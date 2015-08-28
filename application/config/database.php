@@ -5,12 +5,12 @@ $active_record = TRUE;
 
 //$db['default']['hostname'] = 'vendor-data.ct4kuyvudbep.us-west-1.rds.amazonaws.com';
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'bulkhous_suser';
+$db['default']['username'] = 'root';
 //$db['default']['username'] = 'admin_default';
 //$db['default']['password'] = 'bulk@123';
 $db['default']['password'] = 'bulkhouse';
 //$db['default']['database'] = 'admin_default';
-$db['default']['database'] = 'bulkhous_seller';
+$db['default']['database'] = 'mag_data';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
