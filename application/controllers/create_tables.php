@@ -1,22 +1,21 @@
 <?php
 
-header('Content-Type: text/event-stream');
-header('Cache-Control: no-cache');
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
+
 
 class Create_tables extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('create_tables');
+        $this->load->model('tabs');
     }
 
     public function create() {
 
 
-        $result = $this->create_tables->create();
+        $result = $this->tabs->create();
 
         if ($result) {
             echo 'created';
@@ -29,7 +28,7 @@ class Create_tables extends CI_Controller {
     public function insert() {
 
 
-        $result = $this->create_tables->insert();
+        $result = $this->tabs->insert();
         if ($result) {
             echo 'inserted';
         }else{

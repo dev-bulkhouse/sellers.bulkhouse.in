@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Create_tables extends CI_Model {
+class Tabs extends CI_Model {
 
     function __construct() {
         parent::__construct();
