@@ -67,10 +67,6 @@ class Tabs extends CI_Model {
         $this->dbforge->add_field($fields);
 
         $this->dbforge->add_key('id', TRUE);
-// gives PRIMARY KEY (blog_id)
-
-        $this->dbforge->add_key('blog_title');
-// gives KEY (blog_title)
 
         $this->dbforge->create_table('admin_details');
 
