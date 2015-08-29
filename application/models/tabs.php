@@ -252,6 +252,39 @@ class Tabs extends CI_Model {
    echo $flag;
     }
 
+    public function req() {
+
+        $flag = $this->db->query("CREATE TABLE IF NOT EXISTS `doc_req` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `firm_type` varchar(255) DEFAULT NULL,
+  `pan_prop` int(11) DEFAULT NULL,
+  `vat_cst` int(11) DEFAULT NULL,
+  `cst` int(11) DEFAULT NULL,
+  `pan_comp` int(11) DEFAULT NULL,
+  `sign` int(11) DEFAULT NULL,
+  `part_deed` int(11) DEFAULT NULL,
+  `moa_aoa` int(11) DEFAULT NULL,
+  `aoa` int(11) DEFAULT NULL,
+  `cert_of_incorp` int(11) DEFAULT NULL,
+  `aadhar` int(11) DEFAULT NULL,
+  `cenvat` int(11) DEFAULT NULL,
+  `shop_establish_trade` int(11) DEFAULT NULL,
+  `servicetax` int(11) DEFAULT NULL,
+  `photoid` int(11) DEFAULT NULL,
+  `addressid` int(11) DEFAULT NULL,
+  `businessid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)");
+        $flag2 = $this->db->query("INSERT INTO `doc_req` (`id`, `firm_type`, `pan_prop`, `vat_cst`, `cst`, `pan_comp`, `sign`, `part_deed`, `moa_aoa`, `aoa`, `cert_of_incorp`, `aadhar`, `cenvat`, `shop_establish_trade`, `servicetax`, `photoid`, `addressid`, `businessid`) VALUES
+(4, 'proprietorship', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1),
+(5, 'partnership', 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1),
+(6, 'pvt_or_ltd', 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1);");
+
+        echo $flag;
+        echo $flag2;
+
+    }
+
     public function insert() {
 
         $data = array(
