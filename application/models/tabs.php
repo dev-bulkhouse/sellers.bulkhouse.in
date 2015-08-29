@@ -70,8 +70,86 @@ class Tabs extends CI_Model {
 
         $this->dbforge->create_table('admin_details');
 
+    }
 
-        return;
+    public function bank() {
+
+
+        $fields = array(
+            'id' => array(
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => TRUE,
+                'auto_increment' => TRUE
+            ),
+            'compid' => array(
+                'type' => 'INT',
+                'constraint' => 11,
+            ),
+            'account_name' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'default' => 0,
+            ),
+            'account_number' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'default' => 0,
+            ),
+            'bank_name' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'default' => 0,
+            ),
+            'branch' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'default' => 0,
+            ),
+            'ifsc' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'default' => 0,
+            ),
+            'micr' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'default' => 0,
+            ),
+            'date_of_submission' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'default' => 0,
+            ),
+            'status' => array(
+                'type' => 'INT',
+                'constraint' => '11',
+                'default' => 10,
+            ),
+            'dispatch_date' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'default' => 0,
+            ),
+            'amount' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '4',
+                'default' => NULL,
+            ),
+            'attempts' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+                'default' => NULL,
+            ),
+
+        );
+
+        $this->dbforge->add_field($fields);
+
+        $this->dbforge->add_key('id', TRUE);
+
+        $this->dbforge->create_table('bank_details');
+
     }
 
     public function insert() {
@@ -89,7 +167,6 @@ class Tabs extends CI_Model {
 
         $this->db->insert('admin_details', $data);
 
-        return;
     }
 
 }

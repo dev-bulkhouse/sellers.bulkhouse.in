@@ -15,25 +15,25 @@ class Create_tables extends CI_Controller {
     public function create() {
 
 
-        $result = $this->tabs->create();
+       $this->tabs->create();
 
-        if ($result) {
-            echo 'created';
-        }else{
-            echo 'not created';
-        }
+
 
     }
 
     public function insert() {
 
 
-        $result = $this->tabs->insert();
-        if ($result) {
-            echo 'inserted';
-        }else{
-            echo 'not inserted';
-        }
+        $this->tabs->insert();
+
+
+    }
+
+    public function bank() {
+
+
+        $this->tabs->bank();
+
 
     }
 
