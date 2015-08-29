@@ -25,6 +25,7 @@ class Create_tables extends CI_Model {
         $this->dbforge->add_field("gender varchar(100) NOT NULL DEFAULT 'default 0'");
         $this->dbforge->add_field("activation tinyint(1) NOT NULL DEFAULT 'default 0'");
 
+        return;
     }
 
     public function insert() {
@@ -41,6 +42,8 @@ class Create_tables extends CI_Model {
 );
 
 $this->db->insert('admin_details', $data);
+
+return;
 
     }
 

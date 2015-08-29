@@ -16,14 +16,21 @@ class Create_tables extends CI_Controller {
     public function create() {
 
 
-        $this->create_tables->create();
+        $result = $this->create_tables->create();
+
+        if ($result) {
+            echo 'created';
+        }
 
     }
 
     public function insert() {
 
 
-        $this->create_tables->insert();
+        $result = $this->create_tables->insert();
+        if ($result) {
+            echo 'inserted';
+        }
 
     }
 
