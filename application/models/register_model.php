@@ -82,7 +82,7 @@ class Register_model extends CI_Model {
         if ($this->db->affected_rows() === 1) {
             $this->set_session($email);
             $this->send_confirmation_mail();
-            $this->activate_seller($email, $first_name, $last_name, $password_sec);
+//            $this->activate_seller($email, $first_name, $last_name, $password_sec);
 //          $this->activate_account($email);
             return array($first_name, $email, $firm_type, $firm_name, $mobile);
 
