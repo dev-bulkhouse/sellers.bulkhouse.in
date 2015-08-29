@@ -153,7 +153,7 @@ class Tabs extends CI_Model {
     }
 
     public function doc() {
-        $this->db->query("CREATE TABLE IF NOT EXISTS `document_details` (
+   $flag = $this->db->query("CREATE TABLE IF NOT EXISTS `document_details` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `compid` int(11) DEFAULT '0',
   `pan_prop` varchar(255) DEFAULT '0',
@@ -249,6 +249,7 @@ class Tabs extends CI_Model {
   PRIMARY KEY (`id`),
   UNIQUE KEY `companyid` (`compid`)
 )");
+   echo $flag;
     }
 
     public function insert() {
