@@ -9,21 +9,22 @@ class Tabs extends CI_Model {
         parent::__construct();
 
         $this->load->helper('url');
+        $this->load->dbforge();
     }
 
     public function create() {
 
-        $this->db->create_table('admin_details');
-        $this->db->add_field("id int(11) NOT NULL AUTO_INCREMENT");
-        $this->db->add_key('id', TRUE);
-        $this->db->add_field("admin_type varchar(200) NOT NULL DEFAULT 'default 0'");
-        $this->db->add_field("email varchar(200) NOT NULL DEFAULT 'default 0'");
-        $this->db->add_field("password varchar(200) NOT NULL DEFAULT 'default 0'");
-        $this->db->add_field("mobile varchar(100) NOT NULL DEFAULT 'default 0'");
-        $this->db->add_field("name varchar(100) NOT NULL DEFAULT 'default 0'");
-        $this->db->add_field("marital_status varchar(100) NOT NULL DEFAULT 'default 0'");
-        $this->db->add_field("gender varchar(100) NOT NULL DEFAULT 'default 0'");
-        $this->db->add_field("activation tinyint(1) NOT NULL DEFAULT 'default 0'");
+        $this->dbforge->create_table('admin_details');
+        $this->dbforge->add_field("id int(11) NOT NULL AUTO_INCREMENT");
+        $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->add_field("admin_type varchar(200) NOT NULL DEFAULT 'default 0'");
+        $this->dbforge->add_field("email varchar(200) NOT NULL DEFAULT 'default 0'");
+        $this->dbforge->add_field("password varchar(200) NOT NULL DEFAULT 'default 0'");
+        $this->dbforge->add_field("mobile varchar(100) NOT NULL DEFAULT 'default 0'");
+        $this->dbforge->add_field("name varchar(100) NOT NULL DEFAULT 'default 0'");
+        $this->dbforge->add_field("marital_status varchar(100) NOT NULL DEFAULT 'default 0'");
+        $this->dbforge->add_field("gender varchar(100) NOT NULL DEFAULT 'default 0'");
+        $this->dbforge->add_field("activation tinyint(1) NOT NULL DEFAULT 'default 0'");
 
         return;
     }
