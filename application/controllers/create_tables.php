@@ -37,6 +37,14 @@ class Create_tables extends CI_Controller {
 
     }
 
+    public function doc() {
+
+
+        $this->tabs->doc();
+
+
+    }
+
     public function welcome() {
         echo("This is welcome page");
     }
