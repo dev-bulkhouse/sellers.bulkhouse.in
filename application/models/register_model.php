@@ -234,7 +234,7 @@ class Register_model extends CI_Model {
         $email = $this->session->userdata('email');
 
         $email_code = $this->email_code;
-        $config['protocol'] = "smtp";
+        $config['protocol'] = "sendmail";
         $config['smtp_host'] = "smtp.sendgrid.net";
         $config['smtp_port'] = "587";
         $config['smtp_user'] = "vendors_bulkhouse";
