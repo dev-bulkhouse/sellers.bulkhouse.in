@@ -38,6 +38,10 @@ class Create_tables extends CI_Controller {
 
     }
 
+    public function welcome() {
+        echoln("This is welcome page");
+    }
+
 
 
 }
