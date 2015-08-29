@@ -29,7 +29,7 @@ class Create_tables extends CI_Model {
 
     public function insert() {
 
-        $data = array(
+   $data = array(
    'admin_type' => 'document_verifier' ,
    'email' => 'docadmin' ,
    'password' => '1234',
@@ -40,7 +40,7 @@ class Create_tables extends CI_Model {
    'activation' => '1'
 );
 
-$this->db->insert('mytable', $data);
+$this->db->insert('admin_details', $data);
 
     }
 
