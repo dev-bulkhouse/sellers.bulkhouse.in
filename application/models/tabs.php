@@ -379,6 +379,17 @@ class Tabs extends CI_Model {
         echo $flag;
     }
 
+    public function ph() {
+        $this->db->query("CREATE TABLE IF NOT EXISTS `vendor_mobile` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `compid` int(11) NOT NULL,
+  `mobile` varchar(255) NOT NULL,
+  `version` int(11) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+)");
+    }
+
     public function insert() {
 
         $data = array(

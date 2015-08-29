@@ -64,7 +64,17 @@ class Create_tables extends CI_Controller {
     public function sec() {
 
 
+
         $this->tabs->sec();
+
+
+    }
+
+     public function ph() {
+
+
+
+        $this->tabs->ph();
 
 
     }
