@@ -285,6 +285,55 @@ class Tabs extends CI_Model {
 
     }
 
+    public function mn() {
+        $flag = $this->db->query("CREATE TABLE IF NOT EXISTS `vendor_details` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `email` varchar(225) NOT NULL,
+  `vendor_name` varchar(225) NOT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `password` varchar(225) NOT NULL,
+  `land_line` varchar(20) NOT NULL,
+  `mobile` varchar(225) NOT NULL,
+  `firm_type` varchar(225) NOT NULL,
+  `max_credit_limit` varchar(225) NOT NULL,
+  `reg_as` varchar(20) NOT NULL,
+  `firm_name` varchar(225) NOT NULL,
+  `address1` text NOT NULL,
+  `address2` text NOT NULL,
+  `city` varchar(225) NOT NULL,
+  `state` varchar(225) NOT NULL,
+  `pin_code` varchar(255) DEFAULT NULL,
+  `country` varchar(225) NOT NULL,
+  `contact_name` varchar(225) NOT NULL,
+  `mobile_contact` varchar(14) NOT NULL,
+  `email_contact` varchar(225) NOT NULL,
+  `dispat_person` varchar(225) DEFAULT NULL,
+  `dispat_email` varchar(225) DEFAULT NULL,
+  `dispat_mobile` varchar(12) DEFAULT NULL,
+  `dispat_land` varchar(22) DEFAULT NULL,
+  `dispat_address1` varchar(225) DEFAULT NULL,
+  `dispat_address2` text,
+  `dispat_city` varchar(225) DEFAULT NULL,
+  `website` varchar(225) NOT NULL,
+  `comp_profile` varchar(225) NOT NULL,
+  `year_establishment` varchar(225) NOT NULL,
+  `no_employees` varchar(225) NOT NULL,
+  `comp_turnover` varchar(225) NOT NULL,
+  `reg_category` varchar(225) NOT NULL,
+  `pro_category` varchar(225) NOT NULL,
+  `tax_reg` varchar(225) NOT NULL,
+  `cert_products` varchar(225) NOT NULL,
+  `registered_on` datetime NOT NULL,
+  `agree` varchar(1) DEFAULT NULL,
+  `activation` int(1) NOT NULL DEFAULT '0',
+  `cenvat_required` int(11) DEFAULT '0',
+  `servicetax_required` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `emailid` (`email`)
+)");
+        echo $flag;
+    }
+
     public function insert() {
 
         $data = array(
