@@ -14,42 +14,86 @@ class Tabs extends CI_Model {
 
     public function create() {
 
-        $this->dbforge->create_table('admin_details');
-        $this->dbforge->add_field("id int(11) NOT NULL AUTO_INCREMENT");
+
+        $fields = array(
+            'id' => array(
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => TRUE,
+                'auto_increment' => TRUE
+            ),
+            'admin_type' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '200',
+                'default' => 0,
+            ),
+            'email' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '200',
+                'default' => 0,
+            ),
+            'password' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '200',
+                'default' => 0,
+            ),
+            'mobile' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '200',
+                'default' => 0,
+            ),
+            'name' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '200',
+                'default' => 0,
+            ),
+            'marital_status' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+                'default' => 0,
+            ),
+            'gender' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+                'default' => 0,
+            ),
+            'activation' => array(
+                'type' => 'TINYINT',
+                'constraint' => '1',
+                'default' => 0,
+            ),
+        );
+
+        $this->dbforge->add_field($fields);
+
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->add_field("admin_type varchar(200) NOT NULL DEFAULT 'default 0'");
-        $this->dbforge->add_field("email varchar(200) NOT NULL DEFAULT 'default 0'");
-        $this->dbforge->add_field("password varchar(200) NOT NULL DEFAULT 'default 0'");
-        $this->dbforge->add_field("mobile varchar(100) NOT NULL DEFAULT 'default 0'");
-        $this->dbforge->add_field("name varchar(100) NOT NULL DEFAULT 'default 0'");
-        $this->dbforge->add_field("marital_status varchar(100) NOT NULL DEFAULT 'default 0'");
-        $this->dbforge->add_field("gender varchar(100) NOT NULL DEFAULT 'default 0'");
-        $this->dbforge->add_field("activation tinyint(1) NOT NULL DEFAULT 'default 0'");
+// gives PRIMARY KEY (blog_id)
+
+        $this->dbforge->add_key('blog_title');
+// gives KEY (blog_title)
+
+        $this->dbforge->create_table('admin_details');
+
 
         return;
     }
 
     public function insert() {
 
-   $data = array(
-   'admin_type' => 'document_verifier' ,
-   'email' => 'docadmin' ,
-   'password' => '1234',
-   'mobile' => '7386305571',
-   'name' => 'Reddy',
-   'maritak_status' => 'married',
-   'gender' => 'male',
-   'activation' => '1'
-);
+        $data = array(
+            'admin_type' => 'document_verifier',
+            'email' => 'docadmin',
+            'password' => '1234',
+            'mobile' => '7386305571',
+            'name' => 'Reddy',
+            'maritak_status' => 'married',
+            'gender' => 'male',
+            'activation' => '1'
+        );
 
-$this->db->insert('admin_details', $data);
+        $this->db->insert('admin_details', $data);
 
-return;
-
+        return;
     }
-
-
-
-
 
 }
