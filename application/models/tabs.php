@@ -334,6 +334,51 @@ class Tabs extends CI_Model {
         echo $flag;
     }
 
+    public function sec() {
+        $flag = $this->db->query("CREATE TABLE IF NOT EXISTS `sec_vendor_authinfo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `compid` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+)");
+        $flag2 =  $this->db->query("CREATE TABLE IF NOT EXISTS `removed_vendors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `reason` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+)");
+        $flag3 = $this->db->query("CREATE TABLE IF NOT EXISTS `pro_cat` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `compid` int(11) NOT NULL,
+  `Foods_and_Beverages` varchar(255) NOT NULL DEFAULT '0',
+  `The_Fashion` varchar(255) NOT NULL DEFAULT '0',
+  `The_Home` varchar(255) NOT NULL DEFAULT '0',
+  `Mobiles_Consumer_Electronics` varchar(255) NOT NULL DEFAULT '0',
+  `Packing_Stationery_Office_and_School` varchar(255) NOT NULL DEFAULT '0',
+  `Electrical_Lighting_and_Tools` varchar(255) NOT NULL DEFAULT '0',
+  `Sports_and_Toys` varchar(255) NOT NULL DEFAULT '0',
+  `Security_Computers_Telecom` varchar(255) NOT NULL DEFAULT '0',
+  `Agriculture` varchar(255) NOT NULL DEFAULT '0',
+  `Construction` varchar(255) NOT NULL DEFAULT '0',
+  `industrial` varchar(255) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+)");
+        $flag4 = $this->db->query("CREATE TABLE IF NOT EXISTS `credit_limit` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `compid` int(11) DEFAULT NULL,
+  `max_credit_limit` varchar(200) DEFAULT '0',
+  PRIMARY KEY (`id`)
+)");
+        echo $flag4;
+        echo $flag3;
+
+        echo $flag2;
+        echo $flag;
+    }
+
     public function insert() {
 
         $data = array(
