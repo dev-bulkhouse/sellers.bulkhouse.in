@@ -82,7 +82,7 @@ class Tabs extends CI_Model {
             'password' => '1234',
             'mobile' => '7386305571',
             'name' => 'Reddy',
-            'maritak_status' => 'married',
+            'marital_status' => 'married',
             'gender' => 'male',
             'activation' => '1'
         );
