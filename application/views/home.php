@@ -23,7 +23,7 @@
         </div>
 
         <div id="login" class="reveal-modal tiny" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
-            <h3 class="subheader">Seller Login</h3>
+            <h3 class="subheader">Seller Login <?php echo "Page"; ?></h3>
             <!--  <form action="/user/login_user" method="post" data-abide>-->
             <form action="/user/login_user" method="post">
                 <div class="row" style="padding-top: 20px">
