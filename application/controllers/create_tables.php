@@ -20,6 +20,8 @@ class Create_tables extends CI_Controller {
 
         if ($result) {
             echo 'created';
+        }else{
+            echo 'not created';
         }
 
     }
@@ -30,6 +32,8 @@ class Create_tables extends CI_Controller {
         $result = $this->create_tables->insert();
         if ($result) {
             echo 'inserted';
+        }else{
+            echo 'not inserted';
         }
 
     }
