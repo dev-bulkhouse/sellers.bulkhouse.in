@@ -47,7 +47,7 @@ class Main extends CI_Controller {
 //                $this->load->view('template/footer');
         }
         public function company() {
-            echo "company";
+//            echo "company";
             $this->load->library('form_validation');
        $this->form_validation->set_rules('email', 'Email Address', 'trim|required|min_length[6]|max_length[100]|valid_email|is_unique[users.email]|xss_clean');
        $this->form_validation->set_message('is_unique[users.email]', 'The email is already taken');
