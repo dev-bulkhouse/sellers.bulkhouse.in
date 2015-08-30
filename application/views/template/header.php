@@ -15,7 +15,7 @@ if (isset($logged_in)) {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bulkhouse Trading India Pvt Ltd| We Are Launching .....</title>
-    <link rel="stylesheet" href="http://sellers.bulkhouse.in/assets/css/foundation.css" />
+    <link rel="stylesheet" href="<?php echo site_url(); ?>/assets/css/foundation.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
 
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
@@ -105,7 +105,7 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 
-  
+
 }
     </style>
 
