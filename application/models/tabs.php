@@ -403,7 +403,32 @@ class Tabs extends CI_Model {
             'activation' => '1'
         );
 
+        $data2 = array(
+            'admin_type' => 'bank_verifier',
+            'email' => 'bnkadmin',
+            'password' => '1234',
+            'mobile' => '7386305571',
+            'name' => 'Manikumar',
+            'marital_status' => 'married',
+            'gender' => 'male',
+            'activation' => '1'
+        );
+
+        $data3 = array(
+            'admin_type' => 'bank_verifier2',
+            'email' => 'bnkadmin2',
+            'password' => '1234',
+            'mobile' => '7386305571',
+            'name' => 'Manikumar2',
+            'marital_status' => 'married',
+            'gender' => 'male',
+            'activation' => '1'
+        );
+
         $this->db->insert('admin_details', $data);
+        $this->db->insert('admin_details', $data2);
+        $this->db->insert('admin_details', $data3);
+
 
     }
 
