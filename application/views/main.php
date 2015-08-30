@@ -471,20 +471,20 @@ $query = $this->db->get();
                                                                         </a>
                                                                         <ul class="dropdown-menu">
                                                                             <li>
-                                                                              
+
                                                                                 <a href="/main/faqs"><i class="icon-question-sign"></i>Vendor on Boarding</a>
                                                                             </li>
                                                                             <li>
-                                                                                  
+
                                                                                  <a href="/main/faqs2"><i class="icon-question-sign"></i>Selling Process</a>
-                                                                          
+
                                                                                   </li>
-                                                                           
+
                                                                         </ul>
                                                                     </li>
-                                    
-                       
-                                
+
+
+
 
 
                             </ul>
