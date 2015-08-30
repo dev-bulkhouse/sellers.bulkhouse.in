@@ -569,7 +569,7 @@ if (isset($firm_name)) {
 <!--                                            <h4>3,450</h4> <small class="text-muted block">Worldwide visitors</small>-->
                                         <div class="inline">
 
-                                            <div class="easypiechart" data-percent="<?= $val;?>" data-line-width="7" data-track-color="#eee" data-bar-color="#afcf6f" data-scale-color="#fff" data-loop="false" data-size="70"> <span class="h4"><?= $val;?></span>%
+                                            <div class="easypiechart" data-percent="<?php echo $val;?>" data-line-width="7" data-track-color="#eee" data-bar-color="#afcf6f" data-scale-color="#fff" data-loop="false" data-size="70"> <span class="h4"><?php echo $val;?></span>%
 
                                             </div>
                                             <div class="easypie-text">Complete</div>
@@ -800,7 +800,7 @@ if (isset($firm_name)) {
                                     <p style="color: white">Account Complete Status</p>
                                         <div class="progress progress-xs  m-t-sm">
 
-                                            <div class="progress-bar progress-bar-success" data-toggle="tooltip" data-original-title="<?= $val;?>" style="width: <?= $val; ?>%"></div>
+                                            <div class="progress-bar progress-bar-success" data-toggle="tooltip" data-original-title="<?php echo $val;?>" style="width: <?php echo $val; ?>%"></div>
 
                                         </div>
 
