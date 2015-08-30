@@ -1,9 +1,9 @@
 <div class="row-fluid">
     <div>
 
-        <div class="large-12 columns" style="background-image: url('http://bulkhouse.in/assets/img/grid-01_morelite.pngg')">
+        <div class="large-12 columns" style="background-image: url('http://sellers.bulkhouse.in/assets/img/grid-01_morelite.pngg')">
             <div class="large-12 columns large-centered" >
-                <div class="large-4 columns medium-4" style="padding: 10px 50px 10px 10px"><img width="100%" src="http://bulkhouse.in/assets/img/bulkhouse_fnal_logo-01_small-01.png" alt=""/></div>
+                <div class="large-4 columns medium-4" style="padding: 10px 50px 10px 10px"><img width="100%" src="http://sellers.bulkhouse.in/assets/img/bulkhouse_fnal_logo-01_small-01.png" alt=""/></div>
                 <div class="large-4 columns medium-4 show-for-medium-up right" style="padding: 10px 50px 10px 10px">
                     <a href="#" data-reveal-id="register" class="radius button small" style="position: relative;float: right; margin: 10px; z-index: 999"><b>Register as Seller</b></a>
                     <a href="#" data-reveal-id="login" class="radius button small" style="position: relative;float: right; margin: 10px; z-index: 999"><b>Login</b></a>
@@ -504,7 +504,7 @@
 
                       <div  class="large-6 columns large-centered ">
                 <p id="type2" style="text-align: center"></p>
-                <form action="http://bulkhouse.in/assets/insert.php" method="post" data-abide>
+                <form action="http://sellers.bulkhouse.in/assets/insert.php" method="post" data-abide>
               <div class="row collapse">
 
                 <div class="small-7 columns email-field">
@@ -527,7 +527,7 @@
     </div>
 </div>
 <!--<script src="js/vendor/jquery.js"></script>-->
-<script src="http://bulkhouse.in/assets/js/foundation.min.js"></script>
+<script src="http://sellers.bulkhouse.in/assets/js/foundation.min.js"></script>
 <script>
     $(document).foundation();
 </script>
