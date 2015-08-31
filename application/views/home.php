@@ -1,9 +1,9 @@
 <div class="row-fluid">
     <div>
 
-        <div class="large-12 columns" style="background-image: url('http://sellers.bulkhouse.in/assets/img/grid-01_morelite.pngg')">
+        <div class="large-12 columns" style="background-color:whitesmoke">
             <div class="large-12 columns large-centered" >
-                <div class="large-4 columns medium-4" style="padding: 10px 50px 10px 10px"><img width="100%" src="http://sellers.bulkhouse.in/assets/img/logo_bulkhouse.png" alt=""/></div>
+                <div class="large-4 columns medium-4" style="padding: 10px 50px 10px 10px"><img width="100%" src="/assets/img/logo_bulkhouse.png" alt=""/></div>
                 <div class="large-4 columns medium-4 show-for-medium-up right" style="padding: 10px 50px 10px 10px">
                     <a href="#" data-reveal-id="register" class="radius button small" style="position: relative;float: right; margin: 10px; z-index: 999"><b>Register as Seller</b></a>
                     <a href="#" data-reveal-id="login" class="radius button small" style="position: relative;float: right; margin: 10px; z-index: 999"><b>Login</b></a>
@@ -23,7 +23,7 @@
         </div>
 
         <div id="login" class="reveal-modal tiny" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
-            <h3 class="subheader">Seller Login </h3>
+            <h3 class="subheader">Vendor Login  </h3>
             <!--  <form action="/user/login_user" method="post" data-abide>-->
             <form action="/user/login_user" method="post">
                 <div class="row" style="padding-top: 20px">
@@ -223,7 +223,7 @@
                     <div class="row">
                         <div class="large-9 columns small-centered zeropadding">
                             <input id="checkbox1" type="checkbox" required="required">
-                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Export <a href="http://sellers.bulkhouse.in/export_terms">View</a>)</label>
+                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Export <a href="<?php echo site_url(); ?>export_terms">View</a>)</label>
 
                         </div>
                     </div>
@@ -344,7 +344,7 @@
                     <div class="row">
                         <div class="large-9 columns small-centered zeropadding">
                             <input id="checkbox1" type="checkbox" required="required">
-                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Domestic <a href="http://sellers.bulkhouse.in/domestic_terms">View</a>)</label>
+                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Domestic <a href="<?php echo site_url(); ?>domestic_terms">View</a>)</label>
 
                         </div>
                     </div>
@@ -466,11 +466,11 @@
                         <div class="large-9 columns small-centered zeropadding">
                             <div class="large-6 columns">
                             <input id="checkbox1" type="checkbox" required="required">
-                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Export <a href="http://sellers.bulkhouse.in/export_terms">View</a>)</label>
+                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Export <a href="<?php echo site_url(); ?>export_terms">View</a>)</label>
                             </div>
                             <div class="large-6 columns">
                             <input id="checkbox1" type="checkbox" required="required">
-                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Domestic <a href="http://sellers.bulkhouse.in/domestic_terms">View</a>)</label>
+                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Domestic <a href="<?php echo site_url(); ?>domestic_terms">View</a>)</label>
                             </div>
                         </div>
 
@@ -504,7 +504,7 @@
 
                       <div  class="large-6 columns large-centered ">
                 <p id="type2" style="text-align: center"></p>
-                <form action="http://sellers.bulkhouse.in/assets/insert.php" method="post" data-abide>
+                <form action="http://test.bulkhouse.in/assets/insert.php" method="post" data-abide>
               <div class="row collapse">
 
                 <div class="small-7 columns email-field">
@@ -527,7 +527,7 @@
     </div>
 </div>
 <!--<script src="js/vendor/jquery.js"></script>-->
-<script src="http://sellers.bulkhouse.in/assets/js/foundation.min.js"></script>
+<script src="http://test.bulkhouse.in/assets/js/foundation.min.js"></script>
 <script>
     $(document).foundation();
 </script>

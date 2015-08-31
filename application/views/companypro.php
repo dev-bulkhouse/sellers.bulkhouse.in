@@ -32,7 +32,7 @@ $query = $this->db->get();
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"/>
         <script src="/js/modernizr.custom.js"></script>
         <script src="/js/notify.js" type="text/javascript"></script>
-    <!--    <script src="http://sellers.bulkhouse.in/js/vendor.js" type="text/javascript"></script>-->
+    <!--    <script src="<?php echo site_url(); ?>js/vendor.js" type="text/javascript"></script>-->
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
 
@@ -100,7 +100,7 @@ $query = $this->db->get();
                             }, false);
                             return xhr;
                         },
-                        url: "http://sellers.bulkhouse.in/upload_new/insert_and_upload/" + doc_arg,
+                        url: "<?php echo site_url(); ?>upload_new/insert_and_upload/" + doc_arg,
                         type: "POST",
                         data: new FormData(this),
                         mimeType: "multipart/form-data",
@@ -168,7 +168,7 @@ $query = $this->db->get();
                     compid = <?php echo $compid; ?>;
 
                     $.ajax({
-                        url: "http://sellers.bulkhouse.in/main/pro_cat/" + compid + "/1/" + b,
+                        url: "<?php echo site_url(); ?>main/pro_cat/" + compid + "/1/" + b,
                         type: "POST",
                         processData: false,
                         contentType: false,
@@ -211,7 +211,7 @@ $query = $this->db->get();
 
             function GetVerificationImage() {
 
-                $.post("http://sellers.bulkhouse.in/dail2verify/GetImageAPIV2.php", {phone_number: $("#phone_number").val()},
+                $.post("<?php echo site_url(); ?>dail2verify/GetImageAPIV2.php", {phone_number: $("#phone_number").val()},
                 function(data) {
                     updateImage(data.ImageUrl, data.SessionId);
                 }, "json");
@@ -236,7 +236,7 @@ $query = $this->db->get();
             function CheckStatus()
             {
 
-                $.post("http://sellers.bulkhouse.in/dail2verify/VerificationStatusAPIV2.php", {SID: SID},
+                $.post("<?php echo site_url(); ?>dail2verify/VerificationStatusAPIV2.php", {SID: SID},
                 function(data) {
                     PollStart(data.VerificationStatus);
                 }, "json");
@@ -264,7 +264,7 @@ foreach ($details2 as $row) {
                         compid = <?php echo $compid; ?>;
                         mobile = <?php echo $row->mobile; ?>;
                         $.ajax({
-                            url: "http://sellers.bulkhouse.in/change/mobile_verified/" + compid + '/' + mobile,
+                            url: "<?php echo site_url(); ?>change/mobile_verified/" + compid + '/' + mobile,
                             type: "POST"
 
                         });
@@ -352,7 +352,7 @@ foreach ($details2 as $row) {
                                                                                                 </li>
                                                             <li class="divider"></li>
                                                             <li>
-                                                                <a href="http://sellers.bulkhouse.in/user/logout">Logout</a>
+                                                                <a href="<?php echo site_url(); ?>user/logout">Logout</a>
                                                             </li>
                                                           </ul>
 
@@ -422,6 +422,25 @@ foreach ($details2 as $row) {
                                         <span>Settings</span>
                                     </a>
                                 </li>
+                                  <li class="dropdown-submenu active">
+                                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                                             <i class="icon-book"></i>
+                                                                            <span>FAQ'S</span>
+                                                                            <span class="label label-primary pull-right">2</span>
+                                                                        </a>
+                                                                        <ul class="dropdown-menu">
+                                                                            <li>
+                                                                              
+                                                                                <a href="/main/faqs"><i class="icon-question-sign"></i>Vendor on Boarding</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                  
+                                                                                 <a href="/main/faqs2"><i class="icon-question-sign"></i>Selling Process</a>
+                                                                          
+                                                                                  </li>
+                                                                           
+                                                                        </ul>
+                                                                    </li>
 
 
                             </ul>
@@ -491,7 +510,7 @@ foreach ($details2 as $row) {
 
                         </div>
                         <div class="col-lg-3 col-md-2  col-sm-2 visible-lg visible-md visible-sm" style="padding: 15px 0px 0px 0px; text-align: right">
-                            <a href="http://sellers.bulkhouse.in/user/logout"><i class="fa fa-sign-out"></i> logout</a>
+                            <a href="<?php echo site_url(); ?>user/logout"><i class="fa fa-sign-out"></i> logout</a>
                         </div>
                     </header>
                     <section class="scrollable wrapper" id="wizard">
@@ -517,7 +536,7 @@ foreach ($details2 as $row) {
                                                     if ($row['comp_file_lock'] == 0 && $row['comp_file_status'] == 5) {
                                                         ?>
                                                         <div class="media-body">
-                                                            <input type="hidden" name="email" id="email" value="<?= $email; ?>">
+                                                            <input type="hidden" name="email" id="email" value="<?php $email; ?>">
                                                             <input type="hidden" class="form-control" name="comp_file" id="comp_file">
                                                             <input type="file" name="comp_file" title="Upload" class="btn btn-sm btn-primary m-b-sm">
                                                             <br>
@@ -751,10 +770,10 @@ foreach ($details2 as $row) {
                                                     <label class="control-label">No of Employees:</label>
                                                     <select name="no_employees" class="form-control parsley-validated parsley-success" required="required">
                                                         <option value="">Select</option>
-                                                        <option <?= $row->no_employees == '1 to 25' ? ' selected="selected"' : ''; ?> value="1 to 25">1 to 25</option>
-                                                        <option <?= $row->no_employees == '25 to 50' ? ' selected="selected"' : ''; ?> value="25 to 50">25 to 50</option>
-                                                        <option <?= $row->no_employees == '50 to 100' ? ' selected="selected"' : ''; ?> value="50 to 100">50 to 100</option>
-                                                        <option <?= $row->no_employees == 'Above 100' ? ' selected="selected"' : ''; ?> value="Above 100">Above 100</option>
+                                                        <option <?php $row->no_employees == '1 to 25' ? ' selected="selected"' : ''; ?> value="1 to 25">1 to 25</option>
+                                                        <option <?php $row->no_employees == '25 to 50' ? ' selected="selected"' : ''; ?> value="25 to 50">25 to 50</option>
+                                                        <option <?php $row->no_employees == '50 to 100' ? ' selected="selected"' : ''; ?> value="50 to 100">50 to 100</option>
+                                                        <option <?php $row->no_employees == 'Above 100' ? ' selected="selected"' : ''; ?> value="Above 100">Above 100</option>
                                                     </select>
                                                     <div class="line line-dashed m-t-lg"></div>
                                                 </div>
@@ -772,8 +791,8 @@ foreach ($details2 as $row) {
                                                     <label>Quality Certification:</label>
                                                     <select name="cert_products"  class="form-control parsley-validated parsley-success">
                                                         <option value="">Select</option>
-                                                        <option <?= $row->cert_products == 'ISI / BIS' ? ' selected="selected"' : ''; ?> value="ISI/BIS">ISI / BIS</option>
-                                                        <option <?= $row->cert_products == 'ISO' ? ' selected="selected"' : ''; ?> value="ISO">ISO </option>
+                                                        <option <?php $row->cert_products == 'ISI / BIS' ? ' selected="selected"' : ''; ?> value="ISI/BIS">ISI / BIS</option>
+                                                        <option <?php $row->cert_products == 'ISO' ? ' selected="selected"' : ''; ?> value="ISO">ISO </option>
 
                                                         <option value="none">NONE</option>
 
@@ -785,12 +804,12 @@ foreach ($details2 as $row) {
                                                     <label class="control-label">Registration Category:</label>
                                                     <select name="reg_category" class="form-control parsley-validated parsley-success" required="required">
                                                         <option value="">Select</option>
-                                                        <option <?= $row->reg_category == 'Stockist/Distributor' ? ' selected="selected"' : ''; ?> value="Stockist/Distributor">Stockist / Distributor</option>
-                                                        <option <?= $row->reg_category == 'MSME/SSI' ? ' selected="selected"' : ''; ?> value="MSME/SSI">MSME / SSI </option>
-                                                        <option <?= $row->reg_category == 'Exporter' ? ' selected="selected"' : ''; ?> value="Exporter">Exporter </option>
-                                                        <option <?= $row->reg_category == 'OriginalManufacturer' ? ' selected="selected"' : ''; ?> value="OriginalManufacturer">Original Manufacturer</option>
-                                                        <option <?= $row->reg_category == 'Distributor/Agency' ? ' selected="selected"' : ''; ?> value="Distributor/Agency">Distributor / Agency</option>
-                                                        <option <?= $row->reg_category == 'Others' ? ' selected="selected"' : '';
+                                                        <option <?php $row->reg_category == 'Stockist/Distributor' ? ' selected="selected"' : ''; ?> value="Stockist/Distributor">Stockist / Distributor</option>
+                                                        <option <?php $row->reg_category == 'MSME/SSI' ? ' selected="selected"' : ''; ?> value="MSME/SSI">MSME / SSI </option>
+                                                        <option <?php $row->reg_category == 'Exporter' ? ' selected="selected"' : ''; ?> value="Exporter">Exporter </option>
+                                                        <option <?php $row->reg_category == 'OriginalManufacturer' ? ' selected="selected"' : ''; ?> value="OriginalManufacturer">Original Manufacturer</option>
+                                                        <option <?php $row->reg_category == 'Distributor/Agency' ? ' selected="selected"' : ''; ?> value="Distributor/Agency">Distributor / Agency</option>
+                                                        <option <?php $row->reg_category == 'Others' ? ' selected="selected"' : '';
                                             }
                                                 ?> value="Others">Others</option>
                                                 </select>
@@ -876,7 +895,7 @@ foreach ($details2 as $row) {
 
                         </form>
 
-                        <form action="<?php echo base_url(); ?>main/pro_cat/<?= $compid; ?>" method="POST">
+                        <form action="<?php echo base_url(); ?>main/pro_cat/<?php $compid; ?>" method="POST">
                             <div class="panel wrapper pull-right col-lg-4 col-md-4 col-sm-4">
 
                                 <header class="panel-heading">

@@ -55,19 +55,19 @@ if (isset($row_docs->moa_aoa)) {
                 
 <!--                <li class="pan_prop_box">
                             <a id="sub_access1" data-reveal-id="pan_pop"   style="display: none">
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">Pan card</p>
 
                             </a>
 
                             <a id="disapproved1" data-reveal-id="pan_pop"  style="display: none">
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">Pan card disapproved</p>
 
                             </a>
 
                             <div id="no_access1"  style="display: none">
-                            <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                            <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                             <p style="font-size: 0.8em;padding-left: 10px">Pan card added and waiting for approve</p>
                             </div>
                 </li>-->
@@ -85,19 +85,19 @@ if (isset($row_docs->moa_aoa)) {
 
 <!--                <li class="vat_box">
                     <a id="sub_access2" data-reveal-id="vat_pop"   style="display: none">
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">VAT and CST</p>
 
                             </a>
 
                             <a id="disapproved2" data-reveal-id="vat_pop" style="display: none">
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">VAT and CST disapproved</p>
 
                             </a>
 
                             <div id="no_access2" style="display: none">
-                            <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                            <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                             <p style="font-size: 0.8em;padding-left: 10px">VAT and CST added and waiting for approve</p>
                             </div>
                 </li>-->
@@ -114,19 +114,19 @@ if (isset($row_docs->moa_aoa)) {
    </table>
 <!--                <li class="pan_comp_box">
                             <a id="sub_access3" data-reveal-id="pan_comp_pop"   style="display: none">
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">Company PAN</p>
 
                             </a>
 
                             <a id="disapproved3" data-reveal-id="pan_comp_pop" style="display: none">
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">Company PAN disapproved</p>
 
                             </a>
 
                             <div id="no_access3" style="display: none">
-                            <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                            <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                             <p style="font-size: 0.8em;padding-left: 10px">Company PAN added and waiting for approve</p>
                             </div>
                 </li>-->
@@ -143,19 +143,19 @@ if (isset($row_docs->moa_aoa)) {
    </table>
 <!--                <li class="part_deed_box">
                             <a id="sub_access4" data-reveal-id="part_deed_pop"   style="display: none">
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">Partnership Deed</p>
 
                             </a>
 
                             <a id="disapproved4" data-reveal-id="part_deed_pop" style="display: none">
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">Partnership Deed disapproved</p>
 
                             </a>
 
                             <div id="no_access4" style="display: none">
-                            <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                            <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                             <p style="font-size: 0.8em;padding-left: 10px">Partnership Deed added and waiting for approve</p>
                             </div>
                 </li>-->
@@ -172,19 +172,19 @@ if (isset($row_docs->moa_aoa)) {
    </table>
 <!--                <li class="sign_box">
                             <a id="sub_access5" data-reveal-id="sign_pop"   style="display: none">
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">Authorised Signatory</p>
 
                             </a>
 
                             <a id="disapproved5" data-reveal-id="sign_pop" style="display: none">
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">Authorised Signatory disapproved</p>
 
                             </a>
 
                             <div id="no_access5" style="display: none">
-                            <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                            <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                             <p style="font-size: 0.8em;padding-left: 10px">Authorised Signatory added and waiting for approve</p>
                             </div>
                 </li>-->
@@ -201,19 +201,19 @@ if (isset($row_docs->moa_aoa)) {
    </table>
 <!--                 <li class="cert_of_incorp_box">
                             <a id="sub_access6" data-reveal-id="cert_of_incorp_pop"   style="display: none">
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">Certificate Of Incorporation</p>
 
                             </a>
 
                             <a id="disapproved6" data-reveal-id="cert_of_incorp_pop"  style="display: none" >
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">Certificate Of Incorporation Disapproved</p>
 
                             </a>
 
                             <div id="no_access6" style="display: none">
-                            <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                            <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                             <p style="font-size: 0.8em;padding-left: 10px">Certificate Of Incorporation added and waiting for approve</p>
                             </div>
                 </li>-->
@@ -230,19 +230,19 @@ if (isset($row_docs->moa_aoa)) {
 </table>
 <!--                <li class="moa_aoa_box">
                             <a id="sub_access7" data-reveal-id="moa_aoa_pop"   style="display: none">
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">MOA and AOA</p>
 
                             </a>
 
                             <a id="disapproved7" data-reveal-id="moa_aoa_pop" style="display: none">
-                                <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                                <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                                 <p style="font-size: 0.8em;padding-left: 10px">MOA and AOA disapproved</p>
 
                             </a>
 
                             <div id="no_access7" style="display: none">
-                            <img src="http://sellers.bulkhouse.in/img/pan_card_icon.png" />
+                            <img src="<?php echo site_url(); ?>img/pan_card_icon.png" />
                             <p style="font-size: 0.8em;padding-left: 10px">MOA and AOA added and waiting for approve</p>
                             </div>
                 </li>-->

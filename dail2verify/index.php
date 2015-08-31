@@ -33,7 +33,7 @@
 		}
 
 		function GetVerificationImage() {
-			$.post("http://sellers.bulkhouse.in/dail2verify/GetImageAPIV2.php", { phone_number : $("#phone_number").val() },
+			$.post("<?php echo site_url(); ?>dail2verify/GetImageAPIV2.php", { phone_number : $("#phone_number").val() },
 				   function(data) { updateImage(data.ImageUrl,data.SessionId); }, "json");
 		}
 
@@ -52,7 +52,7 @@
 
 		function CheckStatus()
 		{
-			$.post("http://sellers.bulkhouse.in/dail2verify/VerificationStatusAPIV2.php", { SID : SID },
+			$.post("<?php echo site_url(); ?>dail2verify/VerificationStatusAPIV2.php", { SID : SID },
 				   function(data) { PollStart(data.VerificationStatus); }, "json");
 		}
 

@@ -84,7 +84,7 @@
                     }, false);
                     return xhr;
                 },
-                url: "http://sellers.bulkhouse.in/upload_new/insert_and_upload/" + doc_arg,
+                url: "<?php echo site_url(); ?>upload_new/insert_and_upload/" + doc_arg,
                 type: "POST",
                 data: new FormData(this),
                 mimeType: "multipart/form-data",

@@ -89,6 +89,8 @@ class Register extends CI_Controller {
          $this->db->update('vendor_details',$data);
 
      }
+    
+
      public function check_user()
         {
         $email=$this->input->post('email');

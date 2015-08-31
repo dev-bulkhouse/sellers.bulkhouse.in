@@ -11,7 +11,7 @@ if ($logged_in) {
     $show['firm_name'] = $firm_name;
     $show['firm_type'] = $firm_type;
 } else {
-    
+
 }
 $responcea = $this->vendor_update->status_bank($compid);
 if ($responcea == 'Need To Submit' || $responcea == 'Failed' || $responcea == 'wrong' || $responcea == 'submitted') {
@@ -68,170 +68,25 @@ $query = $this->db->get();
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"/>
         <script src="/js/modernizr.custom.js"></script>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <!--    <script src="http://sellers.bulkhouse.in/js/vendor.js" type="text/javascript"></script>-->
+    <!--    <script src="<?php echo site_url(); ?>js/vendor.js" type="text/javascript"></script>-->
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
 
-
+<style>
+            .bg-primary {
+    background-color: #18659B;
+    color: #fff;
+}
+.bg-primary .nav li a {
+    color: #fff;
+}
+        </style>
     </head>
     <body  ng-app="ngAnimate">
-        <section class="container-fluid">
-            <div class="col-lg-12" style="height: 60px; background-color: #01283A">
-                <div class="col-lg-4"><img width="200px" src="http://bulk.house/skin/frontend/apptha/superstore/images/logo.gif" alt="Bulkhouse"></div>
-                <div class="col-lg-8"><h4 style="text-align: right; color: white">Seller Portal</h4><p style="text-align: right; color: white">Support : <?php echo $this->config->item('bulk-support-number'); ?></p></div>
-            </div>
-        </section>
-        <section class="hbox stretch">
-            <!-- .aside -->
-            <aside class="bg-primary aside-sm" id="nav">
-                <section class="vbox">
-                    <header class="dker nav-bar">
-                        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="body">
-                            <i class="icon-reorder"></i>
-                        </a>
-                        <a href="#" class="nav-brand" data-toggle="fullscreen">Bulkhouse</a>
-                        <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user">
-                            <i class="fa fa-sign-out"></i>
-                        </a>
-                    </header>
-                    <footer class="footer bg-gradient hidden-xs">
-
-
-                    </footer>
-                    <section>
-                        <!-- user -->
-                        <!--                        <div class="bg-info nav-user hidden-xs pos-rlt">
-                                                    <div class="nav-avatar pos-rlt">
-                                                        <a href="#" data-toggle="dropdown">
-                                                            <i class="fa fa-user"> My Account</i>
-                                                            <span class="caret caret-white"></span>
-                                                        </a>
-                                                        <ul class="dropdown-menu m-t-sm animated fadeInLeft">
-                                                            <span class="arrow top"></span>
-                                                            <li>
-                                                               <a href="/main/settings"> Change Password</a>
-                                                            </li>
-                                                            <a href="docs.html">Documentation</a>
-                                                            <li>
-                                                                <a href="/main/view_data"><span class="badge bg-danger pull-right" style=""></span>Profile</a>
-                                                            </li>
-                                                            <a href="docs.html">Documentation</a>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <span class="badge bg-danger pull-right">2</span> Notifications
-                                                                </a>
-                                                            </li>
-                                                            <li class="divider"></li>
-                                                            <li>
-                                                                <a href="docs.html">Documentation</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="http://sellers.bulkhouse.in/user/logout">Logout</a>
-                                                            </li>
-                                                        </ul>
-                        
-                                                    </div>-->
-                        <div class="nav-msg">
-
-                            <section class="dropdown-menu m-l-sm pull-left animated fadeInRight">
-                                <div class="arrow left"></div>
-                                <section class="panel bg-white">
-                                    <header class="panel-heading">
-                                        You have
-                                        <span class="count-n">2</span> notifications
-
-                                    </header>
-                                    <div class="list-group">
-                                        <a href="#" class="media list-group-item">
-                                            <span class="pull-left thumb-sm">
-                                                <img src="/images/avatar.jpg" alt="John said" class="img-circle">
-                                            </span>
-                                            <span class="media-body block m-b-none"> Use awesome animate.css
-                                                <br>
-                                                <small class="text-muted">28 Aug 13</small>
-                                            </span>
-                                        </a>
-                                        <a href="#" class="media list-group-item">
-                                            <span class="media-body block m-b-none"> 1.0 initial released
-                                                <br>
-                                                <small class="text-muted">27 Aug 13</small>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <footer class="panel-footer text-sm">
-                                        <a href="#" class="pull-right">
-                                            <i class="icon-cog"></i>
-                                        </a>
-                                        <a href="#">See all the notifications</a>
-                                    </footer>
-                                </section>
-                            </section>
-                        </div>
-                        </div>
-                        <!-- / user -->
-                        <!-- nav -->
-                        <nav class="nav-primary hidden-xs">
-                            <ul class="nav">
-                                <li class="active treeview">
-                                    <a href="/main">
-                                        <i class="icon-dashboard"></i>
-                                        <span>Dashboard</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/main/bank">
-                                        <i class="icon-money"></i>
-                                        <span>Bank Details</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/main/view_data">
-                                        <i class="icon-user"></i>
-                                        <span>Profile</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="/main/settings">
-                                        <i class="icon-gears"></i>
-                                        <span>Settings</span>
-                                    </a>
-                                </li>
-
-
-
-                                <li class="dropdown-submenu active">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <i class="icon-book"></i>
-                                        <span>FAQ'S</span>
-                                        <span class="label label-primary pull-right">2</span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-
-                                            <a href="/main/faqs"><i class="icon-question-sign"></i>Vendor on Boarding</a>
-                                        </li>
-                                        <li>
-
-                                            <a href="/main/faqs2"><i class="icon-question-sign"></i>Selling Process</a>
-
-                                        </li>
-
-                                    </ul>
-                                </li>
-
-                            </ul>
-                        </nav>
-                        <!-- / nav -->
-                        <!-- note -->
-
-                        <!-- / note -->
-                    </section>
-                </section>
-            </aside>
+       <?php $this->load->view('template/main_head', array('firm_name' => $firm_name, 'firm_type' => $firm_type)); ?>
             <!-- /.aside -->
             <aside class="bg-light lter">
-
+                
                 <header class="header b-b">
 
                     <p class="h4 animated bounceInDown"> STEP BY STEP GUIDE TO THE SELLING PROCESS</p>
@@ -307,7 +162,7 @@ $query = $this->db->get();
                                         <li>As a vendor, you will set the price of your products.</li>
                                         <li>If buyer has accepted the displayed price, ordered and paid online to Bulkhouse– Vendor’s confirmation is not necessary and the Purchase order is raised by Bulkhouse to the Vendor automatically.</li>
                                         <li>At times the buyer may not accept your selling price and may set his/her bargain price. In case buyer has not accepted displayed price and opted for bargaining, the order will go to Vendor for acceptance of bargain price or the Vendor may accept bargain price or reject the order or place counter price.</li>
-                                        <li>Reduce selling costs-Bulk ordersIf an order once accepted by the Vendor is not executed, Bulkhouse will levy penalty as per the provisions of the Agreement. 
+                                        <li>Reduce selling costs-Bulk ordersIf an order once accepted by the Vendor is not executed, Bulkhouse will levy penalty as per the provisions of the Agreement.
                                         </li>
                                     </ul>
 
@@ -409,7 +264,7 @@ $query = $this->db->get();
                                     <ul>
                                         <li>The consignment shall be duly inspected by Bulkhouse representatives upon receipt of at the warehouse for quality, quantity, damages etc.</li>
                                         <li>In case the consignment is rejected partly or wholly, due to any valid reason, then Bulkhouse at its discretion may refuse to accept your shipment/return your product.</li>
-                                        <li>In such cases, Vendor will have to replace the ordered item(s).</li> 
+                                        <li>In such cases, Vendor will have to replace the ordered item(s).</li>
                                         <li>The vendor will also be responsible for reverse logistics and other handling charges where rejected order is returned to the Vendor along with the penal provisions of the Vendor agreement.</li>
                                         <li>You should try to avoid such scenario by being extra careful about quality, quantity, and packaging and delivery time of your products.</li>
 

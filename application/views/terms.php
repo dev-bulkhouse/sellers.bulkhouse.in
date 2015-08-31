@@ -680,9 +680,9 @@ if (window.sidebar){
                                     <li>All orders placed on Website are covered under Buyer Protection; hereby Seller agrees to fulfill the
                                         commitments made under the above mentioned program specified at the Website at URL 
                                             <?php if(isset($logged_in)){ ?>
-                                        http://sellers.bulkhouse.in/main/terms#BUYER PROTECTION 
+                                        <?php echo site_url(); ?>main/terms#BUYER PROTECTION 
                                             <?php }else {?>
-                                        http://sellers.bulkhouse.in/terms#BUYER PROTECTION
+                                        <?php echo site_url(); ?>terms#BUYER PROTECTION
                                             <?php }?>. The said program protects Buyer against
                                         inadequate or non-performance by Seller.</li>
                                     <li>The Seller hereby agrees to accept all sales return which are refused/not accepted by the Buyer at the time

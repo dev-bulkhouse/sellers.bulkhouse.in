@@ -54,7 +54,7 @@ if ($logged_in) {
 </style>
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" id="theme">
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://sellers.bulkhouse.in/js/vendor.js" type="text/javascript"></script>
+<script src="<?php echo site_url(); ?>js/vendor.js" type="text/javascript"></script>
 <div class="large-12 columns zeropadding" style="background-color: #a30000">
     <div class="large-7 columns">
         <ul class="list-set">
@@ -171,14 +171,14 @@ if (isset($firm_name)) {
       
 
 
-<script src="http://sellers.bulkhouse.in/js/jquery-1.9.1.min.js"></script>
-<script src="http://sellers.bulkhouse.in/js/vendor/modernizr.js"></script>
-<script src="http://sellers.bulkhouse.in/js/vendor/jquery.js"></script>
-<script src="http://sellers.bulkhouse.in/js/foundation/foundation.js"></script>
-<script src="http://sellers.bulkhouse.in/js/foundation/foundation.equalizer.js"></script>
-<script src="http://sellers.bulkhouse.in/js/foundation/foundation.dropdown.js"></script>
-<script src="http://sellers.bulkhouse.in/js/foundation/foundation.reveal.js"></script>
-<script src="http://sellers.bulkhouse.in/js/foundation/foundation.tooltip.js"></script>
+<script src="<?php echo site_url(); ?>js/jquery-1.9.1.min.js"></script>
+<script src="<?php echo site_url(); ?>js/vendor/modernizr.js"></script>
+<script src="<?php echo site_url(); ?>js/vendor/jquery.js"></script>
+<script src="<?php echo site_url(); ?>js/foundation/foundation.js"></script>
+<script src="<?php echo site_url(); ?>js/foundation/foundation.equalizer.js"></script>
+<script src="<?php echo site_url(); ?>js/foundation/foundation.dropdown.js"></script>
+<script src="<?php echo site_url(); ?>js/foundation/foundation.reveal.js"></script>
+<script src="<?php echo site_url(); ?>js/foundation/foundation.tooltip.js"></script>
 
 <script>
     $(document).foundation({
@@ -207,7 +207,7 @@ if (isset($firm_name)) {
 <script>
                         var compid = <?php echo $compid; ?>;
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/lock/" + compid + "/pan_prop_lock/pan_prop_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/lock/" + compid + "/pan_prop_lock/pan_prop_status");
                             source.onmessage = function(event) {
                                 if ( document.getElementById('sub_access1') !== null ) {
                             document.getElementById("sub_access1").style.display = event.data;
@@ -219,7 +219,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/unlock/" + compid + "/pan_prop_lock/pan_prop_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/unlock/" + compid + "/pan_prop_lock/pan_prop_status");
                             source.onmessage = function(event) {
                                 if ( document.getElementById('no_access1') !== null ) {
                             document.getElementById("no_access1").style.display = event.data;
@@ -231,7 +231,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/disapproved/" + compid + "/pan_prop_lock/pan_prop_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/disapproved/" + compid + "/pan_prop_lock/pan_prop_status");
                             source.onmessage = function(event) {
                                 if ( document.getElementById('disapproved1') !== null ) {
                             document.getElementById("disapproved1").style.display = event.data;
@@ -246,7 +246,7 @@ if (isset($firm_name)) {
                         //VAT CST
 
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/lock/" + compid + "/vat_cst_lock/vat_cst_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/lock/" + compid + "/vat_cst_lock/vat_cst_status");
                             source.onmessage = function(event) {
                                  if ( document.getElementById('sub_access2') !== null ) {
                             document.getElementById("sub_access2").style.display = event.data;
@@ -258,7 +258,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/unlock/" + compid + "/vat_cst_lock/vat_cst_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/unlock/" + compid + "/vat_cst_lock/vat_cst_status");
                             source.onmessage = function(event) {
                                  if ( document.getElementById('no_access2') !== null ) {
                             document.getElementById("no_access2").style.display = event.data;
@@ -270,7 +270,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/disapproved/" + compid + "/vat_cst_lock/vat_cst_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/disapproved/" + compid + "/vat_cst_lock/vat_cst_status");
                             source.onmessage = function(event) {
                                 if ( document.getElementById('disapproved2') !== null ) {
                             document.getElementById("disapproved2").style.display = event.data;
@@ -285,7 +285,7 @@ if (isset($firm_name)) {
                         //Company PAN
 
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/lock/" + compid + "/pan_comp_lock/pan_comp_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/lock/" + compid + "/pan_comp_lock/pan_comp_status");
                             source.onmessage = function(event) {
                                  if ( document.getElementById('sub_access3') !== null ) {
                             document.getElementById("sub_access3").style.display = event.data;
@@ -297,7 +297,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/unlock/" + compid + "/pan_comp_lock/pan_comp_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/unlock/" + compid + "/pan_comp_lock/pan_comp_status");
                             source.onmessage = function(event) {
                                   if ( document.getElementById('no_access3') !== null ) {
                             document.getElementById("no_access3").style.display = event.data;
@@ -309,7 +309,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/disapproved/" + compid + "/pan_comp_lock/pan_comp_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/disapproved/" + compid + "/pan_comp_lock/pan_comp_status");
                             source.onmessage = function(event) {
                                  if ( document.getElementById('disapproved3') !== null ) {
                             document.getElementById("disapproved3").style.display = event.data;
@@ -324,7 +324,7 @@ if (isset($firm_name)) {
                         //Partnership Deed
 
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/lock/" + compid + "/part_deed_lock/part_deed_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/lock/" + compid + "/part_deed_lock/part_deed_status");
                             source.onmessage = function(event) {
                                  if ( document.getElementById('sub_access4') !== null ) {
                             document.getElementById("sub_access4").style.display = event.data;
@@ -336,7 +336,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/unlock/" + compid + "/part_deed_lock/part_deed_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/unlock/" + compid + "/part_deed_lock/part_deed_status");
                             source.onmessage = function(event) {
                                  if ( document.getElementById('no_access4') !== null ) {
                             document.getElementById("no_access4").style.display = event.data;
@@ -348,7 +348,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/disapproved/" + compid + "/part_deed_lock/part_deed_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/disapproved/" + compid + "/part_deed_lock/part_deed_status");
                             source.onmessage = function(event) {
                                 if ( document.getElementById('disapproved4') !== null ) {
                             document.getElementById("disapproved4").style.display = event.data;
@@ -363,7 +363,7 @@ if (isset($firm_name)) {
                         //Authorised Signatory
 
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/lock/" + compid + "/sign_lock/sign_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/lock/" + compid + "/sign_lock/sign_status");
                             source.onmessage = function(event) {
                                  if ( document.getElementById('sub_access5') !== null ) {
                             document.getElementById("sub_access5").style.display = event.data;
@@ -375,7 +375,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/unlock/" + compid + "/sign_lock/sign_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/unlock/" + compid + "/sign_lock/sign_status");
                             source.onmessage = function(event) {
                                  if ( document.getElementById('no_access5') !== null ) {
                             document.getElementById("no_access5").style.display = event.data;
@@ -387,7 +387,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/disapproved/" + compid + "/sign_lock/sign_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/disapproved/" + compid + "/sign_lock/sign_status");
                             source.onmessage = function(event) {
                                  if ( document.getElementById('disapproved5') !== null ) {
                             document.getElementById("disapproved5").style.display = event.data;
@@ -402,7 +402,7 @@ if (isset($firm_name)) {
                         //Certification of Incorporation
 
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/lock/" + compid + "/cert_of_incorp_lock/cert_of_incorp_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/lock/" + compid + "/cert_of_incorp_lock/cert_of_incorp_status");
                             source.onmessage = function(event) {
                                 if ( document.getElementById('sub_access6') !== null ) {
                             document.getElementById("sub_access6").style.display = event.data;
@@ -414,7 +414,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/unlock/" + compid + "/cert_of_incorp_lock/cert_of_incorp_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/unlock/" + compid + "/cert_of_incorp_lock/cert_of_incorp_status");
                             source.onmessage = function(event) {
                                 if ( document.getElementById('no_access6') !== null ) {
                             document.getElementById("no_access6").style.display = event.data;
@@ -426,7 +426,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/disapproved/" + compid + "/cert_of_incorp_lock/cert_of_incorp_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/disapproved/" + compid + "/cert_of_incorp_lock/cert_of_incorp_status");
                             source.onmessage = function(event) {
                                  if ( document.getElementById('disapproved6') !== null ) {
                             document.getElementById("disapproved6").style.display = event.data;
@@ -442,7 +442,7 @@ if (isset($firm_name)) {
                         //MOA and AOA
 
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/lock/" + compid + "/moa_aoa_lock/moa_aoa_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/lock/" + compid + "/moa_aoa_lock/moa_aoa_status");
                             source.onmessage = function(event) {
                                 if ( document.getElementById('sub_access7') !== null ) {
                             document.getElementById("sub_access7").style.display = event.data;
@@ -454,7 +454,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/unlock/" + compid + "/moa_aoa_lock/moa_aoa_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/unlock/" + compid + "/moa_aoa_lock/moa_aoa_status");
                             source.onmessage = function(event) {
                                   if ( document.getElementById('no_access7') !== null ) {
                             document.getElementById("no_access7").style.display = event.data;
@@ -466,7 +466,7 @@ if (isset($firm_name)) {
 
                         }
                         if (typeof (EventSource) !== "undefined") {
-                            var source = new EventSource("http://sellers.bulkhouse.in/change/disapproved/" + compid + "/moa_aoa_lock/moa_aoa_status");
+                            var source = new EventSource("<?php echo site_url(); ?>change/disapproved/" + compid + "/moa_aoa_lock/moa_aoa_status");
                             source.onmessage = function(event) {
                                 if ( document.getElementById('disapproved7') !== null ) {
                             document.getElementById("disapproved7").style.display = event.data;

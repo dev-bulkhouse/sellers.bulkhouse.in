@@ -1,4 +1,25 @@
+<?php
+if ($logged_in) {
+    $compid = $this->session->userdata('id');
+    $email = $this->session->userdata('email');
+    $vendor_name = $this->session->userdata('vendor_name');
+    $firm_name = $this->session->userdata('firm_name');
+    $firm_type = $this->session->userdata('firm_type');
+    $show['compid'] = $compid;
+    $show['email'] = $email;
+    $show['vendor_name'] = $vendor_name;
+    $show['firm_name'] = $firm_name;
+    $show['firm_type'] = $firm_type;
+} else {
 
+}
+?>
+<?php
+$this->db->select('*');
+$this->db->from('document_details');
+$this->db->where(array('document_details.compid' => $compid));
+$query = $this->db->get();
+?>
    <!DOCTYPE html>
    <html lang="en">
        <head>
@@ -25,17 +46,29 @@ var pass1=document.getElementById("npassword").value;
 if(pass1!=pass2)
 	document.getElementById("cpassword").setCustomValidity("Passwords Don't Match");
 else
-	document.getElementById("cpassword").setCustomValidity('');	 
+	document.getElementById("cpassword").setCustomValidity('');
 //empty string means no validation error
 }
 </script>
+<style>
+            .bg-primary {
+                background-color: #F1F1F1;
+    color: black;
+}
+.bg-primary .nav li a {
+    color: black;
+}
+        </style>
        </head>
-       
-       <body>
-           <section id="content" class="m-t-lg wrapper-md animated fadeInDown">
+
+       <body style="background-color: #f8f8f8">
+           <?php $this->load->view('template/main_head',array('firm_name'=>$firm_name,'firm_type'=>$firm_type)); ?>
+
+
                <?php $this->load->view('alert/success-message'); ?>
-               <div class="row m-n">
-                   <div class="col-md-4 col-md-offset-4 m-t-lg">
+           <section>
+               <div class="row m-n animated fadeInDown">
+                   <div class="col-md-12 col-lg-4 col-md-offset-4  m-t-lg">
                        <section class="panel">
                            <header class="panel-heading bg bg-primary text-center"> Change Password </header>
                            <form action="/user/change" method="POST" class="panel-body">
@@ -51,22 +84,21 @@ else
                                    <label class="control-label">Confirm Password</label>
                                    <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" class="form-control">
                                </div>
-                          
+
                                <button type="submit" class="btn btn-info">Change</button>
                                <div class="line line-dashed"></div>
-                              
+
                            </form>
                        </section>
-                       
+
                    </div>
                </div>
            </section>
            <!-- footer -->
-          
+
            <!-- / footer -->
            <script src="/css/app.v1.js"></script>
            <!-- Bootstrap -->
            <!-- app -->
        </body>
    </html>
-   

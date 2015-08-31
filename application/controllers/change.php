@@ -92,7 +92,7 @@ class Change extends CI_Controller {
 $this->db->where('compid', $compid);
 $this->db->update('document_details', $data);
 
-redirect('http://sellers.bulkhouse.in/admin/details/'.$type,'location');
+redirect('/admin/details/'.$type,'location');
 
     }
 
@@ -107,7 +107,7 @@ redirect('http://sellers.bulkhouse.in/admin/details/'.$type,'location');
 $this->db->where('compid', $compid);
 $this->db->update('document_details', $data);
 
-redirect('http://sellers.bulkhouse.in/admin/details/'.$type,'location');
+redirect('/admin/details/'.$type,'location');
 
 
     }
@@ -120,7 +120,7 @@ redirect('http://sellers.bulkhouse.in/admin/details/'.$type,'location');
 $this->db->where('compid', $compid);
 $this->db->update('bank_details', $data);
 
-redirect('http://sellers.bulkhouse.in/admin/bankdetails');
+redirect('/admin/bankdetails');
 
 
     }
@@ -133,7 +133,7 @@ redirect('http://sellers.bulkhouse.in/admin/bankdetails');
 $this->db->where('compid', $compid);
 $this->db->update('bank_details', $data);
 
-redirect('http://sellers.bulkhouse.in/admin/bankdetails');
+redirect('/admin/bankdetails');
     }
 
     public function f_rand($min=0,$max=1,$mul=1000000){
@@ -154,7 +154,7 @@ $this->db->where('compid', $compid);
 $this->db->update('bank_details', $data);
 $email = $this->register_model->get_email($compid);
 //$this->send_confirmation_mail($email,$acno);
-redirect('http://sellers.bulkhouse.in/admin/bankaccounts','location');
+redirect('/admin/bankaccounts','location');
 
 
     }

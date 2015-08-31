@@ -80,7 +80,7 @@ if ($logged_in) {
 
                                 </div>
                             </div>
-                         <button onclick="location.href='http://sellers.bulkhouse.in/test/vendor_report/'" type="button" class="btn btn-primary" >  <i class="icon-download-alt"></i> <span>Excel Export</span></button>
+                         <button onclick="location.href='<?php echo site_url(); ?>test/vendor_report/'" type="button" class="btn btn-primary" >  <i class="icon-download-alt"></i> <span>Excel Export</span></button>
 
                              <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -354,7 +354,7 @@ if ($logged_in) {
                     </div>
                     <div class="mb-footer">
                         <div class="pull-right">
-                            <a href="http://sellers.bulkhouse.in/admin/logout" class="btn btn-success btn-lg">Yes</a>
+                            <a href="<?php echo site_url(); ?>admin/logout" class="btn btn-success btn-lg">Yes</a>
                             <button class="btn btn-default btn-lg mb-control-close">No</button>
                         </div>
                     </div>

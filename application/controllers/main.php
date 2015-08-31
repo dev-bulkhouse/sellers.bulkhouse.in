@@ -16,7 +16,7 @@ class Main extends CI_Controller {
 
         }  else {
             $this->logged_in = false;
-            redirect('http://sellers.bulkhouse.in/','location');
+            redirect('/','location');
         }
 
     }
@@ -47,7 +47,6 @@ class Main extends CI_Controller {
 //                $this->load->view('template/footer');
         }
         public function company() {
-//            echo "company";
             $this->load->library('form_validation');
        $this->form_validation->set_rules('email', 'Email Address', 'trim|required|min_length[6]|max_length[100]|valid_email|is_unique[users.email]|xss_clean');
        $this->form_validation->set_message('is_unique[users.email]', 'The email is already taken');
@@ -64,13 +63,13 @@ class Main extends CI_Controller {
 //                $this->load->view('template/footer');
         }
          public function terms() {
-
+          
 //                $this->load->view('template/header');
 		$this->load->view('terms');
 //                $this->load->view('template/footer');
         }
          public function export_terms() {
-
+          
 //                $this->load->view('template/header');
 		$this->load->view('export_terms');
 //                $this->load->view('template/footer');
@@ -116,7 +115,7 @@ class Main extends CI_Controller {
          public function pro_cat($cid) {
 
              $result = $this->register_model->pro_caty($cid);
-
+               
              if ($result) {
                  $this->session->set_flashdata('success_message', 'Product Categories are Updated');
                  redirect(base_url().'main/company','location');

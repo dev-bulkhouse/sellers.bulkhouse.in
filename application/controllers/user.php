@@ -45,7 +45,7 @@ class User extends CI_Controller {
                     $this->session->set_flashdata('error_message', 'Incorrect Password');
                      redirect(base_url().'','location');
 
-//                    $this->load->view('http://sellers.bulkhouse.in/login');
+//                    $this->load->view('/login');
                     $this->load->view('template/footer');
                     break;
                 case 'not_activated':
@@ -108,7 +108,7 @@ return false;
     
     public function logout() {
         $this->session->sess_destroy();
-        redirect('http://sellers.bulkhouse.in/','location');
+        redirect('/','location');
     }
 
 }

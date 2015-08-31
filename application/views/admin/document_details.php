@@ -82,7 +82,7 @@ if ($logged_in) {
                             <td><?php echo $pan_prop->firm_name; ?></td>
                             <td><?php echo $pan_prop->pan_prop; ?></td>
                             <td><?php echo $pan_prop->pan_prop_date; ?></td>
-                            <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $pan_prop->compid; ?>/pan_card.<?php echo $pan_prop->pan_prop_type; ?>">view</a></td>
+                            <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $pan_prop->compid; ?>/pan_card.<?php echo $pan_prop->pan_prop_type; ?>">view</a></td>
                             <td><form style="float: left" method="post" action="/change/approve/<?php echo $pan_prop->compid.'/pan_prop'?>"><button type="submit" class="button">Approve</button> </form>
                                 <form style="float: right" method="post" action="/change/disapprove/<?php echo $pan_prop->compid.'/pan_prop'?>"><button type="submit" class="button">Disapprove</button></form></td>
                         </tr>
@@ -119,7 +119,7 @@ if ($logged_in) {
                     <td><?php echo $vat->firm_name; ?></td>
                     <td><?php echo $vat->vat_cst; ?></td>
                     <td><?php echo $vat->vat_cst_date; ?></td>
-                    <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $vat->compid; ?>/vat_cst.<?php echo $vat->vat_cst_type; ?>">view</a></td>
+                    <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $vat->compid; ?>/vat_cst.<?php echo $vat->vat_cst_type; ?>">view</a></td>
                     <td><form style="float: left" method="post" action="/change/approve/<?php echo $vat->compid.'/vat_cst'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $vat->compid.'/vat_cst'?>"><button type="submit" class="button">Disapprove</button></form></td>
                 </tr>
 
@@ -155,7 +155,7 @@ if ($logged_in) {
                     <td><?php echo $cst->firm_name; ?></td>
                     <td><?php echo $cst->cst; ?></td>
                     <td><?php echo $cst->cst_date; ?></td>
-                    <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $cst->compid; ?>/cst.<?php echo $cst->cst_type; ?>">view</a></td>
+                    <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $cst->compid; ?>/cst.<?php echo $cst->cst_type; ?>">view</a></td>
                     <td><form style="float: left" method="post" action="/change/approve/<?php echo $cst->compid.'/cst'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $cst->compid.'/cst'?>"><button type="submit" class="button">Disapprove</button></form></td>
                 </tr>
 
@@ -188,7 +188,7 @@ if ($logged_in) {
                     <td><?php echo $aoa->vendor_name; ?></td>
                     <td><?php echo $aoa->firm_name; ?></td>
                     <td><?php echo $aoa->aoa_date; ?></td>
-                    <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $aoa->compid; ?>/AOA.<?php echo $aoa->aoa_type; ?>">view</a></td>
+                    <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $aoa->compid; ?>/AOA.<?php echo $aoa->aoa_type; ?>">view</a></td>
                     <td><form style="float: left" method="post" action="/change/approve/<?php echo $aoa->compid.'/aoa'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $aoa->compid.'/aoa'?>"><button type="submit" class="button">Disapprove</button></form></td>
                 </tr>
 
@@ -222,7 +222,7 @@ if ($logged_in) {
                     <td><?php echo $shop_establish_trade->vendor_name; ?></td>
                     <td><?php echo $shop_establish_trade->firm_name; ?></td>
                     <td><?php echo $shop_establish_trade->shop_establish_trade_date; ?></td>
-                    <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $shop_establish_trade->compid; ?>/shop_establish_trade.<?php echo $shop_establish_trade->shop_establish_trade_type; ?>">view</a></td>
+                    <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $shop_establish_trade->compid; ?>/shop_establish_trade.<?php echo $shop_establish_trade->shop_establish_trade_type; ?>">view</a></td>
                     <td><form style="float: left" method="post" action="/change/approve/<?php echo $shop_establish_trade->compid.'/shop_establish_trade'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $shop_establish_trade->compid.'/shop_establish_trade'?>"><button type="submit" class="button">Disapprove</button></form></td>
                 </tr>
 
@@ -255,7 +255,7 @@ if ($logged_in) {
                     <td><?php echo $addressid->vendor_name; ?></td>
                     <td><?php echo $addressid->firm_name; ?></td>
                     <td><?php echo $addressid->addressid_date; ?></td>
-                    <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $addressid->compid; ?>/addressid.<?php echo $addressid->addressid_type; ?>">view</a></td>
+                    <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $addressid->compid; ?>/addressid.<?php echo $addressid->addressid_type; ?>">view</a></td>
                     <td><form style="float: left" method="post" action="/change/approve/<?php echo $addressid->compid.'/addressid'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $addressid->compid.'/addressid'?>"><button type="submit" class="button">Disapprove</button></form></td>
                 </tr>
 
@@ -288,7 +288,7 @@ if ($logged_in) {
                     <td><?php echo $businessid->vendor_name; ?></td>
                     <td><?php echo $businessid->firm_name; ?></td>
                     <td><?php echo $businessid->businessid_date; ?></td>
-                    <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $businessid->compid; ?>/businessid.<?php echo $businessid->businessid_type; ?>">view</a></td>
+                    <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $businessid->compid; ?>/businessid.<?php echo $businessid->businessid_type; ?>">view</a></td>
                     <td><form style="float: left" method="post" action="/change/approve/<?php echo $businessid->compid.'/businessid'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $businessid->compid.'/businessid'?>"><button type="submit" class="button">Disapprove</button></form></td>
                 </tr>
 
@@ -322,7 +322,7 @@ if ($logged_in) {
                     <td><?php echo $cenvat->vendor_name; ?></td>
                     <td><?php echo $cenvat->firm_name; ?></td>
                     <td><?php echo $cenvat->cenvat_date; ?></td>
-                    <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $cenvat->compid; ?>/cenvat.<?php echo $cenvat->cenvat_type; ?>">view</a></td>
+                    <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $cenvat->compid; ?>/cenvat.<?php echo $cenvat->cenvat_type; ?>">view</a></td>
                     <td><form style="float: left" method="post" action="/change/approve/<?php echo $cenvat->compid.'/cenvat'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $cenvat->compid.'/cenvat'?>"><button type="submit" class="button">Disapprove</button></form></td>
                 </tr>
 
@@ -356,7 +356,7 @@ if ($logged_in) {
                     <td><?php echo $servicetax->vendor_name; ?></td>
                     <td><?php echo $servicetax->firm_name; ?></td>
                     <td><?php echo $servicetax->servicetax_date; ?></td>
-                    <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $servicetax->compid; ?>/servicetax.<?php echo $servicetax->servicetax_type; ?>">view</a></td>
+                    <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $servicetax->compid; ?>/servicetax.<?php echo $servicetax->servicetax_type; ?>">view</a></td>
                     <td><form style="float: left" method="post" action="/change/approve/<?php echo $servicetax->compid.'/servicetax'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $servicetax->compid.'/servicetax'?>"><button type="submit" class="button">Disapprove</button></form></td>
                 </tr>
 
@@ -391,7 +391,7 @@ $comps = $query->result(); ?>
                                                 <td><?php echo $comp->firm_name; ?></td>
                                                 <td><?php echo $comp->pan_comp; ?></td>
                                                 <td><?php echo $comp->pan_comp_date; ?></td>
-                                                <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $comp->compid; ?>/pan_company.<?php echo $comp->pan_comp_type; ?>">view</a></td>
+                                                <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $comp->compid; ?>/pan_company.<?php echo $comp->pan_comp_type; ?>">view</a></td>
                                                 <td><form style="float: left" method="post" action="/change/approve/<?php echo $comp->compid.'/pan_comp'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $comp->compid.'/pan_comp'?>"><button type="submit" class="button">Disapprove</button></form></td>
                                             </tr>
 
@@ -424,7 +424,7 @@ $photoids = $query->result(); ?>
                                                 <td><?php echo $photoid->vendor_name; ?></td>
                                                 <td><?php echo $photoid->photoid; ?></td>
                                                 <td><?php echo $photoid->photoid_date; ?></td>
-                                                <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $photoid->compid; ?>/photoid.<?php echo $photoid->photoid_type; ?>">view</a></td>
+                                                <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $photoid->compid; ?>/photoid.<?php echo $photoid->photoid_type; ?>">view</a></td>
                                                 <td><form style="float: left" method="post" action="/change/approve/<?php echo $photoid->compid.'/photoid'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $photoid->compid.'/photoid'?>"><button type="submit" class="button">Disapprove</button></form></td>
                                             </tr>
 
@@ -459,7 +459,7 @@ $deeds = $query->result(); ?>
                                                 <td><?php echo $deep->firm_name; ?></td>
                                                 <td><?php echo $deep->part_deed; ?></td>
                                                 <td><?php echo $deep->part_deed_date; ?></td>
-                                                <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $deep->compid; ?>/part_deed.<?php echo $deep->part_deed_type; ?>">view</a></td>
+                                                <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $deep->compid; ?>/part_deed.<?php echo $deep->part_deed_type; ?>">view</a></td>
                                                 <td><form style="float: left" method="post" action="/change/approve/<?php echo $deep->compid.'/part_deed'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $deep->compid.'/part_deed'?>"><button type="submit" class="button">Disapprove</button></form></td>
                                             </tr>
 
@@ -493,7 +493,7 @@ $signs = $query->result(); ?>
                                                 <td><?php echo $sign->firm_name; ?></td>
                                                 <td><?php echo $sign->sign; ?></td>
                                                 <td><?php echo $sign->sign_date; ?></td>
-                                                <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $sign->compid; ?>/authorised_sign.<?php echo $sign->sign_type; ?>">view</a></td>
+                                                <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $sign->compid; ?>/authorised_sign.<?php echo $sign->sign_type; ?>">view</a></td>
                                                 <td><form style="float: left" method="post" action="/change/approve/<?php echo $sign->compid.'/sign'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $sign->compid.'/sign'?>"><button type="submit" class="button">Disapprove</button></form></td>
                                             </tr>
 
@@ -527,7 +527,7 @@ $certs = $query->result(); ?>
                                                 <td><?php echo $cert->firm_name; ?></td>
                                                 <td><?php echo $cert->cert_of_incorp; ?></td>
                                                 <td><?php echo $cert->cert_of_incorp_date; ?></td>
-                                                <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $cert->compid; ?>/certification_of_incorporation.<?php echo $cert->vat_cst_type; ?>">view</a></td>
+                                                <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $cert->compid; ?>/certification_of_incorporation.<?php echo $cert->vat_cst_type; ?>">view</a></td>
                                                 <td><form style="float: left" method="post" action="/change/approve/<?php echo $cert->compid.'/cert_of_incorp'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $cert->compid.'/cert_of_incorp'?>"><button type="submit" class="button">Disapprove</button></form></td>
                                             </tr>
 
@@ -562,7 +562,7 @@ $moas = $query->result(); ?>
                                                 <td><?php echo $moa->firm_name; ?></td>
                                                 <td><?php echo $moa->moa_aoa; ?></td>
                                                 <td><?php echo $moa->moa_aoa_date; ?></td>
-                                                <td><a target="_blank" href="http://sellers.bulkhouse.in/files/<?php echo $moa->compid; ?>/MOA.<?php echo $moa->moa_aoa_type; ?>">view</a></td>
+                                                <td><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $moa->compid; ?>/MOA.<?php echo $moa->moa_aoa_type; ?>">view</a></td>
                                                 <td><form style="float: left" method="post" action="/change/approve/<?php echo $moa->compid.'/moa_aoa'?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $moa->compid.'/moa_aoa'?>"><button type="submit" class="button">Disapprove</button></form></td>
                                             </tr>
 
@@ -600,7 +600,7 @@ $moas = $query->result(); ?>
                     </div>
                     <div class="mb-footer">
                         <div class="pull-right">
-                            <a href="http://sellers.bulkhouse.in/admin/logout" class="btn btn-success btn-lg">Yes</a>
+                            <a href="<?php echo site_url(); ?>admin/logout" class="btn btn-success btn-lg">Yes</a>
                             <button class="btn btn-default btn-lg mb-control-close">No</button>
                         </div>
                     </div>

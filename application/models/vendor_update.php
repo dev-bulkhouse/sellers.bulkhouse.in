@@ -266,6 +266,9 @@ class Vendor_update extends CI_Model {
         return $ver[0]->version;
 
     }
+    
+       
+    
 
 
     }

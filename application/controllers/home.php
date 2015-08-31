@@ -9,10 +9,9 @@ class Home extends CI_Controller {
 
   if($this->session->userdata('logged_in')){
             $this->logged_in = true;
-            redirect('http://sellers.bulkhouse.in/main','location');
+            redirect('main','location');
         }  else {
             $this->logged_in = false;
-
         }
 
 

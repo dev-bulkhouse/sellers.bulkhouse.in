@@ -24,7 +24,7 @@ class Email extends CI_Controller {
         $this->email->subject('This is Cron Job Activity - BULKHOUSE');
         //$this->load->view('welcome_message',null,TRUE);
         $base_url = base_url();
-       $link = "<a href='http://sellers.bulkhouse.in/test/report/";
+       $link = "<a href='/test/report/";
        $link .= $date;
        $link .= "'>click for download</a>";
 

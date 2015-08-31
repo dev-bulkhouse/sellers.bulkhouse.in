@@ -1,4 +1,4 @@
-    <?php
+<?php
 if ($logged_in) {
     $compid = $this->session->userdata('id');
     $email = $this->session->userdata('email');
@@ -14,12 +14,12 @@ if ($logged_in) {
 
 }
 $responcea = $this->vendor_update->status_bank($compid);
-if ($responcea == 'Need To Submit' || $responcea == 'Failed' || $responcea == 'wrong'|| $responcea == 'submitted') {
-$val = 30;
+if ($responcea == 'Need To Submit' || $responcea == 'Failed' || $responcea == 'wrong' || $responcea == 'submitted') {
+    $val = 30;
 } elseif ($responcea == 'Sent bank Details') {
-$val = 60;
+    $val = 60;
 } elseif ($responcea == 'Sucess') {
-$val = 100;
+    $val = 100;
 } else {
     $val = 0;
 }
@@ -68,7 +68,7 @@ $query = $this->db->get();
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"/>
         <script src="/js/modernizr.custom.js"></script>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <!--    <script src="http://sellers.bulkhouse.in/js/vendor.js" type="text/javascript"></script>-->
+    <!--    <script src="<?php echo site_url(); ?>js/vendor.js" type="text/javascript"></script>-->
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
         <script>
@@ -224,7 +224,7 @@ $query = $this->db->get();
                             }, false);
                             return xhr;
                         },
-                        url: "http://sellers.bulkhouse.in/upload_new/insert_and_upload/" + doc_arg,
+                        url: "<?php echo site_url(); ?>upload_new/insert_and_upload/" + doc_arg,
                         type: "POST",
                         data: new FormData(this),
                         mimeType: "multipart/form-data",
@@ -308,17 +308,23 @@ $query = $this->db->get();
                 font-size: 1.2em
             }
             .btn-default {
-    color: #fff !important;
-    background-color: #5DCFF3;
-    border-color: #5DCFF3;
-}
-.bg-primary {
-    background-color: #18659B;
-    color: #fff;
-}
-.bg-primary .nav li a {
-    color: #fff;
-}
+                color: #fff !important;
+                background-color: #5DCFF3;
+                border-color: #5DCFF3;
+            }
+            .bg-primary {
+                background-color: #F5F5F5;
+                color: #010101;
+            }
+            .bg-primary .nav li a {
+                color: #010101;
+            }
+            .bg-primary .nav li a:hover {
+                color: #010101;
+            }
+
+
+
 
         </style>
         <!--[if lt IE 9]>
@@ -328,221 +334,68 @@ $query = $this->db->get();
         <![endif]-->
 
         <script type="text/javascript">
-        $(document).ready (function(){
+            $(document).ready(function() {
 
-            window.setTimeout(function() {
-  $("#status_main").fadeTo(500, 0).slideUp(500, function(){
-      $(this).remove();
-  });
-}, 5000);
+                window.setTimeout(function() {
+                    $("#status_main").fadeTo(500, 0).slideUp(500, function() {
+                        $(this).remove();
+                    });
+                }, 5000);
 
             });
         </script>
 
     </head>
-    <body  ng-app="ngAnimate">
-        <section class="container-fluid">
-            <div class="col-lg-12" style="height: 60px; background-color: #01283A">
-                <div class="col-lg-4"><img width="200px" src="http://bulk.house/skin/frontend/apptha/superstore/images/logo.gif" alt="Bulkhouse"></div>
-                <div class="col-lg-8"><h4 style="text-align: right; color: white">Seller Portal</h4><p style="text-align: right; color: white">Support : <?php echo $this->config->item('bulk-support-number'); ?></p></div>
-            </div>
-        </section>
-        <section class="hbox stretch">
-            <!-- .aside -->
-            <aside class="bg-primary aside-sm" id="nav">
-                <section class="vbox">
-                    <header class="dker nav-bar">
-                        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="body">
-                            <i class="icon-reorder"></i>
-                        </a>
-                        <a href="#" class="nav-brand" data-toggle="fullscreen">Bulkhouse</a>
-                        <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user">
-                            <i class="fa fa-sign-out"></i>
-                        </a>
-                    </header>
-                    <footer class="footer bg-gradient hidden-xs">
+    <body  ng-app="ngAnimate" style="background-color: white">
+        <?php $this->load->view('template/main_head', array('firm_name' => $firm_name, 'firm_type' => $firm_type)); ?>
+        <!-- /.aside -->
+        <!-- .vbox -->
 
+        <!--                <div class="alert alert-success alert-block">
+                                        <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i>
+                                        </button>
+                                        <h4><i class="icon-bell-alt"></i>Thankyou for Registering!</h4>
+                                        <p>Welcome to Bulkhouse Seller Dashboard</p>
+                                    </div>-->
 
-                    </footer>
-                    <section>
-                        <!-- user -->
-<!--                        <div class="bg-info nav-user hidden-xs pos-rlt">
-                            <div class="nav-avatar pos-rlt">
-                                <a href="#" data-toggle="dropdown">
-                                    <i class="fa fa-user"> My Account</i>
-                                    <span class="caret caret-white"></span>
-                                </a>
-                                <ul class="dropdown-menu m-t-sm animated fadeInLeft">
-                                    <span class="arrow top"></span>
-                                    <li>
-                                       <a href="/main/settings"> Change Password</a>
-                                    </li>
-                                    <a href="docs.html">Documentation</a>
-                                    <li>
-                                        <a href="/main/view_data"><span class="badge bg-danger pull-right" style=""></span>Profile</a>
-                                    </li>
-                                    <a href="docs.html">Documentation</a>
-                                    <li>
-                                        <a href="#">
-                                            <span class="badge bg-danger pull-right">2</span> Notifications
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="docs.html">Documentation</a>
-                                    </li>
-                                    <li>
-                                        <a href="http://sellers.bulkhouse.in/user/logout">Logout</a>
-                                    </li>
-                                </ul>
-
-                            </div>-->
-                            <div class="nav-msg">
-
-                                <section class="dropdown-menu m-l-sm pull-left animated fadeInRight">
-                                    <div class="arrow left"></div>
-                                    <section class="panel bg-white">
-                                        <header class="panel-heading">
-                                            <strong>You have
-                                                <span class="count-n">2</span> notifications
-                                            </strong>
-                                        </header>
-                                        <div class="list-group">
-                                            <a href="#" class="media list-group-item">
-                                                <span class="pull-left thumb-sm">
-                                                    <img src="/images/avatar.jpg" alt="John said" class="img-circle">
-                                                </span>
-                                                <span class="media-body block m-b-none"> Use awesome animate.css
-                                                    <br>
-                                                    <small class="text-muted">28 Aug 13</small>
-                                                </span>
-                                            </a>
-                                            <a href="#" class="media list-group-item">
-                                                <span class="media-body block m-b-none"> 1.0 initial released
-                                                    <br>
-                                                    <small class="text-muted">27 Aug 13</small>
-                                                </span>
-                                            </a>
-                                        </div>
-                                        <footer class="panel-footer text-sm">
-                                            <a href="#" class="pull-right">
-                                                <i class="icon-cog"></i>
-                                            </a>
-                                            <a href="#">See all the notifications</a>
-                                        </footer>
-                                    </section>
-                                </section>
-                            </div>
-                        </div>
-                        <!-- / user -->
-                        <!-- nav -->
-                        <nav class="nav-primary hidden-xs">
-                            <ul class="nav">
-                                <li class="active treeview">
-                                    <a href="/main">
-                                        <i class="icon-dashboard"></i>
-                                        <span>Dashboard</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/main/bank">
-                                        <i class="icon-money"></i>
-                                        <span>Bank Details</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/main/view_data">
-                                        <i class="icon-user"></i>
-                                        <span>Profile</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="/main/settings">
-                                        <i class="icon-gears"></i>
-                                        <span>Settings</span>
-                                    </a>
-                                </li>
-                       <li class="dropdown-submenu active">
-                                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                                             <i class="icon-book"></i>
-                                                                            <span>FAQ'S</span>
-                                                                            <span class="label label-primary pull-right">2</span>
-                                                                        </a>
-                                                                        <ul class="dropdown-menu">
-                                                                            <li>
-
-                                                                                <a href="/main/faqs"><i class="icon-question-sign"></i>Vendor on Boarding</a>
-                                                                            </li>
-                                                                            <li>
-
-                                                                                 <a href="/main/faqs2"><i class="icon-question-sign"></i>Selling Process</a>
-
-                                                                                  </li>
-
-                                                                        </ul>
-                                                                    </li>
+        <section class="vbox" style="background-color: #fff">
 
 
 
+            <section class="scrollable wrapper animated fadeInDown" >
 
+                <div class="row" style="margin: 10px">
+                    <img width="100%" src="<?php echo site_url(); ?>assets/img/banner.jpg" alt=""/>
+                    <?php if ($val < 100) { ?>
 
-                            </ul>
-                        </nav>
-                        <!-- / nav -->
-                        <!-- note -->
+                    <?php } ?>
 
-                        <!-- / note -->
-                    </section>
-                </section>
-            </aside>
-            <!-- /.aside -->
-            <!-- .vbox -->
-            <section id="content">
-<!--                <div class="alert alert-success alert-block">
-                                <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i>
-                                </button>
-                                <h4><i class="icon-bell-alt"></i>Thankyou for Registering!</h4>
-                                <p>Welcome to Bulkhouse Seller Dashboard</p>
-                            </div>-->
+                </div>
+                <div class="alert alert-block" id='status_main' style="background-color: #1B8EDE; color: white;z-index: 999;">
+                    <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i>
+                    </button>
+                    <h4><i class="icon-bell-alt"></i>Account not Complete! <span style="font-size: 0.7em">  -  Please submit pending documents and details</span></h4>
 
-                <section class="vbox" style="background-color: #fff">
+                </div>
+                <div class="col-md-12 visible-md visible-sm visible-xs">
+                        <p style="color: black">Account Complete Status</p>
+                        <div class="progress progress-xs  m-t-sm">
 
-
-                    <header class="header bg-white b-b">
-                        <div class="col-lg-6 col-md-8  col-sm-8" style="padding: 15px 0px 0px 0px">
-                        <p <h5>Welcome to <b style="padding-right: 5px; border-bottom: 1px solid"><?php
-if (isset($firm_name)) {
-    echo $firm_name;
-}
-?></b><span> You have Registered as - <?php echo ucfirst($firm_type); ?></span></h5></p>
-                        </div>
-
-                        <div class="col-lg-6 col-md-4  col-sm-4 visible-lg visible-md visible-sm" style="padding: 15px 0px 0px 0px; text-align: right"><a href="http://sellers.bulkhouse.in/user/logout"><i class="fa fa-sign-out"></i> logout</a></div>
-                    </header>
-                    <section class="scrollable wrapper">
-
-                        <div class="row" style="margin: 10px">
-                            <img width="100%" src="/img/banner.jpg" alt=""/>
-                            <?php if ($val < 100) { ?>
-
-                <?php }?>
+                            <div class="progress-bar progress-bar-success" data-toggle="tooltip" data-original-title="<?= $val; ?>" style="width: <?= $val; ?>%"></div>
 
                         </div>
-                        <div class="alert alert-block" id='status_main' style="background-color: #1B8EDE; color: white;z-index: 999;">
-                                <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i>
-                                </button>
-                            <h4><i class="icon-bell-alt"></i>Account not Complete! <span style="font-size: 0.7em">  -  Please submit pending documents and details</span></h4>
 
-                       </div>
 
-                        <div class="row row-eq-height" style="margin-bottom: 10px; padding: 10px">
+                    </div>
+
+                <div class="row" style="margin-bottom: 10px; padding: 10px">
+                    <div class="col-lg-6">
+                        <div class="row">
                             <div class="col-lg-6">
-                                <div class="col-lg-6">
-                                     <header class="panel-heading" style="background-color: #1D90E0; color: white">
-                                <span class="badge bg-info pull-right"></span> <i class="icon-paste"></i>Inventory and Sales
-                            </header>
-                                    <div class="list-group" style="padding: 10px; background-color: whitesmoke">
+                                <header class="panel-heading bg-primary" style=" color: black">
+                                    <span class="badge bg-info pull-right"></span> <i class="icon-paste"></i>Inventory and Sales
+                                </header>
+                                <div class="list-group" style="padding: 10px; background-color: white;border: 1px whitesmoke solid">
                                     <article class="media">
 
                                         <div class="media-body">
@@ -552,15 +405,51 @@ if (isset($firm_name)) {
 
                                         </div>
                                     </article>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                     .
                                 </div>
                             </div>
-                            <div class="col-lg-6" style="border-left: 2px whitesmoke solid">
-                                <div class="row row-eq-height">
-                                    <div class="col-lg-12">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <section class="panel no-borders">
+                                    <header class="panel-heading bg-success lter">
+                                        <span class="pull-right"><?php echo date('l'); ?></span>
+                                        <span class="h4">Today Sales $0.00
+                                            <br>
+                                            <small class="text-muted">+0.00(0%) - Your Credit Balance</small>
+                                        </span>
+                                        <div class="text-center padder m-b-n-sm m-t-sm">
+                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="3" data-data="[0,0,0,0,0,0,0,0,0,0,0,0]"></div>
+                                            <div class="sparkline inline" data-type="bar" data-height="45" data-bar-width="6" data-bar-spacing="10" data-bar-color="#92cf5c">0,0,0,0,0,0,0,0,0,0,0,0</div>
+                                        </div>
+                                    </header>
+                                    <div class="panel-body">
+                                        <div>
+                                            <span class="text-muted">Sales in June:</span>
+                                            <span class="h3 block">$0.00</span>
+                                        </div>
+                                        <div class="row m-t-sm">
+                                            <div class="col-xs-4">
+                                                <small class="text-muted block">From market</small>
+                                                <span>$0.00</span>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <small class="text-muted block">Referal</small>
+                                                <span>$0.00</span>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <small class="text-muted block">Affiliate</small>
+                                                <span>$0.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6" style="border-left: 2px whitesmoke solid">
+                        <div class="row">
+                            <div class="col-lg-12">
                                 <div class="col-lg-4 visible-lg" style="background-color: white;">
                                     <header class="panel-heading">
                                         Account Status
@@ -569,255 +458,231 @@ if (isset($firm_name)) {
 <!--                                            <h4>3,450</h4> <small class="text-muted block">Worldwide visitors</small>-->
                                         <div class="inline">
 
-                                            <div class="easypiechart" data-percent="<?php echo $val;?>" data-line-width="7" data-track-color="#eee" data-bar-color="#afcf6f" data-scale-color="#fff" data-loop="false" data-size="70"> <span class="h4"><?php echo $val;?></span>%
+                                            <div class="easypiechart" data-percent="<?= $val; ?>" data-line-width="7" data-track-color="#eee" data-bar-color="#afcf6f" data-scale-color="#fff" data-loop="false" data-size="70"> <span class="h4"><?= $val; ?></span>%
 
                                             </div>
                                             <div class="easypie-text">Complete</div>
                                         </div>
                                     </div>
 
-                                    </div>
+                                </div>
                                 <div class="col-lg-8">
 
-                                    <header class="panel-heading" style="background-color: #1D90E0; color: white">
-                                <span class="badge bg-info pull-right"></span> <i class="icon-paste"></i>Status Updates
-                            </header>
-                            <div class="list-group bg-white" style="padding:20px; background-color: whitesmoke">
+                                    <header class="panel-heading bg-primary" style=" color: black">
+                                        <span class="badge bg-info pull-right"></span> <i class="icon-paste"></i>Status Updates
+                                    </header>
+                                    <div class="list-group bg-white" style="padding:20px; background-color: white; border: 1px whitesmoke solid">
 
-                                <?php
-                                $responce = $this->vendor_update->status_update($firm_type, $compid);
-                                if ($responce == 'Need To Upload') {
-                                    ?>
+                                        <?php
+                                        $responce = $this->vendor_update->status_update($firm_type, $compid);
+                                        if ($responce == 'Need To Upload') {
+                                            ?>
 
 
-                                    <article class="media">
+                                            <article class="media">
 
-                                        <div class="media-body">
+                                                <div class="media-body">
 
-                                            <i class="fa fa-upload" style="font-size: 1.2em">Waiting for Document Upload</i>
+                                                    <i class="fa fa-upload" style="font-size: 1.2em">Waiting for Document Upload</i>
 
-                                        </div>
-                                    </article>
+                                                </div>
+                                            </article>
 
-                                <?php } elseif ($responce == 'Waiting for Approved') { ?>
+                                        <?php } elseif ($responce == 'Waiting for Approved') { ?>
 
 
 
-                                    <article class="media">
-                                        <div class="media-body">
+                                            <article class="media">
+                                                <div class="media-body">
 
-                                            <i class="fa fa-upload" style="font-size: 1.2em">Waiting for Approval</i>
+                                                    <i class="fa fa-upload" style="font-size: 1.2em">Waiting for Approval</i>
 
-                                        </div>
+                                                </div>
 
-                                    </article>
+                                            </article>
 
 
-                                <?php } elseif ($responce == 'Approved') { ?>
+                                        <?php } elseif ($responce == 'Approved') { ?>
 
 
 
 
-                                    <article class="media">
+                                            <article class="media">
 
-                                        <div class="media-body">
+                                                <div class="media-body">
 
-                                            <i class="fa fa-check-square" style="font-size: 1.2em"> Documents are Approved</i>
+                                                    <i class="fa fa-check-square" style="font-size: 1.2em"> Documents are Approved</i>
 
-                                        </div>
-                                    </article>
+                                                </div>
+                                            </article>
 
 
 
 
-                                <?php } elseif ($responce == 'Disapproved') { ?>
+                                        <?php } elseif ($responce == 'Disapproved') { ?>
 
 
 
-                                    <article class="media">
+                                            <article class="media">
 
-                                        <div class="media-body">
+                                                <div class="media-body">
 
-                                            <div class="media-body">
+                                                    <div class="media-body">
 
-                                                <i class="fa fa-exclamation" style="font-size: 1.2em">Documents Are Disapproved</i>
+                                                        <i class="fa fa-exclamation" style="font-size: 1.2em">Documents Are Disapproved</i>
 
-                                            </div>
+                                                    </div>
 
-                                        </div>
-                                    </article>
+                                                </div>
+                                            </article>
 
 
 
-                                <?php } ?>
-                                <?php
-                                $responce = $this->vendor_update->status_profile($compid);
-                                if ($responce == 'Need To Submit') {
-                                    ?>
+                                        <?php } ?>
+                                        <?php
+                                        $responce = $this->vendor_update->status_profile($compid);
+                                        if ($responce == 'Need To Submit') {
+                                            ?>
 
-                                    <article class="media">
+                                            <article class="media">
 
-                                        <div class="media-body">
+                                                <div class="media-body">
 
 
-                                            <i class="fa fa-building" style="font-size: 1.2em"> Company Profile Details Pending <a href="/main/company"> <i class="fa fa-edit"> Update</i></a></i>
+                                                    <i class="fa fa-building" style="font-size: 1.2em"> Company Profile Details Pending <a href="/main/company"> <i class="fa fa-edit"> Update</i></a></i>
 
 
-                                        </div>
-                                    </article>
-                                <?php } ?>
+                                                </div>
+                                            </article>
+                                        <?php } ?>
 
 
 
 
-                                <?php
-                                $responce = $this->vendor_update->status_bank($compid);
-                                if ($responce == 'Need To Submit') {
-                                    ?>
+                                        <?php
+                                        $responce = $this->vendor_update->status_bank($compid);
+                                        if ($responce == 'Need To Submit') {
+                                            ?>
 
 
 
 
-                                    <article class="media">
+                                            <article class="media">
 
-                                        <div class="media-body">
+                                                <div class="media-body">
 
-                                            <i class="fa fa-check-square" style="font-size: 1.2em"> Waiting for Bank Details</i>
+                                                    <i class="fa fa-check-square" style="font-size: 1.2em"> Waiting for Bank Details</i>
 
-                                        </div>
-                                    </article>
+                                                </div>
+                                            </article>
 
-                                <?php } elseif ($responce == 'submitted') { ?>
-                                 <article class="media">
+                                        <?php } elseif ($responce == 'submitted') { ?>
+                                            <article class="media">
 
-                                        <div class="media-body">
+                                                <div class="media-body">
 
-                                            <i class="fa fa-check-square" style="font-size: 1.2em"> Bank Details Submitted</i>
+                                                    <i class="fa fa-check-square" style="font-size: 1.2em"> Bank Details Submitted</i>
 
-                                        </div>
-                                    </article>
-                                <?php } elseif ($responce == 'Dispatch') { ?>
+                                                </div>
+                                            </article>
+                                        <?php } elseif ($responce == 'Dispatch') { ?>
 
 
 
 
-                                    <article class="media">
-                                        <div class="pull-left thumb-sm">
-                                            <span class="icon-stack">
-                                                <i class="icon-circle text-success icon-stack-base"></i>
-                                                <i class="icon-flag icon-light"></i>
-                                            </span>
-                                        </div>
-                                        <div class="media-body">
+                                            <article class="media">
+                                                <div class="pull-left thumb-sm">
+                                                    <span class="icon-stack">
+                                                        <i class="icon-circle text-success icon-stack-base"></i>
+                                                        <i class="icon-flag icon-light"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="media-body">
 
-                                            <i class="fa fa-bank" style="font-size: 1.2em"> Waiting for Bank verification</i>
+                                                    <i class="fa fa-bank" style="font-size: 1.2em"> Waiting for Bank verification</i>
 
-                                        </div>
-                                    </article>
+                                                </div>
+                                            </article>
 
 
-                                <?php } elseif ($responce == 'Sent bank Details') { ?>
+                                        <?php } elseif ($responce == 'Sent bank Details') { ?>
 
 
-                                    <article class="media">
+                                            <article class="media">
 
-                                        <div class="media-body">
-                                            <i class="fa fa-bank" style="font-size: 1.2em"> Please Submit Amount credited in your bank account</i>
+                                                <div class="media-body">
+                                                    <i class="fa fa-bank" style="font-size: 1.2em"> Please Submit Amount credited in your bank account</i>
 
-                                            <form action="/confirm_bank/amount/<?php echo $compid ?>" method="POST" style="margin: 5px 0px 0px 20px">
-                                                <input type="text" name="confirm_amount">
-                                                <input type="submit">
-                                            </form>
+                                                    <form action="/confirm_bank/amount/<?php echo $compid ?>" method="POST" style="margin: 5px 0px 0px 20px">
+                                                        <input type="text" name="confirm_amount">
+                                                        <input type="submit">
+                                                    </form>
 
-                                        </div>
-                                    </article>
+                                                </div>
+                                            </article>
 
 
 
-                                <?php } elseif ($responce == 'Failed') { ?>
+                                        <?php } elseif ($responce == 'Failed') { ?>
 
 
 
-                                    <article class="media">
+                                            <article class="media">
 
-                                        <div class="media-body">
-                                            <i class="fa fa-bank" style="font-size: 1.2em"> Bank Details are Disapproved</i>
+                                                <div class="media-body">
+                                                    <i class="fa fa-bank" style="font-size: 1.2em"> Bank Details are Disapproved</i>
 
-                                            <a href="#" class="alert-link"></a> and try submitting again.
+                                                    <a href="#" class="alert-link"></a> and try submitting again.
 
-                                        </div>
-                                    </article>
+                                                </div>
+                                            </article>
 
 
 
 
-                                <?php } elseif ($responce == 'Sucess') { ?>
-                                    <article class="media">
+                                        <?php } elseif ($responce == 'Sucess') { ?>
+                                            <article class="media">
 
-                                        <div class="media-body">
-                                            <i class="fa fa-bank" style="font-size: 1.2em"> Bank Details are Approved</i>
+                                                <div class="media-body">
+                                                    <i class="fa fa-bank" style="font-size: 1.2em"> Bank Details are Approved</i>
 
 
 
-                                        </div>
-                                    </article>
+                                                </div>
+                                            </article>
 
 
 
-                                <?php } elseif ($responce == 'wrong') { ?>
-                                    <article class="media">
-                                        <div class="pull-left thumb-sm">
-                                            <span class="icon-stack">
-                                                <i class="icon-circle text-success icon-stack-base"></i>
-                                                <i class="icon-flag icon-light"></i>
-                                            </span>
-                                        </div>
-                                        <div class="media-body">
+                                        <?php } elseif ($responce == 'wrong') { ?>
+                                            <article class="media">
+                                                <div class="pull-left thumb-sm">
+                                                    <span class="icon-stack">
+                                                        <i class="icon-circle text-success icon-stack-base"></i>
+                                                        <i class="icon-flag icon-light"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="media-body">
 
-                                            <a href="#" class="h5">Wrong Amounts Entered 3 Times Please Contact Admin</a>
+                                                    <a href="#" class="h5">Wrong Amounts Entered 3 Times Please Contact Admin</a>
 
 
-                                        </div>
-                                    </article>
+                                                </div>
+                                            </article>
 
 
 
-                                <?php } ?>
+                                        <?php } ?>
 
 
 
 
 
-                            </div>
-
-
-                        </div>
                                     </div>
+
+
                                 </div>
                             </div>
-
-                                <div class="col-md-12 visible-md visible-sm visible-xs">
-                                    <p style="color: white">Account Complete Status</p>
-                                        <div class="progress progress-xs  m-t-sm">
-
-                                            <div class="progress-bar progress-bar-success" data-toggle="tooltip" data-original-title="<?php echo $val;?>" style="width: <?php echo $val; ?>%"></div>
-
-                                        </div>
-
-
-                                </div>
-
-
-
                         </div>
-
-                        <div class="row row-eq-height">
-
-                            <div class="col-lg-6">
-                            </div>
-
-                         <div class="col-lg-6" style="border-left: 2px whitesmoke solid">
-
 
                         <!----------------------------->
                         <?php
@@ -857,7 +722,7 @@ if (isset($firm_name)) {
                         $data['doc_title'] = 'Partnership Deed Details';
                         $data['id_modal'] = 'modal-part_deed';
                         $data['doc_placeholder'] = 'Upload Document Copy';
-                           $data['doc_pat'] = '';
+                        $data['doc_pat'] = '';
                         $data['doc_id'] = 'part_deed';
                         $data['doc_note'] = 'Please Upload Document here.<p style="font-size:0.8em">Note: Only JPG and PDF files allowed</p>';
                         $data['doc_file'] = 'upload_file4';
@@ -874,7 +739,7 @@ if (isset($firm_name)) {
                         $data['doc_title'] = 'Company Pan-card Details';
                         $data['id_modal'] = 'modal-pan_comp';
                         $data['doc_placeholder'] = 'Company Pan Number';
-                           $data['doc_pat'] = '';
+                        $data['doc_pat'] = '';
                         $data['doc_id'] = 'pan_comp';
                         $data['doc_note'] = 'Please Upload Document here.<p style="font-size:0.8em">Note: Only JPG and PDF files allowed</p>';
                         $data['doc_file'] = 'upload_file3';
@@ -888,7 +753,7 @@ if (isset($firm_name)) {
                         $data['doc_title'] = 'Authorised Signatory Details';
                         $data['id_modal'] = 'modal-sign';
                         $data['doc_placeholder'] = 'Authorised Signatory';
-                           $data['doc_pat'] = '';
+                        $data['doc_pat'] = '';
                         $data['doc_id'] = 'sign';
                         $data['doc_note'] = '';
                         $data['doc_file'] = 'upload_file5';
@@ -903,7 +768,7 @@ if (isset($firm_name)) {
                         $data['doc_title'] = 'Certificate of Incorporation Details';
                         $data['id_modal'] = 'modal-cert_of_incorp';
                         $data['doc_placeholder'] = 'Upload Document Copy';
-                           $data['doc_pat'] = '';
+                        $data['doc_pat'] = '';
                         $data['doc_id'] = 'cert_of_incorp';
                         $data['doc_note'] = 'Please Upload Document here.<p style="font-size:0.8em">Note: Only JPG and PDF files allowed</p>';
                         $data['doc_file'] = 'upload_file6';
@@ -918,7 +783,7 @@ if (isset($firm_name)) {
                         $data['doc_title'] = 'Memorandum Of Association';
                         $data['id_modal'] = 'modal-moa_aoa';
                         $data['doc_placeholder'] = 'Upload Document Copy';
-                           $data['doc_pat'] = '';
+                        $data['doc_pat'] = '';
                         $data['doc_id'] = 'moa_aoa';
                         $data['doc_note'] = 'Please Upload Document here.<p style="font-size:0.8em">Note: Only JPG and PDF files allowed</p>';
                         $data['doc_file'] = 'upload_file7';
@@ -932,7 +797,7 @@ if (isset($firm_name)) {
                         $data['doc_title'] = 'Articles Of Association';
                         $data['id_modal'] = 'modal-aoa';
                         $data['doc_placeholder'] = 'Upload Document Copy';
-                           $data['doc_pat'] = '';
+                        $data['doc_pat'] = '';
                         $data['doc_id'] = 'aoa';
                         $data['doc_note'] = 'Please Upload Document here.<p style="font-size:0.8em">Note: Only JPG and PDF files allowed</p>';
                         $data['doc_file'] = 'upload_file9';
@@ -946,7 +811,7 @@ if (isset($firm_name)) {
                         $data['doc_title'] = 'Shop establishment/Trade Licence';
                         $data['id_modal'] = 'modal-shop_establish_trade';
                         $data['doc_placeholder'] = 'Upload Document Copy';
-                           $data['doc_pat'] = '';
+                        $data['doc_pat'] = '';
                         $data['doc_id'] = 'shop_establish_trade';
                         $data['doc_note'] = 'Please Upload any of one Document.<p style="font-size:0.8em">Note: Only PDF files allowed</p>';
                         $data['doc_file'] = 'upload_file10';
@@ -962,7 +827,7 @@ if (isset($firm_name)) {
                         $data['doc_placeholder'] = 'CENVAT Number';
                         $data['doc_id'] = 'cenvat';
                         $data['doc_note'] = 'Note: Please Upload Certificate Copy';
-                           $data['doc_pat'] = '';
+                        $data['doc_pat'] = '';
                         $data['doc_file'] = 'upload_file11';
                         $data['doc_spinner'] = 'targetLayer_15';
                         $data['doc_status'] = 'targetLayer15';
@@ -974,7 +839,7 @@ if (isset($firm_name)) {
                         $data['doc_title'] = 'Service Tax Details';
                         $data['id_modal'] = 'modal-servicetax';
                         $data['doc_placeholder'] = 'Service Tax Number';
-                           $data['doc_pat'] = '';
+                        $data['doc_pat'] = '';
                         $data['doc_id'] = 'servicetax';
                         $data['doc_note'] = 'Please Upload Document here.<p style="font-size:0.8em">Note: Only JPG and PDF files allowed</p>';
                         $data['doc_file'] = 'upload_file12';
@@ -988,7 +853,7 @@ if (isset($firm_name)) {
                         $data['doc_title'] = 'Photo Identity Proof';
                         $data['id_modal'] = 'modal-photoid';
                         $data['doc_placeholder'] = 'Id Number';
-                           $data['doc_pat'] = '';
+                        $data['doc_pat'] = '';
                         $data['doc_id'] = 'photoid';
                         $data['doc_note'] = 'Note: Only Aadhar Card or Passport Copy. <p style="font-size:0.8em">Note: Only JPG and PDF files allowed</p>';
                         $data['doc_file'] = 'upload_file13';
@@ -1002,7 +867,7 @@ if (isset($firm_name)) {
                         $data['doc_title'] = 'Resident Address Proof';
                         $data['id_modal'] = 'modal-addressid';
                         $data['doc_placeholder'] = 'Resident Address Prrof';
-                           $data['doc_pat'] = '';
+                        $data['doc_pat'] = '';
                         $data['doc_id'] = 'addressid';
                         $data['doc_note'] = 'Note: Only Aadhar Card or Passport Copy Accepted. <p style="font-size:0.8em">Note: Only JPG and PDF files allowed</p>';
                         $data['doc_file'] = 'upload_file14';
@@ -1016,7 +881,7 @@ if (isset($firm_name)) {
                         $data['doc_title'] = 'Buiseness Address Proof';
                         $data['id_modal'] = 'modal-businessid';
                         $data['doc_placeholder'] = 'Buiseness Address Proof';
-                           $data['doc_pat'] = '';
+                        $data['doc_pat'] = '';
                         $data['doc_id'] = 'businessid';
                         $data['doc_note'] = 'Note: Only Lease deed, Shop & Establishment Licence, Trade Licence, Certificate Of Incorporation, Articles Of Association or Memorandum Of Association are Accepted. <p style="font-size:0.8em">Note: Only JPG and PDF files allowed</p>';
                         $data['doc_file'] = 'upload_file15';
@@ -1034,587 +899,576 @@ if (isset($firm_name)) {
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="list-group bg-white" style="background-color: whitesmoke">
-                                <header class="panel-heading" style="background-color: #1D90E0; color: white">
-                                    <span class="badge bg-info pull-right"></span> Submit Documents
-                                </header>
-                                <?php if ($req_docs->pan_prop == 1) { ?>
-                                    <a href="#" class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                        <?php
-                                        foreach ($query->result_array() as $row) {
-
-                                            if ($row['pan_prop_lock'] == 0 && $row['pan_prop_status'] == 5) {
-                                                ?>
-                                                <span class="badge md-trigger" data-modal="modal-pan">Please Submit</span>
-                                            <?php } elseif ($row['pan_prop_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-                                            <?php } elseif ($row['pan_prop_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-pan">Please Resubmit</span>
-                                            <?php } elseif ($row['pan_prop_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
+                                    <header class="panel-heading bg-primary" style=" color: black">
+                                        <span class="badge bg-info pull-right"></span> Submit Documents
+                                    </header>
+                                    <?php if ($req_docs->pan_prop == 1) { ?>
+                                        <a href="#" class="list-group-item">
+                                            <i class="icon-chevron-right"></i>
                                             <?php
+                                            foreach ($query->result_array() as $row) {
+
+                                                if ($row['pan_prop_lock'] == 0 && $row['pan_prop_status'] == 5) {
+                                                    ?>
+                                                    <span class="badge md-trigger" data-modal="modal-pan">Please Submit</span>
+                                                <?php } elseif ($row['pan_prop_status'] == 0) { ?>
+                                                    <span class="badge md-success">Waiting for approve</span>
+                                                <?php } elseif ($row['pan_prop_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-pan">Please Resubmit</span>
+                                                <?php } elseif ($row['pan_prop_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
+                                                    <?php
+                                                }
                                             }
-                                        }
-                                        ?>
-                                        <i class="icon-list-alt"></i> Personal PAN card
-                                        <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory, please  submit Personal PAN Card" class="fa fa-question-circle"></i></span>
-                                    </a>
+                                            ?>
+                                            <i class="icon-list-alt"></i> Personal PAN card
+                                            <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory, please  submit Personal PAN Card" class="fa fa-question-circle"></i></span>
+                                        </a>
 
-                                <?php } ?>
-                                <!----------------------------->
-                                <?php if ($req_docs->vat_cst == 1) { ?>
-                                    <a href="#" class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                        <?php
-                                        foreach ($query->result_array() as $row) {
-
-                                            if ($row['vat_cst_lock'] == 0 && $row['vat_cst_status'] == 5) {
-                                                ?>
-                                                <span class="badge md-trigger" data-modal="modal-vat_cst">Please Submit</span>
-                                            <?php } elseif ($row['vat_cst_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-                                            <?php } elseif ($row['vat_cst_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-vat_cst">Please Resubmit</span>
-                                            <?php } elseif ($row['vat_cst_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
+                                    <?php } ?>
+                                    <!----------------------------->
+                                    <?php if ($req_docs->vat_cst == 1) { ?>
+                                        <a href="#" class="list-group-item">
+                                            <i class="icon-chevron-right"></i>
                                             <?php
+                                            foreach ($query->result_array() as $row) {
+
+                                                if ($row['vat_cst_lock'] == 0 && $row['vat_cst_status'] == 5) {
+                                                    ?>
+                                                    <span class="badge md-trigger" data-modal="modal-vat_cst">Please Submit</span>
+                                                <?php } elseif ($row['vat_cst_status'] == 0) { ?>
+                                                    <span class="badge md-success">Waiting for approve</span>
+                                                <?php } elseif ($row['vat_cst_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-vat_cst">Please Resubmit</span>
+                                                <?php } elseif ($row['vat_cst_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
+                                                    <?php
+                                                }
                                             }
-                                        }
-                                        ?>
+                                            ?>
 
 
-                                        <i class="icon-rupee"></i> Central Sales Tax-Value-Added Tax (VAT-CST)
+                                            <i class="icon-rupee"></i> Central Sales Tax-Value-Added Tax (VAT-CST)
 
-                                        <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory, please submit number with registration certificate. For within the state transactions" class="fa fa-question-circle"></i></span>
-                                    </a>     <?php } ?>
-                                <!----------------------------->
+                                            <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory, please submit number with registration certificate. For within the state transactions" class="fa fa-question-circle"></i></span>
+                                        </a>     <?php } ?>
+                                    <!----------------------------->
 
 
 
                                     <?php if ($req_docs->pan_comp == 1) { ?>
-                                    <a href="#" class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                        <?php
-                                        foreach ($query->result_array() as $row) {
-
-                                            if ($row['pan_comp_lock'] == 0 && $row['pan_comp_status'] == 5) {
-                                                ?>
-                                                <span class="badge md-trigger" data-modal="modal-pan_comp">Please Submit</span>
-                                            <?php } elseif ($row['pan_comp_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-                                            <?php } elseif ($row['pan_comp_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-pan_comp">Please Resubmit</span>
-                                            <?php } elseif ($row['pan_comp_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
-                                            <?php
-                                            }
-                                        }
-                                        ?>
-
-                                        <i class="icon-list-alt"></i> Company PAN
-                                        <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory, please  submit number Firm PAN card" class="fa fa-question-circle"></i></span>
-
-                                    </a>
-<?php } ?>
-                                <!----------------------------->
-                                    <?php if ($req_docs->part_deed == 1) { ?>
-                                    <a href="#" class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                        <?php
-                                        foreach ($query->result_array() as $row) {
-
-                                            if ($row['part_deed_lock'] == 0 && $row['part_deed_status'] == 5) {
-                                                ?>
-                                                <span class="badge md-trigger" data-modal="modal-part_deed">Please Submit</span>
-                                            <?php } elseif ($row['part_deed_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-                                            <?php } elseif ($row['part_deed_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-part_deed">Please Resubmit</span>
-                                            <?php } elseif ($row['part_deed_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
-        <?php
-        }
-    }
-    ?>
-
-                                        <i class="fa fa-users"></i> Partnership Deed
-                                        <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory to know your Company’s constitution.(Please attach)" class="fa fa-question-circle"></i></span>
-                                    </a>
-                                    <?php } ?>
-                                <!----------------------------->
-                                    <?php if ($req_docs->sign == 1) { ?>
-                                    <a href="#" class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                        <?php
-                                        foreach ($query->result_array() as $row) {
-
-                                            if ($row['sign_lock'] == 0 && $row['sign_status'] == 5) {
-                                                ?>
-                                                <span class="badge md-trigger" data-modal="modal-sign">Please Submit</span>
-                                            <?php } elseif ($row['sign_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-                                            <?php } elseif ($row['sign_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-sign">Please Resubmit</span>
-                                            <?php } elseif ($row['sign_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
-        <?php
-        }
-    }
-    ?>
-
-                                        <i class="icon-bookmark"></i> Authorised Signatory
-                                    </a>
-                                    <?php } ?>
-                                <!----------------------------->
-                                    <?php if ($req_docs->cert_of_incorp == 1) { ?>
-                                    <a href="#" class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                        <?php
-                                        foreach ($query->result_array() as $row) {
-
-                                            if ($row['cert_of_incorp_lock'] == 0 && $row['cert_of_incorp_status'] == 5) {
-                                                ?>
-                                                <span class="badge md-trigger" data-modal="modal-cert_of_incorp">Please Submit</span>
-                                            <?php } elseif ($row['cert_of_incorp_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-                                            <?php } elseif ($row['cert_of_incorp_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-cert_of_incorp">Please Resubmit</span>
-        <?php } elseif ($row['cert_of_incorp_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
-        <?php
-        }
-    }
-    ?>
-
-                                        <i class="icon-bookmark"></i> Certificate Of Incorporation
-                                        <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory to know your Company’s constitution.(Please attach)" class="fa fa-question-circle"></i></span>
-                                    </a>
-                                    <?php } ?>
-                                <!----------------------------->
-                                    <?php if ($req_docs->moa_aoa == 1) { ?>
-                                    <a href="#" class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                        <?php
-                                        foreach ($query->result_array() as $row) {
-
-                                            if ($row['moa_aoa_lock'] == 0 && $row['moa_aoa_status'] == 5) {
-                                                ?>
-                                                <span class="badge md-trigger" data-modal="modal-moa_aoa">Please Submit</span>
-                                            <?php } elseif ($row['moa_aoa_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-                                            <?php } elseif ($row['moa_aoa_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-moa_aoa">Please Resubmit</span>
-        <?php } elseif ($row['moa_aoa_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
-                                        <?php
-                                        }
-                                    }
-                                    ?>
-
-                                        <i class="icon-bookmark"></i> Memorandum Of Association (MOA)
-                                        <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory to know your Company’s constitution.(Please attach)" class="fa fa-question-circle"></i></span>
-                                    </a>
-                                    <?php } ?>
-                                <!----------------------------->
-                                    <?php if ($req_docs->aoa == 1) { ?>
-                                    <a href="#" class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                        <?php
-                                        foreach ($query->result_array() as $row) {
-
-                                            if ($row['aoa_lock'] == 0 && $row['aoa_status'] == 5) {
-                                                ?>
-                                                <span class="badge md-trigger" data-modal="modal-aoa">Please Submit</span>
-                                            <?php } elseif ($row['aoa_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-        <?php } elseif ($row['aoa_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-aoa">Please Resubmit</span>
-        <?php } elseif ($row['aoa_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
-                                        <?php
-                                        }
-                                    }
-                                    ?>
-
-                                        <i class="icon-bookmark"></i> Articles Of Association (AOA)
-                                        <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory to know your Company’s constitution.(Please attach)" class="fa fa-question-circle"></i></span>
-                                    </a>
-                                    <?php } ?>
-                                <!----------------------------->
-                                    <?php if ($req_docs->shop_establish_trade == 1) { ?>
-                                    <a href="#" class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                        <?php
-                                        foreach ($query->result_array() as $row) {
-
-                                            if ($row['shop_establish_trade_lock'] == 0 && $row['shop_establish_trade_status'] == 5) {
-                                                ?>
-                                                <span class="badge md-trigger" data-modal="modal-shop_establish_trade">Please Submit</span>
-                                            <?php } elseif ($row['shop_establish_trade_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-        <?php } elseif ($row['shop_establish_trade_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-shop_establish_trade">Please Resubmit</span>
-                                        <?php } elseif ($row['shop_establish_trade_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
-        <?php
-        }
-    }
-    ?>
-
-                                        <i class="icon-bookmark"></i> Shop establishment/Trade License
-                                        <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory to know your Company’s constitution.(Please attach)" class="fa fa-question-circle"></i></span>
-                                    </a>
-                                <?php } ?>
-
-                                <script>
-                            function save_cenvat(va) {
-                                compid = <?php echo $compid; ?>;
-
-                                $.ajax({
-                                    url: "http://sellers.bulkhouse.in/main/cenvat_doc/" + compid + "/" + va,
-                                    type: "POST",
-                                    processData: false,
-                                    contentType: false,
-                                });
-                            }
-
-                            function save_serv(va) {
-                                compid = <?php echo $compid; ?>;
-
-                                $.ajax({
-                                    url: "http://sellers.bulkhouse.in/main/serv_doc/" + compid + "/" + va,
-                                    type: "POST",
-                                    processData: false,
-                                    contentType: false,
-                                });
-                            }
-
-
-                        </script>
-                                <div class="col-lg-12" style="margin-bottom: 10px; margin-top: 10px; padding-bottom: 10px">
-
-                            <header class="panel-heading">
-                                <span style="font-size: 1.2em">Are you registered with CENVAT ? <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory, if “YES”, please  submit number with Registration certificate" class="fa fa-question-circle"></i></span></span>
-                                <?php
-                                if (isset($cenvat_id)) {
-
-                                    if ($cenvat_id == 0) {
-                                        ?>
-
-                                <i style="float: right" class="label badge" ng-hide="showme"   name="otherdoc" ng-click="showme = true" value="Yes" onclick="save_cenvat('1')">YES</i>
-                                        <i style="float: right" class="label bg-light badge" ng-show="showme"   name="otherdoc" ng-click="showme = false" value="No" onclick="save_cenvat('0')">NO</i>
-
-                                    <?php } elseif ($cenvat_id == 1) { ?>
-
-                                        <i style="float: right" class="label badge" ng-show="showme1"   name="otherdoc" ng-click="showme1 = false" value="Yes" onclick="save_cenvat('1')">YES</i>
-                                        <i style="float: right" class="label bg-light badge" ng-hide="showme1"   name="otherdoc" ng-click="showme1 = true" value="No" onclick="save_cenvat('0')">NO</i>
-
-                                        <?php }
-                                    }
-                                    ?>
-
-                            </header>
-
-
-                                    <div class="list-group bg-white" style="background-color: whitesmoke" ng-show="showme">
-
-                                    <?php if ($req_docs->cenvat == 1) { ?>
-                                    <a class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                        <?php
-                                        foreach ($query->result_array() as $row) {
-
-                                            if ($row['cenvat_lock'] == 0 && $row['cenvat_status'] == 5) {
-                                                ?>
-                                                <span class="badge md-trigger" data-modal="modal-cenvat">Please Submit</span>
-                                    <?php } elseif ($row['cenvat_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-                                    <?php } elseif ($row['cenvat_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-cenvat">Please Resubmit</span>
-                                    <?php } elseif ($row['cenvat_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
-        <?php
-        }
-    }
-    ?>
-
-                                        <i class="icon-rupee"></i> CENVAT
-                                        <span> - <i data-toggle="tooltip" data-placement="top" title="Only Submit CENVAT if you are registered - (Disable if not having. Click NO to Disable)" class="fa fa-question-circle"></i></span>
-                                    </a>
-                                    <?php } ?>
-                            </div>
-                                    <?php
-                                    if (isset($cenvat_id)) {
-
-                                        if ($cenvat_id == 1) {
-                                            ?>
-
-
-                                    <div  class="list-group bg-white" style="background-color: whitesmoke" ng-hide="showme1" >
-
-        <?php if ($req_docs->vat_cst == 1) { ?>
-                                            <a class="list-group-item">
-                                                <i class="icon-chevron-right"></i>
+                                        <a href="#" class="list-group-item">
+                                            <i class="icon-chevron-right"></i>
                                             <?php
                                             foreach ($query->result_array() as $row) {
 
-                                                if ($row['cenvat_lock'] == 0 && $row['cenvat_status'] == 5) {
+                                                if ($row['pan_comp_lock'] == 0 && $row['pan_comp_status'] == 5) {
                                                     ?>
-                                                        <span class="badge md-trigger" data-modal="modal-cenvat">Please Submit</span>
-                <?php } elseif ($row['cenvat_status'] == 0) { ?>
-                                                        <span class="badge md-success">Waiting for approve</span>
-                <?php } elseif ($row['cenvat_status'] == 1) { ?>
-                                                        <span class="badge md-trigger" data-modal="modal-cenvat">Please Resubmit</span>
-                                                <?php } elseif ($row['cenvat_status'] == 2) { ?>
-                                                        <span class="badge md-success">Approved</span>
-                                                <?php }
+                                                    <span class="badge md-trigger" data-modal="modal-pan_comp">Please Submit</span>
+                                                <?php } elseif ($row['pan_comp_status'] == 0) { ?>
+                                                    <span class="badge md-success">Waiting for approve</span>
+                                                <?php } elseif ($row['pan_comp_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-pan_comp">Please Resubmit</span>
+                                                <?php } elseif ($row['pan_comp_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
+                                                    <?php
+                                                }
                                             }
                                             ?>
 
-                                                <i class="icon-rupee"></i> CENVAT
-                                                <span> - <i data-toggle="tooltip" data-placement="top" title="Only Submit CENVAT if you are registered - (Disable if not having. Click NO to Disable)" class="fa fa-question-circle"></i></span>
-                                            </a>
-        <?php } ?>
-                                    </div>
+                                            <i class="icon-list-alt"></i> Company PAN
+                                            <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory, please  submit number Firm PAN card" class="fa fa-question-circle"></i></span>
 
-                                    <?php }
-                                }
-                                ?>
+                                        </a>
+                                    <?php } ?>
+                                    <!----------------------------->
+                                    <?php if ($req_docs->part_deed == 1) { ?>
+                                        <a href="#" class="list-group-item">
+                                            <i class="icon-chevron-right"></i>
+                                            <?php
+                                            foreach ($query->result_array() as $row) {
+
+                                                if ($row['part_deed_lock'] == 0 && $row['part_deed_status'] == 5) {
+                                                    ?>
+                                                    <span class="badge md-trigger" data-modal="modal-part_deed">Please Submit</span>
+                                                <?php } elseif ($row['part_deed_status'] == 0) { ?>
+                                                    <span class="badge md-success">Waiting for approve</span>
+                                                <?php } elseif ($row['part_deed_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-part_deed">Please Resubmit</span>
+                                                <?php } elseif ($row['part_deed_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+
+                                            <i class="fa fa-users"></i> Partnership Deed
+                                            <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory to know your Company’s constitution.(Please attach)" class="fa fa-question-circle"></i></span>
+                                        </a>
+                                    <?php } ?>
+                                    <!----------------------------->
+                                    <?php if ($req_docs->sign == 1) { ?>
+                                        <a href="#" class="list-group-item">
+                                            <i class="icon-chevron-right"></i>
+                                            <?php
+                                            foreach ($query->result_array() as $row) {
+
+                                                if ($row['sign_lock'] == 0 && $row['sign_status'] == 5) {
+                                                    ?>
+                                                    <span class="badge md-trigger" data-modal="modal-sign">Please Submit</span>
+                                                <?php } elseif ($row['sign_status'] == 0) { ?>
+                                                    <span class="badge md-success">Waiting for approve</span>
+                                                <?php } elseif ($row['sign_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-sign">Please Resubmit</span>
+                                                <?php } elseif ($row['sign_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+
+                                            <i class="icon-bookmark"></i> Authorised Signatory
+                                        </a>
+                                    <?php } ?>
+                                    <!----------------------------->
+                                    <?php if ($req_docs->cert_of_incorp == 1) { ?>
+                                        <a href="#" class="list-group-item">
+                                            <i class="icon-chevron-right"></i>
+                                            <?php
+                                            foreach ($query->result_array() as $row) {
+
+                                                if ($row['cert_of_incorp_lock'] == 0 && $row['cert_of_incorp_status'] == 5) {
+                                                    ?>
+                                                    <span class="badge md-trigger" data-modal="modal-cert_of_incorp">Please Submit</span>
+                                                <?php } elseif ($row['cert_of_incorp_status'] == 0) { ?>
+                                                    <span class="badge md-success">Waiting for approve</span>
+                                                <?php } elseif ($row['cert_of_incorp_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-cert_of_incorp">Please Resubmit</span>
+                                                <?php } elseif ($row['cert_of_incorp_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+
+                                            <i class="icon-bookmark"></i> Certificate Of Incorporation
+                                            <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory to know your Company’s constitution.(Please attach)" class="fa fa-question-circle"></i></span>
+                                        </a>
+                                    <?php } ?>
+                                    <!----------------------------->
+                                    <?php if ($req_docs->moa_aoa == 1) { ?>
+                                        <a href="#" class="list-group-item">
+                                            <i class="icon-chevron-right"></i>
+                                            <?php
+                                            foreach ($query->result_array() as $row) {
+
+                                                if ($row['moa_aoa_lock'] == 0 && $row['moa_aoa_status'] == 5) {
+                                                    ?>
+                                                    <span class="badge md-trigger" data-modal="modal-moa_aoa">Please Submit</span>
+                                                <?php } elseif ($row['moa_aoa_status'] == 0) { ?>
+                                                    <span class="badge md-success">Waiting for approve</span>
+                                                <?php } elseif ($row['moa_aoa_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-moa_aoa">Please Resubmit</span>
+                                                <?php } elseif ($row['moa_aoa_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+
+                                            <i class="icon-bookmark"></i> Memorandum Of Association (MOA)
+                                            <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory to know your Company’s constitution.(Please attach)" class="fa fa-question-circle"></i></span>
+                                        </a>
+                                    <?php } ?>
+                                    <!----------------------------->
+                                    <?php if ($req_docs->aoa == 1) { ?>
+                                        <a href="#" class="list-group-item">
+                                            <i class="icon-chevron-right"></i>
+                                            <?php
+                                            foreach ($query->result_array() as $row) {
+
+                                                if ($row['aoa_lock'] == 0 && $row['aoa_status'] == 5) {
+                                                    ?>
+                                                    <span class="badge md-trigger" data-modal="modal-aoa">Please Submit</span>
+                                                <?php } elseif ($row['aoa_status'] == 0) { ?>
+                                                    <span class="badge md-success">Waiting for approve</span>
+                                                <?php } elseif ($row['aoa_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-aoa">Please Resubmit</span>
+                                                <?php } elseif ($row['aoa_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+
+                                            <i class="icon-bookmark"></i> Articles Of Association (AOA)
+                                            <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory to know your Company’s constitution.(Please attach)" class="fa fa-question-circle"></i></span>
+                                        </a>
+                                    <?php } ?>
+                                    <!----------------------------->
+                                    <?php if ($req_docs->shop_establish_trade == 1) { ?>
+                                        <a href="#" class="list-group-item">
+                                            <i class="icon-chevron-right"></i>
+                                            <?php
+                                            foreach ($query->result_array() as $row) {
+
+                                                if ($row['shop_establish_trade_lock'] == 0 && $row['shop_establish_trade_status'] == 5) {
+                                                    ?>
+                                                    <span class="badge md-trigger" data-modal="modal-shop_establish_trade">Please Submit</span>
+                                                <?php } elseif ($row['shop_establish_trade_status'] == 0) { ?>
+                                                    <span class="badge md-success">Waiting for approve</span>
+                                                <?php } elseif ($row['shop_establish_trade_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-shop_establish_trade">Please Resubmit</span>
+                                                <?php } elseif ($row['shop_establish_trade_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+
+                                            <i class="icon-bookmark"></i> Shop establishment/Trade License
+                                            <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory to know your Company’s constitution.(Please attach)" class="fa fa-question-circle"></i></span>
+                                        </a>
+                                    <?php } ?>
+
+                                    <script>
+                                        function save_cenvat(va) {
+                                            compid = <?php echo $compid; ?>;
+
+                                            $.ajax({
+                                                url: "<?php echo site_url(); ?>/main/cenvat_doc/" + compid + "/" + va,
+                                                type: "POST",
+                                                processData: false,
+                                                contentType: false,
+                                            });
+                                        }
+
+                                        function save_serv(va) {
+                                            compid = <?php echo $compid; ?>;
+
+                                            $.ajax({
+                                                url: "<?php echo site_url(); ?>/main/serv_doc/" + compid + "/" + va,
+                                                type: "POST",
+                                                processData: false,
+                                                contentType: false,
+                                            });
+                                        }
 
 
-                            <header class="panel-heading">
-                                <span style="font-size: 1.2em">Are you a Service TAX Payer ? <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory, if “YES”, please  submit number with Registration certificate" class="fa fa-question-circle"></i></span></span>
-<?php
-if (isset($servicetax_id)) {
+                                    </script>
+                                    <div class="col-lg-12" style="margin-bottom: 10px; margin-top: 10px; padding-bottom: 10px">
 
-    if ($servicetax_id == 0) {
-        ?>
+                                        <header class="panel-heading">
+                                            <span style="font-size: 1.2em">Are you registered with CENVAT ? <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory, if “YES”, please  submit number with Registration certificate" class="fa fa-question-circle"></i></span></span>
+                                            <?php
+                                            if (isset($cenvat_id)) {
 
-                                        <i style="float: right" class="label badge" ng-hide="showme5"   name="otherdoc" ng-click="showme5 = true" value="Yes" onclick="save_serv('1')">YES</i>
-                                        <i style="float: right" class="label bg-light badge" ng-show="showme5"   name="otherdoc" ng-click="showme5 = false" value="No" onclick="save_serv('0')">NO</i>
+                                                if ($cenvat_id == 0) {
+                                                    ?>
 
-                                        <?php } elseif ($servicetax_id == 1) { ?>
+                                                    <i style="float: right" class="label badge" ng-hide="showme"   name="otherdoc" ng-click="showme = true" value="Yes" onclick="save_cenvat('1')">YES</i>
+                                                    <i style="float: right" class="label bg-light badge" ng-show="showme"   name="otherdoc" ng-click="showme = false" value="No" onclick="save_cenvat('0')">NO</i>
 
-                                        <i style="float: right" class="label badge" ng-show="showme2"   name="otherdoc" ng-click="showme2 = false" value="Yes" onclick="save_serv('1')">YES</i>
-                                        <i style="float: right" class="label bg-light badge"  ng-hide="showme2"   name="otherdoc" ng-click="showme2 = true" value="No" onclick="save_serv('0')">NO</i>
+                                                <?php } elseif ($cenvat_id == 1) { ?>
 
-                                        <?php }
-                                    }
-                                    ?>
+                                                    <i style="float: right" class="label badge" ng-show="showme1"   name="otherdoc" ng-click="showme1 = false" value="Yes" onclick="save_cenvat('1')">YES</i>
+                                                    <i style="float: right" class="label bg-light badge" ng-hide="showme1"   name="otherdoc" ng-click="showme1 = true" value="No" onclick="save_cenvat('0')">NO</i>
 
-                            </header>
+                                                <?php
+                                                }
+                                            }
+                                            ?>
+
+                                        </header>
 
 
-                                    <div class="list-group bg-white" style="background-color: whitesmoke" ng-show="showme5">
+                                        <div class="list-group bg-white" style="background-color: whitesmoke" ng-show="showme">
 
-                                <?php if ($req_docs->servicetax == 1) { ?>
-                                    <a class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                <?php
-                                foreach ($query->result_array() as $row) {
+<?php if ($req_docs->cenvat == 1) { ?>
+                                                <a class="list-group-item">
+                                                    <i class="icon-chevron-right"></i>
+                                                    <?php
+                                                    foreach ($query->result_array() as $row) {
 
-                                    if ($row['servicetax_lock'] == 0 && $row['servicetax_status'] == 5) {
-                                        ?>
-                                                <span class="badge md-trigger" data-modal="modal-servicetax">Please Submit</span>
-        <?php } elseif ($row['servicetax_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-                                        <?php } elseif ($row['servicetax_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-servicetax">Please Resubmit</span>
-                                            <?php } elseif ($row['servicetax_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
+                                                        if ($row['cenvat_lock'] == 0 && $row['cenvat_status'] == 5) {
+                                                            ?>
+                                                            <span class="badge md-trigger" data-modal="modal-cenvat">Please Submit</span>
+                                                        <?php } elseif ($row['cenvat_status'] == 0) { ?>
+                                                            <span class="badge md-success">Waiting for approve</span>
+                                                        <?php } elseif ($row['cenvat_status'] == 1) { ?>
+                                                            <span class="badge md-trigger" data-modal="modal-cenvat">Please Resubmit</span>
+                                                        <?php } elseif ($row['cenvat_status'] == 2) { ?>
+                                                            <span class="badge md-success">Approved</span>
+                                                            <?php
+                                                        }
+                                                    }
+                                                    ?>
+
+                                                    <i class="icon-rupee"></i> CENVAT
+                                                    <span> - <i data-toggle="tooltip" data-placement="top" title="Only Submit CENVAT if you are registered - (Disable if not having. Click NO to Disable)" class="fa fa-question-circle"></i></span>
+                                                </a>
+                                        <?php } ?>
+                                        </div>
+                                        <?php
+                                        if (isset($cenvat_id)) {
+
+                                            if ($cenvat_id == 1) {
+                                                ?>
+
+
+                                                <div  class="list-group bg-white" style="background-color: whitesmoke" ng-hide="showme1" >
+
+        <?php if ($req_docs->vat_cst == 1) { ?>
+                                                        <a class="list-group-item">
+                                                            <i class="icon-chevron-right"></i>
+                                                            <?php
+                                                            foreach ($query->result_array() as $row) {
+
+                                                                if ($row['cenvat_lock'] == 0 && $row['cenvat_status'] == 5) {
+                                                                    ?>
+                                                                    <span class="badge md-trigger" data-modal="modal-cenvat">Please Submit</span>
+                                                                <?php } elseif ($row['cenvat_status'] == 0) { ?>
+                                                                    <span class="badge md-success">Waiting for approve</span>
+                                                                <?php } elseif ($row['cenvat_status'] == 1) { ?>
+                                                                    <span class="badge md-trigger" data-modal="modal-cenvat">Please Resubmit</span>
+                                                                <?php } elseif ($row['cenvat_status'] == 2) { ?>
+                                                                    <span class="badge md-success">Approved</span>
+                                                                <?php
+                                                                }
+                                                            }
+                                                            ?>
+
+                                                            <i class="icon-rupee"></i> CENVAT
+                                                            <span> - <i data-toggle="tooltip" data-placement="top" title="Only Submit CENVAT if you are registered - (Disable if not having. Click NO to Disable)" class="fa fa-question-circle"></i></span>
+                                                        </a>
+                                                <?php } ?>
+                                                </div>
+
                                             <?php
                                             }
                                         }
                                         ?>
 
-                                        <i class="icon-rupee"></i> Service Tax
-                                        <span> - <i data-toggle="tooltip" data-placement="top" title="Only Submit Service TAX ID if you are registered - (Disable if not having. Click NO to Disable)" class="fa fa-question-circle"></i></span>
-                                    </a>
-                                    <?php } ?>
-                            </div>
-                                    <?php
-                                    if (isset($servicetax_id)) {
 
-                                        if ($servicetax_id == 1) {
-                                            ?>
+                                        <header class="panel-heading">
+                                            <span style="font-size: 1.2em">Are you a Service TAX Payer ? <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory, if “YES”, please  submit number with Registration certificate" class="fa fa-question-circle"></i></span></span>
+                                            <?php
+                                            if (isset($servicetax_id)) {
+
+                                                if ($servicetax_id == 0) {
+                                                    ?>
+
+                                                    <i style="float: right" class="label badge" ng-hide="showme5"   name="otherdoc" ng-click="showme5 = true" value="Yes" onclick="save_serv('1')">YES</i>
+                                                    <i style="float: right" class="label bg-light badge" ng-show="showme5"   name="otherdoc" ng-click="showme5 = false" value="No" onclick="save_serv('0')">NO</i>
+
+    <?php } elseif ($servicetax_id == 1) { ?>
+
+                                                    <i style="float: right" class="label badge" ng-show="showme2"   name="otherdoc" ng-click="showme2 = false" value="Yes" onclick="save_serv('1')">YES</i>
+                                                    <i style="float: right" class="label bg-light badge"  ng-hide="showme2"   name="otherdoc" ng-click="showme2 = true" value="No" onclick="save_serv('0')">NO</i>
+
+    <?php
+    }
+}
+?>
+
+                                        </header>
 
 
-                                    <div class="list-group bg-white" style="background-color: whitesmoke" ng-hide="showme2">
+                                        <div class="list-group bg-white" style="background-color: whitesmoke" ng-show="showme5">
 
-        <?php if ($req_docs->servicetax == 1) { ?>
-                                            <a class="list-group-item">
-                                                <i class="icon-chevron-right"></i>
+                                                <?php if ($req_docs->servicetax == 1) { ?>
+                                                <a class="list-group-item">
+                                                    <i class="icon-chevron-right"></i>
+                                                    <?php
+                                                    foreach ($query->result_array() as $row) {
+
+                                                        if ($row['servicetax_lock'] == 0 && $row['servicetax_status'] == 5) {
+                                                            ?>
+                                                            <span class="badge md-trigger" data-modal="modal-servicetax">Please Submit</span>
+                                                        <?php } elseif ($row['servicetax_status'] == 0) { ?>
+                                                            <span class="badge md-success">Waiting for approve</span>
+                                                        <?php } elseif ($row['servicetax_status'] == 1) { ?>
+                                                            <span class="badge md-trigger" data-modal="modal-servicetax">Please Resubmit</span>
+                                                        <?php } elseif ($row['servicetax_status'] == 2) { ?>
+                                                            <span class="badge md-success">Approved</span>
+            <?php
+        }
+    }
+    ?>
+
+                                                    <i class="icon-rupee"></i> Service Tax
+                                                    <span> - <i data-toggle="tooltip" data-placement="top" title="Only Submit Service TAX ID if you are registered - (Disable if not having. Click NO to Disable)" class="fa fa-question-circle"></i></span>
+                                                </a>
+                                        <?php } ?>
+                                        </div>
                                         <?php
-                                        foreach ($query->result_array() as $row) {
+                                        if (isset($servicetax_id)) {
 
-                                            if ($row['servicetax_lock'] == 0 && $row['servicetax_status'] == 5) {
+                                            if ($servicetax_id == 1) {
                                                 ?>
-                                                        <span class="badge md-trigger" data-modal="modal-servicetax">Please Submit</span>
-                <?php } elseif ($row['servicetax_status'] == 0) { ?>
-                                                        <span class="badge md-success">Waiting for approve</span>
-                <?php } elseif ($row['servicetax_status'] == 1) { ?>
-                                                        <span class="badge md-trigger" data-modal="modal-servicetax">Please Resubmit</span>
-                <?php } elseif ($row['servicetax_status'] == 2) { ?>
-                                                        <span class="badge md-success">Approved</span>
-                <?php
+
+
+                                                <div class="list-group bg-white" style="background-color: whitesmoke" ng-hide="showme2">
+
+                                                        <?php if ($req_docs->servicetax == 1) { ?>
+                                                        <a class="list-group-item">
+                                                            <i class="icon-chevron-right"></i>
+                                                            <?php
+                                                            foreach ($query->result_array() as $row) {
+
+                                                                if ($row['servicetax_lock'] == 0 && $row['servicetax_status'] == 5) {
+                                                                    ?>
+                                                                    <span class="badge md-trigger" data-modal="modal-servicetax">Please Submit</span>
+                                                                <?php } elseif ($row['servicetax_status'] == 0) { ?>
+                                                                    <span class="badge md-success">Waiting for approve</span>
+                                                                <?php } elseif ($row['servicetax_status'] == 1) { ?>
+                                                                    <span class="badge md-trigger" data-modal="modal-servicetax">Please Resubmit</span>
+                                                                <?php } elseif ($row['servicetax_status'] == 2) { ?>
+                                                                    <span class="badge md-success">Approved</span>
+                    <?php
                 }
             }
             ?>
 
-                                                <i class="icon-rupee"></i> Service Tax
-                                                <span> - <i data-toggle="tooltip" data-placement="top" title="Only Submit Service TAX ID and Copy if you are registered - (Disable if not having. Click NO to Disable)" class="fa fa-question-circle"></i></span>
-                                            </a>
-        <?php } ?>
-                                    </div>
+                                                            <i class="icon-rupee"></i> Service Tax
+                                                            <span> - <i data-toggle="tooltip" data-placement="top" title="Only Submit Service TAX ID and Copy if you are registered - (Disable if not having. Click NO to Disable)" class="fa fa-question-circle"></i></span>
+                                                        </a>
+                                                <?php } ?>
+                                                </div>
 
-    <?php }
+    <?php
+    }
 }
 ?>
-                        </div>
-                            </div>
+                                    </div>
+                                </div>
 
-                        </div>
+                            </div>
                         </div>
                         <div class="row">
-                        <div class="col-lg-12">
-                            <div>
-                                <div class="list-group bg-white" style="background-color: whitesmoke">
-                                <header class="panel-heading" style="background-color: #1D90E0; color: white">
-                                    <span class="badge bg-info pull-right"></span> Vendor Photo ID Documents
-                                </header>
-                                    <?php if ($req_docs->photoid == 1) { ?>
-                                    <a href="#" class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                        <?php
-                                        foreach ($query->result_array() as $row) {
+                            <div class="col-lg-12">
+                                <div>
+                                    <div class="list-group bg-white" style="background-color: whitesmoke">
+                                        <header class="panel-heading bg-primary" style=" color: black">
+                                            <span class="badge bg-info pull-right"></span> Vendor Photo ID Documents
+                                        </header>
+                                            <?php if ($req_docs->photoid == 1) { ?>
+                                            <a href="#" class="list-group-item">
+                                                <i class="icon-chevron-right"></i>
+                                                <?php
+                                                foreach ($query->result_array() as $row) {
 
-                                            if ($row['photoid_lock'] == 0 && $row['photoid_status'] == 5) {
-                                                ?>
-                                                <span class="badge md-trigger" data-modal="modal-photoid">Please Submit</span>
-        <?php } elseif ($row['photoid_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-        <?php } elseif ($row['photoid_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-photoid">Please Resubmit</span>
-                                        <?php } elseif ($row['photoid_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
-        <?php
+                                                    if ($row['photoid_lock'] == 0 && $row['photoid_status'] == 5) {
+                                                        ?>
+                                                        <span class="badge md-trigger" data-modal="modal-photoid">Please Submit</span>
+                                                    <?php } elseif ($row['photoid_status'] == 0) { ?>
+                                                        <span class="badge md-success">Waiting for approve</span>
+                                                    <?php } elseif ($row['photoid_status'] == 1) { ?>
+                                                        <span class="badge md-trigger" data-modal="modal-photoid">Please Resubmit</span>
+                                                    <?php } elseif ($row['photoid_status'] == 2) { ?>
+                                                        <span class="badge md-success">Approved</span>
+            <?php
         }
     }
     ?>
-                                        <i class="icon-user"></i> Photo ID
-                                        <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory, please  submit number with either PAN Card/Aadhar card or passport copy" class="fa fa-question-circle"></i></span>
-                                    </a>
+                                                <i class="icon-user"></i> Photo ID
+                                                <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory, please  submit number with either PAN Card/Aadhar card or passport copy" class="fa fa-question-circle"></i></span>
+                                            </a>
 
 <?php } ?>
 
-                            </div>
-                            </div>
-                            <div>
-                                <div class="list-group bg-white" style="background-color: whitesmoke">
-                                <header class="panel-heading" style="background-color: #1D90E0; color: white">
-                                    <span class="badge bg-info pull-right"></span> Address Documents
-                                </header>
-                                    <?php if ($req_docs->addressid == 1) { ?>
-                                    <a href="#" class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                        <?php
-                                        foreach ($query->result_array() as $row) {
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="list-group bg-white" style="background-color: whitesmoke">
+                                        <header class="panel-heading bg-primary" style=" color: black">
+                                            <span class="badge bg-info pull-right"></span> Address Documents
+                                        </header>
+                                            <?php if ($req_docs->addressid == 1) { ?>
+                                            <a href="#" class="list-group-item">
+                                                <i class="icon-chevron-right"></i>
+                                                <?php
+                                                foreach ($query->result_array() as $row) {
 
-                                            if ($row['addressid_lock'] == 0 && $row['addressid_status'] == 5) {
-                                                ?>
-                                                <span class="badge md-trigger" data-modal="modal-addressid">Please Submit</span>
-        <?php } elseif ($row['addressid_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-                                        <?php } elseif ($row['addressid_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-addressid">Please Resubmit</span>
-                                        <?php } elseif ($row['addressid_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
-                                            <?php
-                                            }
-                                        }
-                                        ?>
-                                        <i class="icon-home"></i> Vendor Residence Address
-                                        <span> - <i data-toggle="tooltip" data-placement="top" title="BSNL Bill or Rent Lease deed or Aadhar Card or Passport or Bank statement(lessthan 3months)" class="fa fa-question-circle"></i></span>
-                                    </a>
-
-                                    <?php } ?>
-                                    <?php if ($req_docs->businessid == 1) { ?>
-                                    <a href="#" class="list-group-item">
-                                        <i class="icon-chevron-right"></i>
-                                        <?php
-                                        foreach ($query->result_array() as $row) {
-
-                                            if ($row['businessid_lock'] == 0 && $row['businessid_status'] == 5) {
-                                                ?>
-                                                <span class="badge md-trigger" data-modal="modal-businessid">Please Submit</span>
-        <?php } elseif ($row['businessid_status'] == 0) { ?>
-                                                <span class="badge md-success">Waiting for approve</span>
-                                        <?php } elseif ($row['businessid_status'] == 1) { ?>
-                                                <span class="badge md-trigger" data-modal="modal-buisenessid">Please Resubmit</span>
-        <?php } elseif ($row['businessid_status'] == 2) { ?>
-                                                <span class="badge md-success">Approved</span>
-        <?php
+                                                    if ($row['addressid_lock'] == 0 && $row['addressid_status'] == 5) {
+                                                        ?>
+                                                        <span class="badge md-trigger" data-modal="modal-addressid">Please Submit</span>
+                                                    <?php } elseif ($row['addressid_status'] == 0) { ?>
+                                                        <span class="badge md-success">Waiting for approve</span>
+                                                    <?php } elseif ($row['addressid_status'] == 1) { ?>
+                                                        <span class="badge md-trigger" data-modal="modal-addressid">Please Resubmit</span>
+                                                    <?php } elseif ($row['addressid_status'] == 2) { ?>
+                                                        <span class="badge md-success">Approved</span>
+            <?php
         }
     }
     ?>
-                                        <i class="icon-building"></i> Business Address
-                                        <span> - <i data-toggle="tooltip" data-placement="top" title="Any one of : BSNL Bill /Rent Lease deed/AOA & MOA/ Shop & Establishment license/ Trade license/VAT registration/Bank statement(lessthan 3months)" class="fa fa-question-circle"></i></span>
-                                    </a>
+                                                <i class="icon-home"></i> Vendor Residence Address
+                                                <span> - <i data-toggle="tooltip" data-placement="top" title="BSNL Bill or Rent Lease deed or Aadhar Card or Passport or Bank statement(lessthan 3months)" class="fa fa-question-circle"></i></span>
+                                            </a>
+
+                                            <?php } ?>
+                                            <?php if ($req_docs->businessid == 1) { ?>
+                                            <a href="#" class="list-group-item">
+                                                <i class="icon-chevron-right"></i>
+                                                <?php
+                                                foreach ($query->result_array() as $row) {
+
+                                                    if ($row['businessid_lock'] == 0 && $row['businessid_status'] == 5) {
+                                                        ?>
+                                                        <span class="badge md-trigger" data-modal="modal-businessid">Please Submit</span>
+                                                    <?php } elseif ($row['businessid_status'] == 0) { ?>
+                                                        <span class="badge md-success">Waiting for approve</span>
+                                                    <?php } elseif ($row['businessid_status'] == 1) { ?>
+                                                        <span class="badge md-trigger" data-modal="modal-buisenessid">Please Resubmit</span>
+                                                    <?php } elseif ($row['businessid_status'] == 2) { ?>
+                                                        <span class="badge md-success">Approved</span>
+            <?php
+        }
+    }
+    ?>
+                                                <i class="icon-building"></i> Business Address
+                                                <span> - <i data-toggle="tooltip" data-placement="top" title="Any one of : BSNL Bill /Rent Lease deed/AOA & MOA/ Shop & Establishment license/ Trade license/VAT registration/Bank statement(lessthan 3months)" class="fa fa-question-circle"></i></span>
+                                            </a>
 
 <?php } ?>
 
 
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        </div>
                         </div>
                     </div>
-                        </div>
 
 
 
 
-                        <!--Documents status -->
 
-
+                </div>
 
 
 
 
 
 
-                        <div class="col-lg-12">
-
-
-                        </div>
+                <!--Documents status -->
 
 
 
 
 
-                    </section>
 
 
-                </section>
 
-                <footer class="footer bg-light dker bg-gradient">
-                        <p>Bulkhouse Vendor verification Panel</p>
-                    </footer>
-                <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="body"></a>
+
+
+
+
+
+
             </section>
-            <!-- /.vbox -->
+
+
         </section>
-        <script src="/js/classie.js"></script>
-        <script src="/js/modalEffects.js"></script>
-        <script>
-                                // this is important for IEs
-                                var polyfilter_scriptpath = '/js/';
-        </script>
-        <script src="/js/cssParser.js"></script>
-        <script src="/js/css-filters-polyfill.js"></script>
-        <script src="/css/app.v1.js"></script>
-        <!-- Bootstrap -->
-        <!-- Sparkline Chart -->
-        <!-- App -->
-    </body>
-</html>
+
+<?php $this->load->view('template/main_footer'); ?>

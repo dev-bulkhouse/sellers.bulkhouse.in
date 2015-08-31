@@ -77,7 +77,7 @@ class Admin extends CI_Controller {
 
      public function logout() {
         $this->session->sess_destroy();
-        redirect('http://sellers.bulkhouse.in/admin','location');
+        redirect('/admin','location');
     }
 
     public function details($doc_type) {
