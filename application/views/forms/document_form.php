@@ -5,11 +5,11 @@
 
         <h3 style="font-size: 2em"><?php echo $doc_title; ?>  <a style="cursor: default; color: white" class="md-close" aria-label="Close">&#215;</a></h3>
         <div>
-            <form id="<?=$doc_id;?>" method="post" enctype="multipart/form-data">
+            <form id="<?php echo $doc_id;?>" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="email" id="email" value="<?php echo $email; ?>">
                 <div class="form-group required">
-                    <label for="<?=$doc_id;?>"><?=$doc_placeholder;?>:</label>
-                    <input type="hidden" class="form-control" name="<?=$doc_id;?>" id="<?=$doc_id;?>">
+                    <label for="<?php echo $doc_id;?>"><?php echo $doc_placeholder;?>:</label>
+                    <input type="hidden" class="form-control" name="<?php echo $doc_id;?>" id="<?php echo $doc_id;?>">
 
                 </div>
                 <input type="hidden" name="email" id="email" value="<?php echo $email; ?>">
@@ -44,11 +44,11 @@
 
         <h3 style="font-size: 2em"><?php echo $doc_title; ?>  <a style="cursor: default; color: white" class="md-close" aria-label="Close">&#215;</a></h3>
         <div>
-            <form id="<?=$doc_id;?>" method="post" enctype="multipart/form-data">
+            <form id="<?php echo $doc_id;?>" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="email" id="email" value="<?php echo $email; ?>">
                 <div class="form-group required">
-                    <label for="<?=$doc_id;?>"><?=$doc_placeholder;?>:</label>
-                    <input type="text" <?=$doc_pat;?> class="form-control" name="<?=$doc_id;?>" id="<?=$doc_id;?>" placeholder="<?=$doc_placeholder;?>" required="required">
+                    <label for="<?php echo $doc_id;?>"><?php echo $doc_placeholder;?>:</label>
+                    <input type="text" <?php echo $doc_pat;?> class="form-control" name="<?php echo $doc_id;?>" id="<?php echo $doc_id;?>" placeholder="<?php echo $doc_placeholder;?>" required="required">
 
                 </div>
                 <input type="hidden" name="email" id="email" value="<?php echo $email; ?>">
