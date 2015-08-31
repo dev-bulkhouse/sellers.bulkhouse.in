@@ -61,7 +61,7 @@ else
         </style>
        </head>
 
-       <body style="background-color: #f8f8f8">
+       <body style="background-color: white">
            <?php $this->load->view('template/main_head',array('firm_name'=>$firm_name,'firm_type'=>$firm_type)); ?>
 
 
@@ -94,11 +94,4 @@ else
                    </div>
                </div>
            </section>
-           <!-- footer -->
-
-           <!-- / footer -->
-           <script src="/css/app.v1.js"></script>
-           <!-- Bootstrap -->
-           <!-- app -->
-       </body>
-   </html>
+<?php $this->load->view('template/main_footer'); ?>

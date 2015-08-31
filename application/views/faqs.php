@@ -74,19 +74,22 @@ $query = $this->db->get();
 
         <style>
             .bg-primary {
-    background-color: #18659B;
-    color: #fff;
-}
-.bg-primary .nav li a {
-    color: #fff;
-}
+                background-color: #F5F5F5;
+                color: #010101;
+            }
+            .bg-primary .nav li a {
+                color: #010101;
+            }
+            .bg-primary .nav li a:hover {
+                color: #010101;
+            }
         </style>
     </head>
-    <body  ng-app="ngAnimate">
+    <body  ng-app="ngAnimate" style="background-color: white">
         <?php $this->load->view('template/main_head', array('firm_name' => $firm_name, 'firm_type' => $firm_type)); ?>
             <!-- /.aside -->
-            <aside class="bg-light lter">
-               
+            <aside class="lter">
+
                 <header class="header b-b">
 
                     <p class="h4 animated bounceInDown">STEP BY STEP GUIDE TO VENDOR ON-BOARDING</p>
@@ -97,11 +100,7 @@ $query = $this->db->get();
                     <footer class="footer b-t">
                         <form class="m-t-sm">
                             <div class="input-group">
-                                <p>Bulkhouse Vendor verification Panel</p>
                                 <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-white">
-                                        <i class="icon-search"></i>
-                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -109,7 +108,7 @@ $query = $this->db->get();
                     <section class="scrollable">
 
 
-                        <div class="panel-body">
+                        <div class="panel-body" style="background-color: white">
                             <p><b>FAQ'S</b></p>
                             <div class="line pull-in"></div>
                             <p>This Manual guides you on <b>"How you can register"</b> as a vendor and get answers to your queries during the registration process with Bulkhouse as a Vendor</p>
@@ -119,7 +118,7 @@ $query = $this->db->get();
                         </div>
 
 
-                        <div class="panel panel-default">
+                        <div class="panel panel-default" style="background-color: white">
                             <div class="panel-heading">
 
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#bulkhouse1"><span>1.</span><b>Why sell on Bulkhouse ?</b></a>
@@ -422,11 +421,7 @@ $query = $this->db->get();
                                 </div>
                             </div>
 
-                            <header class="footer b-b">
 
-                                <p class="h4 animated bounceInDown">GUIDE TO STEP BY STEP vendor on-boarding</p>
-
-                            </header>
                         </div>
 
 
@@ -449,17 +444,5 @@ $query = $this->db->get();
 
             <!-- /.vbox -->
         </section>
-        <script src="/js/classie.js"></script>
-        <script src="/js/modalEffects.js"></script>
-        <script>
-            // this is important for IEs
-            var polyfilter_scriptpath = '/js/';
-        </script>
-        <script src="/js/cssParser.js"></script>
-        <script src="/js/css-filters-polyfill.js"></script>
-        <script src="/css/app.v1.js"></script>
-        <!-- Bootstrap -->
-        <!-- Sparkline Chart -->
-        <!-- App -->
-    </body>
-</html>
+
+<?php $this->load->view('template/main_footer'); ?>

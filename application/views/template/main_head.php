@@ -15,22 +15,15 @@
             <aside class="bg-primary aside-sm" id="nav">
                 <section class="vbox">
                     <header class="dker nav-bar" style="background-color: white">
-                        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="body">
-                            <i class="icon-reorder"></i>
+                        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="body" style="font-size: 3em">
+                            <i class="icon-reorder" style="color: black"></i>
                         </a>
-                        <a href="#" class="nav-brand" data-toggle="fullscreen"></a>
-                        <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user">
+                        <a href="#" class="nav-brand visible-for-small-only" data-toggle="fullscreen"></a>
+                        <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user" >
 
                         </a>
                     </header>
-                    <footer class="footer bg-gradient hidden-xs">
-                        <a href="modal.lockme.html" data-toggle="ajaxModal" class="btn btn-sm btn-link m-r-n-xs pull-right">
-                            <i class="icon-off"></i>
-                        </a>
-                        <a href="#nav" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm">
-                            <i class="icon-reorder"></i>
-                        </a>
-                    </footer>
+                    
                     <section>
 <!--                         user
                                                 <div class="bg-info nav-user hidden-xs pos-rlt">

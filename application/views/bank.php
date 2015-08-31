@@ -133,7 +133,7 @@ $query = $this->db->get();
         </style>
 
     </head>
-    <body>
+    <body style="background-color: white">
         <?php $this->load->view('template/main_head',array('firm_name'=>$firm_name,'firm_type'=>$firm_type)); ?>
 
             <!-- /.aside -->
@@ -142,7 +142,7 @@ $query = $this->db->get();
                 <section class="vbox">
                     <section class="scrollable wrapper animated fadeInDown" id="wizard">
                         <div  class="col-ms-12">
-                            <header class="panel-heading" style="background-color: #1D90E0; color: white">
+                            <header class="panel-heading bg-primary" style=" color: black">
                                 <span class="badge bg-info pull-right"></span> <i class="fa fa-bank"></i> Bank Details
                             </header>
                             <div style="background-color: white">
@@ -154,7 +154,7 @@ $query = $this->db->get();
                                     <div class="row">
                                     <form id="canceled_check" method="post" enctype="multipart/form-data" style="margin-top: 10px">
 
-                                                <input type="hidden" name="email" id="email" value="<?php echo $email; ?>">
+                                                <input type="hidden" name="email" id="email" value="<?= $email; ?>">
                                                      <?php
                                             foreach ($query->result_array() as $row) {
 
@@ -199,7 +199,7 @@ $query = $this->db->get();
 <div class="row">
                                                     <div class="col-md-4">
                                                         <label class="control-label">Bank Account Name:</label>
-                                                        <input type="hidden"  name ="email" value="<?php echo $email ?>">
+                                                        <input type="hidden"  name ="email" value="<?= $email ?>">
                                                         <input type="text" placeholder="Bank Account Name" name ="account_name" class="bg-focus form-control" required="required" value=" <?php
                                                         $details = $this->register_model->bankdetails($compid);
                                                         foreach ($details as $row) {
@@ -207,7 +207,7 @@ $query = $this->db->get();
                                                             ?>">
                                                             <div class="line line-dashed m-t-lg"></div>
                                                         </div>
-                                                        <div class="col-md-5">
+                                                        <div class="col-md-4">
                                                             <label class="control-label">Bank Account Number:</label>
                                                             <input type="text" placeholder="Bank Account Number" name ="account_number" pattern="[0-9]*" class="bg-focus form-control" required="required" value="<?php echo $row->account_number; ?>" max="20">
                                                             <div class="line line-dashed m-t-lg"></div>
@@ -263,18 +263,4 @@ $query = $this->db->get();
                     </section>
                 </section>
 
-
-                <footer class="footer bg-light dker bg-gradient">
-                    <p>Bulkhouse Vendor verification Panel</p>
-                </footer>
-
-                <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="body"></a>
-            </section>
-            <!-- /.vbox -->
-
-        <script src="/css/app.v1.js"></script>
-        <!-- Bootstrap -->
-        <!-- Sparkline Chart -->
-        <!-- App -->
-    </body>
-</html>
+<?php $this->load->view('template/main_footer'); ?>

@@ -74,19 +74,22 @@ $query = $this->db->get();
 
 <style>
             .bg-primary {
-    background-color: #18659B;
-    color: #fff;
-}
-.bg-primary .nav li a {
-    color: #fff;
-}
+                background-color: #F5F5F5;
+                color: #010101;
+            }
+            .bg-primary .nav li a {
+                color: #010101;
+            }
+            .bg-primary .nav li a:hover {
+                color: #010101;
+            }
         </style>
     </head>
-    <body  ng-app="ngAnimate">
+    <body  ng-app="ngAnimate" style="background-color: white">
        <?php $this->load->view('template/main_head', array('firm_name' => $firm_name, 'firm_type' => $firm_type)); ?>
             <!-- /.aside -->
-            <aside class="bg-light lter">
-                
+            <aside class="lter">
+
                 <header class="header b-b">
 
                     <p class="h4 animated bounceInDown"> STEP BY STEP GUIDE TO THE SELLING PROCESS</p>
@@ -97,11 +100,9 @@ $query = $this->db->get();
                     <footer class="footer b-t">
                         <form class="m-t-sm">
                             <div class="input-group">
-                                <p>Bulkhouse Vendor verification Panel</p>
+
                                 <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-white">
-                                        <i class="icon-search"></i>
-                                    </button>
+
                                 </div>
                             </div>
                         </form>
@@ -109,7 +110,7 @@ $query = $this->db->get();
                     <section class="scrollable">
 
 
-                        <div class="panel-body">
+                        <div class="panel-body" style="background-color: white">
                             <p><b>FAQ'S</b></p>
                             <div class="line pull-in"></div>
                             <p>The Bulkhouse Vendor platform allows Vendors to register their businesses, sell products, and manage various aspects related to the products and orders.
@@ -330,11 +331,7 @@ $query = $this->db->get();
                             </div>
 
 
-                            <header class="footer b-b">
 
-                                <p class="h4 animated bounceInDown">GUIDE TO STEP BY STEP THE SELLING PROCESS</p>
-
-                            </header>
                         </div>
 
 
@@ -357,17 +354,4 @@ $query = $this->db->get();
 
             <!-- /.vbox -->
         </section>
-        <script src="/js/classie.js"></script>
-        <script src="/js/modalEffects.js"></script>
-        <script>
-            // this is important for IEs
-            var polyfilter_scriptpath = '/js/';
-        </script>
-        <script src="/js/cssParser.js"></script>
-        <script src="/js/css-filters-polyfill.js"></script>
-        <script src="/css/app.v1.js"></script>
-        <!-- Bootstrap -->
-        <!-- Sparkline Chart -->
-        <!-- App -->
-    </body>
-</html>
+<?php $this->load->view('template/main_footer'); ?>

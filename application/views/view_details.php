@@ -57,7 +57,7 @@ if ($logged_in) {
         </style>
 
     </head>
-    <body>
+    <body style="background-color: white">
         <?php $this->load->view('template/main_head',array('firm_name'=>$firm_name,'firm_type'=>$firm_type)); ?>
         <section id="content" style="background-color: white">
                                     <section class="vbox">
@@ -178,8 +178,8 @@ if ($logged_in) {
 
                                                                                 <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4">
 
-                                                                                    <div class="panel panel-info">
-                                                                                        <div class="panel-heading">
+                                                                                    <div class="panel">
+                                                                                        <div class="panel-heading bg-primary" style=" color: black">
 
                                                                                             <h3 class="panel-title">
                                                                                                 Vendor Details</h3>
@@ -212,7 +212,7 @@ if ($logged_in) {
 
                                                                                             </tbody>
                                                                                         </table>
-                                                                                        <div class="panel-heading">
+                                                                                        <div class="panel-heading bg-primary" style=" color: black">
 
                                                                                             <h3 class="panel-title">
                                                                                                 Account Details</h3>
@@ -233,7 +233,7 @@ if ($logged_in) {
 
                                                                                                 <tr><td>Password:</td>
                                                                                             <b>
-                                                                                                <td> <span><span style="font-size: 0.7em"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> - </span><a href="#" style="font-size: 0.8em; color: blue">Change Password</a></span>
+                                                                                                <td> <span><span style="font-size: 0.7em"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> - </span><a href="/main/settings" style="font-size: 0.8em; color: blue">Change Password</a></span>
                                                                                                 </td>
                                                                                             </b>
                                                                                             </tr>
@@ -250,8 +250,8 @@ if ($logged_in) {
                                                                                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" >
 
 
-                                                                                    <div class="panel panel-info">
-                                                                                        <div class="panel-heading">
+                                                                                    <div class="panel">
+                                                                                        <div class="panel-heading bg-primary" style=" color: black">
 
                                                                                             <h3 class="panel-title">
                                                                                                 Company Profile</h3>
@@ -266,10 +266,10 @@ if ($logged_in) {
                                                                                                         <tbody>
 
 
-                                                                                                        <header class="panel-heading">
-                                                                                                            <h4 class="font-thin padder">Vendor Contact Person<span class="pull-right">
+                                                                                                        <header class="panel-heading >
+                                                                                                                <h4 class="font-thin padder">Vendor Contact Person<span class="pull-right" style="margin-top: -10px">
 
-                                                                                                                    <a data-original-title="Edit" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" onclick="location.href = '/main/company';"><i class="icon-edit"></i></a>
+                                                                                                                <a data-original-title="Edit" data-toggle="tooltip" type="button" class="btn btn-sm" style="background-color: #428BCA; color: white" onclick="location.href = '/main/company';">Edit <i class="icon-edit"></i></a>
                                                                                                                 </span></h4>
 
 
@@ -402,28 +402,4 @@ if ($logged_in) {
 
 
                                     </section>
-                                    <footer class="footer bg-light dker bg-gradient">
-                                        <p>Bulkhouse Vendor verification Panel</p>
-                                    </footer>
-                                </section>
-
-                                </section>
-
-                                <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="body"></a>
-                                <script src="/js/classie.js"></script>
-                                <script src="/js/modalEffects.js"></script>
-                                <script>
-                                                                                                                    // this is important for IEs
-                                                                                                                    var polyfilter_scriptpath = '/js/';
-                                </script>
-                                <script src="/js/cssParser.js"></script>
-                                <script src="/js/css-filters-polyfill.js"></script>
-                                <script src="/css/app.v1.js"></script>
-                                <!-- Bootstrap -->
-                                <!-- App -->
-                                <!-- fuelux -->
-                                <!-- datatables -->
-                                <!-- Sparkline Chart -->
-                                <!-- Easy Pie Chart -->
-                                </body>
-                                </html>
+<?php $this->load->view('template/main_footer'); ?>
