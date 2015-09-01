@@ -73,60 +73,7 @@ cursor:pointer;
 </style>
 <script type="text/javascript" src="http://ajax.googleapis.com/
 ajax/libs/jquery/1.5/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function()
-{
-$(".edit_tr").click(function()
-{
-var ID=$(this).attr('id');
-$("#first_"+ID).hide();
 
-$("#first_input_"+ID).show();
-
-}).change(function()
-{
-var ID=$(this).attr('id');
-var first=$("#first_input_"+ID).val();
-
-var dataString = 'id='+ ID +'&vendor_name='+first;
-$("#first_"+ID).html('<img src="load.gif" />'); // Loading image
-
-if(first.length>0)
-{
-
-$.ajax({
-type: "POST",
-url: "<?php echo site_url(); ?>main/vendor_update",
-data: dataString,
-cache: false,
-success: function(html)
-{
-$("#first_"+ID).html(first);
-}
-});
-}
-else
-{
-alert('Enter something.');
-}
-
-});
-
-// Edit input box click action
-$(".editbox").mouseup(function() 
-{
-return false
-});
-
-// Outside click action
-$(document).mouseup(function()
-{
-$(".editbox").hide();
-$(".text").show();
-});
-
-});
-</script>
 </head>
 <body style="background-color: white">
 <?php $this->load->view('template/main_head', array('firm_name' => $firm_name, 'firm_type' => $firm_type)); ?>
@@ -256,16 +203,15 @@ $(".text").show();
                                                             Vendor Details</h3>
 
                                                     </div>
-                                                                                                                                 
+
                                     <table class="table table-hover">
                                                         <tbody>
 
-                                                             <tr id="<?php echo $compid; ?>" class="edit_tr">
+
                                                                 <td>Vendor Name:</td>
-                                                                <td class="edit_td">
-                                                                    <span id="first_<?php echo $compid; ?>" class="text"><?php echo $row->vendor_name; ?></span>
-<input type="text" value="<?php echo $row->vendor_name; ?>" class="editbox" id="first_input_<?php echo $compid; ?>"/><i class="icon-edit" id="first_<?php echo $compid; ?>"></i>
-</td>
+                                                                <td><b><?php
+                                                                        echo $row->vendor_name;$row->firm_name.''.$row->last_name;
+                                                                        ?></b></td>
                                                             </tr>
                                                              <tr>
                                                                 <td>Firm Name:</td>
@@ -298,7 +244,7 @@ $(".text").show();
 
                                                         <h3 class="panel-title">
                                                             Account Details</h3>
-                                                    </div>                                                                                                                                                    
+                                                    </div>
                                                     <table class="table table-hover">
                                                         <tbody>
 
@@ -325,20 +271,20 @@ $(".text").show();
 
                                                 </div>
                                                 <div class="panel">
-                                                  
-  
- 
-    
+
+
+
+
      <div class="panel-heading bg-primary" style=" color: black">
 
                                                         <h3 class="panel-title">
                                                            Product Categories</h3>
-                                                    </div>     
-     
-                                                   
+                                                    </div>
+
+
 
   </div><!-- end of container -->
-                                                                                              
+
                                             </div>
 
                                             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" >
@@ -363,7 +309,7 @@ $(".text").show();
 
                                                                                 <a data-original-title="Edit" data-toggle="tooltip" type="button" class="btn btn-sm" style="background-color: #428BCA; color: white" onclick="location.href = '/main/company';">Edit <i class="icon-edit"></i></a>
                                                                             </span></h4>
-                                                                    </header>                                                                
+                                                                    </header>
                                                                     <tr>
                                                                         <th width="30%"><b>Contact Person:</b></th>
                                                                         <td> <?php
@@ -460,7 +406,7 @@ $(".text").show();
                                                                         ?>
                                                                     </td>
                                                                 </tr>
-                                                            
+
 
                                                                 </tr>
 
