@@ -270,16 +270,7 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
 
 
                                                 </div>
-                                                <div class="panel">
-
-
-
-
-     
-
-
-
-  </div><!-- end of container -->
+                                               
 
                                             </div>
 
