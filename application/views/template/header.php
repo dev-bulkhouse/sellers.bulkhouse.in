@@ -105,8 +105,10 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 
-  
+
 }
+body{font-size: 13px}
+
     </style>
 
 
