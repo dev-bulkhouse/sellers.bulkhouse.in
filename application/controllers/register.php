@@ -60,7 +60,7 @@ class Register extends CI_Controller {
             $this->register_model->set_session_auto($email_address);
             $vendor_name = $this->session->userdata('vendor_name');
             $this->session->set_flashdata('success_message', 'Hi! '.ucfirst($vendor_name).' You have Successfully Registered and Logged In!');
-            redirect(base_url().'main/company','location');
+            redirect(base_url().'main/','location');
         } else {
             echo 'Error giving email activated confirmation, please contact admin@bulkhouse.in';
         }
@@ -89,7 +89,7 @@ class Register extends CI_Controller {
          $this->db->update('vendor_details',$data);
 
      }
-    
+
 
      public function check_user()
         {
