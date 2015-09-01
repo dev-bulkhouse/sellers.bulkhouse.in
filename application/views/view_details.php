@@ -275,11 +275,7 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
 
 
 
-     <div class="panel-heading bg-primary" style=" color: black">
-
-                                                        <h3 class="panel-title">
-                                                           Product Categories</h3>
-                                                    </div>
+     
 
 
 
