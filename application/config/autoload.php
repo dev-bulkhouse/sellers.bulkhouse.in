@@ -110,7 +110,7 @@ $autoload['language'] = array();
 */
 
 $autoload['model'] = array();
-//$autoload['sparks'] = array('mage-api/0.0.1');
+$autoload['sparks'] = array('mage-api/0.0.1');
 
 # Load the template library when the spark is loaded
 

@@ -91,10 +91,10 @@ class Register_model extends CI_Model {
         }
     }
 
-//    public function activate_seller($email, $firstname, $lastname, $password_sec) {
-//        $this->load->spark('mage-api/0.0.1');
-//        $this->mage_api->customer_create(array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'password' => $password_sec, 'website_id' => 1, 'store_id' => 1, 'group_id' => 4));
-//    }
+    public function activate_seller($email, $firstname, $lastname, $password_sec) {
+        $this->load->spark('mage-api/0.0.1');
+        $this->mage_api->customer_create(array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'password' => $password_sec, 'website_id' => 1, 'store_id' => 1, 'group_id' => 4));
+    }
 
     public function update() {
 
