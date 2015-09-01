@@ -105,10 +105,14 @@ return false;
         $this->load->spark('mage-api/0.0.1');
         $this->mage_api->customer_update(array('customerId' => $id,'customerData' => array('password' => $new_password)));
     }
-    
+
     public function logout() {
         $this->session->sess_destroy();
         redirect('/','location');
+    }
+
+    public function update_field(){
+//        alert('Added');
     }
 
 }

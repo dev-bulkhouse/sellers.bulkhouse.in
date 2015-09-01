@@ -132,25 +132,24 @@
                                     <ul class="dropdown-menu">
                                         <li>
 
-                                            <a href="/main/faqs"><i class="icon-question-sign"></i>Vendor on Boarding</a>
+                                            <a href="/main/vendor_on_board"><i class="icon-question-sign"></i>Vendor on Boarding</a>
                                         </li>
                                         <li>
 
-                                            <a href="/main/faqs2"><i class="icon-question-sign"></i>Selling Process</a>
+                                            <a href="/main/selling_process"><i class="icon-question-sign"></i>Selling Process</a>
 
                                         </li>
 
                                     </ul>
                                 </li>
                                 <!--
-
-
-                            </ul>
-                        </nav>
+-->                         </ul>
+                        </nav><!--
                                 <!-- / nav -->
                                 <!-- note -->
 
                                 <!-- / note -->
+                                
                                 </section>
                                 </section>
                                 </aside>

@@ -5,6 +5,7 @@ if ($logged_in) {
     $vendor_name = $this->session->userdata('vendor_name');
     $firm_name = $this->session->userdata('firm_name');
     $firm_type = $this->session->userdata('firm_type');
+    $credit_limit = $this->vendor_model->credit_limit($compid);
     $show['compid'] = $compid;
     $show['email'] = $email;
     $show['vendor_name'] = $vendor_name;
@@ -415,7 +416,11 @@ $query = $this->db->get();
                                         <span class="pull-right"><?php echo date('l'); ?></span>
                                         <span class="h4">Today Sales $0.00
                                             <br>
-                                            <small class="text-muted">+0.00(0%) - Your Credit Balance</small>
+                                             <br>
+                                            <small class="text-muted">Your Credit Balance - <i class="fa fa-rupee"><?php
+                                                    setlocale(LC_MONETARY, 'en_IN');
+                                                    echo money_format('%!i', $credit_limit)
+                                                    ?></i> </small>
                                         </span>
                                         <div class="text-center padder m-b-n-sm m-t-sm">
                                             <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="3" data-data="[0,0,0,0,0,0,0,0,0,0,0,0]"></div>

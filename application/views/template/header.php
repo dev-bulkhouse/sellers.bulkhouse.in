@@ -105,13 +105,13 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 
-
+  
 }
     </style>
 
 
   </head>
-  <body style="background-color:white ; background-size: cover" ng-controller="stageController">
+  <body style="background-image: url('/img/bg.jpg'); background-size: cover" ng-controller="stageController">
       <script type="text/javascript">
 window.onload = function () {
 	document.getElementById("password").onchange = validatePassword;

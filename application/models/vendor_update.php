@@ -176,9 +176,7 @@ class Vendor_update extends CI_Model {
                 }
 
                 public function status_profile($compid) {
-
-
-        $this->db->select('*');
+$this->db->select('*');
         $this->db->from('vendor_details');
         $this->db->where(array('vendor_details.id' => $compid));
         $query = $this->db->get();
@@ -199,6 +197,9 @@ class Vendor_update extends CI_Model {
             $tax_reg = $st->tax_reg;
             $cert_products = $st->cert_products;
             $agree = $st->agree;
+
+
+
 
 
                  if($address1 == "" || $address2 == "" || $city == "" || $state == "" || $pincode == "" || $contact_name == "" || $mobile_contact == "" || $email_contact == "" || $year_establishment == "" || $comp_turnover == "" || $reg_category == "" || $tax_reg == "" || $cert_products == "" ){
@@ -266,9 +267,20 @@ class Vendor_update extends CI_Model {
         return $ver[0]->version;
 
     }
-    
-       
-    
+    public function edit($compid,$field) {
+
+        $compid = $this->session->userdata('id');
+        $email = $this->session->userdata('email');
+
+        $data = array(
+           $field => $this->input->post($field)
+        );
+
+
+        $this->db->where(array('vendor_details.id' => $compid));
+        $this->db->update('vendor_details', $data);
+    }
+
 
 
     }

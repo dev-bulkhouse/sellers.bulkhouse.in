@@ -16,7 +16,7 @@ class Main extends CI_Controller {
 
         }  else {
             $this->logged_in = false;
-            redirect('/','location');
+            redirect('http://sellers.bulkhouse.in/','location');
         }
 
     }
@@ -74,16 +74,20 @@ class Main extends CI_Controller {
 		$this->load->view('export_terms');
 //                $this->load->view('template/footer');
         }
-         public function faqs() {
+         public function vendor_on_board() {
             $logged = $this->logged_in;
 //                $this->load->view('template/header');
 		$this->load->view('faqs',array('logged_in'=>$logged));
 //                $this->load->view('template/footer');
         }
-        public function faqs2() {
+        public function selling_process() {
             $logged = $this->logged_in;
 //                $this->load->view('template/header');
 		$this->load->view('faqs2',array('logged_in'=>$logged));
+//                $this->load->view('template/footer');
+        }
+        public function vendor_update() {
+          $result = $this->vendor_update->edit();
 //                $this->load->view('template/footer');
         }
          public function update_vendor() {
