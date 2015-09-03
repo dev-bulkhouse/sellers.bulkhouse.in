@@ -114,7 +114,7 @@ class Register extends CI_Controller {
 
     public function remove($email) {
 
-        $this->register_model->del($email_address);
+        $this->register_model->del($email);
 
     }
 
