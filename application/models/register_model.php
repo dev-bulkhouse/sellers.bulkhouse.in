@@ -402,6 +402,9 @@ class Register_model extends CI_Model {
         $sql = "SELECT email, registered_on FROM vendor_details WHERE email = '" . $email_address . "' LIMIT 1";
         $result = $this->db->query($sql);
         $row = $result->row();
+//        echo "deleted on bulkhouse.in";
+//        $this->load->spark('mage-api/0.0.1');
+//        $this->mage_api->customer_create(array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'password' => $password_sec, 'website_id' => 1, 'store_id' => 1, 'group_id' => 4));
 
 
     }
