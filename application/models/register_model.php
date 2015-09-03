@@ -397,13 +397,13 @@ class Register_model extends CI_Model {
         }
     }
 
-    public function deleteaccount($email_address) {
+    public function del($email_address) {
 
         $sql = "SELECT email, registered_on FROM vendor_details WHERE email = '" . $email_address . "' LIMIT 1";
         $result = $this->db->query($sql);
         $row = $result->row();
 
-        
+
     }
 
     public function activate_account($email_address) {
