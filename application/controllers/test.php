@@ -59,7 +59,7 @@ $xls->generateXML('Dispatched on'.$date);
 // generate file (constructor parameters are optional)
 $xls = new Excel_XML('UTF-8', false, 'Dispatched Sheet');
 $xls->addArray($data1);
-$xls->generateXML('pending report');
+$xls->generateXML('pending bank report');
 
     }
      public function vendor_report() {
@@ -87,7 +87,7 @@ $xls->generateXML('pending report');
 // generate file (constructor parameters are optional)
 $xls = new Excel_XML('UTF-8', false, 'Dispatched Sheet');
 $xls->addArray($data1);
-$xls->generateXML('pending report');
+$xls->generateXML('Vendors report');
 
     }
      public function pending_email_report() {
@@ -115,11 +115,11 @@ $xls->generateXML('pending report');
 // generate file (constructor parameters are optional)
 $xls = new Excel_XML('UTF-8', false, 'Dispatched Sheet');
 $xls->addArray($data1);
-$xls->generateXML('pending report');
+$xls->generateXML('pending email report');
 
     }
      public function pending_pro_report() {
-               $this->db->select('*');
+               $this->db->select('vendor_name, firm_name, email, mobile');
                 $this->db->from('vendor_details');
                 $this->db->join('document_details','document_details.compid = vendor_details.id');
                 $this->db->where('document_details.pan_prop_status', 5);
@@ -150,11 +150,11 @@ $xls->generateXML('pending report');
 // generate file (constructor parameters are optional)
 $xls = new Excel_XML('UTF-8', false, 'Dispatched Sheet');
 $xls->addArray($data1);
-$xls->generateXML('pending report');
+$xls->generateXML('pending prop report');
 
     }
-    public function pending_pvt_report() {
-              $this->db->select('*');
+     public function pending_pvt_report() {
+               $this->db->select('vendor_name, firm_name, email, mobile');
                 $this->db->from('vendor_details');
                 $this->db->join('document_details','document_details.compid = vendor_details.id');
                 $this->db->where('document_details.pan_prop_status', 5);
@@ -189,11 +189,11 @@ $xls->generateXML('pending report');
 // generate file (constructor parameters are optional)
 $xls = new Excel_XML('UTF-8', false, 'Dispatched Sheet');
 $xls->addArray($data1);
-$xls->generateXML('pending report');
+$xls->generateXML('pending PVT-LTD report');
 
     }
-    public function pending_pat_report() {
-             $this->db->select('*');
+     public function pending_pat_report() {
+             $this->db->select('vendor_name, firm_name, email, mobile');
                 $this->db->from('vendor_details');
                 $this->db->join('document_details','document_details.compid = vendor_details.id');
                 $this->db->where('document_details.pan_prop_status', 5);
@@ -225,7 +225,7 @@ $xls->generateXML('pending report');
 // generate file (constructor parameters are optional)
 $xls = new Excel_XML('UTF-8', false, 'Dispatched Sheet');
 $xls->addArray($data1);
-$xls->generateXML('pending report');
+$xls->generateXML('pending partneship report');
 
     }
 }
