@@ -112,6 +112,12 @@ class Register extends CI_Controller {
 
     }
 
+    public function remove($email) {
+
+        $this->register_model->validate_email_remove($email_address);
+
+    }
+
 
 }
 

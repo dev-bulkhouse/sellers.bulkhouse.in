@@ -373,6 +373,8 @@ class Register_model extends CI_Model {
         }
     }
 
+
+
     public function validate_email_remove($email_address, $email_code, $remove) {
 
         $sql = "SELECT email, registered_on FROM vendor_details WHERE email = '" . $email_address . "' LIMIT 1";
@@ -393,6 +395,15 @@ class Register_model extends CI_Model {
         } else {
             echo 'There is a error on validating your email . Please contact admin@bulkhouse.in';
         }
+    }
+
+    public function deleteaccount($email_address) {
+
+        $sql = "SELECT email, registered_on FROM vendor_details WHERE email = '" . $email_address . "' LIMIT 1";
+        $result = $this->db->query($sql);
+        $row = $result->row();
+
+        
     }
 
     public function activate_account($email_address) {
