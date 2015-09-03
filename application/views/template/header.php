@@ -15,15 +15,15 @@ if (isset($logged_in)) {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bulkhouse Trading India Pvt Ltd| We Are Launching .....</title>
-    <link rel="stylesheet" href="http://test.bulkhouse.in/assets/css/foundation.css" />
+    <link rel="stylesheet" href="http://sellers.bulkhouse.in/assets/css/foundation.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
 
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
-    <link href="http://test.bulkhouse.in/assets/css/added.css" rel="stylesheet" type="text/css"/>
+    <link href="http://sellers.bulkhouse.in/assets/css/added.css" rel="stylesheet" type="text/css"/>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="http://test.bulkhouse.in/assets/js/vendor/modernizr.js"></script>
-    <script src="http://test.bulkhouse.in/assets/js/typed.js" type="text/javascript"></script>
+    <script src="http://sellers.ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://sellers.bulkhouse.in/assets/js/vendor/modernizr.js"></script>
+    <script src="http://sellers.bulkhouse.in/assets/js/typed.js" type="text/javascript"></script>
 
     <script>
     $(function(){
