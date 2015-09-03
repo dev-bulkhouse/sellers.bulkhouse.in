@@ -167,7 +167,8 @@ if ($logged_in) {
                        <?php $this->db->select('*');
                 $this->db->from('vendor_details');
                 $this->db->join('bank_details','bank_details.compid = vendor_details.id');
-               $this->db->where('bank_details.status', 10);
+                $this->db->where('bank_details.status', 10);
+                $this->db->where(array('vendor_details.activation' => 0));
 
         $query = $this->db->get();
         $vendors = $query->result(); ?>
