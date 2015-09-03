@@ -30,8 +30,10 @@ if ($logged_in) {
                         <div class="col-md-12">
 
                             <!-- START DEFAULT DATATABLE -->
+
                               <div class="panel panel-default">
                                 <div class="panel-heading">
+                                     <button onclick="location.href='<?php echo site_url(); ?>test/vendor_report/'" type="button" class="btn btn-primary pull-right" >  <i class="fa fa-download"></i> <span>Excel Export</span></button>
                                     <h3 class="panel-title">Vendors verified emails</h3>
                                     <ul class="panel-controls">
 
@@ -81,6 +83,8 @@ if ($logged_in) {
 
                                 </div>
                             </div>
+
+
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">Vendors Pending email verification</h3>
@@ -131,10 +135,12 @@ if ($logged_in) {
 
                                 </div>
                             </div>
-<!--                         <button onclick="location.href='<?php echo site_url(); ?>test/bank_report/'" type="button" class="btn btn-primary" >  <i class="icon-download-alt"></i> <span>Excel Export</span></button>
--->
+
+
                              <div class="panel panel-default">
+
                                 <div class="panel-heading">
+                                     <button onclick="location.href='<?php echo site_url(); ?>test/bank_report/'" type="button" class="btn btn-primary" >  <i class="fa fa-download"></i> <span>Excel Export</span></button>
                                     <h3 class="panel-title">Vendors Pending Bank Submissions</h3>
                                     <ul class="panel-controls">
 
