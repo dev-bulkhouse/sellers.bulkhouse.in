@@ -33,8 +33,11 @@ if ($logged_in) {
 
                               <div class="panel panel-default">
                                 <div class="panel-heading">
-                                     <button onclick="location.href='<?php echo site_url(); ?>test/vendor_report/'" type="button" class="btn btn-primary pull-right" >  <i class="fa fa-download"></i> <span>Excel Export</span></button>
+<!--                                     <button onclick="location.href='<?php echo site_url(); ?>test/vendor_report/'" type="button" class="btn btn-primary pull-right" >  <i class="fa fa-download"></i> <span>Excel Export</span></button>-->
                                     <h3 class="panel-title">Vendors verified emails</h3>
+                                       <div class="pull-right">
+                                          <button onclick="location.href='<?php echo site_url(); ?>test/vendor_report/'" class="btn btn-danger"><i class="fa fa-download"></i>Export Data</button>
+                                    </div>
                                     <ul class="panel-controls">
 
                                         <li><a href="/admin/vendor_details" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
@@ -88,6 +91,9 @@ if ($logged_in) {
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">Vendors Pending email verification</h3>
+                                       <div class="pull-right">
+                                          <button onclick="location.href='<?php echo site_url(); ?>test/pending_email_report/'" class="btn btn-danger"><i class="fa fa-download"></i>Export Data</button>
+                                    </div>
                                     <ul class="panel-controls">
 
                                         <li><a href="/admin/vendor_details" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
@@ -140,8 +146,11 @@ if ($logged_in) {
                              <div class="panel panel-default">
 
                                 <div class="panel-heading">
-                                     <button onclick="location.href='<?php echo site_url(); ?>test/bank_report/'" type="button" class="btn btn-primary" >  <i class="fa fa-download"></i> <span>Excel Export</span></button>
+
                                     <h3 class="panel-title">Vendors Pending Bank Submissions</h3>
+                                     <div class="pull-right">
+                                          <button onclick="location.href='<?php echo site_url(); ?>test/bank_report/'" class="btn btn-danger"><i class="fa fa-download"></i>Export Data</button>
+                                    </div>
                                     <ul class="panel-controls">
 
                                         <li><a href="/admin/vendor_details" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
@@ -167,7 +176,7 @@ if ($logged_in) {
                        <?php $this->db->select('*');
                 $this->db->from('vendor_details');
                 $this->db->join('bank_details','bank_details.compid = vendor_details.id');
-                $this->db->where(array('bank_details.status' => 10));
+                $this->db->where('bank_details.status', 10);
                 $this->db->where(array('vendor_details.activation' => 1));
 
         $query = $this->db->get();
@@ -197,6 +206,9 @@ if ($logged_in) {
                              <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">Proprietorship Vendors Pending Documents Submissions</h3>
+                                     <div class="pull-right">
+                                          <button onclick="location.href='<?php echo site_url(); ?>test/pending_pro_report/'" class="btn btn-danger"><i class="fa fa-download"></i>Export Data</button>
+                                    </div>
                                     <ul class="panel-controls">
 
                                         <li><a href="/admin/vendor_details" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
@@ -260,6 +272,9 @@ if ($logged_in) {
                              <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">Pvt_or_ltd Vendors Pending Documents Submissions</h3>
+                                     <div class="pull-right">
+                                          <button onclick="location.href='<?php echo site_url(); ?>test/pending_pvt_report/'" class="btn btn-danger"><i class="fa fa-download"></i>Export Data</button>
+                                    </div>
                                     <ul class="panel-controls">
 
                                         <li><a href="/admin/vendor_details" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
@@ -327,17 +342,21 @@ if ($logged_in) {
                              <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">Partnership Vendors Pending Documents Submissions</h3>
+                                     <div class="pull-right">
+                                          <button onclick="location.href='<?php echo site_url(); ?>test/pending_pat_report/'" class="btn btn-danger"><i class="fa fa-download"></i>Export Data</button>
+                                    </div>
                                     <ul class="panel-controls">
 
                                         <li><a href="/admin/vendor_details" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
 
                                     </ul>
+
                                 </div>
                                 <div class="panel-body">
 
 
 
-                                    <table class="table datatable">
+                                    <table id="customers2" class="table datatable">
                                         <thead>
                         <tr>
                             <th>Name</th>
