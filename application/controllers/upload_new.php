@@ -49,9 +49,9 @@ class Upload_new extends CI_Controller {
                 $file = "upload_file1";
 
                 if (is_uploaded_file($_FILES[$file]['tmp_name'])) {
-                    $sourcePath = $_FILES[$file]['tmp_name'];
-                    $name = $_FILES['file']['name'];
-                    $size = $_FILES['file']['size'];
+                    $tmp = $_FILES[$file]['tmp_name'];
+                    $name = $_FILES[$file]['name'];
+                    $size = $_FILES[$file]['size'];
                     $ext = getExtension($name);
                     $email = $this->input->post('email');
                     $comp_id = $this->register_model->get_compid($email);
