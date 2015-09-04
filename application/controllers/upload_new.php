@@ -49,7 +49,7 @@ class Upload_new extends CI_Controller {
                 $file_name = $_FILES[$file]['name'];
                 $file_size = $_FILES[$file]['size'];
                 $file_temp = $_FILES[$file]['tmp_name'];
-                $file_ext = getExtension($name);
+//                $file_ext = getExtension($name);
                 $file_type = $_FILES[$file]['type'];
 
                 if (is_uploaded_file($_FILES[$file]['tmp_name'])) {
