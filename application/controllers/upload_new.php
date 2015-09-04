@@ -99,7 +99,7 @@ class Upload_new extends CI_Controller {
                     $msg = "Please select image file.";
 
 
-                    echo $this->vendor_update->add_document($document_info, $file_type,$comp_id, $data);
+//                    echo $this->vendor_update->add_document($document_info, $file_type,$comp_id, $data);
                 }
             }
         } elseif ($a == "vat_cst") {
