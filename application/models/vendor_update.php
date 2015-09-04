@@ -11,7 +11,7 @@ class Vendor_update extends CI_Model {
 
 
 
-    public function add_document($document_info, $file_type, $sourcePath, $targetPath, $dir, $comp_id,$a) {
+    public function add_document($document_info, $file_type, $comp_id,$a) {
         $file_type = explode('/', $file_type);
         if($file_type[1] == 'jpeg'){
             $file_type[1] = 'jpg';
@@ -26,17 +26,8 @@ class Vendor_update extends CI_Model {
         );
         $this->db->where('compid', $comp_id);
         $this->db->update('document_details', $c);
-        if (!file_exists($dir)) {
-            mkdir($dir, 0777);
-            move_uploaded_file($sourcePath, $targetPath);
 
-
-            return "Uploaded!!";
-        } else {
-            move_uploaded_file($sourcePath, $targetPath);
-
-            return "Uploaded!!";
-        }
+        return "uploaded !!";
     }
 
 
