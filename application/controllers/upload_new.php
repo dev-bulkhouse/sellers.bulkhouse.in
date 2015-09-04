@@ -45,7 +45,7 @@ class Upload_new extends CI_Controller {
         $valid_formats = array("jpg", "png", "gif", "bmp", "jpeg", "PNG", "JPG", "JPEG", "GIF", "BMP");
         if ($a == "pan_prop") {
             if (is_array($_FILES)) {
-
+                var_dump($_FILES);
                 $file = "upload_file1";
 
                 if (is_uploaded_file($_FILES[$file]['tmp_name'])) {
