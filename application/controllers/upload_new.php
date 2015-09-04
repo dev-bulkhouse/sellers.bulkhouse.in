@@ -49,7 +49,7 @@ class Upload_new extends CI_Controller {
                 $file_name = $_FILES[$file]['name'];
                 $file_size = $_FILES[$file]['size'];
                 $file_temp = $_FILES[$file]['tmp_name'];
-                $file_ext = getExtension($file_name);
+//                $file_ext = getExtension($name);
                 $file_type = $_FILES[$file]['type'];
 
                 if (is_uploaded_file($_FILES[$file]['tmp_name'])) {
@@ -65,11 +65,11 @@ class Upload_new extends CI_Controller {
 //                    $targetPath = $dir . "/" . $newfilename;
                     $data = $a;
 
-                    if (strlen($file_name) > 0) {
+                    if (strlen($name) > 0) {
 
-                    if (in_array($file_ext, $valid_formats)) {
+                    if (in_array($ext, $valid_formats)) {
 
-                        if ($file_size < (1024 * 1024)) {
+                        if ($size < (1024 * 1024)) {
 
                             $bucket=$comp_id;
                             if (!class_exists('S3'))require_once(APPPATH."/third_party/S3.php");
@@ -83,8 +83,8 @@ class Upload_new extends CI_Controller {
 
                             $s3->putBucket($bucket, S3::ACL_PUBLIC_READ);
 //Rename image name.
-                            $actual_image_name = 'pan_card' . "." . $file_ext;
-                            if ($s3->putObjectFile($file_temp, $bucket, $actual_image_name, S3::ACL_PUBLIC_READ)) {
+                            $actual_image_name = 'pan_card' . "." . $ext;
+                            if ($s3->putObjectFile($tmp, $bucket, $actual_image_name, S3::ACL_PUBLIC_READ)) {
                                 $msg = "S3 Upload Successful.";
                                 $s3file = 'http://' . $bucket . '.s3.amazonaws.com/' . $actual_image_name;
                                 echo "<img src='$s3file' style='max-width:400px'/><br/>";
@@ -99,7 +99,7 @@ class Upload_new extends CI_Controller {
                     $msg = "Please select image file.";
 
 
-//                    echo $this->vendor_update->add_document($document_info, $file_type,$comp_id, $data);
+                    echo $this->vendor_update->add_document($document_info, $file_type,$comp_id, $data);
                 }
             }
         } elseif ($a == "vat_cst") {
