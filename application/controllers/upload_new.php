@@ -46,13 +46,14 @@ class Upload_new extends CI_Controller {
         if ($a == "pan_prop") {
             if (is_array($_FILES)) {
                 $file = "upload_file1";
-                $name = $_FILES[$file]['name'];
+
+
+                if (is_uploaded_file($_FILES[$file]['tmp_name'])) {
+                    $name = $_FILES[$file]['name'];
                 $size = $_FILES[$file]['size'];
                 $tmp = $_FILES[$file]['tmp_name'];
                 $ext = getExtension($name);
-//                $file_type = $_FILES[$file]['type'];
-
-                if (is_uploaded_file($_FILES[$file]['tmp_name'])) {
+                $file_type = $_FILES[$file]['type'];
 //                    $sourcePath = $_FILES[$file]['tmp_name'];
                     $email = $this->input->post('email');
                     $document_info = $this->input->post('pan');
