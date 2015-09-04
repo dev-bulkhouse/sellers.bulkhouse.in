@@ -42,7 +42,7 @@ class Upload_new extends CI_Controller {
     }
 
     public function insert_and_upload($a) {
-        $valid_formats = array("jpg", "png", "gif", "bmp","jpeg","PNG","JPG","JPEG","GIF","BMP");
+        $valid_formats = array("jpg", "png", "gif", "bmp", "jpeg", "PNG", "JPG", "JPEG", "GIF", "BMP");
         if ($a == "pan_prop") {
             if (is_array($_FILES)) {
                 $file = "upload_file1";
@@ -50,22 +50,56 @@ class Upload_new extends CI_Controller {
                 $size = $_FILES[$file]['size'];
                 $tmp = $_FILES[$file]['tmp_name'];
                 $ext = getExtension($name);
-                $file_type = $_FILES[$file]['type'];
-                
-                    if (is_uploaded_file($_FILES[$file]['tmp_name'])) {
-                        $sourcePath = $_FILES[$file]['tmp_name'];
-                        $email = $this->input->post('email');
-                        $document_info = $this->input->post('pan');
-                        $comp_id = $this->register_model->get_compid($email);
-                        $dir = "files/" . $comp_id;
-                        $temp_filename = explode(".", $_FILES[$file]['name']);
-                        $final_type = $this->convert($file_type);
-                        $newfilename = 'pan_card' . '.' . $final_type;
-                        $targetPath = $dir . "/" . $newfilename;
-                        $data = $a;
-                        echo $this->vendor_update->add_document($document_info, $file_type, $sourcePath, $targetPath, $dir, $comp_id, $data);
-                    }
+//                $file_type = $_FILES[$file]['type'];
 
+                if (is_uploaded_file($_FILES[$file]['tmp_name'])) {
+//                    $sourcePath = $_FILES[$file]['tmp_name'];
+                    $email = $this->input->post('email');
+                    $document_info = $this->input->post('pan');
+                    $comp_id = $this->register_model->get_compid($email);
+//                    $dir = "files/" . $comp_id;
+                    $temp_filename = explode(".", $_FILES[$file]['name']);
+//                    $final_type = $this->convert($file_type);
+//                    $newfilename = 'pan_card' . '.' . $final_type;
+//                    $targetPath = $dir . "/" . $newfilename;
+                    $data = $a;
+
+                    if (strlen($name) > 0) {
+
+                    if (in_array($ext, $valid_formats)) {
+
+                        if ($size < (1024 * 1024)) {
+
+                            $bucket=$comp_id;
+                            if (!class_exists('S3'))require_once(APPPATH."/third_party/S3.php");
+
+//AWS access info
+                            if (!defined('awsAccessKey')) define('awsAccessKey', 'AKIAJVZBGGEJZVDH4EAA');
+                            if (!defined('awsSecretKey')) define('awsSecretKey', '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');
+
+//instantiate the class
+                            $s3 = new S3(awsAccessKey, awsSecretKey);
+
+                            $s3->putBucket($bucket, S3::ACL_PUBLIC_READ);
+//Rename image name.
+                            $actual_image_name = 'pan_card' . "." . $ext;
+                            if ($s3->putObjectFile($tmp, $bucket, $actual_image_name, S3::ACL_PUBLIC_READ)) {
+                                $msg = "S3 Upload Successful.";
+                                $s3file = 'http://' . $bucket . '.s3.amazonaws.com/' . $actual_image_name;
+                                echo "<img src='$s3file' style='max-width:400px'/><br/>";
+                                echo '<b>S3 File URL:</b>' . $s3file;
+                            } else
+                                $msg = "S3 Upload Fail.";
+                        } else
+                            $msg = "Image size Max 1 MB";
+                    } else
+                        $msg = "Invalid file, please upload image file.";
+                } else
+                    $msg = "Please select image file.";
+
+
+                    echo $this->vendor_update->add_document($document_info, $file_type,$comp_id, $data);
+                }
             }
         } elseif ($a == "vat_cst") {
             if (is_array($_FILES)) {
