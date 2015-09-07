@@ -140,68 +140,8 @@ class Main extends CI_Controller {
 
         }
 
-        public function down($compid) {
+   
 
-            echo $this->vendor_update->get_blob($compid);
-
-        }
-
-        public function upl() {
-
-
-include (APPPATH . "third_party/s3_config.php");
-
-function getExtension($str) {
-    $i = strrpos($str, ".");
-    if (!$i) {
-        return "";
-    }
-
-    $l = strlen($str) - $i;
-    $ext = substr($str, $i + 1, $l);
-    return $ext;
-}
-
-$msg = '';
-
-    $name = $_FILES['file']['name'];
-    $size = $_FILES['file']['size'];
-    $tmp = $_FILES['file']['tmp_name'];
-    $ext = getExtension($name);
-
-
-
-    $valid_formats = array("jpg", "png", "gif", "bmp", "jpeg", "PNG", "JPG", "JPEG", "GIF", "BMP");
-
-    if (strlen($name) > 0) {
-
-        if (in_array($ext, $valid_formats)) {
-
-            if ($size < (1024 * 1024)) {
-                include (APPPATH . "third_party/s3_config.php");
-//Rename image name.
-                $actual_image_name = '45' . 'pan_card' . "." . $ext;
-                if ($s3->putObjectFile($tmp, $bucket, $actual_image_name, S3::ACL_PUBLIC_READ)) {
-                    $msg = "S3 Upload Successful.";
-                    $s3file = 'http://' . $bucket . '.s3.amazonaws.com/' . $actual_image_name;
-                    "<img src='$s3file' style='max-width:400px'/><br/>";
-                    '<b>S3 File URL:</b>' . $s3file;
-                } else {
-                    $msg = "S3 Upload Fail.";
-                }
-            } else {
-                $msg = "Image size Max 1 MB";
-            }
-        } else {
-            $msg = "Invalid file, please upload image file.";
-        }
-    } else {
-        $msg = "Please select image file.";
-    }
-
-
-
-        }
 
 
 

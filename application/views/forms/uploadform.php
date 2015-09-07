@@ -115,7 +115,34 @@
                 </div>
             </form>
 
+
+
+
+
+
+
         </section>
+        <div>
+
+            <?php
+$pan_prop_type = "http://sellers.bulkhouse.files.s3.amazonaws.com/1_pan_card.pdf";
+
+$filejpg = "http://sellers.bulkhouse.files.s3.amazonaws.com/1_pan_card.jpg";
+$filepdf = "http://sellers.bulkhouse.files.s3.amazonaws.com/1_pan_card.pdf";
+if ($pan_prop_type == $filejpg){ ?>
+<div class="modal-body">
+           <img src="<?php echo $pan_prop_type; ?>">
+                        </div>
+
+<?php }elseif ($pan_prop_type == $filepdf){ ?>
+ <div class="modal-body">
+     <iframe width="100%" height="800px" src="<?php echo $pan_prop_type; ?>"></iframe>
+                        </div>
+	<?php }else {?>
+	<div></div>
+	<?php } ?>
+
+        </div>
 
     </body>
 </html>

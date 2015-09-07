@@ -1,4 +1,4 @@
-<div class="md-modal md-effect-10" id="<?php echo  $id_modal; ?>">
+<div class="md-modal md-effect-10" id="<?php echo  $id_modal; ?>" style="position: absolute">
     <div class="md-content">
 
         <?php if ($doc_title == "Partnership Deed Details" || $doc_title == "Shop establishment/Trade Licence" || $doc_title == "Certificate of Incorporation Details" || $doc_title == "Memorandum Of Association" || $doc_title == "Articles Of Association" || $doc_title == "Resident Address Proof" || $doc_title == "Buiseness Address Proof") { ?>
