@@ -120,7 +120,7 @@ $xls->generateXML('pending email report');
     }
      public function pending_pro_report() {
                $this->db->select('vendor_name, firm_name, email, mobile');
-                $this->db->from('vendor_details');
+               $this->db->from('vendor_details');
                 $this->db->join('document_details','document_details.compid = vendor_details.id');
                 $this->db->where('document_details.pan_prop_status', 5);
                 $this->db->or_where('document_details.vat_cst_status', 5);
@@ -155,7 +155,7 @@ $xls->generateXML('pending prop report');
     }
      public function pending_pvt_report() {
                $this->db->select('vendor_name, firm_name, email, mobile');
-                $this->db->from('vendor_details');
+               $this->db->from('vendor_details');
                 $this->db->join('document_details','document_details.compid = vendor_details.id');
                 $this->db->where('document_details.pan_prop_status', 5);
                 $this->db->or_where('document_details.vat_cst_status', 5);
