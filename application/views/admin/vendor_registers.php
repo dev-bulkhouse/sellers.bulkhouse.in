@@ -63,9 +63,9 @@ if ($logged_in) {
                        <?php $this->db->select('*');
                             $this->db->from('vendor_details');
                             $this->db->where(array('vendor_details.activation' => 1));
-                            $query = $this->db->get();
-                            $vendors = $query->result(); ?>
-                        <?php foreach ($vendors as $vendor) { ?>
+                            $query1 = $this->db->get();
+                            $vendors1 = $query1->result(); ?>
+                        <?php foreach ($vendors1 as $vendor) { ?>
 
 
                         <tr>
@@ -119,9 +119,9 @@ if ($logged_in) {
                         <?php $this->db->select('*');
                             $this->db->from('vendor_details');
                             $this->db->where(array('vendor_details.activation' => 0));
-                            $query = $this->db->get();
-                            $vendors = $query->result(); ?>
-                        <?php foreach ($vendors as $vendor) { ?>
+                            $query2 = $this->db->get();
+                            $vendors2 = $query2->result(); ?>
+                        <?php foreach ($vendors2 as $vendor) { ?>
 
                         <tr>
                             <td><?php echo $vendor->vendor_name; ?></td>
@@ -179,9 +179,9 @@ if ($logged_in) {
                 $this->db->where('bank_details.status', 10);
                 $this->db->where(array('vendor_details.activation' => 1));
 
-        $query = $this->db->get();
-        $vendors = $query->result(); ?>
-                        <?php foreach ($vendors as $vendor) { ?>
+        $query3 = $this->db->get();
+        $vendors3 = $query->result(); ?>
+                        <?php foreach ($vendors3 as $vendor) { ?>
 
                         <tr>
                             <td><?php echo $vendor->vendor_name; ?></td>
@@ -244,9 +244,9 @@ if ($logged_in) {
                     $this->db->or_where('document_details.businessid', 5);
                      $this->db->group_by("vendor_details.id");
 
-                $query = $this->db->get();
-                $vendors = $query->result(); ?>
-                        <?php foreach ($vendors as $vendor) {
+                $query4 = $this->db->get();
+                $vendors4 = $query->result(); ?>
+                        <?php foreach ($vendors4 as $vendor) {
                             if($vendor->firm_type =='proprietorship')
                             {?>
 
@@ -314,9 +314,9 @@ if ($logged_in) {
                     $this->db->or_where('document_details.businessid', 5);
                      $this->db->group_by("vendor_details.id");
 
-                $query = $this->db->get();
-                $vendors = $query->result(); ?>
-                        <?php foreach ($vendors as $vendor) {
+                $query5 = $this->db->get();
+                $vendors5 = $query->result(); ?>
+                        <?php foreach ($vendors5 as $vendor) {
                             if($vendor->firm_type =='pvt_or_ltd')
                             {?>
 
@@ -376,16 +376,16 @@ if ($logged_in) {
                 $this->db->where('document_details.pan_prop_status', 5);
                 $this->db->or_where('document_details.vat_cst_status', 5);
                  $this->db->or_where('document_details.pan_comp_status', 5);
-                 $this->db->where('document_details.part_deed_status', 5);
+                 $this->db->or_where('document_details.part_deed_status', 5);
                  $this->db->or_where('document_details.shop_establish_trade_status', 5);
                   $this->db->or_where('document_details.photoid', 5);
                    $this->db->or_where('document_details.addressid', 5);
                     $this->db->or_where('document_details.businessid', 5);
                      $this->db->group_by("vendor_details.id");
 
-                $query = $this->db->get();
-                $vendors = $query->result(); ?>
-                        <?php foreach ($vendors as $vendor) {
+                $query6 = $this->db->get();
+                $vendors6 = $query->result(); ?>
+                        <?php foreach ($vendors6 as $vendor) {
                             if($vendor->firm_type =='partnership')
                             {?>
 
