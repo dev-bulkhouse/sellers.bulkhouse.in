@@ -376,7 +376,7 @@ if ($logged_in) {
                 $this->db->where('document_details.pan_prop_status', 5);
                 $this->db->or_where('document_details.vat_cst_status', 5);
                  $this->db->or_where('document_details.pan_comp_status', 5);
-                 $this->db->where('document_details.part_deed_status', 5);
+                 $this->db->or_where('document_details.part_deed_status', 5);
                  $this->db->or_where('document_details.shop_establish_trade_status', 5);
                   $this->db->or_where('document_details.photoid', 5);
                    $this->db->or_where('document_details.addressid', 5);
