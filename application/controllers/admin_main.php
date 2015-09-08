@@ -10,7 +10,7 @@ class Admin_main extends CI_Controller {
 $this->load->model('vendor_model');
     if($this->session->userdata('logged_in')){
             $this->logged_in = true;
-            redirect(base_url().'verification/','location');
+//            redirect(base_url().'verification/','location');
 
         }  else {
             $this->logged_in = false;
