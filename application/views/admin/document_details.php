@@ -52,7 +52,7 @@ if ($logged_in) {
                 </div>
                 <div class="panel-body">
 
-                    <?php if ($doc_type == "pan_prop") { ?>
+<?php if ($doc_type == "pan_prop") { ?>
 
                         <table class="table datatable">
                             <thead>
@@ -138,8 +138,8 @@ if ($logged_in) {
                         </table>
 
 
-                            </div>
-                        </div>
+                </div>
+            </div>
 
 <?php } elseif ($doc_type == "cst") { ?>
 
@@ -517,7 +517,7 @@ if ($logged_in) {
 
 
 
-                            <?php } elseif (($doc_type == "sign")) { ?>
+<?php } elseif (($doc_type == "sign")) { ?>
                         <table class="table datatable">
                             <thead>
                                 <tr>
@@ -555,7 +555,7 @@ if ($logged_in) {
                         </table>
 
 
-                            <?php } elseif (($doc_type == "cert_of_incorp")) { ?>
+<?php } elseif (($doc_type == "cert_of_incorp")) { ?>
                         <table class="table datatable">
                             <thead>
                                 <tr>
@@ -594,7 +594,7 @@ if ($logged_in) {
 
 
 
-                            <?php } elseif (($doc_type == "moa_aoa")) { ?>
+<?php } elseif (($doc_type == "moa_aoa")) { ?>
                         <table class="table datatable">
                             <thead>
                                 <tr>
@@ -632,81 +632,7 @@ if ($logged_in) {
                         </table>
 
 
-                        <div id="moa" class="modal fade" role="dialog">
-                            <div class="modal-dialog">
 
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Vendor Name:<b> <td><?php echo $moa->vendor_name; ?> <?php echo $moa->last_name; ?></b></h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <table class="table datatable">
-                                            <thead>
-                                                <tr>
-
-
-                                                    <th>Company Name</th>
-                                                    <th>MOA and AOA</th>
-                                                    <th>Date of Submission</th>
-                                                    <th>Action</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-
-
-                                                    <td><?php echo $moa->firm_name; ?></td>
-                                                    <td><?php echo $moa->moa_aoa; ?></td>
-                                                    <td><?php echo $moa->moa_aoa_date; ?></td>
-                                                    <td><form style="float: left" method="post" action="/change/approve/<?php echo $moa->compid . '/moa_aoa' ?>"><button type="submit" class="btn btn-success active">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $moa->compid . '/moa_aoa' ?>"><button type="submit" class="btn btn-danger active">Disapprove</button></form></td>
-
-
-                                                </tr>
-
-
-
-                                            </tbody>
-                                        </table>
-                                        <hr>
-                                        <!--                                                                                        <div class="modal-body">
-                                                                                                                                    <img src="<?php echo site_url(); ?>files/<?php echo $moa->compid; ?>/MOA.<?php echo $moa->moa_aoa_type; ?>" class="img-responsive">
-                                                                                                                                </div>-->
-    <?php
-    $filejpg = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $moa->compid . "_pan_card.jpg";
-    $filepdf = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $moa->compid . "_pan_card.pdf";
-
-    if ($moa_type == $filejpg) {
-        ?>
-                                            <div class="modal-body">
-                                                <img src="http://sellers.bulkhouse.files.s3.amazonaws.com/<?php echo $moa->compid; ?>_pan_card.jpg" class="img-responsive">
-                                            </div>
-                                        <?php } elseif ($moa_type == $filepdf) { ?>
-                                            <div class="modal-body">
-                                                <iframe  width="100%" height="1000px" src="http://sellers.bulkhouse.files.s3.amazonaws.com/<?php echo $moa->compid; ?>_pan_card.pdf" class="img-responsive" >
-                                            </div>
-    <?php } else { ?>
-                                            <div class="alert alert-warning" role="alert">
-                                                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                                                <strong>Warning!</strong>  The vendor didn't Upload preferred document.
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <div class="text-center">
-                                                    <img src="http://aniconslibrary.com/wp-content/uploads/2014/07/Anicons-PaperFile.gif" class="login" height="200">
-                                                </div>
-                                            </div>
-    <?php } ?>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-
-                            </div>
                         </div>
 <?php } ?>
 
@@ -721,11 +647,7 @@ if ($logged_in) {
         </div>
     </div>
 
-</div>
-<!-- PAGE CONTENT WRAPPER -->
-</div>
-<!-- END PAGE CONTENT -->
-</div>
+
 <!-- END PAGE CONTAINER -->
 
 <!-- MESSAGE BOX-->
