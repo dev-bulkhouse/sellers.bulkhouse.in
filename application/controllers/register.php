@@ -111,14 +111,12 @@ class Register extends CI_Controller {
 
 
     }
+    public function delete($id)
+	{
+		$id=$this->db->where('id',$id);
+		$this->db->delete('vendor_details',$id);
 
-    public function remove($email) {
-
-        $this->register_model->del($email);
-
-    }
-
-
+        }
 }
 
 /* End of file welcome.php */
