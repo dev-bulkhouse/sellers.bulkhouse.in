@@ -17,14 +17,11 @@
     <body>
 
         <div class="login-container">
-
             <div class="login-box animated fadeInDown">
                 <div class="login-logo"></div>
                 <div class="login-body">
                     <div class="login-title"><strong>Welcome</strong>, Administration login</div>
-                    <?php
-$this->load->view('admin/forms/login_form');
-?>
+                    <?php $this->load->view('admin/forms/login_form'); ?>
                 </div>
                 <div class="login-footer">
                     <div class="pull-left">
