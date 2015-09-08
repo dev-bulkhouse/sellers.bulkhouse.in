@@ -172,7 +172,7 @@ class Admin extends CI_Controller {
      $details['file_name']= "_pan_card";
       $details['button']= "/pan_prop";
      $details['document_name']= "Pan Card Number";
-
+     echo "hi";
      $this->load->view('admin/preview_details',$details);
 
 }
