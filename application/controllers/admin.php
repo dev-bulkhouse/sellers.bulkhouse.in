@@ -173,7 +173,7 @@ class Admin extends CI_Controller {
       $details['button']= "/pan_prop";
      $details['document_name']= "Pan Card Number";
 
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -203,7 +203,7 @@ class Admin extends CI_Controller {
         $details['button']= "/vat";
      $details['document_name']= "VAT Number";
 
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -232,7 +232,7 @@ class Admin extends CI_Controller {
         $details['button']= "/cst";
         $details['document_name']= "CST Number";
 
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -261,7 +261,7 @@ class Admin extends CI_Controller {
         $details['button']= "/aoa";
         $details['document_name']= "AOA Number";
 
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -291,7 +291,7 @@ class Admin extends CI_Controller {
      $details['button']= "/shop_establish_trade";
         $details['document_name']= "Shop establish trade Number";
 
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -318,7 +318,7 @@ class Admin extends CI_Controller {
      $details['document_date'] = $row['addressid_date'];
      $details['type'] = $row['addressid_type'];
      $details['document_name']= "AddressID Number";
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -345,7 +345,7 @@ class Admin extends CI_Controller {
      $details['document_date'] = $row['businessid_date'];
      $details['type'] = $row['businessid_type'];
    $details['document_name']= "BusinessID Number";
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -373,7 +373,7 @@ class Admin extends CI_Controller {
      $details['type'] = $row['cenvat_type'];
         $details['document_name']= "CENVAT Number";
 
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -402,7 +402,7 @@ class Admin extends CI_Controller {
      $details['button']= "/servicetax";
 
 
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -430,7 +430,7 @@ class Admin extends CI_Controller {
    $details['document_name']= "Company PAN Number";
     $details['file_name']= "_pan_comp";
      $details['button']= "/pan_comp";
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -458,7 +458,7 @@ class Admin extends CI_Controller {
    $details['document_name']= "PhotoID Number";
     $details['file_name']= "_photoid";
      $details['button']= "/photoid";
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -487,7 +487,7 @@ class Admin extends CI_Controller {
      $details['button']= "/part_deed";
         $details['document_name']= "Partnership deed Number";
 
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -516,7 +516,7 @@ class Admin extends CI_Controller {
      $details['button']= "/sign";
         $details['document_name']= "Authorised Signatory Number";
 
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -545,7 +545,7 @@ class Admin extends CI_Controller {
         $details['file_name']= "_moa_aoa";
      $details['button']= "/moa_aoa";
 
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
@@ -574,11 +574,11 @@ class Admin extends CI_Controller {
      $details['button']= "/cert_of_incorp_type";
        $details['document_name']= "Certificate Of Incorporation";
 
-     $this->load->view('admin/preview_details',$details);
+     $this->load->view('admin/preview_details/',$details);
 
 }
 
     }
-   
+
 
 }
