@@ -14,7 +14,7 @@ $this->load->model('vendor_model');
 
         }  else {
             $this->logged_in = false;
-            redirect(base_url(),'location');
+            redirect(base_url().'admin/','location');
         }
 
     }

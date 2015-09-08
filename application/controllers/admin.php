@@ -16,7 +16,7 @@ class Admin extends CI_Controller {
 
         }  else {
             $this->logged_in = false;
-            redirect(base_url(),'admin/','location');
+            redirect(base_url().'admin/','location');
         }
 
 
