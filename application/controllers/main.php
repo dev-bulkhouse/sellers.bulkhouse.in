@@ -16,7 +16,7 @@ class Main extends CI_Controller {
 
         }  else {
             $this->logged_in = false;
-            redirect('http://bulkhouse.in/','location');
+            redirect('http://sellers.bulkhouse.in/','location');
         }
 
     }
@@ -63,13 +63,13 @@ class Main extends CI_Controller {
 //                $this->load->view('template/footer');
         }
          public function terms() {
-
+          
 //                $this->load->view('template/header');
 		$this->load->view('terms');
 //                $this->load->view('template/footer');
         }
          public function export_terms() {
-
+          
 //                $this->load->view('template/header');
 		$this->load->view('export_terms');
 //                $this->load->view('template/footer');
@@ -119,7 +119,7 @@ class Main extends CI_Controller {
          public function pro_cat($cid) {
 
              $result = $this->register_model->pro_caty($cid);
-
+               
              if ($result) {
                  $this->session->set_flashdata('success_message', 'Product Categories are Updated');
                  redirect(base_url().'main/company','location');
@@ -133,15 +133,6 @@ class Main extends CI_Controller {
             }
 
         }
-
-        public function udc() {
-
-            $this->load->view('forms/uploadform');
-
-        }
-
-   
-
 
 
 

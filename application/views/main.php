@@ -61,6 +61,7 @@ $query = $this->db->get();
         <meta charset="utf-8">
         <title>Seller | Bulkhouse</title>
         <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav">
+        <meta name="keywords" content="modal, window, overlay, modern, box, css transition, css animation, effect, 3d, perspective" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="/css/app.v1.css">
         <link rel="stylesheet" href="/css/font.css" cache="false">
@@ -69,7 +70,8 @@ $query = $this->db->get();
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"/>
         <script src="/js/modernizr.custom.js"></script>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <!--    <script src="<?php echo site_url(); ?>js/vendor.js" type="text/javascript"></script>-->
+    <!--
+    <script src="<?php echo site_url(); ?>js/vendor.js" type="text/javascript"></script>-->
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
         <script>
@@ -239,7 +241,7 @@ $query = $this->db->get();
 
                             //                    $('a.md-close').trigger('click');
                             //                    setInterval('refreshPage()',3000);
-//                            location.reload();
+                            location.reload();
 
                         },
                         error: function()
@@ -345,6 +347,7 @@ $query = $this->db->get();
 
             });
         </script>
+        
 
     </head>
     <body  ng-app="ngAnimate" style="background-color: white">
@@ -382,7 +385,7 @@ $query = $this->db->get();
                         <p style="color: black">Account Complete Status</p>
                         <div class="progress progress-xs  m-t-sm">
 
-                            <div class="progress-bar progress-bar-success" data-toggle="tooltip" data-original-title="<?php echo $val; ?>" style="width: <?php echo $val; ?>%"></div>
+                            <div class="progress-bar progress-bar-success" data-toggle="tooltip" data-original-title="<?= $val; ?>" style="width: <?= $val; ?>%"></div>
 
                         </div>
 
@@ -463,7 +466,7 @@ $query = $this->db->get();
 <!--                                            <h4>3,450</h4> <small class="text-muted block">Worldwide visitors</small>-->
                                         <div class="inline">
 
-                                            <div class="easypiechart" data-percent="<?php echo $val; ?>" data-line-width="7" data-track-color="#eee" data-bar-color="#afcf6f" data-scale-color="#fff" data-loop="false" data-size="70"> <span class="h4"><?php echo $val; ?></span>%
+                                            <div class="easypiechart" data-percent="<?= $val; ?>" data-line-width="7" data-track-color="#eee" data-bar-color="#afcf6f" data-scale-color="#fff" data-loop="false" data-size="70"> <span class="h4"><?= $val; ?></span>%
 
                                             </div>
                                             <div class="easypie-text">Complete</div>
@@ -687,6 +690,7 @@ $query = $this->db->get();
 
                                 </div>
                             </div>
+                            
                         </div>
 
                         <!----------------------------->
@@ -1349,6 +1353,7 @@ $query = $this->db->get();
                                 </div>
 
                             </div>
+                          
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
@@ -1476,4 +1481,86 @@ $query = $this->db->get();
 
         </section>
 
-<?php $this->load->view('template/main_footer'); ?>
+<a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="body"></a>
+</section>
+<!-- /.vbox -->
+</section>
+<!--        <footer class="footer bg-light dker" style="background-color: white ; border-top:solid 1px #c8c8c8">
+            <div class="col-lg-12" style="padding: 30px 20px 5px 30px"><b>BULKHOUSE</b></div>
+            <div class="col-lg-3 col-md-3" style="padding: 5px 20px 30px 30px">
+            <p>About us</p>
+            <p>Careers</p>
+            <p><a href="/main/vendor_on_board">FAQ'S</a></p>
+            <p><a href="/main/selling_process">FAQ'S Selling Process</a></p></div>
+            <div class="col-lg-3 col-md-3" style="padding: 0px 20px 30px 30px"><p><b> </b></p>
+             <p><a href="/main/terms">Domestic Policies</a></p>
+            <p><a href="/main/export_terms">Export Policies</a></p>
+            <p>Infringement Verification Policy</p>
+
+
+                    </footer>-->
+<footer id="footerWrapper" style="font-family:Georgia,Serif; background-color: whitesmoke ; border-top:solid 1px #c8c8c8">
+    <section id="mainFooter">
+
+
+        <div class="row">
+            <div class="col-sm-2 col-xs-2">
+                <!--	<div class="footerWidget">
+                        <img src="img/bg.png" alt="latest Little Neko news" id="footerLogo">
+                                                                
+                        </div>-->
+            </div>
+
+            <div class="col-sm-3 col-xs-4">
+                <div class="footerWidget">
+                    <div class="page-header">
+                        <h4 style="font-family:Georgia,Serif;"><b>BULKHOUSE</b></h4>
+                    </div>
+                    <p>About us</p>
+                    <p>Careers</p>
+
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-xs-3">
+                <div class="footerWidget">
+                    <div class="page-header">
+                        <h4 style="font-family:Georgia,Serif;"><b>FAQ'S</b></h4>
+                    </div>
+
+                    <p><a href="/main/vendor_on_board">FAQ'S</a></p>
+                    <p><a href="/main/selling_process">FAQ'S Selling Process</a></p></div>
+
+            </div>
+            <div class="col-sm-3 col-xs-3">
+                <div class="footerWidget">
+                    <div class="page-header">
+                        <h4 style="font-family:Georgia,Serif;"><b>POLICIES</b></h4>
+                    </div>
+                    <p><a href="/main/terms">Domestic Policies</a></p>
+                    <p><a href="/main/export_terms">Export Policies</a></p>
+                    <p>Infringement Verification Policy</p></div>
+
+            </div>
+        </div>
+
+        </div>
+
+    </section>
+
+</footer>
+
+
+<script src="/js/classie.js"></script>
+<script src="/js/modalEffects.js"></script>
+<script>
+    // this is important for IEs
+    var polyfilter_scriptpath = '/js/';
+</script>
+<script src="/js/cssParser.js"></script>
+<script src="/js/css-filters-polyfill.js"></script>
+<script src="/css/app.v1.js"></script>
+<!-- Bootstrap -->
+<!-- App -->
+</body>
+</html>

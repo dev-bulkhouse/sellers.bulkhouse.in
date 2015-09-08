@@ -14,16 +14,18 @@ if (isset($logged_in)) {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="modal, window, overlay, modern, box, css transition, css animation, effect, 3d, perspective" />
     <title>Bulkhouse Trading India Pvt Ltd| We Are Launching .....</title>
-    <link rel="stylesheet" href="http://sellers.bulkhouse.in/assets/css/foundation.css" />
+    <link rel="stylesheet" href="<?php echo site_url()?>/assets/css/foundation.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
 
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
-    <link href="http://sellers.bulkhouse.in/assets/css/added.css" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo site_url()?>/assets/css/added.css" rel="stylesheet" type="text/css"/>
 
-    <script src="http://sellers.ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="http://sellers.bulkhouse.in/assets/js/vendor/modernizr.js"></script>
-    <script src="http://sellers.bulkhouse.in/assets/js/typed.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="<?php echo site_url()?>/assets/js/vendor/modernizr.js"></script>
+    <script src="<?php echo site_url()?>/assets/js/typed.js" type="text/javascript"></script>
+    <script src="/js/modernizr.custom.js" type="text/javascript"></script>
 
     <script>
     $(function(){
@@ -105,10 +107,8 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 
-
+  
 }
-body{font-size: 13px}
-
     </style>
 
 
@@ -167,3 +167,4 @@ $(document).ready(function(){
 
 
     </script>
+    

@@ -1,7 +1,7 @@
 <section class="container-fluid" style="background-color: whitesmoke">
             <div class="col-lg-12" style="height: 90px;">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                    <img width="200px" src="http://sellers.bulkhouse.in/assets/img/logo_bulkhouse.png" alt="Bulkhouse">
+                    <img width="200px" src="/assets/img/logo_bulkhouse.png" alt="Bulkhouse">
                 </div>
                 <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6">
                     <h4 style="text-align: right; color: black">Seller Portal</h4>
@@ -23,7 +23,7 @@
 
                         </a>
                     </header>
-
+                    
                     <section>
 <!--                         user
                                                 <div class="bg-info nav-user hidden-xs pos-rlt">
@@ -149,7 +149,7 @@
                                 <!-- note -->
 
                                 <!-- / note -->
-
+                                
                                 </section>
                                 </section>
                                 </aside>

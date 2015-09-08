@@ -12,7 +12,7 @@ class Home extends CI_Controller {
             redirect('main','location');
         }  else {
             $this->logged_in = false;
-//            redirect('http://bulkhouse.in','location');
+            
         }
 
 

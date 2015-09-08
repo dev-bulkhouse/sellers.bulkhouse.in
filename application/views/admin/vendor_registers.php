@@ -14,13 +14,13 @@ if ($logged_in) {
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>
                       <li><a href="\verification">Dashboard</a></li>
-
-
+             
+                
                 </ul>
                 <!-- END BREADCRUMB -->
 
                 <!-- PAGE TITLE -->
-
+               
                 <!-- END PAGE TITLE -->
 
                 <!-- PAGE CONTENT WRAPPER -->
@@ -30,7 +30,7 @@ if ($logged_in) {
                         <div class="col-md-12">
 
                             <!-- START DEFAULT DATATABLE -->
-
+                            
                               <div class="panel panel-default">
                                 <div class="panel-heading">
 <!--                                     <button onclick="location.href='<?php echo site_url(); ?>test/vendor_report/'" type="button" class="btn btn-primary pull-right" >  <i class="fa fa-download"></i> <span>Excel Export</span></button>-->
@@ -39,14 +39,14 @@ if ($logged_in) {
                                           <button onclick="location.href='<?php echo site_url(); ?>test/vendor_report/'" class="btn btn-danger"><i class="fa fa-download"></i>Export Data</button>
                                     </div>
                                     <ul class="panel-controls">
-
+                                      
                                         <li><a href="/admin/vendor_details" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
-
+                                     
                                     </ul>
                                 </div>
                                 <div class="panel-body">
 
-
+                             
 
                                     <table class="table datatable">
                                         <thead>
@@ -56,7 +56,7 @@ if ($logged_in) {
                             <th>Email</th>
                             <th>Contact Number</th>
                              <th>Type</th>
-
+                           
                        </tr>
                     </thead>
                     <tbody>
@@ -74,7 +74,7 @@ if ($logged_in) {
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
-
+                           
                         </tr>
 
 
@@ -86,7 +86,7 @@ if ($logged_in) {
 
                                 </div>
                             </div>
-
+                                                    
 
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -95,14 +95,14 @@ if ($logged_in) {
                                           <button onclick="location.href='<?php echo site_url(); ?>test/pending_email_report/'" class="btn btn-danger"><i class="fa fa-download"></i>Export Data</button>
                                     </div>
                                     <ul class="panel-controls">
-
+                                      
                                         <li><a href="/admin/vendor_details" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
-
+                                     
                                     </ul>
                                 </div>
                                 <div class="panel-body">
 
-
+                             
 
                                     <table class="table datatable">
                                         <thead>
@@ -112,7 +112,7 @@ if ($logged_in) {
                             <th>Email</th>
                             <th>Contact Number</th>
                              <th>Type</th>
-
+                           
                        </tr>
                     </thead>
                     <tbody>
@@ -129,7 +129,7 @@ if ($logged_in) {
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
-
+                           
                         </tr>
 
 
@@ -141,25 +141,25 @@ if ($logged_in) {
 
                                 </div>
                             </div>
-
+                         
 
                              <div class="panel panel-default">
-
+                                
                                 <div class="panel-heading">
-
+                                     
                                     <h3 class="panel-title">Vendors Pending Bank Submissions</h3>
                                      <div class="pull-right">
                                           <button onclick="location.href='<?php echo site_url(); ?>test/bank_report/'" class="btn btn-danger"><i class="fa fa-download"></i>Export Data</button>
                                     </div>
                                     <ul class="panel-controls">
-
+                                      
                                         <li><a href="/admin/vendor_details" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
-
+                                     
                                     </ul>
                                 </div>
                                 <div class="panel-body">
 
-
+                             
 
                                     <table class="table datatable">
                                         <thead>
@@ -169,7 +169,7 @@ if ($logged_in) {
                             <th>Email</th>
                             <th>Contact Number</th>
                              <th>Type</th>
-
+                           
                        </tr>
                     </thead>
                     <tbody>
@@ -178,7 +178,7 @@ if ($logged_in) {
                 $this->db->join('bank_details','bank_details.compid = vendor_details.id');
                 $this->db->where('bank_details.status', 10);
                 $this->db->where(array('vendor_details.activation' => 1));
-
+              
         $query = $this->db->get();
         $vendors = $query->result(); ?>
                         <?php foreach ($vendors as $vendor) { ?>
@@ -189,7 +189,7 @@ if ($logged_in) {
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
-
+                           
                         </tr>
 
 
@@ -201,8 +201,8 @@ if ($logged_in) {
 
                                 </div>
                             </div>
-
-
+                      
+                          
                              <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">Proprietorship Vendors Pending Documents Submissions</h3>
@@ -210,14 +210,14 @@ if ($logged_in) {
                                           <button onclick="location.href='<?php echo site_url(); ?>test/pending_pro_report/'" class="btn btn-danger"><i class="fa fa-download"></i>Export Data</button>
                                     </div>
                                     <ul class="panel-controls">
-
+                                      
                                         <li><a href="/admin/vendor_details" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
-
+                                     
                                     </ul>
                                 </div>
                                 <div class="panel-body">
 
-
+                             
 
                                     <table class="table datatable">
                                         <thead>
@@ -227,12 +227,12 @@ if ($logged_in) {
                             <th>Email</th>
                             <th>Contact Number</th>
                              <th>Type</th>
-
+                           
                        </tr>
                     </thead>
                     <tbody>
-
-                         <?php
+                       
+                         <?php 
                 $this->db->select('*');
                 $this->db->from('vendor_details');
                 $this->db->join('document_details','document_details.compid = vendor_details.id');
@@ -243,20 +243,20 @@ if ($logged_in) {
                    $this->db->or_where('document_details.addressid', 5);
                     $this->db->or_where('document_details.businessid', 5);
                      $this->db->group_by("vendor_details.id");
-
+              
                 $query = $this->db->get();
                 $vendors = $query->result(); ?>
                         <?php foreach ($vendors as $vendor) {
-                            if($vendor->firm_type =='proprietorship')
+                            if($vendor->firm_type =='proprietorship') 
                             {?>
-
+                        
                         <tr>
                             <td><?php echo $vendor->vendor_name; ?></td>
                             <td><?php echo $vendor->firm_name; ?></td>
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
-
+                           
                         </tr>
 
 
@@ -267,7 +267,7 @@ if ($logged_in) {
 
 
                                 </div>
-
+                                 
                             </div>
                              <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -276,14 +276,14 @@ if ($logged_in) {
                                           <button onclick="location.href='<?php echo site_url(); ?>test/pending_pvt_report/'" class="btn btn-danger"><i class="fa fa-download"></i>Export Data</button>
                                     </div>
                                     <ul class="panel-controls">
-
+                                      
                                         <li><a href="/admin/vendor_details" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
-
+                                     
                                     </ul>
                                 </div>
                                 <div class="panel-body">
 
-
+                             
 
                                     <table class="table datatable">
                                         <thead>
@@ -293,12 +293,12 @@ if ($logged_in) {
                             <th>Email</th>
                             <th>Contact Number</th>
                              <th>Type</th>
-
+                           
                        </tr>
                     </thead>
                     <tbody>
-
-                         <?php
+                       
+                         <?php 
                 $this->db->select('*');
                 $this->db->from('vendor_details');
                 $this->db->join('document_details','document_details.compid = vendor_details.id');
@@ -308,25 +308,25 @@ if ($logged_in) {
                    $this->db->or_where('document_details.moa_aoa_status', 5);
                      $this->db->or_where('document_details.aoa_status', 5);
                       $this->db->where('document_details.cert_of_incorp_status', 5);
-
+                 
                   $this->db->or_where('document_details.photoid', 5);
                    $this->db->or_where('document_details.addressid', 5);
                     $this->db->or_where('document_details.businessid', 5);
                      $this->db->group_by("vendor_details.id");
-
+              
                 $query = $this->db->get();
                 $vendors = $query->result(); ?>
                         <?php foreach ($vendors as $vendor) {
-                            if($vendor->firm_type =='pvt_or_ltd')
+                            if($vendor->firm_type =='pvt_or_ltd') 
                             {?>
-
+                        
                         <tr>
                             <td><?php echo $vendor->vendor_name; ?></td>
                             <td><?php echo $vendor->firm_name; ?></td>
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
-
+                           
                         </tr>
 
 
@@ -337,7 +337,7 @@ if ($logged_in) {
 
 
                                 </div>
-
+                                 
                             </div>
                              <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -346,15 +346,15 @@ if ($logged_in) {
                                           <button onclick="location.href='<?php echo site_url(); ?>test/pending_pat_report/'" class="btn btn-danger"><i class="fa fa-download"></i>Export Data</button>
                                     </div>
                                     <ul class="panel-controls">
-
+                                      
                                         <li><a href="/admin/vendor_details" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
-
+                                     
                                     </ul>
-
+                                    
                                 </div>
                                 <div class="panel-body">
 
-
+                             
 
                                     <table id="customers2" class="table datatable">
                                         <thead>
@@ -364,12 +364,12 @@ if ($logged_in) {
                             <th>Email</th>
                             <th>Contact Number</th>
                              <th>Type</th>
-
+                           
                        </tr>
                     </thead>
                     <tbody>
-
-                         <?php
+                       
+                         <?php 
                 $this->db->select('*');
                 $this->db->from('vendor_details');
                 $this->db->join('document_details','document_details.compid = vendor_details.id');
@@ -382,20 +382,20 @@ if ($logged_in) {
                    $this->db->or_where('document_details.addressid', 5);
                     $this->db->or_where('document_details.businessid', 5);
                      $this->db->group_by("vendor_details.id");
-
+              
                 $query = $this->db->get();
                 $vendors = $query->result(); ?>
                         <?php foreach ($vendors as $vendor) {
-                            if($vendor->firm_type =='partnership')
+                            if($vendor->firm_type =='partnership') 
                             {?>
-
+                        
                         <tr>
                             <td><?php echo $vendor->vendor_name; ?></td>
                             <td><?php echo $vendor->firm_name; ?></td>
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
-
+                           
                         </tr>
 
 
@@ -406,9 +406,9 @@ if ($logged_in) {
 
 
                                 </div>
-
+                                 
                             </div>
-
+                             
 
                         </div>
                     </div>

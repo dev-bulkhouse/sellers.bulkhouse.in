@@ -2,7 +2,7 @@
 
 	/**
 	 * Multi-Upload
-	 *
+	 * 
 	 * Extends CodeIgniters native Upload class to add support for multiple
 	 * uploads.
 	 *
@@ -13,15 +13,15 @@
 	 * @link		https://github.com/stvnthomas/CodeIgniter-2.1-Multi-Upload
 	 */
 		class MY_Upload extends CI_Upload {
-
-
+			
+			
 			/**
 			 * Properties
 			 */
 			 	protected $_multi_upload_data			= array();
 				protected $_multi_file_name_override	= "";
-
-
+				
+				
 			/**
 			 * Initialize preferences
 			 *
@@ -38,7 +38,7 @@
 									"max_filename"		=> 0,
 									"allowed_types"		=> "",
 									"file_temp"			=> "",
-									"file_name"			=> "abc",
+									"file_name"			=> "",
 									"orig_name"			=> "",
 									"file_type"			=> "jpg|png|doc|xls|rtf|pdf|docx|xlsx",
 									"file_size"			=> "",
@@ -58,7 +58,7 @@
 									"temp_prefix"		=> "temp_file_",
 									"client_name"		=> ""
 								);
-
+					
 					//Set each configuration.
 					foreach($defaults as $key => $val){
 						if(isset($config[$key])){
@@ -72,34 +72,34 @@
 							$this->$key = $val;
 						}
 					}
-
+					
 					//Check if file_name was provided.
 					if(!empty($this->file_name)){
 						//Multiple file upload.
 						if(is_array($this->file_name)){
 							//Clear file name override.
 							$this->_file_name_override = "";
-
+							
 							//Set multiple file name override.
 							$this->_multi_file_name_override = $this->file_name;
 						//Single file upload.
 						} else {
 							//Set file name override.
 							$this->_file_name_override = $this->file_name;
-
+							
 							//Clear multiple file name override.
 							$this->_multi_file_name_override = "";
 						}
 					}
 				}
-
-
+				
+				
 			/**
 			 * File MIME Type
-			 *
+			 * 
 			 * Detects the (actual) MIME type of the uploaded file, if possible.
 			 * The input array is expected to be $_FILES[$field].
-			 *
+			 * 
 			 * In the case of multiple uploads, a optional second argument may be
 			 * passed specifying which array element of the $_FILES[$field] array
 			 * elements should be referenced (name, type, tmp_name, etc).
@@ -119,12 +119,12 @@
 						$tmp_name = $file["tmp_name"];
 						$type = $file["type"];
 					}
-
+					
 					//We'll need this to validate the MIME info string (e.g. text/plain; charset=us-ascii).
 					$regexp = "/^([a-z\-]+\/[a-z0-9\-\.\+]+)(;\s.+)?$/";
-
+					
 					/* Fileinfo Extension - most reliable method.
-					 *
+					 * 
 					 * Unfortunately, prior to PHP 5.3 - it's only available as a PECL extension and the
 					 * more convenient FILEINFO_MIME_TYPE flag doesn't exist.
 					 */
@@ -133,7 +133,7 @@
 							if(is_resource($finfo)){
 								$mime = @finfo_file($finfo, $tmp_name);
 								finfo_close($finfo);
-
+								
 								/* According to the comments section of the PHP manual page,
 								 * it is possible that this function returns an empty string
 								 * for some files (e.g. if they don't exist in the magic MIME database).
@@ -144,7 +144,7 @@
 								 	}
 							}
 					 	}
-
+						
 					/* This is an ugly hack, but UNIX-type systems provide a "native" way to detect the file type,
 					 * which is still more secure than depending on the value of $_FILES[$field]['type'], and as it
 					 * was reported in issue #750 (https://github.com/EllisLab/CodeIgniter/issues/750) - it's better
@@ -158,7 +158,7 @@
 					 */
 					 	if(DIRECTORY_SEPARATOR !== "\\"){
 					 		$cmd = "file --brief --mime ".escapeshellarg($tmp_name)." 2>&1";
-
+							
 							if(function_exists("exec")){
 								/* This might look confusing, as $mime is being populated with all of the output when set in the second parameter.
 								 * However, we only neeed the last line, which is the actual return value of exec(), and as such - it overwrites
@@ -171,7 +171,7 @@
 										return;
 									}
 							}
-
+							
 							if((bool)@ini_get("safe_mode") === FALSE && function_exists("shell_exec")){
 								$mime = @shell_exec($cmd);
 								if(strlen($mime) > 0){
@@ -182,7 +182,7 @@
 									}
 								}
 							}
-
+							
 							if(function_exists("popen")){
 								$proc = @popen($cmd, "r");
 								if(is_resource($proc)){
@@ -198,7 +198,7 @@
 								}
 							}
 					 	}
-
+						
 						//Fall back to the deprecated mime_content_type(), if available (still better than $_FILES[$field]["type"])
 						if(function_exists("mime_content_type")){
 							$this->file_type = @mime_content_type($tmp_name);
@@ -207,12 +207,12 @@
 								return;
 							}
 						}
-
+						
 						//If all else fails, use $_FILES default mime type.
 						$this->file_type = $type;
 				}
-
-
+				
+				
 			/**
 			 * Set Multiple Upload Data
 			 *
@@ -237,8 +237,8 @@
 						"image_size_str"	=> $this->image_size_str
 					);
 				}
-
-
+				
+				
 			/**
 			 * Get Multiple Upload Data
 			 *
@@ -248,8 +248,8 @@
 				public function get_multi_upload_data(){
 					return $this->_multi_upload_data;
 				}
-
-
+				
+				
 			/**
 			 * Multile File Upload
 			 *
@@ -260,22 +260,22 @@
 				public function do_multi_upload($field){
 					//Clear multi_upload_data.
 					$this->_multi_upload_data = array();
-
+					
 					//Is $_FILES[$field] set? If not, no reason to continue.
 					if(!isset($_FILES[$field])){ return false; }
-
+					
 					//Is this really a multi upload?
 					if(!is_array($_FILES[$field]["name"])){
 						//Fallback to do_upload method.
 						return $this->do_upload($field);
 					}
-
+					
 					//Is the upload path valid?
 					if(!$this->validate_upload_path()){
 						//Errors will already be set by validate_upload_path() so just return FALSE
 						return FALSE;
 					}
-
+					
 					//Every file will have a separate entry in each of the $_FILES associative array elements (name, type, etc).
 					//Loop through $_FILES[$field]["name"] as representative of total number of files. Use count as key in
 					//corresponding elements of the $_FILES[$field] elements.
@@ -284,7 +284,7 @@
 						if(!is_uploaded_file($_FILES[$field]["tmp_name"][$i])){
 							//Determine error number.
 							$error = (!isset($_FILES[$field]["error"][$i])) ? 4 : $_FILES[$field]["error"][$i];
-
+							
 							//Set error.
 							switch($error){
 								//UPLOAD_ERR_INI_SIZE
@@ -319,11 +319,11 @@
 									$this->set_error("upload_no_file_selected");
 								break;
 							}
-
+							
 							//Return failed upload.
 							return FALSE;
 						}
-
+						
 						//Set current file data as class variables.
 						$this->file_temp	= $_FILES[$field]["tmp_name"][$i];
 						$this->file_size	= $_FILES[$field]["size"][$i];
@@ -333,18 +333,18 @@
 						$this->file_name	= $this->_prep_filename($_FILES[$field]["name"][$i]);
 						$this->file_ext		= $this->get_extension($this->file_name);
 						$this->client_name	= $this->file_name;
-
+						
 						//Is the file type allowed to be uploaded?
 						if(!$this->is_allowed_filetype()){
 							$this->set_error("upload_invalid_filetype");
 							return FALSE;
 						}
-
+						
 						//If we're overriding, let's now make sure the new name and type is allowed.
 						//Check if a filename was supplied for the current file. Otherwise, use it's given name.
 						if(!empty($this->_multi_file_name_override[$i])){
 							$this->file_name = $this->_prep_filename($this->_multi_file_name_override[$i]);
-
+							
 							//If no extension was provided in the file_name config item, use the uploaded one.
 							if(strpos($this->_multi_file_name_override[$i], ".") === FALSE){
 								$this->file_name .= $this->file_ext;
@@ -352,44 +352,44 @@
 							} else {
 								$this->file_ext = $this->get_extension($this->_multi_file_name_override[$i]);
 							}
-
+							
 							if(!$this->is_allowed_filetype(TRUE)){
 								$this->set_error("upload_invalid_filetype");
 								return FALSE;
 							}
 						}
-
+						
 						//Convert the file size to kilobytes.
 						if($this->file_size > 0){
 							$this->file_size = round($this->file_size/1024, 2);
 						}
-
+						
 						//Is the file size within the allowed maximum?
 						if(!$this->is_allowed_filesize()){
 							$this->set_error("upload_invalid_filesize");
 							return FALSE;
 						}
-
+						
 						//Are the image dimensions within the allowed size?
 						//Note: This can fail if the server has an open_basdir restriction.
 						if(!$this->is_allowed_dimensions()){
 							$this->set_error("upload_invalid_dimensions");
 							return FALSE;
 						}
-
+						
 						//Sanitize the file name for security.
 						$this->file_name = $this->clean_file_name($this->file_name);
-
+						
 						//Truncate the file name if it's too long
 						if($this->max_filename > 0){
 							$this->file_name = $this->limit_filename_length($this->file_name, $this->max_filename);
 						}
-
+						
 						//Remove white spaces in the name
 						if($this->remove_spaces == TRUE){
 							$this->file_name = preg_replace("/\s+/", "_", $this->file_name);
 						}
-
+						
 						/* Validate the file name
 						 * This function appends an number onto the end of
 						 * the file if one with the same name already exists.
@@ -402,7 +402,7 @@
 									return FALSE;
 								}
 							}
-
+							
 						/* Run the file through the XSS hacking filter
 						 * This helps prevent malicious code from being
 						 * embedded within a file.  Scripts can easily
@@ -414,7 +414,7 @@
 									return FALSE;
 								}
 							}
-
+							
 						/* Move the file to the final destination
 						 * To deal with different server configurations
 						 * we'll attempt to use copy() first.  If that fails
@@ -427,18 +427,18 @@
 									return FALSE;
 								}
 							}
-
+						
 						/* Set the finalized image dimensions
 						 * This sets the image width/height (assuming the
 						 * file was an image).  We use this information
 						 * in the "data" function.
 						 */
 							$this->set_image_properties($this->upload_path.$this->file_name);
-
+							
 						//Set current file data to multi_file_upload_data.
 						$this->set_multi_upload_data();
 					}
-
+					
 					//Return all file upload data.
 					return TRUE;
 			}

@@ -128,7 +128,7 @@ if ($logged_in) {
                                         <td><?php echo $vat->vat_cst; ?></td>
                                         <td><?php echo $vat->vat_cst_date; ?></td>
                                         <td><button type="button" class="btn btn-info active" data-toggle="modal" data-target="#vat" data-whatever="<?php echo $vat->compid; ?>" >View</button></td>
-
+                                       
                                         <td><form style="float: left" method="post" action="/change/approve/<?php echo $vat->compid . '/vat_cst' ?>"><button type="submit" class="btn btn-success active">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $vat->compid . '/vat_cst' ?>"><button type="submit" class="btn btn-danger active">Disapprove</button></form></td>
                                     </tr>
     <?php } ?>
@@ -179,7 +179,7 @@ if ($logged_in) {
                             </tbody>
                         </table>
 
-
+                        
 <?php } elseif ($doc_type == "aoa") { ?>
 
                         <table class="table datatable">
@@ -216,7 +216,7 @@ if ($logged_in) {
                             </tbody>
                         </table>
 
-
+                       
 <?php } elseif ($doc_type == "shop_establish_trade") { ?>
 
                         <table class="table datatable">
@@ -253,7 +253,7 @@ if ($logged_in) {
                             </tbody>
                         </table>
 
-
+                        
 
 <?php } elseif ($doc_type == "addressid") { ?>
 
@@ -291,7 +291,7 @@ if ($logged_in) {
                             </tbody>
                         </table>
 
-
+                       
 <?php } elseif ($doc_type == "businessid") { ?>
 
                         <table class="table datatable">
@@ -328,7 +328,7 @@ if ($logged_in) {
                             </tbody>
                         </table>
 
-
+                      
 <?php } elseif ($doc_type == "cenvat") { ?>
 
                         <table class="table datatable">
@@ -365,7 +365,7 @@ if ($logged_in) {
                             </tbody>
                         </table>
 
-
+                        
 
 <?php } elseif ($doc_type == "servicetax") { ?>
 
@@ -403,7 +403,7 @@ if ($logged_in) {
                             </tbody>
                         </table>
 
-
+                       
 <?php } elseif (($doc_type == "pan_comp")) { ?>
                         <table class="table datatable">
                             <thead>
@@ -441,7 +441,7 @@ if ($logged_in) {
                             </tbody>
                         </table>
 
-
+                     
 <?php } elseif (($doc_type == "photoid")) { ?>
                         <table class="table datatable">
                             <thead>
@@ -477,7 +477,7 @@ if ($logged_in) {
                             </tbody>
                         </table>
 
-
+                      
 <?php } elseif (($doc_type == "part_deed")) { ?>
                         <table class="table datatable">
                             <thead>
@@ -515,7 +515,7 @@ if ($logged_in) {
                             </tbody>
                         </table>
 
-
+                       
 
                             <?php } elseif (($doc_type == "sign")) { ?>
                         <table class="table datatable">
@@ -554,7 +554,7 @@ if ($logged_in) {
                             </tbody>
                         </table>
 
-
+                     
                             <?php } elseif (($doc_type == "cert_of_incorp")) { ?>
                         <table class="table datatable">
                             <thead>
@@ -592,7 +592,7 @@ if ($logged_in) {
                             </tbody>
                         </table>
 
-
+                       
 
                             <?php } elseif (($doc_type == "moa_aoa")) { ?>
                         <table class="table datatable">
@@ -815,7 +815,7 @@ if ($logged_in) {
                 }
             });
     })
-
+    
     $('#cst').on('show.bs.modal', function (event) {
           var button = $(event.relatedTarget); // Button that triggered the modal
           var recipient = button.data('whatever'); // Extract info from data-* attributes
@@ -836,7 +836,7 @@ if ($logged_in) {
                 }
             });
     })
-
+    
     $('#aoa').on('show.bs.modal', function (event) {
           var button = $(event.relatedTarget); // Button that triggered the modal
           var recipient = button.data('whatever'); // Extract info from data-* attributes
@@ -857,7 +857,7 @@ if ($logged_in) {
                 }
             });
     })
-
+    
     $('#shop_establish_trade').on('show.bs.modal', function (event) {
           var button = $(event.relatedTarget); // Button that triggered the modal
           var recipient = button.data('whatever'); // Extract info from data-* attributes
@@ -878,7 +878,7 @@ if ($logged_in) {
                 }
             });
     })
-
+    
     $('#addressid').on('show.bs.modal', function (event) {
           var button = $(event.relatedTarget); // Button that triggered the modal
           var recipient = button.data('whatever'); // Extract info from data-* attributes

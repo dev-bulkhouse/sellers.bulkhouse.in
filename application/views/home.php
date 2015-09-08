@@ -3,7 +3,7 @@
 
         <div class="large-12 columns" style="background-image: url('<?php echo site_url(); ?>assets/img/grid-01_morelite.pngg')">
             <div class="large-12 columns large-centered" >
-                <div class="large-4 columns medium-4" style="padding: 10px 50px 10px 10px"><img width="100%" src="http://sellers.bulkhouse.in/assets/img/logo_bulkhouse.png" alt=""/></div>
+                <div class="large-4 columns medium-4" style="padding: 10px 50px 10px 10px"><img width="100%" src="/assets/img/logo_bulkhouse.png" alt=""/></div>
                 <div class="large-4 columns medium-4 show-for-medium-up right" style="padding: 10px 50px 10px 10px">
                     <a href="#" data-reveal-id="register" class="radius button small" style="position: relative;float: right; margin: 10px; z-index: 999"><b>Register as Seller</b></a>
                     <a href="#" data-reveal-id="login" class="radius button small" style="position: relative;float: right; margin: 10px; z-index: 999"><b>Login</b></a>
@@ -25,7 +25,7 @@
         <div id="login" class="reveal-modal tiny" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
             <h3 class="subheader">Vendor Login  </h3>
             <!--  <form action="/user/login_user" method="post" data-abide>-->
-            <form action="/user/login_user" method="post">
+            <form action="/user/login_user" method="post" ">
                 <div class="row" style="padding-top: 20px">
                     <div class="row">
                         <div class="large-12 columns">
@@ -80,7 +80,7 @@
                             <div class="row">
                                 <div class="small-9 columns small-centered zeropadding">
                                     <div class="row">
-                                        <input type="email" name="email" placeholder="Please enter registered Email Id" required="required">
+                                        <input type="email" id="email" name="email" placeholder="Please enter registered Email Id" required="required">
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
             </div>
 
             <div id="Export" style="display: none">
-            <form  id="form_reg" action="/register/register_user" method="post">
+            <form  id="form_reg" action="/register/register_user" method="post" id="form">
                 <div class="row" style="padding-top: 20px">
                     <div class="row">
                         <div class="small-9 columns small-centered zeropadding">
@@ -177,7 +177,7 @@
                         <div class="small-9 columns small-centered zeropadding">
                             <div class="row">
                                 <div class="small-8 columns zeropadding">
-                                    <input name="email" type="email"  id="email" placeholder="Please enter your Email Id" required="required" value="<?php echo set_value('email'); ?>">
+                                    <input name="email" id="email" type="email"  id="email" placeholder="Please enter your Email Id" required="required" value="<?php echo set_value('email'); ?>">
                                 </div>
 
                                 <div class="small-4 columns zeropadding">
@@ -213,11 +213,15 @@
                     </div>
                     <div class="row">
                         <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
+
+
+
+                           <div class="row">
 
                                 <input name="mobile" type="number"  id="right-label" pattern="^[7-9][0-9]{9}$" placeholder="Please enter your Mobile number" required="required">
             <!--                    <small class="error">An Phone Number is required.</small>-->
                             </div>
+
                         </div>
                     </div>
                     <div class="row">
@@ -239,7 +243,7 @@
             </form>
             </div>
             <div id="Domestic" style="display: none">
-            <form  id="form_reg" action="/register/register_user" method="post">
+            <form  id="form_reg" action="/register/register_user" method="post" id="form">
                 <div class="row" style="padding-top: 20px">
                     <div class="row">
                         <div class="small-9 columns small-centered zeropadding">
@@ -298,7 +302,7 @@
                         <div class="small-9 columns small-centered zeropadding">
                             <div class="row">
                                 <div class="small-8 columns zeropadding">
-                                    <input name="email" type="email"  id="email" placeholder="Please enter your Email Id" required="required" value="<?php echo set_value('email'); ?>">
+                                    <input name="email" id="email" type="email"  id="email" placeholder="Please enter your Email Id" required="required" value="<?php echo set_value('email'); ?>">
                                 </div>
 
                                 <div class="small-4 columns zeropadding">
@@ -360,7 +364,7 @@
             </form>
             </div>
             <div id="Both" style="display: none">
-            <form  id="form_reg" action="/register/register_user" method="post">
+            <form  id="form_reg" action="/register/register_user" method="post" id="form">
                 <div class="row" style="padding-top: 20px">
                     <div class="row">
                         <div class="small-9 columns small-centered zeropadding">
@@ -419,7 +423,7 @@
                         <div class="small-9 columns small-centered zeropadding">
                             <div class="row">
                                 <div class="small-8 columns zeropadding">
-                                    <input name="email" type="email"  id="email" placeholder="Please enter your Email Id" required="required" value="<?php echo set_value('email'); ?>">
+                                    <input name="email" id="email" type="email"  id="email" placeholder="Please enter your Email Id" required="required" value="<?php echo set_value('email'); ?>">
                                 </div>
 
                                 <div class="small-4 columns zeropadding">
@@ -456,9 +460,8 @@
                     <div class="row">
                         <div class="small-9 columns small-centered zeropadding">
                             <div class="row">
-
                                 <input name="mobile" type="number"  id="right-label" pattern="^[7-9][0-9]{9}$" placeholder="Please enter your Mobile number" required="required">
-            <!--                    <small class="error">An Phone Number is required.</small>-->
+              <!--                    <small class="error">An Phone Number is required.</small>-->
                             </div>
                         </div>
                     </div>
@@ -466,11 +469,11 @@
                         <div class="large-9 columns small-centered zeropadding">
                             <div class="large-6 columns">
                             <input id="checkbox1" type="checkbox" required="required">
-                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Export <a href="<?php echo site_url(); ?>export_terms">View</a>)</label>
+                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Export <a href="<?php echo site_url(); ?>export_terms" target="_blank">View</a>)</label>
                             </div>
                             <div class="large-6 columns">
                             <input id="checkbox1" type="checkbox" required="required">
-                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Domestic <a href="<?php echo site_url(); ?>domestic_terms">View</a>)</label>
+                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Domestic <a href="<?php echo site_url(); ?>domestic_terms" target="_blank">View</a>)</label>
                             </div>
                         </div>
 
@@ -527,7 +530,7 @@
     </div>
 </div>
 <!--<script src="js/vendor/jquery.js"></script>-->
-<script src="http://test.bulkhouse.in/assets/js/foundation.min.js"></script>
+<script src="<?php echo site_url()?>/assets/js/foundation.min.js"></script>
 <script>
     $(document).foundation();
 </script>
