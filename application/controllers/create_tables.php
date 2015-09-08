@@ -29,6 +29,14 @@ class Create_tables extends CI_Controller {
 
     }
 
+    public function newid() {
+
+
+        $this->tabs->newid();
+
+
+    }
+
     public function bank() {
 
 

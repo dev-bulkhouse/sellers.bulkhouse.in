@@ -432,6 +432,22 @@ class Tabs extends CI_Model {
 
     }
 
+    public function newid() {
+
+        $data4 = array(
+            'admin_type' => 'document_verifier',
+            'email' => 'murthy@bulkhouse.net',
+            'password' => 'admin9000282777',
+            'mobile' => '9000282777',
+            'name' => 'Murthy',
+            'marital_status' => 'married',
+            'gender' => 'male',
+            'activation' => '1'
+        );
+        $this->db->insert('admin_details', $data4);
+
+    }
+
 
 
 }
