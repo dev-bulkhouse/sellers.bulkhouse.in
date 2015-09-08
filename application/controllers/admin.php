@@ -106,6 +106,74 @@ class Admin extends CI_Controller {
            redirect(base_url().'admin/','location');
         }
     }
+
+    public function vendor_profile() {
+
+        if($this->session->userdata('logged_in')){
+            $this->logged_in = true;
+            $logged = $this->logged_in;
+            $this->load->view('admin/template/header',array('logged_in'=>$logged));
+            $this->load->view('admin/vendor_profile',array('logged_in'=>$logged));
+
+        }  else {
+            $this->logged_in = false;
+           redirect(base_url().'admin/','location');
+        }
+    }
+       public function vendor_doc($id)
+       {
+           $vendor_details1 = $this->register_model->doc_data($id);
+           foreach($vendor_details1->result_array() as $row)
+{
+     $detail['pan_prop'] = $row['pan_prop'];
+
+}
+if($this->session->userdata('logged_in')){
+            $this->logged_in = true;
+            $logged = $this->logged_in;
+            $this->load->view('admin/template/header',array('logged_in'=>$logged));
+               //$this->load->view('admin/template/header',array('id'=>$id,'logged_in'=>$logged));
+            $this->load->view('admin/document_details',$detail);
+              //$this->load->view('admin/profiles',array('id'=>$id,'logged_in'=>$logged));
+
+        }  else {
+            $this->logged_in = false;
+           redirect(base_url().'admin/','location');
+        }
+
+       }
+               public function profile($id) {
+$vendor_details = $this->register_model->view_data($id);
+
+foreach($vendor_details->result_array() as $row)
+{
+     $details['vendor_name'] = $row['vendor_name'];
+     $details['last_name'] = $row['last_name'];
+     $details['firm_type'] = $row['firm_type'];
+     $details['firm_name'] = $row['firm_name'];
+     $details['email'] = $row['email'];
+     $details['mobile'] = $row['mobile'];
+     $details['pan_prop'] = $row['pan_prop'];
+     $details['vat'] = $row['vat'];
+     $details['cst'] = $row['cst'];
+
+}
+
+
+        if($this->session->userdata('logged_in')){
+            $this->logged_in = true;
+            $logged = $this->logged_in;
+            $this->load->view('admin/template/header',array('logged_in'=>$logged));
+               //$this->load->view('admin/template/header',array('id'=>$id,'logged_in'=>$logged));
+            $this->load->view('admin/profiles',$details);
+                          //$this->load->view('admin/profiles',array('id'=>$id,'logged_in'=>$logged));
+
+        }  else {
+            $this->logged_in = false;
+           redirect(base_url().'admin/','location');
+        }
+    }
+    
     public function bankdetails() {
 
         if($this->session->userdata('logged_in')){
