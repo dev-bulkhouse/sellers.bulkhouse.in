@@ -173,7 +173,7 @@ foreach($vendor_details->result_array() as $row)
            redirect(base_url().'admin/','location');
         }
     }
-    
+
     public function bankdetails() {
 
         if($this->session->userdata('logged_in')){
@@ -265,7 +265,7 @@ foreach($vendor_details->result_array() as $row)
      $details['mobile'] = $row['mobile'];
      $details['document'] = $row['vat_cst'];
      $details['document_date'] = $row['vat_cst_date'];
-     $details['type'] = $row['pan_prop_type'];
+     $details['type'] = $row['vat_cst_type'];
       $details['file_name']= "_vat";
         $details['button']= "/vat";
      $details['document_name']= "VAT Number";

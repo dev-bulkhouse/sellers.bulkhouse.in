@@ -52,7 +52,7 @@ if ($pan_prop_type == $filejpg || $pan_prop_type == $filejpg_b){ ?>
                         </div>
 <?php }elseif ($pan_prop_type == $filepdf || $pan_prop_type == $filepdf_b){ ?>
  <div class="modal-body">
-     <iframe  width="100%" height="1000px" src="<?php echo $pan_prop_type; ?>" class="img-responsive" >
+     <iframe  width="100%" height="1000px" src="<?php echo $pan_prop_type; ?>" class="img-responsive" ></iframe>
                         </div>
 	<?php }else {?>
                          <div class="alert alert-warning" role="alert">
