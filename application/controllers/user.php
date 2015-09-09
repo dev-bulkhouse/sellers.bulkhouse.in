@@ -108,7 +108,7 @@ return false;
 
     public function logout() {
         $this->session->sess_destroy();
-        redirect('/','location');
+        redirect('http://bulkhouse.in','location');
     }
 
     public function update_field(){
