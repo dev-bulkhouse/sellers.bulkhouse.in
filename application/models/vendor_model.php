@@ -18,17 +18,26 @@ class Vendor_model extends CI_Model {
         if ($firm_type == $firm_type) {
             $this->db->where('document_details.pan_prop_status', '2');
             $this->db->where('document_details.vat_cst_status', '2');
+            $this->db->where('document_details.shop_establish_trade_status', '2');
+            $this->db->where('document_details.photoid_status', '2');
+            $this->db->where('document_details.addressid_status', '2');
+            $this->db->where('document_details.businessid_status', '2');
         } elseif ($firm_type == $firm_type) {
             $this->db->where('document_details.pan_comp_status', '2');
             $this->db->where('document_details.vat_cst_status', '2');
-            $this->db->where('document_details.sign_status', '2');
             $this->db->where('document_details.part_deed_status', '2');
+            $this->db->where('document_details.photoid_status', '2');
+            $this->db->where('document_details.addressid_status', '2');
+            $this->db->where('document_details.businessid_status', '2');
         } elseif ($firm_type == $firm_type) {
             $this->db->where('document_details.pan_comp_status', '2');
             $this->db->where('document_details.vat_cst_status', '2');
-            $this->db->where('document_details.sign_status', '2');
             $this->db->where('document_details.moa_aoa_status', '2');
+            $this->db->where('document_details.aoa_status', '2');
             $this->db->where('document_details.cert_of_incorp_status', '2');
+            $this->db->where('document_details.photoid_status', '2');
+            $this->db->where('document_details.addressid_status', '2');
+            $this->db->where('document_details.businessid_status', '2');
         }
         return $this->db->count_all_results();
     }
@@ -58,7 +67,7 @@ class Vendor_model extends CI_Model {
 
     }
 
-  
+
 
     public function convert_number($number) {
 		if (($number < 0) || ($number > 99999999999)) {
