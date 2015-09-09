@@ -114,9 +114,7 @@ class Register extends CI_Controller {
      public function check_user()
         {
         $this->output->set_header("Access-Control-Allow-Origin: *");
-        $this->output->set_header("Access-Control-Expose-Headers: Access-Control-Allow-Origin");
-        $this->output->set_status_header(200);
-        $this->output->set_content_type('application/json');
+        
         $email=$this->input->post('email');
 
         $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
