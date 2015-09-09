@@ -113,10 +113,7 @@ class Register extends CI_Controller {
 
      public function check_user()
         {
-        $this->output->set_header("Access-Control-Allow-Origin: *");
-
-        $email=$this->input->get('email');
-
+        $email=$this->input->post('email');
         $regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
         if (preg_match($regex, $email)) {
         $result=$this->register_model->check_user_exist($email);
