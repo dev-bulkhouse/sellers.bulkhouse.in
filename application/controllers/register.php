@@ -69,14 +69,17 @@ class Register extends CI_Controller {
 
        $email_address=$this->input->post('email');
        $vendor_code=$this->input->post('code');
-       
+
         if($vendor_code  == $this->config->item('vendor_code')){
-       
+
 
             $this->register_model->set_session_auto($email_address);
             $vendor_name = $this->session->userdata('vendor_name');
             $this->session->set_flashdata('success_message', 'Hi! '.ucfirst($vendor_name).' You have Successfully Registered and Logged In!');
             redirect(base_url().'main/','location');
+        }else {
+//            $this->session->set_flashdata('success_message', 'Hi! '.ucfirst($vendor_name).' You have Successfully Registered and Logged In!');
+            redirect(base_url().'manage/','location');
         }
     }
 
@@ -133,8 +136,8 @@ class Register extends CI_Controller {
         $this->db->join('document_details', 'document_details.compid = vendor_details.id');
         $this->db->join('bank_details', 'bank_details.compid = vendor_details.id');
         $this->db->where(array('bank_details.compid' => $compid));
-        
-        
+
+
 		$id=$this->db->where('id',$id);
 		$this->db->delete('vendor_details',$id);
 
