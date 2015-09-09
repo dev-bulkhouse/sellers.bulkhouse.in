@@ -233,7 +233,7 @@ foreach($vendor_details->result_array() as $row)
      $details['email'] = $row['email'];
      $details['mobile'] = $row['mobile'];
      $details['document'] = $row['pan_prop'];
-     
+
      $details['document_date'] = $row['pan_prop_date'];
      $details['type'] = $row['pan_prop_type'];
      $details['file_name']= "_pan_card";
@@ -264,9 +264,9 @@ foreach($vendor_details->result_array() as $row)
      $details['email'] = $row['email'];
      $details['mobile'] = $row['mobile'];
      $details['document'] = $row['vat_cst'];
-     
+
      $details['document_date'] = $row['vat_cst_date'];
-     $details['type'] = $row['pan_prop_type'];
+     $details['type'] = $row['vat_cst_type'];
       $details['file_name']= "_vat";
         $details['button']= "/vat";
      $details['document_name']= "VAT Number";
@@ -325,7 +325,7 @@ foreach($vendor_details->result_array() as $row)
      $details['address']= "Address";
      $details['address1'] = $row['address1'];
      $details['address2'] = $row['address2'];
-     
+
      $details['document_date'] = $row['aoa_date'];
      $details['type'] = $row['aoa_type'];
       $details['file_name']= "_aoa";
@@ -357,11 +357,11 @@ foreach($vendor_details->result_array() as $row)
      $details['address']= "Address";
      $details['address1'] = $row['address1'];
      $details['address2'] = $row['address2'];
-    
+
      $details['document_date'] = $row['shop_establish_trade_date'];
      $details['type'] = $row['shop_establish_trade_type'];
       $details['file_name']= "_shop_establish_trade_date";
-      
+
      $details['button']= "/shop_establish_trade";
         $details['document_name']= "Shop establish trade Number";
 
@@ -477,7 +477,7 @@ foreach($vendor_details->result_array() as $row)
      $details['type'] = $row['servicetax_type'];
      $details['file_name']= "_servicetax";
      $details['button']= "/servicetax";
-     
+
 
      $this->load->view('admin/preview_details',$details);
 
@@ -667,6 +667,6 @@ $details['address']= "Address";
 }
 
     }
-   
+
 
 }
