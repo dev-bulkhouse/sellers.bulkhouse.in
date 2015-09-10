@@ -103,14 +103,14 @@ class Vendor_update extends CI_Model {
 
 
              if($firm_type == 'partnership'){
-                 if($pan_prop == 5 || $photoid == 5 ||$vat_cst_status == 5 || $cst_status == 5 || $pan_comp_status == 5 || $part_deed_status == 5 ){
+                 if($pan_prop_status == 5 || $photoid == 5 ||$vat_cst_status == 5 || $cst_status == 5 || $pan_comp_status == 5 || $part_deed_status == 5 ){
                      return "Need To Upload";
-                 }elseif($pan_prop == 0 || $photoid == 0 || $vat_cst_status == 0 || $cst_status == 0 || $pan_comp_status == 0 || $part_deed_status == 0){
+                 }elseif($pan_prop_status == 0 || $photoid == 0 || $vat_cst_status == 0 || $cst_status == 0 || $pan_comp_status == 0 || $part_deed_status == 0){
                      return "Waiting for Approved";
-                 }elseif($pan_prop == 2 || $photoid == 2 || $vat_cst_status == 2 || $cst_status == 2 || $pan_comp_status == 2 || $part_deed_status == 2){
+                 }elseif($pan_prop_status == 2 || $photoid == 2 || $vat_cst_status == 2 || $cst_status == 2 || $pan_comp_status == 2 || $part_deed_status == 2){
                      return "Approved";
 
-                 }elseif($pan_prop == 1 || $photoid == 1 || $vat_cst_status == 1 || $cst_status == 1 || $pan_comp_status == 1 || $part_deed_status == 1){
+                 }elseif($pan_prop_status == 1 || $photoid == 1 || $vat_cst_status == 1 || $cst_status == 1 || $pan_comp_status == 1 || $part_deed_status == 1){
                      return "Disapproved";
                  }
 
