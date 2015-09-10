@@ -1425,7 +1425,7 @@ $query = $this->db->get();
                                                     <?php } elseif ($row['businessid_status'] == 0) { ?>
                                                         <span class="badge md-success">Waiting for approve</span>
                                                     <?php } elseif ($row['businessid_status'] == 1) { ?>
-                                                        <span class="badge md-trigger" data-modal="modal-buisenessid">Please Resubmit</span>
+                                                        <span class="badge md-trigger" data-modal="modal-businessid">Please Resubmit</span>
                                                     <?php } elseif ($row['businessid_status'] == 2) { ?>
                                                         <span class="badge md-success">Approved</span>
             <?php
