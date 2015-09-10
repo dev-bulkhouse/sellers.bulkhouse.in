@@ -392,7 +392,7 @@ foreach ($details2 as $row) {
                                                     if ($row['comp_file_lock'] == 0 && $row['comp_file_status'] == 5) {
                                                         ?>
                                                         <div class="media-body">
-                                                            <input type="hidden" name="email" id="email" value="<?php $email; ?>">
+                                                            <input type="hidden" name="email" id="email" value="<?php echo $email; ?>">
                                                             <input type="hidden" class="form-control" name="comp_file" id="comp_file">
                                                             <input type="file" name="comp_file" title="Upload" class="btn btn-sm btn-primary m-b-sm">
                                                             <br>
