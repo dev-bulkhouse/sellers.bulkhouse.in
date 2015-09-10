@@ -643,7 +643,7 @@ foreach ($details2 as $row) {
                                                 </div>
 
                                                 <div class="col-sm-3">
-
+                                                        
                                                     <label>Quality Certification:</label>
                                                     <select name="cert_products"  class="form-control parsley-validated parsley-success">
                                                         <option value="">Select</option>

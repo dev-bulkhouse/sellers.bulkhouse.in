@@ -622,8 +622,48 @@ if ($logged_in) {
                                         <td><?php echo $moa->firm_name; ?></td>
                                         <td><?php echo $moa->moa_aoa; ?></td>
                                         <td><?php echo $moa->moa_aoa_date; ?></td>
-                                        <td><button type="button" class="btn btn-info active" data-toggle="modal" data-target="#moa" data-whatever="<?php echo $moa->compid; ?>">View</button><a target="_blank" href="<?php echo site_url(); ?>files/<?php echo $moa->compid; ?>/MOA.<?php echo $moa->moa_aoa_type; ?>">view</a></td>
+                                        <td><button type="button" class="btn btn-info active" data-toggle="modal" data-target="#moa" data-whatever="<?php echo $moa->compid; ?>">View</button></td>
                                         <td><form style="float: left" method="post" action="/change/approve/<?php echo $moa->compid . '/moa_aoa' ?>"><button type="submit" class="btn btn-success active">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $moa->compid . '/moa_aoa' ?>"><button type="submit" class="btn btn-danger active">Disapprove</button></form></td>
+                                    </tr>
+    <?php } ?>
+
+
+                            </tbody>
+                        </table>
+
+
+
+                        </div>
+<?php } elseif (($doc_type == "comp_file")) { ?>
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Company Name</th>
+                                    <th>MOA and AOA</th>
+                                    <th>Date of Submission</th>
+                                    <th>Preview</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+    <?php
+    $this->db->select('*');
+    $this->db->from('document_details');
+    $this->db->join('vendor_details', 'vendor_details.id = document_details.compid');
+    $this->db->where(array('document_details.comp_file_status' => 0));
+    $query = $this->db->get();
+    $comp_files = $query->result();
+    ?>
+    <?php foreach ($comp_files as $comp_file) { ?>
+
+                                    <tr>
+                                        <td><?php echo $comp_file->vendor_name; ?></td>
+                                        <td><?php echo $comp_file->firm_name; ?></td>
+                                        <td><?php echo $comp_file->comp_file; ?></td>
+                                        <td><?php echo $comp_file->comp_file_date; ?></td>
+                                        <td><button type="button" class="btn btn-info active" data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $comp_file->compid; ?>">View</button></td>
+                                        <td><form style="float: left" method="post" action="/change/approve/<?php echo $comp_file->compid . '/comp_file' ?>"><button type="submit" class="btn btn-success active">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $comp_file->compid . '/comp_file' ?>"><button type="submit" class="btn btn-danger active">Disapprove</button></form></td>
                                     </tr>
     <?php } ?>
 
@@ -990,6 +1030,26 @@ if ($logged_in) {
             $.ajax({
                 type: "GET",
                 url: "/admin/document_preview_cert_of_incorp/",
+                data: dataString,
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.ct').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    })
+    $('#comp_file').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget); // Button that triggered the modal
+          var recipient = button.data('whatever'); // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'id=' + recipient;
+
+            $.ajax({
+                type: "GET",
+                url: "/admin/document_preview_profile/",
                 data: dataString,
                 cache: false,
                 success: function (data) {

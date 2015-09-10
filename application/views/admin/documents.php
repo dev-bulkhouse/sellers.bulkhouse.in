@@ -94,6 +94,10 @@ if ($logged_in) {
         $data['doc_name'] = 'aoa';
         $this->load->view('admin/widget_document', $data);
 
+        $data['doc_show_title'] = 'New Company Profile';
+        $data['doc_name'] = 'comp_file';
+        $this->load->view('admin/widget_document', $data);
+
         $data['doc_show_title'] = 'New Shop and Establishment or Trade License';
         $data['doc_name'] = 'shop_establish_trade';
         $this->load->view('admin/widget_document', $data);

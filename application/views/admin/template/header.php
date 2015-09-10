@@ -44,7 +44,7 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                  
+
                                     <div class="ct"></div>
                                 </div>
 
@@ -55,7 +55,7 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
@@ -66,7 +66,7 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
@@ -77,18 +77,31 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
                             </div>
                         </div>
+
+        <div id="comp_file" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+        
           <div id="shop_establish_trade" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
                             <div class="modal-dialog">
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
@@ -99,7 +112,7 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
@@ -110,7 +123,7 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
@@ -121,7 +134,7 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
@@ -132,7 +145,7 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
@@ -143,7 +156,7 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
@@ -154,7 +167,7 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
@@ -165,7 +178,7 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
@@ -176,7 +189,7 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
@@ -187,7 +200,7 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
@@ -198,7 +211,7 @@ if ($logged_in) {
 
                                 <!-- Modal content-->
                                 <div class="modal-content">
-                                   
+
                                     <div class="ct"></div>
                                 </div>
 
