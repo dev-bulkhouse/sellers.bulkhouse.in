@@ -102,9 +102,9 @@ class Vendor_update extends CI_Model {
             $cert_of_incorp_status = $st->cert_of_incorp_status;
             $moa_aoa_status = $st->moa_aoa_status;
             $aoa_status = $st->aoa_status;
-            $shop_establish_trade = $st->shop_establish_trade;
-            $photoid = $st->photoid;
-            $businessid = $st->businessid;
+            $shop_establish_trade = $st->shop_establish_trade_status;
+            $photoid = $st->photoid_status;
+            $businessid = $st->businessid_status;
 
             if ($firm_type == 'partnership') {
                 if ($pan_prop_status == 5 || $photoid == 5 || $vat_cst_status == 5 || $cst_status == 5 || $pan_comp_status == 5 || $part_deed_status == 5) {
