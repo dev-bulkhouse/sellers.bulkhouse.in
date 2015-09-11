@@ -360,10 +360,10 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (8000 * 8000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
-                            $actual_image_name = $comp_id . '_' . 'MOA' . "." . $ext;
+                            $actual_image_name = $comp_id . '_' . 'moa_aoa' . "." . $ext;
                             if ($s3->putObjectFile($tmp, $bucket, $actual_image_name, S3::ACL_PUBLIC_READ)) {
                                 $s3file = 'http://' . $bucket . '.s3.amazonaws.com/' . $actual_image_name;
                                 "<img src='$s3file' style='max-width:400px'/><br/>";
@@ -374,7 +374,7 @@ class Upload_new extends CI_Controller {
                                 echo "Upload Fail !!";
                             }
                         } else {
-                            echo "Image size was more than 2 MB";
+                            echo "Image size was more than 8 MB";
                         }
                     } else {
                         echo "Invalid file, Invalid file, Only PDF Allowed.";
@@ -402,10 +402,10 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (8000 * 8000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
-                            $actual_image_name = $comp_id . '_' . 'AOA' . "." . $ext;
+                            $actual_image_name = $comp_id . '_' . 'aoa' . "." . $ext;
                             if ($s3->putObjectFile($tmp, $bucket, $actual_image_name, S3::ACL_PUBLIC_READ)) {
                                 $s3file = 'http://' . $bucket . '.s3.amazonaws.com/' . $actual_image_name;
                                 "<img src='$s3file' style='max-width:400px'/><br/>";
@@ -416,7 +416,7 @@ class Upload_new extends CI_Controller {
                                 echo "Upload Fail !!";
                             }
                         } else {
-                            echo "Image size was more than 2 MB";
+                            echo "Image size was more than 8 MB";
                         }
                     } else {
                         echo "Invalid file, Invalid file, Only PDF Allowed.";
