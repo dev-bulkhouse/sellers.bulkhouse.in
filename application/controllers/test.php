@@ -17,20 +17,20 @@ class Test extends CI_Controller {
         $this->db->where('bank_details.dispatch_date', $date);
         $query = $this->db->get();
         $excel = $query->result();
-        $data = array();
-        $data = array(
+        $data6 = array();
+        $data6 = array(
 
                    1 => array ('Account Name','Account Number','Bank Name','Branch','IFSC','MICR','Deposit Amount')
             );
 
         foreach ($excel as $report)
         {
-        $data[] = $report;
+        $data6[] = $report;
         }
 
 // generate file (constructor parameters are optional)
 $xls = new Excel_XML('UTF-8', false, 'Dispatched Sheet');
-$xls->addArray($data);
+$xls->addArray($data6);
 $xls->generateXML('Dispatched on'.$date);
 
     }
@@ -42,23 +42,23 @@ $xls->generateXML('Dispatched on'.$date);
                  $this->db->where('bank_details.status', 10);
                 $query = $this->db->get();
                 $excel = $query->result();
-                $data1 = array();
+                $data5 = array();
 
-                $data1 = array(
+                $data5 = array(
 
                    1 => array ('Name','CompanyName','email','Mobile'),
 
                   );
             foreach ($excel as $report)
         {
-        $data1[] = $report;
+        $data5[] = $report;
         }
 
 
 
 // generate file (constructor parameters are optional)
 $xls = new Excel_XML('UTF-8', false, 'Dispatched Sheet');
-$xls->addArray($data1);
+$xls->addArray($data5);
 $xls->generateXML('pending bank report');
 
     }
@@ -70,23 +70,23 @@ $xls->generateXML('pending bank report');
                  $this->db->where('vendor_details.activation', 1);
                 $query = $this->db->get();
                 $excel = $query->result();
-                $data1 = array();
+                $data = array();
 
-                $data1 = array(
+                $data = array(
 
                    1 => array ('Name','CompanyName','email','Mobile'),
 
                   );
             foreach ($excel as $report)
         {
-        $data1[] = $report;
+        $data[] = $report;
         }
 
 
 
 // generate file (constructor parameters are optional)
 $xls = new Excel_XML('UTF-8', false, 'Dispatched Sheet');
-$xls->addArray($data1);
+$xls->addArray($data);
 $xls->generateXML('Vendors report');
 
     }
@@ -133,23 +133,23 @@ $xls->generateXML('pending email report');
                 $query = $this->db->get();
 
                 $excel = $query->result();
-                $data1 = array();
+                $data2 = array();
 
-                $data1 = array(
+                $data2 = array(
 
                    1 => array ('Name','CompanyName','email','Mobile','Firm Type'),
 
                   );
             foreach ($excel as $report)
         {
-        $data1[] = $report;
+        $data2[] = $report;
         }
 
 
 
 // generate file (constructor parameters are optional)
 $xls = new Excel_XML('UTF-8', false, 'Dispatched Sheet');
-$xls->addArray($data1);
+$xls->addArray($data2);
 $xls->generateXML('pending prop report');
 
     }
@@ -172,23 +172,23 @@ $xls->generateXML('pending prop report');
                 $query = $this->db->get();
 
                 $excel = $query->result();
-                $data1 = array();
+                $data3 = array();
 
-                $data1 = array(
+                $data3 = array(
 
                    1 => array ('Name','CompanyName','email','Mobile','Firm Type'),
 
                   );
             foreach ($excel as $report)
         {
-        $data1[] = $report;
+        $data3[] = $report;
         }
 
 
 
 // generate file (constructor parameters are optional)
 $xls = new Excel_XML('UTF-8', false, 'Dispatched Sheet');
-$xls->addArray($data1);
+$xls->addArray($data3);
 $xls->generateXML('pending PVT-LTD report');
 
     }
@@ -208,23 +208,23 @@ $xls->generateXML('pending PVT-LTD report');
                 $query = $this->db->get();
 
                 $excel = $query->result();
-                $data1 = array();
+                $data4 = array();
 
-                $data1 = array(
+                $data4 = array(
 
                    1 => array ('Name','CompanyName','email','Mobile','Firm Type'),
 
                   );
             foreach ($excel as $report)
         {
-        $data1[] = $report;
+        $data4[] = $report;
         }
 
 
 
 // generate file (constructor parameters are optional)
 $xls = new Excel_XML('UTF-8', false, 'Dispatched Sheet');
-$xls->addArray($data1);
+$xls->addArray($data4);
 $xls->generateXML('pending partneship report');
 
     }
