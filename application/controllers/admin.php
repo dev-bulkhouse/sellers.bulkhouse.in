@@ -22,6 +22,7 @@ class Admin extends CI_Controller {
 
 
         $this->load->model('login_model');
+        $this->load->model('vendor_update');
         $this->load->helper('url');
     }
 
@@ -141,36 +142,67 @@ if($this->session->userdata('logged_in')){
         }
 
        }
-               public function profile($id) {
-$vendor_details = $this->register_model->view_data($id);
+             public function profile($id) {
 
-foreach($vendor_details->result_array() as $row)
-{
-     $details['vendor_name'] = $row['vendor_name'];
-     $details['last_name'] = $row['last_name'];
-     $details['firm_type'] = $row['firm_type'];
-     $details['firm_name'] = $row['firm_name'];
-     $details['email'] = $row['email'];
-     $details['mobile'] = $row['mobile'];
-     $details['pan_prop'] = $row['pan_prop'];
-     $details['vat'] = $row['vat'];
-     $details['cst'] = $row['cst'];
+        $this->db->select('*');
+        $this->db->from('vendor_details');
+        $this->db->join('document_details', 'document_details.compid = vendor_details.id');
+           $this->db->join('bank_details', 'bank_details.compid = vendor_details.id');
 
-}
+        $this->db->where(array('vendor_details.id' => $id));
+         $this->db->group_by("vendor_details.id");
+
+        $query = $this->db->get();
+        foreach ($query->result_array() as $row) {
+            $details['compid'] = $row['compid'];
+            $details['vendor_name'] = $row['vendor_name'];
+            $details['last_name'] = $row['last_name'];
+            $details['company_name'] = $row['firm_name'];
+            $details['firm_type'] = $row['firm_type'];
+            $details['firm_name'] = $row['firm_name'];
+            $details['email'] = $row['email'];
+            $details['mobile'] = $row['mobile'];
+            $details['pan_prop_status'] = $row['pan_prop_status'];
+             $details['pan_comp_status'] = $row['pan_comp_status'];
+              $details['vat_cst_status'] = $row['vat_cst_status'];
+               $details['part_deed_status'] = $row['part_deed_status'];
+               $details['photoid_status'] = $row['photoid_status'];
+               $details['shop_establish_trade_status'] = $row['shop_establish_trade_status'];
+               $details['businessid_status'] = $row['businessid_status'];
+               $details['cert_of_incorp_status'] = $row['cert_of_incorp_status'];
+               $details['moa_aoa_status'] = $row['moa_aoa_status'];
+                 $details['aoa_status'] = $row['aoa_status'];
+                   $details['status'] = $row['status'];
+                     $details['address1'] = $row['address1'];
+                       $details['address2'] = $row['address2'];
+                        $details['city'] = $row['city'];
+                         $details['state'] = $row['state'];
+                          $details['country'] = $row['country'];
+                           $details['pin_code'] = $row['pin_code'];
+                             $details['cenvat_status'] = $row['cenvat_status'];
+                               $details['servicetax_status'] = $row['servicetax_status'];
+                               $details['year_establishment'] = $row['year_establishment'];
+                               $details['no_employees'] = $row['no_employees'];
+                               $details['reg_category'] = $row['reg_category'];
+                               $details['website'] = $row['website'];
+                                $details['land_line'] = $row['land_line'];
+                                 $details['cert_products'] = $row['cert_products'];
+                                  $details['comp_turnover'] = $row['comp_turnover'];
+                                   $details['registered_on'] = $row['registered_on'];
 
 
-        if($this->session->userdata('logged_in')){
-            $this->logged_in = true;
-            $logged = $this->logged_in;
-            $this->load->view('admin/template/header',array('logged_in'=>$logged));
-               //$this->load->view('admin/template/header',array('id'=>$id,'logged_in'=>$logged));
-            $this->load->view('admin/profiles',$details);
-                          //$this->load->view('admin/profiles',array('id'=>$id,'logged_in'=>$logged));
 
-        }  else {
-            $this->logged_in = false;
-           redirect(base_url().'admin/','location');
+
+
+
+
+
+
+
+
+            $this->load->view('admin/profiles', $details);
         }
+
     }
     public function bankdetails() {
 
