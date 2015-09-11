@@ -81,7 +81,7 @@ class Register_model extends CI_Model {
 
         if ($this->db->affected_rows() === 1) {
             $this->set_session($email);
-            $this->send_confirmation_mail();
+            $this->send_confirmation_mail($email);
             $this->activate_seller($email, $first_name, $last_name, $password_sec);
 //          $this->activate_account($email);
             return array($first_name, $email, $firm_type, $firm_name, $mobile);
@@ -228,17 +228,17 @@ class Register_model extends CI_Model {
         $this->session->set_userdata($sess_data);
     }
 
-    private function send_confirmation_mail() {
+    private function send_confirmation_mail($email) {
         $this->load->helper('url');
         $this->load->library('email');
-        $email = $this->session->userdata('email');
+//        $email = $this->session->userdata('email');
 
         $email_code = $this->email_code;
         $config['protocol'] = "sendmail";
         $config['smtp_host'] = "smtp.sendgrid.net";
         $config['smtp_port'] = "587";
         $config['smtp_user'] = "vendors_bulkhouse";
-        $config['smtp_pass'] = "bulkhouse@vizag123";
+        $config['smtp_pass'] = "asdftrew12";
         $config['charset'] = "utf-8";
         $config['newline'] = "\r\n";
         $this->email->initialize($config);
