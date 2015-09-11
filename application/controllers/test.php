@@ -119,7 +119,7 @@ $xls->generateXML('pending email report');
 
     }
      public function pending_pro_report() {
-               $this->db->select('vendor_name, firm_name, email, mobile');
+               $this->db->select('vendor_name, firm_name, email, mobile,firm_type');
                 $this->db->from('vendor_details');
                 $this->db->join('document_details','document_details.compid = vendor_details.id');
                 $this->db->where('document_details.pan_prop_status', 5);
@@ -137,7 +137,7 @@ $xls->generateXML('pending email report');
 
                 $data1 = array(
 
-                   1 => array ('Name','CompanyName','email','Mobile'),
+                   1 => array ('Name','CompanyName','email','Mobile','Firm Type'),
 
                   );
             foreach ($excel as $report)
@@ -154,7 +154,7 @@ $xls->generateXML('pending prop report');
 
     }
      public function pending_pvt_report() {
-               $this->db->select('vendor_name, firm_name, email, mobile');
+               $this->db->select('vendor_name, firm_name, email, mobile','firm_type');
                 $this->db->from('vendor_details');
                 $this->db->join('document_details','document_details.compid = vendor_details.id');
                 $this->db->where('document_details.pan_prop_status', 5);
@@ -162,7 +162,7 @@ $xls->generateXML('pending prop report');
                  $this->db->or_where('document_details.pan_comp_status', 5);
                    $this->db->or_where('document_details.moa_aoa_status', 5);
                      $this->db->or_where('document_details.aoa_status', 5);
-                      $this->db->where('document_details.cert_of_incorp_status', 5);
+                      $this->db->or_where('document_details.cert_of_incorp_status', 5);
 
                   $this->db->or_where('document_details.photoid', 5);
                    $this->db->or_where('document_details.addressid', 5);
@@ -176,7 +176,7 @@ $xls->generateXML('pending prop report');
 
                 $data1 = array(
 
-                   1 => array ('Name','CompanyName','email','Mobile'),
+                   1 => array ('Name','CompanyName','email','Mobile','Firm Type'),
 
                   );
             foreach ($excel as $report)
@@ -193,8 +193,8 @@ $xls->generateXML('pending PVT-LTD report');
 
     }
      public function pending_pat_report() {
-             $this->db->select('vendor_name, firm_name, email, mobile');
-                $this->db->from('vendor_details');
+             $this->db->select('vendor_name, firm_name, email, mobile','firm_type');
+                 $this->db->from('vendor_details');
                 $this->db->join('document_details','document_details.compid = vendor_details.id');
                 $this->db->where('document_details.pan_prop_status', 5);
                 $this->db->or_where('document_details.vat_cst_status', 5);
@@ -212,7 +212,7 @@ $xls->generateXML('pending PVT-LTD report');
 
                 $data1 = array(
 
-                   1 => array ('Name','CompanyName','email','Mobile'),
+                   1 => array ('Name','CompanyName','email','Mobile','Firm Type'),
 
                   );
             foreach ($excel as $report)
@@ -230,4 +230,3 @@ $xls->generateXML('pending partneship report');
     }
 }
 
-    

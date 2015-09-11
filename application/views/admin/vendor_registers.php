@@ -308,7 +308,7 @@ if ($logged_in) {
                  $this->db->or_where('document_details.pan_comp_status', 5);
                    $this->db->or_where('document_details.moa_aoa_status', 5);
                      $this->db->or_where('document_details.aoa_status', 5);
-                      $this->db->where('document_details.cert_of_incorp_status', 5);
+                      $this->db->or_where('document_details.cert_of_incorp_status', 5);
 
                   $this->db->or_where('document_details.photoid', 5);
                    $this->db->or_where('document_details.addressid', 5);
