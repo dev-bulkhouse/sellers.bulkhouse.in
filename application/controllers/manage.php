@@ -10,8 +10,9 @@ class Manage extends CI_Controller {
     public function __construct() {
         parent::__construct();
 
-         
+
         $this->load->model('login_model');
+         $this->load->model('subscribe_model');
         $this->load->helper('url');
     }
 
@@ -22,6 +23,14 @@ class Manage extends CI_Controller {
 //        $this->load->view('admin/template/footer');
     }
 
-   
+    public function imp() {
+
+
+        $this->load->view('secimp');
+
+
+    }
+
+
 
 }

@@ -134,5 +134,13 @@ class Subscribe_model extends CI_Model {
         }
     }
 
+    public function get_imp() {
+        $this->db->select('*');
+        $this->db->from('sec_vendor_authinfo');
+        $query = $this->db->get();
+
+        return $query->result_array();
+
+    }
 
 }
