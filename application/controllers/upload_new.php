@@ -194,7 +194,7 @@ class Upload_new extends CI_Controller {
                         if ($size < (2048 * 2048)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
-                            $actual_image_name = $comp_id . '_' . 'pan_comp' . "." . $ext;
+                            $actual_image_name = $comp_id . '_' . 'pan_company' . "." . $ext;
                             if ($s3->putObjectFile($tmp, $bucket, $actual_image_name, S3::ACL_PUBLIC_READ)) {
                                 $s3file = 'http://' . $bucket . '.s3.amazonaws.com/' . $actual_image_name;
                                 "<img src='$s3file' style='max-width:400px'/><br/>";
