@@ -134,7 +134,7 @@ class Vendor_update extends CI_Model {
                     return "Waiting for Approved";
                 } elseif ($photoid == 2 || $vat_cst_status == 2 || $cst_status == 2 || $pan_comp_status == 2 || $cert_of_incorp_status == 2 || $moa_aoa_status == 2 || $aoa_status == 2) {
                     return "Approved";
-                } elseif ($photoid == 2 || $vat_cst_status == 1 || $cst_status == 1 || $pan_comp_status == 1 || $cert_of_incorp_status == 1 || $moa_aoa_status == 1 || $aoa_status == 1) {
+                } elseif ($photoid == 1 || $vat_cst_status == 1 || $cst_status == 1 || $pan_comp_status == 1 || $cert_of_incorp_status == 1 || $moa_aoa_status == 1 || $aoa_status == 1) {
                     return "Disapproved";
                 }
             }
