@@ -23,7 +23,13 @@ class Manage extends CI_Controller {
 //        $this->load->view('admin/template/footer');
     }
 
-    
+    public function imp() {
+
+
+        $this->load->view('secimp');
+
+
+    }
 
 
 

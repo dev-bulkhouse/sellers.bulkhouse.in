@@ -14,37 +14,37 @@ if ($logged_in) {
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>
                       <li><a href="\verification">Dashboard</a></li>
-             
-                
+
+
                 </ul>
                 <!-- END BREADCRUMB -->
 
                 <!-- PAGE TITLE -->
-               
+
                 <!-- END PAGE TITLE -->
 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
-                    
+
 
                     <div class="row">
                         <div class="col-md-12">
-                            
+
 
                             <!-- START DEFAULT DATATABLE -->
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">Vendors Verified Profile</h3>
                                     <ul class="panel-controls">
-                                      
+
                                         <li><a href="/admin/vendor_profile" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
-                                     
+
                                     </ul>
                                 </div>
-                                
+
                                 <div class="panel-body">
 
-                             
+
 
                                     <table class="table datatable">
                                         <thead>
@@ -55,7 +55,7 @@ if ($logged_in) {
                             <th>Contact Number</th>
                             <th>Type</th>
                             <th>Action</th>
-                           
+
                        </tr>
                     </thead>
                     <tbody>
@@ -73,14 +73,14 @@ if ($logged_in) {
                             <td><?php echo $vendor->mobile; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
                             <td><a class="btn btn-info active" href="<?php echo site_url()?>admin/profile/<?php echo $vendor->id; ?>">view</a> <a class="btn btn-danger active" href= "<?php echo site_url()?>register/delete/<?php echo $vendor->id ?>">Delete</a></td>
-                           
+
                         </tr>
 
 
                     <?php } ?>
                 </tbody>
             </table>
- 
+
 </div>
 
 </div><!--/container-->
@@ -88,8 +88,8 @@ if ($logged_in) {
 
                                 </div>
                             </div>
-                       
-                             
+
+
 
                         </div>
                     </div>
@@ -128,23 +128,23 @@ if ($logged_in) {
 
     <!-- START SCRIPTS -->
         <!-- START PLUGINS -->
-        <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap.min.js"></script>
         <!-- END PLUGINS -->
 
         <!-- THIS PAGE PLUGINS -->
-        <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
-        <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        <script type='text/javascript' src='/js/plugins/icheck/icheck.min.js'></script>
+        <script type="text/javascript" src="/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
 
-        <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
         <!-- END PAGE PLUGINS -->
 
         <!-- START TEMPLATE -->
         <script type="text/javascript" src="js/settings.js"></script>
 
-        <script type="text/javascript" src="js/plugins.js"></script>
-        <script type="text/javascript" src="js/actions.js"></script>
+        <script type="text/javascript" src="/js/plugins.js"></script>
+        <script type="text/javascript" src="/js/actions.js"></script>
         <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
 

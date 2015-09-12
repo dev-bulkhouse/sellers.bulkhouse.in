@@ -27,15 +27,11 @@ class Home extends CI_Controller {
 	}
         public function terms() {
 
-//                $this->load->view('template/header');
 		$this->load->view('terms');
-//                $this->load->view('template/footer');
         }
         public function export_terms() {
 
-//                $this->load->view('template/header');
 		$this->load->view('export_terms');
-//                $this->load->view('template/footer');
         }
 
         public function aaptha($email, $firstname, $lastname, $password_sec) {

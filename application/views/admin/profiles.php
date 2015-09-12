@@ -318,7 +318,7 @@
                                         <a   data-toggle="tooltip" title="Approved!" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Pan Card</b></small></a>
                                     <?php } elseif ($pan_prop_status == 1) { ?>
 
-                                        <a   data-toggle="tooltip" title="Submited!" class="btn btn-circle btn-danger"><i class="fa fa-check"></i><small><b>Pan Card</b></small></a>
+                                        <a   data-toggle="tooltip" title="Disapproved" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Pan Card</b></small></a>
                                     <?php } ?>
 
                                     <?php if ($pan_comp_status == 5) { ?>
@@ -622,7 +622,7 @@
     <?php } elseif ($status == 0) { ?>
 
                                         <a   data-toggle="tooltip" title="Submitted!" class="btn btn-circle btn-primary"><i class="glyphicon glyphicon-thumbs-up"></i></a>
-                                        <br><small><b>Bank status</b></small></a>
+                                        <small><b>Bank status</b></small></a>
     <?php } elseif ($status == 1) { ?>
 
                                         <a   data-toggle="tooltip" title="Dispatch!" class="btn btn-circle btn-info"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Bank status</b></small></a>

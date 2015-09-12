@@ -300,7 +300,7 @@ if($this->session->userdata('logged_in')){
      $details['document_date'] = $row['vat_cst_date'];
      $details['type'] = $row['vat_cst_type'];
       $details['file_name']= "_vat";
-        $details['button']= "/vat";
+        $details['button']= "/vat_cst";
      $details['document_name']= "VAT Number";
 
      $this->load->view('admin/preview_details',$details);
