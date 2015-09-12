@@ -111,6 +111,20 @@ redirect('/admin/details/'.$type,'location');
 
 
     }
+
+    public function waiting($compid,$type){
+
+        $data = array(
+               $type.'_status' => 0,
+         );
+
+$this->db->where('compid', $compid);
+$this->db->update('document_details', $data);
+
+redirect('/admin/details/'.$type,'location');
+
+
+    }
      public function sucess($compid){
 
         $data = array(
