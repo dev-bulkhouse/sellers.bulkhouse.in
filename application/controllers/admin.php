@@ -721,8 +721,8 @@ if($this->session->userdata('logged_in')){
      $details['document'] = $row['cert_of_incorp'];
      $details['document_date'] = $row['cert_of_incorp_date'];
      $details['type'] = $row['cert_of_incorp_type'];
-     $details['file_name']= "_cert_of_incorp_type";
-     $details['button']= "/cert_of_incorp_type";
+     $details['file_name']= "_cert_of_incorp";
+     $details['button']= "/cert_of_incorp";
        $details['document_name']= "Certificate Of Incorporation";
 $details['address']= "Address";
      $details['address1'] = $row['address1'];
