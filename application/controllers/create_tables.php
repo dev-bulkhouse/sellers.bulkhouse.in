@@ -87,6 +87,10 @@ class Create_tables extends CI_Controller {
 
     }
 
+    public function mag_cust() {
+        $this->tabs->mag_cust();
+    }
+
     public function welcome() {
         echo("This is welcome page");
     }
