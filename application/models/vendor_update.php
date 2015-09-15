@@ -279,6 +279,7 @@ class Vendor_update extends CI_Model {
 
         $this->db->where(array('vendor_details.email' => $email));
         $this->db->update('vendor_details', $data);
+        echo "firmtype changed successfully for ".$email." to ".$firmtype;
     }
 
 }
