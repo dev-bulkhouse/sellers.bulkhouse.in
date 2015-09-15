@@ -238,4 +238,29 @@ class Test extends CI_Controller {
         $xls->generateXML('all vendors report');
     }
 
+    public function document_pending_vendors() {
+        $this->db->select('vendor_name, firm_name, email, mobile,firm_type,registered_on,pan_prop_lock,vat_cst_lock,pan_comp_lock,part_deed_lock,cert_of_incorp_lock,moa_aoa_lock,aoa_lock,shop_establish_trade_lock,cenvat_lock,servicetax_lock,photoid_lock,addressid_lock,businessid_lock.canceled_check_lock,comp_file_lock');
+        $this->db->from('vendor_details');
+        $this->db->join('document_details', 'document_details.compid = vendor_details.id');
+        $this->db->group_by("vendor_details.id");
+        $query = $this->db->get();
+
+        $excel7 = $query->result();
+        $data10 = array();
+
+        $data10 = array(
+            1 => array('Name', 'CompanyName', 'email', 'Mobile', 'Firm Type','Registered On','Personal Pan','Vat-Cst','Company Pan','Partnership Deed','Certificate Of Incorporation','MOA','AOA','Shop and Estableshment or Trade License','CenVat','Service Tax','Photo Id','Registrant Address','Business Address','Check','Company Profile'),
+        );
+        foreach ($excel7 as $report) {
+            $data10[] = $report;
+        }
+
+
+
+// generate file (constructor parameters are optional)
+        $xls = new Excel_XML('UTF-8', false, 'All Vendors');
+        $xls->addArray($data10);
+        $xls->generateXML('all vendors report');
+    }
+
 }
