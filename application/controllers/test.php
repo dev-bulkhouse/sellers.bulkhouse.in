@@ -215,7 +215,7 @@ class Test extends CI_Controller {
     }
 
     public function all_vendors() {
-        $this->db->select('vendor_name, firm_name, email, mobile,firm_type');
+        $this->db->select('vendor_name, firm_name, email, mobile,firm_type,registered_on');
         $this->db->from('vendor_details');
         $this->db->group_by("vendor_details.id");
         $query = $this->db->get();
@@ -224,7 +224,7 @@ class Test extends CI_Controller {
         $data10 = array();
 
         $data10 = array(
-            1 => array('Name', 'CompanyName', 'email', 'Mobile', 'Firm Type'),
+            1 => array('Name', 'CompanyName', 'email', 'Mobile', 'Firm Type','Registered On'),
         );
         foreach ($excel7 as $report) {
             $data10[] = $report;
