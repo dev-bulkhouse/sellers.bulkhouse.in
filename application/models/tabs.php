@@ -285,6 +285,21 @@ class Tabs extends CI_Model {
 
     }
 
+    public function mag_cust() {
+
+        $flag = $this->db->query("CREATE TABLE IF NOT EXISTS `mag_cust` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  `custid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)");
+        
+
+        echo $flag;
+
+
+    }
+
     public function mn() {
         $flag = $this->db->query("CREATE TABLE IF NOT EXISTS `vendor_details` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
