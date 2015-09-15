@@ -82,9 +82,9 @@ class Register_model extends CI_Model {
         if ($this->db->affected_rows() === 1) {
             $this->set_session($email);
             $this->send_confirmation_mail($email);
-            $this->activate_seller($email, $first_name, $last_name, $password_sec);
+            $custid =$this->activate_seller($email, $first_name, $last_name, $password_sec);
 //          $this->activate_account($email);
-            return array($first_name, $email, $firm_type, $firm_name, $mobile);
+            return array($first_name, $email, $firm_type, $firm_name, $mobile, $custid);
 
         } else {
             echo "i am really sorry!";
@@ -93,7 +93,8 @@ class Register_model extends CI_Model {
 
     public function activate_seller($email, $firstname, $lastname, $password_sec) {
         $this->load->spark('mage-api/0.0.1');
-        $this->mage_api->customer_create(array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'password' => $password_sec, 'website_id' => 1, 'store_id' => 1, 'group_id' => 4));
+        $result = $this->mage_api->customer_create(array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'password' => $password_sec, 'website_id' => 1, 'store_id' => 1, 'group_id' => 4));
+        return $result;
     }
 
     public function update() {
