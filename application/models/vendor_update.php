@@ -259,11 +259,25 @@ class Vendor_update extends CI_Model {
         $email = $this->session->userdata('email');
 
         $data = array(
+
             $field => $this->input->post($field)
         );
 
 
         $this->db->where(array('vendor_details.id' => $compid));
+        $this->db->update('vendor_details', $data);
+    }
+
+    public function change_firmtype($email,$firmtype) {
+
+
+        $data = array(
+
+            'firmtype' => $firmtype
+        );
+
+
+        $this->db->where(array('vendor_details.email' => $email));
         $this->db->update('vendor_details', $data);
     }
 

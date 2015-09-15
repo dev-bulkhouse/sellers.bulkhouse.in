@@ -734,4 +734,10 @@ $details['address']= "Address";
     }
 
 
+    public function change_firmtype($email,$firmtype) {
+        
+            $this->vendor_update->change_firmtype($email,$firmtype);
+    }
+
+
 }
