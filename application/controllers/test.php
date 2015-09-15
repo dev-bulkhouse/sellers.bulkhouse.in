@@ -214,4 +214,28 @@ class Test extends CI_Controller {
         $xls->generateXML('pending partneship report');
     }
 
+    public function all_vendors() {
+        $this->db->select('vendor_name, firm_name, email, mobile,firm_type');
+        $this->db->from('vendor_details');
+        $this->db->group_by("vendor_details.id");
+        $query = $this->db->get();
+
+        $excel7 = $query->result();
+        $data10 = array();
+
+        $data10 = array(
+            1 => array('Name', 'CompanyName', 'email', 'Mobile', 'Firm Type'),
+        );
+        foreach ($excel7 as $report) {
+            $data10[] = $report;
+        }
+
+
+
+// generate file (constructor parameters are optional)
+        $xls = new Excel_XML('UTF-8', false, 'All Vendors');
+        $xls->addArray($data10);
+        $xls->generateXML('all vendors report');
+    }
+
 }
