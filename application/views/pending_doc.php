@@ -598,8 +598,8 @@ $query = $this->db->get();
                         $data['doc_id'] = 'comp_file';
                         $data['doc_note'] = 'Please Upload Document here.<p style="font-size:0.8em">Note: Only JPG and PDF files allowed</p>';
                         $data['doc_file'] = 'comp_file';
-                        $data['doc_spinner'] = 'targetLayer_20';
-                        $data['doc_status'] = 'targetLayer20';
+                        $data['doc_spinner'] = 'targetLayer_21';
+                        $data['doc_status'] = 'targetLayer21';
                         $this->load->view('forms/document_form', $data);
                         ?>
                         <?php
