@@ -132,27 +132,93 @@ else
 
     <script type="text/javascript">
 $(document).ready(function(){
- $("#email").keyup(function(){
-  if($("#email").val().length >= 4)
-  {
-  $.ajax({
-   type: "POST",
-   url: "<?php echo base_url();?>/register/check_user",
-   data: "email="+$("#email").val(),
-   success: function(msg){
-    if(msg=="false")
-    {
-    document.getElementById("email").setCustomValidity("Submit Unique EmailID");
-    }
-    else
-    {
-    document.getElementById("email").setCustomValidity('');
-    }
-   }
-  });
-  }
 
- });
+
+
+    $(".emailValidation_Export").blur(function(e) {
+        e.preventDefault();
+        $.post("<?php echo base_url();?>/register/check_user", {email : $("#newEmail_Export").val()}, function (data) {
+            if(data === "true") {
+                $(".verify").css("display", "block");
+                $(".verify_none").css("display", "none");
+                $(".verify_none_chk").css("display", "none");
+                $(".butExport").prop("disabled", "false");
+            } else if(data === "false") {
+                $(".verify_none").css("display", "block");
+                $(".verify").css("display", "none");
+                $(".verify_none_chk").css("display", "none");
+                $(".butExport").prop("disabled", "true");
+            } else if(data === "unknown") {
+                $(".verify").css("display", "none");
+                $(".verify_none").css("display", "none");
+                $(".verify_none_chk").css("display", "block");
+                $(".butExport").prop("disabled", "true");
+            }
+        });
+    });
+
+    $(".emailValidation_Domestic").blur(function(e) {
+        e.preventDefault();
+        $.post("<?php echo base_url();?>/register/check_user", {email : $("#newEmail_Domestic").val()}, function (data) {
+            if(data === "true") {
+                $(".verify").css("display", "block");
+                $(".verify_none").css("display", "none");
+                $(".verify_none_chk").css("display", "none");
+            } else if(data === "false") {
+                $(".verify_none").css("display", "block");
+                $(".verify").css("display", "none");
+                $(".verify_none_chk").css("display", "none");
+            } else if(data === "unknown") {
+                $(".verify").css("display", "none");
+                $(".verify_none").css("display", "none");
+                $(".verify_none_chk").css("display", "block");
+            }
+        });
+    });
+
+    $(".emailValidation_Both").blur(function(e) {
+        e.preventDefault();
+        $.post("<?php echo base_url();?>/register/check_user", {email : $("#newEmail_Both").val()}, function (data) {
+            if(data === "true") {
+                $(".verify").css("display", "block");
+                $(".verify_none").css("display", "none");
+                $(".verify_none_chk").css("display", "none");
+            } else if(data === "false") {
+                $(".verify_none").css("display", "block");
+                $(".verify").css("display", "none");
+                $(".verify_none_chk").css("display", "none");
+            } else if(data === "unknown") {
+                $(".verify").css("display", "none");
+                $(".verify_none").css("display", "none");
+                $(".verify_none_chk").css("display", "block");
+            }
+        });
+    });
+// $("#email").click(function(){
+//     alert("function check");
+//  if($("#email").val().length >= 4)
+//  {
+//  $.ajax({
+//   type: "POST",
+//   url: "<?php // echo base_url();?>/register/check_user",
+//   data: "email="+$("#email").val(),
+//   success: function(msg){
+//    if(msg=="false")
+//    {
+//    document.getElementById("email").setCustomValidity("Submit Unique EmailID");
+//    }
+//    else
+//    {
+//    document.getElementById("email").setCustomValidity('');
+//    }
+//   }
+//  });
+//  }
+//
+// });
+
+
+
  document.getElementById('register_for').addEventListener('change', function () {
     var style = this.value == 'Export' ? 'block' : 'none';
     document.getElementById('Export').style.display = style;

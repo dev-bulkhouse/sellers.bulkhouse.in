@@ -46,7 +46,7 @@ if (window.sidebar){
             </script>-->
     </head>
     <body>
-         <section class="container-fluid">
+        <section class="container-fluid">
             <div class="col-lg-12" style="height: 60px; background-color: #01283A">
                 <div class="col-lg-4"><img width="200px" src="http://bulk.house/skin/frontend/apptha/superstore/images/logo.gif" alt="Bulkhouse"></div>
                 <div class="col-lg-8"><h4 style="text-align: right; color: white">Seller Portal</h4><p style="text-align: right; color: white">Support : <?php echo $this->config->item('bulk-support-number'); ?></p></div>
@@ -61,7 +61,7 @@ if (window.sidebar){
                         <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-primary">
                             <i class="icon-reorder"></i>
                         </a>
-                       
+
 
                     </header>
                     <footer class="footer b-r bg-gradient hidden-xs text-center">
@@ -166,12 +166,12 @@ if (window.sidebar){
                                     <li>The Vendor commits to supply products and transfer additional rights, determined in this Agreement, to
                                         Bulkhouse by submitting them to the Website. Bulkhouse will use products strictly to fulfill its business
                                         needs.</li>
-                                    
+
                                     <li>The Vendor also undertakes to sell Products to Bulkhouse properly, on time, and in a good and honest
                                         manner.</li>
                                     <li>This Agreement is a long-term contract and is the basis for establishing individual purchase.</li>
-                                  
-                                    </ul>
+
+                                </ul>
                                 <p>These terms and conditions govern your use of <b>www.bulkhouse.com</b>,
                                     <b>www.bulkhouse.in</b> or any other websites owned, managed and run by Bulkhouse Trading India Pvt.Ltd .</br> which is an online marketplace allowing
                                     sellers to sell directly to customers (hereinafter referred to as "Bulkhouse"). You must read, agree with and
@@ -184,13 +184,13 @@ if (window.sidebar){
                                 <p><b>If you do not agree or are not willing to be bound by the terms and conditions of this Agreement,
                                         please do not click on the "check box” and on the 'continue' button and on the "Apply as seller"
                                         button.</b>
-                                    </p>
-                                 <div class="line"></div>
+                                </p>
+                                <div class="line"></div>
                                 <h4><b>RECITALS</b>
 
                                     <small>Definitions:</small>
                                 </h4>
-                               
+
                                 <ul>
 
                                     <li>'Buyer' shall mean a user of the Website who places an Order on the Seller listed on the Website for products or services.  </li>
@@ -199,8 +199,8 @@ if (window.sidebar){
                                     <li> 'Seller Panel' means a uniform resource locator ('URL') provided by Bulkhouse to Seller with a unique login
                                         and password to update the order status, price and inventory on the same.</li>
                                 </ul>
-                                 <div class="line"></div>
-                        
+                                <div class="line"></div>
+
                                 <h4 id="APPLICATIONANDACCEPTANCEOFTERMS" class="m-t-lg">APPLICATION AND ACCEPTANCE OF TERMS</h4>
                                 <ul>
                                     <li>Bulkhouse provides an online transaction platform on the Bulkhouse website which allows registered
@@ -220,7 +220,7 @@ if (window.sidebar){
                                         the corresponding changes to the Agreement. </li>
                                     <li>Your continued use of the Website and/or the Services following any such revisions to the Agreement
                                         or such policies and rules will constitute your acceptance of such changes. If you do not agree to any
-                                        such changes, do not continue to use the Website and the Services and close your Account.</li> 
+                                        such changes, do not continue to use the Website and the Services and close your Account.</li>
                                     <li>Bulkhouse may at any time change or remove (temporarily or permanently) the Website, Products or
                                         Suppliers and their information from the Website without indicating the reasons of such change or
                                         removal and you confirm your acceptance to that effect.
@@ -380,7 +380,7 @@ if (window.sidebar){
                                             claim. (OR), it shall be referred to a sole Arbitrator who shall be an independent and neutral third party
                                             identified by Bulkhouse. The place of arbitration shall be Visakhapatnam .The Arbitration &. Conciliation
                                             Act, 1996, shall govern the arbitration proceedings. The arbitration proceedings shall be in the English
-                                            language.</li>  
+                                            language.</li>
                                         <li>You agree that all claims, differences and disputes arising under or in connection with or in relation to the
                                             Vendor Agreement or any transactions entered into on or through the Website or the relationship
                                             between You and Bulkhouse shall be subject to the exclusive jurisdiction of the courts at Visakhapatnam
@@ -393,7 +393,7 @@ if (window.sidebar){
                                             legal notices by mail to the address in your latest membership profile in which case the notice shall be
                                             deemed given five days after the date of mailing. Except as explicitly stated otherwise, legal notices shall
                                             be served on Bulkhouse by sending the notices to Bulkhouse Trading India Pvt. Ltd Level-II, Plot No
-                                            39,Ocean View Layout, Aqua Sports Complex, Visakhapatnam 530 003 ,Andhra Pradesh, India.</li>  
+                                            39,Ocean View Layout, Aqua Sports Complex, Visakhapatnam 530 003 ,Andhra Pradesh, India.</li>
 
                                     </ul>
                                 </ul>
@@ -490,16 +490,16 @@ if (window.sidebar){
                                         the right to determine the Sellers who may sell on the Website.</li>
                                     <li>By listing the Product in the Website, you represent and warrant to Bulkhouse and prospective Buyers that
                                         you are the owner of the Product and/or have the right and ability to sel l the Product and that the listing
-                                        is accurate, current, and complete and is not misleading or otherwise deceptive.</li>  
+                                        is accurate, current, and complete and is not misleading or otherwise deceptive.</li>
                                     <li>The Vendor gives Bulkhouse exclusive and transferable license to market and resell Products to Buyers,
                                         through the Internet and/or other networks. Such resale shall be subject to the terms and conditions
                                         issued by Bulkhouse in respect of Buyers, and in the event of any conflict such terms and conditions shall
-                                        take precedence over any sales terms imposed by the Vendor.</li>  
+                                        take precedence over any sales terms imposed by the Vendor.</li>
                                     <li>Seller hereby declares & confirms that it deals in original, legitimate and genuine quality products which
                                         are either self-manufactured and/or procured from the legitimate channel following all legal requirements.
                                         Seller further declares that it shall not violate the intellectual property rights of any third party and for any
                                         breach or violation of such intellectual rights, it shall be solely responsible. The Declaration of Seller is
-                                        annexed herewith as Annexure-2.</li> 
+                                        annexed herewith as Annexure-2.</li>
                                     <li>Bulkhouse retains the right to immediately halt any sale, prevent or restrict access to the Website or the
                                         Services, or take any other action to restrict access to or availability of objectionable material, any
                                         inaccurate listing, any inappropriately categorized Products, any unlawful Products, or any Products
@@ -517,7 +517,7 @@ if (window.sidebar){
                                         Excise, Custom Duty, Local Levies) regarding your use of our service and your bidding on, listing, purchase,
                                         solicitation of offers to purchase, and sale of items or services, but not limited to the Drugs and Cosmetics
                                         Act, 1940, the Drugs And Magic Remedies (Objectionable Advertisements) Act, 1954, the Indian Penal
-                                        Code, 1860, Information Technology Act 2000 as amended time to time and rules there under.</li> 
+                                        Code, 1860, Information Technology Act 2000 as amended time to time and rules there under.</li>
 
                                 </ul>
 
@@ -539,7 +539,7 @@ if (window.sidebar){
                                     and sell these items at Bulkhouse.com or Bulkhouse.in We will cancel the listing of prohibited and restricted
                                     items within 24 hours after we come to know about such occurrence.</p>
                                 <ul>
-                                    <li>Adult goods and services</li> 
+                                    <li>Adult goods and services</li>
                                     <li>Alcoholic Beverages</li>
                                     <li>Body parts</li>
                                     <li>Bulk marketing tools, e-mail advertising, opt-in or any commercial messaging
@@ -551,42 +551,42 @@ if (window.sidebar){
                                     </li>
                                     <li>Credit card protection, credit repair services, applications for financial services
                                         or loans, collection services</li>
-                                    <li>Donations</li> 
-                                    <li>Drugs and drug paraphernalia</li> 
-                                    <li>Drug test circumvention aids</li> 
-                                    <li>Endangered species</li> 
+                                    <li>Donations</li>
+                                    <li>Drugs and drug paraphernalia</li>
+                                    <li>Drug test circumvention aids</li>
+                                    <li>Endangered species</li>
                                     <li>Financial products, services, and stored
                                         value</li>
-                                    <li> Fund solicitations</li> 
-                                    <li>File sharing services, torrent files</li> 
+                                    <li> Fund solicitations</li>
+                                    <li>File sharing services, torrent files</li>
                                     <li>Gambling, gambling transactions or sports
                                         gambling prognostication</li>
-                                    <li>Government IDs or documents</li> 
-                                    <li>Hacking and cracking materials</li> 
+                                    <li>Government IDs or documents</li>
+                                    <li>Hacking and cracking materials</li>
                                     <li>Hazardous materials, combustibles,
                                         corrosives</li>
-                                    <li>Illegal goods</li> 
-                                    <li>Live animals</li> 
+                                    <li>Illegal goods</li>
+                                    <li>Live animals</li>
                                     <li>Miracle cures</li>
 
                                     <li>Money making schemes, Multi level
-                                        marketing products (MLM) </li> 
-                                    <li>Offensive goods</li> 
-                                    <li> Offensive goods, crime</li> 
+                                        marketing products (MLM) </li>
+                                    <li>Offensive goods</li>
+                                    <li> Offensive goods, crime</li>
                                     <li>Pre-adult content - pictures, videos, etc. of
-                                        individuals under the age of 18 years</li> 
-                                    <li>Precious metals</li> 
+                                        individuals under the age of 18 years</li>
+                                    <li>Precious metals</li>
                                     <li>Prescription drugs or pharmacies,
-                                        controlled substances, unapproved drugs</li> 
+                                        controlled substances, unapproved drugs</li>
                                     <li>Pyrotechnic devices and hazardous
-                                        materials</li> 
-                                    <li>Regulated goods</li> 
-                                    <li>Securities</li> 
-                                    <li>Travel packages and offers</li> 
-                                    <li>Tobacco and cigarettes</li> 
-                                    <li>Traffic devices</li> 
-                                    <li>Firearms, ammunition, weapons</li> 
-                                    <li>Wholesale currency</li> 
+                                        materials</li>
+                                    <li>Regulated goods</li>
+                                    <li>Securities</li>
+                                    <li>Travel packages and offers</li>
+                                    <li>Tobacco and cigarettes</li>
+                                    <li>Traffic devices</li>
+                                    <li>Firearms, ammunition, weapons</li>
+                                    <li>Wholesale currency</li>
 
                                 </ul>
                                 <p>This Prohibited Products and Activities List are not exhaustive and finite and Bulkhouse may at any time
@@ -671,19 +671,19 @@ if (window.sidebar){
                                         its products, services, offers, packages, etc to the Buyer directly, indirectly and /or through email, sms or
                                         any other electronic or physical mode.</li>
                                     <li>The ownership in the products will be transferred to the Buyer after successful delivery at the destination
-                                        provided by Buyer, until which the ownership in the product shall be with Seller only.</li> 
+                                        provided by Buyer, until which the ownership in the product shall be with Seller only.</li>
                                     <li>As a large market place, Bulkhouse will extend its services to Sellers by giving mandates to logistic partner
                                         for facilitating the smooth functioning of the transaction between the Seller and Buyer. Any damage in
                                         transit on account of inadequate/unsuitable packaging will be to the account of Seller. However, any
                                         damage to the product in transit due to mishandling by the logistic partner, Bulkhouse will facilitate the
                                         recovery from logistic partner.</li>
                                     <li>All orders placed on Website are covered under Buyer Protection; hereby Seller agrees to fulfill the
-                                        commitments made under the above mentioned program specified at the Website at URL 
-                                            <?php if(isset($logged_in)){ ?>
-                                        <?php echo site_url(); ?>main/terms#BUYER PROTECTION 
-                                            <?php }else {?>
-                                        <?php echo site_url(); ?>terms#BUYER PROTECTION
-                                            <?php }?>. The said program protects Buyer against
+                                        commitments made under the above mentioned program specified at the Website at URL
+                                        <?php if (isset($logged_in)) { ?>
+                                            <?php echo site_url(); ?>main/terms#BUYER PROTECTION
+                                        <?php } else { ?>
+                                            <?php echo site_url(); ?>terms#BUYER PROTECTION
+                                        <?php } ?>. The said program protects Buyer against
                                         inadequate or non-performance by Seller.</li>
                                     <li>The Seller hereby agrees to accept all sales return which are refused/not accepted by the Buyer at the time
                                         of delivery.</li>
@@ -699,14 +699,17 @@ if (window.sidebar){
                                 <div class="line"></div>
                                 <h4 id="PAYMENTPOLICIES" class="m-t-lg"> PAYMENT POLICIES</h4>
                                 <ul>
-                                    <li>Bulkhouse shall release the payment after 30 days but within 45 days from the receipt of the goods by
-                                        the buyer by way of account payee cheque /RTGS/ NEFT after deducting Bulkhouse's charges if
-                                        applicable to the Seller’s bank account furnished to Bulkhouse at the time of registration.</li> 
+                                    <li>Bulkhouse shall release the payment within maximum SEVEN working days from the receipt of the
+                                        goods by the buyer after deducting Bulkhouse's charges if applicable.</li>
+                                    <li>All payments will be made by account payee cheque /RTGS/ NEFT only to the Seller’s bank account
+                                        furnished to Bulkhouse at the time of registration. </li>
                                     <li>The Seller agrees and acknowledges that he will pay the applicable marketing, fulfillment, promotion ,
                                         courier and other related fees as put forth and updated in the agreement and website for all the
-                                        orders received and sold through Bulkhouse.</li>
-                                    <li>The final payment release is however subject to the Buyer’s protection policies of cancellation, refund
-                                        and return as mentioned in this agreement </li>
+                                        orders received and sold through Bulkhouse. </li>
+                                    <li>
+                                        The final payment release is however subject to the Buyer’s protection policies of cancellation, refund
+                                        and return as mentioned in this agreement.
+                                    </li>
 
 
                                 </ul>
@@ -717,65 +720,87 @@ if (window.sidebar){
                                 <p>Bulkhouse offers manufacturer/seller warranty on products which typically have warranty. The warranty is
                                     mention with the product description.</p>
                                 <ul>
-                                    <li><strong>Manufacture Warranty: </strong> Warranty is provided by the manufacturer. Standard warranty and Invoice is
+                                    <li><strong>Manufacture Warranty: </strong>  Warranty is provided by the manufacturer. Standard warranty and Invoice is
                                         sent along with the product and you will have to contact the manufacturer's service center to avail the
                                         warranty. Bulkhouse will assist you if you are facing any problem in doing so.</li>
                                     <li><strong>Seller Warranty: </strong> The seller owns the warranty on such products. The product will have to be shipped
-                                        back to merchant (for repair or replacement) to avail the warranty.
-                                        If your item becomes defective more than 7 days past the received date (48 hours for Electronic Goods) and it
-                                        is under warranty, you might also want to consider contacting the manufacturer/seller for repairs or
-                                        replacement.</li>
-                                </ul> 
+                                        back to merchant (for repair or replacement) to avail the warranty.</li>
+                                </ul>
 
-                                <p>Manufacturer/seller's warranties may not apply in all cases, depending on factors like the use of the product,
+                                <p>If your item becomes defective more than FIVE days past the received date (48 hours for Electronic Goods)
+                                    and it is under warranty, you might also want to consider contacting the manufacturer/seller for repairs or
+                                    replacement.</p>
+                                <p>
+                                    Manufacturer/seller's warranties may not apply in all cases, depending on factors like the use of the product,
                                     where the product was purchased, or who you purchased the product from. Please review the warranty
-                                    carefully, and contact the manufacturer/seller if you have any questions.</p>
+                                    carefully, and contact the manufacturer/seller if you have any questions.
+                                </p>
                                 <div class="line"></div>
-                                <h4 id="BUYERPROTECTION" class="m-t-lg">BUYER PROTECTION</h4>                                     
+                                <h4 id="BUYERPROTECTION" class="m-t-lg">BUYER PROTECTION</h4>
 
-                                <p>As a marketplace, Bulkhouse runs a very comprehensive Buyer Protection program so that you are 100%
-                                    protected. You experience trust and comfort during online shopping at Bulkhouse.com.
-                                    At Bulkhouse, trust is the foremost thing for each transaction. To extend this trust to buyers, we offer Buyer
+                                <p>Bulkhouse runs a very comprehensive Buyer Protection program so that you are 100% protected. You
+                                    experience trust and comfort during online shopping at Bulkhouse.</p>
+                                <p>At Bulkhouse, trust is the foremost thing for each transaction. To extend this trust to buyers, we offer Buyer
                                     Protection, which is based on four pillars i.e.</p>
                                 <ul>
                                     <li>Secure Payments</li>
                                     <li>Guaranteed Product Quality</li>
                                     <li> Easy Replacement</li>
                                     <li>Reliable Merchants</li>
-                                 
+
                                 </ul>
-                                <p>All the merchants selling at Bulkhouse.in are well screened by our team before they are brought on board. We
+                                <p>All the merchants selling at Bulkhouse are well screened by our team before they are brought on board. We
                                     assure you that all the products you buy from our website, regardless of the merchant are genuine, authentic,
                                     products being sold by well reputed and honorable merchants at the best prices possible. Of course, we also
                                     offer all the warranties, guarantees as entailed by the product, all this at a great price and with the best
                                     customer service in the industry.</p>
                                 <ul>
-                                    <li> Buyer is completely protected through 7-day return guarantee for all products purchased from Bulkhouse
-                                        which are not as per ordered specifications, such as</li>
+                                    <li>Buyer is completely protected through FIVE DAY return guarantee for all products purchased from
+                                        Bulkhouse which are:</li>
                                     <ul>
                                         <li>Defective</li>
-                                        <li>Damaged</li>
-                                        <li>Wrong Size</li>
-                                        <li>Wrong Quantity</li>
+
+                                        <li>Wrong Size or specifications</li>
+
                                         <li>Wrong Color</li>
-                                        <li>Significantly different from the description given by the merchant</li>
-                                    </ul>
-                                    <p>However, for some products, the sale is a final sale, and the merchant does not accept any return.
-                                        Some health care products, customized products, products like undergarments, lingerie, swimsuits etc
-                                        and perishables including flowers, edible products cannot be returned due to health & hygiene
-                                        reasons.</p>
-                                    <p>
-                                        We will also not be able to accept the return if product
-                                    </p>
-                                    <ul>
-                                        <li>Is used / worn or altered</li>
-                                        <li>Exhibits physical damage to the box or to the product</li>
-                                        <li>Is returned without original packaging and accessories</li>
-                                        <li>Serial Number is tampered</li>
 
                                     </ul>
-                                    <li>Items should be returned within 7 days of receiving the product. If buyer does not request return/refund
-                                        within 7 days of receipt of product, it will be assumed that buyer is satisfied with the product.</li>
+                                    <li>
+                                        Buyer is also obligated to check and inform Bulkhouse at the time of receipt of all products purchased
+                                        from Bulkhouse for:
+
+                                    </li>
+                                    <ul>
+                                        <li>Damages</li>
+                                        <li>Significantly different from the description given by the merchant</li>
+                                        <li>Wrong Quantity </li>
+
+
+                                    </ul>
+                                    <p>
+                                        Bulkhouse will not entertain requests for returns/ replacements if the complaints are not lodged at the
+                                        time of receipt of the goods in above cases as mentioned above.
+
+                                    </p>
+                                    <li>Items should be returned within FIVE days of receiving the product. If buyer does not request
+                                        return/refund within FIVE days of receipt of product, it will be assumed that buyer is satisfied with the
+                                        product.
+                                    </li>
+                                    <li>We will also not be able to accept the return if product</li>
+                                    <ul>
+                                        <li>
+                                            Is used / worn or altered
+                                        </li>
+                                        <li>
+                                            Exhibits physical damage to the box or to the product
+                                        </li>
+                                        <li>
+                                            Is returned without original packaging and accessories
+                                        </li>
+                                        <li>
+                                            Serial Number is tampered
+                                        </li>
+                                    </ul>
                                     <li>To request a return, please log-in to Bulkhouse and raise Return Request for concerned product. You will
                                         receive an e-mail acknowledgment of your request</li>
                                     <li>Return Request will be reviewed by Bulkhouse. If necessary, request is shared with concerned merchant for
@@ -786,11 +811,11 @@ if (window.sidebar){
                                         accompanied by its original price tag and packing slip. On the box, please mention your order number.</li>
                                     <li>After the product is received, it will be verified against your claim. Replacement or refund is initiated after
                                         that. Replacement would depend on the stock availability</li>
-                                    <li>It takes between 1 to 3 weeks from the time a request is raised to the time the product is delivered back
+                                    <li>. It takes between 1 to 3 weeks from the time a request is raised to the time the product is delivered back
                                         to us. Exact time would depend on the nature of the product and your location. Please be assured that we
                                         work very hard to ensure that your interests are protected.</li>
-                                    <li>We initiate the replacement or refund within 2 working days of receiving the product. For refunds it takes
-                                        upto 2 weeks for the amount to get credited in your account after we have initiated the refund. The
+                                    <li> We initiate the replacement or refund within 2 working days of receiving the product. For refunds it takes
+                                        up to 2 weeks for the amount to get credited in your account after we have initiated the refund. The
                                         refund/replacement may get delayed or declined if the product received by us is not as per your claim or
                                         you have not written order number on the package.</li>
                                 </ul>
@@ -806,7 +831,9 @@ if (window.sidebar){
                                 <p>
                                     If you find a defect after opening the product, you need to visit the nearest service center of the brand and get
                                     the DOA (Dead on Arrival) or DAP (Dead After Purchase) certificate from them (Most brands will only give you
-                                    DOA/DOP if you visit their service center within 7 days of purchase of product).
+                                    DOA/DOP if you visit their service center within FIVE days of purchase of product). .
+                                </p>
+                                <p>
                                     Once you receive this, please inform us; we will arrange the reverse pickup from your address. Once we receive
                                     the product in our warehouse, we'll ship the replacement at earliest (Subject to availability).
                                 </p>
@@ -815,13 +842,13 @@ if (window.sidebar){
                                 <ul>
                                     <li><strong> Cancellation by Bulkhouse:</strong></li>
                                     <ul>
-                                        <li>There may be certain orders that Bulkhouse is unable to accept and must cancel. Bulkhouse reserves
+                                        <li> There may be certain orders that Bulkhouse is unable to accept and must cancel. Bulkhouse reserves
                                             the right, at Bulkhouse's sole discretion, to refuse or cancel any order for any reason whatsoever.</li>
-                                        <li>Some situations that may result in buyers order being cancelled include, without limitation, nonavailability
+                                        <li> Some situations that may result in buyers order being cancelled include, without limitation, nonavailability
                                             of the product or quantities ordered by the buyer, non- availability of the service,
                                             inaccuracies or errors in pricing information, or problems identified by Bulkhouse's credit and fraud
                                             avoidance department.</li>
-                                        <li>Bulkhouse may also require additional verifications or information before accepting any order.
+                                        <li> Bulkhouse may also require additional verifications or information before accepting any order.
                                             Bulkhouse will contact the buyer if all or any portion of the order is cancelled or if additional
                                             information is required to accept the order.</li>
                                         <li> If the order is cancelled after the credit card has been charged, the said amount will be reversed back
@@ -834,11 +861,11 @@ if (window.sidebar){
                                             for order cancellations for any reason whatsoever. </li>
                                         <li>As part of usual business practice, if Bulkhouse receives a cancellation notice and the order has not
                                             been processed/ approved by Bulkhouse, Bulkhouse shall cancel the order and refund the entire
-                                            amount to the Buyer within a reasonable period of time. 
+                                            amount to the Buyer within a reasonable period of time.
                                         </li>
-                                        <li>Bulkhouse will not be able to cancel orders that have already been processed. </li>
+                                        <li> Bulkhouse will not be able to cancel orders that have already been processed. . </li>
                                         <li>Bulkhouse has the full right to decide whether an order has been processed or not. Bulkhouse's
-                                            decision regarding the cancellations is final and no disputes will be entertained.</li>
+                                            decision regarding the cancellations is final and no disputes will be entertained..</li>
                                     </ul>
                                     <li><strong> Charges on returns and cancellation: </strong></li>
                                     <table class="table table-hover table-bordered">
@@ -875,7 +902,7 @@ if (window.sidebar){
                                                     published dispatch date, etc)
                                                 </td>
                                                 <td>NA</td>
-                                                <td>Borne by Seller</td>
+                                                <td>NA</td>
                                                 <td>Borne by
                                                     Bulkhouse</td>
                                                 <td>Borne by Seller</td>
@@ -921,16 +948,15 @@ if (window.sidebar){
                                 <h4 id="SHIPPINGPOLICY" class="m-t-lg">SHIPPING POLICY</h4>
 
                                 <ul>
-                                    <li> At Bulkhouse, we provide world class shipping to all our customers that includes inspection, fast & ontime
-                                        delivery, top quality packaging, insurance for the package, and timely communication at each stage
-                                        of shipping.</li>
-                                    <li>We have partnered with most of the top courier and logistics partners to assure that you receive your
-                                        order on time and safely with full courtesy and attention.</li>
+                                    <li> We have partnered with most of the top courier and logistics partners to facilitate on-time secure delivery
+                                        of your consignments ordered through us with timely communication to you at each stage of shipping.</li>
+                                    <li>You also have the option to add opt on features as transit insurance, reinforced packaging, payment
+                                        pickups for the package at an extra cost.</li>
                                     <li>The delivery timeframe mentioned on product details is estimated. Actual delivery time depends upon
                                         availability of the product at the merchant, address where the order needs to be delivered and courier
-                                        services. You can be rest assured that you are completely protected as a shopper at <b>bulkhouse.in</b>. You
-                                        always have a choice to cancel your order due to shipment delay by contacting us at 
-                                        </br> Email: <b>customersupport@bulkhouse.in</b> or 
+                                        services.</li>
+                                    <li>You always have a choice to cancel your order prior to shipment due to delays by contacting us at
+                                        </br> Email: <b>customersupport@bulkhouse.in</b> or
                                         </br>call at <b>0891 667 9999</b>.</li>
                                     <b>[10:00 AM to 6:00 PM (Monday to Saturday)]</b>
                                 </ul>
@@ -940,7 +966,7 @@ if (window.sidebar){
 
 
 
-<!--                                <p>Use FontAwesome font icons, over 361 icons with version 3.2 and more will be added in the future, check 
+<!--                                <p>Use FontAwesome font icons, over 361 icons with version 3.2 and more will be added in the future, check
                                     <strong>
                                         <a href="http://fortawesome.github.io/Font-Awesome/">FontAwesome</a>
                                     </strong> for more details to see how to use and examples
