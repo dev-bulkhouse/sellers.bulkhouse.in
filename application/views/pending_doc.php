@@ -203,7 +203,7 @@ $query = $this->db->get();
 
                 var doc_arg_comp_file = "comp_file";
 
-                run_doc_check(doc_type_comp_file, disp_layer_comp_file, success_layer_comp_file, doc_arg_comp_file);
+                run_doc(doc_type_comp_file, disp_layer_comp_file, success_layer_comp_file, doc_arg_comp_file);
 
                 var doc_type_canceled_check = "#canceled_check";
                 var disp_layer_canceled_check = "#targetLayer_20";
@@ -211,7 +211,7 @@ $query = $this->db->get();
 
                 var doc_arg_canceled_check = "canceled_check";
 
-                run_doc_check(doc_type_canceled_check, disp_layer_canceled_check, success_layer_canceled_check, doc_arg_canceled_check);
+                run_doc(doc_type_canceled_check, disp_layer_canceled_check, success_layer_canceled_check, doc_arg_canceled_check);
 
 
 
