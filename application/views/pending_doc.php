@@ -640,7 +640,10 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-pan">Please Submit</span>
                                                 <?php } elseif ($row['pan_prop_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-
+                                                <?php } elseif ($row['pan_prop_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-pan">Please Resubmit</span>
+                                                <?php } elseif ($row['pan_prop_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
                                                     <?php
                                                 }
                                             }
