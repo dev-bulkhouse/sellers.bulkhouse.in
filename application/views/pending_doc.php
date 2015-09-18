@@ -665,7 +665,10 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-vat_cst">Please Submit</span>
                                                 <?php } elseif ($row['vat_cst_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-
+                                                <?php } elseif ($row['vat_cst_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-vat_cst">Please Resubmit</span>
+                                                <?php } elseif ($row['vat_cst_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
                                                     <?php
                                                 }
                                             }
@@ -691,7 +694,10 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-pan_comp">Please Submit</span>
                                                 <?php } elseif ($row['pan_comp_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-
+                                                <?php } elseif ($row['pan_comp_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-pan_comp">Please Resubmit</span>
+                                                <?php } elseif ($row['pan_comp_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
                                                     <?php
                                                 }
                                             }
@@ -714,7 +720,10 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-part_deed">Please Submit</span>
                                                 <?php } elseif ($row['part_deed_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-
+                                                <?php } elseif ($row['part_deed_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-part_deed">Please Resubmit</span>
+                                                <?php } elseif ($row['part_deed_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
                                                     <?php
                                                 }
                                             }
@@ -736,7 +745,10 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-sign">Please Submit</span>
                                                 <?php } elseif ($row['sign_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-
+                                                <?php } elseif ($row['sign_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-sign">Please Resubmit</span>
+                                                <?php } elseif ($row['sign_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
                                                     <?php
                                                 }
                                             }
@@ -757,7 +769,10 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-cert_of_incorp">Please Submit</span>
                                                 <?php } elseif ($row['cert_of_incorp_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-
+                                                <?php } elseif ($row['cert_of_incorp_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-cert_of_incorp">Please Resubmit</span>
+                                                <?php } elseif ($row['cert_of_incorp_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
                                                     <?php
                                                 }
                                             }
@@ -779,7 +794,10 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-moa_aoa">Please Submit</span>
                                                 <?php } elseif ($row['moa_aoa_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-
+                                                <?php } elseif ($row['moa_aoa_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-moa_aoa">Please Resubmit</span>
+                                                <?php } elseif ($row['moa_aoa_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
                                                     <?php
                                                 }
                                             }
@@ -801,7 +819,10 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-aoa">Please Submit</span>
                                                 <?php } elseif ($row['aoa_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-
+                                                <?php } elseif ($row['aoa_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-aoa">Please Resubmit</span>
+                                                <?php } elseif ($row['aoa_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
                                                     <?php
                                                 }
                                             }
@@ -823,7 +844,10 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-shop_establish_trade">Please Submit</span>
                                                 <?php } elseif ($row['shop_establish_trade_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-
+                                                <?php } elseif ($row['shop_establish_trade_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-shop_establish_trade">Please Resubmit</span>
+                                                <?php } elseif ($row['shop_establish_trade_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
                                                     <?php
                                                 }
                                             }
@@ -898,8 +922,11 @@ $query = $this->db->get();
                                                             <span class="badge md-trigger" data-modal="modal-cenvat">Please Submit</span>
                                                         <?php } elseif ($row['cenvat_status'] == 0) { ?>
                                                             <span class="badge md-success">Waiting for approve</span>
-
-                                                            <?php
+                                                                <?php } elseif ($row['cenvat_status'] == 1) { ?>
+                                                                    <span class="badge md-trigger" data-modal="modal-cenvat">Please Resubmit</span>
+                                                                <?php } elseif ($row['cenvat_status'] == 2) { ?>
+                                                                    <span class="badge md-success">Approved</span>
+                                                                <?php
                                                         }
                                                     }
                                                     ?>
@@ -929,8 +956,11 @@ $query = $this->db->get();
                                                                     <span class="badge md-trigger" data-modal="modal-cenvat">Please Submit</span>
                                                                 <?php } elseif ($row['cenvat_status'] == 0) { ?>
                                                                     <span class="badge md-success">Waiting for approve</span>
-
-                                                                <?php
+                                                        <?php } elseif ($row['cenvat_status'] == 1) { ?>
+                                                            <span class="badge md-trigger" data-modal="modal-cenvat">Please Resubmit</span>
+                                                        <?php } elseif ($row['cenvat_status'] == 2) { ?>
+                                                            <span class="badge md-success">Approved</span>
+                                                            <?php
                                                                 }
                                                             }
                                                             ?>
@@ -984,6 +1014,10 @@ $query = $this->db->get();
                                                             <span class="badge md-trigger" data-modal="modal-servicetax">Please Submit</span>
                                                         <?php } elseif ($row['servicetax_status'] == 0) { ?>
                                                             <span class="badge md-success">Waiting for approve</span>
+                                                        <?php } elseif ($row['servicetax_status'] == 1) { ?>
+                                                            <span class="badge md-trigger" data-modal="modal-servicetax">Please Resubmit</span>
+                                                        <?php } elseif ($row['servicetax_status'] == 2) { ?>
+                                                            <span class="badge md-success">Approved</span>
 
             <?php
         }
@@ -1015,6 +1049,10 @@ $query = $this->db->get();
                                                                     <span class="badge md-trigger" data-modal="modal-servicetax">Please Submit</span>
                                                                 <?php } elseif ($row['servicetax_status'] == 0) { ?>
                                                                     <span class="badge md-success">Waiting for approve</span>
+                                                                <?php } elseif ($row['servicetax_status'] == 1) { ?>
+                                                                    <span class="badge md-trigger" data-modal="modal-servicetax">Please Resubmit</span>
+                                                                <?php } elseif ($row['servicetax_status'] == 2) { ?>
+                                                                    <span class="badge md-success">Approved</span>
 
                     <?php
                 }
@@ -1055,6 +1093,10 @@ $query = $this->db->get();
                                                         <span class="badge md-trigger" data-modal="modal-photoid">Please Submit</span>
                                                     <?php } elseif ($row['photoid_status'] == 0) { ?>
                                                         <span class="badge md-success">Waiting for approve</span>
+                                                    <?php } elseif ($row['photoid_status'] == 1) { ?>
+                                                        <span class="badge md-trigger" data-modal="modal-photoid">Please Resubmit</span>
+                                                    <?php } elseif ($row['photoid_status'] == 2) { ?>
+                                                        <span class="badge md-success">Approved</span>
 
             <?php
         }
@@ -1084,6 +1126,10 @@ $query = $this->db->get();
                                                         <span class="badge md-trigger" data-modal="modal-addressid">Please Submit</span>
                                                     <?php } elseif ($row['addressid_status'] == 0) { ?>
                                                         <span class="badge md-success">Waiting for approve</span>
+                                                    <?php } elseif ($row['addressid_status'] == 1) { ?>
+                                                        <span class="badge md-trigger" data-modal="modal-addressid">Please Resubmit</span>
+                                                    <?php } elseif ($row['addressid_status'] == 2) { ?>
+                                                        <span class="badge md-success">Approved</span>
 
             <?php
         }
@@ -1105,6 +1151,11 @@ $query = $this->db->get();
                                                         <span class="badge md-trigger" data-modal="modal-businessid">Please Submit</span>
                                                     <?php } elseif ($row['businessid_status'] == 0) { ?>
                                                         <span class="badge md-success">Waiting for approve</span>
+
+                                                    <?php } elseif ($row['businessid_status'] == 1) { ?>
+                                                        <span class="badge md-trigger" data-modal="modal-businessid">Please Resubmit</span>
+                                                    <?php } elseif ($row['businessid_status'] == 2) { ?>
+                                                        <span class="badge md-success">Approved</span>
 
             <?php
         }
@@ -1133,6 +1184,10 @@ $query = $this->db->get();
                                                         <span class="badge md-trigger" data-modal="modal-comp_file">Please Submit</span>
                                                     <?php } elseif ($row['comp_file_status'] == 0) { ?>
                                                         <span class="badge md-success">Waiting for approve</span>
+                                                    <?php } elseif ($row['comp_file_status'] == 1) { ?>
+                                                        <span class="badge md-trigger" data-modal="modal-businessid">Please Resubmit</span>
+                                                    <?php } elseif ($row['comp_file_status'] == 2) { ?>
+                                                        <span class="badge md-success">Approved</span>
 
 
             <?php
@@ -1154,6 +1209,11 @@ $query = $this->db->get();
                                                         <span class="badge md-trigger" data-modal="modal-canceled_check">Please Submit</span>
                                                     <?php } elseif ($row['canceled_check_status'] == 0) { ?>
                                                         <span class="badge md-success">Waiting for approve</span>
+                                                        
+                                                    <?php } elseif ($row['canceled_check_status'] == 1) { ?>
+                                                        <span class="badge md-trigger" data-modal="modal-businessid">Please Resubmit</span>
+                                                    <?php } elseif ($row['canceled_check_status'] == 2) { ?>
+                                                        <span class="badge md-success">Approved</span>
 
             <?php
         }
