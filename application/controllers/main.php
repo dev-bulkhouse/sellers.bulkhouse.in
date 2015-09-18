@@ -46,6 +46,30 @@ class Main extends CI_Controller {
 		$this->load->view('changepassword',array('logged_in'=>$logged));
 //                $this->load->view('template/footer');
         }
+        public function update_profile() {
+            $logged = $this->logged_in;
+//                $this->load->view('template/header');
+		$this->load->view('pending_profile',array('logged_in'=>$logged));
+//                $this->load->view('template/footer');
+        }
+         public function update_doc() {
+            $logged = $this->logged_in;
+//                $this->load->view('template/header');
+		$this->load->view('pending_doc',array('logged_in'=>$logged));
+//                $this->load->view('template/footer');
+        }
+         public function update_bank() {
+            $logged = $this->logged_in;
+//                $this->load->view('template/header');
+		$this->load->view('pending_bank',array('logged_in'=>$logged));
+//                $this->load->view('template/footer');
+        }
+         public function test() {
+
+//                $this->load->view('template/header');
+		$this->load->view('test');
+//                $this->load->view('template/footer');
+        }
         public function company() {
             $this->load->library('form_validation');
        $this->form_validation->set_rules('email', 'Email Address', 'trim|required|min_length[6]|max_length[100]|valid_email|is_unique[users.email]|xss_clean');
@@ -140,7 +164,7 @@ class Main extends CI_Controller {
 
         }
 
-   
+
 
 
 

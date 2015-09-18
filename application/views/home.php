@@ -105,429 +105,393 @@
             <div class="row" style="padding-top: 20px">
                 <div class="small-9 columns small-centered zeropadding">
                     <div class="small-6 columns small-centered  zeropadding">
-                                    <div class="row">
-                                        <label> Register For
-                                            <select id="register_for">
-                                                <option value="">Select</option>
-                                                <option value="Export">Export Transactions</option>
-                                                <option value="Domestic">Domestic Transactions</option>
-                                                <option value="Both">Both</option>
-                                            </select>
-                                        </label>
-                                    </div>
-                                </div>
+                        <div class="row">
+                            <label> Register For
+                                <select id="register_for">
+                                    <option value="">Select</option>
+                                    <option value="Export">Export Transactions</option>
+                                    <option value="Domestic">Domestic Transactions</option>
+                                    <option value="Both">Both</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div id="Export" style="display: none">
-            <form  id="form_reg" action="/register/register_user" method="post">
-                <div class="row" style="padding-top: 20px">
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
-                                <div class="small-12 columns  zeropadding">
-                                    <div class="row">
-                                        <label>Firm Type <small>required</small>
-                                            <select name="firm_type" required="required">
-                                                <option value="">Select</option>
-                                                <option value="proprietorship">Proprietorship</option>
-                                                <option value="partnership">Partnership</option>
-                                                <option value="pvt_or_ltd">Private Limited Company / Limited Company</option>
-                                            </select>
-                                        </label>
+                <form  id="form_reg" action="/register/register_user" method="post">
+                    <div class="row" style="padding-top: 20px">
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+                                    <div class="small-12 columns  zeropadding">
+                                        <div class="row">
+                                            <label>Firm Type <small>required</small>
+                                                <select name="firm_type" required="required">
+                                                    <option value="">Select</option>
+                                                    <option value="proprietorship">Proprietorship</option>
+                                                    <option value="partnership">Partnership</option>
+                                                    <option value="pvt_or_ltd">Private Limited Company / Limited Company</option>
+                                                </select>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <input name="reg_as" type="hidden" value="Export">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-9 small-centered columns zeropadding">
-                            <div class="row">
-
-                                <input name="firm_name" type="text" id="right-label" placeholder="Please enter your Company Name" required="required">
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
-                                <div class="small-6 columns zeropadding">
-                                    <div class="row">
-
-                                        <input name="firstname" type="text"  id="right-label" placeholder="Firstname" required="required">
-                    <!--                    <small class="error">Vendor Name is required.</small>-->
-                                    </div>
-                                </div>
-
-                                <div class="small-6 columns zeropadding">
-                                    <div class="row">
-
-                                        <input name="lastname" type="text"  id="right-label" placeholder="Lastname" required="required">
-                    <!--                    <small class="error">Vendor Name is required.</small>-->
-                                    </div>
+                                    <input name="reg_as" type="hidden" value="Export">
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="small-9 small-centered columns zeropadding">
+                                <div class="row">
 
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
-                                <div class="small-8 columns zeropadding">
-                                    <input name="email" type="email"  id="email" placeholder="Please enter your Email Id" required="required" value="<?php echo set_value('email'); ?>">
+                                    <input name="firm_name" type="text" id="right-label" placeholder="Please enter your Company Name" required="required">
+
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+                                    <div class="small-6 columns zeropadding">
+                                        <div class="row">
 
-                                <div class="small-4 columns zeropadding">
-                                    <span id="usr_verify" class="verify" style="display: none; font-size: 0.8em; padding: 10px" >Valid Email <i class="fa fa-check"></i></span>
-                                    <span id="usr_verify" class="verify_none" style="display: none;font-size: 0.8em;padding: 10px" >This Email-Id is already in use <i class="fa fa-times"></i></span>
-                                    <span id="usr_verify" class="verify_none_chk" style="display: none;font-size: 0.8em;padding: 10px" >Not a Valid Email <i class="fa fa-times"></i></span>
+                                            <input name="firstname" type="text"  id="right-label" placeholder="Firstname" required="required">
+                        <!--                    <small class="error">Vendor Name is required.</small>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="small-6 columns zeropadding">
+                                        <div class="row">
+
+                                            <input name="lastname" type="text"  id="right-label" placeholder="Lastname" required="required">
+                        <!--                    <small class="error">Vendor Name is required.</small>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+                                    <div class="small-8 columns zeropadding">
+                                        <input name="email" type="email"  id="email" placeholder="Please enter your Email Id" required="required" value="<?php echo set_value('email'); ?>">
+                                    </div>
+
+                                    <div class="small-4 columns zeropadding">
+                                        <span id="usr_verify" class="verify" style="display: none; font-size: 0.8em; padding: 10px" >Valid Email <i class="fa fa-check"></i></span>
+                                        <span id="usr_verify" class="verify_none" style="display: none;font-size: 0.8em;padding: 10px" >This Email-Id is already in use <i class="fa fa-times"></i></span>
+                                        <span id="usr_verify" class="verify_none_chk" style="display: none;font-size: 0.8em;padding: 10px" >Not a Valid Email <i class="fa fa-times"></i></span>
 
                     <!--<span id="usr_verify" class="verify_not_done" >no</span>-->
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
-                                <div class="small-6 columns zeropadding">
-                                    <div class="row">
-
-                                        <input name="password" type="password"  id="password"  placeholder="Please enter Password" required>
-                                        <!--<small class="error">Please Enter Password.</small>-->
-                                    </div>
-                                </div>
-                                <div class="small-6 columns  zeropadding">
-                                    <div class="row">
-
-                                        <input  type="password"  id="confirm_password"  placeholder="Please repeat Password" required><!--
-                    <!--                    <small class="error">Please Repeat Password.</small>-->
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+                                    <div class="small-6 columns zeropadding">
+                                        <div class="row">
 
-                                <input name="mobile" type="number"  id="right-label" pattern="^[7-9][0-9]{9}$" placeholder="Please enter your Mobile number" required="required">
-            <!--                    <small class="error">An Phone Number is required.</small>-->
+                                            <input name="password" type="password"  id="password"  placeholder="Please enter Password" required>
+                                            <!--<small class="error">Please Enter Password.</small>-->
+                                        </div>
+                                    </div>
+                                    <div class="small-6 columns  zeropadding">
+                                        <div class="row">
+
+                                            <input  type="password"  id="confirm_password"  placeholder="Please repeat Password" required><!--
+                        <!--                    <small class="error">Please Repeat Password.</small>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+
+                                    <input name="mobile" type="number"  id="right-label" pattern="^[7-9][0-9]{9}$" placeholder="Please enter your Mobile number" required="required">
+                <!--                    <small class="error">An Phone Number is required.</small>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-9 columns small-centered zeropadding">
+                                <input id="checkbox1" type="checkbox" required="required">
+                                <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Export <a href="<?php echo site_url(); ?>export_terms">View</a>)</label>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="large-4 columns large-centered zeropadding">
+
+                                <input id="reg" class="button radius md-close" type="submit" value="Register" style="margin: 0px"/>
+
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="large-9 columns small-centered zeropadding">
-                            <input id="checkbox1" type="checkbox" required="required">
-                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Export <a href="<?php echo site_url(); ?>export_terms">View</a>)</label>
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-4 columns large-centered zeropadding">
-
-                            <input id="reg" class="button radius md-close" type="submit" value="Register" style="margin: 0px"/>
-
-                        </div>
-                    </div>
-                </div>
-            </form>
+                </form>
             </div>
             <div id="Domestic" style="display: none">
-            <form  id="form_reg" action="/register/register_user" method="post">
-                <div class="row" style="padding-top: 20px">
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
-                                <div class="small-12 columns  zeropadding">
-                                    <div class="row">
-                                        <label>Firm Type <small>required</small>
-                                            <select name="firm_type" required="required">
-                                                <option value="">Select</option>
-                                                <option value="proprietorship">Proprietorship</option>
-                                                <option value="partnership">Partnership</option>
-                                                <option value="pvt_or_ltd">Private Limited Company / Limited Company</option>
-                                            </select>
-                                        </label>
+                <form  id="form_reg" action="/register/register_user" method="post">
+                    <div class="row" style="padding-top: 20px">
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+                                    <div class="small-12 columns  zeropadding">
+                                        <div class="row">
+                                            <label>Firm Type <small>required</small>
+                                                <select name="firm_type" required="required">
+                                                    <option value="">Select</option>
+                                                    <option value="proprietorship">Proprietorship</option>
+                                                    <option value="partnership">Partnership</option>
+                                                    <option value="pvt_or_ltd">Private Limited Company / Limited Company</option>
+                                                </select>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
 
-                                 <input name="reg_as" type="hidden" value="Domestic">
+                                    <input name="reg_as" type="hidden" value="Domestic">
 
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-9 small-centered columns zeropadding">
-                            <div class="row">
-
-                                <input name="firm_name" type="text" id="right-label" placeholder="Please enter your Company Name" required="required">
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
-                                <div class="small-6 columns zeropadding">
-                                    <div class="row">
-
-                                        <input name="firstname" type="text"  id="right-label" placeholder="Firstname" required="required">
-                    <!--                    <small class="error">Vendor Name is required.</small>-->
-                                    </div>
-                                </div>
-
-                                <div class="small-6 columns zeropadding">
-                                    <div class="row">
-
-                                        <input name="lastname" type="text"  id="right-label" placeholder="Lastname" required="required">
-                    <!--                    <small class="error">Vendor Name is required.</small>-->
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="small-9 small-centered columns zeropadding">
+                                <div class="row">
 
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
-                                <div class="small-8 columns zeropadding">
-                                    <input name="email" type="email"  id="email" placeholder="Please enter your Email Id" required="required" value="<?php echo set_value('email'); ?>">
+                                    <input name="firm_name" type="text" id="right-label" placeholder="Please enter your Company Name" required="required">
+
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+                                    <div class="small-6 columns zeropadding">
+                                        <div class="row">
 
-                                <div class="small-4 columns zeropadding">
-                                    <span id="usr_verify" class="verify" style="display: none; font-size: 0.8em; padding: 10px" >Valid Email <i class="fa fa-check"></i></span>
-                                    <span id="usr_verify" class="verify_none" style="display: none;font-size: 0.8em;padding: 10px" >This Email-Id is already in use <i class="fa fa-times"></i></span>
-                                    <span id="usr_verify" class="verify_none_chk" style="display: none;font-size: 0.8em;padding: 10px" >Not a Valid Email <i class="fa fa-times"></i></span>
+                                            <input name="firstname" type="text"  id="right-label" placeholder="Firstname" required="required">
+                        <!--                    <small class="error">Vendor Name is required.</small>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="small-6 columns zeropadding">
+                                        <div class="row">
+
+                                            <input name="lastname" type="text"  id="right-label" placeholder="Lastname" required="required">
+                        <!--                    <small class="error">Vendor Name is required.</small>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+                                    <div class="small-8 columns zeropadding">
+                                        <input name="email" type="email"  id="email" placeholder="Please enter your Email Id" required="required" value="<?php echo set_value('email'); ?>">
+                                    </div>
+
+                                    <div class="small-4 columns zeropadding">
+                                        <span id="usr_verify" class="verify" style="display: none; font-size: 0.8em; padding: 10px" >Valid Email <i class="fa fa-check"></i></span>
+                                        <span id="usr_verify" class="verify_none" style="display: none;font-size: 0.8em;padding: 10px" >This Email-Id is already in use <i class="fa fa-times"></i></span>
+                                        <span id="usr_verify" class="verify_none_chk" style="display: none;font-size: 0.8em;padding: 10px" >Not a Valid Email <i class="fa fa-times"></i></span>
 
                     <!--<span id="usr_verify" class="verify_not_done" >no</span>-->
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
-                                <div class="small-6 columns zeropadding">
-                                    <div class="row">
-
-                                        <input name="password" type="password"  id="password"  placeholder="Please enter Password" required>
-                                        <!--<small class="error">Please Enter Password.</small>-->
-                                    </div>
-                                </div>
-                                <div class="small-6 columns  zeropadding">
-                                    <div class="row">
-
-                                        <input  type="password"  id="confirm_password"  placeholder="Please repeat Password" required><!--
-                    <!--                    <small class="error">Please Repeat Password.</small>-->
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+                                    <div class="small-6 columns zeropadding">
+                                        <div class="row">
 
-                                <input name="mobile" type="number"  id="right-label" pattern="^[7-9][0-9]{9}$" placeholder="Please enter your Mobile number" required="required">
-            <!--                    <small class="error">An Phone Number is required.</small>-->
+                                            <input name="password" type="password"  id="password"  placeholder="Please enter Password" required>
+                                            <!--<small class="error">Please Enter Password.</small>-->
+                                        </div>
+                                    </div>
+                                    <div class="small-6 columns  zeropadding">
+                                        <div class="row">
+
+                                            <input  type="password"  id="confirm_password"  placeholder="Please repeat Password" required><!--
+                        <!--                    <small class="error">Please Repeat Password.</small>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+
+                                    <input name="mobile" type="number"  id="right-label" pattern="^[7-9][0-9]{9}$" placeholder="Please enter your Mobile number" required="required">
+                <!--                    <small class="error">An Phone Number is required.</small>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-9 columns small-centered zeropadding">
+                                <input id="checkbox1" type="checkbox" required="required">
+                                <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Domestic <a href="<?php echo site_url(); ?>domestic_terms">View</a>)</label>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="large-4 columns large-centered zeropadding">
+
+                                <input id="reg" class="button radius md-close" type="submit" value="Register" style="margin: 0px"/>
+
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="large-9 columns small-centered zeropadding">
-                            <input id="checkbox1" type="checkbox" required="required">
-                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Domestic <a href="<?php echo site_url(); ?>domestic_terms">View</a>)</label>
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-4 columns large-centered zeropadding">
-
-                            <input id="reg" class="button radius md-close" type="submit" value="Register" style="margin: 0px"/>
-
-                        </div>
-                    </div>
-                </div>
-            </form>
+                </form>
             </div>
             <div id="Both" style="display: none">
-            <form  id="form_reg" action="/register/register_user" method="post">
-                <div class="row" style="padding-top: 20px">
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
-                                <div class="small-12 columns  zeropadding">
-                                    <div class="row">
-                                        <label>Firm Type <small>required</small>
-                                            <select name="firm_type" required="required">
-                                                <option value="">Select</option>
-                                                <option value="proprietorship">Proprietorship</option>
-                                                <option value="partnership">Partnership</option>
-                                                <option value="pvt_or_ltd">Private Limited Company / Limited Company</option>
-                                            </select>
-                                        </label>
+                <form  id="form_reg" action="/register/register_user" method="post">
+                    <div class="row" style="padding-top: 20px">
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+                                    <div class="small-12 columns  zeropadding">
+                                        <div class="row">
+                                            <label>Firm Type <small>required</small>
+                                                <select name="firm_type" required="required">
+                                                    <option value="">Select</option>
+                                                    <option value="proprietorship">Proprietorship</option>
+                                                    <option value="partnership">Partnership</option>
+                                                    <option value="pvt_or_ltd">Private Limited Company / Limited Company</option>
+                                                </select>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
 
-                                 <input name="reg_as" type="hidden" value="Both">
+                                    <input name="reg_as" type="hidden" value="Both">
 
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-9 small-centered columns zeropadding">
-                            <div class="row">
-
-                                <input name="firm_name" type="text" id="right-label" placeholder="Please enter your Company Name" required="required">
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
-                                <div class="small-6 columns zeropadding">
-                                    <div class="row">
-
-                                        <input name="firstname" type="text"  id="right-label" placeholder="Firstname" required="required">
-                    <!--                    <small class="error">Vendor Name is required.</small>-->
-                                    </div>
-                                </div>
-
-                                <div class="small-6 columns zeropadding">
-                                    <div class="row">
-
-                                        <input name="lastname" type="text"  id="right-label" placeholder="Lastname" required="required">
-                    <!--                    <small class="error">Vendor Name is required.</small>-->
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="small-9 small-centered columns zeropadding">
+                                <div class="row">
 
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
-                                <div class="small-8 columns zeropadding">
-                                    <input name="email" type="email"  id="email" placeholder="Please enter your Email Id" required="required" value="<?php echo set_value('email'); ?>">
+                                    <input name="firm_name" type="text" id="right-label" placeholder="Please enter your Company Name" required="required">
+
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+                                    <div class="small-6 columns zeropadding">
+                                        <div class="row">
 
-                                <div class="small-4 columns zeropadding">
-                                    <span id="usr_verify" class="verify" style="display: none; font-size: 0.8em; padding: 10px" >Valid Email <i class="fa fa-check"></i></span>
-                                    <span id="usr_verify" class="verify_none" style="display: none;font-size: 0.8em;padding: 10px" >This Email-Id is already in use <i class="fa fa-times"></i></span>
-                                    <span id="usr_verify" class="verify_none_chk" style="display: none;font-size: 0.8em;padding: 10px" >Not a Valid Email <i class="fa fa-times"></i></span>
+                                            <input name="firstname" type="text"  id="right-label" placeholder="Firstname" required="required">
+                        <!--                    <small class="error">Vendor Name is required.</small>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="small-6 columns zeropadding">
+                                        <div class="row">
+
+                                            <input name="lastname" type="text"  id="right-label" placeholder="Lastname" required="required">
+                        <!--                    <small class="error">Vendor Name is required.</small>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+                                    <div class="small-8 columns zeropadding">
+                                        <input name="email" type="email"  id="email" placeholder="Please enter your Email Id" required="required" value="<?php echo set_value('email'); ?>">
+                                    </div>
+
+                                    <div class="small-4 columns zeropadding">
+                                        <span id="usr_verify" class="verify" style="display: none; font-size: 0.8em; padding: 10px" >Valid Email <i class="fa fa-check"></i></span>
+                                        <span id="usr_verify" class="verify_none" style="display: none;font-size: 0.8em;padding: 10px" >This Email-Id is already in use <i class="fa fa-times"></i></span>
+                                        <span id="usr_verify" class="verify_none_chk" style="display: none;font-size: 0.8em;padding: 10px" >Not a Valid Email <i class="fa fa-times"></i></span>
 
                     <!--<span id="usr_verify" class="verify_not_done" >no</span>-->
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
-                                <div class="small-6 columns zeropadding">
-                                    <div class="row">
-
-                                        <input name="password" type="password"  id="password"  placeholder="Please enter Password" required>
-                                        <!--<small class="error">Please Enter Password.</small>-->
-                                    </div>
-                                </div>
-                                <div class="small-6 columns  zeropadding">
-                                    <div class="row">
-
-                                        <input  type="password"  id="confirm_password"  placeholder="Please repeat Password" required><!--
-                    <!--                    <small class="error">Please Repeat Password.</small>-->
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-9 columns small-centered zeropadding">
-                            <div class="row">
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+                                    <div class="small-6 columns zeropadding">
+                                        <div class="row">
 
-                                <input name="mobile" type="number"  id="right-label" pattern="^[7-9][0-9]{9}$" placeholder="Please enter your Mobile number" required="required">
-            <!--                    <small class="error">An Phone Number is required.</small>-->
+                                            <input name="password" type="password"  id="password"  placeholder="Please enter Password" required>
+                                            <!--<small class="error">Please Enter Password.</small>-->
+                                        </div>
+                                    </div>
+                                    <div class="small-6 columns  zeropadding">
+                                        <div class="row">
+
+                                            <input  type="password"  id="confirm_password"  placeholder="Please repeat Password" required><!--
+                        <!--                    <small class="error">Please Repeat Password.</small>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-9 columns small-centered zeropadding">
+                                <div class="row">
+
+                                    <input name="mobile" type="number"  id="right-label" pattern="^[7-9][0-9]{9}$" placeholder="Please enter your Mobile number" required="required">
+                <!--                    <small class="error">An Phone Number is required.</small>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-9 columns small-centered zeropadding">
+                                <div class="large-6 columns">
+                                    <input id="checkbox1" type="checkbox" required="required">
+                                    <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Export <a href="<?php echo site_url(); ?>export_terms">View</a>)</label>
+                                </div>
+                                <div class="large-6 columns">
+                                    <input id="checkbox1" type="checkbox" required="required">
+                                    <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Domestic <a href="<?php echo site_url(); ?>domestic_terms">View</a>)</label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="large-4 columns large-centered zeropadding">
+
+                                <input id="reg" class="button radius md-close" type="submit" value="Register" style="margin: 0px"/>
+
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="large-9 columns small-centered zeropadding">
-                            <div class="large-6 columns">
-                            <input id="checkbox1" type="checkbox" required="required">
-                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Export <a href="<?php echo site_url(); ?>export_terms">View</a>)</label>
-                            </div>
-                            <div class="large-6 columns">
-                            <input id="checkbox1" type="checkbox" required="required">
-                            <label for="checkbox1" style="font-size: 0.8em"> I agree to the Terms & Conditions (Domestic <a href="<?php echo site_url(); ?>domestic_terms">View</a>)</label>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="large-4 columns large-centered zeropadding">
-
-                            <input id="reg" class="button radius md-close" type="submit" value="Register" style="margin: 0px"/>
-
-                        </div>
-                    </div>
-                </div>
-            </form>
+                </form>
             </div>
             <a class="close-reveal-modal" aria-label="Close">&#215;</a>
         </div>
-
-        <!--          <div class="row-fluid">
-                      <div class="large-8 columns large-centered" style="height: 100px">
-                      <div class="large-12 columns large-centered show-for-large-up">
-                          <div style="text-align: center; font-size: 4em;"><span style="color: transparent">.</span><span  class="typed"></span></div>
-                      </div>
-                      <div class="small-12 columns small-centered show-for-medium-down">
-                          <div style="text-align: center; font-size: 2em;"><span style="color: transparent">.</span><span  class="typed"></span></div>
-                      </div>
-                      </div>
-                  </div>-->
-        <!--          <div class="row-fluid">
-                      <div class="large-12 columns" style="position: relative; margin-bottom:0px">
-
-                      <div  class="large-6 columns large-centered ">
-                <p id="type2" style="text-align: center"></p>
-                <form action="http://test.bulkhouse.in/assets/insert.php" method="post" data-abide>
-              <div class="row collapse">
-
-                <div class="small-7 columns email-field">
-
-                    <input type="email" name="email" required placeholder="Enter Email Id here">
-                    <small class="error">An email address is required.</small>
-                </div>
-                <div class="small-5 columns">
-                    <input type="submit" class="button postfix" value="Go">
-
-                </div>
-
-              </div>
-                    </form>
-            </div>
-                          <div class="large-10 columns large-centered"><p style="text-align: center">Subscribe for an exclusive free pre-launch sign-up offer</p></div>
-                      </div>
-
-          </div>-->
     </div>
 </div>
 <!--<script src="js/vendor/jquery.js"></script>-->
 <script src="http://test.bulkhouse.in/assets/js/foundation.min.js"></script>
 <script>
-    $(document).foundation();
+            $(document).foundation();
 </script>
