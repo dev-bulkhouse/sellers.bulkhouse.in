@@ -132,8 +132,26 @@ else
 
     <script type="text/javascript">
 $(document).ready(function(){
-
-
+     $("#email").keyup(function(){
+  if($("#email").val().length >= 4)
+  {
+  $.ajax({
+   type: "POST",
+   url: "<?php echo base_url();?>/register/check_user",
+   data: "email="+$("#email").val(),
+   success: function(msg){
+    if(msg=="false")
+    {
+    document.getElementById("email").setCustomValidity("Submit Unique EmailID");
+    }
+    else
+    {
+    document.getElementById("email").setCustomValidity('');
+    }
+   }
+  });
+  }
+  });
 
     $(".emailValidation_Export").blur(function(e) {
         e.preventDefault();
