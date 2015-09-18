@@ -70,12 +70,12 @@ $query = $this->db->get();
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"/>
         <script src="/js/modernizr.custom.js"></script>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <!--
-    <script src="<?php echo site_url(); ?>js/vendor.js" type="text/javascript"></script>-->
+        <!--
+        <script src="<?php echo site_url(); ?>js/vendor.js" type="text/javascript"></script>-->
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
         <script>
-            $(document).ready(function(e) {
+            $(document).ready(function (e) {
 
                 var doc_type_pan = "#pan";
                 var disp_layer_pan = "#targetLayer_5";
@@ -219,13 +219,13 @@ $query = $this->db->get();
 
             function run_doc(doc_type, disp_layer, success_layer, doc_arg) {
 
-                $(doc_type).on('submit', (function(e) {
+                $(doc_type).on('submit', (function (e) {
                     e.preventDefault();
                     $.ajax({
-                        xhr: function() {
+                        xhr: function () {
                             var xhr = new window.XMLHttpRequest();
                             //Upload progress
-                            xhr.upload.addEventListener("progress", function(evt) {
+                            xhr.upload.addEventListener("progress", function (evt) {
                                 if (evt.lengthComputable) {
                                     var percentComplete = evt.loaded / evt.total;
                                     $(disp_layer).css("display", "block");
@@ -233,7 +233,7 @@ $query = $this->db->get();
                                 }
                             }, false);
                             //Download progress
-                            xhr.addEventListener("progress", function(evt) {
+                            xhr.addEventListener("progress", function (evt) {
                                 if (evt.lengthComputable) {
                                     var percentComplete = evt.loaded / evt.total;
                                     //Do something with download progress
@@ -249,7 +249,7 @@ $query = $this->db->get();
                         contentType: false,
                         cache: false,
                         processData: false,
-                        success: function(data)
+                        success: function (data)
                         {
                             $(disp_layer).css("display", "none");
                             $(success_layer).html(data);
@@ -259,7 +259,7 @@ $query = $this->db->get();
                             location.reload();
 
                         },
-                        error: function()
+                        error: function ()
                         {
                         }
 
@@ -352,10 +352,10 @@ $query = $this->db->get();
         <![endif]-->
 
         <script type="text/javascript">
-            $(document).ready(function() {
+            $(document).ready(function () {
 
-                window.setTimeout(function() {
-                    $("#status_main").fadeTo(500, 0).slideUp(500, function() {
+                window.setTimeout(function () {
+                    $("#status_main").fadeTo(500, 0).slideUp(500, function () {
                         $(this).remove();
                     });
                 }, 5000);
@@ -364,10 +364,10 @@ $query = $this->db->get();
         </script>
         <style>
             section {
-  background: url("/img/wall_1.jpg") left top no-repeat fixed;
-  padding: 20px 0px;
-}
-            </style>
+                background: url("/img/wall_1.jpg") left top no-repeat fixed;
+                padding: 20px 0px;
+            }
+        </style>
 
     </head>
     <body  ng-app="ngAnimate">
@@ -602,7 +602,7 @@ $query = $this->db->get();
                         $data['doc_status'] = 'targetLayer20';
                         $this->load->view('forms/document_form', $data);
                         ?>
-                         <?php
+                        <?php
                         $data['email'] = $email;
                         $data['doc_title'] = 'Cancel Cheque';
                         $data['id_modal'] = 'modal-canceled_check';
@@ -901,7 +901,7 @@ $query = $this->db->get();
                                                     <i style="float: right" class="label badge" ng-show="showme1"   name="otherdoc" ng-click="showme1 = false" value="Yes" onclick="save_cenvat('1')">YES</i>
                                                     <i style="float: right" class="label bg-light badge" ng-hide="showme1"   name="otherdoc" ng-click="showme1 = true" value="No" onclick="save_cenvat('0')">NO</i>
 
-                                                <?php
+                                                    <?php
                                                 }
                                             }
                                             ?>
@@ -911,7 +911,7 @@ $query = $this->db->get();
 
                                         <div class="list-group bg-white" style="background-color: whitesmoke" ng-show="showme">
 
-<?php if ($req_docs->cenvat == 1) { ?>
+                                            <?php if ($req_docs->cenvat == 1) { ?>
                                                 <a class="list-group-item">
                                                     <i class="icon-chevron-right"></i>
                                                     <?php
@@ -922,11 +922,11 @@ $query = $this->db->get();
                                                             <span class="badge md-trigger" data-modal="modal-cenvat">Please Submit</span>
                                                         <?php } elseif ($row['cenvat_status'] == 0) { ?>
                                                             <span class="badge md-success">Waiting for approve</span>
-                                                                <?php } elseif ($row['cenvat_status'] == 1) { ?>
-                                                                    <span class="badge md-trigger" data-modal="modal-cenvat">Please Resubmit</span>
-                                                                <?php } elseif ($row['cenvat_status'] == 2) { ?>
-                                                                    <span class="badge md-success">Approved</span>
-                                                                <?php
+                                                        <?php } elseif ($row['cenvat_status'] == 1) { ?>
+                                                            <span class="badge md-trigger" data-modal="modal-cenvat">Please Resubmit</span>
+                                                        <?php } elseif ($row['cenvat_status'] == 2) { ?>
+                                                            <span class="badge md-success">Approved</span>
+                                                            <?php
                                                         }
                                                     }
                                                     ?>
@@ -934,7 +934,7 @@ $query = $this->db->get();
                                                     <i class="icon-rupee"></i> CENVAT
                                                     <span> - <i data-toggle="tooltip" data-placement="top" title="Only Submit CENVAT if you are registered - (Disable if not having. Click NO to Disable)" class="fa fa-question-circle"></i></span>
                                                 </a>
-                                        <?php } ?>
+                                            <?php } ?>
                                         </div>
                                         <?php
                                         if (isset($cenvat_id)) {
@@ -945,7 +945,7 @@ $query = $this->db->get();
 
                                                 <div  class="list-group bg-white" style="background-color: whitesmoke" ng-hide="showme1" >
 
-        <?php if ($req_docs->vat_cst == 1) { ?>
+                                                    <?php if ($req_docs->vat_cst == 1) { ?>
                                                         <a class="list-group-item">
                                                             <i class="icon-chevron-right"></i>
                                                             <?php
@@ -956,11 +956,11 @@ $query = $this->db->get();
                                                                     <span class="badge md-trigger" data-modal="modal-cenvat">Please Submit</span>
                                                                 <?php } elseif ($row['cenvat_status'] == 0) { ?>
                                                                     <span class="badge md-success">Waiting for approve</span>
-                                                        <?php } elseif ($row['cenvat_status'] == 1) { ?>
-                                                            <span class="badge md-trigger" data-modal="modal-cenvat">Please Resubmit</span>
-                                                        <?php } elseif ($row['cenvat_status'] == 2) { ?>
-                                                            <span class="badge md-success">Approved</span>
-                                                            <?php
+                                                                <?php } elseif ($row['cenvat_status'] == 1) { ?>
+                                                                    <span class="badge md-trigger" data-modal="modal-cenvat">Please Resubmit</span>
+                                                                <?php } elseif ($row['cenvat_status'] == 2) { ?>
+                                                                    <span class="badge md-success">Approved</span>
+                                                                    <?php
                                                                 }
                                                             }
                                                             ?>
@@ -968,10 +968,10 @@ $query = $this->db->get();
                                                             <i class="icon-rupee"></i> CENVAT
                                                             <span> - <i data-toggle="tooltip" data-placement="top" title="Only Submit CENVAT if you are registered - (Disable if not having. Click NO to Disable)" class="fa fa-question-circle"></i></span>
                                                         </a>
-                                                <?php } ?>
+                                                    <?php } ?>
                                                 </div>
 
-                                            <?php
+                                                <?php
                                             }
                                         }
                                         ?>
@@ -988,22 +988,22 @@ $query = $this->db->get();
                                                     <i style="float: right" class="label badge" ng-hide="showme5"   name="otherdoc" ng-click="showme5 = true" value="Yes" onclick="save_serv('1')">YES</i>
                                                     <i style="float: right" class="label bg-light badge" ng-show="showme5"   name="otherdoc" ng-click="showme5 = false" value="No" onclick="save_serv('0')">NO</i>
 
-    <?php } elseif ($servicetax_id == 1) { ?>
+                                                <?php } elseif ($servicetax_id == 1) { ?>
 
                                                     <i style="float: right" class="label badge" ng-show="showme2"   name="otherdoc" ng-click="showme2 = false" value="Yes" onclick="save_serv('1')">YES</i>
                                                     <i style="float: right" class="label bg-light badge"  ng-hide="showme2"   name="otherdoc" ng-click="showme2 = true" value="No" onclick="save_serv('0')">NO</i>
 
-    <?php
-    }
-}
-?>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
 
                                         </header>
 
 
                                         <div class="list-group bg-white" style="background-color: whitesmoke" ng-show="showme5">
 
-                                                <?php if ($req_docs->servicetax == 1) { ?>
+                                            <?php if ($req_docs->servicetax == 1) { ?>
                                                 <a class="list-group-item">
                                                     <i class="icon-chevron-right"></i>
                                                     <?php
@@ -1019,15 +1019,15 @@ $query = $this->db->get();
                                                         <?php } elseif ($row['servicetax_status'] == 2) { ?>
                                                             <span class="badge md-success">Approved</span>
 
-            <?php
-        }
-    }
-    ?>
+                                                            <?php
+                                                        }
+                                                    }
+                                                    ?>
 
                                                     <i class="icon-rupee"></i> Service Tax
                                                     <span> - <i data-toggle="tooltip" data-placement="top" title="Only Submit Service TAX ID if you are registered - (Disable if not having. Click NO to Disable)" class="fa fa-question-circle"></i></span>
                                                 </a>
-                                        <?php } ?>
+                                            <?php } ?>
                                         </div>
                                         <?php
                                         if (isset($servicetax_id)) {
@@ -1038,7 +1038,7 @@ $query = $this->db->get();
 
                                                 <div class="list-group bg-white" style="background-color: whitesmoke" ng-hide="showme2">
 
-                                                        <?php if ($req_docs->servicetax == 1) { ?>
+                                                    <?php if ($req_docs->servicetax == 1) { ?>
                                                         <a class="list-group-item">
                                                             <i class="icon-chevron-right"></i>
                                                             <?php
@@ -1054,21 +1054,21 @@ $query = $this->db->get();
                                                                 <?php } elseif ($row['servicetax_status'] == 2) { ?>
                                                                     <span class="badge md-success">Approved</span>
 
-                    <?php
-                }
-            }
-            ?>
+                                                                    <?php
+                                                                }
+                                                            }
+                                                            ?>
 
                                                             <i class="icon-rupee"></i> Service Tax
                                                             <span> - <i data-toggle="tooltip" data-placement="top" title="Only Submit Service TAX ID and Copy if you are registered - (Disable if not having. Click NO to Disable)" class="fa fa-question-circle"></i></span>
                                                         </a>
-                                                <?php } ?>
+                                                    <?php } ?>
                                                 </div>
 
-    <?php
-    }
-}
-?>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
                                     </div>
                                 </div>
 
@@ -1082,7 +1082,7 @@ $query = $this->db->get();
                                         <header class="panel-heading bg-primary" style=" color: black">
                                             <span class="badge bg-info pull-right"></span> Vendor Photo ID Documents
                                         </header>
-                                            <?php if ($req_docs->photoid == 1) { ?>
+                                        <?php if ($req_docs->photoid == 1) { ?>
                                             <a href="#" class="list-group-item">
                                                 <i class="icon-chevron-right"></i>
                                                 <?php
@@ -1098,15 +1098,15 @@ $query = $this->db->get();
                                                     <?php } elseif ($row['photoid_status'] == 2) { ?>
                                                         <span class="badge md-success">Approved</span>
 
-            <?php
-        }
-    }
-    ?>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
                                                 <i class="icon-user"></i> Photo ID
                                                 <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory, please  submit number with either PAN Card/Aadhar card or passport copy" class="fa fa-question-circle"></i></span>
                                             </a>
 
-<?php } ?>
+                                        <?php } ?>
 
                                     </div>
                                 </div>
@@ -1115,7 +1115,7 @@ $query = $this->db->get();
                                         <header class="panel-heading bg-primary" style=" color: black">
                                             <span class="badge bg-info pull-right"></span> Address Documents
                                         </header>
-                                            <?php if ($req_docs->addressid == 1) { ?>
+                                        <?php if ($req_docs->addressid == 1) { ?>
                                             <a href="#" class="list-group-item">
                                                 <i class="icon-chevron-right"></i>
                                                 <?php
@@ -1131,16 +1131,16 @@ $query = $this->db->get();
                                                     <?php } elseif ($row['addressid_status'] == 2) { ?>
                                                         <span class="badge md-success">Approved</span>
 
-            <?php
-        }
-    }
-    ?>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
                                                 <i class="icon-home"></i> Vendor Residence Address
                                                 <span> - <i data-toggle="tooltip" data-placement="top" title="BSNL Bill or Rent Lease deed or Aadhar Card or Passport or Bank statement(lessthan 3months)" class="fa fa-question-circle"></i></span>
                                             </a>
 
-                                            <?php } ?>
-                                            <?php if ($req_docs->businessid == 1) { ?>
+                                        <?php } ?>
+                                        <?php if ($req_docs->businessid == 1) { ?>
                                             <a href="#" class="list-group-item">
                                                 <i class="icon-chevron-right"></i>
                                                 <?php
@@ -1157,71 +1157,71 @@ $query = $this->db->get();
                                                     <?php } elseif ($row['businessid_status'] == 2) { ?>
                                                         <span class="badge md-success">Approved</span>
 
-            <?php
-        }
-    }
-    ?>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
                                                 <i class="icon-building"></i> Business Address
                                                 <span> - <i data-toggle="tooltip" data-placement="top" title="Any one of : BSNL Bill /Rent Lease deed/AOA & MOA/ Shop & Establishment license/ Trade license/VAT registration/Bank statement(lessthan 3months)" class="fa fa-question-circle"></i></span>
                                             </a>
 
-<?php } ?>
+                                        <?php } ?>
 
 
                                     </div>
-                                     <div class="list-group bg-white" style="background-color: whitesmoke">
+                                    <div class="list-group bg-white" style="background-color: whitesmoke">
                                         <header class="panel-heading bg-primary" style=" color: black">
                                             <span class="badge bg-info pull-right"></span> Other Documents
                                         </header>
 
-                                            <a href="#" class="list-group-item">
-                                                <i class="icon-chevron-right"></i>
-                                                <?php
-                                                foreach ($query->result_array() as $row) {
+                                        <a href="#" class="list-group-item">
+                                            <i class="icon-chevron-right"></i>
+                                            <?php
+                                            foreach ($query->result_array() as $row) {
 
-                                                    if ($row['comp_file_lock'] == 0 && $row['comp_file_status'] == 5) {
-                                                        ?>
-                                                        <span class="badge md-trigger" data-modal="modal-comp_file">Please Submit</span>
-                                                    <?php } elseif ($row['comp_file_status'] == 0) { ?>
-                                                        <span class="badge md-success">Waiting for approve</span>
-                                                    <?php } elseif ($row['comp_file_status'] == 1) { ?>
-                                                        <span class="badge md-trigger" data-modal="modal-businessid">Please Resubmit</span>
-                                                    <?php } elseif ($row['comp_file_status'] == 2) { ?>
-                                                        <span class="badge md-success">Approved</span>
-
-
-            <?php
-        }
-    }
-    ?>
-                                                <i class="icon-file-text"></i> Company Profile
-                                                <span> - <i data-toggle="tooltip" data-placement="top" title="Upload Company profile if you had" class="fa fa-question-circle"></i></span>
-                                            </a>
+                                                if ($row['comp_file_lock'] == 0 && $row['comp_file_status'] == 5) {
+                                                    ?>
+                                                    <span class="badge md-trigger" data-modal="modal-comp_file">Please Submit</span>
+                                                <?php } elseif ($row['comp_file_status'] == 0) { ?>
+                                                    <span class="badge md-success">Waiting for approve</span>
+                                                <?php } elseif ($row['comp_file_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-businessid">Please Resubmit</span>
+                                                <?php } elseif ($row['comp_file_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
 
 
-                                            <a href="#" class="list-group-item">
-                                                <i class="icon-chevron-right"></i>
-                                                <?php
-                                                foreach ($query->result_array() as $row) {
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+                                            <i class="icon-file-text"></i> Company Profile
+                                            <span> - <i data-toggle="tooltip" data-placement="top" title="Upload Company profile if you had" class="fa fa-question-circle"></i></span>
+                                        </a>
 
-                                                    if ($row['canceled_check_lock'] == 0 && $row['canceled_check_status'] == 5) {
-                                                        ?>
-                                                        <span class="badge md-trigger" data-modal="modal-canceled_check">Please Submit</span>
-                                                    <?php } elseif ($row['canceled_check_status'] == 0) { ?>
-                                                        <span class="badge md-success">Waiting for approve</span>
-                                                        
-                                                    <?php } elseif ($row['canceled_check_status'] == 1) { ?>
-                                                        <span class="badge md-trigger" data-modal="modal-businessid">Please Resubmit</span>
-                                                    <?php } elseif ($row['canceled_check_status'] == 2) { ?>
-                                                        <span class="badge md-success">Approved</span>
 
-            <?php
-        }
-    }
-    ?>
-                                                <i class="icon-credit-card"></i> Cancel Cheque
-                                                <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory 'Please Submit Cancel Cheque'" class="fa fa-question-circle"></i></span>
-                                            </a>
+                                        <a href="#" class="list-group-item">
+                                            <i class="icon-chevron-right"></i>
+                                            <?php
+                                            foreach ($query->result_array() as $row) {
+
+                                                if ($row['canceled_check_lock'] == 0 && $row['canceled_check_status'] == 5) {
+                                                    ?>
+                                                    <span class="badge md-trigger" data-modal="modal-canceled_check">Please Submit</span>
+                                                <?php } elseif ($row['canceled_check_status'] == 0) { ?>
+                                                    <span class="badge md-success">Waiting for approve</span>
+
+                                                <?php } elseif ($row['canceled_check_status'] == 1) { ?>
+                                                    <span class="badge md-trigger" data-modal="modal-businessid">Please Resubmit</span>
+                                                <?php } elseif ($row['canceled_check_status'] == 2) { ?>
+                                                    <span class="badge md-success">Approved</span>
+
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
+                                            <i class="icon-credit-card"></i> Cancel Cheque
+                                            <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory 'Please Submit Cancel Cheque'" class="fa fa-question-circle"></i></span>
+                                        </a>
 
 
 
@@ -1244,16 +1244,16 @@ $query = $this->db->get();
         </section>
 
 
-<script src="/js/classie.js"></script>
-<script src="/js/modalEffects.js"></script>
-<script>
-    // this is important for IEs
-    var polyfilter_scriptpath = '/js/';
-</script>
-<script src="/js/cssParser.js"></script>
-<script src="/js/css-filters-polyfill.js"></script>
-<script src="/css/app.v1.js"></script>
-<!-- Bootstrap -->
-<!-- App -->
-</body>
+        <script src="/js/classie.js"></script>
+        <script src="/js/modalEffects.js"></script>
+        <script>
+                                            // this is important for IEs
+                                            var polyfilter_scriptpath = '/js/';
+        </script>
+        <script src="/js/cssParser.js"></script>
+        <script src="/js/css-filters-polyfill.js"></script>
+        <script src="/css/app.v1.js"></script>
+        <!-- Bootstrap -->
+        <!-- App -->
+    </body>
 </html>
