@@ -171,6 +171,7 @@ if($this->session->userdata('logged_in')){
                $details['businessid_status'] = $row['businessid_status'];
                $details['cert_of_incorp_status'] = $row['cert_of_incorp_status'];
                $details['moa_aoa_status'] = $row['moa_aoa_status'];
+               $details['addressid_status'] = $row['addressid_status'];
                  $details['aoa_status'] = $row['aoa_status'];
                    $details['status'] = $row['status'];
                      $details['address1'] = $row['address1'];
@@ -189,7 +190,44 @@ if($this->session->userdata('logged_in')){
                                  $details['cert_products'] = $row['cert_products'];
                                   $details['comp_turnover'] = $row['comp_turnover'];
                                    $details['registered_on'] = $row['registered_on'];
+$details['document'] = $row['pan_prop'];
+            $details['document_date'] = $row['pan_prop_date'];
+            $details['type'] = $row['pan_prop_type'];
+            $details['file_name'] = "_pan_card";
+            $details['button'] = "/pan_prop";
 
+             $details['document'] = $row['vat_cst'];
+            $details['document_date'] = $row['vat_cst_date'];
+            $details['type'] = $row['vat_cst_type'];
+            $details['file_name'] = "_vat";
+            $details['button'] = "/vat_cst";
+
+            $details['document_date'] = $row['aoa_date'];
+            $details['type'] = $row['aoa_type'];
+            $details['file_name'] = "_aoa";
+            $details['button'] = "/aoa";
+
+             $details['document_date'] = $row['shop_establish_trade_date'];
+            $details['type'] = $row['shop_establish_trade_type'];
+            $details['file_name'] = "_shop_establish_trade_date";
+            $details['button'] = "/shop_establish_trade";
+
+            $details['file_name'] = "_addressid";
+            $details['button'] = "/addressid";
+            $details['document_date'] = $row['addressid_date'];
+            $details['type'] = $row['addressid_type'];
+
+             $details['file_name'] = "_businessid";
+            $details['button'] = "/businessid";
+            $details['document_date'] = $row['businessid_date'];
+            $details['type'] = $row['businessid_type'];
+
+
+            $details['document_date'] = $row['pan_comp_date'];
+            $details['type'] = $row['pan_comp_type'];
+            $details['document_name'] = "Company PAN Number";
+            $details['file_name'] = "_pan_comp";
+            $details['button'] = "/pan_comp";
 
 
 
@@ -735,7 +773,7 @@ $details['address']= "Address";
 
 
     public function change_firmtype($email,$firmtype) {
-        
+
             $this->vendor_update->change_firmtype($email,$firmtype);
     }
 
