@@ -31,10 +31,44 @@ $show['city'] = $city;
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"/>
 <script src="/js/modernizr.custom.js"></script>
 
-
 <!--    <script src="<?php echo site_url(); ?>js/vendor.js" type="text/javascript"></script>-->
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+  
+  <style>
+      .list-tags {
+  float: left;
+  width: 100%;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.list-tags li {
+  float: left;
+  display: block;
+  position: relative;
+  font-size: 16px;
+}
+.list-tags li a {
+  display: block;
+  float: left;
+  background: #F5F5F5;
+  border: 1px solid #D5D5D5;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  line-height: 23px;
+  font-size: 16px;
+  margin: 0px 5px 5px 0px;
+  padding: 0px 8px;
+  color: #656d78;
+}
+.list-tags li a:hover {
+  text-decoration: none;
+  background: #F0F0F0;
+}
+/* END LIST TAGS */
+      </style>
 <!--[if lt IE 9]>
 <script src="js/ie/respond.min.js" cache="false"></script>
 <script src="js/ie/html5.js" cache="false"></script>
@@ -73,7 +107,60 @@ cursor:pointer;
 </style>
 <script type="text/javascript" src="http://ajax.googleapis.com/
 ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+$(".edit_tr").click(function()
+{
+var ID=$(this).attr('id');
+$("#first_"+ID).hide();
 
+$("#first_input_"+ID).show();
+
+}).change(function()
+{
+var ID=$(this).attr('id');
+var first=$("#first_input_"+ID).val();
+
+var dataString = 'id='+ ID +'&vendor_name='+first;
+$("#first_"+ID).html('<img src="load.gif" />'); // Loading image
+
+if(first.length>0)
+{
+
+$.ajax({
+type: "POST",
+url: "<?php echo site_url(); ?>main/vendor_update",
+data: dataString,
+cache: false,
+success: function(html)
+{
+$("#first_"+ID).html(first);
+}
+});
+}
+else
+{
+alert('Enter something.');
+}
+
+});
+
+// Edit input box click action
+$(".editbox").mouseup(function() 
+{
+return false
+});
+
+// Outside click action
+$(document).mouseup(function()
+{
+$(".editbox").hide();
+$(".text").show();
+});
+
+});
+</script>
 </head>
 <body style="background-color: white">
 <?php $this->load->view('template/main_head', array('firm_name' => $firm_name, 'firm_type' => $firm_type)); ?>
@@ -203,15 +290,16 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
                                                             Vendor Details</h3>
 
                                                     </div>
-
+                                                                                                                                 
                                     <table class="table table-hover">
                                                         <tbody>
 
-
+                                                             <tr id="<?php echo $compid; ?>" class="edit_tr">
                                                                 <td>Vendor Name:</td>
-                                                                <td><b><?php
-                                                                        echo $row->vendor_name;$row->firm_name.''.$row->last_name;
-                                                                        ?></b></td>
+                                                                <td class="edit_td">
+                                                                    <span id="first_<?php echo $compid; ?>" class="text"><?php echo $row->vendor_name; ?></span>
+<input type="text" value="<?php echo $row->vendor_name; ?>" class="editbox" id="first_input_<?php echo $compid; ?>"/><i class="icon-edit" id="first_<?php echo $compid; ?>"></i>
+</td>
                                                             </tr>
                                                              <tr>
                                                                 <td>Firm Name:</td>
@@ -244,7 +332,7 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
 
                                                         <h3 class="panel-title">
                                                             Account Details</h3>
-                                                    </div>
+                                                    </div>                                                                                                                                                    
                                                     <table class="table table-hover">
                                                         <tbody>
 
@@ -270,8 +358,36 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
 
 
                                                 </div>
-                                               
+                                                <div class="panel">
+                                                  
+  
+ 
+    
+     <div class="panel-heading bg-primary" style=" color: black">
 
+                                                        <h3 class="panel-title">
+                                                           Product Categories</h3>
+                                                    </div> 
+                                                    </br>
+                                          
+                                                   <ul class="list-tags push-up-12">
+                                        <li><a href="#"><span class="fa fa-tag"></span> Donec</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Bibendum</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Praesent</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Fusce</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Nam quis</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Maecenas</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Nulla facilisi</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Donec</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Nam vitae</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Malesuada</a></li>
+                                    </ul>
+                           
+                            </div>
+            
+
+ 
+                                                                                              
                                             </div>
 
                                             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" >
@@ -296,7 +412,7 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
 
                                                                                 <a data-original-title="Edit" data-toggle="tooltip" type="button" class="btn btn-sm" style="background-color: #428BCA; color: white" onclick="location.href = '/main/company';">Edit <i class="icon-edit"></i></a>
                                                                             </span></h4>
-                                                                    </header>
+                                                                    </header>                                                                
                                                                     <tr>
                                                                         <th width="30%"><b>Contact Person:</b></th>
                                                                         <td> <?php
@@ -386,14 +502,14 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
                                                                         <td><?php echo $row->reg_category; ?></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td><b>Certification of Products:</b></td>
+                                                                        <td><b>Quality Certification of Products:</b></td>
                                                                         <td><?php
                                                                             echo $row->cert_products;
                                                                         }
                                                                         ?>
                                                                     </td>
                                                                 </tr>
-
+                                                            
 
                                                                 </tr>
 

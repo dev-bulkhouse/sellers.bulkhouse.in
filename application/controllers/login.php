@@ -156,27 +156,25 @@ class Login extends CI_Controller
         $email_hash = $_POST['email_hash'];
         $email_code =  $_POST['email_code'];
         $email_sha =  sha1($_POST['email'].$_POST['email_code']);
-//        echo $email = trim($email)."<br/>";
-//        echo $email_hash = trim($email_hash)."<br/>";
-//        echo $email_code = trim($email_code)."<br/>";
-//        echo $email_sha = trim($email_sha)."<br/>";
         if (!isset($email,$email_hash) || $email_hash !== $email_sha) {
                 echo 'Error updating your password';
         } else {
 
      $result = $this->login_model->update_password();
 
-     if($result){
+     if($result == true){
 
          $this->session->set_flashdata('success_message', 'Password reset successfull! ');
          redirect(base_url().'','location');
      }  else {
-         $this->session->set_flashdata('error_message', 'Password reset failed please click back on the same link');
+         $this->session->set_flashdata('error_message', 'Password reset failed please click back on the same link or try again');
          redirect(base_url().'','location');
      }
  }
 
     }
+
+
 
 
 

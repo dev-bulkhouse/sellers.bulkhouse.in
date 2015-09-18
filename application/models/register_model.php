@@ -81,10 +81,10 @@ class Register_model extends CI_Model {
 
         if ($this->db->affected_rows() === 1) {
             $this->set_session($email);
-            $this->send_confirmation_mail();
-//            $this->activate_seller($email, $first_name, $last_name, $password_sec);
+            $this->send_confirmation_mail($email);
+            $custid =$this->activate_mag_seller($email, $first_name, $last_name, $password_sec);
 //          $this->activate_account($email);
-            return array($first_name, $email, $firm_type, $firm_name, $mobile);
+            return array($first_name, $email, $firm_type, $firm_name, $mobile, $custid);
 
         } else {
             echo "i am really sorry!";
@@ -93,7 +93,20 @@ class Register_model extends CI_Model {
 
     public function activate_seller($email, $firstname, $lastname, $password_sec) {
         $this->load->spark('mage-api/0.0.1');
-        $this->mage_api->customer_create(array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'password' => $password_sec, 'website_id' => 1, 'store_id' => 1, 'group_id' => 4));
+        $result = $this->mage_api->customer_create(array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'password' => $password_sec, 'website_id' => 1, 'store_id' => 1, 'group_id' => 4));
+        return $result;
+    }
+
+    public function activate_mag_seller($email, $firstname, $lastname, $password_sec) {
+
+        $client = new SoapClient('http://bulk.house/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client->login('inhouse_developer', '3125582');
+$result = $client->call($session,'customer.create',array(array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'password' => $password_sec, 'website_id' => 1, 'store_id' => 1, 'group_id' => 4)));
+    return $result;
+
     }
 
     public function update() {
@@ -228,17 +241,17 @@ class Register_model extends CI_Model {
         $this->session->set_userdata($sess_data);
     }
 
-    private function send_confirmation_mail() {
+    private function send_confirmation_mail($email) {
         $this->load->helper('url');
         $this->load->library('email');
-        $email = $this->session->userdata('email');
+//        $email = $this->session->userdata('email');
 
         $email_code = $this->email_code;
         $config['protocol'] = "sendmail";
         $config['smtp_host'] = "smtp.sendgrid.net";
         $config['smtp_port'] = "587";
         $config['smtp_user'] = "vendors_bulkhouse";
-        $config['smtp_pass'] = "bulkhouse@vizag123";
+        $config['smtp_pass'] = "asdftrew12";
         $config['charset'] = "utf-8";
         $config['newline'] = "\r\n";
         $this->email->initialize($config);

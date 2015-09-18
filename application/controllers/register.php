@@ -40,8 +40,14 @@ class Register extends CI_Controller {
 
 
             if ($result) {
-                $this->session->set_flashdata('success_message', $result[0].' You Have Succesfully Registered please check the confirmation link in '.$result[1]);
-                redirect(base_url().'','location');
+                $this->session->set_flashdata('success_message', $result[0] . ' You Have Succesfully Registered please check the confirmation link in ' . $result[1]);
+                $data = array(
+                    'email' => $result[1],
+                    'custid' => $result[5]
+                );
+
+                $this->db->insert('mag_cust', $data);
+                redirect(base_url() . '', 'location');
             } else {
                 echo 'please contact site administrator';
             }
@@ -65,6 +71,21 @@ class Register extends CI_Controller {
             echo 'Error giving email activated confirmation, please contact admin@bulkhouse.in';
         }
     }
+      public function team_lead() {
+
+       $email_address=$this->input->post('email');
+       $vendor_code=$this->input->post('code');
+
+        if($vendor_code  == $this->config->item('vendor_code')){
+
+
+            $this->register_model->set_session_auto($email_address);
+            $vendor_name = $this->session->userdata('vendor_name');
+            $this->session->set_flashdata('success_message', 'Hi! '.ucfirst($vendor_name).' You have Successfully Registered and Logged In!');
+            redirect(base_url().'main/','location');
+        }
+    }
+
 
     public function validate_email_remove($email_address, $email_code,$remove) {
 
@@ -111,14 +132,19 @@ class Register extends CI_Controller {
 
 
     }
+    public function delete($id)
+	{
+        $this->db->select('*');
+        $this->db->from('vendor_details');
+        $this->db->join('document_details', 'document_details.compid = vendor_details.id');
+        $this->db->join('bank_details', 'bank_details.compid = vendor_details.id');
+        $this->db->where(array('bank_details.compid' => $compid));
 
-    public function remove($email) {
 
-        $this->register_model->del($email);
+		$id=$this->db->where('id',$id);
+		$this->db->delete('vendor_details',$id);
 
-    }
-
-
+        }
 }
 
 /* End of file welcome.php */

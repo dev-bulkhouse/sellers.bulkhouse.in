@@ -1,6 +1,6 @@
 <?php
-
-if ($logged_in) {
+if(isset($logged_in)){
+    if ($logged_in) {
     $email = $this->session->userdata('email');
     $admin_type = $this->session->userdata('admin_type');
     $name = $this->session->userdata('name');
@@ -8,20 +8,19 @@ if ($logged_in) {
     if ($admin_type == "document_verifier") {
 
         $role = "Documents Verifier";
-
     } elseif ($admin_type == "bank_verifier") {
 
         $role = "Assistant Bank Admin";
-}elseif ($admin_type == "bank_verifier2") {
+    } elseif ($admin_type == "bank_verifier2") {
 
         $role = "Bank Admin";
-}
-
+    }
 } else {
 
 }
+}
 ?><!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
     <head>
         <!-- META SECTION -->
         <title>Bulkhouse | Sellers | Approvals</title>
@@ -35,8 +34,178 @@ if ($logged_in) {
         <!-- CSS INCLUDE -->
         <link rel="stylesheet" type="text/css" id="theme" href="/css/theme-default.css"/>
         <!-- EOF CSS INCLUDE -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
     </head>
     <body>
+        <div id="pan_prop" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                  
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+        <div id="vat" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+          <div id="cst" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+          <div id="aoa" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+          <div id="shop_establish_trade" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+          <div id="addressid" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+          <div id="businessid" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+          <div id="cenvat" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+        <div id="servicetax" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+        <div id="comp" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+        <div id="photoid" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+          <div id="deep" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+          <div id="sign" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+          <div id="moa" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+         <div id="cert" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                   
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
 
@@ -61,12 +230,15 @@ if ($logged_in) {
                     <li class="active">
                         <a href="/verification"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
                     </li>
-                     <?php if ($admin_type == "document_verifier") {?>
-                    
-                    <li class="active">
-                        <a href="/admin/vendor_details"><span class="fa fa-desktop"></span> <span class="xn-text">Pending Vendors</span></a>
-                    </li>
-                   <?php } ?>
+<?php if ($admin_type == "document_verifier") { ?>
+
+                        <li class="active">
+                            <a href="/admin/vendor_details"><span class="fa fa-desktop"></span> <span class="xn-text">Pending Vendors</span></a>
+                        </li>
+                        <li class="active">
+                            <a href="/admin/vendor_profile"><span class="fa fa-desktop"></span> <span class="xn-text">Vendors Profiles</span></a>
+                        </li>
+<?php } ?>
 
 
 
@@ -89,103 +261,10 @@ if ($logged_in) {
 
                     <!-- SIGN OUT -->
                     <li class="xn-icon-button pull-right">
-                        <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+                        <a href="<?php site_url() ?>admin/logout" class="mb-control" data-sound="alert" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
                     </li>
                     <!-- END SIGN OUT -->
-                    <!-- MESSAGES -->
 
-
-<!--                    <li class="xn-icon-button pull-right">
-                        <a href="#"><span class="fa fa-comments"></span></a>
-                        <div class="informer informer-danger">4</div>
-                        <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>
-                                <div class="pull-right">
-                                    <span class="label label-danger">4 new</span>
-                                </div>
-                            </div>
-                            <div class="panel-body list-group list-group-contacts scroll" style="height: 200px;">
-                                <a href="#" class="list-group-item">
-                                    <div class="list-group-status status-online"></div>
-                                    <img src="assets/images/users/user2.jpg" class="pull-left" alt=""/>
-                                    <span class="contacts-title">Kishore Chandra</span>
-                                    <p>Praesent placerat tellus id augue condimentum</p>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="list-group-status status-away"></div>
-                                    <img src="assets/images/users/user.jpg" class="pull-left" alt=""/>
-                                    <span class="contacts-title">Santhosh</span>
-                                    <p>Donec risus sapien, sagittis et magna quis</p>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="list-group-status status-away"></div>
-                                    <img src="assets/images/users/user3.jpg" class="pull-left" alt=""/>
-                                    <span class="contacts-title">Ashwin</span>
-                                    <p>Mauris vel eros ut nunc rhoncus cursus sed</p>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="list-group-status status-offline"></div>
-                                    <img src="assets/images/users/user6.jpg" class="pull-left" alt=""/>
-                                    <span class="contacts-title">G s s Venkatesh</span>
-                                    <p>I want my money back!</p>
-                                </a>
-                            </div>
-                            <div class="panel-footer text-center">
-                                <a href="pages-messages.html">Show all messages</a>
-                            </div>
-                        </div>
-                    </li>-->
-
-
-
-                    <!-- END MESSAGES -->
-                    <!-- TASKS -->
-<!--                    <li class="xn-icon-button pull-right">
-                        <a href="#"><span class="fa fa-tasks"></span></a>
-                        <div class="informer informer-warning">3</div>
-                        <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><span class="fa fa-tasks"></span> Tasks</h3>
-                                <div class="pull-right">
-                                    <span class="label label-warning">3 active</span>
-                                </div>
-                            </div>
-                            <div class="panel-body list-group scroll" style="height: 200px;">
-                                <a class="list-group-item" href="#">
-                                    <strong>Phasellus augue arcu, elementum</strong>
-                                    <div class="progress progress-small progress-striped active">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
-                                    </div>
-                                    <small class="text-muted">John Doe, 25 Sep 2014 / 50%</small>
-                                </a>
-                                <a class="list-group-item" href="#">
-                                    <strong>Aenean ac cursus</strong>
-                                    <div class="progress progress-small progress-striped active">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">80%</div>
-                                    </div>
-                                    <small class="text-muted">Dmitry Ivaniuk, 24 Sep 2014 / 80%</small>
-                                </a>
-                                <a class="list-group-item" href="#">
-                                    <strong>Lorem ipsum dolor</strong>
-                                    <div class="progress progress-small progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">95%</div>
-                                    </div>
-                                    <small class="text-muted">John Doe, 23 Sep 2014 / 95%</small>
-                                </a>
-                                <a class="list-group-item" href="#">
-                                    <strong>Cras suscipit ac quam at tincidunt.</strong>
-                                    <div class="progress progress-small">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
-                                    </div>
-                                    <small class="text-muted">John Doe, 21 Sep 2014 /</small><small class="text-success"> Done</small>
-                                </a>
-                            </div>
-                            <div class="panel-footer text-center">
-                                <a href="pages-tasks.html">Show all tasks</a>
-                            </div>
-                        </div>
-                    </li>-->
-                    <!-- END TASKS -->
                 </ul>
+
                 <!-- END X-NAVIGATION VERTICAL -->

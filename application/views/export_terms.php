@@ -77,85 +77,69 @@ if (window.sidebar){
                                 <li>
                                     <a href="#overview">Overview</a>
                                 </li>
-
                                 <li>
-                                    <a href="#PRIVACYANDPERSONALDATAMANAGEMENT">Privacy and personal data</a>
+                                    <a href="#APPLICATIONANDACCEPTANCEOFTERMS">Application and Acceptance of Terms and Grant of Rights</a>
                                 </li>
                                 <li>
-                                    <a href="#INTELLECTUALPROPERTY">Intellectual Property</a>
+                                    <a href="#ACCOUNTRULES">Account Rules</a>
+                                </li>
+                               
+                                <li>
+                                    <a href="#CODEOFCONDUCT">Code of Conduct</a>
+                                </li>
+                                 <li>
+                                    <a href="#INTELLECTUALPROPERTYRIGHTS">Privacy Policy, Intellectual property and Data protection</a>
                                 </li>
                                 <li>
-                                    <a href="#TERMSOFUSEANDSCOPEOFTHEAGREEMENT">Terms of use and scope</a>
+                                    <a href="#PRODUCTLISTING">Product Listing</a>
                                 </li>
-
+                                
                                 <li>
-                                    <a href="#PRODUCTSPOLICY">Product Policy</a>
-                                </li>
-                                <li>
-                                    <a href="#ORDERFULFILLMENTPROCESSING">Order fulfillment  </a>
-                                </li>
-                                <li>
-                                    <a href="#TRANSPORTANDDELIVERY">Transport and Delivery</a>
-                                </li>
-                                <li>
-                                    <a href="#TAXATIONPOLICY">Taxation Policy</a>
-                                </li>
-                                <li>
-                                    <a href="#GENERALTERMS">General Terms</a>
+                                    <a href="#PROHIBITEDPRODUCTS">Prohibited Products &  Prohibited Activities</a>
                                 </li>
 
-                                <!--
-
-                                                                <li>
-                                                                    <a href="#REPRESENTAION AND WARRANTIES">Representation and Warranties</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#MISCELLANEOUS">Miscellaneous</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#TERMINATIONLIMITATIONOF THE AGREEMENT">Terminations</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#PRODUCT LISTING">Product Listing</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#PROHIBITED PRODUCTS AND ACTIVITIES LIST">Activities List</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#PROHIBITED PRODUCTS">Prohibited Products</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#PROHIBITED ACTIVITIES">Prohibited Activities</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#PRICING POLICIES">Pricing Policies</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#ORDER FULFILLMENT, LOGISTICS AND DELIVERY">Order Fulfillment</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#PAYMENT POLICIES">Payment Policies</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#WARRANTIES">Warranties</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#BUYER PROTECTION">Buyer Protection</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#Return Policy on Electronic Items like Mobiles, Laptops etc">Return Policy</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#CANCELLATION POLICY">Cancellation Policies</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#SHIPPING POLICY">Shipping Policies</a>
-                                                                </li>-->
+                                <li>
+                                    <a href="#PRICINGPOLICIES">Pricing Policies</a>
+                                </li>
+                                <li>
+                                    <a href="#ORDERFULFILLMENTPROCESSING">Order Fulfillment</a>
+                                </li>
+                                <li>
+                                    <a href="#SHIPPING POLICY">Shipping, Transport and Delivery</a>
+                                </li>
+                                <li>
+                                    <a href="#PAYMENTPOLICIES">Payment Policies</a>
+                                </li>
+                                <li>
+                                    <a href="#PAYMENTPOLICIES">Taxation Policies</a>
+                                </li>
+                                <li>
+                                    <a href="#Warranties">Warranties, Buyer Protection & Return Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#OrderCancellationPolicies">Order Cancellation Policies</a>
+                                </li>
+                                <li>
+                                    <a href="#INDEMNIFICATION">Indemnification</a>
+                                </li>
+                                <li>
+                                    <a href="#DISPUTES">Disputes</a>
+                                </li>
+                                <li>
+                                    <a href="#TERMINATIONS">Terminations</a>
+                                </li>
+                                <li>
+                                    <a href="#RepresentationandWarranties">Representation, Warranties, returns and rejects</a>
+                                </li>
+                                <li>
+                                    <a href="#Generalterms">General Terms</a>
+                                </li>
 
                             </ul>
                         </nav>
                     </section>
                 </section>
+                
             </aside>
             <!-- /.aside -->
             <section id="content">
@@ -169,85 +153,575 @@ if (window.sidebar){
                         <section id="docs">
                             <div class="clearfix padder">
                                 <h4 id="overview">For export transactions</h4>
-
-
-                                <p>This document is an electronic record in terms of Information Technology Act, 2000 and rules
-                                    there under as applicable and the amended provisions pertaining to electronic records in
-                                    various statutes as amended by the Information Technology Act, 2000.
-                                    This document is published in accordance with the provisions of Rule 3 (1) of the Information
-                                    Technology (Intermediaries guidelines) Rules, 2011 that require publishing the rules and
-                                    regulations, privacy policy and user agreement for access or usage of <b>www.bulkhouse.com</b>,
-                                    <b>www.bulkhouse.in</b> or any other websites owned, managed and run by Bulkhouse Trading India Pvt.Ltd .</br>
-                                    BY USING THE WEBSITE, YOU AGREE TO THE TERMS AND CONDITIONS OF THIS POLICY. IF YOU
-                                    DO NOT AGREE WITH THE TERMS AND CONDITIONS OF THIS POLICY, PLEASE DO NOT PROCEED
-                                    FURTHER TO USE THIS WEBSITE.
-                                    This electronic record is generated by a computer system and does not require any physical or
-                                    digital signatures.</p>
-
+                                <p>
+                                <p>This document is an electronic record in terms of Information Technology Act, 2000 and rules there under as applicable and the amended provisions pertaining to electronic records in various statutes as amended by the Information Technology Act, 2000. This document is published in accordance with the provisions of Rule 3 (1) of the Information Technology (Intermediaries guidelines) Rules, 2011 that require publishing the rules and regulations, privacy policy and user agreement for access or usage of <b>www.bulkhouse.com</b>, <b>www.bulkhouse.in</b> or any other websites owned, managed and run by Bulkhouse Trading India Pvt.Ltd.
+    This section sets out general terms and conditions for using the Website.</p>
+<b>Recitals & Definitions:</b></br>
+<p>'Buyer' shall mean a user of the Website who places an Order on the Seller listed on the Website for products or services.</p>
+<p>'Order' shall mean a binding purchase order placed by a Buyer on the Seller through for supply of products or services.</p>
+<p>'Website' means <b>'www.bulkhouse.com'</b> or <b>bulkhouse.in</b> and instances of the same</p>
+<p>'Seller Panel' means a uniform resource locator ('URL') provided by Bulkhouse to Seller with a unique login and password to update the order status, price and inventory on the same.
+<p>The Seller commits to supply products and transfer additional rights, determined in this Agreement, to Bulkhouse by submitting them to the Website. Bulkhouse will use products strictly to fulfill its business needs. The Seller also undertakes to sell Products to Bulkhouse properly, on time, and in a good and honest manner.</p>
+<p>This Agreement is a long-term contract and is the basis for establishing individual purchase.</p>
+<p>These terms and conditions govern your use of www.bulkhouse.com, www.bulkhouse.in or any other websites owned, managed and run by Bulkhouse Trading India Pvt.Ltd. which an online marketplace is allowing sellers to sell directly to customers (hereinafter referred to as "Bulkhouse".</p> 
+<p>You must read, agree with and accept all of the terms and conditions contained in this Agreement as these terms constitute your legal and contractual obligations towards Bulkhouse. This Agreement shall be effective and binding upon your 'acceptance'. 'Acceptance' shall mean your affirmative action in clicking on the 'check box' and on the 'continue' button as provided on the registration page while you are transacting as Guest User or such other actions that implies your acceptance.</p>
+<p>If you do not agree or are not willing to be bound by the terms and conditions of this Agreement, please do not click on the "check box” and on the 'seller Login' button and on the "Register as a seller" button.</p>
+</p>
                                 <div class="line"></div>
-                                <table class="table table-hover table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Part</th>
-                                            <th>Description</th>
+
+                                <h4 id="APPLICATIONANDACCEPTANCEOFTERMS" class="m-t-lg">Application of Terms </h4>
+                                <ul>
+                                    <li>Bulkhouse provides an online transaction platform on the Bulkhouse website which
+                                        allows registered Vendors of the Bulkhouse conclude online transactions for products
+                                        or services within the Bulkhouse subject to the terms of this Agreement. Bulkhouse
+                                        may publish transaction rules, dispute rules and other rules and policies for any type of
+                                        online transactions and any subsequent amendments or modifications as may be made
+                                        from time to time. Such terms are expressly incorporated into this Agreement by
+                                        reference and you agree to be bound by such rules and policies.</li>
+                                    <li>This Agreement, including the User Terms and the General Terms, to form a legally
+                                        binding agreement between you and Bulkhouse, in relation to your use of the website
+                                        services. By accessing and using the website services, you agree to accept and be bound
+                                        by this Agreement. Please do not use the website services if you do not accept all of the
+                                        terms of this Agreement.</li>
+                                    <li>Bulkhouse may change, amend, delete or add to this Agreement or any of the terms and
+                                        conditions contained in any policies or rules governing the Website and/or the Services
+                                        at any time and in its sole discretion. Any such changes will be effective upon the
+                                        posting of the revised Agreement or such policies and rules on the Website and you are
+                                        solely responsible for reviewing any such notice and the corresponding changes to the
+                                        Agreement.</li>
+                                    <li>Your continued use of the Website and/or the Services following any such revisions to
+                                        the Agreement or such policies and rules will constitute your acceptance of such
+                                        changes. If you do not agree to any such changes, do not continue to use the Website
+                                        and the Services and close your Account.</li>
+                                    <li>Bulkhouse may at any time change or remove (temporarily or permanently) the
+                                        Website, Products or Suppliers and their information from the Website without
+                                        indicating the reasons of such change or removal and you confirm your acceptance to
+                                        that effect.</li>
+                                    <li><strong>GRANT OF RIGHTS</strong>
+ </li>
+                                    <ul>
+                                        <li>By listing the Product in the Website, you represent and warrant to Bulkhouse and prospective Buyers that you are the owner of the Product and/or have the right and ability to sell the Product and that the listing is accurate, current, and complete and is not misleading or otherwise deceptive.
+</li>
+                                           <li>Bulkhouse retains the right to immediately halt any sale, prevent or restrict access to the Website or the Services, or take any other action to restrict access to or availability of objectionable material, any inaccurate listing, any inappropriately categorized Products, any unlawful Products, or any Products otherwise prohibited by this Agreement or applicable law or in any other case in its sole discretion.</li>
+                                              <li>The Vendor gives Bulkhouse exclusive and transferable license to market and resell Products to Buyers, through the Internet and/or other networks. Such resale shall be subject to the terms and conditions issued by Bulkhouse in respect of Buyers, and in the event of any conflict such terms and conditions shall take precedence over any sales terms imposed by the Vendor.
+</li>
+                                        
+                                    </ul>
+                                </ul>
+                                <div class="line"></div>
+
+                                <h4 id="ACCOUNTRULES" class="m-t-lg">ACCOUNT RULES </h4>
+                                <ul>
+                                    <li>The Vendor, who wants to start using the Services, has to register at the Website. After you
+                                        agree to be bound by this Agreement and complete the registration form, Bulkhouse will
+                                        establish an account for you (the "Account") and provide you with the unique logon ID and
+                                        password. Bulkhouse is entitled to refuse to register a new Supplier without indicating the
+                                        reasons.</li>
+                                    <li>You can register only one Account online with bulkhouse.com for each
+                                        firm/company/organization/legal-person. The person should be competent to contract.</li>
+                                    <li>You are solely responsible for maintaining the confidentiality of your unique logon ID and
+                                        password, and for their use. As traffic on this Website may be monitored, evidence of the use
+                                        of the logon ID can be produced to support or defend any dispute or actionable cause or
+                                        matter which arises in relation to your usage of the Service and/or the Website.</li>
+                                    <li>You confirm that at the registration at the Website you have entered correct data about
+                                        yourself and that afterwards, when changing or adding this data in the Account, you will
+                                        enter only correct data. The Vendor shall bear any losses that occur regarding to the
+                                        submission of invalid/incorrect data.</li>
+                                    <ul>
+                                        <li>You unconditionally warrant that any Product characteristics submitted by you at
+                                            the Website and any other information, data and/or content you provide:</li>
+                                        <li>Will be correct, accurate and not misleading or otherwise deceptive;</li>
+                                        <li>Will not infringe the intellectual property rights of Bulkhouse or any third party
+                                            such as copyright, patent, trademark, trade secret or other proprietary rights, rights
+                                            of publicity or privacy;</li>
+                                        <li>Will not violate any law, statute, or regulation;</li>
+                                        <li>Will not be defamatory or libelous, and,</li>
+                                        <li>Will not create liability for Bulkhouse.</li>
+                                    </ul>
+                                    <li>You agree to give all notices, provide all necessary information, materials and approval, and
+                                        render all reasonable assistance and cooperation necessary for the completion of the
+                                        Transactions. If your failure to do so results in delay in the provision of any Transaction,
+                                        cancellation of any Online Transaction, or disposal of any funds, Bulkhouse shall not be
+                                        liable for any loss or damages arising from such default.</li>
+                                    <li>You shall not use the Website and/or the Services for any purpose that is unlawful or
+                                        prohibited by this Agreement and legal requirements. The Vendor’s registration at the
+                                        Website implies the Vendor's confirmation and a guarantee that by selling Products to
+                                        Bulkhouse, the Vendor will act honestly and in such way that it would meet the interests of
+                                        both the Vendor and Bulkhouse. Bulkhouse has a right to restrict the Vendor's usage of the
+                                        Website without prior notice if the Vendor uses the Website in unlawful or other
+                                        unaccepted way.</li>
+                                    <li>You should not at any point of time, during the course of agreement and a period of FIVE
+                                        years from the date of termination of this Agreement, engage in any business whether
+                                        directly or indirectly through his agents, representatives with any of the international
+                                        buyers who have approached him through Bulkhouse website or have visited Bulkhouse
+                                        website and contacted him directly. In case it has come to the notice of Bulkhouse of such an
+                                        occurance, Bulkhouse shall have the rights to claim damages and terminate the Agreement.</li>
+                                    <li>You commit to provide Bulkhouse with all the required information and documents.
+                                        Bulkhouse may hold payments due to you for your Products until you provide Bulkhouse
+                                        with the required information and documents. If you do not provide Bulkhouse with the
+                                        required information and documents after Bulkhouse’s notice, Bulkhouse may set-off
+                                        payments due to you as a compensation for damages.</li>
+
+                                </ul>
+                                <div class="line"></div>
+                                <h4 id="CODEOFCONDUCT" class="m-t-lg">CODE OF CONDUCT </h4>
+
+                                <ul>
+                                    <li>Vendor warrants that the Products are produced in compliance with all applicable requirements
+                                        of The Child Labor (Prohibition & Regulation) Act, The Equal Remuneration Act, The Payment of
+                                        Wages Act, as amended, and of regulations and orders of the Ministry of Labor and Employment.
+                                        Vendor represents and warrants that Vendor and its contractors are not engaged in and will not
+                                        engage in any labor practice in violation of the laws or regulations of the country of manufacture
+                                        or assembly of the Products involving unsanitary and/or unsafe labor conditions. If Bulkhouse
+                                        determines that Vendor or its contractors have failed to comply with the foregoing, Bulkhouse
+                                        will be entitled to return all Products on hand for full refund, at Vendor’s cost, and cancel any
+                                        unfilled orders at no cost.</li>
+                                    <li>The following Code of Conduct is an integral part of all Bulkhouse Purchase Orders, the terms of
+                                        which must be followed by Vendor and its contractors.</li>
+                                    <ul>
+                                        <li>All Vendor workers performing work within the INDIA must be legally eligible for
+                                            employment in the INDIA under the Indian Immigration Laws. Vendor must require and
+                                            review documentation establishing such eligibility for all Vendor workers who perform
+                                            services for Bulkhouse within the India.</li>
+                                        <li>Vendor may not engage in any conduct likely, intending, or appearing to improperly
+                                            influence any Bulkhouse Representatives in the performance of their job
+                                            responsibilities. Bribes, cash payments, and business gifts and entertainment of more
+                                            than token value expressly are prohibited. Vendor must refrain from engaging in any
+                                            conduct that may appear improper or may result in a conflict of interest when viewed
+                                            from Bulkhouse’s point of view.</li>
+                                        <li>Vendor must comply with the provision of the Prevention of Corruption Act as amended.
+                                            Vendor will not offer or provide money or anything else of value to any agent or
+                                            representative of any government or government agency in order to obtain or retain
+                                            business.</li>
+                                        <li>Vendor and its contractors must maintain written records evidencing compliance with
+                                            the provisions of this Code of Conduct and must make those records available to
+                                            Bulkhouse upon request.</li>
+                                    </ul>
+                                </ul>
+                                <div class="line"></div>
+                                <h4 id="PRODUCTLISTING" class="m-t-lg">PRODUCTS LISTING </h4>
+
+                                <ul>
+                                    <li>If the Vendor registers Products for inclusion in the Website, Bulkhouse is entitled to
+                                        purchase such Products for resale.</li>
+                                    <li>Bulkhouse allows you to list and sell products or services which are legal in its listed
+                                        categories.</li>
+                                    <li>The vendor represent and confirms that you shall be the sole and exclusive legal owner of all
+                                        items, goods or products of any description that you wish to offer for sale on the Website.</li>
+                                    <li>You shall have absolute right, title and authority to deal in and offer for sale such items,
+                                        goods or products.</li>
+                                    <li>You shall not engage in any transaction in an item or service, which is prohibited by the
+                                        provisions of any applicable law including exchange control laws or regulations for the time
+                                        being in force.</li>
+                                    <li>You shall at all times ensure full compliance with the applicable laws and shall not link
+                                        directly or indirectly to or include descriptions of items, goods or services that are
+                                        prohibited under the this Agreement or any other applicable law for the time being in force
+                                        including provisions of the Information Technology Act, 2000 and rules there under as
+                                        applicable and as amended from time to time and also all applicable Domestic laws, rules
+                                        and regulations (including the provisions of any applicable Exchange Control Laws or
+                                        Regulations in Force) and International Laws, Foreign Exchange Laws, Statutes, Ordinances
+                                        and Regulations (including, but not limited to Sales Tax/ VAT, Income Tax, Octroi, Service
+                                        Tax, Central Excise, Custom Duty, Local Levies) regarding your use of our service and your
+                                        bidding on, listing, purchase, solicitation of offers to purchase, and sale of items or services,
+                                        but not limited to the Drugs and Cosmetics Act, 1940, the Drugs And Magic Remedies
+                                        (Objectionable Advertisements) Act, 1954, the Indian Penal Code, 1860, Information
+                                        Technology Act 2000 as amended time to time and rules there under.</li>
+                                    <li>Bulkhouse reserves its sole discretion in the interpretation and enforcement of these
+                                        policies in conjunction with the Vendor Agreement. Bulkhouse reserves the right to decline
+                                        any Product or website of the Supplier that does not comply with this list. At the same time,
+                                        Bulkhouse ensures that all Products will comply with this list.</li>
+                                    <li><b>BULKHOUSE</b> reserves the right in its sole discretion to remove any product/
+                                        material/content/photos/offers displayed on the web site which it reasonably believes is unlawful, could subject <b>BULKHOUSE</b> to liability, violates the terms and conditions and/or
+                                        Agreement or is otherwise found inappropriate in <b>BULKHOUSE</b>'s opinion.</li>
+                                    <li>Bulkhouse reserves the right to cooperate fully with governmental authorities, private
+                                        investigators and/or injured third parties in the investigation of any suspected criminal or
+                                        civil wrong doing.</li>
+
+                                </ul>
+                                <div class="line"></div>
+                                <h4 id="PROHIBITEDPRODUCTS" class="m-t-lg">PROHIBITED PRODUCTS AND ACTIVITIES LIST </h4>
+
+                                <p>As the Vendor, you may list any item in the Website unless it is a prohibited item defined in or similar to
+                                    the items listed in the Prohibited Products and Activities List.
+                                    Bulkhouse may change the Prohibited Products and Activities List in its discretion, without notice to
+                                    you or your consent.</p>
+                                <ul>
+                                    <li><strong>PROHIBITED PRODUCTS</strong></li>
+                                    <p>You must ensure that you are legally able to sell each Product included in a listing on the
+                                        Website, and that it is lawful to sell and export such Product to the jurisdiction of Bulkhouse and
+                                        the Buyer. In any case Bulkhouse shall not be responsible for verifying your right to list and sell
+                                        Products.
+                                        The Products listed hereinafter are prohibited Products and may not be listed, offered for sale,
+                                        advertised or promoted in the Bulkhouse Website.
+                                        Please note that merchants/vendors are responsible for any legal issues and other liabilities
+                                        arising if you try and sell these items at  <b>www.bulkhouse.com</b>,
+                                        <b>www.bulkhouse.in</b> or any other websites owned, managed and run by Bulkhouse Trading India Pvt.Ltd .</br>
+                                        We will cancel the
+                                        listing of prohibited and restricted items within 24 hours after we come to know about such
+                                        occurrence.</p>
+                                    <ul>
+                                        <li>Adult goods and services</li> <li> Alcoholic Beverages</li>
+                                        <li>Body parts</li>
+                                        <li>Bulk marketing tools, e-mail advertising, opt-in or
+                                            any commercial messaging services</li>
+                                        <li> Cable descramblers and black boxes <li>Certification test exams and study aids</li>
+                                        <li>Child pornography</li> <li> Copyright unlocking devices</li>
+                                        <li>Copyrighted media</li><li>Copyrighted software</li>
+                                        <li>Counterfeit and unauthorized goods</li>
+                                        <li>Credit card protection, credit repair services,
+                                            applications for financial services or loans,
+                                            collection services</li>
+                                        <li>Donations</li><li>Drugs and drug paraphernalia</li>
+                                        <li>Drug test circumvention aids</li><li>Endangered species</li>
+                                        <li> Financial products, services, and stored value</li><li>Fund solicitations</li>
+                                        <li>File sharing services, torrent files</li>
+                                        <li>Gambling, gambling transactions or sports
+                                            gambling prognostication</li>
+                                        <li>Government IDs or documents</li><li>Hacking and cracking materials</li>
+                                        <li>Hazardous materials, combustibles, corrosives</li><li>Illegal goods</li>
+                                        <li>Live animals</li>
+                                        <li>Miracle cures</li>
+                                        <li>Money making schemes, Multi level marketing
+                                            products (MLM)</li>
+                                        <li> Offensive goods</li>
+                                        <li>Offensive goods, crime</li>
+                                        <li> Pre-adult content - pictures, videos, etc. of
+                                            individuals under the age of 18 years</li>
+                                        <li>Precious metals</li>
+                                        <li>Prescription drugs or pharmacies, controlled
+                                            substances, unapproved drugs</li>
+                                        <li>Pyrotechnic devices and hazardous materials</li><li>Regulated goods</li>
+                                        <li> Securities</li><li>Travel packages and offers</li>
+                                        <li> Tobacco and cigarettes</li><li>Traffic devices</li>
+                                        <li> Firearms, ammunition, weapons</li><li>Wholesale currency</li>
+                                    </ul>
+                                    <p>This Prohibited Products and Activities List are not exhaustive and finite and Bulkhouse may at any
+                                        time include other Products into this list or change the list without your consent. All Suppliers shall be
+                                        informed of these changes via e-mail.</p>
+                                    <p>Bulkhouse reserves its sole discretion in the interpretation and enforcement of these policies in
+                                        conjunction with the Vendor Agreement. Bulkhouse reserves the right to decline any Product or
+                                        website of the Supplier that does not comply with this list. At the same time, Bulkhouse ensures that all
+                                        Products will comply with this list.</p>
+                                    <li><strong>PROHIBITED ACTIVITIES</strong></li>
+                                    <p>In connection with your use of the Website, your Account, or the Services, or in the course of your
+                                        interactions with Bulkhouse, you cannot:</p>
+                                    <p>Breach the Vendor agreement (including, without limitation, opening multiple Accounts or breaching
+                                        the Privacy Policy, the Prohibited Product and Activities List or any other agreement that you have
+                                        entered into with Bulkhouse);</p>
+                                    <p>Breach any law, statute, contract, or regulation (for example, those governing anti-money laundering,
+                                        consumer protections, unfair competition, anti-discrimination or false advertising);</p>
+                                    <p>Infringe Bulkhouse's or any third party's copyright, patent, trademark, trade secret or other intellectual
+                                        property rights, or rights of publicity or privacy;</p>
+
+                                    <ul>
+                                        <li>Sell or promote any Product on your website that is not approved by Bulkhouse.</li>
+                                        <li>Act in a manner that is obscene, defamatory, libelous, unlawfully threatening or unlawfully
+                                            harassing;</li>
+                                        <li>Provide false, inaccurate or misleading information;</li>
+                                        <li>Fail to provide us with further information about you or your business activities that we may
+                                            reasonably request;</li>
+                                        <li>Refuse to cooperate in an investigation or provide confirmation of your identity or any
+                                            information you provide to us;</li>
+                                        <li>Control the Account that is linked to another Account that has engaged in any of these
+                                            prohibited activities;</li>
+                                        <li>Conduct your business or use the Services in a manner that results in or may result in
+                                            complaints, disputes, claims, reversals, charge backs, fees, fines, penalties and other liability to
+                                            Bulkhouse, or you;</li>
+                                        <li>Disclose or distribute another Supplier's or Buyer's information to a third party, or use the
+                                            information for marketing purposes unless you receive the Supplier's or the Buyer's express
+                                            consent to do so;</li>
+                                        <li>Facilitate any viruses, Trojan horses, worms or other computer programming routines that may
+                                            damage, detrimentally interfere with, surreptitiously intercept or expropriate any system, data
+                                            or information;</li>
+                                        <li>Use any robot, spider, other automatic device, or manual process to monitor or copy our
+                                            Website without our prior written permission;</li>
+                                        <li>Use any device, software or routine to bypass our robot exclusion headers, or interfere or
+                                            attempt to interfere, with our Website or the Services;</li>
+                                        <li>Copy, reproduce, communicate to any third party, alter, modify, create derivative works,
+                                            publicly display or frame any content from the Bulkhouse Website(s) without our or any
+                                            applicable third party's written consent;</li>
+                                        <li>Reveal your Account password(s) to anyone else, nor may you use anyone else's password. We
+                                            are not responsible for losses incurred by you including, without limitation, the use of your
+                                            Account by any person other than you, arising as the result of misuse of passwords;</li>
+                                        <li>Do, or omit to do, or attempt to do or omit to do, any other act or thing which may interfere with
+                                            the proper operation of the Service or activities carried out as part of the Services or otherwise
+                                            than in accordance with the terms of this Supplier agreement.</li>
+                                    </ul>
+                                    <p>If you engage in any of these activities, your Account will be terminated immediately. This Prohibited
+                                        Products and Activities List is not exhaustive and finite and Bulkhouse may at any time include other
+                                        prohibited activities into this list or change the list without your consent.</p>
+
+                                    <li><strong>PRODUCT PACKING</strong></li>
+                                    <ul>
+                                        <li>The Vendor shall package the products with the original packaging fit for international export as
+                                            per the Packaging Instructions and Packaging plans provided by Bulkhouse. These Packaging
+                                            instructions will vary based the on the Product to be packaged.</li>
+                                        <li>Vendor must prepare Products for shipment as specified by the Bulkhouse Purchase Order
+                                            instructions, Hazardous Material rules (H.W.M.H), International Maritime Dangerous Goods
+                                            Code (I.M.D.G.) requirements, and in accordance with the Terms and Conditions of the National
+                                            Motor Freight Classification as it pertains to specifications for packages and the rules portion of
+                                            the tariff.</li>
+                                        <li>Custom pre-pack and package Products as specified by the purchase order:</li>
+                                        <ul>
+                                            <li>Case quantity and inner pack quantity as specified.</li>
+                                            <li>Pre-assorted as specified.</li>
+                                            <li>Do not ship partial cases.</li>
+
+                                        </ul>
+                                        <li>The Vendor shall package the products with the bar code (if applicable) print out given through
+                                            our website. Each package should be attested with this bar codification sticker/paper print out
+                                            available at Vendors panel for each Purchase order separately.</li>
+                                    </ul>
+                                    <li><strong>PRODUCT QUALITY</strong></li>
+                                    <ul>
+                                        <li>You agree to provide and sell only good quality Products.</li>
+                                        <li>You guarantee that your Products will be functioning normally and meet standard quality
+                                            requirements and conditions of the respective kind of Products and will not have any hidden
+                                            deficiencies. Bulkhouse will not be responsible for any damage arising from the Buyer's failure
+                                            to follow instructions relating to the Product's use.</li>
+                                        <li>If the Products that you sold are in a poor quality, Bulkhouse or the Buyer can return faulty
+                                            Product to you and you must replace it with the good quality Product or refund the amount
+                                            paid.</li>
+                                        <li>The Products are sampled and quality verified at the warehouse and if the products are found
+                                            to be of inferior quality or not according to description, the products will be returned.</li>
+                                    </ul>
+                                    <li><strong>PRODUCT SUPPORT</strong></li>
+                                    <ul>
+                                        <li>Vendor must provide answers through the Bulkhouse website’s enquiry box to all queries
+                                            raised by buyers.</li>
+                                        <li>You shall provide Product support to both Bulkhouse and Buyers (persons or entities that
+                                            acquire Product for their own use from Bulkhouse). You shall be solely responsible for the
+                                            Product support of the Buyers of Products.</li>
+                                        <li>Product support means responses to Bulkhouse and Buyer inquiries, troubleshooting, Buyer
+                                            education, provision of user manuals and other similar consultations.</li>
+                                        <li>You undertake to provide Product support in a timely manner after the support inquiry from
+                                            Bulkhouse or Buyer.</li>
 
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>A</td>
-                                            <td>PRIVACY AND PERSONAL DATA MANAGEMENT </td>
+                                    </ul>
 
 
-                                        </tr>
-                                        <tr>
-                                            <td>B</td>
-                                            <td>INTELLECTUAL PROPERTY, DATA PROTECTION AND
-                                                CONFIDENTIAL INFORMATION
+                                </ul>
+                                <div class="line"></div>
+                                <h4 id="PRICINGPOLICIES" class="m-t-lg">PRICING POLICIES </h4>
 
-                                            </td>
+                                <ul>
+                                    <li>The vendor shall indicate a Product price in Indian National Rupee (INR) on the Website. The
+                                        price will be the delivered cost of the product to the designated Bulkhouse warehouse including
+                                        all the applicable taxes, shipping fees and other costs.</li>
+                                    <li>The vendor should honor the price of product displayed by him on the website and also the
+                                        quantity supply for any orders which are shown under process in his vendor panel or waiting
+                                        for Purchase order to be raised from Bulkhouse.</li>
+                                    <li>Each listed item will be reviewed by Bulkhouse before making it available to be purchased.
+                                        Bulkhouse may deny any Product for any reason.</li>
+                                    <li>Price Increase Notification Policy: Vendor cannot increase the price for all existing Purchase
+                                        Orders in his vendor panel on the Bulkhouse website,</li>
+                                    <li>A minimum of sixty (60) days time should be given to all the existing Purchase Orders in the
+                                        vendor panel from the date of their creation, and the Purchase Orders might be Performa
+                                        Purchase Orders or confirmed Purchase Orders.</li>
+                                    <li>Bulkhouse reserves its right to monitor the vendor product pricing. Bulkhouse will be
+                                        constantly monitoring prices for each vendor at various channels and will not allow you to
+                                        price your products at higher prices at Bulkhouse vs. other channels such as your own retail
+                                        website or store, your own Website (if any) or any other 3rd party retail stores or Websites.</li>
+                                    <li>Vendor’s pricing of the products sold at Bulkhouse to be same as the lowest rate you are selling
+                                        elsewhere or even lower but it should not be more. Violation of our pricing policy will result
+                                        into warning notices and can also result into account suspension and/or store suspension.</li>
+                                </ul>
+                                <div class="line"></div>
+                                <h4 id="ORDERFULFILLMENTPROCESSING" class="m-t-lg">ORDER FULFILLMENT & PROCESSING</h4>
+                                <ul>
+                                    <li><strong>PURCHASE ORDERS</strong></li>
+                                    <ul>
+                                        <li>The legal basis for Bulkhouse’s purchase of Products is set forth in its purchase orders
+                                            (“Bulkhouse Purchase Order”) and in this Agreement. A Bulkhouse Purchase Order is available
+                                            on the Vendor panel in the website. The legal basis for Bulkhouse’s purchase of private label
+                                            goods is set forth in this Agreement.</li>
+                                        <li>Unless Vendor and Bulkhouse have executed a written amendment to this agreement,
+                                            agreement applies to every purchase of Products by Bulkhouse from Vendor. If there is an
+                                            inconsistency between the terms and conditions contained in this Agreement and the terms and
+                                            conditions contained in other documents relating to the business to be conducted between
+                                            Bulkhouse and Vendor, the terms and conditions of this Agreement will prevail unless the
+                                            conflicting document provides otherwise and is signed by both Bulkhouse and Vendor. Vendor
+                                            must honor the price and quantity put on Bulkhouse Website for the products uploaded.</li>
+                                        <li>The Vendor shall maintain sufficient inventory to fulfill purchases by Bulkhouse in a timely
+                                            manner.</li>
+                                        <li>Vendor must provide a separate invoice for each Bulkhouse Purchase Order delivered. Each
+                                            invoice must include the following:</li>
+                                        <ul>
+
+                                            <li>Unique invoice number.</li>
+                                            <li>Valid Bulkhouse Purchase Order number.</li>
+                                            <li>Vendor name and “remit to address”.</li>
+                                            <li> Complete address to which the product was shipped.</li>
+                                            <li>Total shipped quantity and total invoiced quantity.</li>
+                                            <li>Invoice date on or after the ship date.</li>
+                                            <li>Packing list of total products shipped.</li>
+
+                                        </ul>
+                                        <li>Vendor must notify Bulkhouse’s Accounts Payable in writing of any change to Vendor’s "remit
+                                            to address." Failure to do so will delay future payments. Notification information for the various
+                                            Bulkhouse entities is available from Bulkhouse Website.</li>
+                                        <li>Vendor must deliver the products to Bulkhouse’s Warehouse as mentioned on the Purchase
+                                            Order.</li>
+                                        <li>Vendor must quote a Bulkhouse Purchase Order number and Vendor’s invoice number when
+                                            making inquiries or initiating correspondence.</li>
+                                        <li>Vendor must keep full and detailed accounts for a period of not less than five (5) years or such
+                                            longer periods as required by applicable laws and regulations. Vendor shall exercise such
+                                            controls as may be necessary for proper financial management with respect to transactions with
+                                            Bulkhouse. Bulkhouse reserves the right to audit up to five (5) years of Vendor’s books and
+                                            records at any time with respect to Vendor’s charges, policies, procedures and transactions with
+                                            Bulkhouse. Any resulting claims will be immediately deducted with or without prior Vendor
+                                            approval or notice.</li>
+                                        <li>Bulkhouse reserves the right to cancel a Bulkhouse Purchase Order without penalty within the
+                                            time frame mentioned in the Purchase Order.</li>
+                                        <li>Vendor must seek due authorization by e-mail from Bulkhouse prior to making substitutions
+                                            for the Products appearing on the Bulkhouse Purchase Order.</li>
+                                        <li>Bulkhouse reserves the right to undertake anti-fraud checks including manual review of orders
+                                            to verify Buyers credentials. In some instances the due process of these anti-fraud checks may
+                                            cause delay in the sale and distribution of the Products to the Buyer. In the event of the Buyer</li>
+                                        <li>seeking to cancel the order from Bulkhouse due to such delay or process, Bulkhouse will also
+                                            cancel the order from the Vendor and shall not be liable to the Vendor for such cancellation.</li>
+
+                                    </ul>
+                                    <li><strong>PACKING LISTS:</strong></li>
+                                    <ul>
+                                        <li>Vendors are required to prepare packing lists as specified below:</li>
+                                        <ul>
+                                            <li>The Vendor needs to provide Packaging list and bar code printout (if applicable) along
+                                                with the consignment for every pack</li>
+                                            <li>The packing list must include: Bulkhouse Purchase Order number, Vendor style/stock
+                                                number, UPC, quantity ordered, quantity shipped, and customer address. (NOTE: Soft
+                                                goods Products packing lists must also include the UPC/SKU number, color, size and the
+                                                total quantity shipped by style).</li>
+                                            <li> The packaging list must be uploaded to the Vendor panel in the Bulkhouse Website for
+                                                each Purchase order and also a copy of which to be sent along with the goods.</li>
+
+                                        </ul>
+                                        <li>Bar Code Policy (if applicable):</li>
+                                        <ul>
+                                            <li>All Packages sent to Bulkhouse warehouse must have a readable Barcode affixed to the
+                                                Package.</li>
+                                            <li>This barcode must be printed from Bulkhouse website onto stickers or paper and be
+                                                affixed on all the packages of the invoice. The printer stickers can be purchased from
+                                                Bulkhouse warehouse.</li>
+                                            <li>Bar codes must be clear, legible, scan able and represent the human readable numeric
+                                                code located beneath the barcode.</li>
+
+                                        </ul>
+
+                                    </ul>
+                                    <li><strong>RETURNS , REFUNDS AND REJECTS :</strong></li>
+                                    <ul>
+                                        <li>In the event of any and all product recalls that are either agreed upon between Vendor and Bulkhouse, or that are required (either by law or in the commercially reasonable judgment of Bulkhouse) because Bulkhouse has reason to believe the Products are defective, dangerous, incomplete, infringe upon intellectual property rights, or are not in compliance with applicable laws or regulations, the Products will be returned to Vendor at Vendor’s expense, or otherwise disposed of.</li>
+                                        <li>This expense for the divisions, unless otherwise agreed, will include: 1) a 12% handling fee for product consolidation and 2) incoming and return freight charges. Any exceptions to this policy must be in writing and signed by the Bulkhouse Representative prior to the return</li>
+                                        <li>Bulkhouse will, at its discretion, allow for the return or replacement of any Product within 45 days from the date of sale.</li>
+                                        <li>Bulkhouse has the right to reject the product if found faulty or not according to description given on its website in its customary regular inspections. The costs for returning the product will be charged to the Vendor. A penalty may be charged to the Vendor if the rejected products are not replaced by the Vendor in the stipulated time frame.</li>
+                                        <li>Bulkhouse can reject the products if the packaging is not fit for international shipping. Bulkhouse can take up to 30days for inspection upon receiving the product at its warehouse.</li>
+                                        <li><b>Non-Conforming or Unordered Products:</b> Bulkhouse will have no obligation to accept or pay for any unordered Products or Products shipped that do not conform to, or comply with, the terms and conditions of the Bulkhouse Purchase Order or the terms and conditions of any agreement to which these Bulkhouse Purchase Order Terms and Conditions are attached, including shipping and routing instructions and dates of shipment and delivery. If Bulkhouse takes delivery of such nonconforming order, or any part of such an order, Bulkhouse reserves the right to deduct from its payment all actual or reasonable expenses, including but not limited to transportation, inspection, receipt, ticketing, re-ticketing, recall, care and custody of the Products, and notice to Vendor incurred as a result of such non- conformity or non-compliance. If Bulkhouse takes delivery of any unordered or non-complying Products, Bulkhouse may, without notice to Vendor of such fact, ship the unordered or non-complying Products to Vendor at Vendor’s cost and expense. Bulkhouse will have no obligation to accept or to pay for any substituted goods or excess shipment of any Products made without Bulk house’s prior written approval. Vendors will not backorder any Products subject to the Bulkhouse Purchase Order without Bulk house’s prior written consent. Vendor must pay all shipping costs associated with a backorder. All backorders should receive the best of pricing and terms at either the time of original order or at the time of actual shipment. All terms and conditions of the Bulkhouse Purchase Order apply to any Products on backorder.</li>
+                                        <li><b>Right of Inspection:</b> Bulkhouse will have the right to inspect the Products and reject any nonconforming Products within thirty (30) days of receipt at its warehouse. This right of inspection, whether exercised or not, will not affect Bulk house’s right to revoke acceptance or pursue other remedies if defects or nonconformities are discovered at a later date, notwithstanding that any defect or nonconformity could have been discovered upon inspection. Payment by Bulkhouse will not be construed as an acceptance of Products, or as a waiver or limitation of any of Bulk house’s rights as set forth herein. In no event will Vendor sell or distribute to third parties any Products that contain logos, trade names, trademarks or labels of Bulkhouse, even if rejected by Bulkhouse as nonconforming.</li>
+                                        <li><b>BULKHOUSE BILLING POLICY FOR RECALLS AND WITHDRAWALS:</b>Vendors of recalled or withdrawn Products removed from sale, returned for refund will be charged the total of the following:</li>
+                                        <ul>
+                                            <li> A handling cost of Rs500/= per CBM.</li>
+                                            <li> Freight charges at actual.</li>
+                                            <li> Penalties if levied.</li>
+                                        </ul>
 
 
-                                        </tr>
-                                        <tr>
-                                            <td>C</td>
-                                            <td>TERMS OF USE AND SCOPE OF THE AGREEMENT  </td>
+                                    </ul>
+                                </ul>
+                                <div class="line"></div>
+                                <h4 id="INDEMNIFICATION" class="m-t-lg">INDEMNIFICATION </h4>
+
+                                <ul>
+                                    <li>You agree to indemnify and hold Bulkhouse, its parent, sister companies, subsidiaries,
+                                        affiliates, service providers, sellers, distributors, licensees's, officers, directors and its employees
+                                        harmless from and against all liabilities, legal fees, damages, losses, costs and other expenses in
+                                        relation to any claims or actions brought against Bulkhouse arising out of any breach by you of
+                                        this Agreement or other liabilities arising out of your use of this Website or the Services.</li>
+                                    <li>You are responsible for all reversals, chargeback’s, fees, fines, penalties and other liability
+                                        and/or losses incurred by Bulkhouse, the Buyer, or a third party caused by your use of the
+                                        Services and/or arising from your breach of this Agreement. You agree to reimburse
+                                        Bulkhouse, the Buyer, or a third party for any and all such liability.</li>
+                                    <li>If the Buyer claims for damage reimbursement in relation to your Product, you must
+                                        immediately act on reimbursing such damage.</li>
+                                    <li>If you sell Product which does not comply with statutory requirements and state authorities
+                                        apply sanctions to Bulkhouse for selling such Product to Buyers, you must reimburse these
+                                        losses to Bulkhouse.</li>
+                                </ul>
+                                <div class="line"></div>
+                                <h4 id="DISPUTES" class="m-t-lg">DISPUTES, GOVERNING LAW </h4>
+
+                                <ul>
+                                    <li>This Vendor Agreement and the relationship between you and Bulkhouse shall be governed in
+                                        accordance with the laws of India without reference to conflict of laws principles.</li>
+                                    <li>This Agreement is personal to you and it cannot be transferred, assigned or delegated to
+                                        anyone. Any attempt by you to assign, transfer or delegate this Agreement and the rights
+                                        and/or obligations stipulated in this Agreement shall be null and void. Bulkhouse may freely
+                                        assign this Agreement without consent or notice.</li>
+                                    <li>These Terms and Conditions shall be interpreted and governed in general by the laws of the
+                                        Republic of India, without respect to the conflict of laws and provisions.</li>
+                                    <li>If any section or portion(s) of this Agreement is declared invalid by any court of competent
+                                        jurisdiction or a government agency having jurisdiction, the remainder of this Agreement, and
+                                        the application of such provision to persons or circumstances other than those to which it is
+                                        held invalid by such court, shall not be affected thereby, and this Agreement shall remain in full
+                                        force and effect. To the extent possible, the parties shall reform such invalidated section or
+                                        portion(s) thereof in a manner that will render such provision valid without impairing the
+                                        parties' original intent.</li>
+                                    <li>If any dispute arises between you and Bulkhouse during your use of the Website or thereafter,
+                                        in connection with the validity, construction interpretation, implementation or alleged breach
+                                        or enforceability of these Terms and Conditions or arising out of or in relation to these Terms
+                                        and Conditions, or for the breach hereof ,shall be initially resolved by the parties in good faith
+                                        within thirty (30) days from the day of notice by any of the parties to the other party as to the
+                                        existence of a dispute or claim. (OR), it shall be referred to a sole Arbitrator who shall be an
+                                        independent and neutral third party identified by Bulkhouse. The place of arbitration shall be
+                                        Visakhapatnam .The Arbitration &. Conciliation Act, 1996, shall govern the arbitration
+                                        proceedings. The arbitration proceedings shall be in the English language.</li>
+                                    <li>You agree that all claims, differences and disputes arising under or in connection with or in
+                                        relation to the Vendor Agreement or any transactions entered into on or through the Website
+                                        or the relationship between You and Bulkhouse shall be subject to the exclusive jurisdiction of
+                                        the courts at Visakhapatnam and you hereby accede to and accept the jurisdiction of such
+                                        courts.</li>
+                                    <li>All the notices, consents and other communication of the parties related to this Agreement shall
+                                        be delivered via e-mail or in the Account panel.</li>
+                                    <li>Except as explicitly stated otherwise, legal notices shall be served on you by sending notices to
+                                        the email address in your latest membership profile on the Bulkhouse site. Notice shall be
+                                        deemed given 24 hours after email is sent, unless we are notified that the email address is
+                                        invalid. Alternatively, we may give you legal notices by mail to the address in your latest
+                                        membership profile in which case the notice shall be deemed given five days after the date of
+                                        mailing. Except as explicitly stated otherwise, legal notices shall be served on Bulkhouse by
+                                        sending the notices to BulkHouse Trading India Pvt. Ltd Level-II, Plot No 39,Ocean View
+                                        Layout, Aqua Sports Complex, Visakhapatnam 530 003 ,Andhra Pradesh, India.</li>
+                                </ul>
+                                <div class="line"></div>
+                                <h4 id="TERMINATIONS" class="m-t-lg">TERMINATIONS (LIMITATION) OF THE AGREEMENT</h4>
+
+                                <ul>
+                                    <li>The term of this Agreement is for a period of time when you successfully register for the
+                                        Bulkhouse Account until this Agreement is terminated for whatever reason. You may close
+                                        your Account and terminate this Agreement at any time by logging in to your Account and then
+                                        following the instructions. Account cancellation shall mean the Agreement termination.</li>
+                                    <li>At any time and for any reason in its sole discretion Bulkhouse may terminate this Agreement,
+                                        your access to the Website and/or the Services, your Account and may halt any pending listings
+                                        or sales at any time without notice to you. Bulkhouse shall have no liability or obligation for the
+                                        termination of this Agreement.</li>
+                                    <li>You may not close your Account to evade an investigation on your fraudulent activities. If you
+                                        attempt to close your Account while we are conducting an investigation, we may hold your
+                                        funds for up to 180 Days to protect Bulkhouse or a third party against the risk of reversals,
+                                        charge backs, claims, fees, fines, penalties and other liabilities of whatever nature. You will
+                                        remain liable for all obligations related to your Account even after the Account is closed.</li>
+                                    <li>In case of the material breach of the Agreement committed by you (including, but not limited
+                                        to, excessive charge backs, fraudulent/misleading information about your Products, breach of
+                                        applicable law, etc.) Bulkhouse reserves the right to impose a penalty on you equal to your
+                                        total earnings of 6 (six) previous months. This penalty is considered minimal losses of
+                                        Bulkhouse, which do not have to be proved, and you agree to pay it.</li>
+                                    <li>In case of a willful termination of the agreement by the Vendor, the Vendor must complete all
+                                        pending order lying for execution with him till the date of termination proposed or agreed
+                                        upon.</li>
 
 
-                                        </tr>
-                                        <tr>
-                                            <td>D</td>
-                                            <td>PRODUCTS POLICY </td>
+                                </ul>
 
-                                        </tr>
-                                        <tr>
-                                            <td>E</td>
-                                            <td>ORDER FULFILLMENT & PROCESSING  </td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>F</td>
-                                            <td>TRANSPORT AND DELIVERY </td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>G</td>
-                                            <td>TAXATION POLICY </td>
-
-
-                                        </tr>
-                                        <tr>
-                                            <td>H</td>
-                                            <td>GENERAL TERMS  </td>
-
-
-                                        </tr>
-
-                                    </tbody>
-                                </table>
+                                  
                                 <h4 id="PRIVACYANDPERSONALDATAMANAGEMENT" class="m-t-lg">PART A :PRIVACY AND PERSONAL DATA MANAGEMENT </h4>
                                  <ul>
                                 <ul>
@@ -574,7 +1048,7 @@ if (window.sidebar){
                                     <ul>
 
                                     <li>This section sets out general terms and conditions for using the Website.</li>
-                                    <li>The term “Buyer” shall mean purchaser who purchases the Vendor’s product from Bulk
+                                    <li>The term "Buyer" shall mean purchaser who purchases the Vendor’s product from Bulk
                                         house’s website.</li>
                                     <li>The Vendor commits to supply products and transfer additional rights, determined in this
                                         Agreement, to Bulkhouse by submitting them to the Website. Bulkhouse will use products
@@ -586,88 +1060,7 @@ if (window.sidebar){
                                     <li>This Agreement is a long-term contract and is the basis for establishing individual purchase.</li>
                                 </ul>
 
-                                    <li><strong>APPLICATION AND ACCEPTANCE OF TERMS</strong></li>
-                                    <ul>
-                                        <li>Bulkhouse provides an online transaction platform on the Bulkhouse website which
-                                            allows registered Vendors of the Bulkhouse conclude online transactions for products
-                                            or services within the Bulkhouse subject to the terms of this Agreement. Bulkhouse
-                                            may publish transaction rules, dispute rules and other rules and policies for any type of
-                                            online transactions and any subsequent amendments or modifications as may be made
-                                            from time to time. Such terms are expressly incorporated into this Agreement by
-                                            reference and you agree to be bound by such rules and policies.</li>
-                                        <li>This Agreement, including the User Terms and the General Terms, to form a legally
-                                            binding agreement between you and Bulkhouse, in relation to your use of the website
-                                            services. By accessing and using the website services, you agree to accept and be bound
-                                            by this Agreement. Please do not use the website services if you do not accept all of the
-                                            terms of this Agreement.</li>
-                                        <li>Bulkhouse may change, amend, delete or add to this Agreement or any of the terms and
-                                            conditions contained in any policies or rules governing the Website and/or the Services
-                                            at any time and in its sole discretion. Any such changes will be effective upon the
-                                            posting of the revised Agreement or such policies and rules on the Website and you are
-                                            solely responsible for reviewing any such notice and the corresponding changes to the
-                                            Agreement.</li>
-                                        <li>Your continued use of the Website and/or the Services following any such revisions to
-                                            the Agreement or such policies and rules will constitute your acceptance of such
-                                            changes. If you do not agree to any such changes, do not continue to use the Website
-                                            and the Services and close your Account.</li>
-                                        <li>Bulkhouse may at any time change or remove (temporarily or permanently) the
-                                            Website, Products or Suppliers and their information from the Website without
-                                            indicating the reasons of such change or removal and you confirm your acceptance to
-                                            that effect.</li>
-                                    </ul>
-                                    <li><strong>ACCOUNT RULES</strong></li>
-                                    <ul>
-                                        <li>The Vendor, who wants to start using the Services, has to register at the Website. After you
-                                            agree to be bound by this Agreement and complete the registration form, Bulkhouse will
-                                            establish an account for you (the "Account") and provide you with the unique logon ID and
-                                            password. Bulkhouse is entitled to refuse to register a new Supplier without indicating the
-                                            reasons.</li>
-                                        <li>You can register only one Account online with bulkhouse.com for each
-                                            firm/company/organization/legal-person. The person should be competent to contract.</li>
-                                        <li>You are solely responsible for maintaining the confidentiality of your unique logon ID and
-                                            password, and for their use. As traffic on this Website may be monitored, evidence of the use
-                                            of the logon ID can be produced to support or defend any dispute or actionable cause or
-                                            matter which arises in relation to your usage of the Service and/or the Website.</li>
-                                        <li>You confirm that at the registration at the Website you have entered correct data about
-                                            yourself and that afterwards, when changing or adding this data in the Account, you will
-                                            enter only correct data. The Vendor shall bear any losses that occur regarding to the
-                                            submission of invalid/incorrect data.</li>
-                                        <ul>
-                                            <li>You unconditionally warrant that any Product characteristics submitted by you at
-                                                the Website and any other information, data and/or content you provide:</li>
-                                            <li>Will be correct, accurate and not misleading or otherwise deceptive;</li>
-                                            <li>Will not infringe the intellectual property rights of Bulkhouse or any third party
-                                                such as copyright, patent, trademark, trade secret or other proprietary rights, rights
-                                                of publicity or privacy;</li>
-                                            <li>Will not violate any law, statute, or regulation;</li>
-                                            <li>Will not be defamatory or libelous, and,</li>
-                                            <li>Will not create liability for Bulkhouse.</li>
-                                        </ul>
-                                        <li>You agree to give all notices, provide all necessary information, materials and approval, and
-                                            render all reasonable assistance and cooperation necessary for the completion of the
-                                            Transactions. If your failure to do so results in delay in the provision of any Transaction,
-                                            cancellation of any Online Transaction, or disposal of any funds, Bulkhouse shall not be
-                                            liable for any loss or damages arising from such default.</li>
-                                        <li>You shall not use the Website and/or the Services for any purpose that is unlawful or
-                                            prohibited by this Agreement and legal requirements. The Vendor’s registration at the
-                                            Website implies the Vendor's confirmation and a guarantee that by selling Products to
-                                            Bulkhouse, the Vendor will act honestly and in such way that it would meet the interests of
-                                            both the Vendor and Bulkhouse. Bulkhouse has a right to restrict the Vendor's usage of the
-                                            Website without prior notice if the Vendor uses the Website in unlawful or other
-                                            unaccepted way.</li>
-                                        <li>You should not at any point of time, during the course of agreement and a period of FIVE
-                                            years from the date of termination of this Agreement, engage in any business whether
-                                            directly or indirectly through his agents, representatives with any of the international
-                                            buyers who have approached him through Bulkhouse website or have visited Bulkhouse
-                                            website and contacted him directly. In case it has come to the notice of Bulkhouse of such an
-                                            occurance, Bulkhouse shall have the rights to claim damages and terminate the Agreement.</li>
-                                        <li>You commit to provide Bulkhouse with all the required information and documents.
-                                            Bulkhouse may hold payments due to you for your Products until you provide Bulkhouse
-                                            with the required information and documents. If you do not provide Bulkhouse with the
-                                            required information and documents after Bulkhouse’s notice, Bulkhouse may set-off
-                                            payments due to you as a compensation for damages.</li>
-
-                                    </ul>
+                                 
                                     <li><strong>GRANT OF RIGHTS</strong></li>
                                     <ul>
                                         <li>By listing the Product in the Website, you represent and warrant to Bulkhouse and prospective
@@ -683,125 +1076,7 @@ if (window.sidebar){
                                             terms and conditions issued by Bulkhouse in respect of Buyers, and in the event of any conflict
                                             such terms and conditions shall take precedence over any sales terms imposed by the Vendor.</li>
                                     </ul>
-                                    <li><strong>CODE OF CONDUCT</strong></li>
-                                    <ul>
-                                        <li>Vendor warrants that the Products are produced in compliance with all applicable requirements
-                                            of The Child Labor (Prohibition & Regulation) Act, The Equal Remuneration Act, The Payment of
-                                            Wages Act, as amended, and of regulations and orders of the Ministry of Labor and Employment.
-                                            Vendor represents and warrants that Vendor and its contractors are not engaged in and will not
-                                            engage in any labor practice in violation of the laws or regulations of the country of manufacture
-                                            or assembly of the Products involving unsanitary and/or unsafe labor conditions. If Bulkhouse
-                                            determines that Vendor or its contractors have failed to comply with the foregoing, Bulkhouse
-                                            will be entitled to return all Products on hand for full refund, at Vendor’s cost, and cancel any
-                                            unfilled orders at no cost.</li>
-                                        <li>The following Code of Conduct is an integral part of all Bulkhouse Purchase Orders, the terms of
-                                            which must be followed by Vendor and its contractors.</li>
-                                        <ul>
-                                            <li>All Vendor workers performing work within the INDIA must be legally eligible for
-                                                employment in the INDIA under the Indian Immigration Laws. Vendor must require and
-                                                review documentation establishing such eligibility for all Vendor workers who perform
-                                                services for Bulkhouse within the India.</li>
-                                            <li>Vendor may not engage in any conduct likely, intending, or appearing to improperly
-                                                influence any Bulkhouse Representatives in the performance of their job
-                                                responsibilities. Bribes, cash payments, and business gifts and entertainment of more
-                                                than token value expressly are prohibited. Vendor must refrain from engaging in any
-                                                conduct that may appear improper or may result in a conflict of interest when viewed
-                                                from Bulkhouse’s point of view.</li>
-                                            <li>Vendor must comply with the provision of the Prevention of Corruption Act as amended.
-                                                Vendor will not offer or provide money or anything else of value to any agent or
-                                                representative of any government or government agency in order to obtain or retain
-                                                business.</li>
-                                            <li>Vendor and its contractors must maintain written records evidencing compliance with
-                                                the provisions of this Code of Conduct and must make those records available to
-                                                Bulkhouse upon request.</li>
-                                        </ul>
-                                        <li><strong>INDEMNIFICATION</strong></li>
-                                        <ul>
-                                            <li>You agree to indemnify and hold Bulkhouse, its parent, sister companies, subsidiaries,
-                                                affiliates, service providers, sellers, distributors, licensees's, officers, directors and its employees
-                                                harmless from and against all liabilities, legal fees, damages, losses, costs and other expenses in
-                                                relation to any claims or actions brought against Bulkhouse arising out of any breach by you of
-                                                this Agreement or other liabilities arising out of your use of this Website or the Services.</li>
-                                            <li>You are responsible for all reversals, chargeback’s, fees, fines, penalties and other liability
-                                                and/or losses incurred by Bulkhouse, the Buyer, or a third party caused by your use of the
-                                                Services and/or arising from your breach of this Agreement. You agree to reimburse
-                                                Bulkhouse, the Buyer, or a third party for any and all such liability.</li>
-                                            <li>If the Buyer claims for damage reimbursement in relation to your Product, you must
-                                                immediately act on reimbursing such damage.</li>
-                                            <li>If you sell Product which does not comply with statutory requirements and state authorities
-                                                apply sanctions to Bulkhouse for selling such Product to Buyers, you must reimburse these
-                                                losses to Bulkhouse.</li>
-                                        </ul>
-                                        <li><strong>DISPUTES, GOVERNING LAW</strong></li>
-                                        <ul>
-                                            <li>This Vendor Agreement and the relationship between you and Bulkhouse shall be governed in
-                                                accordance with the laws of India without reference to conflict of laws principles.</li>
-                                            <li>This Agreement is personal to you and it cannot be transferred, assigned or delegated to
-                                                anyone. Any attempt by you to assign, transfer or delegate this Agreement and the rights
-                                                and/or obligations stipulated in this Agreement shall be null and void. Bulkhouse may freely
-                                                assign this Agreement without consent or notice.</li>
-                                            <li>These Terms and Conditions shall be interpreted and governed in general by the laws of the
-                                                Republic of India, without respect to the conflict of laws and provisions.</li>
-                                            <li>If any section or portion(s) of this Agreement is declared invalid by any court of competent
-                                                jurisdiction or a government agency having jurisdiction, the remainder of this Agreement, and
-                                                the application of such provision to persons or circumstances other than those to which it is
-                                                held invalid by such court, shall not be affected thereby, and this Agreement shall remain in full
-                                                force and effect. To the extent possible, the parties shall reform such invalidated section or
-                                                portion(s) thereof in a manner that will render such provision valid without impairing the
-                                                parties' original intent.</li>
-                                            <li>If any dispute arises between you and Bulkhouse during your use of the Website or thereafter,
-                                                in connection with the validity, construction interpretation, implementation or alleged breach
-                                                or enforceability of these Terms and Conditions or arising out of or in relation to these Terms
-                                                and Conditions, or for the breach hereof ,shall be initially resolved by the parties in good faith
-                                                within thirty (30) days from the day of notice by any of the parties to the other party as to the
-                                                existence of a dispute or claim. (OR), it shall be referred to a sole Arbitrator who shall be an
-                                                independent and neutral third party identified by Bulkhouse. The place of arbitration shall be
-                                                Visakhapatnam .The Arbitration &. Conciliation Act, 1996, shall govern the arbitration
-                                                proceedings. The arbitration proceedings shall be in the English language.</li>
-                                            <li>You agree that all claims, differences and disputes arising under or in connection with or in
-                                                relation to the Vendor Agreement or any transactions entered into on or through the Website
-                                                or the relationship between You and Bulkhouse shall be subject to the exclusive jurisdiction of
-                                                the courts at Visakhapatnam and you hereby accede to and accept the jurisdiction of such
-                                                courts.</li>
-                                            <li>All the notices, consents and other communication of the parties related to this Agreement shall
-                                                be delivered via e-mail or in the Account panel.</li>
-                                            <li>Except as explicitly stated otherwise, legal notices shall be served on you by sending notices to
-                                                the email address in your latest membership profile on the Bulkhouse site. Notice shall be
-                                                deemed given 24 hours after email is sent, unless we are notified that the email address is
-                                                invalid. Alternatively, we may give you legal notices by mail to the address in your latest
-                                                membership profile in which case the notice shall be deemed given five days after the date of
-                                                mailing. Except as explicitly stated otherwise, legal notices shall be served on Bulkhouse by
-                                                sending the notices to BulkHouse Trading India Pvt. Ltd Level-II, Plot No 39,Ocean View
-                                                Layout, Aqua Sports Complex, Visakhapatnam 530 003 ,Andhra Pradesh, India.</li>
-                                        </ul>
-                                        <li><strong>TERMINATION (LIMITATION) OF THE AGREEMENT</strong></li>
-                                        <ul>
-                                            <li>The term of this Agreement is for a period of time when you successfully register for the
-                                                Bulkhouse Account until this Agreement is terminated for whatever reason. You may close
-                                                your Account and terminate this Agreement at any time by logging in to your Account and then
-                                                following the instructions. Account cancellation shall mean the Agreement termination.</li>
-                                            <li>At any time and for any reason in its sole discretion Bulkhouse may terminate this Agreement,
-                                                your access to the Website and/or the Services, your Account and may halt any pending listings
-                                                or sales at any time without notice to you. Bulkhouse shall have no liability or obligation for the
-                                                termination of this Agreement.</li>
-                                            <li>You may not close your Account to evade an investigation on your fraudulent activities. If you
-                                                attempt to close your Account while we are conducting an investigation, we may hold your
-                                                funds for up to 180 Days to protect Bulkhouse or a third party against the risk of reversals,
-                                                charge backs, claims, fees, fines, penalties and other liabilities of whatever nature. You will
-                                                remain liable for all obligations related to your Account even after the Account is closed.</li>
-                                            <li>In case of the material breach of the Agreement committed by you (including, but not limited
-                                                to, excessive charge backs, fraudulent/misleading information about your Products, breach of
-                                                applicable law, etc.) Bulkhouse reserves the right to impose a penalty on you equal to your
-                                                total earnings of 6 (six) previous months. This penalty is considered minimal losses of
-                                                Bulkhouse, which do not have to be proved, and you agree to pay it.</li>
-                                            <li>In case of a willful termination of the agreement by the Vendor, the Vendor must complete all
-                                                pending order lying for execution with him till the date of termination proposed or agreed
-                                                upon.</li>
-
-
-                                        </ul>
-
-                                    </ul>
+                                   
                                 </ul>
                                 <div class="line"></div>
                                 <h4 id="PRODUCTSPOLICY" class="m-t-lg">PART D: PRODUCTS POLICY</h4>
@@ -822,226 +1097,49 @@ if (window.sidebar){
                                         damages) arising out of or in connection with such transaction.</li>
                                 </ul>
 
-                                    <li><strong>PRODUCTS LISTING</strong></li>
+                                   
+                                    
+                                </ul>
+                                
+                                <div class="line"></div>
+                                <h4 id="PAYMENTS" class="m-t-lg">PART F : PAYMENTS POLICY</h4>
+                                <ul>
+                                        <li>The sums due to the Vendor by Bulkhouse shall be clearly shown in the Sales reports in the Vendor's account.</li>
+                                        <li>All payments will be made by account payee cheque /RTGS/ NEFT only to the Seller’s bank account furnished to Bulkhouse at the time of registration.</li>
+                                        <li>Payment will be made within maximum of SIXTY days from the date of the final delivery of the products as per the Purchase order to Bulkhouse warehouse.</li>
+                                        <li>You shall be solely responsible for payment of any taxes, duties or other governmental levies or any charges or fees that may be imposed on any products or services supplied under or in connection with the Website Transactions.</li>
+                                        <li>Bulkhouse may also temporarily hold any portion of the funds in your Account if Bulkhouse, at its sole discretion, determines such action is needed to secure payment for payment of governmental levies or any charges or fees that may be imposed on any products or services supplied under or in connection with the Website Transactions, performance of, and/or assurances regarding any liabilities, obligations, or indebtedness you may incur with Bulkhouse.</li>
+                                        <li>The final payment release is however subject to the policies of cancellation, refund and return as mentioned in this agreement</li>
+                                    </ul>
+                                <div class="line"></div>
+                                <h4 id="TRANSPORTANDDELIVERY" class="m-t-lg">PART G : TRANSPORT AND DELIVERY</h4>
+                                <ul>
+                                    <li>The Vendor should deliver the Products to Bulkhouse warehouse as per the estimated
+                                        time frame mentioned on Purchase Order.</li>
+                                    <li>Bulkhouse reserves the right to penalize or reject the late and early deliveries.</li>
                                     <ul>
-                                        <li>If the Vendor registers Products for inclusion in the Website, Bulkhouse is entitled to
-                                            purchase such Products for resale.</li>
-                                        <li>Bulkhouse allows you to list and sell products or services which are legal in its listed
-                                            categories.</li>
-                                        <li>The vendor represent and confirms that you shall be the sole and exclusive legal owner of all
-                                            items, goods or products of any description that you wish to offer for sale on the Website.</li>
-                                        <li>You shall have absolute right, title and authority to deal in and offer for sale such items,
-                                            goods or products.</li>
-                                        <li>You shall not engage in any transaction in an item or service, which is prohibited by the
-                                            provisions of any applicable law including exchange control laws or regulations for the time
-                                            being in force.</li>
-                                        <li>You shall at all times ensure full compliance with the applicable laws and shall not link
-                                            directly or indirectly to or include descriptions of items, goods or services that are
-                                            prohibited under the this Agreement or any other applicable law for the time being in force
-                                            including provisions of the Information Technology Act, 2000 and rules there under as
-                                            applicable and as amended from time to time and also all applicable Domestic laws, rules
-                                            and regulations (including the provisions of any applicable Exchange Control Laws or
-                                            Regulations in Force) and International Laws, Foreign Exchange Laws, Statutes, Ordinances
-                                            and Regulations (including, but not limited to Sales Tax/ VAT, Income Tax, Octroi, Service
-                                            Tax, Central Excise, Custom Duty, Local Levies) regarding your use of our service and your
-                                            bidding on, listing, purchase, solicitation of offers to purchase, and sale of items or services,
-                                            but not limited to the Drugs and Cosmetics Act, 1940, the Drugs And Magic Remedies
-                                            (Objectionable Advertisements) Act, 1954, the Indian Penal Code, 1860, Information
-                                            Technology Act 2000 as amended time to time and rules there under.</li>
-                                        <li>Bulkhouse reserves its sole discretion in the interpretation and enforcement of these
-                                            policies in conjunction with the Vendor Agreement. Bulkhouse reserves the right to decline
-                                            any Product or website of the Supplier that does not comply with this list. At the same time,
-                                            Bulkhouse ensures that all Products will comply with this list.</li>
-                                        <li><b>BULKHOUSE</b> reserves the right in its sole discretion to remove any product/
-                                            material/content/photos/offers displayed on the web site which it reasonably believes is unlawful, could subject <b>BULKHOUSE</b> to liability, violates the terms and conditions and/or
-                                            Agreement or is otherwise found inappropriate in <b>BULKHOUSE</b>'s opinion.</li>
-                                        <li>Bulkhouse reserves the right to cooperate fully with governmental authorities, private
-                                            investigators and/or injured third parties in the investigation of any suspected criminal or
-                                            civil wrong doing.</li>
+                                        <li>For Late deliveries, the liquidated damages would be applied at the rate of Rs.150/m3
+                                            (Cubic Meter) per number of days delayed as per Purchase Order to the total space(in
+                                            Cubic meters) occupied by the entire Sale Order of Bulkhouse.</li>
+                                        <li>For Early deliveries, the liquidated damages would be applied at the rate of
+                                            Rs.150/m3 (Cubic Meter) per number of day sent early as per Purchase Order to the
+                                            total space(in Cubic meters) occupied by the items as per Purchase Order.</li>
 
                                     </ul>
-                                    <li><strong>PROHIBITED PRODUCTS AND ACTIVITIES LIST</strong></li>
-                                    <p>As the Vendor, you may list any item in the Website unless it is a prohibited item defined in or similar to
-                                        the items listed in the Prohibited Products and Activities List.
-                                        Bulkhouse may change the Prohibited Products and Activities List in its discretion, without notice to
-                                        you or your consent.</p>
-                                    <ul>
-                                        <li><strong>PROHIBITED PRODUCTS</strong></li>
-                                        <p>You must ensure that you are legally able to sell each Product included in a listing on the
-                                            Website, and that it is lawful to sell and export such Product to the jurisdiction of Bulkhouse and
-                                            the Buyer. In any case Bulkhouse shall not be responsible for verifying your right to list and sell
-                                            Products.
-                                            The Products listed hereinafter are prohibited Products and may not be listed, offered for sale,
-                                            advertised or promoted in the Bulkhouse Website.
-                                            Please note that merchants/vendors are responsible for any legal issues and other liabilities
-                                            arising if you try and sell these items at  <b>www.bulkhouse.com</b>,
-                                    <b>www.bulkhouse.in</b> or any other websites owned, managed and run by Bulkhouse Trading India Pvt.Ltd .</br>
-                                         We will cancel the
-                                            listing of prohibited and restricted items within 24 hours after we come to know about such
-                                            occurrence.</p>
-                                        <ul>
-                                            <li>Adult goods and services</li> <li> Alcoholic Beverages</li>
-                                            <li>Body parts</li>
-                                            <li>Bulk marketing tools, e-mail advertising, opt-in or
-                                                any commercial messaging services</li>
-                                            <li> Cable descramblers and black boxes <li>Certification test exams and study aids</li>
-                                            <li>Child pornography</li> <li> Copyright unlocking devices</li>
-                                            <li>Copyrighted media</li><li>Copyrighted software</li>
-                                            <li>Counterfeit and unauthorized goods</li>
-                                            <li>Credit card protection, credit repair services,
-                                                applications for financial services or loans,
-                                                collection services</li>
-                                            <li>Donations</li><li>Drugs and drug paraphernalia</li>
-                                            <li>Drug test circumvention aids</li><li>Endangered species</li>
-                                            <li> Financial products, services, and stored value</li><li>Fund solicitations</li>
-                                            <li>File sharing services, torrent files</li>
-                                            <li>Gambling, gambling transactions or sports
-                                                gambling prognostication</li>
-                                            <li>Government IDs or documents</li><li>Hacking and cracking materials</li>
-                                            <li>Hazardous materials, combustibles, corrosives</li><li>Illegal goods</li>
-                                            <li>Live animals</li>
-                                            <li>Miracle cures</li>
-                                            <li>Money making schemes, Multi level marketing
-                                                products (MLM)</li>
-                                            <li> Offensive goods</li>
-                                            <li>Offensive goods, crime</li>
-                                            <li> Pre-adult content - pictures, videos, etc. of
-                                                individuals under the age of 18 years</li>
-                                            <li>Precious metals</li>
-                                            <li>Prescription drugs or pharmacies, controlled
-                                                substances, unapproved drugs</li>
-                                            <li>Pyrotechnic devices and hazardous materials</li><li>Regulated goods</li>
-                                            <li> Securities</li><li>Travel packages and offers</li>
-                                            <li> Tobacco and cigarettes</li><li>Traffic devices</li>
-                                            <li> Firearms, ammunition, weapons</li><li>Wholesale currency</li>
-                                        </ul>
-                                        <p>This Prohibited Products and Activities List are not exhaustive and finite and Bulkhouse may at any
-                                            time include other Products into this list or change the list without your consent. All Suppliers shall be
-                                            informed of these changes via e-mail.</p>
-                                        <p>Bulkhouse reserves its sole discretion in the interpretation and enforcement of these policies in
-                                            conjunction with the Vendor Agreement. Bulkhouse reserves the right to decline any Product or
-                                            website of the Supplier that does not comply with this list. At the same time, Bulkhouse ensures that all
-                                            Products will comply with this list.</p>
-                                        <li><strong>PROHIBITED ACTIVITIES</strong></li>
-                                        <p>In connection with your use of the Website, your Account, or the Services, or in the course of your
-                                            interactions with Bulkhouse, you cannot:</p>
-                                        <p>Breach the Vendor agreement (including, without limitation, opening multiple Accounts or breaching
-                                            the Privacy Policy, the Prohibited Product and Activities List or any other agreement that you have
-                                            entered into with Bulkhouse);</p>
-                                        <p>Breach any law, statute, contract, or regulation (for example, those governing anti-money laundering,
-                                            consumer protections, unfair competition, anti-discrimination or false advertising);</p>
-                                        <p>Infringe Bulkhouse's or any third party's copyright, patent, trademark, trade secret or other intellectual
-                                            property rights, or rights of publicity or privacy;</p>
+                                    <li>Bulkhouse will physically verify at its receiving warehouse that products delivered
+                                        correspond with items and quantities listed on the invoice, and compare cost totals to the
+                                        invoice.</li>
+                                    <li>The invoice for products received using Bulkhouse’s Website must agree with or be no
+                                        higher than the Bulkhouse Purchase Order.</li>
+                                    <li>Any Products not counted at time of receipt will be verified by item by warehouse
+                                        personnel prior to shipping. Vendor will be notified of any adjustments to invoice.</li>
+                                    <li>The vendor will receive a copy of Bulkhouse receiving document (where applicable) after
+                                        Log has been signed.</li>
 
-                                        <ul>
-                                            <li>Sell or promote any Product on your website that is not approved by Bulkhouse.</li>
-                                            <li>Act in a manner that is obscene, defamatory, libelous, unlawfully threatening or unlawfully
-                                                harassing;</li>
-                                            <li>Provide false, inaccurate or misleading information;</li>
-                                            <li>Fail to provide us with further information about you or your business activities that we may
-                                                reasonably request;</li>
-                                            <li>Refuse to cooperate in an investigation or provide confirmation of your identity or any
-                                                information you provide to us;</li>
-                                            <li>Control the Account that is linked to another Account that has engaged in any of these
-                                                prohibited activities;</li>
-                                            <li>Conduct your business or use the Services in a manner that results in or may result in
-                                                complaints, disputes, claims, reversals, charge backs, fees, fines, penalties and other liability to
-                                                Bulkhouse, or you;</li>
-                                            <li>Disclose or distribute another Supplier's or Buyer's information to a third party, or use the
-                                                information for marketing purposes unless you receive the Supplier's or the Buyer's express
-                                                consent to do so;</li>
-                                            <li>Facilitate any viruses, Trojan horses, worms or other computer programming routines that may
-                                                damage, detrimentally interfere with, surreptitiously intercept or expropriate any system, data
-                                                or information;</li>
-                                            <li>Use any robot, spider, other automatic device, or manual process to monitor or copy our
-                                                Website without our prior written permission;</li>
-                                            <li>Use any device, software or routine to bypass our robot exclusion headers, or interfere or
-                                                attempt to interfere, with our Website or the Services;</li>
-                                            <li>Copy, reproduce, communicate to any third party, alter, modify, create derivative works,
-                                                publicly display or frame any content from the Bulkhouse Website(s) without our or any
-                                                applicable third party's written consent;</li>
-                                            <li>Reveal your Account password(s) to anyone else, nor may you use anyone else's password. We
-                                                are not responsible for losses incurred by you including, without limitation, the use of your
-                                                Account by any person other than you, arising as the result of misuse of passwords;</li>
-                                            <li>Do, or omit to do, or attempt to do or omit to do, any other act or thing which may interfere with
-                                                the proper operation of the Service or activities carried out as part of the Services or otherwise
-                                                than in accordance with the terms of this Supplier agreement.</li>
-                                        </ul>
-                                        <p>If you engage in any of these activities, your Account will be terminated immediately. This Prohibited
-                                            Products and Activities List is not exhaustive and finite and Bulkhouse may at any time include other
-                                            prohibited activities into this list or change the list without your consent.</p>
-                                        <li><strong>PRICING POLICY</strong></li>
-                                        <ul>
-                                            <li>The vendor shall indicate a Product price in Indian National Rupee (INR) on the Website. The
-                                                price will be the delivered cost of the product to the designated Bulkhouse warehouse including
-                                                all the applicable taxes, shipping fees and other costs.</li>
-                                            <li>The vendor should honor the price of product displayed by him on the website and also the
-                                                quantity supply for any orders which are shown under process in his vendor panel or waiting
-                                                for Purchase order to be raised from Bulkhouse.</li>
-                                            <li>Each listed item will be reviewed by Bulkhouse before making it available to be purchased.
-                                                Bulkhouse may deny any Product for any reason.</li>
-                                            <li>Price Increase Notification Policy: Vendor cannot increase the price for all existing Purchase
-                                                Orders in his vendor panel on the Bulkhouse website,</li>
-                                            <li>A minimum of sixty (60) days time should be given to all the existing Purchase Orders in the
-                                                vendor panel from the date of their creation, and the Purchase Orders might be Performa
-                                                Purchase Orders or confirmed Purchase Orders.</li>
-                                            <li>Bulkhouse reserves its right to monitor the vendor product pricing. Bulkhouse will be
-                                                constantly monitoring prices for each vendor at various channels and will not allow you to
-                                                price your products at higher prices at Bulkhouse vs. other channels such as your own retail
-                                                website or store, your own Website (if any) or any other 3rd party retail stores or Websites.</li>
-                                            <li>Vendor’s pricing of the products sold at Bulkhouse to be same as the lowest rate you are selling
-                                                elsewhere or even lower but it should not be more. Violation of our pricing policy will result
-                                                into warning notices and can also result into account suspension and/or store suspension.</li>
-                                        </ul>
-                                        <li><strong>PRODUCT PACKING</strong></li>
-                                        <ul>
-                                            <li>The Vendor shall package the products with the original packaging fit for international export as
-                                                per the Packaging Instructions and Packaging plans provided by Bulkhouse. These Packaging
-                                                instructions will vary based the on the Product to be packaged.</li>
-                                            <li>Vendor must prepare Products for shipment as specified by the Bulkhouse Purchase Order
-                                                instructions, Hazardous Material rules (H.W.M.H), International Maritime Dangerous Goods
-                                                Code (I.M.D.G.) requirements, and in accordance with the Terms and Conditions of the National
-                                                Motor Freight Classification as it pertains to specifications for packages and the rules portion of
-                                                the tariff.</li>
-                                            <li>Custom pre-pack and package Products as specified by the purchase order:</li>
-                                            <ul>
-                                                <li>Case quantity and inner pack quantity as specified.</li>
-                                                <li>Pre-assorted as specified.</li>
-                                                <li>Do not ship partial cases.</li>
-
-                                            </ul>
-                                            <li>The Vendor shall package the products with the bar code (if applicable) print out given through
-                                                our website. Each package should be attested with this bar codification sticker/paper print out
-                                                available at Vendors panel for each Purchase order separately.</li>
-                                        </ul>
-                                        <li><strong>PRODUCT QUALITY</strong></li>
-                                        <ul>
-                                            <li>You agree to provide and sell only good quality Products.</li>
-                                            <li>You guarantee that your Products will be functioning normally and meet standard quality
-                                                requirements and conditions of the respective kind of Products and will not have any hidden
-                                                deficiencies. Bulkhouse will not be responsible for any damage arising from the Buyer's failure
-                                                to follow instructions relating to the Product's use.</li>
-                                            <li>If the Products that you sold are in a poor quality, Bulkhouse or the Buyer can return faulty
-                                                Product to you and you must replace it with the good quality Product or refund the amount
-                                                paid.</li>
-                                            <li>The Products are sampled and quality verified at the warehouse and if the products are found
-                                                to be of inferior quality or not according to description, the products will be returned.</li>
-                                        </ul>
-                                        <li><strong>PRODUCT SUPPORT</strong></li>
-                                        <ul>
-                                            <li>Vendor must provide answers through the Bulkhouse website’s enquiry box to all queries
-                                                raised by buyers.</li>
-                                            <li>You shall provide Product support to both Bulkhouse and Buyers (persons or entities that
-                                                acquire Product for their own use from Bulkhouse). You shall be solely responsible for the
-                                                Product support of the Buyers of Products.</li>
-                                            <li>Product support means responses to Bulkhouse and Buyer inquiries, troubleshooting, Buyer
-                                                education, provision of user manuals and other similar consultations.</li>
-                                            <li>You undertake to provide Product support in a timely manner after the support inquiry from
-                                                Bulkhouse or Buyer.</li>
-
-
-                                        </ul>
-                                        <li><strong>REPRESENTATIONS, WARRANTIES AND GUARANTEES:</strong></li>
+                                </ul>
+                                <div class="line"></div>
+                                <h4 id="RepresentationandWarranties" class="m-t-lg">REPRESENTATIONS, WARRANTIES AND GUARANTEES:</h4>
+                                
                                         <ul>
                                             <li>The Products shipped, as of the date of shipment, comply with, and are not adulterated or
                                                 misbranded within the meaning of, the Food Safety and Standards Act ("FSSA"),Drugs and
@@ -1102,206 +1200,14 @@ if (window.sidebar){
                                                 conform to all applicable laws, rules and regulations, both domestic and foreign.</li>
 
                                         </ul>
-
-                                    </ul>
-                                </ul>
                                 <div class="line"></div>
-                                <h4 id="ORDERFULFILLMENTPROCESSING" class="m-t-lg">PART E :ORDER FULFILLMENT & PROCESSING</h4>
-                                <ul>
-                                    <li><strong>PURCHASE ORDERS</strong></li>
-                                    <ul>
-                                        <li>The legal basis for Bulkhouse’s purchase of Products is set forth in its purchase orders
-                                            (“Bulkhouse Purchase Order”) and in this Agreement. A Bulkhouse Purchase Order is available
-                                            on the Vendor panel in the website. The legal basis for Bulkhouse’s purchase of private label
-                                            goods is set forth in this Agreement.</li>
-                                        <li>Unless Vendor and Bulkhouse have executed a written amendment to this agreement,
-                                            agreement applies to every purchase of Products by Bulkhouse from Vendor. If there is an
-                                            inconsistency between the terms and conditions contained in this Agreement and the terms and
-                                            conditions contained in other documents relating to the business to be conducted between
-                                            Bulkhouse and Vendor, the terms and conditions of this Agreement will prevail unless the
-                                            conflicting document provides otherwise and is signed by both Bulkhouse and Vendor. Vendor
-                                            must honor the price and quantity put on Bulkhouse Website for the products uploaded.</li>
-                                        <li>The Vendor shall maintain sufficient inventory to fulfill purchases by Bulkhouse in a timely
-                                            manner.</li>
-                                        <li>Vendor must provide a separate invoice for each Bulkhouse Purchase Order delivered. Each
-                                            invoice must include the following:</li>
-                                        <ul>
-
-                                            <li>Unique invoice number.</li>
-                                            <li>Valid Bulkhouse Purchase Order number.</li>
-                                            <li>Vendor name and “remit to address”.</li>
-                                            <li> Complete address to which the product was shipped.</li>
-                                            <li>Total shipped quantity and total invoiced quantity.</li>
-                                            <li>Invoice date on or after the ship date.</li>
-                                            <li>Packing list of total products shipped.</li>
-
-                                        </ul>
-                                        <li>Vendor must notify Bulkhouse’s Accounts Payable in writing of any change to Vendor’s “remit
-                                            to address.” Failure to do so will delay future payments. Notification information for the various
-                                            Bulkhouse entities is available from Bulkhouse Website.</li>
-                                        <li>Vendor must deliver the products to Bulkhouse’s Warehouse as mentioned on the Purchase
-                                            Order.</li>
-                                        <li>Vendor must quote a Bulkhouse Purchase Order number and Vendor’s invoice number when
-                                            making inquiries or initiating correspondence.</li>
-                                        <li>Vendor must keep full and detailed accounts for a period of not less than five (5) years or such
-                                            longer periods as required by applicable laws and regulations. Vendor shall exercise such
-                                            controls as may be necessary for proper financial management with respect to transactions with
-                                            Bulkhouse. Bulkhouse reserves the right to audit up to five (5) years of Vendor’s books and
-                                            records at any time with respect to Vendor’s charges, policies, procedures and transactions with
-                                            Bulkhouse. Any resulting claims will be immediately deducted with or without prior Vendor
-                                            approval or notice.</li>
-                                        <li>Bulkhouse reserves the right to cancel a Bulkhouse Purchase Order without penalty within the
-                                            time frame mentioned in the Purchase Order.</li>
-                                        <li>Vendor must seek due authorization by e-mail from Bulkhouse prior to making substitutions
-                                            for the Products appearing on the Bulkhouse Purchase Order.</li>
-                                        <li>Bulkhouse reserves the right to undertake anti-fraud checks including manual review of orders
-                                            to verify Buyers credentials. In some instances the due process of these anti-fraud checks may
-                                            cause delay in the sale and distribution of the Products to the Buyer. In the event of the Buyer</li>
-                                        <li>seeking to cancel the order from Bulkhouse due to such delay or process, Bulkhouse will also
-                                            cancel the order from the Vendor and shall not be liable to the Vendor for such cancellation.</li>
-
-                                    </ul>
-                                    <li><strong>PACKING LISTS:</strong></li>
-                                    <ul>
-                                        <li>Vendors are required to prepare packing lists as specified below:</li>
-                                        <ul>
-                                            <li>The Vendor needs to provide Packaging list and bar code printout (if applicable) along
-                                                with the consignment for every pack</li>
-                                            <li>The packing list must include: Bulkhouse Purchase Order number, Vendor style/stock
-                                                number, UPC, quantity ordered, quantity shipped, and customer address. (NOTE: Soft
-                                                goods Products packing lists must also include the UPC/SKU number, color, size and the
-                                                total quantity shipped by style).</li>
-                                            <li> The packaging list must be uploaded to the Vendor panel in the Bulkhouse Website for
-                                                each Purchase order and also a copy of which to be sent along with the goods.</li>
-
-                                        </ul>
-                                        <li>Bar Code Policy (if applicable):</li>
-                                        <ul>
-                                            <li>All Packages sent to Bulkhouse warehouse must have a readable Barcode affixed to the
-                                                Package.</li>
-                                            <li>This barcode must be printed from Bulkhouse website onto stickers or paper and be
-                                                affixed on all the packages of the invoice. The printer stickers can be purchased from
-                                                Bulkhouse warehouse.</li>
-                                            <li>Bar codes must be clear, legible, scan able and represent the human readable numeric
-                                                code located beneath the barcode.</li>
-
-                                        </ul>
-
-                                    </ul>
-                                    <li><strong>RETURNS , REFUNDS AND REJECTS :</strong></li>
-                                    <ul>
-                                        <li>In the event of any and all product recalls that are either agreed upon between Vendor and
-                                            Bulkhouse, or that are required (either by law or in the commercially reasonable judgment
-                                            of Bulkhouse) because Bulkhouse has reason to believe the Products are defective,
-                                            dangerous, incomplete, infringe upon intellectual property rights, or are not in compliance
-                                            with applicable laws or regulations, the Products will be returned to Vendor at Vendor’s
-                                            expense, or otherwise disposed of.</li>
-                                        <li>This expense for the divisions, unless otherwise agreed, will include: 1) a 12% handling fee
-                                            for product consolidation and 2) incoming and return freight charges. Any exceptions to
-                                            this policy must be in writing and signed by the Bulkhouse Representative prior to the
-                                            return</li>
-                                        <li>Bulkhouse will, at its discretion, allow for the return or replacement of any Product within
-                                            90 days from the date of sale.</li>
-                                        <li>Bulkhouse has the right to reject the product if found faulty or not according to description
-                                            given on its website in its customary regular inspections. The costs for returning the
-                                            product will be charged to the Vendor. A penalty may be charged to the Vendor if the
-                                            rejected products are not replaced by the Vendor in the stipulated time frame.</li>
-                                        <li>Bulkhouse can reject the products if the packaging is not fit for international shipping.
-                                            Bulkhouse can take up to 15 days for inspection upon receiving the product at its
-                                            warehouse.</li>
-                                        <li><b>Non-Conforming or Unordered Products:</b> Bulkhouse will have no obligation to accept or pay
-                                            for any unordered Products or Products shipped that do not conform to, or comply with, the
-                                            terms and conditions of the Bulkhouse Purchase Order or the terms and conditions of any
-                                            agreement to which these Bulkhouse Purchase Order Terms and Conditions are attached,
-                                            including shipping and routing instructions and dates of shipment and delivery. If
-                                            Bulkhouse takes delivery of such nonconforming order, or any part of such an order,
-                                            Bulkhouse reserves the right to deduct from its payment all actual or reasonable expenses,
-                                            including but not limited to transportation, inspection, receipt, ticketing, re-ticketing, recall,
-                                            care and custody of the Products, and notice to Vendor incurred as a result of such non conformity or non-compliance. If Bulkhouse takes delivery of any unordered or noncomplying
-                                            Products, Bulkhouse may, without notice to Vendor of such fact, ship the
-                                            unordered or non-complying Products to Vendor at Vendor’s cost and expense. Bulkhouse
-                                            will have no obligation to accept or to pay for any substituted goods or excess shipment of
-                                            any Products made without Bulkhouse’s prior written approval. Vendors will not backorder
-                                            any Products subject to the Bulkhouse Purchase Order without Bulkhouse’s prior written
-                                            consent. Vendor must pay all shipping costs associated with a backorder. All backorders
-                                            should receive the best of pricing and terms at either the time of original order or at the
-                                            time of actual shipment. All terms and conditions of the Bulkhouse Purchase Order apply to
-                                            any Products on backorder.</li>
-                                        <li><b>Right of Inspection:</b> Bulkhouse will have the right to inspect the Products and reject any
-                                            nonconforming Products within thirty (30) days of delivery. This right of inspection,
-                                            whether exercised or not, will not affect Bulkhouse’s right to revoke acceptance or pursue
-                                            other remedies if defects or nonconformities are discovered at a later date, notwithstanding
-                                            that any defect or nonconformity could have been discovered upon inspection. Payment by
-                                            Bulkhouse will not be construed as an acceptance of Products, or as a waiver or limitation of
-                                            any of Bulkhouse’s rights as set forth herein. In no event will Vendor sell or distribute to
-                                            third parties any Products that contain logos, trade names, trademarks or labels of
-                                            Bulkhouse, even if rejected by Bulkhouse as nonconforming.</li>
-                                        <li><b>BULKHOUSE BILLING POLICY FOR RECALLS AND WITHDRAWALS:</b>Vendors of recalled or
-                                            withdrawn Products removed from sale, returned for refund or used in the preparation of
-                                            other products will be charged the total of the following:</li>
-                                        <ul>
-                                            <li> A handling cost of Rs200/= per CBM.</li>
-                                            <li> Freight and handling charges at actual.</li>
-                                            <li> Penalties if levied.</li>
-                                        </ul>
-
-
-                                    </ul>
-                                    <li><strong>PAYMENTS</strong></li>
-                                    <ul>
-                                        <li>At the time of the Product placement in the Website, Bulkhouse purchases the Product
-                                            from the Vendor at a wholesale price (indicated at the Website by the Vendor). Bulkhouse
-                                            shall not be restricted by the Vendor as to the price charged to Buyers for the resale of
-                                            Products purchased from the Vendor and may change the final price of the Product.</li>
-                                        <li>Payment will be made between 45 days to a maximum of 90 days from the date of the final
-                                            delivery of the products as per the Purchase order to Bulkhouse warehouse.</li>
-                                        <li>The sums due to the Vendor shall be clearly shown in the Sales reports in the Vendor's
-                                            account.</li>
-                                        <li>Bulkhouse may also temporarily hold any portion of the funds in your Account if
-                                            Bulkhouse, in its sole discretion, determines such action is needed to secure payment for,
-                                            performance of, and/or assurances regarding any liabilities, obligations, or indebtedness
-                                            you may incur with Bulkhouse.</li>
-                                        <li>You shall be solely responsible for payment of any taxes, duties or other governmental
-                                            levies or any charges or fees that may be imposed on any products or services supplied
-                                            under or in connection with the Website Transactions.</li>
-
-                                    </ul>
-
-                                </ul>
-                                <div class="line"></div>
-                                <h4 id="TRANSPORTANDDELIVERY" class="m-t-lg">PART F : TRANSPORT AND DELIVERY</h4>
-                                <ul>
-                                    <li>The Vendor should deliver the Products to Bulkhouse warehouse as per the estimated
-                                        time frame mentioned on Purchase Order.</li>
-                                    <li>Bulkhouse reserves the right to penalize or reject the late and early deliveries.</li>
-                                    <ul>
-                                        <li>For Late deliveries, the liquidated damages would be applied at the rate of Rs150/m3
-                                            (Cubic Meter) per number of days delayed as per Purchase Order to the total space(in
-                                            Cubic meters) occupied by the entire Sale Order of Bulkhouse.</li>
-                                        <li>For Early deliveries, the liquidated damages would be applied at the rate of
-                                            Rs150/m3 (Cubic Meter) per number of day sent early as per Purchase Order to the
-                                            total space(in Cubic meters) occupied by the items as per Purchase Order.</li>
-
-                                    </ul>
-                                    <li>Bulkhouse will physically verify at its receiving warehouse that products delivered
-                                        correspond with items and quantities listed on the invoice, and compare cost totals to the
-                                        invoice.</li>
-                                    <li>The invoice for products received using Bulkhouse’s Website must agree with or be no
-                                        higher than the Bulkhouse Purchase Order.</li>
-                                    <li>Any Products not counted at time of receipt will be verified by item by warehouse
-                                        personnel prior to shipping. Vendor will be notified of any adjustments to invoice.</li>
-                                    <li>The vendor will receive a copy of Bulkhouse receiving document (where applicable) after
-                                        Log has been signed.</li>
-
-                                </ul>
-                                <div class="line"></div>
-                                <h4 id="TAXATIONPOLICY" class="m-t-lg">PART G: TAXATION POLICY</h4>
+                                <h4 id="TAXATIONPOLICY" class="m-t-lg">PART H: TAXATION POLICY</h4>
                                 <p>The Products procured by Bulkhouse are for Export only, hence Vendor are exempted from paying
                                     Sales tax , VAT, CST and other domestic taxes to the tax agencies. All the statutory forms, e.g. like 'H' Forms
                                     and other documentation required for this purpose will be given by Bulkhouse at Vendors
                                     request.</p>
                                 <div class="line"></div>
-                                <h4 id="GENERALTERMS" class="m-t-lg">PART H: GENERAL TERMS</h4>
+                                <h4 id="GENERALTERMS" class="m-t-lg">PART I: GENERAL TERMS</h4>
                                 <ul>
                                     <li><strong>EXCLUSION OF WARRANTIES AND LIABILITY</strong></li>
                                     <p>
@@ -1310,8 +1216,8 @@ if (window.sidebar){
                                         WHATSOEVER, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
                                         WARRANTY OF ACCURACY, COMPLETENESS, QUALITY, MERCHANTABILITY, FITNESS FOR A
                                         PARTICULAR PURPOSE OR NON-INFRINGEMENT. YOU EXPRESSLY AGREE THAT YOUR USE OF
-                                        THE BULKHOUSE SERVICES IS AT YOUR SOLE RISK.
-                                        TO THE FULLEST EXTENT PERMITTED AT LAW, BULKHOUSE WILL NOT BELIABLE FOR ANY
+                                        THE BULKHOUSE SERVICES IS AT YOUR SOLE RISK.</p>
+                                        <p>TO THE FULLEST EXTENT PERMITTED AT LAW, BULKHOUSE WILL NOT BELIABLE FOR ANY
                                         DAMAGES OF ANY KIND INCLUDING WITHOUT LIMITATION DIRECT, INDIRECT, INCIDENTAL,
                                         PUNITIVE, SPECIAL AND CONSEQUENTIAL DAMAGES (INCLUDING, WITHOUT LIMITATION,
                                         LOSS OF PROFITS, LOSS OF REVENUE, LOSS OF DATA, ANY INJURY, OTHER LOSS OR CLAIM,
@@ -1326,12 +1232,7 @@ if (window.sidebar){
                                         Rs. 10,000/-
                                     </p>
                                     <li><strong>FORCE MAJEURE</strong></li>
-                                    <p>Under no circumstances shall Bulkhouse, be held liable for any delay or failure or disruption of
-                                        the Online Services resulting directly or indirectly from acts of nature, forces or causes beyond
-                                        our reasonable control, including without limitation, acts of God, Internet failures, computer,
-                                        telecommunications or any other equipment failures, electrical power failures, strikes, labor
-                                        disputes, riots, insurrections, civil disturbances, shortages of labor or materials, terrorism, war,
-                                        governmental actions, orders of domestic or foreign courts or tribunals.</p>
+                                    <p>Under no circumstances shall Bulkhouse, be held liable for any delay or failure or disruption of the Online Services resulting directly or indirectly from acts of nature, forces or causes beyond our reasonable control, including without limitation, acts of God, Internet failures, computer, telecommunications or any other equipment failures, electrical power failures, strikes, labor disputes, riots, insurrections, civil disturbances, shortages of labor or materials, terrorism, war, governmental actions, orders of domestic or foreign courts or tribunals</p>
                                 </ul>
 
 

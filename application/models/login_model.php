@@ -23,14 +23,13 @@ class Login_model extends CI_Model {
         if ($result->num_rows() === 1) {
             if ($row->activation) {
 
-                if ($row->password === sha1($this->config->item('bulk-lock') . $password))
-                {
+                if ($row->password === sha1($this->config->item('bulk-lock') . $password)) {
                     // authenticated, now update the user's session
-                        $vendor_name = $row->vendor_name;
-                        $email = $row->email;
-                        $firm_type = $row->firm_type;
-                        $firm_name = $row->firm_name;
-                        $mobile = $row->mobile;
+                    $vendor_name = $row->vendor_name;
+                    $email = $row->email;
+                    $firm_type = $row->firm_type;
+                    $firm_name = $row->firm_name;
+                    $mobile = $row->mobile;
 
                     $this->set_session_user($vendor_name, $email, $firm_type, $firm_name, $mobile);
                     return 'logged_in';
@@ -38,7 +37,7 @@ class Login_model extends CI_Model {
                     return'incorrect_password';
                 }
             } else {
-               return'not_activated';
+                return'not_activated';
             }
         } else {
             return'email_not_found';
@@ -78,14 +77,13 @@ class Login_model extends CI_Model {
         if ($result->num_rows() === 1) {
             if ($row->activation) {
 
-                if ($row->password === $password)
-                {
+                if ($row->password === $password) {
                     // authenticated, now update the user's session
-                        $id = $row->id;
-                        $admin_email = $row->email;
-                        $admin_type = $row->admin_type;
-                        $name = $row->name;
-                        $mobile = $row->mobile;
+                    $id = $row->id;
+                    $admin_email = $row->email;
+                    $admin_type = $row->admin_type;
+                    $name = $row->name;
+                    $mobile = $row->mobile;
 
                     $this->set_session_admin($id, $admin_email, $admin_type, $name, $mobile);
                     return 'logged_in';
@@ -93,12 +91,13 @@ class Login_model extends CI_Model {
                     return'incorrect_password';
                 }
             } else {
-               return'not_activated';
+                return'not_activated';
             }
         } else {
             return'email_not_found';
         }
     }
+
     public function set_session_admin($id, $admin_email, $admin_type, $name, $mobile) {
 
         $sql = "SELECT * FROM admin_details WHERE email = '" . $admin_email . "' LIMIT 1";
@@ -116,45 +115,70 @@ class Login_model extends CI_Model {
             'logged_in' => 1
         );
 
-         $this->session->set_userdata($sess_data2);
-
+        $this->session->set_userdata($sess_data2);
     }
 
-    public function email_exists($email){
+    public function email_exists($email) {
 
         $sql = "SELECT vendor_name, email, password FROM vendor_details WHERE email = '" . $email . "' LIMIT 1";
         $result = $this->db->query($sql);
         $row = $result->row();
 //        $pass5 = mb_substr($row->password, 0, 5);
 
-        return ($result->num_rows() === 1 && $row->email) ?$row->vendor_name:false;
+        return ($result->num_rows() === 1 && $row->email) ? $row->vendor_name : false;
     }
 
-    public function verify_reset_password_code($email, $code){
+    public function verify_reset_password_code($email, $code) {
         $sql = "SELECT vendor_name, email FROM vendor_details WHERE email = '" . $email . "' LIMIT 1";
         $result = $this->db->query($sql);
         $row = $result->row();
         $vendorname = $row->vendor_name;
-        if($result->num_rows() === 1){
-            $code = sha1($this->config->item('bulk-lock').$vendorname);
-            return ($code)?true:false;
-        }  else {
+        if ($result->num_rows() === 1) {
+            $code = sha1($this->config->item('bulk-lock') . $vendorname);
+            return ($code) ? true : false;
+        } else {
             return false;
         }
     }
 
-    public function update_password(){
+    public function update_password() {
         $email = $this->input->post('email');
         $password = sha1($this->config->item('bulk-lock') . $this->input->post('password'));
+        $pwd = $this->input->post('password');
         $sql = "UPDATE vendor_details SET password = '" . $password . "' WHERE email = '" . $email . "' LIMIT 1";
         $this->db->query($sql);
-        if($this->db->affected_rows() === 1){
-            return true;
-        }  else {
+        if ($this->db->affected_rows() === 1) {
+            $custid = $this->get_custid($email);
+            return $this->update_mag_direct($custid, $pwd, $email);
+//            return true;
+        } else {
             return false;
         }
     }
 
+    public function update_mag_password($custid, $pwd, $email) {
+        $this->load->spark('mage-api/0.0.1');
+        $update = array('password' => $pwd, 'email' => $email);
+        $cust = array('customerId' => $custid);
+        $custdata = array('customerData' => $update);
+        return $this->mage_api->customer_update($custid, $update);
+    }
 
+    public function update_mag_direct($custid, $pwd, $email) {
+        $client = new SoapClient('http://bulk.house/api/soap/?wsdl');
+        $session = $client->login('inhouse_developer', '3125582');
+        return $client->call($session, 'customer.update', array('customerId' => $custid, 'customerData' => array('email' => $email, 'password' => $pwd)));
+//var_dump ($result);
+    }
+
+    public function get_custid($email) {
+        $this->db->select('custid');
+        $this->db->from('mag_cust');
+        $this->db->where(array('mag_cust.email' => $email));
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $ver = $query->result();
+        return $ver[0]->custid;
+    }
 
 }

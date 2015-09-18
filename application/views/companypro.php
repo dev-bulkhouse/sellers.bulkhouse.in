@@ -268,8 +268,8 @@ $query = $this->db->get();
                 else if (vStatus === "VERIFIED")
                 {
                     success();
-<?php $details2 = $this->register_model->viewdata($compid);
-foreach ($details2 as $row) {
+<?php $details4 = $this->register_model->viewdata($compid);
+foreach ($details4 as $row) {
     ?>
                         compid = <?php echo $compid; ?>;
                         mobile = <?php echo $row->mobile; ?>;
@@ -314,13 +314,7 @@ foreach ($details2 as $row) {
 
                 <section class="vbox">
                     <header class="header bg-white b-b">
-                        <div class="col-lg-6 col-md-8  col-sm-8" style="padding: 15px 0px 0px 0px">
-                            <p <h5>Welcome to <b style="padding-right: 5px; border-bottom: 1px solid"><?php
-                                    if (isset($firm_name)) {
-                                        echo $firm_name;
-                                    }
-                                    ?></b><span> You have Registered as - <?php echo ucfirst($firm_type); ?></span></h5></p>
-                        </div>
+
                         <div class="col-lg-3 col-md-2 col-sm-2">
                             <?php
                                 $mobile_verification = $this->vendor_update->mobile_number($compid);
@@ -365,13 +359,13 @@ foreach ($details2 as $row) {
                             ?>
 
                         </div>
-                        <div class="col-lg-3 col-md-2  col-sm-2 visible-lg visible-md visible-sm" style="padding: 15px 0px 0px 0px; text-align: right">
-                            <a href="<?php echo site_url(); ?>user/logout"><i class="fa fa-sign-out"></i> logout</a>
-                        </div>
+
                     </header>
                     <section class="scrollable wrapper" id="wizard">
                         <div class='notifications top-left'><?php $this->load->view('alert/success-message'); ?></div>
-
+  <header class="panel-heading">
+      <h4 class="font-thin padder"><b>Vendor Details</b></h4>
+                                </header>
 
                         <div class="tab-content">
                             <section class="tab-pane active" id="basic">
@@ -428,7 +422,7 @@ foreach ($details2 as $row) {
 
 
 
-                        <div class="col-md-12">
+<!--                        <div class="col-md-12">
                             <div class="col-md-4">
                                 <label class="control-label">Vendor Name:</label>
                                 <input  placeholder="Contact Person" value="<?php
@@ -467,15 +461,15 @@ foreach ($details2 as $row) {
                                     <div class="line line-dashed m-t-lg"></div>
                                 </div>
 
-<?php } ?>
-                        </div>
 
+                        </div>-->
+                                <?php } ?>
                         <form action="<?php echo base_url(); ?>main/update_vendor" method="post">
 
-                            <div class="panel wrapper col-lg-8 col-md-8 col-sm-8">
-                                <header class="panel-heading">
-                                    <h4 class="font-thin padder">Vendor Details</h4>
-                                </header>
+                            <hr>
+
+                            <div class=" col-lg-12 col-md-12 col-sm-12">
+
                                 <div class="row">
 
 
@@ -486,93 +480,146 @@ foreach ($details2 as $row) {
 
                                         <div class="form-group required">
 
-                                            <div class="col-sm-10" ng-hide="showme">
 
-                                                <p id="social-buttons"> <a href="#" class="btn btn-rounded btn-sm btn-primary" ng-click="showme = true"><i class="fa fa-caret-right"></i> Additional Contact Details</a> </p>
-                                                <div class="m-t-lg"></div>
+
+
+
+
+                                            <div class="col-lg-10 col-md-10 col-sm-10">
+                                                <div class="col-sm-12">
+                                                    <header class="panel-heading">
+                                                        <h4 class="font-thin padder">Company Details</h4>
+
+                                                    </header>
+                                                    <div class=" m-t-lg"></div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <label class="control-label">Year of Established:</label>
+                                                    <input type="number"  placeholder="Year of Established" value="<?php
+                                                      $details3 = $this->register_model->viewdata($compid);
+                                foreach ($details3 as $row) {
+
+                                                echo $row->year_establishment;
+                                                    ?>" name ="year_establishment" class="bg-focus form-control" pattern="[0-9]*" required="required" maxlength="4">
+                                                    <div class="line line-dashed m-t-lg"></div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <label class="control-label">No of Employees:</label>
+                                                    <select name="no_employees" class="form-control parsley-validated parsley-success" required="required">
+                                                        <option value="">Select</option>
+                                                        <option <?php echo $row->no_employees == '1 to 25' ? ' selected="selected"' : ''; ?> value="1 to 25">1 to 25</option>
+                                                        <option <?php echo $row->no_employees == '25 to 50' ? ' selected="selected"' : ''; ?> value="25 to 50">25 to 50</option>
+                                                        <option <?php echo $row->no_employees == '50 to 100' ? ' selected="selected"' : ''; ?> value="50 to 100">50 to 100</option>
+                                                        <option <?php echo $row->no_employees == 'Above 100' ? ' selected="selected"' : ''; ?> value="Above 100">Above 100</option>
+                                                    </select>
+                                                    <div class="line line-dashed m-t-lg"></div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <label data-toggle="tooltip" data-placement="top" title="Only Previous Year Turnover">Turnover:</label>
+                                                    <input type="number" value="<?php
+                                                echo $row->comp_turnover;
+                                                    ?>"  placeholder="Company Turnover" pattern="[0-9]*" name ="comp_turnover" class="bg-focus form-control">
+                                                    <div class="line line-dashed m-t-lg"></div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+
+                                                    <label>Quality Certification:</label>
+                                                    <select name="cert_products"  class="form-control parsley-validated parsley-success">
+                                                        <option value="">Select</option>
+                                                        <option <?php echo $row->cert_products == 'ISI / BIS' ? ' selected="selected"' : ''; ?> value="ISI/BIS">ISI / BIS</option>
+                                                        <option <?php echo $row->cert_products == 'ISO' ? ' selected="selected"' : ''; ?> value="ISO">ISO </option>
+
+                                                        <option value="none">NONE</option>
+
+                                                    </select>
+                                                    <div class="line line-dashed m-t-lg"></div>
+                                                </div>
+
+                                                <div class="col-sm-4">
+                                                    <label class="control-label">Registration Category:</label>
+                                                    <select name="reg_category" class="form-control parsley-validated parsley-success" required="required">
+                                                        <option value="">Select</option>
+                                                        <option <?php echo $row->reg_category == 'Stockist/Distributor' ? ' selected="selected"' : ''; ?> value="Stockist/Distributor">Stockist / Distributor</option>
+                                                        <option <?php echo $row->reg_category == 'MSME/SSI' ? ' selected="selected"' : ''; ?> value="MSME/SSI">MSME / SSI </option>
+                                                        <option <?php echo $row->reg_category == 'Exporter' ? ' selected="selected"' : ''; ?> value="Exporter">Exporter </option>
+                                                        <option <?php echo $row->reg_category == 'OriginalManufacturer' ? ' selected="selected"' : ''; ?> value="OriginalManufacturer">Original Manufacturer</option>
+                                                        <option <?php echo $row->reg_category == 'Distributor/Agency' ? ' selected="selected"' : ''; ?> value="Distributor/Agency">Distributor / Agency</option>
+                                                        <option <?php echo $row->reg_category == 'Others' ? ' selected="selected"' : '';
+
+                                                ?> value="Others">Others</option>
+                                                </select>
+                                                 <div class="line line-dashed m-t-lg"></div>
                                             </div>
-                                            <div class="col-sm-10" ng-show="showme">
-                                                <p id="social-buttons"> <a href="#" class="btn btn-rounded btn-sm btn-primary" ng-click="showme = false"><i class="fa fa-caret-down"></i> Additional Contact Details</a> </p>
 
+                                        </div>
 
-                                                <div class=" m-t-lg"></div>
-                                            </div>
-
-                                            <div class="col-sm-4" ng-show="showme">
-                                                <label >Contact Person:</label>
-                                                <input  placeholder="Contact Person" value="<?php
-                                                echo $row->contact_name;
-                                                ?>" name="contact_name" class="bg-focus form-control">
-                                                <div class="line line-dashed m-t-lg"></div>
-                                            </div>
-
-                                            <div class="col-sm-4" ng-show="showme">
-                                                <label>Email:</label>
-                                                <input type="email"  placeholder="Contact Email" value="<?php
-                                                echo $row->email_contact;
-                                                ?>" name="email_contact" class="bg-focus form-control">
-                                                <div class="line line-dashed m-t-lg"></div>
-                                            </div>
-
-                                            <div class="col-sm-3" ng-show="showme">
-                                                <label>Mobile Number:</label>
-                                                <input type="number"  placeholder="Mobile Number" pattern="[789][0-9]{9}" value="<?php
-                                                echo $row->mobile_contact;
-                                                ?>" name ="mobile_contact" class="bg-focus form-control" maxlength="11">
-                                                <div class="line line-dashed m-t-lg"></div>
-                                            </div>
-
-
-
-
-
-                                            <div class="col-sm-10">
+                                       <div class=" pull-left col-lg-5 col-md-5 col-sm-5">
+                                            <div class="line line m-t-lg"></div>
+ <div class="col-sm-12">
                                                 <header class="panel-heading">
                                                     <h4 class="font-thin padder">Contact Details</h4>
                                                 </header>
                                                 <div class=" m-t-lg"></div>
                                             </div>
 
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-12">
                                                 <label>Office Land Line:</label>
                                                 <input type="number"  placeholder="Office Land Line" pattern="[0-9]*" value="<?php
-                                                $details = $this->register_model->viewdata($compid);
-                                                foreach ($details as $row) {
+
                                                     echo $row->land_line;
                                                     ?>" name ="land_line" class="bg-focus form-control"  maxlength="20">
                                                     <div class="line line-dashed m-t-lg"></div>
                                                 </div>
 
-                                                <div class="col-sm-3">
+                                                <div class="col-sm-12">
                                                     <label class="control-label">Address Line 1:</label>
-                                                    <input type="text"  placeholder="Address line 1" value="<?php
+                                                    <textarea type="text"  placeholder="Address line 1" name ="address1" class="bg-focus form-control" required="required"><?php
                                                 echo $row->address1;
-                                                    ?>" name ="address1" class="bg-focus form-control" required="required">
+                                                ?></textarea>
                                                     <div class="line line-dashed m-t-lg"></div>
                                                 </div>
 
-                                                <div class="col-sm-3">
+                                                <div class="col-sm-12">
                                                     <label>Address Line 2:</label>
-                                                    <input type="text"  placeholder="Address line 2" value="<?php
+                                                    <textarea type="text"  placeholder="Address line 2" name ="address2" class="bg-focus form-control"><?php
                                                 echo $row->address2;
-                                                    ?>" name ="address2" class="bg-focus form-control">
+                                                ?></textarea>
                                                     <div class="line line-dashed m-t-lg"></div>
                                                 </div>
-                                                <div class="col-sm-3">
-                                                    <label class="control-label">Country:</label>
-                                                    <select id="country" name="country" value="<?php
+                                                <div class="col-sm-12">
+                                                    <label class="control-label">Country: </label>
+                                                    <?php
                                                 echo $row->country;
-                                                    ?>"  class="bg-focus form-control" required="required"></select>
+                                                    ?>
+                                                    <select id="country" name="country" class="bg-focus form-control" required="required">
+                                                        <?php if (isset($row->country)) { ?>
+                                                        <option selected="">
+                                                                <?php echo $row->country;
+                                                    ?></option>
+                                                       <?php } ?>
+                                                    </select>
+
                                                     <div class="line line-dashed m-t-lg" ></div>
                                                 </div>
 
-                                                <div class="col-sm-3">
+                                                <div class="col-sm-12">
 
-                                                    <label class="control-label">State:</label>
-
-                                                    <select name="state" id="state" class="bg-focus form-control" value="<?php
+                                                    <label class="control-label">State: </label>
+                                                    <?php
                                                 echo $row->state;
-                                                    ?>" required="required"></select>
+                                                    ?>
+                                                    <select name="state" id="state" class="bg-focus form-control" required="required">
+                                                        <?php if (isset($row->state)) { ?>
+                                                        <option selected=""><?php
+                                                echo $row->state;
+                                                    ?></option>
+                                                       <?php } ?>
+
+                                                    </select>
                                                     <script language="javascript">
                                                         populateCountries("country", "state");
 
@@ -580,7 +627,7 @@ foreach ($details2 as $row) {
 
                                                     <div class="line line-dashed m-t-lg"></div>
                                                 </div>
-                                                <div class="col-sm-3">
+                                                <div class="col-sm-12">
                                                     <label class="control-label">City:</label>
                                                     <input type="text"  placeholder="City"value="<?php
                                                 echo $row->city;
@@ -590,7 +637,7 @@ foreach ($details2 as $row) {
 
 
 
-                                                <div class="col-sm-3" >
+                                                <div class="col-sm-12" >
                                                     <label class="control-label">Pin code:</label>
                                                     <input type="number" placeholder="Pincode" pattern="[0-9]*" value="<?php
                                                 echo $row->pin_code;
@@ -600,86 +647,61 @@ foreach ($details2 as $row) {
 
 
 
-                                                <div class="col-sm-3">
+                                                <div class="col-sm-12">
                                                     <label>Website:</label>
-                                                    <input type="text"  placeholder="Website"  pattern="https?://.+" title="Include http://" value="<?php
+                                                    <input type="text"  placeholder="Website"   value="<?php
                                                 echo $row->website;
-                                                    ?>" name ="website" class="bg-focus form-control">
+                                } ?>" name ="website" class="bg-focus form-control">
                                                     <div class="line line-dashed m-t-lg"></div>
                                                 </div>
-                                                <div class="col-sm-10">
-                                                    <header class="panel-heading">
-                                                        <h4 class="font-thin padder">Company Details</h4>
-                                                    </header>
-                                                    <div class=" m-t-lg"></div>
-                                                </div>
+                                               <div class="col-sm-10" ng-hide="showme">
 
-                                                <div class="col-sm-3">
-                                                    <label class="control-label">Year of Established:</label>
-                                                    <input type="number"  placeholder="Year of Established" value="<?php
-                                                echo $row->year_establishment;
-                                                    ?>" name ="year_establishment" class="bg-focus form-control" pattern="[0-9]*" required="required" maxlength="4">
-                                                    <div class="line line-dashed m-t-lg"></div>
-                                                </div>
-
-                                                <div class="col-sm-3">
-                                                    <label class="control-label">No of Employees:</label>
-                                                    <select name="no_employees" class="form-control parsley-validated parsley-success" required="required">
-                                                        <option value="">Select</option>
-                                                        <option <?php $row->no_employees == '1 to 25' ? ' selected="selected"' : ''; ?> value="1 to 25">1 to 25</option>
-                                                        <option <?php $row->no_employees == '25 to 50' ? ' selected="selected"' : ''; ?> value="25 to 50">25 to 50</option>
-                                                        <option <?php $row->no_employees == '50 to 100' ? ' selected="selected"' : ''; ?> value="50 to 100">50 to 100</option>
-                                                        <option <?php $row->no_employees == 'Above 100' ? ' selected="selected"' : ''; ?> value="Above 100">Above 100</option>
-                                                    </select>
-                                                    <div class="line line-dashed m-t-lg"></div>
-                                                </div>
-
-                                                <div class="col-sm-3">
-                                                    <label data-toggle="tooltip" data-placement="top" title="Only Previous Year Turnover">Turnover (Lakhs):</label>
-                                                    <input type="number" value="<?php
-                                                echo $row->comp_turnover;
-                                                    ?>"  placeholder="Company Turnover" pattern="[0-9]*" name ="comp_turnover" class="bg-focus form-control">
-                                                    <div class="line line-dashed m-t-lg"></div>
-                                                </div>
-
-                                                <div class="col-sm-3">
-
-                                                    <label>Quality Certification:</label>
-                                                    <select name="cert_products"  class="form-control parsley-validated parsley-success">
-                                                        <option value="">Select</option>
-                                                        <option <?php $row->cert_products == 'ISI / BIS' ? ' selected="selected"' : ''; ?> value="ISI/BIS">ISI / BIS</option>
-                                                        <option <?php $row->cert_products == 'ISO' ? ' selected="selected"' : ''; ?> value="ISO">ISO </option>
-
-                                                        <option value="none">NONE</option>
-
-                                                    </select>
-                                                    <div class="line line-dashed m-t-lg"></div>
-                                                </div>
-
-                                                <div class="col-sm-5">
-                                                    <label class="control-label">Registration Category:</label>
-                                                    <select name="reg_category" class="form-control parsley-validated parsley-success" required="required">
-                                                        <option value="">Select</option>
-                                                        <option <?php $row->reg_category == 'Stockist/Distributor' ? ' selected="selected"' : ''; ?> value="Stockist/Distributor">Stockist / Distributor</option>
-                                                        <option <?php $row->reg_category == 'MSME/SSI' ? ' selected="selected"' : ''; ?> value="MSME/SSI">MSME / SSI </option>
-                                                        <option <?php $row->reg_category == 'Exporter' ? ' selected="selected"' : ''; ?> value="Exporter">Exporter </option>
-                                                        <option <?php $row->reg_category == 'OriginalManufacturer' ? ' selected="selected"' : ''; ?> value="OriginalManufacturer">Original Manufacturer</option>
-                                                        <option <?php $row->reg_category == 'Distributor/Agency' ? ' selected="selected"' : ''; ?> value="Distributor/Agency">Distributor / Agency</option>
-                                                        <option <?php $row->reg_category == 'Others' ? ' selected="selected"' : '';
-                                            }
-                                                ?> value="Others">Others</option>
-                                                </select>
+                                                <p id="social-buttons"> <a href="#" class="btn btn-rounded btn-sm btn-primary" ng-click="showme = true"><i class="fa fa-caret-right"></i> Additional Contact Details</a> </p>
                                                 <div class="m-t-lg"></div>
+                                              </div>
+                                            <div class="col-sm-10" ng-show="showme">
+                                                <p id="social-buttons"> <a href="#" class="btn btn-rounded btn-sm btn-primary" ng-click="showme = false"><i class="fa fa-caret-down"></i> Additional Contact Details</a> </p>
+
+
+                                                <div class=" m-t-lg"></div>
                                             </div>
 
+                                            <div class="col-sm-10" ng-show="showme">
+                                                <label >Contact Person:</label>
+                                                <input type="text" placeholder="Contact Person" value=" <?php $details = $this->register_model->viewdata($compid);
+                                                foreach ($details as $row) {
+                                                echo $row->contact_name;
+                                                ?>" name="contact_name" class="bg-focus form-control">
+                                                <div class="line line-dashed m-t-lg"></div>
+                                            </div>
 
-                                            <div class="col-sm-10">
+                                            <div class="col-sm-10" ng-show="showme">
+                                                <label>Email:</label>
+                                                <input type="email"  placeholder="Contact Email" value="<?php
+                                                echo $row->email_contact;
+                                                ?>" name="email_contact" class="bg-focus form-control">
+                                                <div class="line line-dashed m-t-lg"></div>
+                                            </div>
+
+                                            <div class="col-sm-10" ng-show="showme">
+                                                <label>Mobile Number:</label>
+                                                <input type="number"  placeholder="Mobile Number" pattern="[789][0-9]{9}" value="<?php
+                                                echo $row->mobile_contact;
+                                                ?>" name ="mobile_contact" class="bg-focus form-control" maxlength="11">
+                                                <div class="line line-dashed m-t-lg"></div>
+                                            </div>
+
+                                             </div>
+
+                                       <div class="pull-right col-lg-5 col-md-5 col-sm-5">
+                                            <div class="line line m-t-lg"></div>
+                                            <div class="col-sm-12">
                                                 <header class="panel-heading">
                                                     <h4 class="font-thin padder">Dispatch Contact Details</h4>
                                                 </header>
                                                 <div class="m-t-lg"></div>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-12">
                                                 <label class="control-label" >Contact Person:</label>
                                                 <input  placeholder="Contact Person" value="<?php
                                                 echo $row->dispat_person;
@@ -687,7 +709,7 @@ foreach ($details2 as $row) {
                                                 <div class="line line-dashed m-t-lg"></div>
                                             </div>
 
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-12">
                                                 <label class="control-label">Email:</label>
                                                 <input  type="email"  placeholder="Contact Email" value="<?php
                                                 echo $row->dispat_email;
@@ -695,14 +717,14 @@ foreach ($details2 as $row) {
                                                 <div class="line line-dashed m-t-lg"></div>
                                             </div>
 
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-12">
                                                 <label class="control-label">Mobile Number:</label>
                                                 <input type="number"  placeholder="Mobile Number" pattern="[789][0-9]{9}" value="<?php
                                                 echo $row->dispat_mobile;
                                                 ?>" name ="dispat_mobile" class="bg-focus form-control" maxlength="11">
                                                 <div class="line line-dashed m-t-lg"></div>
                                             </div>
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-12">
                                                 <label>Office Land Line:</label>
                                                 <input type="number"  placeholder="Land Line" pattern="[0-9]*" value="<?php
                                                 echo $row->dispat_land;
@@ -710,33 +732,29 @@ foreach ($details2 as $row) {
                                                 <div class="line line-dashed m-t-lg"></div>
                                             </div>
 
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-12">
                                                 <label class="control-label">Address Line 1:</label>
-                                                <input type="text"  placeholder="Address line 1" value="<?php
+                                                <textarea type="text"  placeholder="Address line 1" name ="dispat_address1" class="bg-focus form-control" required="required"><?php
                                                 echo $row->dispat_address1;
-                                                ?>" name ="dispat_address1" class="bg-focus form-control" required="required">
+                                                ?></textarea>
                                                 <div class="line line-dashed m-t-lg"></div>
                                             </div>
 
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-12">
                                                 <label>Address Line 2:</label>
-                                                <input type="text"  placeholder="Address line 2" value="<?php
+                                                <textarea type="text"  placeholder="Address line 2" name ="dispat_address2" class="bg-focus form-control"><?php
                                                 echo $row->dispat_address2;
-                                                ?>" name ="dispat_address2" class="bg-focus form-control">
+                                                ?></textarea>
                                                 <div class="line line-dashed m-t-lg"></div>
                                             </div>
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-12">
                                                 <label class="control-label">City:</label>
                                                 <input type="text"  placeholder="City"value="<?php
                                                 echo $row->dispat_city;
-                                                ?>" name ="dispat_city" class="bg-focus form-control" >
+                                                }?>" name ="dispat_city" class="bg-focus form-control" >
                                                 <div class="line line-dashed m-t-lg"></div>
                                             </div>
-
-
-
-
-
+ </div>
 
                                         </div>
                                     </div>
@@ -751,23 +769,21 @@ foreach ($details2 as $row) {
 
                         </form>
 
+
                         <form action="<?php echo base_url(); ?>main/pro_cat/<?php $compid; ?>" method="POST">
-                            <div class="panel wrapper pull-right col-lg-4 col-md-4 col-sm-4">
+
+                            <div class="panel wrapper col-lg-8 col-md-8 col-sm-8">
 
                                 <header class="panel-heading">
                                     <h4 class="font-thin padder">Product Categories  <button class="btn btn-sm btn-primary pull-right" type="submit" >Submit</button></h4>
-
-
-
-
-                                </header>
+                                 </header>
 
                                 <div class="row">
                                     <div class="form-group required">
                                         <div class="form-group required">
 
-                                            <div class="col-lg-10" ng-controller="checkBoxController">
-
+                                            <div ng-controller="checkBoxController">
+<div class="col-lg-5">
                                                 <label class="control-label">Select your Products Categories:</label>
                                                 <div ng-repeat="pro in pro_category">
 
@@ -778,14 +794,9 @@ foreach ($details2 as $row) {
                                                         <label for="{{pro.name}}"></label>
                                                         {{pro.name}}
                                                     </div>
-
                                                 </div>
-                                                <div class="line line-dashed m-t-lg"></div>
-
-
-
-
-                                                <div class="col-lg-10">
+                                                </div>
+                                           <div class="col-lg-5">
                                                     <span style="color:black;" class="selected-item"><b><u>Selected Categories:</u></b></span>
 
 

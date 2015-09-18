@@ -358,6 +358,7 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 $config['bulk-lock']='~JB#&@';
+$config['vendor_code']='qwerty';
 $config['bulk-support-number'] = '+91 891 667 9999';
 $config['bot_email'] = 'vendor@bulkhouse.in';
 $config['noreply_email'] = 'noreply@bulkhouse.in';

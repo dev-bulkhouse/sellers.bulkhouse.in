@@ -196,7 +196,22 @@ $query = $this->db->get();
                 var doc_arg_businessid = "businessid";
 
                 run_doc(doc_type_businessid, disp_layer_businessid, success_layer_businessid, doc_arg_businessid);
+                
+                var doc_type_comp_file = "#comp_file";
+                var disp_layer_comp_file = "#targetLayer_21";
+                var success_layer_comp_file = "#targetLayer21";
 
+                var doc_arg_comp_file = "comp_file";
+
+                run_doc_check(doc_type_comp_file, disp_layer_comp_file, success_layer_comp_file, doc_arg_comp_file);
+                
+                var doc_type_canceled_check = "#canceled_check";
+                var disp_layer_canceled_check = "#targetLayer_20";
+                var success_layer_canceled_check = "#targetLayer20";
+
+                var doc_arg_canceled_check = "canceled_check";
+
+                run_doc_check(doc_type_canceled_check, disp_layer_canceled_check, success_layer_canceled_check, doc_arg_canceled_check);
 
 
 
@@ -347,350 +362,28 @@ $query = $this->db->get();
 
             });
         </script>
-        
+        <style>
+            section {
+  background: url("/img/wall_1.jpg") left top no-repeat fixed;
+  padding: 20px 0px;
+}
+            </style>
 
     </head>
-    <body  ng-app="ngAnimate" style="background-color: white">
-        <?php $this->load->view('template/main_head', array('firm_name' => $firm_name, 'firm_type' => $firm_type)); ?>
-        <!-- /.aside -->
-        <!-- .vbox -->
+    <body  ng-app="ngAnimate">
+       
+        <section class="vbox">
 
-        <!--                <div class="alert alert-success alert-block">
-                                        <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i>
-                                        </button>
-                                        <h4><i class="icon-bell-alt"></i>Thankyou for Registering!</h4>
-                                        <p>Welcome to Bulkhouse Seller Dashboard</p>
-                                    </div>-->
 
-        <section class="vbox" style="background-color: #fff">
 
+            <section class="scrollable wrapper animated fadeInDown"  >
 
+              
 
-            <section class="scrollable wrapper animated fadeInDown" >
-
-                <div class="row" style="margin: 10px">
-                    <img width="100%" src="<?php echo site_url(); ?>assets/img/banner.jpg" alt=""/>
-                    <?php if ($val < 100) { ?>
-
-                    <?php } ?>
-
-                </div>
-                <div class="alert alert-block" id='status_main' style="background-color: #1B8EDE; color: white;z-index: 999;">
-                    <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i>
-                    </button>
-                    <h4><i class="icon-bell-alt"></i>Account not Complete! <span style="font-size: 0.7em">  -  Please submit pending documents and details</span></h4>
-
-                </div>
-                <div class="col-md-12 visible-md visible-sm visible-xs">
-                        <p style="color: black">Account Complete Status</p>
-                        <div class="progress progress-xs  m-t-sm">
-
-                            <div class="progress-bar progress-bar-success" data-toggle="tooltip" data-original-title="<?= $val; ?>" style="width: <?= $val; ?>%"></div>
-
-                        </div>
-
-
-                    </div>
-
-                <div class="row" style="margin-bottom: 10px; padding: 10px">
-                    <div class="col-lg-6">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <header class="panel-heading bg-primary" style=" color: black">
-                                    <span class="badge bg-info pull-right"></span> <i class="icon-paste"></i>Inventory and Sales
-                                </header>
-                                <div class="list-group" style="padding: 10px; background-color: white;border: 1px whitesmoke solid">
-                                    <article class="media">
-
-                                        <div class="media-body">
-                                            <a target="_blank" href="http://bulk.house/index.php/marketplace/seller/login/"><span class="badge" style="font-size: 1.2em"><i class="fa fa-plus" style="font-size: 1em"> Add Products</i></span></a>
-
-
-
-                                        </div>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <section class="panel no-borders">
-                                    <header class="panel-heading bg-success lter">
-                                        <span class="pull-right"><?php echo date('l'); ?></span>
-                                        <span class="h4">Today Sales $0.00
-                                            <br>
-                                             <br>
-                                            <small class="text-muted">Your Credit Balance - <i class="fa fa-rupee"><?php
-                                                    setlocale(LC_MONETARY, 'en_IN');
-                                                    echo money_format('%!i', $credit_limit)
-                                                    ?></i> </small>
-                                        </span>
-                                        <div class="text-center padder m-b-n-sm m-t-sm">
-                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="3" data-data="[0,0,0,0,0,0,0,0,0,0,0,0]"></div>
-                                            <div class="sparkline inline" data-type="bar" data-height="45" data-bar-width="6" data-bar-spacing="10" data-bar-color="#92cf5c">0,0,0,0,0,0,0,0,0,0,0,0</div>
-                                        </div>
-                                    </header>
-                                    <div class="panel-body">
-                                        <div>
-                                            <span class="text-muted">Sales in June:</span>
-                                            <span class="h3 block">$0.00</span>
-                                        </div>
-                                        <div class="row m-t-sm">
-                                            <div class="col-xs-4">
-                                                <small class="text-muted block">From market</small>
-                                                <span>$0.00</span>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <small class="text-muted block">Referal</small>
-                                                <span>$0.00</span>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <small class="text-muted block">Affiliate</small>
-                                                <span>$0.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-6" style="border-left: 2px whitesmoke solid">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="col-lg-4 visible-lg" style="background-color: white;">
-                                    <header class="panel-heading">
-                                        Account Status
-                                    </header>
-                                    <div class="panel-body text-center">
-<!--                                            <h4>3,450</h4> <small class="text-muted block">Worldwide visitors</small>-->
-                                        <div class="inline">
-
-                                            <div class="easypiechart" data-percent="<?= $val; ?>" data-line-width="7" data-track-color="#eee" data-bar-color="#afcf6f" data-scale-color="#fff" data-loop="false" data-size="70"> <span class="h4"><?= $val; ?></span>%
-
-                                            </div>
-                                            <div class="easypie-text">Complete</div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-lg-8">
-
-                                    <header class="panel-heading bg-primary" style=" color: black">
-                                        <span class="badge bg-info pull-right"></span> <i class="icon-paste"></i>Status Updates
-                                    </header>
-                                    <div class="list-group bg-white" style="padding:20px; background-color: white; border: 1px whitesmoke solid">
-                                         <?php
-                                        $responce = $this->vendor_update->status_profile($compid);
-                                        if ($responce == 'Need To Submit') {
-                                            ?>
-
-                                            <article class="media">
-
-                                                <div class="media-body">
-
-
-                                                    <i class="fa fa-building" style="font-size: 1.2em"> Company Profile Details Pending <a href="/main/company"> <i class="fa fa-edit"> Update</i></a></i>
-
-
-                                                </div>
-                                            </article>
-                                        <?php } ?>
-                                        
-
-                                        <?php
-                                        $responce = $this->vendor_update->status_bank($compid);
-                                        if ($responce == 'Need To Submit') {
-                                            ?>
-
-
-
-
-                                            <article class="media">
-
-                                                <div class="media-body">
-
-                                                    <i class="fa fa-check-square" style="font-size: 1.2em"> Waiting for Bank Details</i>
-
-                                                </div>
-                                            </article>
-
-                                        <?php } elseif ($responce == 'submitted') { ?>
-                                            <article class="media">
-
-                                                <div class="media-body">
-
-                                                    <i class="fa fa-check-square" style="font-size: 1.2em"> Bank Details Submitted</i>
-
-                                                </div>
-                                            </article>
-                                        <?php } elseif ($responce == 'Dispatch') { ?>
-
-
-
-
-                                            <article class="media">
-                                                <div class="pull-left thumb-sm">
-                                                    <span class="icon-stack">
-                                                        <i class="icon-circle text-success icon-stack-base"></i>
-                                                        <i class="icon-flag icon-light"></i>
-                                                    </span>
-                                                </div>
-                                                <div class="media-body">
-
-                                                    <i class="fa fa-bank" style="font-size: 1.2em"> Waiting for Bank verification</i>
-
-                                                </div>
-                                            </article>
-
-
-                                        <?php } elseif ($responce == 'Sent bank Details') { ?>
-
-
-                                            <article class="media">
-
-                                                <div class="media-body">
-                                                    <i class="fa fa-bank" style="font-size: 1.2em"> Please Submit Amount credited in your bank account</i>
-
-                                                    <form action="/confirm_bank/amount/<?php echo $compid ?>" method="POST" style="margin: 5px 0px 0px 20px">
-                                                        <input type="text" name="confirm_amount">
-                                                        <input type="submit">
-                                                    </form>
-
-                                                </div>
-                                            </article>
-
-
-
-                                        <?php } elseif ($responce == 'Failed') { ?>
-
-
-
-                                            <article class="media">
-
-                                                <div class="media-body">
-                                                    <i class="fa fa-bank" style="font-size: 1.2em"> Bank Details are Disapproved</i>
-
-                                                    <a href="#" class="alert-link"></a> and try submitting again.
-
-                                                </div>
-                                            </article>
-
-
-
-
-                                        <?php } elseif ($responce == 'Sucess') { ?>
-                                            <article class="media">
-
-                                                <div class="media-body">
-                                                    <i class="fa fa-bank" style="font-size: 1.2em"> Bank Details are Approved</i>
-
-
-
-                                                </div>
-                                            </article>
-
-
-
-                                        <?php } elseif ($responce == 'wrong') { ?>
-                                            <article class="media">
-                                                <div class="pull-left thumb-sm">
-                                                    <span class="icon-stack">
-                                                        <i class="icon-circle text-success icon-stack-base"></i>
-                                                        <i class="icon-flag icon-light"></i>
-                                                    </span>
-                                                </div>
-                                                <div class="media-body">
-
-                                                    <a href="#" class="h5">Wrong Amounts Entered 3 Times Please Contact Admin</a>
-
-
-                                                </div>
-                                            </article>
-
-
-
-                                        <?php } ?>
-                                        
-                                        <?php
-                                        $responce = $this->vendor_update->status_update($firm_type, $compid);
-                                        if ($responce == 'Need To Upload') {
-                                            ?>
-
-
-                                            <article class="media">
-
-                                                <div class="media-body">
-
-                                                    <i class="fa fa-upload" style="font-size: 1.2em">Waiting for Document Upload</i>
-
-                                                </div>
-                                            </article>
-
-                                        <?php } elseif ($responce == 'Waiting for Approved') { ?>
-
-
-
-                                            <article class="media">
-                                                <div class="media-body">
-
-                                                    <i class="fa fa-upload" style="font-size: 1.2em">Waiting for Approval</i>
-
-                                                </div>
-
-                                            </article>
-
-
-                                        <?php } elseif ($responce == 'Approved') { ?>
-
-
-
-
-                                            <article class="media">
-
-                                                <div class="media-body">
-
-                                                    <i class="fa fa-check-square" style="font-size: 1.2em"> Documents are Approved</i>
-
-                                                </div>
-                                            </article>
-
-
-
-
-                                        <?php } elseif ($responce == 'Disapproved') { ?>
-
-
-
-                                            <article class="media">
-
-                                                <div class="media-body">
-
-                                                    <div class="media-body">
-
-                                                        <i class="fa fa-exclamation" style="font-size: 1.2em">Documents Are Disapproved</i>
-
-                                                    </div>
-
-                                                </div>
-                                            </article>
-
-
-<?php } ?>
-                                       
-
-
-
-
-
-                                    </div>
-
-
-                                </div>
-                            </div>
-                            
-                        </div>
-
+                <div class="row" style="margin-bottom: 10px; padding: 10px;">
+                   
+                    <div class="col-lg-8 centered col-lg-offset-2">
+                      
                         <!----------------------------->
                         <?php
                         $data['email'] = $email;
@@ -896,6 +589,32 @@ $query = $this->db->get();
                         $data['doc_status'] = 'targetLayer19';
                         $this->load->view('forms/document_form', $data);
                         ?>
+                        <?php
+                        $data['email'] = $email;
+                        $data['doc_title'] = 'Company Profile';
+                        $data['id_modal'] = 'modal-comp_file';
+                        $data['doc_placeholder'] = 'Upload Document Copy';
+                        $data['doc_pat'] = '';
+                        $data['doc_id'] = 'comp_file';
+                        $data['doc_note'] = 'Please Upload Document here.<p style="font-size:0.8em">Note: Only JPG and PDF files allowed</p>';
+                        $data['doc_file'] = 'comp_file';
+                        $data['doc_spinner'] = 'targetLayer_20';
+                        $data['doc_status'] = 'targetLayer20';
+                        $this->load->view('forms/document_form', $data);
+                        ?>
+                         <?php
+                        $data['email'] = $email;
+                        $data['doc_title'] = 'Cancel Cheque';
+                        $data['id_modal'] = 'modal-canceled_check';
+                        $data['doc_placeholder'] = 'Upload Cancel Cheque Copy';
+                        $data['doc_pat'] = '';
+                        $data['doc_id'] = 'canceled_check';
+                        $data['doc_note'] = 'Please Upload Document here.<p style="font-size:0.8em">Note: Only JPG and PDF files allowed</p>';
+                        $data['doc_file'] = 'canceled_check';
+                        $data['doc_spinner'] = 'targetLayer_20';
+                        $data['doc_status'] = 'targetLayer20';
+                        $this->load->view('forms/document_form', $data);
+                        ?>
 
 
 
@@ -908,6 +627,7 @@ $query = $this->db->get();
                                 <div class="list-group bg-white" style="background-color: whitesmoke">
                                     <header class="panel-heading bg-primary" style=" color: black">
                                         <span class="badge bg-info pull-right"></span> Submit Documents
+                                        
                                     </header>
                                     <?php if ($req_docs->pan_prop == 1) { ?>
                                         <a href="#" class="list-group-item">
@@ -920,10 +640,7 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-pan">Please Submit</span>
                                                 <?php } elseif ($row['pan_prop_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-                                                <?php } elseif ($row['pan_prop_status'] == 1) { ?>
-                                                    <span class="badge md-trigger" data-modal="modal-pan">Please Resubmit</span>
-                                                <?php } elseif ($row['pan_prop_status'] == 2) { ?>
-                                                    <span class="badge md-success">Approved</span>
+                                              
                                                     <?php
                                                 }
                                             }
@@ -945,10 +662,7 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-vat_cst">Please Submit</span>
                                                 <?php } elseif ($row['vat_cst_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-                                                <?php } elseif ($row['vat_cst_status'] == 1) { ?>
-                                                    <span class="badge md-trigger" data-modal="modal-vat_cst">Please Resubmit</span>
-                                                <?php } elseif ($row['vat_cst_status'] == 2) { ?>
-                                                    <span class="badge md-success">Approved</span>
+                                               
                                                     <?php
                                                 }
                                             }
@@ -974,10 +688,7 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-pan_comp">Please Submit</span>
                                                 <?php } elseif ($row['pan_comp_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-                                                <?php } elseif ($row['pan_comp_status'] == 1) { ?>
-                                                    <span class="badge md-trigger" data-modal="modal-pan_comp">Please Resubmit</span>
-                                                <?php } elseif ($row['pan_comp_status'] == 2) { ?>
-                                                    <span class="badge md-success">Approved</span>
+                                              
                                                     <?php
                                                 }
                                             }
@@ -1000,10 +711,7 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-part_deed">Please Submit</span>
                                                 <?php } elseif ($row['part_deed_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-                                                <?php } elseif ($row['part_deed_status'] == 1) { ?>
-                                                    <span class="badge md-trigger" data-modal="modal-part_deed">Please Resubmit</span>
-                                                <?php } elseif ($row['part_deed_status'] == 2) { ?>
-                                                    <span class="badge md-success">Approved</span>
+                                              
                                                     <?php
                                                 }
                                             }
@@ -1025,10 +733,7 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-sign">Please Submit</span>
                                                 <?php } elseif ($row['sign_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-                                                <?php } elseif ($row['sign_status'] == 1) { ?>
-                                                    <span class="badge md-trigger" data-modal="modal-sign">Please Resubmit</span>
-                                                <?php } elseif ($row['sign_status'] == 2) { ?>
-                                                    <span class="badge md-success">Approved</span>
+                                              
                                                     <?php
                                                 }
                                             }
@@ -1049,10 +754,7 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-cert_of_incorp">Please Submit</span>
                                                 <?php } elseif ($row['cert_of_incorp_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-                                                <?php } elseif ($row['cert_of_incorp_status'] == 1) { ?>
-                                                    <span class="badge md-trigger" data-modal="modal-cert_of_incorp">Please Resubmit</span>
-                                                <?php } elseif ($row['cert_of_incorp_status'] == 2) { ?>
-                                                    <span class="badge md-success">Approved</span>
+                                                
                                                     <?php
                                                 }
                                             }
@@ -1074,10 +776,7 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-moa_aoa">Please Submit</span>
                                                 <?php } elseif ($row['moa_aoa_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-                                                <?php } elseif ($row['moa_aoa_status'] == 1) { ?>
-                                                    <span class="badge md-trigger" data-modal="modal-moa_aoa">Please Resubmit</span>
-                                                <?php } elseif ($row['moa_aoa_status'] == 2) { ?>
-                                                    <span class="badge md-success">Approved</span>
+                                             
                                                     <?php
                                                 }
                                             }
@@ -1099,10 +798,7 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-aoa">Please Submit</span>
                                                 <?php } elseif ($row['aoa_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-                                                <?php } elseif ($row['aoa_status'] == 1) { ?>
-                                                    <span class="badge md-trigger" data-modal="modal-aoa">Please Resubmit</span>
-                                                <?php } elseif ($row['aoa_status'] == 2) { ?>
-                                                    <span class="badge md-success">Approved</span>
+                                                
                                                     <?php
                                                 }
                                             }
@@ -1124,10 +820,7 @@ $query = $this->db->get();
                                                     <span class="badge md-trigger" data-modal="modal-shop_establish_trade">Please Submit</span>
                                                 <?php } elseif ($row['shop_establish_trade_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
-                                                <?php } elseif ($row['shop_establish_trade_status'] == 1) { ?>
-                                                    <span class="badge md-trigger" data-modal="modal-shop_establish_trade">Please Resubmit</span>
-                                                <?php } elseif ($row['shop_establish_trade_status'] == 2) { ?>
-                                                    <span class="badge md-success">Approved</span>
+                                                
                                                     <?php
                                                 }
                                             }
@@ -1202,10 +895,7 @@ $query = $this->db->get();
                                                             <span class="badge md-trigger" data-modal="modal-cenvat">Please Submit</span>
                                                         <?php } elseif ($row['cenvat_status'] == 0) { ?>
                                                             <span class="badge md-success">Waiting for approve</span>
-                                                        <?php } elseif ($row['cenvat_status'] == 1) { ?>
-                                                            <span class="badge md-trigger" data-modal="modal-cenvat">Please Resubmit</span>
-                                                        <?php } elseif ($row['cenvat_status'] == 2) { ?>
-                                                            <span class="badge md-success">Approved</span>
+                                                       
                                                             <?php
                                                         }
                                                     }
@@ -1236,10 +926,7 @@ $query = $this->db->get();
                                                                     <span class="badge md-trigger" data-modal="modal-cenvat">Please Submit</span>
                                                                 <?php } elseif ($row['cenvat_status'] == 0) { ?>
                                                                     <span class="badge md-success">Waiting for approve</span>
-                                                                <?php } elseif ($row['cenvat_status'] == 1) { ?>
-                                                                    <span class="badge md-trigger" data-modal="modal-cenvat" data-toggle="tooltip" data-placement="left" data-original-title="Please submit Prefered Documents">Please Resubmit</span>
-                                                                <?php } elseif ($row['cenvat_status'] == 2) { ?>
-                                                                    <span class="badge md-success">Approved</span>
+                                                               
                                                                 <?php
                                                                 }
                                                             }
@@ -1294,10 +981,7 @@ $query = $this->db->get();
                                                             <span class="badge md-trigger" data-modal="modal-servicetax">Please Submit</span>
                                                         <?php } elseif ($row['servicetax_status'] == 0) { ?>
                                                             <span class="badge md-success">Waiting for approve</span>
-                                                        <?php } elseif ($row['servicetax_status'] == 1) { ?>
-                                                            <span class="badge md-trigger" data-modal="modal-servicetax">Please Resubmit</span>
-                                                        <?php } elseif ($row['servicetax_status'] == 2) { ?>
-                                                            <span class="badge md-success">Approved</span>
+                                                     
             <?php
         }
     }
@@ -1328,10 +1012,7 @@ $query = $this->db->get();
                                                                     <span class="badge md-trigger" data-modal="modal-servicetax">Please Submit</span>
                                                                 <?php } elseif ($row['servicetax_status'] == 0) { ?>
                                                                     <span class="badge md-success">Waiting for approve</span>
-                                                                <?php } elseif ($row['servicetax_status'] == 1) { ?>
-                                                                    <span class="badge md-trigger" data-modal="modal-servicetax">Please Resubmit</span>
-                                                                <?php } elseif ($row['servicetax_status'] == 2) { ?>
-                                                                    <span class="badge md-success">Approved</span>
+                                                               
                     <?php
                 }
             }
@@ -1371,11 +1052,7 @@ $query = $this->db->get();
                                                         <span class="badge md-trigger" data-modal="modal-photoid">Please Submit</span>
                                                     <?php } elseif ($row['photoid_status'] == 0) { ?>
                                                         <span class="badge md-success">Waiting for approve</span>
-                                                    <?php } elseif ($row['photoid_status'] == 1) { ?>
-                                                        <span class="badge md-trigger" data-modal="modal-photoid" data-toggle="tooltip" data-placement="left" data-original-title="Please submit Prefered Documents" >Please Resubmit</span>
-                                            
-                                                    <?php } elseif ($row['photoid_status'] == 2) { ?>
-                                                        <span class="badge md-success">Approved</span>
+                                                  
             <?php
         }
     }
@@ -1404,10 +1081,7 @@ $query = $this->db->get();
                                                         <span class="badge md-trigger" data-modal="modal-addressid">Please Submit</span>
                                                     <?php } elseif ($row['addressid_status'] == 0) { ?>
                                                         <span class="badge md-success">Waiting for approve</span>
-                                                    <?php } elseif ($row['addressid_status'] == 1) { ?>
-                                                        <span class="badge md-trigger" data-modal="modal-addressid">Please Resubmit</span>
-                                                    <?php } elseif ($row['addressid_status'] == 2) { ?>
-                                                        <span class="badge md-success">Approved</span>
+                                                  
             <?php
         }
     }
@@ -1428,10 +1102,7 @@ $query = $this->db->get();
                                                         <span class="badge md-trigger" data-modal="modal-businessid">Please Submit</span>
                                                     <?php } elseif ($row['businessid_status'] == 0) { ?>
                                                         <span class="badge md-success">Waiting for approve</span>
-                                                    <?php } elseif ($row['businessid_status'] == 1) { ?>
-                                                        <span class="badge md-trigger" data-modal="modal-businessid" data-toggle="tooltip" data-placement="left" data-original-title="Please submit Prefered Documents">Please Resubmit</span>
-                                                    <?php } elseif ($row['businessid_status'] == 2) { ?>
-                                                        <span class="badge md-success">Approved</span>
+                                                  
             <?php
         }
     }
@@ -1441,6 +1112,54 @@ $query = $this->db->get();
                                             </a>
 
 <?php } ?>
+
+
+                                    </div>
+                                     <div class="list-group bg-white" style="background-color: whitesmoke">
+                                        <header class="panel-heading bg-primary" style=" color: black">
+                                            <span class="badge bg-info pull-right"></span> Other Documents
+                                        </header>
+                                          
+                                            <a href="#" class="list-group-item">
+                                                <i class="icon-chevron-right"></i>
+                                                <?php
+                                                foreach ($query->result_array() as $row) {
+
+                                                    if ($row['comp_file_lock'] == 0 && $row['comp_file_status'] == 5) {
+                                                        ?>
+                                                        <span class="badge md-trigger" data-modal="modal-comp_file">Please Submit</span>
+                                                    <?php } elseif ($row['comp_file_status'] == 0) { ?>
+                                                        <span class="badge md-success">Waiting for approve</span>
+                                                  
+                                                 
+            <?php
+        }
+    }
+    ?>
+                                                <i class="icon-file-text"></i> Company Profile
+                                                <span> - <i data-toggle="tooltip" data-placement="top" title="Upload Company profile if you had" class="fa fa-question-circle"></i></span>
+                                            </a>
+
+                                           
+                                            <a href="#" class="list-group-item">
+                                                <i class="icon-chevron-right"></i>
+                                                <?php
+                                                foreach ($query->result_array() as $row) {
+
+                                                    if ($row['canceled_check_lock'] == 0 && $row['canceled_check_status'] == 5) {
+                                                        ?>
+                                                        <span class="badge md-trigger" data-modal="modal-canceled_check">Please Submit</span>
+                                                    <?php } elseif ($row['canceled_check_status'] == 0) { ?>
+                                                        <span class="badge md-success">Waiting for approve</span>
+                                                 
+            <?php
+        }
+    }
+    ?>
+                                                <i class="icon-credit-card"></i> Cancel Cheque
+                                                <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory 'Please Submit Cancel Cheque'" class="fa fa-question-circle"></i></span>
+                                            </a>
+
 
 
                                     </div>
@@ -1456,98 +1175,10 @@ $query = $this->db->get();
                 </div>
 
 
-
-
-
-
-                <!--Documents status -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </section>
 
 
         </section>
-
-<a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="body"></a>
-</section>
-<!-- /.vbox -->
-</section>
-<!--        <footer class="footer bg-light dker" style="background-color: white ; border-top:solid 1px #c8c8c8">
-            <div class="col-lg-12" style="padding: 30px 20px 5px 30px"><b>BULKHOUSE</b></div>
-            <div class="col-lg-3 col-md-3" style="padding: 5px 20px 30px 30px">
-            <p>About us</p>
-            <p>Careers</p>
-            <p><a href="/main/vendor_on_board">FAQ'S</a></p>
-            <p><a href="/main/selling_process">FAQ'S Selling Process</a></p></div>
-            <div class="col-lg-3 col-md-3" style="padding: 0px 20px 30px 30px"><p><b> </b></p>
-             <p><a href="/main/terms">Domestic Policies</a></p>
-            <p><a href="/main/export_terms">Export Policies</a></p>
-            <p>Infringement Verification Policy</p>
-
-
-                    </footer>-->
-<footer id="footerWrapper" style="font-family:Georgia,Serif; background-color: whitesmoke ; border-top:solid 1px #c8c8c8">
-    <section id="mainFooter">
-
-
-        <div class="row">
-            <div class="col-sm-2 col-xs-2">
-                <!--	<div class="footerWidget">
-                        <img src="img/bg.png" alt="latest Little Neko news" id="footerLogo">
-                                                                
-                        </div>-->
-            </div>
-
-            <div class="col-sm-3 col-xs-4">
-                <div class="footerWidget">
-                    <div class="page-header">
-                        <h4 style="font-family:Georgia,Serif;"><b>BULKHOUSE</b></h4>
-                    </div>
-                    <p>About us</p>
-                    <p>Careers</p>
-
-                </div>
-            </div>
-
-            <div class="col-sm-3 col-xs-3">
-                <div class="footerWidget">
-                    <div class="page-header">
-                        <h4 style="font-family:Georgia,Serif;"><b>FAQ'S</b></h4>
-                    </div>
-
-                    <p><a href="/main/vendor_on_board">FAQ'S</a></p>
-                    <p><a href="/main/selling_process">FAQ'S Selling Process</a></p></div>
-
-            </div>
-            <div class="col-sm-3 col-xs-3">
-                <div class="footerWidget">
-                    <div class="page-header">
-                        <h4 style="font-family:Georgia,Serif;"><b>POLICIES</b></h4>
-                    </div>
-                    <p><a href="/main/terms">Domestic Policies</a></p>
-                    <p><a href="/main/export_terms">Export Policies</a></p>
-                    <p>Infringement Verification Policy</p></div>
-
-            </div>
-        </div>
-
-        </div>
-
-    </section>
-
-</footer>
 
 
 <script src="/js/classie.js"></script>

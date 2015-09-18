@@ -2,7 +2,7 @@
 <html lang="en" class="body-full-height">
     <head>
         <!-- META SECTION -->
-        <title>Bulkhouse Admin</title>
+        <title>Bulkhouse | Manage admin</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,9 +22,24 @@
                 <div class="login-logo"></div>
                 <div class="login-body">
                     <div class="login-title"><strong>Welcome</strong>, Administration login</div>
-                    <?php
-$this->load->view('admin/forms/login_form');
-?>
+                   <form action="/register/team_lead" class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" name="email" class="form-control" placeholder="Email ID"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="password" name="code" class="form-control" placeholder=" Enter Code"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                                <div class="col-md-6">
+                            <input type="submit" id="log_in" value="Log-in" class="btn btn-info btn-block">
+                           
+                        </div>
+                    </div>
+                    </form>
                 </div>
                 <div class="login-footer">
                     <div class="pull-left">

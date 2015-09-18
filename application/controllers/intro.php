@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Intro extends CI_Controller {
 
 
     public function __construct() {
@@ -12,18 +12,15 @@ class Home extends CI_Controller {
             redirect('main','location');
         }  else {
             $this->logged_in = false;
-            
+
         }
-
-
-
     }
 
 	public function index()
 	{
-                $this->load->view('template/header');
-		$this->load->view('home');
-                $this->load->view('template/footer');
+//                $this->load->view('template/header');
+		$this->load->view('intro');
+//                $this->load->view('template/footer');
 	}
         public function terms() {
 
@@ -38,10 +35,13 @@ class Home extends CI_Controller {
 //                $this->load->view('template/footer');
         }
 
-        public function aaptha($email, $firstname, $lastname, $password_sec) {
-        $this->load->spark('mage-api/0.0.1');
-        $this->mage_api->customer_create(array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'password' => $password_sec, 'website_id' => 1, 'store_id' => 1, 'group_id' => 4));
-    }
+        public function register() {
+
+            $this->load->view('intro_register');
+
+        }
+
+
 
 }
 

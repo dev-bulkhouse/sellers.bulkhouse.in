@@ -11,7 +11,7 @@ class Vendor_update extends CI_Model {
 
 
 
-    public function add_document($document_info, $file_type, $comp_id,$a) {
+    public function add_document($document_info, $file_type, $sourcePath, $targetPath, $dir, $comp_id,$a) {
         $file_type = explode('/', $file_type);
         if($file_type[1] == 'jpeg'){
             $file_type[1] = 'jpg';
@@ -26,8 +26,17 @@ class Vendor_update extends CI_Model {
         );
         $this->db->where('compid', $comp_id);
         $this->db->update('document_details', $c);
+        if (!file_exists($dir)) {
+            mkdir($dir, 0777);
+            move_uploaded_file($sourcePath, $targetPath);
 
-        return "uploaded !!";
+
+            return "Uploaded!!";
+        } else {
+            move_uploaded_file($sourcePath, $targetPath);
+
+            return "Uploaded!!";
+        }
     }
 
 
@@ -87,21 +96,21 @@ class Vendor_update extends CI_Model {
             $cert_of_incorp_status = $st->cert_of_incorp_status;
             $moa_aoa_status = $st->moa_aoa_status;
             $aoa_status = $st->aoa_status;
-            $shop_establish_trade =$st->shop_establish_trade;
-            $photoid =$st->photoid;
-            $businessid =$st->businessid;
+            $shop_establish_trade =$st->shop_establish_trade_status;
+            $photoid =$st->photoid_status;
+            $businessid =$st->businessid_status;
 
 
 
              if($firm_type == 'partnership'){
-                 if($photoid == 5 ||$vat_cst_status == 5 || $cst_status == 5 || $pan_comp_status == 5 || $part_deed_status == 5 ){
+                 if($pan_prop_status == 5 || $photoid == 5 ||$vat_cst_status == 5 || $cst_status == 5 || $pan_comp_status == 5 || $part_deed_status == 5 ){
                      return "Need To Upload";
-                 }elseif($photoid == 0 || $vat_cst_status == 0 || $cst_status == 0 || $pan_comp_status == 0 || $part_deed_status == 0){
+                 }elseif($pan_prop_status == 0 || $photoid == 0 || $vat_cst_status == 0 || $cst_status == 0 || $pan_comp_status == 0 || $part_deed_status == 0){
                      return "Waiting for Approved";
-                 }elseif($photoid == 2 || $vat_cst_status == 2 || $cst_status == 2 || $pan_comp_status == 2 || $part_deed_status == 2){
+                 }elseif($pan_prop_status == 2 || $photoid == 2 || $vat_cst_status == 2 || $cst_status == 2 || $pan_comp_status == 2 || $part_deed_status == 2){
                      return "Approved";
 
-                 }elseif($photoid == 1 || $vat_cst_status == 1 || $cst_status == 1 || $pan_comp_status == 1 || $part_deed_status == 1){
+                 }elseif($pan_prop_status == 1 || $photoid == 1 || $vat_cst_status == 1 || $cst_status == 1 || $pan_comp_status == 1 || $part_deed_status == 1){
                      return "Disapproved";
                  }
 
@@ -126,7 +135,7 @@ class Vendor_update extends CI_Model {
                  }elseif($photoid == 2 || $vat_cst_status == 2 || $cst_status == 2 || $pan_comp_status == 2 || $cert_of_incorp_status == 2 || $moa_aoa_status == 2 || $aoa_status == 2){
                      return "Approved";
 
-                 }elseif($photoid == 2 || $vat_cst_status == 1 || $cst_status == 1 || $pan_comp_status == 1 || $cert_of_incorp_status == 1 || $moa_aoa_status == 1 || $aoa_status == 1){
+                 }elseif($photoid == 1 || $vat_cst_status == 1 || $cst_status == 1 || $pan_comp_status == 1 || $cert_of_incorp_status == 1 || $moa_aoa_status == 1 || $aoa_status == 1){
                      return "Disapproved";
                  }
 
@@ -190,7 +199,7 @@ $this->db->select('*');
             $agree = $st->agree;
 
 
-
+        
 
 
                  if($address1 == "" || $address2 == "" || $city == "" || $state == "" || $pincode == "" || $contact_name == "" || $mobile_contact == "" || $email_contact == "" || $year_establishment == "" || $comp_turnover == "" || $reg_category == "" || $tax_reg == "" || $cert_products == "" ){
@@ -258,13 +267,39 @@ $this->db->select('*');
         return $ver[0]->version;
 
     }
-    public function edit($compid,$field) {
+    public function edit($compid) {
 
         $compid = $this->session->userdata('id');
         $email = $this->session->userdata('email');
 
         $data = array(
-           $field => $this->input->post($field)
+           'vendor_name' => $this->input->post('vendor_name'),
+            'max_credit_limit' => $this->input->post('max_credit_limit'),
+            'address1' => $this->input->post('address1'),
+            'address2' => $this->input->post('address2'),
+            'city' => $this->input->post('city'),
+            'state' => $this->input->post('state'),
+            'pin_code' => $this->input->post('pin_code'),
+            'country' => $this->input->post('country'),
+            'contact_name' => $this->input->post('contact_name'),
+            'mobile_contact' => $this->input->post('mobile_contact'),
+            'email_contact' => $this->input->post('email_contact'),
+            'website' => $this->input->post('website'),
+            'land_line' => $this->input->post('land_line'),
+            'year_establishment' => $this->input->post('year_establishment'),
+            'no_employees' => $this->input->post('no_employees'),
+            'comp_turnover' => $this->input->post('comp_turnover'),
+            'reg_category' => $this->input->post('reg_category'),
+            'pro_category' => $this->input->post('pro_category'),
+            'tax_reg' => $this->input->post('tax_reg'),
+            'cert_products' => $this->input->post('cert_products'),
+            'dispat_person' => $this->input->post('dispat_person'),
+            'dispat_email' => $this->input->post('dispat_email'),
+            'dispat_mobile' => $this->input->post('dispat_mobile'),
+            'dispat_land' => $this->input->post('dispat_land'),
+            'dispat_address1' => $this->input->post('dispat_address1'),
+            'dispat_address2' => $this->input->post('dispat_address2'),
+            'dispat_city' => $this->input->post('dispat_city'),
         );
 
 

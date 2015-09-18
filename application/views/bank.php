@@ -154,7 +154,7 @@ $query = $this->db->get();
                                     <div class="row">
                                     <form id="canceled_check" method="post" enctype="multipart/form-data" style="margin-top: 10px">
 
-                                                <input type="hidden" name="email" id="email" value="<?php echo  $email; ?>">
+                                                <input type="hidden" name="email" id="email" value="<?= $email; ?>">
                                                      <?php
                                             foreach ($query->result_array() as $row) {
 
@@ -199,7 +199,7 @@ $query = $this->db->get();
 <div class="row">
                                                     <div class="col-md-4">
                                                         <label class="control-label">Bank Account Name:</label>
-                                                        <input type="hidden"  name ="email" value="<?php echo  $email ?>">
+                                                        <input type="hidden"  name ="email" value="<?= $email ?>">
                                                         <input type="text" placeholder="Bank Account Name" name ="account_name" class="bg-focus form-control" required="required" value=" <?php
                                                         $details = $this->register_model->bankdetails($compid);
                                                         foreach ($details as $row) {
