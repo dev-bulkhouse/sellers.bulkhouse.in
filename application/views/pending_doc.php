@@ -256,7 +256,7 @@ $query = $this->db->get();
 
                             //                    $('a.md-close').trigger('click');
                             //                    setInterval('refreshPage()',3000);
-                            location.reload();
+//                            location.reload();
 
                         },
                         error: function ()
