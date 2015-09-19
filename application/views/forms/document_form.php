@@ -1,7 +1,7 @@
 <div class="md-modal md-effect-10" id="<?php echo  $id_modal; ?>" style="position: absolute">
     <div class="md-content">
 
-        <?php if ($doc_title == "Partnership Deed Details" || $doc_title == "Shop establishment/Trade Licence" || $doc_title == "Certificate of Incorporation Details" || $doc_title == "Memorandum Of Association" || $doc_title == "Articles Of Association" || $doc_title == "Resident Address Proof" || $doc_title == "Buiseness Address Proof") { ?>
+        <?php if ($doc_title == "Partnership Deed Details" || $doc_title == "Shop establishment/Trade Licence" || $doc_title == "Certificate of Incorporation Details" || $doc_title == "Memorandum Of Association" || $doc_title == "Articles Of Association" || $doc_title == "Resident Address Proof" || $doc_title == "Buiseness Address Proof" || $doc_title == "Company Profile" || $doc_title == "Cancel Cheque") { ?>
 
         <h3 style="font-size: 2em"><?php echo  $doc_title; ?>  <a style="cursor: default; color: white" class="md-close" aria-label="Close">&#215;</a></h3>
         <div>

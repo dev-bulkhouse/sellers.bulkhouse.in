@@ -1185,7 +1185,7 @@ $query = $this->db->get();
                                                 <?php } elseif ($row['comp_file_status'] == 0) { ?>
                                                     <span class="badge md-success">Waiting for approve</span>
                                                 <?php } elseif ($row['comp_file_status'] == 1) { ?>
-                                                    <span class="badge md-trigger" data-modal="modal-businessid">Please Resubmit</span>
+                                                    <span class="badge md-trigger" data-modal="modal-comp_file">Please Resubmit</span>
                                                 <?php } elseif ($row['comp_file_status'] == 2) { ?>
                                                     <span class="badge md-success">Approved</span>
 
@@ -1211,7 +1211,7 @@ $query = $this->db->get();
                                                     <span class="badge md-success">Waiting for approve</span>
 
                                                 <?php } elseif ($row['canceled_check_status'] == 1) { ?>
-                                                    <span class="badge md-trigger" data-modal="modal-businessid">Please Resubmit</span>
+                                                    <span class="badge md-trigger" data-modal="modal-canceled_check">Please Resubmit</span>
                                                 <?php } elseif ($row['canceled_check_status'] == 2) { ?>
                                                     <span class="badge md-success">Approved</span>
 
