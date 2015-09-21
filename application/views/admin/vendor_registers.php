@@ -56,6 +56,7 @@ if ($logged_in) {
                             <th>Company Name</th>
                             <th>Email</th>
                             <th>Contact Number</th>
+                             <th>Submission Date</th>
                              <th>Type</th>
 
                        </tr>
@@ -74,6 +75,7 @@ if ($logged_in) {
                             <td><?php echo $vendor->firm_name; ?></td>
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
+                            <td><?php echo $vendor->registered_on; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
 
                         </tr>
@@ -112,6 +114,7 @@ if ($logged_in) {
                             <th>Company Name</th>
                             <th>Email</th>
                             <th>Contact Number</th>
+                             <th>Submission Date</th>
                              <th>Type</th>
 
                        </tr>
@@ -129,6 +132,7 @@ if ($logged_in) {
                             <td><?php echo $vendor->firm_name; ?></td>
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
+                              <td><?php echo $vendor->registered_on; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
 
                         </tr>
@@ -169,6 +173,7 @@ if ($logged_in) {
                             <th>Company Name</th>
                             <th>Email</th>
                             <th>Contact Number</th>
+
                              <th>Type</th>
 
                        </tr>
@@ -189,6 +194,7 @@ if ($logged_in) {
                             <td><?php echo $vendor->firm_name; ?></td>
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
+
                             <td><?php echo $vendor->firm_type; ?></td>
 
                         </tr>
@@ -227,6 +233,7 @@ if ($logged_in) {
                             <th>Company Name</th>
                             <th>Email</th>
                             <th>Contact Number</th>
+
                              <th>Type</th>
 
                        </tr>
@@ -256,6 +263,7 @@ if ($logged_in) {
                             <td><?php echo $vendor->firm_name; ?></td>
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
+
                             <td><?php echo $vendor->firm_type; ?></td>
 
                         </tr>
@@ -308,7 +316,7 @@ if ($logged_in) {
                  $this->db->or_where('document_details.pan_comp_status', 5);
                    $this->db->or_where('document_details.moa_aoa_status', 5);
                      $this->db->or_where('document_details.aoa_status', 5);
-                      $this->db->or_where('document_details.cert_of_incorp_status', 5);
+                      $this->db->where('document_details.cert_of_incorp_status', 5);
 
                   $this->db->or_where('document_details.photoid', 5);
                    $this->db->or_where('document_details.addressid', 5);
@@ -461,7 +469,7 @@ if ($logged_in) {
         <!-- END PAGE PLUGINS -->
 
         <!-- START TEMPLATE -->
-        <script type="text/javascript" src="/js/settings.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
 
         <script type="text/javascript" src="/js/plugins.js"></script>
         <script type="text/javascript" src="/js/actions.js"></script>

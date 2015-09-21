@@ -19,17 +19,42 @@ if ($logged_in) {
 
 <!-- PAGE TITLE -->
 <div class="page-title">
-    <h2><span class="fa fa-arrow-circle-o-left"></span>
-        <?php if ($doc_type == "pan_prop") { ?> Pan-card
+    <h2><span ><a href="\verification" class="fa fa-arrow-circle-o-left"></a></span>
+        <?php if ($doc_type == "pan_prop") { ?> Pan Card
         <?php } elseif ($doc_type == "vat_cst") { ?>
-            VAT CST
+            VAT - CST
         <?php } elseif ($doc_type == "pan_comp") { ?>
             Company Pan-card
         <?php } elseif ($doc_type == "moa_aoa") { ?>
             MOA and AOA
         <?php } elseif ($doc_type == "cert_of_incorp") { ?>
             Certificate of Incorporation
+
+         <?php } elseif ($doc_type == "cst") { ?>
+           CST
+        <?php } elseif ($doc_type == "aoa") { ?>
+          AOA
+      <?php } elseif ($doc_type == "shop_establish_trade") { ?>
+         Shop and Establishment or Trade License
+      <?php } elseif ($doc_type == "photoid") { ?>
+         PHOTO-ID
+       <?php } elseif ($doc_type == "addressid") { ?>
+        ADDRESS -ID
+       <?php } elseif ($doc_type == "businessid") { ?>
+         BUSINESS-ID
+      <?php } elseif ($doc_type == "cenvat") { ?>
+         CENVAT Proof
+      <?php } elseif ($doc_type == "servicetax") { ?>
+        Service Tax
+     <?php } elseif ($doc_type == "sign") { ?>
+           Signatures Proof
+        <?php } elseif ($doc_type == "part_deed") { ?>
+        New Partnership Deed
+
+              <?php } elseif ($doc_type == "comp_file") { ?>
+      Company Profiles
         <?php } ?>
+
     </h2>
 </div>
 <!-- END PAGE TITLE -->
