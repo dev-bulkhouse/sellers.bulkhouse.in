@@ -43,7 +43,7 @@ body {
   min-height: 100%;
   padding: 0px;
   margin: 0px;
-  background: #f5f5f5 url('../img/bg.png') left top repeat;
+  background: url('../img/bg.png') repeat;
   position: relative;
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
@@ -240,7 +240,7 @@ body {
   padding-right: 50px;
 }
 body.page-container-boxed {
-  background: url("../img/backgrounds/wall_1.jpg") left top no-repeat fixed;
+  background: url("/img/wall_1.jpg") left top no-repeat fixed;
   padding: 20px 0px;
 }
 body.page-container-boxed .page-container {
@@ -1796,7 +1796,10 @@ ul.panel-controls > li > .dropdown-menu:before {
   font-size: 11px;
 }
 .panel-body.panel-body-pricing .fa {
-  color: #EEE;
+  color: #61B7A3;
+}
+.panel-body.panel-body-pricing .glyphicon {
+  color: #61B7A3;
 }
 /* PANEL BODY PRICING */
 /* PANEL REFRESHING */

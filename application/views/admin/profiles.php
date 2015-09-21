@@ -515,6 +515,32 @@
 
                                     </span>
 
+                                    <?php } ?>
+
+    <?php if ($comp_file_status == 5) { ?>
+  </br>
+                                    </br>
+                                    <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Company profile</b></small></a>
+    <?php } elseif ($comp_file_status == 0) { ?>
+                                     </br>
+                                    </br>
+                                    <span data-toggle="tooltip" title="waiting for approve!">
+                                        <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-warning"><i class="fa fa-exclamation"></i><small><b>Company profile</b></small></a>
+                                    </span>
+    <?php } elseif ($comp_file_status == 2) { ?>
+                                    </br>
+                                    </br>
+                                    <span data-toggle="tooltip" title="Approved!">
+                                        <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Company profile</b></small></a>
+                                    </span>
+    <?php } elseif ($comp_file_status == 1) { ?>
+                                    </br>
+                                    </br>
+                                    <span data-toggle="tooltip" title="Disapproved!">
+                                        <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Company profile</b></small></a>
+
+                                    </span>
+
                                     <?php
                                 }
                             } elseif ($firm_type == 'proprietorship') {
@@ -670,6 +696,32 @@
     <?php } elseif ($servicetax_status == 1) { ?>
                                     <span data-toggle="tooltip" title="Disapproved!">
                                         <a   data-toggle="modal" data-target="#servicetax" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Service Tax</b></small></a>
+
+                                    </span>
+  <?php } ?>
+
+    <?php if ($comp_file_status == 5) { ?>
+                                    </br>
+                                    </br>
+
+                                    <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Company profile</b></small></a>
+    <?php } elseif ($comp_file_status == 0) { ?>
+                                    </br>
+                                    </br>
+                                    <span data-toggle="tooltip" title="waiting for approve!">
+                                        <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-warning"><i class="fa fa-exclamation"></i><small><b>Company profile</b></small></a>
+                                    </span>
+    <?php } elseif ($comp_file_status == 2) { ?>
+                                    </br>
+                                    </br>
+                                    <span data-toggle="tooltip" title="Approved!">
+                                        <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Company profile</b></small></a>
+                                    </span>
+    <?php } elseif ($comp_file_status == 1) { ?>
+                                    </br>
+                                    </br>
+                                    <span data-toggle="tooltip" title="Disapproved!">
+                                        <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Company profile</b></small></a>
 
                                     </span>
 
@@ -843,9 +895,34 @@
                                             <a   data-toggle="modal" data-target="#servicetax" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Service Tax</b></small></a>
 
                                         </span>
+  <?php } ?>
 
-                                        <?php
-                                    }
+    <?php if ($comp_file_status == 5) { ?>
+</br>
+                                    </br>
+                                    <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Company profile</b></small></a>
+    <?php } elseif ($comp_file_status == 0) { ?>
+                                    </br>
+                                    </br>
+                                    <span data-toggle="tooltip" title="waiting for approve!">
+                                        <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-warning"><i class="fa fa-exclamation"></i><small><b>Company profile</b></small></a>
+                                    </span>
+    <?php } elseif ($comp_file_status == 2) { ?>
+                                    </br>
+                                    </br>
+                                    <span data-toggle="tooltip" title="Approved!">
+                                        <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Company profile</b></small></a>
+                                    </span>
+    <?php } elseif ($comp_file_status == 1) { ?>
+                                    </br>
+                                    </br>
+                                    <span data-toggle="tooltip" title="Disapproved!">
+                                        <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Company profile</b></small></a>
+
+                                    </span>
+
+                                    <?php
+                                  }
                                 }
                                 ?>
 
@@ -886,18 +963,34 @@
                                 <?php } elseif ($status == 5) { ?>
 
                                     <a   data-toggle="tooltip" title="Wrong!" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Bank status</b></small></a>
-                                    <?php
-                                }
+                                     <?php } ?>
+
+    <?php if ($canceled_check_status == 5) { ?>
+
+                                    <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Canceled check</b></small></a>
+    <?php } elseif ($canceled_check_status == 0) { ?>
+                                    <span data-toggle="tooltip" title="waiting for approve!">
+                                        <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-warning"><i class="fa fa-exclamation"></i><small><b>Canceled check</b></small></a>
+                                    </span>
+    <?php } elseif ($canceled_check_status == 2) { ?>
+                                    <span data-toggle="tooltip" title="Approved!">
+                                        <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Canceled check</b></small></a>
+                                    </span>
+    <?php } elseif ($canceled_check_status == 1) { ?>
+                                    <span data-toggle="tooltip" title="Disapproved!">
+                                        <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Canceled check</b></small></a>
+                                    </span>
+                                <?php }
                             } elseif ($firm_type == 'pvt_or_ltd') {
 
                                 if ($status == 10) {
                                     ?>
 
                                     <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Bank status</b></small></a>
-    <?php } elseif ($status == 0) { ?>
+    <?php }                            elseif ($status == 0) { ?>
 
-                                    <a   data-toggle="tooltip" title="Submitted!" class="btn btn-circle btn-primary"><i class="glyphicon glyphicon-thumbs-up"></i></a>
-                                    <small><b>Bank status</b></small></a>
+                                    <a   data-toggle="tooltip" title="Submitted!" class="btn btn-circle btn-primary"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Bank status</b></small></a>
+
                                 <?php } elseif ($status == 1) { ?>
 
                                     <a   data-toggle="tooltip" title="Dispatch!" class="btn btn-circle btn-info"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Bank status</b></small></a>
@@ -913,8 +1006,24 @@
                                 <?php } elseif ($status == 5) { ?>
 
                                     <a   data-toggle="tooltip" title="Wrong!" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Bank status</b></small></a>
-                                    <?php
-                                }
+                                   <?php } ?>
+
+    <?php if ($canceled_check_status == 5) { ?>
+
+                                    <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Canceled check</b></small></a>
+    <?php } elseif ($canceled_check_status == 0) { ?>
+                                    <span data-toggle="tooltip" title="waiting for approve!">
+                                        <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-warning"><i class="fa fa-exclamation"></i><small><b>Canceled check</b></small></a>
+                                    </span>
+    <?php } elseif ($canceled_check_status == 2) { ?>
+                                    <span data-toggle="tooltip" title="Approved!">
+                                        <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Canceled check</b></small></a>
+                                    </span>
+    <?php } elseif ($canceled_check_status == 1) { ?>
+                                    <span data-toggle="tooltip" title="Disapproved!">
+                                        <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Canceled check</b></small></a>
+                                    </span>
+                                <?php }
                             } elseif ($firm_type == 'proprietorship') {
                                 if ($status == 10) {
                                     ?>
@@ -939,8 +1048,24 @@
                                 <?php } elseif ($status == 5) { ?>
 
                                     <a   data-toggle="tooltip" title="Wrong!" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Bank status</b></small></a>
-                                    <?php
-                                }
+                                    <?php } ?>
+
+    <?php if ($canceled_check_status == 5) { ?>
+
+                                    <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Canceled check</b></small></a>
+    <?php } elseif ($canceled_check_status == 0) { ?>
+                                    <span data-toggle="tooltip" title="waiting for approve!">
+                                        <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-warning"><i class="fa fa-exclamation"></i><small><b>Canceled check</b></small></a>
+                                    </span>
+    <?php } elseif ($canceled_check_status == 2) { ?>
+                                    <span data-toggle="tooltip" title="Approved!">
+                                        <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Canceled check</b></small></a>
+                                    </span>
+    <?php } elseif ($canceled_check_status == 1) { ?>
+                                    <span data-toggle="tooltip" title="Disapproved!">
+                                        <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Canceled check</b></small></a>
+                                    </span>
+                                <?php }
                             }
                             ?>
 
