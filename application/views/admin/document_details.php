@@ -640,7 +640,6 @@ if ($logged_in) {
                                 <tr>
                                     <th>Name</th>
                                     <th>Company Name</th>
-                                    <th>MOA and AOA</th>
                                     <th>Date of Submission</th>
                                     <th>Preview</th>
                                     <th>Action</th>
@@ -660,7 +659,6 @@ if ($logged_in) {
                                     <tr>
                                         <td><?php echo $comp_file->vendor_name; ?></td>
                                         <td><?php echo $comp_file->firm_name; ?></td>
-                                        <td><?php echo $comp_file->comp_file; ?></td>
                                         <td><?php echo $comp_file->comp_file_date; ?></td>
                                         <td><button type="button" class="btn btn-info active" data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $comp_file->compid; ?>">View</button></td>
                                         <td><form style="float: left" method="post" action="/change/approve/<?php echo $comp_file->compid . '/comp_file' ?>"><button type="submit" class="btn btn-success active">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $comp_file->compid . '/comp_file' ?>"><button type="submit" class="btn btn-danger active">Disapprove</button></form></td>

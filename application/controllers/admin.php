@@ -690,4 +690,33 @@ class Admin extends CI_Controller {
         }
     }
 
+    public function document_preview_profile() {
+        $compid = $_GET['id'];
+        $this->db->select('*');
+        $this->db->from('document_details');
+        $this->db->join('vendor_details', 'vendor_details.id = compid');
+        $this->db->where(array('vendor_details.id' => $compid));
+        $query = $this->db->get();
+        foreach ($query->result_array() as $row) {
+            $details['compid'] = $row['compid'];
+            $details['vendor_name'] = $row['vendor_name'];
+            $details['last_name'] = $row['last_name'];
+            $details['company_name'] = $row['firm_name'];
+            $details['firm_type'] = $row['firm_type'];
+            $details['firm_name'] = $row['firm_name'];
+            $details['email'] = $row['email'];
+            $details['mobile'] = $row['mobile'];
+            $details['document'] = $row['comp_file'];
+            $details['document_date'] = $row['comp_file_date'];
+            $details['type'] = $row['comp_file_type'];
+            $details['file_name'] = "_comp_file";
+            $details['button'] = "/comp_file";
+            $details['document_name'] = "Company Profile";
+            $details['address'] = "Address";
+            $details['address1'] = $row['address1'];
+            $details['address2'] = $row['address2'];
+            $this->load->view('admin/preview_details', $details);
+        }
+    }
+
 }
