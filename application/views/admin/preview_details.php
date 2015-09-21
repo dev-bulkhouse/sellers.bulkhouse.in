@@ -31,8 +31,8 @@
 
         </tbody>
     </table>
-    <hr>
-    <?php if (isset($document_name)) { ?>
+    <hr><?php if (isset($document_name)) { ?>
+    <?php if (isset($document)) { ?>
         <div class="col-md-6">
 
             <div class="panel panel-success push-up-20">
@@ -52,6 +52,8 @@
 
         </div>
 <?php } else {
+
+    }}  else {
 
 } ?>
 <?php if (isset($address1)) { ?>
