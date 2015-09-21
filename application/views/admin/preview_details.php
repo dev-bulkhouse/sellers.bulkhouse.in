@@ -32,7 +32,7 @@
         </tbody>
     </table>
     <hr>
-    <?php if (isset($document)) { ?>
+    <?php if (isset($document_name)) { ?>
         <div class="col-md-6">
 
             <div class="panel panel-success push-up-20">

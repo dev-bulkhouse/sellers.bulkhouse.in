@@ -376,7 +376,6 @@ class Admin extends CI_Controller {
             $details['type'] = $row['aoa_type'];
             $details['file_name'] = "_aoa";
             $details['button'] = "/aoa";
-            $details['document_name'] = "AOA Number";
 
             $this->load->view('admin/preview_details', $details);
         }
@@ -598,7 +597,6 @@ class Admin extends CI_Controller {
             $details['address'] = "Address";
             $details['address1'] = $row['address1'];
             $details['address2'] = $row['address2'];
-            $details['document_name'] = "Partnership deed Number";
 
             $this->load->view('admin/preview_details', $details);
         }
@@ -650,7 +648,6 @@ class Admin extends CI_Controller {
             $details['document'] = $row['moa_aoa'];
             $details['document_date'] = $row['moa_aoa_date'];
             $details['type'] = $row['moa_aoa_type'];
-            $details['document_name'] = "MOA and AOA Number";
             $details['file_name'] = "_moa_aoa";
             $details['button'] = "/moa_aoa";
             $details['address'] = "Address";
@@ -711,7 +708,6 @@ class Admin extends CI_Controller {
             $details['type'] = $row['comp_file_type'];
             $details['file_name'] = "_comp_file";
             $details['button'] = "/comp_file";
-            $details['document_name'] = "Company Profile";
             $details['address'] = "Address";
             $details['address1'] = $row['address1'];
             $details['address2'] = $row['address2'];
