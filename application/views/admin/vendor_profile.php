@@ -73,7 +73,6 @@ if ($logged_in) {
                             <td><?php echo $vendor->mobile; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
                             <td><a class="btn btn-info active" href="<?php echo site_url()?>admin/profile/<?php echo $vendor->id; ?>">view</a> <a class="btn btn-danger active mb-control" data-box="#message-box-info">Delete</a></td>
-
                         </tr>
 
 
