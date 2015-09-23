@@ -72,7 +72,7 @@ if ($logged_in) {
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
-                            <td><a style="cursor:pointer;" data-toggle="modal" data-target="#myModal" href="<?php echo site_url()?>/admin/profiles/<?php echo $vendor->id; ?>">view</a></td>
+                            <td><a class="btn btn-info active" href="<?php echo site_url()?>admin/profile/<?php echo $vendor->id; ?>">view</a> <button type="button" class="btn btn-danger active mb-control" data-box="#message-box-info">Delete</button></td>
 
                         </tr>
 
@@ -80,10 +80,24 @@ if ($logged_in) {
                     <?php } ?>
                 </tbody>
             </table>
+ <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-danger"></span> Information</div>
+                    <div class="mb-content">
+                        <p>Are you sure ? You want to delete existing Customer ?</p>
+                    </div>
+                    <div class="mb-footer">
 
+                         <a  href= "<?php echo site_url()?>register/delete/<?php echo $vendor->id ?>" class="btn btn-default btn-lg pull-right">Yes</a>
+                         <button class="btn btn-default btn-lg pull-right mb-control-close">No</button>
+                    </div>
+                </div>
+            </div>
 </div>
 
 </div><!--/container-->
+
+
                                 </div>
                             </div>
 
@@ -126,23 +140,23 @@ if ($logged_in) {
 
     <!-- START SCRIPTS -->
         <!-- START PLUGINS -->
-        <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap.min.js"></script>
         <!-- END PLUGINS -->
 
         <!-- THIS PAGE PLUGINS -->
-        <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
-        <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        <script type='text/javascript' src='/js/plugins/icheck/icheck.min.js'></script>
+        <script type="text/javascript" src="/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
 
-        <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
         <!-- END PAGE PLUGINS -->
 
         <!-- START TEMPLATE -->
         <script type="text/javascript" src="js/settings.js"></script>
 
-        <script type="text/javascript" src="js/plugins.js"></script>
-        <script type="text/javascript" src="js/actions.js"></script>
+        <script type="text/javascript" src="/js/plugins.js"></script>
+        <script type="text/javascript" src="/js/actions.js"></script>
         <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
 
