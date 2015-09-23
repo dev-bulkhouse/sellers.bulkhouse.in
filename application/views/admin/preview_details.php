@@ -97,18 +97,14 @@
     $filejpg_a = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $compid . $file_name . ".JPG";
     $filepdf = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $compid . $file_name . ".pdf";
     $filepdf_a = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $compid . $file_name . ".PDF";
-    if ($pan_prop_type == $filejpg || $pan_prop_type == $filejpg_a) {
+    if ($pan_prop_type == $filejpg || $pan_prop_type == $filejpg_a || $pan_prop_type == $filejpeg_a || $pan_prop_type == $filejpeg) {
         ?>
         <div class="modal-body">
             <img src="<?php echo $pan_prop_type; ?>" class="img-responsive">
         </div>
 <?php } elseif ($pan_prop_type == $filepdf || $pan_prop_type == $filepdf_a) { ?>
         <div class="modal-body">
-            <iframe  width="100%" height="1000px" src="<?php echo $pan_prop_type; ?>" class="img-responsive" >
-        </div>
-<?php } elseif ($pan_prop_type == $filejpeg || $pan_prop_type == $filejpeg_a) { ?>
-        <div class="modal-body">
-            <iframe  width="100%" height="1000px" src="<?php echo $pan_prop_type; ?>" class="img-responsive" >
+            <iframe  width="100%" height="1000px" src="<?php echo $pan_prop_type; ?>" class="img-responsive" ></iframe>
         </div>
 
 <?php } else { ?>
