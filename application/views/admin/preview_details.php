@@ -91,12 +91,12 @@
     <?php
     $pan_prop_type = $type;
 
-    $filejpg = "http://sellers.yesdesigns.files.s3.amazonaws.com/" . $compid . $file_name . ".jpg";
-    $filejpeg = "http://sellers.yesdesigns.files.s3.amazonaws.com/" . $compid . $file_name . ".jpeg";
-    $filejpeg_a = "http://sellers.yesdesigns.files.s3.amazonaws.com/" . $compid . $file_name . ".JPEG";
-    $filejpg_a = "http://sellers.yesdesigns.files.s3.amazonaws.com/" . $compid . $file_name . ".JPG";
-    $filepdf = "http://sellers.yesdesigns.files.s3.amazonaws.com/" . $compid . $file_name . ".pdf";
-    $filepdf_a = "http://sellers.yesdesigns.files.s3.amazonaws.com/" . $compid . $file_name . ".PDF";
+    $filejpg = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $compid . $file_name . ".jpg";
+    $filejpeg = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $compid . $file_name . ".jpeg";
+    $filejpeg_a = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $compid . $file_name . ".JPEG";
+    $filejpg_a = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $compid . $file_name . ".JPG";
+    $filepdf = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $compid . $file_name . ".pdf";
+    $filepdf_a = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $compid . $file_name . ".PDF";
     if ($pan_prop_type == $filejpg || $pan_prop_type == $filejpg_a) {
         ?>
         <div class="modal-body">
