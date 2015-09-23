@@ -72,7 +72,7 @@ if ($logged_in) {
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
-                            <td><a class="btn btn-info active" href="<?php echo site_url()?>admin/profile/<?php echo $vendor->id; ?>">view</a> <button type="button" class="btn btn-danger active mb-control" data-box="#message-box-info">Delete</button></td>
+                            <td><a class="btn btn-info active" href="<?php echo site_url()?>admin/profile/<?php echo $vendor->id; ?>">view</a> <a class="btn btn-danger active mb-control" data-box="#message-box-info">Delete</a></td>
 
                         </tr>
 
@@ -80,7 +80,8 @@ if ($logged_in) {
                     <?php } ?>
                 </tbody>
             </table>
- <div class="mb-container">
+                                     <div class="message-box message-box-danger animated fadeIn" id="message-box-info">
+<div class="mb-container">
                 <div class="mb-middle">
                     <div class="mb-title"><span class="fa fa-danger"></span> Information</div>
                     <div class="mb-content">
@@ -94,6 +95,7 @@ if ($logged_in) {
                 </div>
             </div>
 </div>
+
 
 </div><!--/container-->
 
