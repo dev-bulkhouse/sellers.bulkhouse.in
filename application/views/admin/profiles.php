@@ -213,6 +213,17 @@
 
             </div>
         </div>
+        <div id="comp_file" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="ct"></div>
+                </div>
+
+            </div>
+        </div>
 
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
@@ -563,23 +574,7 @@
                                     <span data-toggle="tooltip" title="Submited!">
                                         <a  data-toggle="modal" data-target="#pan_prop" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-check"></i><small><b>Pan Card</b></small></a>
                                     </span>
-                                <?php } ?>
-    <?php if ($pan_comp_status == 5) { ?>
 
-                                    <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Company Pan</b></small></a>
-
-    <?php } elseif ($pan_comp_status == 0) { ?>
-                                    <span data-toggle="tooltip" title="Waiting for approve!!">
-                                        <a   data-toggle="modal" data-target="#comp" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-warning"><i class="fa fa-exclamation"></i><small><b>Company Pan</b></small></a>
-                                    </span>
-    <?php } elseif ($pan_comp_status == 2) { ?>
-                                    <span data-toggle="tooltip" title="Approved!">
-                                        <a   data-toggle="modal" data-target="#comp" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Company Pan</b></small></a>
-                                    </span>
-    <?php } elseif ($pan_comp_status == 1) { ?>
-                                    <span data-toggle="tooltip" title="Disapproved!">
-                                        <a   data-toggle="modal" data-target="#comp" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Company Pan</b></small></a>
-                                    </span>
                                 <?php } ?>
 
     <?php if ($shop_establish_trade_status == 5) { ?>
@@ -1454,6 +1449,26 @@
                     $.ajax({
                         type: "GET",
                         url: "/admin/document_preview_cert_of_incorp/",
+                        data: dataString,
+                        cache: false,
+                        success: function (data) {
+                            console.log(data);
+                            modal.find('.ct').html(data);
+                        },
+                        error: function (err) {
+                            console.log(err);
+                        }
+                    });
+                })
+                $('#canceled_check').on('show.bs.modal', function (event) {
+                    var button = $(event.relatedTarget); // Button that triggered the modal
+                    var recipient = button.data('whatever'); // Extract info from data-* attributes
+                    var modal = $(this);
+                    var dataString = 'id=' + recipient;
+
+                    $.ajax({
+                        type: "GET",
+                        url: "/admin/document_preview_canceled_check/",
                         data: dataString,
                         cache: false,
                         success: function (data) {

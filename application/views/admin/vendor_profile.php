@@ -72,10 +72,22 @@ if ($logged_in) {
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
-                            <td><a class="btn btn-info active" href="<?php echo site_url()?>admin/profile/<?php echo $vendor->id; ?>">view</a> <a class="btn btn-danger active" href= "<?php echo site_url()?>register/delete/<?php echo $vendor->id ?>">Delete</a></td>
+                            <td><a class="btn btn-info active" href="<?php echo site_url()?>admin/profile/<?php echo $vendor->id; ?>">view</a> <a class="btn btn-danger active mb-control" data-box="#message-box-info">Delete</a></td>
 
                         </tr>
+  <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-danger"></span> Information</div>
+                    <div class="mb-content">
+                        <p>Are you sure ? You want to delete existing Customer ?</p>
+                    </div>
+                    <div class="mb-footer">
 
+                         <a  href= "<?php echo site_url()?>register/delete/<?php echo $vendor->id ?>" class="btn btn-default btn-lg pull-right">Yes</a>
+                         <button class="btn btn-default btn-lg pull-right mb-control-close">No</button>
+                    </div>
+                </div>
+            </div>
 
                     <?php } ?>
                 </tbody>

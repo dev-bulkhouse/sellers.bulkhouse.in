@@ -293,7 +293,7 @@ class Tabs extends CI_Model {
   `custid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 )");
-        
+
 
         echo $flag;
 
@@ -443,8 +443,6 @@ class Tabs extends CI_Model {
         $this->db->insert('admin_details', $data);
         $this->db->insert('admin_details', $data2);
         $this->db->insert('admin_details', $data3);
-
-
     }
 
     public function newid() {

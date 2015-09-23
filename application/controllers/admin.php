@@ -403,7 +403,7 @@ class Admin extends CI_Controller {
 
             $details['document_date'] = $row['shop_establish_trade_date'];
             $details['type'] = $row['shop_establish_trade_type'];
-            $details['file_name'] = "_shop_establish_trade_date";
+            $details['file_name'] = "_shop_establish_trade";
 
             $details['button'] = "/shop_establish_trade";
             $details['document_name'] = "Shop establish trade Number";
