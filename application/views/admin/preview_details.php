@@ -32,30 +32,34 @@
         </tbody>
     </table>
     <hr><?php if (isset($document_name)) { ?>
+        <?php if (isset($document)) { ?>
+            <div class="col-md-6">
+
+                <div class="panel panel-success push-up-20">
+                    <div class="panel-body panel-body-pricing">
+                        <h3>
+                            <th><?php echo $document_name ?></th>
+                        <?php } else {
+
+                        }
+                        ?><br/><small>
     <?php if (isset($document)) { ?>
-        <div class="col-md-6">
+                                <td><?php echo $document; ?></td>
+                            </small></h3>
 
-            <div class="panel panel-success push-up-20">
-                <div class="panel-body panel-body-pricing">
-                    <h3>
-                        <th><?php echo $document_name ?></th>
-                    <?php } else {
-
-                    } ?><br/><small>
-<?php if (isset($document)) { ?>
-                            <td><?php echo $document; ?></td>
-                        </small></h3>
+                    </div>
 
                 </div>
 
             </div>
+        <?php
+        } else {
 
-        </div>
-<?php } else {
+        }
+    } else {
 
-    }}  else {
-
-} ?>
+    }
+    ?>
 <?php if (isset($address1)) { ?>
         <div class="col-md-6">
 
@@ -65,7 +69,8 @@
                         <th><?php echo $address ?></th>
 <?php } else {
 
-} ?><br/><small>
+}
+?><br/><small>
 <?php if (isset($address1)) { ?>
                             <td><?php echo $address1; ?><br><?php echo $address2; ?></td>
                         </small></h3>
@@ -75,22 +80,25 @@
             </div>
 
         </div>
-    <?php } else {
+<?php } else {
 
-    } ?>
+}
+?>
 
     <!--                                                                                            <div class="modal-body">
                                                                                                     <img src="<?php echo site_url(); ?>files/<?php echo $cert->compid; ?>/certification_of_incorporation.<?php echo $cert->cert_of_incorp_type; ?>" class="img-responsive">
                                                                                                 </div>-->
-<?php
-$pan_prop_type = $type;
+    <?php
+    $pan_prop_type = $type;
 
-$filejpg = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $compid . $file_name . ".jpg";
-$filejpg_a = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $compid . $file_name . ".JPG";
-$filepdf = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $compid . $file_name . ".pdf";
-$filepdf_a = "http://sellers.bulkhouse.files.s3.amazonaws.com/" . $compid . $file_name . ".PDF";
-if ($pan_prop_type == $filejpg || $pan_prop_type == $filejpg_a) {
-    ?>
+    $filejpg = "http://sellers.yesdesigns.files.s3.amazonaws.com/" . $compid . $file_name . ".jpg";
+    $filejpeg = "http://sellers.yesdesigns.files.s3.amazonaws.com/" . $compid . $file_name . ".jpeg";
+    $filejpeg_a = "http://sellers.yesdesigns.files.s3.amazonaws.com/" . $compid . $file_name . ".JPEG";
+    $filejpg_a = "http://sellers.yesdesigns.files.s3.amazonaws.com/" . $compid . $file_name . ".JPG";
+    $filepdf = "http://sellers.yesdesigns.files.s3.amazonaws.com/" . $compid . $file_name . ".pdf";
+    $filepdf_a = "http://sellers.yesdesigns.files.s3.amazonaws.com/" . $compid . $file_name . ".PDF";
+    if ($pan_prop_type == $filejpg || $pan_prop_type == $filejpg_a) {
+        ?>
         <div class="modal-body">
             <img src="<?php echo $pan_prop_type; ?>" class="img-responsive">
         </div>
@@ -98,6 +106,11 @@ if ($pan_prop_type == $filejpg || $pan_prop_type == $filejpg_a) {
         <div class="modal-body">
             <iframe  width="100%" height="1000px" src="<?php echo $pan_prop_type; ?>" class="img-responsive" >
         </div>
+<?php } elseif ($pan_prop_type == $filejpeg || $pan_prop_type == $filejpeg_a) { ?>
+        <div class="modal-body">
+            <iframe  width="100%" height="1000px" src="<?php echo $pan_prop_type; ?>" class="img-responsive" >
+        </div>
+
 <?php } else { ?>
         <div class="alert alert-warning" role="alert">
             <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
@@ -106,7 +119,7 @@ if ($pan_prop_type == $filejpg || $pan_prop_type == $filejpg_a) {
         <div class="modal-body">
 
             <div class="text-center">
-                <img src="http://aniconslibrary.com/wp-content/uploads/2014/07/Anicons-PaperFile.gif" class="login" height="200">
+                <img src="https://s-media-cache-ak0.pinimg.com/originals/ce/5b/2a/ce5b2a2992a514dfbe0e58b622dd1da3.jpg" class="login" height="200">
             </div>
         </div>
 <?php } ?>
