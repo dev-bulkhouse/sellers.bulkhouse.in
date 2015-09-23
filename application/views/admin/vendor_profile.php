@@ -75,7 +75,12 @@ if ($logged_in) {
                             <td><a class="btn btn-info active" href="<?php echo site_url()?>admin/profile/<?php echo $vendor->id; ?>">view</a> <a class="btn btn-danger active mb-control" data-box="#message-box-info">Delete</a></td>
 
                         </tr>
-  <div class="mb-container">
+
+
+                    <?php } ?>
+                </tbody>
+            </table>
+                                    <div class="mb-container">
                 <div class="mb-middle">
                     <div class="mb-title"><span class="fa fa-danger"></span> Information</div>
                     <div class="mb-content">
@@ -88,10 +93,6 @@ if ($logged_in) {
                     </div>
                 </div>
             </div>
-
-                    <?php } ?>
-                </tbody>
-            </table>
 
 </div>
 
