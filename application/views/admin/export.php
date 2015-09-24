@@ -15,6 +15,7 @@
         <!-- EOF CSS INCLUDE -->
         <style>
             .due{background-color: yellow}
+            .rjt{background-color: darkred; color: white}
             td{border: #000 solid}
         </style>
     </head>
@@ -90,7 +91,7 @@
                                  <?php }elseif($vendor->pan_prop_status == 2){?>
                                  <td>Approve</td>
                                 <?php }elseif($vendor->pan_prop_status == 1){?>
-                                 <td>Reject</td>
+                                 <td class="rjt">Reject</td>
                                  <?php }elseif($vendor->pan_prop_status == 5){?>
                                  <td class="due">Due</td>
                                  <?php } ?>
@@ -103,7 +104,7 @@
                                  <?php }elseif($vendor->pan_comp_status == 2){?>
                                  <td>Approve</td>
                                 <?php }elseif($vendor->pan_comp_status == 1){?>
-                                 <td>Reject</td>
+                                 <td class="rjt">Reject</td>
                                  <?php }elseif($vendor->pan_comp_status == 5){?>
                                  <td class="due">Due</td>
                                   <?php }} ?>
@@ -113,7 +114,7 @@
                                  <?php }elseif($vendor->vat_cst_status == 2){?>
                                  <td>Approve</td>
                                 <?php }elseif($vendor->vat_cst_status == 1){?>
-                                 <td>Reject</td>
+                                 <td class="rjt">Reject</td>
                                  <?php }elseif($vendor->vat_cst_status == 5){?>
                                  <td class="due">Due</td>
                                  <?php } ?>
@@ -129,7 +130,7 @@
                                  <?php }elseif($vendor->shop_establish_trade_status == 2){?>
                                  <td>Approve</td>
                                 <?php }elseif($vendor->shop_establish_trade_status == 1){?>
-                                 <td>Reject</td>
+                                 <td class="rjt">Reject</td>
                                  <?php }elseif($vendor->shop_establish_trade_status == 5){?>
                                  <td class="due">Due</td>
                                   <?php }} ?>
@@ -140,7 +141,7 @@
                                  <?php }elseif($vendor->photoid_status == 2){?>
                                  <td>Approve</td>
                                 <?php }elseif($vendor->photoid_status == 1){?>
-                                 <td>Reject</td>
+                                 <td class="rjt">Reject</td>
                                  <?php }elseif($vendor->photoid_status == 5){?>
                                  <td class="due">Due</td>
                                  <?php } ?>
@@ -151,7 +152,7 @@
                                  <?php }elseif($vendor->addressid_status == 2){?>
                                  <td>Approve</td>
                                 <?php }elseif($vendor->addressid_status == 1){?>
-                                 <td>Reject</td>
+                                 <td class="rjt">Reject</td>
                                  <?php }elseif($vendor->addressid_status == 5){?>
                                  <td class="due">Due</td>
                                  <?php } ?>
@@ -162,7 +163,7 @@
                                  <?php }elseif($vendor->businessid_status == 2){?>
                                  <td>Approve</td>
                                 <?php }elseif($vendor->businessid_status == 1){?>
-                                 <td>Reject</td>
+                                 <td class="rjt">Reject</td>
                                  <?php }elseif($vendor->businessid_status == 5){?>
                                  <td class="due">Due</td>
                                  <?php } ?>
@@ -173,7 +174,7 @@
                                  <?php }elseif($vendor->cert_of_incorp_status == 2){?>
                                  <td>Approve</td>
                                 <?php }elseif($vendor->cert_of_incorp_status == 1){?>
-                                 <td>Reject</td>
+                                 <td class="rjt">Reject</td>
                                  <?php }elseif($vendor->cert_of_incorp_status == 5){?>
                                  <td class="due">Due</td>
                                  <?php }}else {?>
@@ -186,7 +187,7 @@
                                  <?php }elseif($vendor->moa_aoa_status == 2){?>
                                  <td>Approve</td>
                                 <?php }elseif($vendor->moa_aoa_status == 1){?>
-                                 <td>Reject</td>
+                                 <td class="rjt">Reject</td>
                                  <?php }elseif($vendor->moa_aoa_status == 5){?>
                                  <td class="due">Due</td>
                                  <?php }}else {?>
@@ -199,7 +200,7 @@
                                  <?php }elseif($vendor->aoa_status == 2){?>
                                  <td>Approve</td>
                                 <?php }elseif($vendor->aoa_status == 1){?>
-                                 <td>Reject</td>
+                                 <td class="rjt">Reject</td>
                                  <?php }elseif($vendor->aoa_status == 5){?>
                                  <td class="due">Due</td>
                                   <?php }}else {?>
@@ -212,7 +213,7 @@
                                  <?php }elseif($vendor->part_deed_status == 2){?>
                                  <td>Approve</td>
                                 <?php }elseif($vendor->part_deed_status == 1){?>
-                                 <td>Reject</td>
+                                 <td class="rjt">Reject</td>
                                  <?php }elseif($vendor->part_deed_status == 5){?>
                                  <td class="due">Due</td>
                                 <?php }}else {?>
