@@ -23,220 +23,248 @@
         <!-- START PAGE CONTAINER -->
 
 
-            <div class="page-content">
+        <div class="page-content">
 
-                <div class="page-content-wrap">
+            <div class="page-content-wrap">
 
-                    <div class="row">
-                        <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
 
-                            <!-- START DEFAULT DATATABLE -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Export Data</h3>
-                                    <ul class="panel-controls">
-                                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
-                                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
-                                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="panel-body">
-                                   <table class="table datatable">
-                                        <thead>
-                        <tr>
-                            <th>Name,
-                             Company,
-                             Email,
-                             Contact</th>
-                             <th>Register Time</th>
-                            <th>Type</th>
-                            <th>Pan Card</th>
-                            <th>Company Pan</th>
-                            <th>VAT-CST</th>
-
-                            <th>Shop Establish/Trade</th>
-                            <th>Photo id</th>
-                            <th>Address</th>
-                            <th>Buz Adr </th>
-                            <th>COI</th>
-                            <th>MOA</th>
-                             <th>AOA</th>
-                            <th>Prt Deed</th>
-
-
-                       </tr>
-                    </thead>
-                    <tbody>
-                       <?php  $this->db->select('*');
-                        $this->db->from('document_details');
-                        $this->db->join('vendor_details', 'vendor_details.id = document_details.compid');
-
-                        $query = $this->db->get();
-                        $vendors = $query->result();
-                        ?>
-                        <?php foreach ($vendors as $vendor) { ?>
-
-
-                        <tr>
-                            <td><?php echo $vendor->vendor_name; ?><br/>
-                            <?php echo $vendor->firm_name; ?><br/>
-                            <?php echo $vendor->email; ?><br/>
-                            <?php echo $vendor->mobile; ?>
-                             <td><?php echo $vendor->registered_on; ?></td>
-                           <td><?php echo $vendor->firm_type; ?></td>
-
-
-                                <?php if($vendor->pan_prop_status == 0) {?>
-                                <td>WFA</td>
-                                 <?php }elseif($vendor->pan_prop_status == 2){?>
-                                 <td>Approve</td>
-                                <?php }elseif($vendor->pan_prop_status == 1){?>
-                                 <td class="rjt">Reject</td>
-                                 <?php }elseif($vendor->pan_prop_status == 5){?>
-                                 <td class="due">Due</td>
-                                 <?php } ?>
-
-                                  <?php if($vendor->firm_type == 'proprietorship'){?>
-                                  <td>NA</td>
-                                  <?php }else { ?>
-                                  <?php if($vendor->pan_comp_status == 0) {?>
-                                <td>WFA</td>
-                                 <?php }elseif($vendor->pan_comp_status == 2){?>
-                                 <td>Approve</td>
-                                <?php }elseif($vendor->pan_comp_status == 1){?>
-                                 <td class="rjt">Reject</td>
-                                 <?php }elseif($vendor->pan_comp_status == 5){?>
-                                 <td class="due">Due</td>
-                                  <?php }} ?>
-
-                                 <?php if($vendor->vat_cst_status == 0) {?>
-                                <td>WFA</td>
-                                 <?php }elseif($vendor->vat_cst_status == 2){?>
-                                 <td>Approve</td>
-                                <?php }elseif($vendor->vat_cst_status == 1){?>
-                                 <td class="rjt">Reject</td>
-                                 <?php }elseif($vendor->vat_cst_status == 5){?>
-                                 <td class="due">Due</td>
-                                 <?php } ?>
-
-
-
-
-                                  <?php if($vendor->firm_type == 'pvt_or_ltd'){?>
-                                   <td>NA</td>
-                                  <?php }else { ?>
-                                  <?php if($vendor->shop_establish_trade_status == 0) {?>
-                                <td>WFA</td>
-                                 <?php }elseif($vendor->shop_establish_trade_status == 2){?>
-                                 <td>Approve</td>
-                                <?php }elseif($vendor->shop_establish_trade_status == 1){?>
-                                 <td class="rjt">Reject</td>
-                                 <?php }elseif($vendor->shop_establish_trade_status == 5){?>
-                                 <td class="due">Due</td>
-                                  <?php }} ?>
-
-
-                                <?php if($vendor->photoid_status == 0) {?>
-                                <td>WFA</td>
-                                 <?php }elseif($vendor->photoid_status == 2){?>
-                                 <td>Approve</td>
-                                <?php }elseif($vendor->photoid_status == 1){?>
-                                 <td class="rjt">Reject</td>
-                                 <?php }elseif($vendor->photoid_status == 5){?>
-                                 <td class="due">Due</td>
-                                 <?php } ?>
-
-
-                                 <?php if($vendor->addressid_status == 0) {?>
-                                <td>WFA</td>
-                                 <?php }elseif($vendor->addressid_status == 2){?>
-                                 <td>Approve</td>
-                                <?php }elseif($vendor->addressid_status == 1){?>
-                                 <td class="rjt">Reject</td>
-                                 <?php }elseif($vendor->addressid_status == 5){?>
-                                 <td class="due">Due</td>
-                                 <?php } ?>
-
-
-                                  <?php if($vendor->businessid_status == 0) {?>
-                                <td>WFA</td>
-                                 <?php }elseif($vendor->businessid_status == 2){?>
-                                 <td>Approve</td>
-                                <?php }elseif($vendor->businessid_status == 1){?>
-                                 <td class="rjt">Reject</td>
-                                 <?php }elseif($vendor->businessid_status == 5){?>
-                                 <td class="due">Due</td>
-                                 <?php } ?>
-
-                                 <?php if($vendor->firm_type == 'pvt_or_ltd'){?>
-                                  <?php if($vendor->cert_of_incorp_status == 0) {?>
-                                <td>WFA</td>
-                                 <?php }elseif($vendor->cert_of_incorp_status == 2){?>
-                                 <td>Approve</td>
-                                <?php }elseif($vendor->cert_of_incorp_status == 1){?>
-                                 <td class="rjt">Reject</td>
-                                 <?php }elseif($vendor->cert_of_incorp_status == 5){?>
-                                 <td class="due">Due</td>
-                                 <?php }}else {?>
-                                 <td>NA</td>
-                                    <?php } ?>
-
-                                <?php if($vendor->firm_type == 'pvt_or_ltd'){?>
-                                <?php if($vendor->moa_aoa_status == 0) {?>
-                                <td>WFA</td>
-                                 <?php }elseif($vendor->moa_aoa_status == 2){?>
-                                 <td>Approve</td>
-                                <?php }elseif($vendor->moa_aoa_status == 1){?>
-                                 <td class="rjt">Reject</td>
-                                 <?php }elseif($vendor->moa_aoa_status == 5){?>
-                                 <td class="due">Due</td>
-                                 <?php }}else {?>
-                                 <td>NA</td>
-                                    <?php } ?>
-
-                                  <?php if($vendor->firm_type == 'pvt_or_ltd'){?>
-                                  <?php if($vendor->aoa_status == 0) {?>
-                                <td>WFA</td>
-                                 <?php }elseif($vendor->aoa_status == 2){?>
-                                 <td>Approve</td>
-                                <?php }elseif($vendor->aoa_status == 1){?>
-                                 <td class="rjt">Reject</td>
-                                 <?php }elseif($vendor->aoa_status == 5){?>
-                                 <td class="due">Due</td>
-                                  <?php }}else {?>
-                                 <td>NA</td>
-                                    <?php } ?>
-
-                                 <?php if($vendor->firm_type == 'partnership'){?>
-                                 <?php if($vendor->part_deed_status == 0) {?>
-                                <td>WFA</td>
-                                 <?php }elseif($vendor->part_deed_status == 2){?>
-                                 <td>Approve</td>
-                                <?php }elseif($vendor->part_deed_status == 1){?>
-                                 <td class="rjt">Reject</td>
-                                 <?php }elseif($vendor->part_deed_status == 5){?>
-                                 <td class="due">Due</td>
-                                <?php }}else {?>
-                                 <td>NA</td>
-                                    <?php } ?>
-
-
-                        </tr>
-
-
-                    <?php } ?>
-                </tbody>
-            </table>
-                                </div>
+                        <!-- START DEFAULT DATATABLE -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Export Data</h3>
+                                <ul class="panel-controls">
+                                    <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                                    <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                                    <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                                </ul>
                             </div>
+                            <div class="panel-body">
+                                <table class="table datatable">
+                                    <thead>
+                                        <tr>
+                                            <th>Name,
+                                                Company,
+                                                Email,
+                                                Contact</th>
+                                            <th>Register Time</th>
+                                            <th>Type</th>
+                                            <th>Pan Card</th>
+                                            <th>Company Pan</th>
+                                            <th>VAT-CST</th>
 
+                                            <th>Shop Establish/Trade</th>
+                                            <th>Photo id</th>
+                                            <th>Address</th>
+                                            <th>Buz Adr </th>
+                                            <th>COI</th>
+                                            <th>MOA</th>
+                                            <th>AOA</th>
+                                            <th>Prt Deed</th>
+                                            <th>Comp Prof</th>
+                                            <th>Cheque</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $this->db->select('*');
+                                        $this->db->from('document_details');
+                                        $this->db->join('vendor_details', 'vendor_details.id = document_details.compid');
+
+                                        $query = $this->db->get();
+                                        $vendors = $query->result();
+                                        ?>
+<?php foreach ($vendors as $vendor) { ?>
+
+
+                                            <tr>
+                                                <td><?php echo $vendor->vendor_name; ?><br/>
+                                                    <?php echo $vendor->firm_name; ?><br/>
+                                                    <?php echo $vendor->email; ?><br/>
+    <?php echo $vendor->mobile; ?>
+                                                <td><?php echo $vendor->registered_on; ?></td>
+                                                <td><?php echo $vendor->firm_type; ?></td>
+
+
+                                                <?php if ($vendor->pan_prop_status == 0) { ?>
+                                                    <td>WFA</td>
+                                                <?php } elseif ($vendor->pan_prop_status == 2) { ?>
+                                                    <td>Approve</td>
+                                                <?php } elseif ($vendor->pan_prop_status == 1) { ?>
+                                                    <td class="rjt">Reject</td>
+                                                <?php } elseif ($vendor->pan_prop_status == 5) { ?>
+                                                    <td class="due">Due</td>
+                                                <?php } ?>
+
+                                                <?php if ($vendor->firm_type == 'proprietorship') { ?>
+                                                    <td>NA</td>
+                                                <?php } else { ?>
+                                                    <?php if ($vendor->pan_comp_status == 0) { ?>
+                                                        <td>WFA</td>
+                                                    <?php } elseif ($vendor->pan_comp_status == 2) { ?>
+                                                        <td>Approve</td>
+                                                    <?php } elseif ($vendor->pan_comp_status == 1) { ?>
+                                                        <td class="rjt">Reject</td>
+                                                    <?php } elseif ($vendor->pan_comp_status == 5) { ?>
+                                                        <td class="due">Due</td>
+                                                    <?php }
+                                                } ?>
+
+                                                <?php if ($vendor->vat_cst_status == 0) { ?>
+                                                    <td>WFA</td>
+                                                <?php } elseif ($vendor->vat_cst_status == 2) { ?>
+                                                    <td>Approve</td>
+                                                <?php } elseif ($vendor->vat_cst_status == 1) { ?>
+                                                    <td class="rjt">Reject</td>
+                                                <?php } elseif ($vendor->vat_cst_status == 5) { ?>
+                                                    <td class="due">Due</td>
+    <?php } ?>
+
+
+
+
+                                                <?php if ($vendor->firm_type == 'pvt_or_ltd') { ?>
+                                                    <td>NA</td>
+                                                <?php } else { ?>
+                                                    <?php if ($vendor->shop_establish_trade_status == 0) { ?>
+                                                        <td>WFA</td>
+                                                    <?php } elseif ($vendor->shop_establish_trade_status == 2) { ?>
+                                                        <td>Approve</td>
+                                                    <?php } elseif ($vendor->shop_establish_trade_status == 1) { ?>
+                                                        <td class="rjt">Reject</td>
+                                                    <?php } elseif ($vendor->shop_establish_trade_status == 5) { ?>
+                                                        <td class="due">Due</td>
+                                                    <?php }
+                                                } ?>
+
+
+                                                <?php if ($vendor->photoid_status == 0) { ?>
+                                                    <td>WFA</td>
+                                                <?php } elseif ($vendor->photoid_status == 2) { ?>
+                                                    <td>Approve</td>
+                                                <?php } elseif ($vendor->photoid_status == 1) { ?>
+                                                    <td class="rjt">Reject</td>
+    <?php } elseif ($vendor->photoid_status == 5) { ?>
+                                                    <td class="due">Due</td>
+                                                <?php } ?>
+
+
+                                                <?php if ($vendor->addressid_status == 0) { ?>
+                                                    <td>WFA</td>
+                                                <?php } elseif ($vendor->addressid_status == 2) { ?>
+                                                    <td>Approve</td>
+                                                <?php } elseif ($vendor->addressid_status == 1) { ?>
+                                                    <td class="rjt">Reject</td>
+    <?php } elseif ($vendor->addressid_status == 5) { ?>
+                                                    <td class="due">Due</td>
+                                                <?php } ?>
+
+
+                                                <?php if ($vendor->businessid_status == 0) { ?>
+                                                    <td>WFA</td>
+                                                <?php } elseif ($vendor->businessid_status == 2) { ?>
+                                                    <td>Approve</td>
+                                                <?php } elseif ($vendor->businessid_status == 1) { ?>
+                                                    <td class="rjt">Reject</td>
+                                                <?php } elseif ($vendor->businessid_status == 5) { ?>
+                                                    <td class="due">Due</td>
+                                                <?php } ?>
+
+                                                <?php if ($vendor->firm_type == 'pvt_or_ltd') { ?>
+                                                    <?php if ($vendor->cert_of_incorp_status == 0) { ?>
+                                                        <td>WFA</td>
+                                                    <?php } elseif ($vendor->cert_of_incorp_status == 2) { ?>
+                                                        <td>Approve</td>
+                                                    <?php } elseif ($vendor->cert_of_incorp_status == 1) { ?>
+                                                        <td class="rjt">Reject</td>
+                                                    <?php } elseif ($vendor->cert_of_incorp_status == 5) { ?>
+                                                        <td class="due">Due</td>
+                                                    <?php }
+                                                } else { ?>
+                                                    <td>NA</td>
+                                                <?php } ?>
+
+                                                <?php if ($vendor->firm_type == 'pvt_or_ltd') { ?>
+                                                    <?php if ($vendor->moa_aoa_status == 0) { ?>
+                                                        <td>WFA</td>
+                                                    <?php } elseif ($vendor->moa_aoa_status == 2) { ?>
+                                                        <td>Approve</td>
+                                                    <?php } elseif ($vendor->moa_aoa_status == 1) { ?>
+                                                        <td class="rjt">Reject</td>
+                                                    <?php } elseif ($vendor->moa_aoa_status == 5) { ?>
+                                                        <td class="due">Due</td>
+                                                    <?php }
+                                                } else { ?>
+                                                    <td>NA</td>
+                                                <?php } ?>
+
+                                                <?php if ($vendor->firm_type == 'pvt_or_ltd') { ?>
+                                                    <?php if ($vendor->aoa_status == 0) { ?>
+                                                        <td>WFA</td>
+                                                    <?php } elseif ($vendor->aoa_status == 2) { ?>
+                                                        <td>Approve</td>
+                                                    <?php } elseif ($vendor->aoa_status == 1) { ?>
+                                                        <td class="rjt">Reject</td>
+                                                    <?php } elseif ($vendor->aoa_status == 5) { ?>
+                                                        <td class="due">Due</td>
+                                                    <?php }
+                                                } else { ?>
+                                                    <td>NA</td>
+                                                <?php } ?>
+
+                                                <?php if ($vendor->firm_type == 'partnership') { ?>
+                                                    <?php if ($vendor->part_deed_status == 0) { ?>
+                                                        <td>WFA</td>
+                                                    <?php } elseif ($vendor->part_deed_status == 2) { ?>
+                                                        <td>Approve</td>
+                                                    <?php } elseif ($vendor->part_deed_status == 1) { ?>
+                                                        <td class="rjt">Reject</td>
+                                                    <?php } elseif ($vendor->part_deed_status == 5) { ?>
+                                                        <td class="due">Due</td>
+                                                    <?php }
+                                                } else { ?>
+                                                    <td>NA</td>
+                                                <?php } ?>
+
+                                                <?php if ($vendor->comp_file_status == 0) { ?>
+                                                    <td>WFA</td>
+                                                <?php } elseif ($vendor->comp_file_status == 2) { ?>
+                                                    <td>Approve</td>
+                                                <?php } elseif ($vendor->comp_file_status == 1) { ?>
+                                                    <td>Reject</td>
+                                                <?php } elseif ($vendor->comp_file_status == 5) { ?>
+                                                    <td>Due</td>
+                                                <?php } ?>
+
+                                                <?php if ($vendor->canceled_check_status == 0) { ?>
+                                                    <td>WFA</td>
+    <?php } elseif ($vendor->canceled_check_status == 2) { ?>
+                                                    <td>Approve</td>
+    <?php } elseif ($vendor->canceled_check_status == 1) { ?>
+                                                    <td>Reject</td>
+                                            <?php } elseif ($vendor->canceled_check_status == 5) { ?>
+                                                    <td>Due</td>
+    <?php } ?>
+
+                                            </tr>
+
+
+<?php } ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
-                <!-- PAGE CONTENT WRAPPER -->
+
             </div>
-            <!-- END PAGE CONTENT -->
+            <!-- PAGE CONTENT WRAPPER -->
+        </div>
+        <!-- END PAGE CONTENT -->
 
         <!-- END PAGE CONTAINER -->
 
@@ -265,7 +293,7 @@
         <audio id="audio-fail" src="/audio/fail.mp3" preload="auto"></audio>
         <!-- END PRELOADS -->
 
-    <!-- START SCRIPTS -->
+        <!-- START SCRIPTS -->
         <!-- START PLUGINS -->
         <script type="text/javascript" src="/js/plugins/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="/js/plugins/jquery/jquery-ui.min.js"></script>
@@ -285,7 +313,7 @@
         <script type="text/javascript" src="/js/plugins.js"></script>
         <script type="text/javascript" src="/js/actions.js"></script>
         <!-- END TEMPLATE -->
-    <!-- END SCRIPTS -->
+        <!-- END SCRIPTS -->
 
     </body>
 </html>
