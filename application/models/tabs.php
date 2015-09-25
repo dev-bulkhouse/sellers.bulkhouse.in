@@ -349,6 +349,28 @@ class Tabs extends CI_Model {
         echo $flag;
     }
 
+    public function employee() {
+        $bang = $this->db->query("CREATE TABLE IF NOT EXISTS `employee` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `agent_id` int(20) NOT NULL,
+  `agent_name` varchar(225) NOT NULL,
+  PRIMARY KEY (`id`)");
+        echo $bang;
+    }
+
+    public function leads() {
+        $bang2 = $this->db->query("CREATE TABLE IF NOT EXISTS `leads` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `date` varchar(225) NOT NULL,
+  `vendor_name` varchar(225) NOT NULL,
+  `vendor_phone` bigint(15) NOT NULL,
+  `vendor_email` varchar(225) NOT NULL,
+  `agent_id` int(20) NOT NULL,
+  PRIMARY KEY (`id`)
+)");
+         echo $bang2;
+    }
+
     public function sec() {
         $flag = $this->db->query("CREATE TABLE IF NOT EXISTS `sec_vendor_authinfo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -358,6 +380,8 @@ class Tabs extends CI_Model {
   `date` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 )");
+
+
         $flag2 =  $this->db->query("CREATE TABLE IF NOT EXISTS `removed_vendors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,

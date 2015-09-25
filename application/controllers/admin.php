@@ -35,6 +35,29 @@ class Admin extends CI_Controller {
         $this->load->view('admin/export');
 //        $this->load->view('admin/template/footer');
     }
+    public function employees() {
+
+//        $this->load->view('admin/template/header');
+        $this->load->view('admin/employee');
+//        $this->load->view('admin/template/footer');
+    }
+    public function add_agent() {
+
+//        $this->load->view('admin/template/header');
+        $result = $this->register_model->add_agents();
+          if($result == 1){
+            redirect(base_url() . 'admin/employees', 'location');
+       }
+
+//        $this->load->view('admin/template/footer');
+    }
+
+    public function leads() {
+
+//        $this->load->view('admin/template/header');
+        $this->load->view('admin/leads');
+//        $this->load->view('admin/template/footer');
+    }
 
     public function login_admin() {
 
@@ -544,7 +567,7 @@ class Admin extends CI_Controller {
             $details['document_date'] = $row['pan_comp_date'];
             $details['type'] = $row['pan_comp_type'];
             $details['document_name'] = "Company PAN Number";
-            $details['file_name'] = "_pan_company";
+            $details['file_name'] = "_pan_comp";
             $details['button'] = "/pan_comp";
             $this->load->view('admin/preview_details', $details);
         }
@@ -747,5 +770,18 @@ class Admin extends CI_Controller {
             $this->load->view('admin/preview_details', $details);
         }
     }
+
+
+    public function add_leads() {
+            $email = $this->input->post('email');
+            $name = $this->input->post('name');
+            $phone = $this->input->post('phone');
+            $agent = $this->input->post('agent');
+
+        $result = $this->register_model->add_leads($email,$name,$phone,$agent);
+       if($result == 1){
+            redirect(base_url() . 'admin/leads', 'location');
+       }
+       }
 
 }

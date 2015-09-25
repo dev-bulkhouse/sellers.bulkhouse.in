@@ -21,6 +21,11 @@ class Create_tables extends CI_Controller {
 
     }
 
+    public function agent_leads() {
+        $this->tabs->employee();
+        $this->tabs->leads();
+    }
+
     public function insert() {
 
 

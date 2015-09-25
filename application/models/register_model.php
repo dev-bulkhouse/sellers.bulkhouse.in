@@ -194,6 +194,18 @@ class Register_model extends CI_Model {
         }
     }
 
+    public function get_mag_cust_id($email) {
+        $this->db->select('custid');
+        $this->db->from('mag_cust');
+        $this->db->where(array('mag_cust.email' => $email));
+        $query = $this->db->get();
+
+        foreach ($query->result_array() as $row) {
+
+            return $row['custid'];
+        }
+    }
+
     public function get_reg_as($email) {
         $this->db->select('reg_as');
         $this->db->from('vendor_details');
@@ -399,15 +411,13 @@ class Register_model extends CI_Model {
     }
 
     public function del($email_address) {
-
         $sql = "SELECT email, registered_on FROM vendor_details WHERE email = '" . $email_address . "' LIMIT 1";
         $result = $this->db->query($sql);
         $row = $result->row();
 //        echo "deleted on bulkhouse.in";
-//        $this->load->spark('mage-api/0.0.1');
-//        $this->mage_api->customer_create(array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'password' => $password_sec, 'website_id' => 1, 'store_id' => 1, 'group_id' => 4));
-
-
+        $custid = $this->get_mag_cust_id($email_address);
+        $this->load->spark('mage-api/0.0.1');
+        $this->mage_api->customer_delete($custid);
     }
 
     public function activate_account($email_address) {
@@ -429,6 +439,20 @@ class Register_model extends CI_Model {
             echo'Error when activating your account, please contact admin@bulkhouse.com';
             return false;
         }
+    }
+     public function add_agents() {
+            $data = array(
+                'agent_id' => $this->input->post('agent_id'),
+                'agent_name' => $this->input->post('agent_name'),
+
+            );
+            $this->db->insert('employee', $data);
+            if ($this->db->affected_rows() == 1) {
+                return true;
+
+            } else {
+                return false;
+            }
     }
 
     public function remove_account($email_address, $reason) {
@@ -549,5 +573,22 @@ class Register_model extends CI_Model {
             return false;
         }
     }
+
+    public function add_leads($email,$name,$phone,$agent) {
+            $data = array(
+                'vendor_email' => $email,
+                'vendor_name' => $name,
+                'vendor_phone' => $phone,
+                'agent_id' => $agent,
+                'date' => date('d-m-Y H:i:s')
+            );
+            $this->db->insert('leads', $data);
+            if ($this->db->affected_rows() == 1) {
+                return true;
+            } else {
+                return false;
+            }
+    }
+
 
 }
