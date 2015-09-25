@@ -544,7 +544,7 @@ class Admin extends CI_Controller {
             $details['document_date'] = $row['pan_comp_date'];
             $details['type'] = $row['pan_comp_type'];
             $details['document_name'] = "Company PAN Number";
-            $details['file_name'] = "_pan_comp";
+            $details['file_name'] = "_pan_company";
             $details['button'] = "/pan_comp";
             $this->load->view('admin/preview_details', $details);
         }
