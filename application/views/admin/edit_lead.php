@@ -32,19 +32,21 @@
                 <div class="col-md-12 col-lg-4 col-md-offset-4  m-t-lg">
                     <?php $this->load->view('alert/success-message'); ?>
                     <section class="panel">
-                        <header class="panel-heading bg bg-primary text-center"> Add Leads</header>
-                        <form action="/admin/add_leads" method="POST" class="panel-body">
+                        <header class="panel-heading bg bg-primary text-center"> Add Employee</header>
+                        <form action="/admin/update_lead" method="POST" class="panel-body">
+
                             <div class="form-group">
-                                <label class="control-label">Vendor Email</label>
-                                <input type="text" name="email" placeholder="Vendor Email" class="form-control">
+                                <label class="control-label">Vendor Email - lead number = <?php echo $id; ?></label>
+                                <input type="hidden" name="id" value="<?php  echo $id; ?>">
+                                <input type="text" name="email" placeholder="Vendor Email" value="<?php  echo $vendor_email; ?>" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Vendor Name</label>
-                                <input type="text" name="name" placeholder="Enter Vendor Name" class="form-control">
+                                <input type="text" name="name" placeholder="Enter Vendor Name"value="<?php echo $vendor_name; ?>" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Vendor Phone</label>
-                                <input type="text" name="phone" placeholder="Enter Vendor Phone" class="form-control">
+                                <input type="text" name="phone" placeholder="Enter Vendor Phone" value="<?php echo $vendor_phone;  ?>" class="form-control">
                             </div>
 
                             <div class="form-group">
@@ -71,6 +73,7 @@
                 </div>
             </div>
         </section>
+
 
 
 

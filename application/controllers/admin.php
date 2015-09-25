@@ -60,11 +60,13 @@ class Admin extends CI_Controller {
     }
     public function delete_lead($id)
 	{
-		$id=$this->db->where('id',$id);
-		 $result = $this->db->delete('leads',$id);
+                $this->db->select('*');
+        $this->db->from('leads');
+        $this->db->where(array('leads.id' => $id));
+       $result = $this->db->delete('leads');
 
 		 if($result == 1){
-            redirect(base_url() . 'admin/leads', 'location');
+            redirect(base_url() . 'admin/employees', 'location');
        }
 	}
 
@@ -804,22 +806,31 @@ class Admin extends CI_Controller {
        }
        public function edit_lead($id)
 	{
-		$row=$this->register_model->editleads($id);
-		$data['r']=$row;
+		$result=$this->register_model->editleads($id);
+                 foreach ($result as $row) {
+
+             $data['vendor_email'] = $row['vendor_email'];
+             $data['vendor_phone'] = $row['vendor_phone'];
+             $data['vendor_name'] = $row['vendor_name'];
+
+             $data['id'] = $id;
+        }
+
 		$this->load->view('admin/edit_lead',$data);
 
 	}
-	public function update_lead($id)
+	public function update_lead()
 	{
 
-		 $email = $this->input->post('email');
-                 $name = $this->input->post('name');
+		$email = $this->input->post('email');
+                $name = $this->input->post('name');
                 $phone = $this->input->post('phone');
                 $agent = $this->input->post('agent');
+                $id = $this->input->post('id');
 
-           $result = $this->register_model->update_lead($email,$name,$phone,$agent);
+           $result = $this->register_model->update_lead($email,$name,$phone,$agent,$id);
        if($result == 1){
-            redirect(base_url() . 'admin/leads', 'location');
+            redirect(base_url() . 'admin/employees', 'location');
        }
 
 	}

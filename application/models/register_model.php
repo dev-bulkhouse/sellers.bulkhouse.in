@@ -82,10 +82,9 @@ class Register_model extends CI_Model {
         if ($this->db->affected_rows() === 1) {
             $this->set_session($email);
             $this->send_confirmation_mail($email);
-            $custid =$this->activate_seller($email, $first_name, $last_name, $password_sec);
+            $custid = $this->activate_seller($email, $first_name, $last_name, $password_sec);
 //          $this->activate_account($email);
             return array($first_name, $email, $firm_type, $firm_name, $mobile, $custid);
-
         } else {
             echo "i am really sorry!";
         }
@@ -386,8 +385,6 @@ class Register_model extends CI_Model {
         }
     }
 
-
-
     public function validate_email_remove($email_address, $email_code, $remove) {
 
         $sql = "SELECT email, registered_on FROM vendor_details WHERE email = '" . $email_address . "' LIMIT 1";
@@ -440,31 +437,38 @@ class Register_model extends CI_Model {
             return false;
         }
     }
-     public function add_agents() {
-            $data = array(
-                'agent_id' => $this->input->post('agent_id'),
-                'agent_name' => $this->input->post('agent_name'),
 
-            );
-            $this->db->insert('employee', $data);
-            if ($this->db->affected_rows() == 1) {
-                return true;
-
-            } else {
-                return false;
-            }
+    public function add_agents() {
+        $data = array(
+            'agent_id' => $this->input->post('agent_id'),
+            'agent_name' => $this->input->post('agent_name'),
+        );
+        $this->db->insert('employee', $data);
+        if ($this->db->affected_rows() == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
-    public function viewleads()
-	{
-		$query= $this->db->get('leads');
-		return $query->result();
-	}
-         public function editleads($id)
-	{
-		$this->db->where('id',$id);
-		$query=$this->db->get('leads');
-		return $query->row();
-	}
+
+    public function viewleads() {
+        $this->db->select('*');
+        $this->db->from('leads');
+        $query = $this->db->get();
+        return $query->result();
+
+    }
+
+    public function editleads($id) {
+
+
+
+        $this->db->select('*');
+        $this->db->from('leads');
+        $this->db->where(array('leads.id' => $id));
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 
     public function remove_account($email_address, $reason) {
 
@@ -585,54 +589,53 @@ class Register_model extends CI_Model {
         }
     }
 
-    public function add_leads($email,$name,$phone,$agent) {
-            $data = array(
-                'vendor_email' => $email,
-                'vendor_name' => $name,
-                'vendor_phone' => $phone,
-                'agent_id' => $agent,
-                'date' => date('d-m-Y H:i:s')
-            );
-            $this->db->insert('leads', $data);
-            if ($this->db->affected_rows() == 1) {
-                return true;
-            } else {
-                return false;
-            }
-    }
-     public function update_lead($email,$name,$phone,$agent) {
-            $data = array(
-                'vendor_email' => $email,
-                'vendor_name' => $name,
-                'vendor_phone' => $phone,
-                'agent_id' => $agent,
-
-            );
-            $this->db->update('leads', $data);
-            if ($this->db->affected_rows() == 1) {
-                return true;
-            } else {
-                return false;
-            }
+    public function add_leads($email, $name, $phone, $agent) {
+        $data = array(
+            'vendor_email' => $email,
+            'vendor_name' => $name,
+            'vendor_phone' => $phone,
+            'agent_id' => $agent,
+            'date' => date('d-m-Y H:i:s')
+        );
+        $this->db->insert('leads', $data);
+        if ($this->db->affected_rows() == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-     public function check_email_lead($email) {
-            $this->db->select('vendor_email,agent_id');
-            $this->db->from('leads');
-            $this->db->where(array('leads.vendor_email' => $email));
-            $query = $this->db->get();
+    public function update_lead($email, $name, $phone, $agent, $id) {
+        $data = array(
+            'vendor_email' => $email,
+            'vendor_name' => $name,
+            'vendor_phone' => $phone,
+            'agent_id' => $agent,
+        );
+        $this->db->where(array('leads.id' => $id));
+        $this->db->update('leads', $data);
+        if ($this->db->affected_rows() == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-            if ($query->num_rows() > 0) {
-                foreach ($query->result_array() as $row) {
-                   $vendorEmail =  $row['vendor_email'];
-                   $agentId = $row['agent_id'];
-            return array('one', $vendorEmail, $agentId);
+    public function check_email_lead($email) {
+        $this->db->select('vendor_email,agent_id');
+        $this->db->from('leads');
+        $this->db->where(array('leads.vendor_email' => $email));
+        $query = $this->db->get();
 
-                    }
-            } else {
+        if ($query->num_rows() > 0) {
+            foreach ($query->result_array() as $row) {
+                $vendorEmail = $row['vendor_email'];
+                $agentId = $row['agent_id'];
+                return array('one', $vendorEmail, $agentId);
+            }
+        } else {
             return array('two');
-            }
+        }
     }
-
 
 }
