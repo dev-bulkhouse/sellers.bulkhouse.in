@@ -567,7 +567,7 @@ class Admin extends CI_Controller {
             $details['document_date'] = $row['pan_comp_date'];
             $details['type'] = $row['pan_comp_type'];
             $details['document_name'] = "Company PAN Number";
-            $details['file_name'] = "_pan_comp";
+            $details['file_name'] = "_pan_company";
             $details['button'] = "/pan_comp";
             $this->load->view('admin/preview_details', $details);
         }
@@ -777,6 +777,17 @@ class Admin extends CI_Controller {
             $name = $this->input->post('name');
             $phone = $this->input->post('phone');
             $agent = $this->input->post('agent');
+            $res = $this->register_model->check_email_lead($email);
+            if ($res[0] == 'one') {
+                $email2 = $res[1];
+                $agent2 = $res[2];
+                $this->session->set_flashdata('success_message', 'This Email : '.$email2.' was already in the leads of agent '.$agent2.'.');
+            }elseif($res[0] == 'two'){
+                $result = $this->register_model->add_leads($email,$name,$phone,$agent);
+       if($result == 1){
+            redirect(base_url() . 'admin/leads', 'location');
+       }
+            }
 
         $result = $this->register_model->add_leads($email,$name,$phone,$agent);
        if($result == 1){

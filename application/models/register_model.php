@@ -590,5 +590,23 @@ class Register_model extends CI_Model {
             }
     }
 
+    public function check_email_lead($email) {
+            $this->db->select('vendor_email,agent_id');
+            $this->db->from('leads');
+            $this->db->where(array('leads.vendor_email' => $email));
+            $query = $this->db->get();
+
+            if ($query->num_rows() > 0) {
+                foreach ($query->result_array() as $row) {
+                   $vendorEmail =  $row['vendor_email'];
+                   $agentId = $row['agent_id'];
+            return array('one', $vendorEmail, $agentId);
+
+                    }
+            } else {
+            return array('two');
+            }
+    }
+
 
 }
