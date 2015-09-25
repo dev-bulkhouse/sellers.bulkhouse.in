@@ -57,13 +57,14 @@
                                             <th>Shop Establish/Trade</th>
                                             <th>Photo id</th>
                                             <th>Address</th>
-                                            <th>Buz Adr </th>
+                                            <th>Buisness Adr </th>
                                             <th>COI</th>
                                             <th>MOA</th>
                                             <th>AOA</th>
                                             <th>Prt Deed</th>
                                             <th>Comp Prof</th>
                                             <th>Cheque</th>
+                                            <th>Agent</th>
 
 
                                         </tr>
@@ -73,10 +74,13 @@
                                         $this->db->select('*');
                                         $this->db->from('document_details');
                                         $this->db->join('vendor_details', 'vendor_details.id = document_details.compid');
+                                       $this->db->join('leads', 'leads.vendor_email = vendor_details.email','left');
+
 
                                         $query = $this->db->get();
                                         $vendors = $query->result();
                                         ?>
+
 <?php foreach ($vendors as $vendor) { ?>
 
 
@@ -84,7 +88,7 @@
                                                 <td><?php echo $vendor->vendor_name; ?><br/>
                                                     <?php echo $vendor->firm_name; ?><br/>
                                                     <?php echo $vendor->email; ?><br/>
-    <?php echo $vendor->mobile; ?>
+                                                     <?php echo $vendor->mobile; ?></td>
                                                 <td><?php echo $vendor->registered_on; ?></td>
                                                 <td><?php echo $vendor->firm_type; ?></td>
 
@@ -234,9 +238,9 @@
                                                 <?php } elseif ($vendor->comp_file_status == 2) { ?>
                                                     <td>Approve</td>
                                                 <?php } elseif ($vendor->comp_file_status == 1) { ?>
-                                                    <td>Reject</td>
+                                                    <td class="rjt">Reject</td>
                                                 <?php } elseif ($vendor->comp_file_status == 5) { ?>
-                                                    <td>Due</td>
+                                                    <td class="due">Due</td>
                                                 <?php } ?>
 
                                                 <?php if ($vendor->canceled_check_status == 0) { ?>
@@ -244,15 +248,27 @@
     <?php } elseif ($vendor->canceled_check_status == 2) { ?>
                                                     <td>Approve</td>
     <?php } elseif ($vendor->canceled_check_status == 1) { ?>
-                                                    <td>Reject</td>
+                                                    <td class="rjt">Reject</td>
                                             <?php } elseif ($vendor->canceled_check_status == 5) { ?>
-                                                    <td>Due</td>
+                                                    <td class="due">Due</td>
     <?php } ?>
+
+                                                    <?php if($vendor->agent_id  != NULL) { ?>
+
+                                                    <td><?php echo $vendor->agent_id; ?></td>
+                                                    <?php }else {?>
+                                                    <td>No Agent</td>
+                                                     <?php }  ?>
+
+
+
+
 
                                             </tr>
 
 
 <?php } ?>
+
                                     </tbody>
                                 </table>
                             </div>
