@@ -56,7 +56,7 @@
 
                                         foreach ($query->result() as $row) {
                                             ?>
-                                             <option><?php echo $row->agent_id; ?></option>
+                                             <option value="<?php echo $row->agent_id ?>"><?php echo $row->agent_name.' - ('.$row->agent_id.')'; ?></option>
                                        <?php }?>
 
                                 </select>
