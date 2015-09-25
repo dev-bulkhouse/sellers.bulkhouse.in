@@ -32,7 +32,7 @@
                 <div class="col-md-12 col-lg-4 col-md-offset-4  m-t-lg">
                     <?php $this->load->view('alert/success-message'); ?>
                     <section class="panel">
-                        <header class="panel-heading bg bg-primary text-center"> Add Employee</header>
+                        <header class="panel-heading bg bg-primary text-center"> Add Leads</header>
                         <form action="/admin/add_leads" method="POST" class="panel-body">
                             <div class="form-group">
                                 <label class="control-label">Vendor Email</label>
