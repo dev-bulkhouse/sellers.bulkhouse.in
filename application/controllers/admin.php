@@ -782,6 +782,7 @@ class Admin extends CI_Controller {
                 $email2 = $res[1];
                 $agent2 = $res[2];
                 $this->session->set_flashdata('success_message', 'This Email : '.$email2.' was already in the leads of agent '.$agent2.'.');
+                redirect(base_url() . 'admin/leads', 'location');
             }elseif($res[0] == 0){
                 $result = $this->register_model->add_leads($email,$name,$phone,$agent);
        if($result == 1){
@@ -789,10 +790,7 @@ class Admin extends CI_Controller {
        }
             }
 
-        $result = $this->register_model->add_leads($email,$name,$phone,$agent);
-       if($result == 1){
-            redirect(base_url() . 'admin/leads', 'location');
-       }
+
        }
 
 }
