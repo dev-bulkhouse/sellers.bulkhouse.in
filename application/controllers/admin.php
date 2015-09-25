@@ -58,6 +58,15 @@ class Admin extends CI_Controller {
         $this->load->view('admin/leads');
 //        $this->load->view('admin/template/footer');
     }
+    public function delete_lead($id)
+	{
+		$id=$this->db->where('id',$id);
+		 $result = $this->db->delete('leads',$id);
+
+		 if($result == 1){
+            redirect(base_url() . 'admin/leads', 'location');
+       }
+	}
 
     public function login_admin() {
 
@@ -782,7 +791,8 @@ class Admin extends CI_Controller {
                 $email2 = $res[1];
                 $agent2 = $res[2];
                 $this->session->set_flashdata('success_message', 'This Email : '.$email2.' was already in the leads of agent '.$agent2.'.');
-                redirect(base_url() . 'admin/leads', 'location');
+            redirect(base_url() . 'admin/leads', 'location');
+
             }elseif($res[0] == 'two'){
                 $result = $this->register_model->add_leads($email,$name,$phone,$agent);
        if($result == 1){
@@ -792,5 +802,26 @@ class Admin extends CI_Controller {
 
 
        }
+       public function edit_lead($id)
+	{
+		$row=$this->register_model->editleads($id);
+		$data['r']=$row;
+		$this->load->view('admin/edit_lead',$data);
+
+	}
+	public function update_lead($id)
+	{
+
+		 $email = $this->input->post('email');
+                 $name = $this->input->post('name');
+                $phone = $this->input->post('phone');
+                $agent = $this->input->post('agent');
+
+           $result = $this->register_model->update_lead($email,$name,$phone,$agent);
+       if($result == 1){
+            redirect(base_url() . 'admin/leads', 'location');
+       }
+
+	}
 
 }

@@ -454,6 +454,17 @@ class Register_model extends CI_Model {
                 return false;
             }
     }
+    public function viewleads()
+	{
+		$query= $this->db->get('leads');
+		return $query->result();
+	}
+         public function editleads($id)
+	{
+		$this->db->where('id',$id);
+		$query=$this->db->get('leads');
+		return $query->row();
+	}
 
     public function remove_account($email_address, $reason) {
 
@@ -589,8 +600,23 @@ class Register_model extends CI_Model {
                 return false;
             }
     }
+     public function update_lead($email,$name,$phone,$agent) {
+            $data = array(
+                'vendor_email' => $email,
+                'vendor_name' => $name,
+                'vendor_phone' => $phone,
+                'agent_id' => $agent,
 
-    public function check_email_lead($email) {
+            );
+            $this->db->update('leads', $data);
+            if ($this->db->affected_rows() == 1) {
+                return true;
+            } else {
+                return false;
+            }
+    }
+
+     public function check_email_lead($email) {
             $this->db->select('vendor_email,agent_id');
             $this->db->from('leads');
             $this->db->where(array('leads.vendor_email' => $email));
@@ -600,11 +626,11 @@ class Register_model extends CI_Model {
                 foreach ($query->result_array() as $row) {
                    $vendorEmail =  $row['vendor_email'];
                    $agentId = $row['agent_id'];
-            return array(1, $vendorEmail, $agentId);
+            return array('one', $vendorEmail, $agentId);
 
                     }
             } else {
-            return array(2);
+            return array('two');
             }
     }
 
