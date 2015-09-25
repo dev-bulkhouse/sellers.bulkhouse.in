@@ -75,6 +75,7 @@
                                         $this->db->from('document_details');
                                         $this->db->join('vendor_details', 'vendor_details.id = document_details.compid');
                                        $this->db->join('leads', 'leads.vendor_email = vendor_details.email','left');
+                                       $this->db->join('employee', 'employee.agent_id = leads.agent_id','left');
 
 
                                         $query = $this->db->get();
@@ -255,7 +256,7 @@
 
                                                     <?php if($vendor->agent_id  != NULL) { ?>
 
-                                                    <td><?php echo $vendor->agent_id; ?></td>
+                                                    <td><?php echo $vendor->agent_name; ?><br/>(<?php echo $vendor->agent_id; ?>)</td>
                                                     <?php }else {?>
                                                     <td>No Agent</td>
                                                      <?php }  ?>
