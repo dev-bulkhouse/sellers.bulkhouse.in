@@ -354,7 +354,7 @@ class Tabs extends CI_Model {
   `id` int(20) NOT NULL AUTO_INCREMENT,
   `agent_id` int(20) NOT NULL,
   `agent_name` varchar(225) NOT NULL,
-  PRIMARY KEY (`id`)");
+  PRIMARY KEY (`id`))");
         echo $bang;
     }
 
