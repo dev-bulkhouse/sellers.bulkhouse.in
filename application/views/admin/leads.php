@@ -50,6 +50,7 @@
                             <div class="form-group">
                                 <label for="sel1">Select Agent:</label>
                                 <select name="agent" class="form-control" id="sel1">
+                                    <option>Select Agent</option>
                                     <?php $this->db->select('*');
                                         $this->db->from('employee');
                                         $query = $this->db->get();
