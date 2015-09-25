@@ -600,11 +600,11 @@ class Register_model extends CI_Model {
                 foreach ($query->result_array() as $row) {
                    $vendorEmail =  $row['vendor_email'];
                    $agentId = $row['agent_id'];
-            return array('one', $vendorEmail, $agentId);
+            return array(1, $vendorEmail, $agentId);
 
                     }
             } else {
-            return array('two');
+            return array(2);
             }
     }
 

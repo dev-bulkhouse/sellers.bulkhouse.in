@@ -50,12 +50,14 @@
                             <div class="form-group">
                                 <label for="sel1">Select Agent:</label>
                                 <select name="agent" class="form-control" id="sel1">
+                                    <option>Select Your Name</option>
                                     <?php $this->db->select('*');
                                         $this->db->from('employee');
                                         $query = $this->db->get();
 
                                         foreach ($query->result() as $row) {
                                             ?>
+
                                              <option value="<?php echo $row->agent_id ?>"><?php echo $row->agent_name.' - ('.$row->agent_id.')'; ?></option>
                                        <?php }?>
 

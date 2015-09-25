@@ -778,11 +778,11 @@ class Admin extends CI_Controller {
             $phone = $this->input->post('phone');
             $agent = $this->input->post('agent');
             $res = $this->register_model->check_email_lead($email);
-            if ($res[0] == 'one') {
+            if ($res[0] == 1) {
                 $email2 = $res[1];
                 $agent2 = $res[2];
                 $this->session->set_flashdata('success_message', 'This Email : '.$email2.' was already in the leads of agent '.$agent2.'.');
-            }elseif($res[0] == 'two'){
+            }elseif($res[0] == 0){
                 $result = $this->register_model->add_leads($email,$name,$phone,$agent);
        if($result == 1){
             redirect(base_url() . 'admin/leads', 'location');
