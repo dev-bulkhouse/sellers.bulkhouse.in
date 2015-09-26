@@ -16,7 +16,7 @@
         <style>
             .due{background-color: yellow; font-weight: bold;}
             .rjt{background-color: darkred; color: white}
-            td{border: #000 solid}
+            td{border: #000 solid;text-align: justify}
         </style>
     </head>
     <body>
