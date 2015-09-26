@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" id="theme" href="/css/theme-default.css"/>
         <!-- EOF CSS INCLUDE -->
         <style>
-            .due{background-color: yellow}
+            .due{background-color: yellow; font-weight: bold;}
             .rjt{background-color: darkred; color: white}
             td{border: #000 solid}
         </style>
