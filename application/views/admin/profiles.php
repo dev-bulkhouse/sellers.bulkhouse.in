@@ -224,6 +224,17 @@
 
             </div>
         </div>
+        <div id="canceled_check" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="ct"></div>
+                </div>
+
+            </div>
+        </div>
 
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
@@ -326,7 +337,8 @@
 
                                         <p><span class="fa fa-caret-right">&nbsp;  </span>Firm Type: &nbsp;<b><?php echo $firm_type ?></b></p>
                                         <p><span class="fa fa-phone">&nbsp;  </span>Mobile: &nbsp;  <b><?php echo $mobile ?></b>&nbsp;
-                                            <?php $verified_mobile = $this->vendor_update->latest_number($compid);
+                                            <?php
+                                            $verified_mobile = $this->vendor_update->latest_number($compid);
                                             if ($verified_mobile == $mobile) {
                                                 ?>
                                                 <i class="fa fa-check" data-toggle="tooltip" title="Verified"></i>
@@ -526,14 +538,14 @@
 
                                     </span>
 
-                                    <?php } ?>
+                                <?php } ?>
 
     <?php if ($comp_file_status == 5) { ?>
-  </br>
+                                    </br>
                                     </br>
                                     <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Company profile</b></small></a>
     <?php } elseif ($comp_file_status == 0) { ?>
-                                     </br>
+                                    </br>
                                     </br>
                                     <span data-toggle="tooltip" title="waiting for approve!">
                                         <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-warning"><i class="fa fa-exclamation"></i><small><b>Company profile</b></small></a>
@@ -693,7 +705,7 @@
                                         <a   data-toggle="modal" data-target="#servicetax" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Service Tax</b></small></a>
 
                                     </span>
-  <?php } ?>
+                                <?php } ?>
 
     <?php if ($comp_file_status == 5) { ?>
                                     </br>
@@ -724,7 +736,28 @@
                                 }
                             } elseif ($firm_type == 'pvt_or_ltd') {
 
-                                if ($pan_comp_status == 5) {
+                                if ($pan_prop_status == 5) {
+                                    ?>
+
+                                    <a   data-toggle="tooltip"  title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i>
+                                        <small><b>Pan Card</b></small></a>
+    <?php } elseif ($pan_prop_status == 0) { ?>
+                                    <span data-toggle="tooltip" title="waiting for approve!">
+                                        <a   data-toggle="modal" data-target="#pan_prop" data-whatever="<?php echo $compid; ?>"  class="btn btn-circle btn-warning"><i class="fa fa-exclamation"></i><small><b>Pan Card</b></small></a>
+                                    </span>
+
+    <?php } elseif ($pan_prop_status == 2) { ?>
+                                    <span data-toggle="tooltip" title="Approved!">
+                                        <a  data-toggle="modal" data-target="#pan_prop" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Pan Card</b></small></a>
+                                    </span>
+    <?php } elseif ($pan_prop_status == 1) { ?>
+                                    <span data-toggle="tooltip" title="Submited!">
+                                        <a  data-toggle="modal" data-target="#pan_prop" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-check"></i><small><b>Pan Card</b></small></a>
+                                    </span>
+
+                                <?php } ?>
+
+                                <?php if ($pan_comp_status == 5) {
                                     ?>
 
                                     <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Company Pan</b></small></a>
@@ -775,7 +808,7 @@
                                     </span>
                                 <?php } ?>
 
-                                <?php if ($photoid_status == 5) { ?>
+    <?php if ($photoid_status == 5) { ?>
 
                                     <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Photo ID</b></small></a>
     <?php } elseif ($photoid_status == 0) { ?>
@@ -792,7 +825,7 @@
                                     </span>
                                 <?php } ?>
 
-                                <?php if ($vat_cst_status == 5) { ?>
+    <?php if ($vat_cst_status == 5) { ?>
 
                                     <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>VAT - CST</b></small></a>
     <?php } elseif ($vat_cst_status == 0) { ?>
@@ -809,7 +842,7 @@
                                     </span>
                                 <?php } ?>
 
-                                    <?php if ($cert_of_incorp_status == 5) { ?>
+    <?php if ($cert_of_incorp_status == 5) { ?>
                                     <span data-toggle="tooltip" title="waiting for approve!">
                                         <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>COI</b></small></a>
     <?php } elseif ($cert_of_incorp_status == 0) { ?>
@@ -857,7 +890,7 @@
 
                                     <?php } ?>
 
-                                    <?php if ($cenvat_status == 5) { ?>
+    <?php if ($cenvat_status == 5) { ?>
 
                                         <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>CENVAT</b></small></a>
     <?php } elseif ($cenvat_status == 0) { ?>
@@ -874,7 +907,7 @@
                                         </span>
                                     <?php } ?>
 
-                                    <?php if ($servicetax_status == 5) { ?>
+    <?php if ($servicetax_status == 5) { ?>
 
                                         <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Service Tax</b></small></a>
     <?php } elseif ($servicetax_status == 0) { ?>
@@ -890,34 +923,32 @@
                                             <a   data-toggle="modal" data-target="#servicetax" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Service Tax</b></small></a>
 
                                         </span>
-  <?php } ?>
+                                    <?php } ?>
 
     <?php if ($comp_file_status == 5) { ?>
-</br>
-                                    </br>
-                                    <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Company profile</b></small></a>
+
+
+                                        <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Company profile</b></small></a>
     <?php } elseif ($comp_file_status == 0) { ?>
-                                    </br>
-                                    </br>
-                                    <span data-toggle="tooltip" title="waiting for approve!">
-                                        <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-warning"><i class="fa fa-exclamation"></i><small><b>Company profile</b></small></a>
-                                    </span>
+                                        </br>
+
+                                        <span data-toggle="tooltip" title="waiting for approve!">
+                                            <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-warning"><i class="fa fa-exclamation"></i><small><b>Company profile</b></small></a>
+                                        </span>
     <?php } elseif ($comp_file_status == 2) { ?>
-                                    </br>
-                                    </br>
-                                    <span data-toggle="tooltip" title="Approved!">
-                                        <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Company profile</b></small></a>
-                                    </span>
+
+                                        <span data-toggle="tooltip" title="Approved!">
+                                            <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Company profile</b></small></a>
+                                        </span>
     <?php } elseif ($comp_file_status == 1) { ?>
-                                    </br>
-                                    </br>
-                                    <span data-toggle="tooltip" title="Disapproved!">
-                                        <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Company profile</b></small></a>
 
-                                    </span>
+                                        <span data-toggle="tooltip" title="Disapproved!">
+                                            <a   data-toggle="modal" data-target="#comp_file" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Company profile</b></small></a>
 
-                                    <?php
-                                  }
+                                        </span>
+
+                                        <?php
+                                    }
                                 }
                                 ?>
 
@@ -940,25 +971,25 @@
                                     ?>
 
                                     <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Bank status</b></small></a>
-                                <?php } elseif ($status == 0) { ?>
+    <?php } elseif ($status == 0) { ?>
 
                                     <a   data-toggle="tooltip" title="Submitted!" class="btn btn-circle btn-primary"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Bank status</b></small></a>
-                                <?php } elseif ($status == 1) { ?>
+    <?php } elseif ($status == 1) { ?>
 
                                     <a   data-toggle="tooltip" title="Dispatch!" class="btn btn-circle btn-info"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Bank status</b></small></a>
-                                <?php } elseif ($status == 2) { ?>
+    <?php } elseif ($status == 2) { ?>
 
                                     <a   data-toggle="tooltip" title="Sent Bank Details!" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Bank status</b></small></a>
-                                <?php } elseif ($status == 3) { ?>
+    <?php } elseif ($status == 3) { ?>
 
                                     <a   data-toggle="tooltip" title="Failed!" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Bank status</b></small></a>
-                                <?php } elseif ($status == 4) { ?>
+    <?php } elseif ($status == 4) { ?>
 
                                     <a   data-toggle="tooltip" title="Success!" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Bank status</b></small></a>
-                                <?php } elseif ($status == 5) { ?>
+    <?php } elseif ($status == 5) { ?>
 
                                     <a   data-toggle="tooltip" title="Wrong!" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Bank status</b></small></a>
-                                     <?php } ?>
+                                <?php } ?>
 
     <?php if ($canceled_check_status == 5) { ?>
 
@@ -975,14 +1006,15 @@
                                     <span data-toggle="tooltip" title="Disapproved!">
                                         <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Canceled check</b></small></a>
                                     </span>
-                                <?php }
+                                <?php
+                                }
                             } elseif ($firm_type == 'pvt_or_ltd') {
 
                                 if ($status == 10) {
                                     ?>
 
                                     <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Bank status</b></small></a>
-    <?php }                            elseif ($status == 0) { ?>
+    <?php } elseif ($status == 0) { ?>
 
                                     <a   data-toggle="tooltip" title="Submitted!" class="btn btn-circle btn-primary"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Bank status</b></small></a>
 
@@ -1001,9 +1033,9 @@
                                 <?php } elseif ($status == 5) { ?>
 
                                     <a   data-toggle="tooltip" title="Wrong!" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Bank status</b></small></a>
-                                   <?php } ?>
+                                <?php } ?>
 
-    <?php if ($canceled_check_status == 5) { ?>
+                                <?php if ($canceled_check_status == 5) { ?>
 
                                     <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Canceled check</b></small></a>
     <?php } elseif ($canceled_check_status == 0) { ?>
@@ -1018,16 +1050,17 @@
                                     <span data-toggle="tooltip" title="Disapproved!">
                                         <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Canceled check</b></small></a>
                                     </span>
-                                <?php }
+                                <?php
+                                }
                             } elseif ($firm_type == 'proprietorship') {
                                 if ($status == 10) {
                                     ?>
 
                                     <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Bank status</b></small></a>
-    <?php } elseif ($status == 0) { ?>
+                                <?php } elseif ($status == 0) { ?>
 
-                                    <a   data-toggle="tooltip" title="Submitted!" class="btn btn-circle btn-primary"><i class="glyphicon glyphicon-thumbs-up"></i></a>
-                                    <small><b>Bank status</b></small></a>
+                                    <a   data-toggle="tooltip" title="Submitted!" class="btn btn-circle btn-primary"><i class="glyphicon glyphicon-thumbs-up"></i> <small><b>Bank status</b></small></a>
+
                                 <?php } elseif ($status == 1) { ?>
 
                                     <a   data-toggle="tooltip" title="Dispatch!" class="btn btn-circle btn-info"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Bank status</b></small></a>
@@ -1043,26 +1076,27 @@
                                 <?php } elseif ($status == 5) { ?>
 
                                     <a   data-toggle="tooltip" title="Wrong!" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Bank status</b></small></a>
-                                    <?php } ?>
+    <?php } ?>
 
-    <?php if ($canceled_check_status == 5) { ?>
+                                <?php if ($canceled_check_status == 5) { ?>
 
                                     <a   data-toggle="tooltip" title="Need to Upload!!" class="btn btn-circle btn-info"><i class="fa fa-thumbs-down"></i><small><b>Canceled check</b></small></a>
-    <?php } elseif ($canceled_check_status == 0) { ?>
+                                <?php } elseif ($canceled_check_status == 0) { ?>
                                     <span data-toggle="tooltip" title="waiting for approve!">
                                         <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-warning"><i class="fa fa-exclamation"></i><small><b>Canceled check</b></small></a>
                                     </span>
-    <?php } elseif ($canceled_check_status == 2) { ?>
+                                <?php } elseif ($canceled_check_status == 2) { ?>
                                     <span data-toggle="tooltip" title="Approved!">
                                         <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-success"><i class="glyphicon glyphicon-thumbs-up"></i><small><b>Canceled check</b></small></a>
                                     </span>
-    <?php } elseif ($canceled_check_status == 1) { ?>
+                                <?php } elseif ($canceled_check_status == 1) { ?>
                                     <span data-toggle="tooltip" title="Disapproved!">
                                         <a   data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $compid; ?>" class="btn btn-circle btn-danger"><i class="fa fa-times"></i><small><b>Canceled check</b></small></a>
                                     </span>
-                                <?php }
-                            }
-                            ?>
+    <?php
+    }
+}
+?>
 
                         </div>
 
@@ -1156,330 +1190,330 @@
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
     <script>
-                $('#pan_prop').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+            $('#pan_prop').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_pan/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
-                $('#vat').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_pan/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
+            $('#vat').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_vat/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_vat/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
 
-                $('#cst').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+            $('#cst').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_cst/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_cst/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
 
-                $('#aoa').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+            $('#aoa').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_aoa/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_aoa/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
 
-                $('#shop_establish_trade').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+            $('#shop_establish_trade').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_shop_establish_trade/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_shop_establish_trade/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
 
-                $('#addressid').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+            $('#addressid').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_addressid/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
-                $('#businessid').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_addressid/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
+            $('#businessid').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_businessid/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
-                $('#cenvat').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_businessid/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
+            $('#cenvat').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_cenvat/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
-                $('#servicetax').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_cenvat/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
+            $('#servicetax').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_servicetax/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
-                $('#comp').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_servicetax/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
+            $('#comp').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_pan_comp/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
-                $('#photoid').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_pan_comp/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
+            $('#photoid').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_photoid/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
-                $('#deep').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_photoid/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
+            $('#deep').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_part_deed/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
-                $('#sign').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_part_deed/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
+            $('#sign').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_sign/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
-                $('#moa').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_sign/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
+            $('#moa').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_moa_aoa/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
-                $('#cert').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_moa_aoa/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
+            $('#cert').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_cert_of_incorp/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
-                $('#canceled_check').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget); // Button that triggered the modal
-                    var recipient = button.data('whatever'); // Extract info from data-* attributes
-                    var modal = $(this);
-                    var dataString = 'id=' + recipient;
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_cert_of_incorp/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
+            $('#canceled_check').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var recipient = button.data('whatever'); // Extract info from data-* attributes
+                var modal = $(this);
+                var dataString = 'id=' + recipient;
 
-                    $.ajax({
-                        type: "GET",
-                        url: "/admin/document_preview_canceled_check/",
-                        data: dataString,
-                        cache: false,
-                        success: function (data) {
-                            console.log(data);
-                            modal.find('.ct').html(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    });
-                })
+                $.ajax({
+                    type: "GET",
+                    url: "/admin/document_preview_canceled_check/",
+                    data: dataString,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        modal.find('.ct').html(data);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            })
     </script>
 </body>
 </html>

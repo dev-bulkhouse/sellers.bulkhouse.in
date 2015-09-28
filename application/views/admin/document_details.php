@@ -53,6 +53,8 @@ if ($logged_in) {
 
               <?php } elseif ($doc_type == "comp_file") { ?>
       Company Profiles
+          <?php } elseif ($doc_type == "canceled_check") { ?>
+     Canceled Check
         <?php } ?>
 
     </h2>
@@ -694,10 +696,47 @@ if ($logged_in) {
                             </tbody>
                         </table>
 
+        <?php } elseif (($doc_type == "canceled_check")) { ?>
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Company Name</th>
+                                    <th>Date of Submission</th>
+                                    <th>Preview</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+    <?php
+    $this->db->select('*');
+    $this->db->from('document_details');
+    $this->db->join('vendor_details', 'vendor_details.id = document_details.compid');
+    $this->db->where(array('document_details.canceled_check_status' => 0));
+    $query = $this->db->get();
+    $canceled_checks = $query->result();
+    ?>
+    <?php foreach ($canceled_checks as $canceled_check) { ?>
+
+                                    <tr>
+                                        <td><?php echo $canceled_check->compid; ?></td>
+                                        <td><?php echo $canceled_check->vendor_name; ?></td>
+                                        <td><?php echo $canceled_check->firm_name; ?></td>
+                                        <td><?php echo $canceled_check->comp_file_date; ?></td>
+                                        <td><button type="button" class="btn btn-info active" data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $canceled_check->compid; ?>">View</button></td>
+                                        <td><form style="float: left" method="post" action="/change/approve/<?php echo $canceled_check->compid . '/canceled_check' ?>"><button type="submit" class="btn btn-success active">Approve</button> </form><form style="float: right" method="post" action="/change/disapprove/<?php echo $canceled_check->compid . '/canceled_check' ?>"><button type="submit" class="btn btn-danger active">Disapprove</button></form></td>
+                                    </tr>
+    <?php } ?>
+
+
+                            </tbody>
+                        </table>
+
 
 
                         </div>
 <?php } ?>
+
 
 
 
@@ -1073,6 +1112,26 @@ if ($logged_in) {
             $.ajax({
                 type: "GET",
                 url: "/admin/document_preview_profile/",
+                data: dataString,
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.ct').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    })
+     $('#canceled_check').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget); // Button that triggered the modal
+          var recipient = button.data('whatever'); // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'id=' + recipient;
+
+            $.ajax({
+                type: "GET",
+                url: "/admin/document_preview_canceled_check/",
                 data: dataString,
                 cache: false,
                 success: function (data) {
