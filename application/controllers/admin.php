@@ -717,7 +717,7 @@ class Admin extends CI_Controller {
             $details['document'] = $row['cert_of_incorp'];
             $details['document_date'] = $row['cert_of_incorp_date'];
             $details['type'] = $row['cert_of_incorp_type'];
-            $details['file_name'] = "_cert_of_incorp";
+            $details['file_name'] = "_certificate_of_incorporation";
             $details['button'] = "/cert_of_incorp";
             $details['document_name'] = "Certificate Of Incorporation";
             $details['address'] = "Address";
