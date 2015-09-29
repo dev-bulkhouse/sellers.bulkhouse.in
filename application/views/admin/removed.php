@@ -50,6 +50,7 @@
                                             <th>Email</th>
                                             <th>Removed Time</th>
                                             <th>Reason</th>
+                                            <th>Agent</th>
                                         </tr>
                                     </thead>
                                     <tbody>
