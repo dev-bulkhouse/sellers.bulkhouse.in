@@ -35,6 +35,10 @@ class Admin extends CI_Controller {
         $this->load->view('admin/export');
 //        $this->load->view('admin/template/footer');
     }
+    public function removed() {
+        $this->load->view('admin/removed');
+    }
+
     public function employees() {
 
 //        $this->load->view('admin/template/header');
