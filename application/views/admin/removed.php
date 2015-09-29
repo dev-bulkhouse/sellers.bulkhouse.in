@@ -55,7 +55,7 @@
                                     <tbody>
                                         <?php
                                         $this->db->select('*');
-                                        $this->db->from('removed_vendors');               
+                                        $this->db->from('removed_vendors');
                                        $this->db->join('leads', 'leads.vendor_email = removed_vendors.email','left');
                                        $this->db->join('employee', 'employee.agent_id = leads.agent_id','left');
                                         $query = $this->db->get();
@@ -67,14 +67,14 @@
 
                                             <tr>
                                                 <td>
-                                                    <span class="fa fa-envelope"> <?php echo $removed->email; ?></span>
+                                                    <span class="fa fa-envelope"> <?php echo $rem->email; ?></span>
                                                 </td>
-                                                <td><?php echo $removed->date; ?></td>
-                                                <td><?php echo $removed->reason; ?></td>
+                                                <td><?php echo $rem->date; ?></td>
+                                                <td><?php echo $rem->reason; ?></td>
 
-                                                    <?php if($vendor->agent_id  != NULL) { ?>
+                                                    <?php if($rem->agent_id  != NULL) { ?>
 
-                                                    <td class="active"><?php echo $removed->agent_name; ?><br/>(<?php echo $removed->agent_id; ?>)</td>
+                                                    <td class="active"><?php echo $rem->agent_name; ?><br/>(<?php echo $rem->agent_id; ?>)</td>
                                                     <?php }else {?>
                                                    <td class="active">No Agent</td>
                                                      <?php }  ?>
