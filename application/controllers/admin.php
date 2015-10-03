@@ -636,7 +636,7 @@ class Admin extends CI_Controller {
             $details['document'] = $row['part_deed'];
             $details['document_date'] = $row['part_deed_date'];
             $details['type'] = $row['part_deed_type'];
-            $details['file_name'] = "_part_deed";
+            $details['file_name'] = "_partnership_deed";
             $details['button'] = "/part_deed";
             $details['address'] = "Address";
             $details['address1'] = $row['address1'];
