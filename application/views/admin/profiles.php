@@ -47,7 +47,7 @@
 
         </script>
     </head>
-    <body>
+      <body class="page-container-boxed">
         <div id="pan_prop" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
             <div class="modal-dialog">
 

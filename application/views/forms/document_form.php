@@ -24,10 +24,11 @@
                         <span><?php echo  $doc_note; ?></span>
                     </div>
                     <hr>
-                    <div class="col-lg-2">
+                    <div class="col-lg-4">
                         <button class="btn btn-sm btn-default" type="submit">Submit</button>
 
                     </div>
+
                     <div class="col-lg-4">
                         <div id="<?php echo  $doc_spinner; ?>" style="display: none"><i class="fa fa-spinner fa-pulse"></i></div>
                         <div id="<?php echo  $doc_status; ?>"></div>
@@ -63,10 +64,11 @@
                         <span><?php echo  $doc_note; ?></span>
                     </div>
                     <hr>
-                    <div class="col-lg-2">
+                    <div class="col-lg-4">
                         <button class="btn btn-sm btn-default" type="submit">Submit</button>
 
                     </div>
+
                     <div class="col-lg-4">
                         <div id="<?php echo  $doc_spinner; ?>" style="display: none"><i class="fa fa-spinner fa-pulse"></i></div>
                         <div id="<?php echo  $doc_status; ?>"></div>

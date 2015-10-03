@@ -138,6 +138,10 @@ if ($logged_in) {
         $data['doc_name'] = 'sign';
         $this->load->view('admin/widget_document', $data);
 
+        $data['doc_show_title'] = 'Canceled Cheque';
+        $data['doc_name'] = 'canceled_check';
+        $this->load->view('admin/widget_document', $data);
+
         ?>
 
 

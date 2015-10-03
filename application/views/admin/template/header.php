@@ -38,7 +38,7 @@ if ($logged_in) {
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     </head>
-    <body>
+     <body class="page-container-boxed">
         <div id="pan_prop" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
                             <div class="modal-dialog">
 
@@ -95,7 +95,7 @@ if ($logged_in) {
 
                             </div>
                         </div>
-        
+
           <div id="shop_establish_trade" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
                             <div class="modal-dialog">
 
@@ -207,6 +207,17 @@ if ($logged_in) {
                             </div>
                         </div>
          <div id="cert" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+
+                                    <div class="ct"></div>
+                                </div>
+
+                            </div>
+                        </div>
+          <div id="canceled_check" class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" aria-labelledby="memberModalLabel">
                             <div class="modal-dialog">
 
                                 <!-- Modal content-->

@@ -12,7 +12,7 @@ if ($logged_in) {
 
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
-                 
+
                         <li><a href="\verification">Dashboard</a></li>
                     <li><a href="#">Bank</a></li>
                     <li class="active">Bank Accounts</li>
@@ -51,6 +51,7 @@ if ($logged_in) {
                                                 <th>IFS-Code</th>
                                                 <th>MICR</th>
                                                 <th>Date of Submission</th>
+                                                <th>Canceled Cheque</th>
                                                 <th>Action</th>
                                            </tr>
                                         </thead>
@@ -80,6 +81,7 @@ if ($logged_in) {
                                                 <td><?php echo $bank_single->ifsc; ?></td>
                                                 <td><?php echo $bank_single->micr; ?></td>
                                                 <td><?php echo $bank_single->date_of_submission; ?></td>
+                                                <td><button type="button" class="btn btn-info active" data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $bank_single->compid; ?>">View</button></td>
                                                 <?php if ($bank_single->status == 0) { ?>
                                                 <td><form style="float: left" method="post" action="/change/dispatch/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="button">Dispatch</button> </form></td>
                                                 <?php }elseif($bank_single->status == 1){ ?>
@@ -236,7 +238,28 @@ $bank_data3 = $query3->result(); ?>
         <script type="text/javascript" src="/js/actions.js"></script>
         <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
+    <script>
+         $('#canceled_check').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget); // Button that triggered the modal
+          var recipient = button.data('whatever'); // Extract info from data-* attributes
+          var modal = $(this);
+          var dataString = 'id=' + recipient;
 
+            $.ajax({
+                type: "GET",
+                url: "/admin/document_preview_canceled_check/",
+                data: dataString,
+                cache: false,
+                success: function (data) {
+                    console.log(data);
+                    modal.find('.ct').html(data);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+    })
+    </script>
     </body>
 </html>
 

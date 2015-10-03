@@ -135,6 +135,48 @@ class Register_model extends CI_Model {
         $this->db->update('vendor_details', $data);
     }
 
+    public function update_vend() {
+
+        $compid = $this->session->userdata('id');
+        $email = $this->session->userdata('email');
+
+        $data = array(
+            'max_credit_limit' => $this->input->post('max_credit_limit'),
+            'address1' => $this->input->post('address1'),
+            'address2' => $this->input->post('address2'),
+            'city' => $this->input->post('city'),
+            'state' => $this->input->post('state'),
+            'pin_code' => $this->input->post('pin_code'),
+            'country' => $this->input->post('country'),
+            'contact_name' => $this->input->post('contact_name'),
+            'mobile_contact' => $this->input->post('mobile_contact'),
+            'email_contact' => $this->input->post('email_contact'),
+            'website' => $this->input->post('website'),
+            'land_line' => $this->input->post('land_line'),
+            'year_establishment' => $this->input->post('year_establishment'),
+            'no_employees' => $this->input->post('no_employees'),
+            'comp_turnover' => $this->input->post('comp_turnover'),
+            'reg_category' => $this->input->post('reg_category'),
+            'pro_category' => $this->input->post('pro_category'),
+            'tax_reg' => $this->input->post('tax_reg'),
+            'cert_products' => $this->input->post('cert_products'),
+            'dispat_person' => $this->input->post('dispat_person'),
+            'dispat_email' => $this->input->post('dispat_email'),
+            'dispat_mobile' => $this->input->post('dispat_mobile'),
+            'dispat_land' => $this->input->post('dispat_land'),
+            'dispat_address1' => $this->input->post('dispat_address1'),
+            'dispat_address2' => $this->input->post('dispat_address2'),
+            'dispat_city' => $this->input->post('dispat_city'),
+        );
+        $this->db->where(array('vendor_details.id' => $compid));
+        $this->db->update('vendor_details', $data);
+        if ($this->db->affected_rows() == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function cenvat_doc($cid, $stat) {
         $data4 = array(
             'cenvat_required' => $stat
@@ -454,9 +496,9 @@ class Register_model extends CI_Model {
     public function viewleads() {
         $this->db->select('*');
         $this->db->from('leads');
+
         $query = $this->db->get();
         return $query->result();
-
     }
 
     public function editleads($id) {

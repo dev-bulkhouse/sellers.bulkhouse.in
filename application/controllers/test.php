@@ -4,10 +4,12 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 require_once APPPATH . "/third_party/xlszen.php";
 
+
 class Test extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+
     }
 
     public function report($date) {
@@ -239,7 +241,7 @@ class Test extends CI_Controller {
     }
 
     public function document_pending_prop() {
-        $this->db->select('vendor_name, firm_name, email, mobile,firm_type,registered_on,pan_prop_lock,vat_cst_lock,cert_of_incorp_lock,shop_establish_trade_lock,cenvat_lock,servicetax_lock,photoid_lock,addressid_lock,businessid_lock,canceled_check_lock,comp_file_lock');
+        $this->db->select('vendor_name, firm_name, email, mobile,firm_type,registered_on,pan_prop_status,vat_cst_status,cert_of_incorp_status,shop_establish_trade_status,cenvat_status,servicetax_status,photoid_status,addressid_status,businessid_status,canceled_check_status,comp_file_status');
         $this->db->from('vendor_details');
         $this->db->join('document_details', 'document_details.compid = vendor_details.id');
         $this->db->where('vendor_details.firm_type', 'proprietorship');
@@ -265,7 +267,7 @@ class Test extends CI_Controller {
     }
 
     public function document_pending_part() {
-        $this->db->select('vendor_name, firm_name, email, mobile,firm_type,registered_on,pan_prop_lock,vat_cst_lock,pan_comp_lock,part_deed_lock,shop_establish_trade_lock,cenvat_lock,servicetax_lock,photoid_lock,addressid_lock,businessid_lock,canceled_check_lock,comp_file_lock');
+        $this->db->select('vendor_name, firm_name, email, mobile,firm_type,registered_on,pan_prop_status,vat_cst_status,pan_comp_status,part_deed_status,shop_establish_trade_status,cenvat_status,servicetax_status,photoid_status,addressid_status,businessid_status,canceled_check_status,comp_file_status');
         $this->db->from('vendor_details');
         $this->db->join('document_details', 'document_details.compid = vendor_details.id');
         $this->db->where('vendor_details.firm_type', 'partnership');
@@ -291,7 +293,7 @@ class Test extends CI_Controller {
     }
 
     public function document_pending_pvt() {
-        $this->db->select('vendor_name, firm_name, email, mobile,firm_type,registered_on,pan_prop_lock,vat_cst_lock,pan_comp_lock,moa_aoa_lock,aoa_lock,cert_of_incorp_lock,cenvat_lock,servicetax_lock,photoid_lock,addressid_lock,businessid_lock,canceled_check_lock,comp_file_lock');
+        $this->db->select('vendor_name, firm_name, email, mobile,firm_type,registered_on,pan_prop_status,vat_cst_status,pan_comp_status,moa_aoa_status,aoa_status,cert_of_incorp_status,cenvat_status,servicetax_status,photoid_status,addressid_status,businessid_status,canceled_check_status,comp_file_status');
         $this->db->from('vendor_details');
         $this->db->join('document_details', 'document_details.compid = vendor_details.id');
         $this->db->where('vendor_details.firm_type', 'pvt_or_ltd');
@@ -315,5 +317,13 @@ class Test extends CI_Controller {
         $xls->addArray($data10);
         $xls->generateXML('PVT LTD or LTD Vendors Report');
     }
+
+     public function export_agent() {
+
+        $this->load->view('spreadsheet');
+
+    }
+
+
 
 }

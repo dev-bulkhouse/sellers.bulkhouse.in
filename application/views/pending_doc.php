@@ -74,6 +74,7 @@ $query = $this->db->get();
         <script src="<?php echo site_url(); ?>js/vendor.js" type="text/javascript"></script>-->
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+
         <script>
             $(document).ready(function (e) {
 
@@ -625,9 +626,25 @@ $query = $this->db->get();
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="list-group bg-white" style="background-color: whitesmoke">
+                                     <div class="panel">
+
+                        <div class="mb-container">
+
+                               <div class="col-lg-6">
+                                <img src="/img/bulkhouse_logo_white-01.png" alt="" width="230"/>
+                        </div>
+                            <div class="col-lg-6"></div>
+
+                <img src="http://placehold.it/350x65" width="100%">
+
+
+
+</div>
+                                </div>
                                     <header class="panel-heading bg-primary" style=" color: black">
                                         <span class="badge bg-info pull-right"></span> Submit Documents
 
+                 <a href="<?php echo site_url(); ?>user/logout" class="btn btn-s-md btn-primary pull-right">Logout</a>
                                     </header>
                                     <?php if ($req_docs->pan_prop == 1) { ?>
                                         <a href="#" class="list-group-item">
@@ -1253,6 +1270,30 @@ $query = $this->db->get();
         <script src="/js/cssParser.js"></script>
         <script src="/js/css-filters-polyfill.js"></script>
         <script src="/css/app.v1.js"></script>
+         <script type="text/javascript" src="/js/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap.min.js"></script>
+        <!-- END PLUGINS -->
+
+        <!-- THIS PAGE PLUGINS -->
+        <script type='text/javascript' src='/js/plugins/icheck/icheck.min.js'></script>
+        <script type="text/javascript" src="/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+        <script type='text/javascript' src='/js/plugins/bootstrap/bootstrap-select.js'></script>
+
+        <script type='text/javascript' src='/js/plugins/validationengine/languages/jquery.validationEngine-en.js'></script>
+        <script type='text/javascript' src='/js/plugins/validationengine/jquery.validationEngine.js'></script>
+
+        <script type='text/javascript' src='/js/plugins/jquery-validation/jquery.validate.js'></script>
+
+        <script type='text/javascript' src='/js/plugins/maskedinput/jquery.maskedinput.min.js'></script>
+        <!-- END THIS PAGE PLUGINS -->
+
+        <!-- START TEMPLATE -->
+        <script type="text/javascript" src="js/settings.js"></script>
+
+        <script type="text/javascript" src="/js/plugins.js"></script>
+        <script type="text/javascript" src="/js/actions.js"></script>
         <!-- Bootstrap -->
         <!-- App -->
     </body>

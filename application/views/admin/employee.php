@@ -29,6 +29,14 @@
 
     <body  class="page-container-boxed">
         <div class="page-content-wrap">
+             <div class="col-lg-8 centered col-lg-offset-2">
+
+                        <div class="mb-container">
+
+                                <img src="/img/bulkhouse_logo_white-01.png" alt="" width="230"/>
+                                </div>
+
+                      </div>
         <section>
             <div class="row m-n animated fadeInDown">
                 <div class="col-md-12 col-lg-4 col-md-offset-4  m-t-lg">
@@ -55,14 +63,15 @@
         </section>
 
         <section>
+
             <div class="row m-n animated fadeInDown">
-                <div class="col-lg-8 centered col-lg-offset-2">
+                <div class="col-lg-6 centered col-lg-offset-3">
                     <section class="panel">
                         <header class="panel-heading bg bg-primary text-center"> Edit Lead</header>
                         <div class="panel-body">
                             <table class="table datatable">
                                 <thead>
-                                <th>Vendor Name</th>
+
                                 <th>Vendor e-mail</th>
                                   <th>Agent ID</th>
 
@@ -72,16 +81,17 @@
                                 <tbody>
                                     <?php
                                     $result = $this->register_model->viewleads();
-                                    foreach ($result as $row) { ?>
+                                    foreach ($result as $row) {
+                                        ?>
 
-                                      <tr>
-								<td><?php echo $row->vendor_name ?></td>
-                                                                <td> <?php echo $row->vendor_email ?> </td>
-								<td><?php echo $row->agent_id ?> </td>
+                                        <tr>
 
-                                <td><a class="btn btn-info active" href="<?php echo site_url()?>admin/edit_lead/<?php echo $row->id; ?>">Edit</a> | <a class="btn btn-danger active" href=<?php echo site_url()?>admin/delete_lead/<?php echo $row->id; ?>">Delete</a></td>
-								</tr>
-                                    <?php } ?>
+                                            <td> <?php echo $row->vendor_email ?> </td>
+                                            <td><?php echo $row->agent_id ?> </td>
+
+                                            <td><a class="btn btn-info active" href="<?php echo site_url() ?>admin/edit_lead/<?php echo $row->id; ?>">Edit</a> | <a class="btn btn-danger active" href=<?php echo site_url() ?>admin/delete_lead/<?php echo $row->id; ?>">Delete</a></td>
+                                        </tr>
+<?php } ?>
 
                                 </tbody>
                             </table>

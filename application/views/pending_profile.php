@@ -15,7 +15,7 @@
         <!-- CSS INCLUDE -->
         <link rel="stylesheet" type="text/css" id="theme" href="/css/theme-default.css"/>
         <!-- EOF CSS INCLUDE -->
-         <style>
+        <style>
             input[type=number]::-webkit-inner-spin-button,
             input[type=number]::-webkit-outer-spin-button {
                 -webkit-appearance: none;
@@ -31,43 +31,63 @@
             .bg-primary .nav li a:hover {
                 color: #010101;
             }
+
+            .bs-wizard {margin-top: 40px;}
+
         </style>
 
     </head>
     <body class="page-container-boxed">
         <!-- START PAGE CONTAINER -->
         <div class="container">
-             <div class="page-content-wrap">
+            <div class="page-content-wrap">
 
-                    <div class="row">
-                        <div class="col-md-12">
+                <div class="row">
+                    <div class="col-lg-8 centered col-lg-offset-2">
 
 
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Update <strong>Profile Details</strong> </h3>
-                                      <button type="button" class="btn btn-primary mb-control pull-right" data-box="#message-box-info"><span class="glyphicon glyphicon-log-out"></span> Log out</button>
+                        <div class="panel panel-default">
+                             <div class="panel">
+                        <div class="mb-container">
+
+                             <div class="col-lg-6">
+                                <img src="/img/bulkhouse_logo_white-01.png" alt="" width="230"/>
+                        </div>
+                            <div class="col-lg-6"></div>
+
+            <div class="row" style="border-bottom:0;">
+                <img src="http://placehold.it/350x65" width="100%">
+
+                </div>
+
+</div>
                                 </div>
-                                 <div class="message-box message-box-info animated fadeIn" id="message-box-info">
-            <div class="mb-container">
-                <div class="mb-middle">
-                    <div class="mb-title"><span class="fa fa-info"></span> Information</div>
-                    <div class="mb-content">
-                        <p>You Should Submit Profile Form, Bank Details and Preferred Documents then you can access your Account Thank you! </p>
-                    </div>
-                    <div class="mb-footer">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Update <strong>Profile Details</strong> </h3>
+                                <button type="button" class="btn btn-primary mb-control pull-right" data-box="#message-box-info"><span class="glyphicon glyphicon-log-out"></span> Log out</button>
+                            </div>
+                            <div class="message-box message-box-info animated fadeIn" id="message-box-info">
+                                <div class="mb-container">
+                                    <div class="mb-middle">
+                                        <div class="mb-title"><span class="fa fa-info"></span> Information</div>
+                                        <div class="mb-content">
+                                            <p>You Should Submit Profile Form, Bank Details and Preferred Documents then you can access your Account Thank you! </p>
+                                        </div>
+                                        <div class="mb-footer">
 
-                         <a href="<?php echo site_url(); ?>user/logout" class="btn btn-default btn-lg pull-right">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-                                <div class="block">
-                                 <div class="page-title">
-                    <h3><span class="fa fa-building-o"></span> Company Details</h3>
-                </div>
-                               </div>
-                         <form class="form-horizontal" action="<?php echo base_url(); ?>main/update_vendor" method="post">
+                                            <a href="<?php echo site_url(); ?>user/logout" class="btn btn-default btn-lg pull-right">Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="page-title">
+                                    <h3><span class="fa fa-building-o"></span> Company Details</h3>
+                                </div>
+                            </div>
+                            <form class="form-horizontal" action="<?php echo base_url(); ?>main/pending_vendor" method="post">
+
+
                                 <div class="panel-body">
 
                                     <div class="row">
@@ -75,7 +95,7 @@
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Year of established</label>
+                                                <label class="col-md-5 control-label">Year of established</label>
                                                 <div class="col-md-6">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
@@ -86,8 +106,8 @@
                                             </div>
 
 
-                                               <div class="form-group">
-                                                <label class="col-md-3 control-label">Turnover</label>
+                                            <div class="form-group">
+                                                <label class="col-md-5 control-label">Turnover</label>
                                                 <div class="col-md-6">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-inr"></span></span>
@@ -97,10 +117,10 @@
                                                 </div>
                                             </div>
 
-                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Registration Category</label>
+                                            <div class="form-group">
+                                                <label class="col-md-5 control-label">Registration Category</label>
                                                 <div class="col-md-6">
-                                                   <select  name="reg_category" class="form-control select" required="required">
+                                                    <select  name="reg_category" class="form-control select" required="required">
                                                         <option value="">Select Category</option>
                                                         <option value="Stockist/Distributor">Stockist / Distributor</option>
                                                         <option  value="MSME/SSI">MSME / SSI </option>
@@ -108,9 +128,9 @@
                                                         <option  value="OriginalManufacturer">Original Manufacturer</option>
                                                         <option  value="Distributor/Agency">Distributor / Agency</option>
                                                         <option  value="Others">Others</option>
-                                                </select>
                                                     </select>
-                                                     <span class="help-block">Company Registration Category</span>
+                                                    </select>
+                                                    <span class="help-block">Company Registration Category</span>
                                                 </div>
                                             </div>
 
@@ -119,9 +139,9 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">No. of employee's</label>
+                                                <label class="col-md-5 control-label">No. of employee's</label>
                                                 <div class="col-md-6">
-                                                   <select name="no_employees" class="form-control select" required="required">
+                                                    <select name="no_employees" class="form-control select" required="required">
                                                         <option value="">Select employee's</option>
                                                         <option  value="1 to 25">1 to 25</option>
                                                         <option  value="25 to 50">25 to 50</option>
@@ -131,11 +151,11 @@
                                                     <span class="help-block">Select Number of Employees's</span>
                                                 </div>
                                             </div>
-                                             <div class="form-group">
-                                                <label  class="col-md-3 control-label">Quality Certification</label>
+                                            <div class="form-group">
+                                                <label  class="col-md-5 control-label">Quality Certification</label>
                                                 <div class="col-md-6">
-                                                   <select name="cert_products" class="form-control select">
-                                                         <option value="">Select Certification</option>
+                                                    <select name="cert_products" class="form-control select">
+                                                        <option value="">Select Certification</option>
                                                         <option value="ISI/BIS">ISI / BIS</option>
                                                         <option value="ISO">ISO </option>
                                                     </select>
@@ -151,199 +171,199 @@
 
                                 </div>
 
+                                <div class="col-md-12" style="margin-bottom: 30px;">
+                                    <div class="row">
+                                        <div class="col-md-6" style="border-right: solid darkgray thin">
 
-                    <div class="row">
-                        <div class="col-md-6">
+                                            <!-- START VALIDATIONENGINE PLUGIN -->
+                                            <div class="block">
+                                                <div class="page-title">
+                                                    <h3><span class="fa fa-building-o"></span> Contact Details</h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <form id="validate" role="form" class="form-horizontal" action="javascript:alert('Form #validate submited');">
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">Office Land line:</label>
+                                                            <div class="col-md-7">
+                                                                <input type="text" class="form-control"  name ="land_line"/>
+                                                                <span class="help-block">Required, max size = 8</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">Address 1:</label>
+                                                            <div class="col-md-7">
+                                                                <textarea type="text" class="validate[required,min[18],max[120]] form-control" name ="address1" required></textarea>
+                                                                <span class="help-block">Required, min size = 5, max size = 10</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">Address 2:</label>
+                                                            <div class="col-md-7">
+                                                                <textarea type="text" class="form-control" name ="address2" ></textarea>
+                                                                <span class="help-block">Required, min size = 5, max size = 10</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">Country:</label>
+                                                            <div class="col-md-7">
+                                                                <select name="country" id="country" class="form-control select" value="<?php
+                                                                echo $row->state;
+                                                                ?>" required="required"></select>
+                                                                <span class="help-block">Select Country</span>
+                                                            </div>
+                                                        </div>
 
-                            <!-- START VALIDATIONENGINE PLUGIN -->
-                            <div class="block">
-                                 <div class="page-title">
-                    <h3><span class="fa fa-building-o"></span> Contact Details</h3>
-                </div>
-                                 <div class="panel-body">
-                                <form id="validate" role="form" class="form-horizontal" action="javascript:alert('Form #validate submited');">
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Office Land line:</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control"  name ="land_line"/>
-                                            <span class="help-block">Required, max size = 8</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Address 1:</label>
-                                        <div class="col-md-9">
-                                            <textarea type="text" class="validate[required,min[18],max[120]] form-control" name ="address1" required></textarea>
-                                            <span class="help-block">Required, min size = 5, max size = 10</span>
-                                        </div>
-                                    </div>
-                                      <div class="form-group">
-                                        <label class="col-md-3 control-label">Address 2:</label>
-                                        <div class="col-md-9">
-                                            <textarea type="text" class="form-control" name ="address2" ></textarea>
-                                            <span class="help-block">Required, min size = 5, max size = 10</span>
-                                        </div>
-                                    </div>
-                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Country:</label>
-                                        <div class="col-md-9">
-                                            <select name="country" id="country" class="form-control select" value="<?php
-                                                echo $row->state;
-                                                    ?>" required="required"></select>
-                                            <span class="help-block">Select Country</span>
-                                        </div>
-                                    </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">State:</label>
+                                                            <div class="col-md-7">
+                                                                <select name="state" id="state" class="form-control" value="<?php
+                                                                echo $row->state;
+                                                                ?>" required="required"></select>
+                                                                <span class="help-block">Required</span>
+                                                            </div>
+                                                            <script language="javascript">
+                                                                populateCountries("country", "state");
 
-                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">State:</label>
-                                        <div class="col-md-9">
-                                            <select name="state" id="state" class="form-control" value="<?php
-                                                echo $row->state;
-                                                    ?>" required="required"></select>
-                                            <span class="help-block">Required</span>
-                                        </div>
-                                           <script language="javascript">
-                                                        populateCountries("country", "state");
-
-                                                    </script>
-                                    </div>
-                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">City:</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name ="city" required/>
-                                            <span class="help-block">Required</span>
-                                        </div>
-                                    </div>
-                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Pin code:</label>
-                                        <div class="col-md-9">
-                                         <input type="number" class="form-control" name ="pin_code" pattern="[0-9]*" required/>
-                                            <span class="help-block">Required,max size = 10</span>
-                                        </div>
-                                    </div>
+                                                            </script>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">City:</label>
+                                                            <div class="col-md-7">
+                                                                <input type="text" class="form-control" name ="city" required/>
+                                                                <span class="help-block">Required</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">Pin code:</label>
+                                                            <div class="col-md-7">
+                                                                <input type="number" class="form-control" name ="pin_code" pattern="[0-9]*" required/>
+                                                                <span class="help-block">Required,max size = 10</span>
+                                                            </div>
+                                                        </div>
 
 
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">WebSite:</label>
-                                        <div class="col-md-9">
-                                            <input type="text" name="website" value="http://" class="form-control" required/>
-                                            <span class="help-block">Required, url</span>
-                                        </div>
-                                    </div>
-                                    <div class="page-title">
-                    <h3><span class="fa fa-phone"></span> Addtional Contact Details</h3>
-                </div>
-                                      <div class="form-group">
-                                        <label class="col-md-3 control-label">Contact Person:</label>
-                                       <div class="col-md-9">
-                                                <input type="text" placeholder="Contact Person"
-                                                name="contact_name" class="bg-focus form-control">
-                                                <div class="line line-dashed m-t-lg"></div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">WebSite:</label>
+                                                            <div class="col-md-7">
+                                                                <input type="text" name="website" value="http://" class="form-control" required/>
+                                                                <span class="help-block">Required, url</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="page-title">
+                                                            <h3><span class="fa fa-phone"></span> Addtional Contact Details</h3>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">Contact Person:</label>
+                                                            <div class="col-md-7">
+                                                                <input type="text" placeholder="Contact Person"
+                                                                       name="contact_name" class="bg-focus form-control">
+                                                                <div class="line line-dashed m-t-lg"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-5 control-label">Email:</label>
+                                                            <div class="col-md-7">
+
+                                                                <input type="email"  placeholder="Contact Email" class="bg-focus form-control">
+                                                                <div class="line line-dashed m-t-lg"></div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+
+                                                            <label class="col-md-5 control-label">Mobile Number:</label>
+                                                            <div class="col-md-7">
+                                                                <input type="number"  placeholder="Mobile Number" pattern="[789][0-9]{9}" name ="mobile_contact" class="bg-focus form-control" maxlength="11">
+                                                                <div class="line line-dashed m-t-lg"></div>
+                                                            </div>
+                                                        </div>
+                                                </div>
                                             </div>
-                                         </div>
-                                          <div class="form-group">
-                                            <label class="col-md-3 control-label">Email:</label>
-                                              <div class="col-md-9">
+                                            <!-- END VALIDATIONENGINE PLUGIN -->
 
-                                                <input type="email"  placeholder="Contact Email" class="bg-focus form-control">
-                                                <div class="line line-dashed m-t-lg"></div>
+                                        </div>
+
+                                        <div class="col-md-6" >
+
+                                            <!-- START JQUERY VALIDATION PLUGIN -->
+                                            <div class="block">
+                                                <div class="page-title">
+                                                    <h3><span class="fa fa-truck"></span> Dispatch Contact Details</h3>
+                                                </div>
+
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+                                                        <label class="col-md-5 control-label">Contact Person:</label>
+                                                        <div class="col-md-7">
+                                                            <input type="text" class="form-control" name="login" name ="dispat_person" required/>
+                                                            <span class="help-block">Required</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-5 control-label">E-mail:</label>
+                                                        <div class="col-md-7">
+                                                            <input type="email" value="" name="email" name="dispat_email" class="form-control" required/>
+                                                            <span class="help-block">required email</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-5 control-label">Mobile Number::</label>
+                                                        <div class="col-md-7">
+                                                            <input type="number" class="form-control" name ="dispat_mobile" pattern="[789][0-9]{9}"/>
+                                                            <span class="help-block">min size = 18, max size = 100</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-5 control-label">Office Land Line:</label>
+                                                        <div class="col-md-7">
+                                                            <input type="number" class="form-control" name ="dispat_land" pattern="[0-9]*"/>
+                                                            <span class="help-block">min size = 18, max size = 100</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-5 control-label">Address 1:</label>
+                                                        <div class="col-md-7">
+                                                            <textarea type="text" class="validate[required,min[18],max[120]] form-control" name ="dispat_address1" required></textarea>
+                                                            <span class="help-block">Required, min size = 15, max size = 20</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-5 control-label">Address 2:</label>
+                                                        <div class="col-md-7">
+                                                            <textarea type="text" class="form-control" name ="dispat_address2" ></textarea>
+                                                            <span class="help-block">If Required</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-5 control-label">City:</label>
+                                                        <div class="col-md-7">
+                                                            <input type="text" class="form-control" name ="dispat_city" required/>
+                                                            <span class="help-block">Required</span>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+                                                <!-- END JQUERY VALIDATION PLUGIN -->
                                             </div>
-                                             </div>
-
-                                            <div class="form-group">
-
-                                                <label class="col-md-3 control-label">Mobile Number:</label>
-                                                 <div class="col-md-9">
-                                                <input type="number"  placeholder="Mobile Number" pattern="[789][0-9]{9}" name ="mobile_contact" class="bg-focus form-control" maxlength="11">
-                                                <div class="line line-dashed m-t-lg"></div>
-                                            </div>
-                                                 </div>
-                                   </div>
-                            </div>
-                            <!-- END VALIDATIONENGINE PLUGIN -->
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <!-- START JQUERY VALIDATION PLUGIN -->
-                            <div class="block">
-                              <div class="page-title">
-                    <h3><span class="fa fa-truck"></span> Dispatch Contact Details</h3>
-                </div>
-
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">Contact Person:</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="login" name ="dispat_person" required/>
-                                            <span class="help-block">Required</span>
                                         </div>
                                     </div>
-                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">E-mail:</label>
-                                        <div class="col-md-9">
-                                            <input type="email" value="" name="email" name="dispat_email" class="form-control" required/>
-                                            <span class="help-block">required email</span>
-                                        </div>
-                                    </div>
-                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Mobile Number::</label>
-                                        <div class="col-md-9">
-                                            <input type="number" class="form-control" name ="dispat_mobile" pattern="[789][0-9]{9}"/>
-                                            <span class="help-block">min size = 18, max size = 100</span>
-                                        </div>
-                                    </div>
-                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Office Land Line:</label>
-                                        <div class="col-md-9">
-                                            <input type="number" class="form-control" name ="dispat_land" pattern="[0-9]*"/>
-                                            <span class="help-block">min size = 18, max size = 100</span>
-                                        </div>
-                                    </div>
-                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Address 1:</label>
-                                        <div class="col-md-9">
-                                            <textarea type="text" class="validate[required,min[18],max[120]] form-control" name ="dispat_address1" required></textarea>
-                                            <span class="help-block">Required, min size = 15, max size = 20</span>
-                                        </div>
-                                    </div>
-                                      <div class="form-group">
-                                        <label class="col-md-3 control-label">Address 2:</label>
-                                        <div class="col-md-9">
-                                            <textarea type="text" class="form-control" name ="dispat_address2" ></textarea>
-                                            <span class="help-block">If Required</span>
-                                        </div>
-                                    </div>
-                                       <div class="form-group">
-                                        <label class="col-md-3 control-label">City:</label>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name ="dispat_city" required/>
-                                            <span class="help-block">Required</span>
-                                        </div>
-                                    </div>
-
-
                                 </div>
-
-                            <!-- END JQUERY VALIDATION PLUGIN -->
-                            </div>
-                        </div>
-                    </div>
-
 
 
 
                                 <div class="panel-footer">
 
-                                       <button class="btn btn-primary pull-right" type="submit">Submit</button>
+                                    <button class="btn btn-primary pull-right" type="submit">Submit</button>
                                 </div>
 
                             </form>
- </div>
                         </div>
                     </div>
-  </div>
                 </div>
+            </div>
+        </div>
 
 
         <!-- END PAGE CONTAINER -->
@@ -373,7 +393,7 @@
         <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
         <!-- END PRELOADS -->
 
-    <!-- START SCRIPTS -->
+        <!-- START SCRIPTS -->
         <!-- START PLUGINS -->
         <script type="text/javascript" src="/js/plugins/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="/js/plugins/jquery/jquery-ui.min.js"></script>
@@ -403,21 +423,19 @@
         <!-- END TEMPLATE -->
 
         <script type="text/javascript">
-            var jvalidate = $("#jvalidate").validate({
-                ignore: [],
-                rules: {
-
-                        email: {
-                                required: true,
-                                email: true
-                        },
-
-                    }
-                });
+                                               var jvalidate = $("#jvalidate").validate({
+                                                   ignore: [],
+                                                   rules: {
+                                                       email: {
+                                                           required: true,
+                                                           email: true
+                                                       },
+                                                   }
+                                               });
 
         </script>
 
-    <!-- END SCRIPTS -->
+        <!-- END SCRIPTS -->
 
     </body>
 </html>

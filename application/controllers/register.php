@@ -129,7 +129,7 @@ class Register extends CI_Controller {
         $this->db->from('vendor_details');
         $this->db->join('document_details', 'document_details.compid = vendor_details.id');
         $this->db->join('bank_details', 'bank_details.compid = vendor_details.id');
-        $this->db->where(array('bank_details.compid' => $compid));
+        $this->db->where(array('bank_details.compid' => $id));
 
 
         $id = $this->db->where('id', $id);

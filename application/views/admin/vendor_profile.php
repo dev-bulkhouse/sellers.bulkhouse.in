@@ -72,28 +72,17 @@ if ($logged_in) {
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
-                            <td><a class="btn btn-info active" href="<?php echo site_url()?>admin/profile/<?php echo $vendor->id; ?>">view</a> <a class="btn btn-danger active mb-control" data-box="#message-box-info">Delete</a></td>
+                            <td><a class="btn btn-info active" href="<?php echo site_url()?>admin/profile/<?php echo $vendor->id; ?>">view</a> <a class="btn btn-danger active mb-control"  href= "<?php echo site_url()?>register/delete/<?php echo $vendor->id ?>">Delete</a></td>
+
                         </tr>
 
 
                     <?php } ?>
                 </tbody>
             </table>
-                                    <div class="mb-container">
-                <div class="mb-middle">
-                    <div class="mb-title"><span class="fa fa-danger"></span> Information</div>
-                    <div class="mb-content">
-                        <p>Are you sure ? You want to delete existing Customer ?</p>
-                    </div>
-                    <div class="mb-footer">
 
-                         <a  href= "<?php echo site_url()?>register/delete/<?php echo $vendor->id ?>" class="btn btn-default btn-lg pull-right">Yes</a>
-                         <button class="btn btn-default btn-lg pull-right mb-control-close">No</button>
-                    </div>
-                </div>
-            </div>
 
-</div>
+
 
 </div><!--/container-->
 
@@ -124,7 +113,7 @@ if ($logged_in) {
                     </div>
                     <div class="mb-footer">
                         <div class="pull-right">
-                            <a href="http://sellers.bulkhouse.in/admin/logout" class="btn btn-success btn-lg">Yes</a>
+                            <a href="<?php echo site_url()?>admin/logout" class="btn btn-success btn-lg">Yes</a>
                             <button class="btn btn-default btn-lg mb-control-close">No</button>
                         </div>
                     </div>

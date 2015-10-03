@@ -49,7 +49,6 @@ class Vendor_update extends CI_Model {
         );
         $this->db->where('compid', $comp_id);
         $this->db->update('document_details', $c);
-
     }
 
     public function add_bank($comp_id) {
@@ -68,6 +67,28 @@ class Vendor_update extends CI_Model {
         $this->db->where('compid', $comp_id);
         $this->db->update('bank_details', $banking);
         return 1;
+    }
+
+    public function vendor_bank($comp_id) {
+        $time = date("Y-m-d") . "|" . date("h:i:s");
+        $banking = array(
+            'account_name' => $this->input->post('account_name'),
+            'account_number' => $this->input->post('account_number'),
+            'bank_name' => $this->input->post('bank_name'),
+            'branch' => $this->input->post('branch'),
+            'ifsc' => $this->input->post('ifsc'),
+            'micr' => $this->input->post('micr'),
+            'date_of_submission' => $time,
+            'compid' => $comp_id,
+            'status' => 0
+        );
+        $this->db->where('compid', $comp_id);
+        $this->db->update('bank_details', $banking);
+        if ($this->db->affected_rows() == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function credit($comp_id) {
@@ -96,45 +117,45 @@ class Vendor_update extends CI_Model {
 
             $pan_prop_status = $st->pan_prop_status;
             $vat_cst_status = $st->vat_cst_status;
-            $cst_status = $st->cst_status;
             $pan_comp_status = $st->pan_comp_status;
             $part_deed_status = $st->part_deed_status;
             $cert_of_incorp_status = $st->cert_of_incorp_status;
             $moa_aoa_status = $st->moa_aoa_status;
             $aoa_status = $st->aoa_status;
-            $shop_establish_trade = $st->shop_establish_trade_status;
+            $shop_establish_trade_status = $st->shop_establish_trade_status;
             $photoid = $st->photoid_status;
             $businessid = $st->businessid_status;
+            $addressid = $st->addressid_status;
 
             if ($firm_type == 'partnership') {
-                if ($pan_prop_status == 5 || $photoid == 5 || $vat_cst_status == 5 || $cst_status == 5 || $pan_comp_status == 5 || $part_deed_status == 5) {
+                if ($addressid == 5 || $businessid == 5 || $pan_prop_status == 5 || $photoid == 5 || $vat_cst_status == 5 || $pan_comp_status == 5 || $part_deed_status == 5 || $shop_establish_trade_status == 5) {
                     return "Need To Upload";
-                } elseif ($pan_prop_status == 0 || $photoid == 0 || $vat_cst_status == 0 || $cst_status == 0 || $pan_comp_status == 0 || $part_deed_status == 0) {
+                } elseif ($addressid == 0 || $businessid == 0 || $pan_prop_status == 0 || $photoid == 0 || $vat_cst_status == 0 || $pan_comp_status == 0 || $part_deed_status == 0 || $shop_establish_trade_status == 0) {
                     return "Waiting for Approved";
-                } elseif ($pan_prop_status == 2 || $photoid == 2 || $vat_cst_status == 2 || $cst_status == 2 || $pan_comp_status == 2 || $part_deed_status == 2) {
+                } elseif ($addressid == 2 || $businessid == 2 || $pan_prop_status == 2 || $photoid == 2 || $vat_cst_status == 2 || $pan_comp_status == 2 || $part_deed_status == 2 || $shop_establish_trade_status == 2) {
                     return "Approved";
-                } elseif ($pan_prop_status == 1 || $photoid == 1 || $vat_cst_status == 1 || $cst_status == 1 || $pan_comp_status == 1 || $part_deed_status == 1) {
+                } elseif ($addressid == 1 || $businessid == 1 || $pan_prop_status == 1 || $photoid == 1 || $vat_cst_status == 1 || $pan_comp_status == 1 || $part_deed_status == 1 || $shop_establish_trade_status == 1) {
                     return "Disapproved";
                 }
             } elseif ($firm_type == 'proprietorship') {
-                if ($businessid == 5 || $photoid == 5 || $vat_cst_status == 5 || $pan_prop_status == 5 || $cst_status == 5 || $shop_establish_trade == 5) {
+                if ($addressid == 5 || $businessid == 5 || $photoid == 5 || $vat_cst_status == 5 || $pan_prop_status == 5 || $shop_establish_trade_status == 5) {
                     return "Need To Upload";
-                } elseif ($businessid == 0 || $photoid == 0 || $vat_cst_status == 0 || $pan_prop_status == 0 || $cst_status == 0 || $shop_establish_trade == 0) {
+                } elseif ($addressid == 0 || $businessid == 0 || $photoid == 0 || $vat_cst_status == 0 || $pan_prop_status == 0 || $shop_establish_trade_status == 0) {
                     return "Waiting for Approved";
-                } elseif ($businessid == 2 || $photoid == 2 || $vat_cst_status == 2 || $pan_prop_status == 2 || $cst_status == 2 || $shop_establish_trade == 2) {
+                } elseif ($addressid == 2 || $businessid == 2 || $photoid == 2 || $vat_cst_status == 2 || $pan_prop_status == 2 || $shop_establish_trade_status == 2) {
                     return "Approved";
-                } elseif ($businessid == 1 || $photoid == 1 || $vat_cst_status == 1 || $pan_prop_status == 1 || $cst_status == 1 || $shop_establish_trade == 1) {
+                } elseif ($addressid == 1 || $businessid == 1 || $photoid == 1 || $vat_cst_status == 1 || $pan_prop_status == 1 || $shop_establish_trade_status == 1) {
                     return "Disapproved";
                 }
             } elseif ($firm_type == 'pvt_or_ltd') {
 
-                if ($photoid == 5 || $vat_cst_status == 5 || $cst_status == 5 || $pan_comp_status == 5 || $cert_of_incorp_status == 5 || $moa_aoa_status == 5 || $aoa_status == 5) {
+                if ($addressid == 5 || $businessid == 5 || $photoid == 5 || $vat_cst_status == 5 || $pan_comp_status == 5 || $cert_of_incorp_status == 5 || $moa_aoa_status == 5 || $aoa_status == 5) {
                     return "Need To Upload";
-                } elseif ($photoid == 0 || $vat_cst_status == 0 || $cst_status == 0 || $pan_comp_status == 0 || $cert_of_incorp_status == 0 || $moa_aoa_status == 0 || $aoa_status == 0) {
+                } elseif ($addressid == 0 || $businessid == 0 || $photoid == 0 || $vat_cst_status == 0 || $pan_comp_status == 0 || $cert_of_incorp_status == 0 || $moa_aoa_status == 0 || $aoa_status == 0) {
                     return "Waiting for Approved";
-                } elseif ($photoid == 2 || $vat_cst_status == 2 || $cst_status == 2 || $pan_comp_status == 2 || $cert_of_incorp_status == 2 || $moa_aoa_status == 2 || $aoa_status == 2) {
+                } elseif ($addressid == 2 || $businessid == 2 || $photoid == 2 || $vat_cst_status == 2 || $pan_comp_status == 2 || $cert_of_incorp_status == 2 || $moa_aoa_status == 2 || $aoa_status == 2) {
                     return "Approved";
-                } elseif ($photoid == 1 || $vat_cst_status == 1 || $cst_status == 1 || $pan_comp_status == 1 || $cert_of_incorp_status == 1 || $moa_aoa_status == 1 || $aoa_status == 1) {
+                } elseif ($addressid == 1 || $businessid == 1 || $photoid == 1 || $vat_cst_status == 1 || $pan_comp_status == 1 || $cert_of_incorp_status == 1 || $moa_aoa_status == 1 || $aoa_status == 1) {
                     return "Disapproved";
                 }
             }
@@ -201,6 +222,83 @@ class Vendor_update extends CI_Model {
         }
     }
 
+    public function profile_update($compid) {
+        $this->db->select('*');
+        $this->db->from('vendor_details');
+        $this->db->where(array('vendor_details.id' => $compid));
+        $query = $this->db->get();
+        $result = $query->result();
+        foreach ($result as $st) {
+
+            $address1 = $st->address1;
+
+            $city = $st->city;
+            $state = $st->state;
+            $pincode = $st->pin_code;
+            $contact_name = $st->contact_name;
+            $mobile_contact = $st->mobile_contact;
+            $email_contact = $st->email_contact;
+            $year_establishment = $st->year_establishment;
+            $comp_turnover = $st->comp_turnover;
+            $reg_category = $st->reg_category;
+            $tax_reg = $st->tax_reg;
+            $cert_products = $st->cert_products;
+
+            if ($address1 != "" && $city != "" && $state != "" && $pincode != "" && $contact_name != "" && $mobile_contact != "" && $email_contact != "" && $year_establishment != "" && $comp_turnover != "" && $reg_category != "" && $tax_reg != "" && $cert_products != "") {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+    public function redirect($compid) {
+        $this->db->select('*');
+        $this->db->from('document_details');
+        $this->db->join('vendor_details', 'vendor_details.id = document_details.compid');
+        $this->db->where(array('vendor_details.id' => $compid));
+        $query = $this->db->get();
+        $result = $query->result();
+        foreach ($result as $st) {
+            $firm_type = $st->firm_type;
+            $pan_prop_status = $st->pan_prop_status;
+            $vat_cst_status = $st->vat_cst_status;
+            $pan_comp_status = $st->pan_comp_status;
+            $part_deed_status = $st->part_deed_status;
+            $sign_status = $st->sign_status;
+            $cert_of_incorp_status = $st->cert_of_incorp_status;
+            $moa_aoa_status = $st->moa_aoa_status;
+            $aoa_status = $st->aoa_status;
+            $shop_establish_trade_status = $st->shop_establish_trade_status;
+            $photoid_status = $st->photoid_status;
+            $addressid_status = $st->addressid_status;
+            $businessid_status = $st->businessid_status;
+            $canceled_check_status = $st->canceled_check_status;
+        }
+        if ($firm_type == "proprietorship") {
+            if ($pan_prop_status == 2 && $vat_cst_status == 2 && $shop_establish_trade_status == 2 && $addressid_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $canceled_check_status == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } elseif ($firm_type == "partnership") {
+
+            if ($pan_prop_status == 2 && $vat_cst_status == 2 && $pan_comp_status == 2 && $part_deed_status == 2 && $shop_establish_trade_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $addressid_status && $canceled_check_status == 0) {
+
+                return false;
+            } else {
+                return true;
+            }
+        } elseif ($firm_type == "pvt_or_ltd") {
+            if ($pan_prop_status == 2 && $addressid_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $vat_cst_status == 2 && $pan_comp_status == 2 && $cert_of_incorp_status == 2 && $moa_aoa_status == 2 && $aoa_status == 2 && $canceled_check_status == 0) {
+
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
     public function mobile_verified($compid, $mobile) {
 
         $last_version = $this->latest_number_version($compid);
@@ -259,7 +357,6 @@ class Vendor_update extends CI_Model {
         $email = $this->session->userdata('email');
 
         $data = array(
-
             $field => $this->input->post($field)
         );
 
@@ -268,18 +365,17 @@ class Vendor_update extends CI_Model {
         $this->db->update('vendor_details', $data);
     }
 
-    public function change_firmtype($email,$firmtype) {
+    public function change_firmtype($email, $firmtype) {
 
 
         $data = array(
-
             'firmtype' => $firmtype
         );
 
 
         $this->db->where(array('vendor_details.email' => $email));
         $this->db->update('vendor_details', $data);
-        echo "firmtype changed successfully for ".$email." to ".$firmtype;
+        echo "firmtype changed successfully for " . $email . " to " . $firmtype;
     }
 
 }

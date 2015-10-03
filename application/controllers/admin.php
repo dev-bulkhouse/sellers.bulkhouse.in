@@ -29,14 +29,22 @@ class Admin extends CI_Controller {
         $this->load->view('admin/login');
 //        $this->load->view('admin/template/footer');
     }
-     public function exports() {
+   
+    public function removed() {
+        $this->load->view('admin/removed');
+    }
+
+    public function exports() {
 
 //        $this->load->view('admin/template/header');
         $this->load->view('admin/export');
 //        $this->load->view('admin/template/footer');
     }
-    public function removed() {
-        $this->load->view('admin/removed');
+    public function exports_admin() {
+
+//        $this->load->view('admin/template/header');
+        $this->load->view('admin/export_admin');
+//        $this->load->view('admin/template/footer');
     }
 
     public function employees() {
@@ -45,13 +53,14 @@ class Admin extends CI_Controller {
         $this->load->view('admin/employee');
 //        $this->load->view('admin/template/footer');
     }
+
     public function add_agent() {
 
 //        $this->load->view('admin/template/header');
         $result = $this->register_model->add_agents();
-          if($result == 1){
+        if ($result == 1) {
             redirect(base_url() . 'admin/employees', 'location');
-       }
+        }
 
 //        $this->load->view('admin/template/footer');
     }
@@ -62,17 +71,17 @@ class Admin extends CI_Controller {
         $this->load->view('admin/leads');
 //        $this->load->view('admin/template/footer');
     }
-    public function delete_lead($id)
-	{
-                $this->db->select('*');
+
+    public function delete_lead($id) {
+        $this->db->select('*');
         $this->db->from('leads');
         $this->db->where(array('leads.id' => $id));
-       $result = $this->db->delete('leads');
+        $result = $this->db->delete('leads');
 
-		 if($result == 1){
+        if ($result == 1) {
             redirect(base_url() . 'admin/employees', 'location');
-       }
-	}
+        }
+    }
 
     public function login_admin() {
 
@@ -118,7 +127,7 @@ class Admin extends CI_Controller {
 
     public function logout() {
         $this->session->sess_destroy();
-        redirect('http://sellers.bulkhouse.in/admin', 'location');
+         redirect(site_url() . 'admin/', 'location');
     }
 
     public function details($doc_type) {
@@ -183,10 +192,10 @@ class Admin extends CI_Controller {
         $this->db->select('*');
         $this->db->from('vendor_details');
         $this->db->join('document_details', 'document_details.compid = vendor_details.id');
-           $this->db->join('bank_details', 'bank_details.compid = vendor_details.id');
+        $this->db->join('bank_details', 'bank_details.compid = vendor_details.id');
 
         $this->db->where(array('vendor_details.id' => $id));
-         $this->db->group_by("vendor_details.id");
+        $this->db->group_by("vendor_details.id");
 
         $query = $this->db->get();
         foreach ($query->result_array() as $row) {
@@ -199,43 +208,43 @@ class Admin extends CI_Controller {
             $details['email'] = $row['email'];
             $details['mobile'] = $row['mobile'];
             $details['pan_prop_status'] = $row['pan_prop_status'];
-             $details['pan_comp_status'] = $row['pan_comp_status'];
-              $details['vat_cst_status'] = $row['vat_cst_status'];
-               $details['part_deed_status'] = $row['part_deed_status'];
-               $details['photoid_status'] = $row['photoid_status'];
-               $details['shop_establish_trade_status'] = $row['shop_establish_trade_status'];
-               $details['businessid_status'] = $row['businessid_status'];
-               $details['cert_of_incorp_status'] = $row['cert_of_incorp_status'];
-               $details['moa_aoa_status'] = $row['moa_aoa_status'];
-                 $details['aoa_status'] = $row['aoa_status'];
-                  $details['addressid_status'] = $row['addressid_status'];
-                   $details['status'] = $row['status'];
-                    $details['comp_file_status'] = $row['comp_file_status'];
-                    $details['canceled_check_status'] = $row['canceled_check_status'];
-                     $details['address1'] = $row['address1'];
-                       $details['address2'] = $row['address2'];
-                        $details['city'] = $row['city'];
-                         $details['state'] = $row['state'];
-                          $details['country'] = $row['country'];
-                           $details['pin_code'] = $row['pin_code'];
-                             $details['cenvat_status'] = $row['cenvat_status'];
-                               $details['servicetax_status'] = $row['servicetax_status'];
-                               $details['year_establishment'] = $row['year_establishment'];
-                               $details['no_employees'] = $row['no_employees'];
-                               $details['reg_category'] = $row['reg_category'];
-                               $details['website'] = $row['website'];
-                                $details['land_line'] = $row['land_line'];
-                                 $details['cert_products'] = $row['cert_products'];
-                                  $details['comp_turnover'] = $row['comp_turnover'];
-                                   $details['registered_on'] = $row['registered_on'];
+            $details['pan_comp_status'] = $row['pan_comp_status'];
+            $details['vat_cst_status'] = $row['vat_cst_status'];
+            $details['part_deed_status'] = $row['part_deed_status'];
+            $details['photoid_status'] = $row['photoid_status'];
+            $details['shop_establish_trade_status'] = $row['shop_establish_trade_status'];
+            $details['businessid_status'] = $row['businessid_status'];
+            $details['cert_of_incorp_status'] = $row['cert_of_incorp_status'];
+            $details['moa_aoa_status'] = $row['moa_aoa_status'];
+            $details['aoa_status'] = $row['aoa_status'];
+            $details['addressid_status'] = $row['addressid_status'];
+            $details['status'] = $row['status'];
+            $details['comp_file_status'] = $row['comp_file_status'];
+            $details['canceled_check_status'] = $row['canceled_check_status'];
+            $details['address1'] = $row['address1'];
+            $details['address2'] = $row['address2'];
+            $details['city'] = $row['city'];
+            $details['state'] = $row['state'];
+            $details['country'] = $row['country'];
+            $details['pin_code'] = $row['pin_code'];
+            $details['cenvat_status'] = $row['cenvat_status'];
+            $details['servicetax_status'] = $row['servicetax_status'];
+            $details['year_establishment'] = $row['year_establishment'];
+            $details['no_employees'] = $row['no_employees'];
+            $details['reg_category'] = $row['reg_category'];
+            $details['website'] = $row['website'];
+            $details['land_line'] = $row['land_line'];
+            $details['cert_products'] = $row['cert_products'];
+            $details['comp_turnover'] = $row['comp_turnover'];
+            $details['registered_on'] = $row['registered_on'];
 
-                                    $details['document'] = $row['pan_prop'];
+            $details['document'] = $row['pan_prop'];
             $details['document_date'] = $row['pan_prop_date'];
             $details['type'] = $row['pan_prop_type'];
             $details['file_name'] = "_pan_card";
             $details['button'] = "/pan_prop";
 
-             $details['document'] = $row['vat_cst'];
+            $details['document'] = $row['vat_cst'];
             $details['document_date'] = $row['vat_cst_date'];
             $details['type'] = $row['vat_cst_type'];
             $details['file_name'] = "_vat";
@@ -246,7 +255,7 @@ class Admin extends CI_Controller {
             $details['file_name'] = "_aoa";
             $details['button'] = "/aoa";
 
-             $details['document_date'] = $row['shop_establish_trade_date'];
+            $details['document_date'] = $row['shop_establish_trade_date'];
             $details['type'] = $row['shop_establish_trade_type'];
             $details['file_name'] = "_shop_establish_trade_date";
             $details['button'] = "/shop_establish_trade";
@@ -256,7 +265,7 @@ class Admin extends CI_Controller {
             $details['document_date'] = $row['addressid_date'];
             $details['type'] = $row['addressid_type'];
 
-             $details['file_name'] = "_businessid";
+            $details['file_name'] = "_businessid";
             $details['button'] = "/businessid";
             $details['document_date'] = $row['businessid_date'];
             $details['type'] = $row['businessid_type'];
@@ -270,7 +279,6 @@ class Admin extends CI_Controller {
 
             $this->load->view('admin/profiles', $details);
         }
-
     }
 
     public function bankdetails() {
@@ -758,11 +766,13 @@ class Admin extends CI_Controller {
             $this->load->view('admin/preview_details', $details);
         }
     }
+
     public function document_preview_canceled_check() {
         $compid = $_GET['id'];
         $this->db->select('*');
         $this->db->from('document_details');
         $this->db->join('vendor_details', 'vendor_details.id = compid');
+        $this->db->join('bank_details', 'bank_details.compid = document_details.compid');
         $this->db->where(array('vendor_details.id' => $compid));
         $query = $this->db->get();
         foreach ($query->result_array() as $row) {
@@ -778,65 +788,65 @@ class Admin extends CI_Controller {
             $details['document_date'] = $row['canceled_check_date'];
             $details['type'] = $row['canceled_check_type'];
             $details['file_name'] = "_canceled_check";
+            $details['bank'] = "Bank Details";
+            $details['bank1'] = $row['account_name'];
+            $details['bank2'] = $row['account_number'];
+            $details['bank3'] = $row['bank_name'];
+            $details['bank4'] = $row['branch'];
+            $details['bank5'] = $row['ifsc'];
+            $details['bank6'] = $row['micr'];
             $details['button'] = "/canceled_check";
-            $details['address'] = "Address";
-            $details['address1'] = $row['address1'];
-            $details['address2'] = $row['address2'];
+
             $this->load->view('admin/preview_details', $details);
         }
     }
 
-
     public function add_leads() {
-            $email = $this->input->post('email');
-            $name = $this->input->post('name');
-            $phone = $this->input->post('phone');
-            $agent = $this->input->post('agent');
-            $res = $this->register_model->check_email_lead($email);
-            if ($res[0] == 'one') {
-                $email2 = $res[1];
-                $agent2 = $res[2];
-                $this->session->set_flashdata('success_message', 'This Email : '.$email2.' was already in the leads of agent '.$agent2.'.');
-            redirect(base_url() . 'admin/leads', 'location');
-
-            }elseif($res[0] == 'two'){
-                $result = $this->register_model->add_leads($email,$name,$phone,$agent);
-       if($result == 1){
-            redirect(base_url() . 'admin/leads', 'location');
-       }
+        $email = $this->input->post('email');
+        $name = $this->input->post('name');
+        $phone = $this->input->post('phone');
+        $agent = $this->input->post('agent');
+        $res = $this->register_model->check_email_lead($email);
+        if ($res[0] == 'one') {
+            $email2 = $res[1];
+            $agent2 = $res[2];
+            $this->session->set_flashdata('success_message', 'This Email : ' . $email2 . ' was already in the leads of agent ' . $agent2 . '.');
+            redirect(base_url() . 'admin/exports_admin', 'location');
+        } elseif ($res[0] == 'two') {
+            $result = $this->register_model->add_leads($email, $name, $phone, $agent);
+            if ($result == 1) {
+                redirect(base_url() . 'admin/exports_admin', 'location');
             }
+        }
+    }
 
+    public function edit_lead($id) {
+        $result = $this->register_model->editleads($id);
+        foreach ($result as $row) {
 
-       }
-       public function edit_lead($id)
-	{
-		$result=$this->register_model->editleads($id);
-                 foreach ($result as $row) {
+            $data['vendor_email'] = $row['vendor_email'];
+            $data['vendor_phone'] = $row['vendor_phone'];
+            $data['vendor_name'] = $row['vendor_name'];
 
-             $data['vendor_email'] = $row['vendor_email'];
-             $data['vendor_phone'] = $row['vendor_phone'];
-             $data['vendor_name'] = $row['vendor_name'];
-
-             $data['id'] = $id;
+            $data['id'] = $id;
         }
 
-		$this->load->view('admin/edit_lead',$data);
+        $this->load->view('admin/edit_lead', $data);
+    }
 
-	}
-	public function update_lead()
-	{
+    public function update_lead() {
 
-		$email = $this->input->post('email');
-                $name = $this->input->post('name');
-                $phone = $this->input->post('phone');
-                $agent = $this->input->post('agent');
-                $id = $this->input->post('id');
+        $email = $this->input->post('email');
+        $name = $this->input->post('name');
+        $phone = $this->input->post('phone');
+        $agent = $this->input->post('agent');
+        $id = $this->input->post('id');
 
-           $result = $this->register_model->update_lead($email,$name,$phone,$agent,$id);
-       if($result == 1){
+        $result = $this->register_model->update_lead($email, $name, $phone, $agent, $id);
+        if ($result == 1) {
             redirect(base_url() . 'admin/employees', 'location');
-       }
+        }
+    }
 
-	}
 
 }
