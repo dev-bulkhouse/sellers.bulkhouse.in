@@ -825,7 +825,7 @@ class Admin extends CI_Controller {
 	}
 
         public function view_agents() {
-            $this->ooad-view('admin/view_agents');
+            $this->load->view('admin/view_agents');
         }
 	public function update_lead()
 	{
