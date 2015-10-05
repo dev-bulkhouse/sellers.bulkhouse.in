@@ -1,0 +1,56 @@
+
+.zeropadding{
+    padding: 0px;
+}
+
+
+
+[data-magellan-expedition], [data-magellan-expedition-clone]{
+    background-color:#FFFFFF;
+    height: 100px
+}
+.button{background-color: #bf0000}
+
+.prefix, .postfix {
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  font-size: 0.875rem;
+  /* height: 2.3125rem; */
+  line-height: 2.3125rem; 
+  overflow: visible;
+  padding-bottom: 0;
+  padding-top: 0;
+  position: relative;
+  text-align: center;
+  width: auto;
+  z-index: 2;
+}
+
+.footer{background-color:#E80000;position: relative; bottom: 0px; padding: 10px; margin-top: 40px}
+
+.main_panel_grid{
+    background-color:white;
+    
+}
+
+.text_little{font-size: 0.8em}
+.text_lit{font-size: 0.9em}
+
+.list-set li{
+    float: left;
+    list-style: none;
+    padding : 5px 15px;
+    background-color: #660000;
+    margin-right: 5px;
+    font-size: 0.9em;
+    color: white
+}
+.label {font-size: 1em}
+
+.list-set > li > a{color: white}
+.list-set > li > a:hover{color: whitesmoke}
+
+.sml-icon {
+    width: 30px;
+}
