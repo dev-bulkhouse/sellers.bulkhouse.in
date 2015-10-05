@@ -837,6 +837,15 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/edit_agent',$data);
 
 	}
+        public function delete_agent($id)
+	{
+		$this->db->where('id', $id);
+                $this->db->delete('employee');
+
+
+
+
+	}
 
         public function view_agents() {
             $this->load->view('admin/view_agents');
