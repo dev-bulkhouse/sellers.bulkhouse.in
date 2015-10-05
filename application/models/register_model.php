@@ -478,6 +478,15 @@ class Register_model extends CI_Model {
         return $query->result_array();
     }
 
+    public function editagents($id) {
+
+        $this->db->select('*');
+        $this->db->from('employee');
+        $this->db->where(array('employee.id' => $id));
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
     public function remove_account($email_address, $reason) {
 
         $this->db->where('email', $email_address);
@@ -622,6 +631,21 @@ class Register_model extends CI_Model {
         );
         $this->db->where(array('leads.id' => $id));
         $this->db->update('leads', $data);
+        if ($this->db->affected_rows() == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function update_agent($agent_name,$agent_id,$id) {
+        $data = array(
+            'agent_name' => $agent_name,
+            'agent_id' => $agent_id,
+            'id' => $id,
+        );
+        $this->db->where(array('employee.id' => $id));
+        $this->db->update('employee', $data);
         if ($this->db->affected_rows() == 1) {
             return true;
         } else {

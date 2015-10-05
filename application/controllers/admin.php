@@ -824,6 +824,20 @@ class Admin extends CI_Controller {
 
 	}
 
+        public function edit_agent($id)
+	{
+		$result=$this->register_model->editagents($id);
+                 foreach ($result as $row) {
+
+             $data['agent_name'] = $row['agent_name'];
+             $data['agent_id'] = $row['agent_id'];
+             $data['id'] = $id;
+        }
+
+		$this->load->view('admin/edit_lead',$data);
+
+	}
+
         public function view_agents() {
             $this->load->view('admin/view_agents');
         }
@@ -839,6 +853,20 @@ class Admin extends CI_Controller {
            $result = $this->register_model->update_lead($email,$name,$phone,$agent,$id);
        if($result == 1){
             redirect(base_url() . 'admin/employees', 'location');
+       }
+
+	}
+
+        public function update_agent()
+	{
+
+		$agent_name = $this->input->post('agent_name');
+                $agent_id = $this->input->post('agent_id');
+                $id = $this->input->post('id');
+
+           $result = $this->register_model->update_agent($agent_name,$agent_id,$id);
+       if($result == 1){
+            redirect(base_url() . 'admin/view_agents', 'location');
        }
 
 	}
