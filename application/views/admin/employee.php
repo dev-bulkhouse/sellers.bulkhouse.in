@@ -45,11 +45,11 @@
                         <form action="/admin/add_agent" method="POST" class="panel-body">
                             <div class="form-group">
                                 <label class="control-label">Agent ID</label>
-                                <input type="number" name="agent_id" placeholder="Enter Agent ID" class="form-control">
+                                <input type="number" name="agent_id" placeholder="Enter Agent ID" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Agent Name</label>
-                                <input type="text" name="agent_name" placeholder="Enter Agent Name" class="form-control">
+                                <input type="text" name="agent_name" placeholder="Enter Agent Name" class="form-control" required>
                             </div>
 
                             <button type="submit" class="btn btn-info">Submit</button>

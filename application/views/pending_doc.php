@@ -425,7 +425,7 @@ $query = $this->db->get();
                         $data['doc_placeholder'] = 'Upload Document Copy';
                         $data['doc_pat'] = '';
                         $data['doc_id'] = 'part_deed';
-                        $data['doc_note'] = 'Please Upload Document here.<p style="font-size:0.8em">Note: Only JPG and PDF files allowed</p>';
+                        $data['doc_note'] = 'Please Upload Document here.<p style="font-size:0.8em">Note: Only PDF files allowed</p>';
                         $data['doc_file'] = 'upload_file4';
                         $data['doc_spinner'] = 'targetLayer_8';
                         $data['doc_status'] = 'targetLayer8';
@@ -635,7 +635,7 @@ $query = $this->db->get();
                         </div>
                             <div class="col-lg-6"></div>
 
-                <img src="http://placehold.it/350x65" width="100%">
+                <img src="/img/step3.jpg" alt="" width="100%"/>
 
 
 
@@ -1290,7 +1290,6 @@ $query = $this->db->get();
         <!-- END THIS PAGE PLUGINS -->
 
         <!-- START TEMPLATE -->
-        <script type="text/javascript" src="js/settings.js"></script>
 
         <script type="text/javascript" src="/js/plugins.js"></script>
         <script type="text/javascript" src="/js/actions.js"></script>

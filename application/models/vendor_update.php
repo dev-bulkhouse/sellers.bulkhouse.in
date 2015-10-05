@@ -259,6 +259,9 @@ class Vendor_update extends CI_Model {
         $this->db->where(array('vendor_details.id' => $compid));
         $query = $this->db->get();
         $result = $query->result();
+        $pvt_or_ltd = 'pvt_or_ltd';
+        $partnership = 'partnership';
+        $proprietorship = 'proprietorship';
         foreach ($result as $st) {
             $firm_type = $st->firm_type;
             $pan_prop_status = $st->pan_prop_status;
@@ -274,29 +277,31 @@ class Vendor_update extends CI_Model {
             $addressid_status = $st->addressid_status;
             $businessid_status = $st->businessid_status;
             $canceled_check_status = $st->canceled_check_status;
+
+        if ($firm_type === $proprietorship) {
+        if ($pan_prop_status == 2 && $vat_cst_status == 2 && $shop_establish_trade_status == 2 && $addressid_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $canceled_check_status == 0) {
+
+                return true;
+            } else {
+                return false;
+            }
+        } elseif ($firm_type === $partnership) {
+          if ($pan_prop_status == 2 && $vat_cst_status == 2 && $pan_comp_status == 2 && $part_deed_status == 2 && $shop_establish_trade_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $addressid_status && $canceled_check_status == 0) {
+
+                return true;
+            } else {
+                return false;
+            }
+        } elseif($firm_type === $pvt_or_ltd) {
+          if ($pan_prop_status == 2 && $addressid_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $vat_cst_status == 2 && $pan_comp_status == 2 && $cert_of_incorp_status == 2 && $moa_aoa_status == 2 && $aoa_status == 2 && $canceled_check_status == 0) {
+
+                return true;
+            } else {
+                return false;
+            }
         }
-        if ($firm_type == "proprietorship") {
-            if ($pan_prop_status == 2 && $vat_cst_status == 2 && $shop_establish_trade_status == 2 && $addressid_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $canceled_check_status == 0) {
-                return true;
-            } else {
-                return false;
-            }
-        } elseif ($firm_type == "partnership") {
 
-            if ($pan_prop_status == 2 && $vat_cst_status == 2 && $pan_comp_status == 2 && $part_deed_status == 2 && $shop_establish_trade_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $addressid_status && $canceled_check_status == 0) {
-
-                return false;
-            } else {
-                return true;
-            }
-        } elseif ($firm_type == "pvt_or_ltd") {
-            if ($pan_prop_status == 2 && $addressid_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $vat_cst_status == 2 && $pan_comp_status == 2 && $cert_of_incorp_status == 2 && $moa_aoa_status == 2 && $aoa_status == 2 && $canceled_check_status == 0) {
-
-                return false;
-            } else {
-                return true;
-            }
-        }
+    }
     }
 
     public function mobile_verified($compid, $mobile) {

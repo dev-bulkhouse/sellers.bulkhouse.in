@@ -66,7 +66,8 @@ if ($logged_in) {
                         </div>
                             <div class="col-lg-6"></div>
             <div class="row" style="border-bottom:0;">
-                <img src="http://placehold.it/350x65" width="100%">
+
+                <img src="/img/step2.jpg" alt="" width="100%"/>
 
                 </div>
 
