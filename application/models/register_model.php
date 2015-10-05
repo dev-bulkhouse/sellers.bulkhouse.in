@@ -451,6 +451,8 @@ class Register_model extends CI_Model {
         }
     }
 
+
+
     public function viewleads() {
         $this->db->select('*');
         $this->db->from('leads');
@@ -459,9 +461,15 @@ class Register_model extends CI_Model {
 
     }
 
+    public function view_agents() {
+        $this->db->select('*');
+        $this->db->from('employee');
+        $query = $this->db->get();
+        return $query->result();
+
+    }
+
     public function editleads($id) {
-
-
 
         $this->db->select('*');
         $this->db->from('leads');

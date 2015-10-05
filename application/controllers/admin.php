@@ -823,6 +823,10 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/edit_lead',$data);
 
 	}
+
+        public function view_agents() {
+            $this->ooad-view('admin/view_agents');
+        }
 	public function update_lead()
 	{
 
