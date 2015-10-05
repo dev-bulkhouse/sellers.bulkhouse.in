@@ -63,7 +63,7 @@
                                             <tr>
                                                 <td><?php echo $row->agent_name; ?></td>
                                                 <td><?php echo $row->agent_id; ?></td>
-                                                <td><a href="<?php site_url(); ?>edit_agent/ <?php echo $row->id; ?>">Edit</a></td>
+                                                <td><a href="<?php site_url(); ?>edit_agent/<?php echo $row->id; ?>">Edit</a></td>
                                                 <td><a href="<?php site_url(); ?>delete_agent/<?php echo $row->id; ?>">Delete</a></td>
                                             </tr>
 
