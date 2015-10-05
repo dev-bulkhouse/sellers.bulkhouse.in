@@ -62,7 +62,7 @@ if ($logged_in) {
                              <div class="panel">
                         <div class="mb-container">
                             <div class="col-lg-6">
-                                <img src="/img/bulkhouse_logo_white-01.png" alt="" width="230"/>
+                                <img src="/img/logo_small.png" alt="" width="230"/>
                         </div>
                             <div class="col-lg-6"></div>
             <div class="row" style="border-bottom:0;">

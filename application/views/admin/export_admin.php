@@ -28,7 +28,7 @@
 
                 <div class="mb-container">
 
-                    <img src="/img/bulkhouse_logo_white-01.png" alt="" width="230"/>
+                    <img src="/img/logo_small.png" alt="" width="230"/>
 
                     <div class="btn-group pull-right">
                         <a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Dashboard <span class="caret"></span></a>

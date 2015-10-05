@@ -32,7 +32,7 @@
 
                         <div class="mb-container">
 
-                                <img src="/img/bulkhouse_logo_white-01.png" alt="" width="230"/>
+                                <img src="/img/logo_small.png" alt="" width="230"/>
                                 </div>
                          </div>
 
