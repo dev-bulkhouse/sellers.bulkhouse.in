@@ -42,8 +42,8 @@
                                 <input type="text" name="agent_name" placeholder="Enter Agent Name" value="<?php echo $agent_name; ?>" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Vendor Phone</label>
-                                <input type="text" name="agent_id" placeholder="Enter Agent Id" value="<?php echo $agent_id;  ?>" class="form-control">
+                                <label class="control-label">Agent ID</label>
+                                <input type="text" name="agent_id" placeholder="Enter Agent Id" disabled="disabled" value="<?php echo $agent_id;  ?>" class="form-control">
                             </div>
 
                             <button type="submit" class="btn btn-info">Submit</button>
