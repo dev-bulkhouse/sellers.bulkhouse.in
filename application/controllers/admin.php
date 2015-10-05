@@ -834,7 +834,7 @@ class Admin extends CI_Controller {
              $data['id'] = $id;
         }
 
-		$this->load->view('admin/edit_lead',$data);
+		$this->load->view('admin/edit_agent',$data);
 
 	}
 
