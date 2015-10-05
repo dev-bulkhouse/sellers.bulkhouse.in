@@ -49,6 +49,8 @@
                                         <tr>
                                             <th>Name</th>
                                             <th>Agent ID</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -61,6 +63,8 @@
                                             <tr>
                                                 <td><?php echo $row->agent_name; ?></td>
                                                 <td><?php echo $row->agent_id; ?></td>
+                                                <td><a href="http://<?php echo $row->id; ?>">Edit</a></td>
+                                                <td><a href="http://<?php echo $row->id; ?>">Delete</a></td>
                                             </tr>
 
 
@@ -82,7 +86,7 @@
         <!-- END PAGE CONTAINER -->
 
         <!-- MESSAGE BOX-->
-        
+
         <!-- END MESSAGE BOX-->
 
         <!-- START PRELOADS -->
