@@ -841,7 +841,9 @@ class Admin extends CI_Controller {
 	{
 		$this->db->where('id', $id);
                 $this->db->delete('employee');
-
+                if ($this->db->affected_rows() == 1) {
+                redirect(base_url() . 'admin/view_agents', 'location');
+        }
 
 
 
