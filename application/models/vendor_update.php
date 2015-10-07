@@ -279,21 +279,21 @@ class Vendor_update extends CI_Model {
             $canceled_check_status = $st->canceled_check_status;
 
         if ($firm_type === $proprietorship) {
-        if ($pan_prop_status == 2 && $vat_cst_status == 2 && $shop_establish_trade_status == 2 && $addressid_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $canceled_check_status == 0) {
+        if ($pan_prop_status == 2 && $vat_cst_status == 2 && $shop_establish_trade_status == 2 && $addressid_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $canceled_check_status == 2) {
 
                 return true;
             } else {
                 return false;
             }
         } elseif ($firm_type === $partnership) {
-          if ($pan_prop_status == 2 && $vat_cst_status == 2 && $pan_comp_status == 2 && $part_deed_status == 2 && $shop_establish_trade_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $addressid_status && $canceled_check_status == 0) {
+          if ($pan_prop_status == 2 && $vat_cst_status == 2 && $pan_comp_status == 2 && $part_deed_status == 2 && $shop_establish_trade_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $addressid_status && $canceled_check_status == 2) {
 
                 return true;
             } else {
                 return false;
             }
         } elseif($firm_type === $pvt_or_ltd) {
-          if ($pan_prop_status == 2 && $addressid_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $vat_cst_status == 2 && $pan_comp_status == 2 && $cert_of_incorp_status == 2 && $moa_aoa_status == 2 && $aoa_status == 2 && $canceled_check_status == 0) {
+          if ($pan_prop_status == 2 && $addressid_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $vat_cst_status == 2 && $pan_comp_status == 2 && $cert_of_incorp_status == 2 && $moa_aoa_status == 2 && $aoa_status == 2 && $canceled_check_status == 2) {
 
                 return true;
             } else {
