@@ -54,6 +54,14 @@ $route['viewdocuments/cert_of_incorp'] = "admin/details/cert_of_incorp";
 $route['viewdocuments/moa_aoa'] = "admin/details/moa_aoa";
 $route['viewdocuments/part_deed'] = "admin/details/part_deed";
 $route['404_override'] = '';
+$route['profile'] = '/view/view_data';
+$route['bank'] = '/view/bank';
+$route['settings'] = '/view/settings';
+$route['faqs01'] = '/view/vendor_on_board';
+$route['faqs02'] = '/view/selling_process';
+$route['domestic'] = '/view/terms';
+$route['exports'] = '/view/export_terms';
+$route['profile01'] = '/view/company/';
 
 
 /* End of file routes.php */

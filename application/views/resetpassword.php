@@ -29,6 +29,12 @@ else
 //empty string means no validation error
 }
 </script>
+  <style>
+            body {
+                background: url("/img/wall_1.jpg") left top repeat ;
+                padding: 20px 0px;
+            }
+        </style>
        </head>
 
        <body>
@@ -46,11 +52,11 @@ else
                          <?php } ?>
                                <div class="form-group">
                                    <label class="control-label">New Password</label>
-                                   <input type="password" name="password" id="npassword" placeholder="New Password" class="form-control">
+                                   <input type="password" name="password" id="npassword" placeholder="New Password" class="form-control" required>
                                </div>
                                <div class="form-group">
                                    <label class="control-label">Confirm Password</label>
-                                   <input type="password"  id="cpassword" placeholder="Conform Password" class="form-control">
+                                   <input type="password"  id="cpassword" placeholder="Conform Password" class="form-control" required>
                                </div>
 
                                <button type="submit" class="btn btn-info">Reset</button>

@@ -16,6 +16,17 @@ class Create_tables extends CI_Controller {
 
 
        $this->tabs->create();
+       $this->tabs->insert();
+       $this->tabs->newid();
+       $this->tabs->bank();
+       $this->tabs->doc();
+       $this->tabs->req();
+       $this->tabs->mn();
+       $this->tabs->sec();
+       $this->tabs->ph();
+       $this->tabs->mag_cust();
+       $this->tabs->employee();
+        $this->tabs->leads();
 
 
 

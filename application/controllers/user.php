@@ -88,6 +88,9 @@ $data = array(
             );
 $this->db->where('id', $id);
 $this->db->update('vendor_details', $data);
+$custemail = $this->register_model->get_email($id);
+$custid = $this->register_model->get_mag_cust_id($custemail);
+$this->update_seller($custid, $new_password);
    $this->session->set_flashdata('success_message', 'Password Updated');
                 redirect(base_url().'','location');
 return false;
@@ -95,15 +98,29 @@ return false;
 }else
 
     $this->session->set_flashdata('alert_message', 'Wrong Old Password');
-                redirect(base_url().'main/changepw','location');
+                redirect(base_url().'view/settings','location');
 
 return false;
 
 }
 
     public function update_seller($id,$new_password) {
-        $this->load->spark('mage-api/0.0.1');
-        $this->mage_api->customer_update(array('customerId' => $id,'customerData' => array('password' => $new_password)));
+
+        $client = new SoapClient('http://bulk.house/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client->login('inhouse_developer', '3125582');
+
+$client->call($session, 'customer.update',
+ array('customerId' => $id, 'customerData' =>
+   array('password_hash'=> md5($new_password))));
+
+
+// If you don't need the session anymore
+//$client->endSession($session);
+      //  $this->load->spark('mage-api/0.0.1');
+        //$this->mage_api->customer_update(array('customerId' => $id,'customerData' => array('password_hash' => md5($new_password))));
     }
 
     public function logout() {

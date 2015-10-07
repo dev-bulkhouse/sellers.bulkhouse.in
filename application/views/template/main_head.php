@@ -106,19 +106,19 @@
                                     </a>
                                 </li>
                                 <li  >
-                                    <a href="/main/bank">
+                                    <a href="/bank">
                                         <i class="icon-money"></i>
                                         <span>Bank Details</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/main/view_data">
+                                    <a href="/profile">
                                         <i class="icon-user"></i>
                                         <span>Profile</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/main/settings">
+                                    <a href="/settings">
                                         <i class="icon-gears"></i>
                                         <span>Settings</span>
                                     </a>
@@ -132,11 +132,11 @@
                                     <ul class="dropdown-menu">
                                         <li>
 
-                                            <a href="/main/vendor_on_board"><i class="icon-question-sign"></i>Vendor on Boarding</a>
+                                            <a href="/faqs01"><i class="icon-question-sign"></i>Vendor on Boarding</a>
                                         </li>
                                         <li>
 
-                                            <a href="/main/selling_process"><i class="icon-question-sign"></i>Selling Process</a>
+                                            <a href="/faqs02"><i class="icon-question-sign"></i>Selling Process</a>
 
                                         </li>
 

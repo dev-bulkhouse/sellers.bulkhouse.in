@@ -153,6 +153,7 @@ class Login extends CI_Controller
 
     public function update_password(){
         $email = $this->input->post('email');
+        $password = $this->input->post('password');
         $email_hash = $_POST['email_hash'];
         $email_code =  $_POST['email_code'];
         $email_sha =  sha1($_POST['email'].$_POST['email_code']);
@@ -164,9 +165,9 @@ class Login extends CI_Controller
                 echo 'Error updating your password';
         } else {
 
-     $result = $this->login_model->update_password();
+     $result = $this->login_model->update_password($email,$password);
 
-     if($result){
+     if($result == 1){
 
          $this->session->set_flashdata('success_message', 'Password reset successfull! ');
          redirect(base_url().'','location');

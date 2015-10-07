@@ -142,34 +142,6 @@ if ($logged_in) {
                             <!-- END WIDGET MESSAGES -->
 
                         </div>
-                        <?php $this->db->select('*');
-        $this->db->from('bank_details');
-        $this->db->join('vendor_details', 'bank_details.compid = vendor_details.id');
-        $this->db->where(array('bank_details.status' => 1));
-        $bank1_count =  $this->db->count_all_results(); ?>
-                          <div class="col-md-4">
-
-                            <!-- START WIDGET MESSAGES -->
-                            <div class="widget <?php if ($bank1_count == 0) {
-    echo "widget-default";
-}  else {
-    echo "widget-success";
-}?> widget-item-icon" onclick="location.href='/admin/bankaccounts';">
-                                <div class="widget-item-left">
-                                    <span class="fa fa-list-alt"></span>
-                                </div>
-                                <div class="widget-data">
-                                    <div class="widget-int num-count"><?php echo $bank1_count; ?></div>
-                                    <div class="widget-title">Dispatched Bank Accounts</div>
-                                    <div class="widget-subtitle">waiting for conformation</div>
-                                </div>
-                                <div class="widget-controls">
-                                    <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
-                                </div>
-                            </div>
-                            <!-- END WIDGET MESSAGES -->
-
-                        </div>
 
 
 

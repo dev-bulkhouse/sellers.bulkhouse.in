@@ -81,7 +81,7 @@ if ($logged_in) {
 
 <?php if ($doc_type == "pan_prop") { ?>
 
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -127,7 +127,7 @@ if ($logged_in) {
 
 <?php } elseif ($doc_type == "vat_cst") { ?>
 
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -170,7 +170,7 @@ if ($logged_in) {
 
 <?php } elseif ($doc_type == "cst") { ?>
 
-                        <table class="table datatable">
+                         <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -209,7 +209,7 @@ if ($logged_in) {
 
 <?php } elseif ($doc_type == "aoa") { ?>
 
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -246,7 +246,7 @@ if ($logged_in) {
 
 <?php } elseif ($doc_type == "shop_establish_trade") { ?>
 
-                        <table class="table datatable">
+                      <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -284,7 +284,7 @@ if ($logged_in) {
 
 <?php } elseif ($doc_type == "addressid") { ?>
 
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -321,7 +321,7 @@ if ($logged_in) {
 
 <?php } elseif ($doc_type == "businessid") { ?>
 
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -358,7 +358,7 @@ if ($logged_in) {
 
 <?php } elseif ($doc_type == "cenvat") { ?>
 
-                        <table class="table datatable">
+                      <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -396,7 +396,7 @@ if ($logged_in) {
 
 <?php } elseif ($doc_type == "servicetax") { ?>
 
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -432,7 +432,7 @@ if ($logged_in) {
 
 
 <?php } elseif (($doc_type == "pan_comp")) { ?>
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -470,7 +470,7 @@ if ($logged_in) {
 
 
 <?php } elseif (($doc_type == "photoid")) { ?>
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -506,7 +506,7 @@ if ($logged_in) {
 
 
 <?php } elseif (($doc_type == "part_deed")) { ?>
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -545,7 +545,7 @@ if ($logged_in) {
 
 
 <?php } elseif (($doc_type == "sign")) { ?>
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -583,7 +583,7 @@ if ($logged_in) {
 
 
 <?php } elseif (($doc_type == "cert_of_incorp")) { ?>
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -622,7 +622,7 @@ if ($logged_in) {
 
 
 <?php } elseif (($doc_type == "moa_aoa")) { ?>
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -662,7 +662,7 @@ if ($logged_in) {
 
                         </div>
 <?php } elseif (($doc_type == "comp_file")) { ?>
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>
@@ -697,7 +697,7 @@ if ($logged_in) {
                         </table>
 
         <?php } elseif (($doc_type == "canceled_check")) { ?>
-                        <table class="table datatable">
+                        <table class="table datatable table-hover">
                             <thead>
                                 <tr>
                                     <th>Name</th>

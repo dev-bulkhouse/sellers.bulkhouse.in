@@ -46,7 +46,7 @@ if ($logged_in) {
 
 
 
-                                    <table class="table datatable">
+                                    <table class="table datatable table-hover">
                                         <thead>
                         <tr>
                             <th>Name</th>
@@ -72,7 +72,7 @@ if ($logged_in) {
                             <td><?php echo $vendor->email; ?></td>
                             <td><?php echo $vendor->mobile; ?></td>
                             <td><?php echo $vendor->firm_type; ?></td>
-                            <td><a class="btn btn-info active" href="<?php echo site_url()?>admin/profile/<?php echo $vendor->id; ?>">view</a> <a class="btn btn-danger active mb-control"  href= "<?php echo site_url()?>register/delete/<?php echo $vendor->id ?>">Delete</a></td>
+                            <td><a class="btn btn-info active" href="<?php echo site_url()?>admin/profile/<?php echo $vendor->id; ?>">view</a> | <a class="btn btn-danger active"  href= "<?php echo site_url()?>register/delete/<?php echo $vendor->id ?>">Delete</a></td>
 
                         </tr>
 

@@ -770,7 +770,7 @@ class Upload_new extends CI_Controller {
         $result = $this->vendor_update->add_bank($comp_id);
         if ($result) {
             $this->session->set_flashdata('success_message', 'You have Successfully! Submitted');
-            redirect(base_url() . 'main/bank', 'location');
+            redirect(base_url() . 'view/bank', 'location');
         } else {
             echo 'please contact site administrator';
         }
@@ -782,7 +782,7 @@ class Upload_new extends CI_Controller {
         $result = $this->vendor_update->vendor_bank($comp_id);
          if($result == true )
         {
-        redirect(base_url() . 'main/', 'location');
+        redirect(base_url() . 'view/', 'location');
         }
 
     }
@@ -793,7 +793,7 @@ class Upload_new extends CI_Controller {
         $result = $this->vendor_update->credit($comp_id);
         if ($result) {
             $this->session->set_flashdata('success_message', 'You have Successfully! Submitted');
-            redirect(base_url() . 'main/view_data', 'location');
+            redirect(base_url() . 'view/view_data', 'location');
         } else {
             echo 'please contact site administrator';
         }

@@ -168,7 +168,7 @@ $query = $this->db->get();
                     compid = <?php echo $compid; ?>;
 
                     $.ajax({
-                        url: "<?php echo site_url(); ?>main/pro_cat/" + compid + "/1/" + b,
+                        url: "<?php echo site_url(); ?>view/pro_cat/" + compid + "/1/" + b,
                         type: "POST",
                         processData: false,
                         contentType: false,
@@ -470,7 +470,7 @@ foreach ($details2 as $row) {
 <?php } ?>
                         </div>
 
-                        <form action="<?php echo base_url(); ?>main/update_vendor" method="post">
+                        <form action="<?php echo base_url(); ?>view/update_vendor" method="post">
 
                             <div class="panel wrapper col-lg-8 col-md-8 col-sm-8">
                                 <header class="panel-heading">
@@ -643,7 +643,7 @@ foreach ($details2 as $row) {
                                                 </div>
 
                                                 <div class="col-sm-3">
-                                                        
+
                                                     <label>Quality Certification:</label>
                                                     <select name="cert_products"  class="form-control parsley-validated parsley-success">
                                                         <option value="">Select</option>
@@ -751,7 +751,7 @@ foreach ($details2 as $row) {
 
                         </form>
 
-                        <form action="<?php echo base_url(); ?>main/pro_cat/<?php $compid; ?>" method="POST">
+                        <form action="<?php echo base_url(); ?>view/pro_cat/<?php $compid; ?>" method="POST">
                             <div class="panel wrapper pull-right col-lg-4 col-md-4 col-sm-4">
 
                                 <header class="panel-heading">

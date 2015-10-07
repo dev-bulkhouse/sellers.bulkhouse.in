@@ -69,7 +69,7 @@
 
                             </div>
                             <div class="panel-body">
-                                <table class="table datatable">
+                                <table class="table datatable table-hover">
                                     <thead>
                                         <tr>
                                             <th>Name,

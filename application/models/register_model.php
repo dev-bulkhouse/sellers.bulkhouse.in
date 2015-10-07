@@ -282,6 +282,25 @@ class Register_model extends CI_Model {
         $this->session->set_userdata($sess_data);
     }
 
+    public function update_seller($id,$new_password) {
+
+        $client = new SoapClient('http://bulk.house/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client->login('inhouse_developer', '3125582');
+
+$client->call($session, 'customer.update',
+ array('customerId' => $id, 'customerData' =>
+   array('password_hash'=> md5($new_password))));
+
+
+// If you don't need the session anymore
+//$client->endSession($session);
+      //  $this->load->spark('mage-api/0.0.1');
+        //$this->mage_api->customer_update(array('customerId' => $id,'customerData' => array('password_hash' => md5($new_password))));
+    }
+
     private function send_confirmation_mail($email) {
         $this->load->helper('url');
         $this->load->library('email');

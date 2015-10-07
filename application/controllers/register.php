@@ -125,15 +125,11 @@ class Register extends CI_Controller {
     }
 
     public function delete($id) {
-        $this->db->select('*');
-        $this->db->from('vendor_details');
-        $this->db->join('document_details', 'document_details.compid = vendor_details.id');
-        $this->db->join('bank_details', 'bank_details.compid = vendor_details.id');
-        $this->db->where(array('bank_details.compid' => $id));
 
-
-        $id = $this->db->where('id', $id);
-        $this->db->delete('vendor_details', $id);
+        $tables = array('vendor_details', 'bank_details','vendor_profile','pro_cat','document_deatils');
+       $this->db->where('compid', $id);
+         $this->db->where('id', $id);
+$this->db->delete($tables);
     }
 
 }

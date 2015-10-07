@@ -143,17 +143,24 @@ class Login_model extends CI_Model {
         }
     }
 
-    public function update_password(){
-        $email = $this->input->post('email');
-        $password = sha1($this->config->item('bulk-lock') . $this->input->post('password'));
-        $sql = "UPDATE vendor_details SET password = '" . $password . "' WHERE email = '" . $email . "' LIMIT 1";
-        $this->db->query($sql);
+    public function update_password($email,$pass){
+
+        $password = sha1($this->config->item('bulk-lock') . $pass);
+        $new_password = $this->input->post('password');
+        $data = array(
+               'password' => $password,
+            );
+$this->db->where('email', $email);
+$this->db->update('vendor_details', $data);
         if($this->db->affected_rows() === 1){
-            return true;
+            $custid = $this->register_model->get_mag_cust_id($email);
+             $this->register_model->update_seller($custid, $new_password);
+            return 1;
         }  else {
-            return false;
+            return 0;
         }
     }
+
 
 
 

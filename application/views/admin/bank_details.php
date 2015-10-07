@@ -22,7 +22,7 @@ if ($logged_in) {
                 <!-- PAGE TITLE -->
                 <div class="page-title">
                     <h2><span class="fa fa-arrow-circle-o-left"></span>
-                         Bank Accounts For Waiting for Approval
+                         Bank Accounts For Approvals
                     </h2>
                 </div>
                 <!-- END PAGE TITLE -->
@@ -40,7 +40,7 @@ if ($logged_in) {
 
 
 
-                                    <table class="table datatable">
+                                    <table class="table datatable table-bordered table-hover">
                                         <thead>
                                             <tr>
                                                 <th>Account Name</th>
@@ -81,11 +81,11 @@ if ($logged_in) {
                                                 <td><?php echo $bank_single->ifsc; ?></td>
                                                 <td><?php echo $bank_single->micr; ?></td>
                                                 <td><?php echo $bank_single->date_of_submission; ?></td>
-                                                <td><button type="button" class="btn btn-info active" data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $bank_single->compid; ?>">View</button></td>
+                                                <td><button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $bank_single->compid; ?>">View</button></td>
                                                 <?php if ($bank_single->status == 0) { ?>
-                                                <td><form style="float: left" method="post" action="/change/dispatch/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="button">Dispatch</button> </form></td>
+                                                <td><form style="float: left" method="post" action="/change/dispatch/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="btn btn-primary">Dispatch</button> </form></td>
                                                 <?php }elseif($bank_single->status == 1){ ?>
-                                                <td><button style="float: left"  class="button">Dispatched</button></td>
+                                                <td><button style="float: left"  class="btn btn-success">Dispatched</button></td>
                                                 <?php } ?>
                                             </tr>
 
@@ -118,10 +118,11 @@ $bank_data2 = $query2->result(); ?>
                                                 <td><?php echo $bank_single->ifsc; ?></td>
                                                 <td><?php echo $bank_single->micr; ?></td>
                                                 <td><?php echo $bank_single->date_of_submission; ?></td>
+                                                 <td><button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $bank_single->compid; ?>">View</button></td>
                                                 <?php if ($bank_single->status == 0) { ?>
-                                                <td><form style="float: left" method="post" action="/change/dispatch/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="button">Dispatch</button> </form></td>
-                                                <?php }else { ?>
-                                                <td><button style="float: left"  class="button">Dispatched</button></td>
+                                                <td><form style="float: left" method="post" action="/change/dispatch/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="btn btn-primary">Dispatch</button> </form></td>
+                                                <?php }elseif($bank_single->status == 1){ ?>
+                                                <td><button style="float: left"  class="btn btn-success">Dispatched</button></td>
                                                 <?php } ?>
                                             </tr>
 
@@ -154,10 +155,11 @@ $bank_data3 = $query3->result(); ?>
                                                 <td><?php echo $bank_single->ifsc; ?></td>
                                                 <td><?php echo $bank_single->micr; ?></td>
                                                 <td><?php echo $bank_single->date_of_submission; ?></td>
+                                                 <td><button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#canceled_check" data-whatever="<?php echo $bank_single->compid; ?>">View</button></td>
                                                 <?php if ($bank_single->status == 0) { ?>
-                                                <td><form style="float: left" method="post" action="/change/dispatch/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="button">Dispatch</button> </form></td>
-                                                <?php }{ ?>
-                                                <td><button style="float: left"  class="button">Dispatched</button></td>
+                                                <td><form style="float: left" method="post" action="/change/dispatch/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="btn btn-primary">Dispatch</button> </form></td>
+                                                <?php }elseif($bank_single->status == 1){ ?>
+                                                <td><button style="float: left"  class="btn btn-success">Dispatched</button></td>
                                                 <?php } ?>
                                             </tr>
 

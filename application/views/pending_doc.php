@@ -365,7 +365,7 @@ $query = $this->db->get();
         </script>
         <style>
             section {
-                background: url("/img/wall_1.jpg") left top no-repeat fixed;
+                background: url("/img/wall_1.jpg") left top repeat ;
                 padding: 20px 0px;
             }
         </style>

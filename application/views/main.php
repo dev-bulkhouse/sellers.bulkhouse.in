@@ -586,7 +586,7 @@ $query = $this->db->get();
 
                                                 <div class="media-body">
 
-                                                    <i class="fa fa-check-square" style="font-size: 1.2em"> Bank Details Submitted</i>
+                                                    <i class="fa fa-check-square" style="font-size: 1.2em"> Waiting for Bank Details Approval</i>
 
                                                 </div>
                                             </article>
@@ -598,7 +598,7 @@ $query = $this->db->get();
                                             <article class="media">
                                                 <div class="pull-left thumb-sm">
                                                     <span class="icon-stack">
-                                                        <i class="icon-circle text-success icon-stack-base"></i>
+
                                                         <i class="icon-flag icon-light"></i>
                                                     </span>
                                                 </div>
@@ -617,10 +617,15 @@ $query = $this->db->get();
 
                                                 <div class="media-body">
                                                     <i class="fa fa-bank" style="font-size: 1.2em"> Please Submit Amount credited in your bank account</i>
-
+ <div class="line line-dashed m-t-lg"></div>
                                                     <form action="/confirm_bank/amount/<?php echo $compid ?>" method="POST" style="margin: 5px 0px 0px 20px">
-                                                        <input type="text" name="confirm_amount">
-                                                        <input type="submit">
+                                                       <div class="col-md-8">
+                                                           <input type="text" name="confirm_amount" placeholder="Enter Credit Amount" class="bg-focus form-control" required="required">
+                                                      <br/>
+                                                        <input type="submit" class="btn btn-info">
+                                                       </div>
+
+
                                                     </form>
 
                                                 </div>
@@ -662,13 +667,13 @@ $query = $this->db->get();
                                             <article class="media">
                                                 <div class="pull-left thumb-sm">
                                                     <span class="icon-stack">
-                                                        <i class="icon-circle text-success icon-stack-base"></i>
+
                                                         <i class="icon-flag icon-light"></i>
                                                     </span>
                                                 </div>
                                                 <div class="media-body">
 
-                                                    <a href="#" class="h5">Wrong Amounts Entered 3 Times Please Contact Admin</a>
+                                                    <a href="#" class="h5">Wrong Amounts Entered 3 Times Please Contact Support : <b>+91 891 667 9999</b></a>
 
 
                                                 </div>

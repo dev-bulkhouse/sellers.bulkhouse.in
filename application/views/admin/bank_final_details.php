@@ -21,8 +21,8 @@ if ($logged_in) {
 
                 <!-- PAGE TITLE -->
                 <div class="page-title">
-                    <h2><span class="fa fa-arrow-circle-o-left"></span>
-                         Bank Accounts For Waiting for Approval and Reject
+                    <h2><a href="\verification" class="fa fa-arrow-circle-o-left"></a>
+                         Bank Accounts for Approvals
                     </h2>
                 </div>
                 <!-- END PAGE TITLE -->
@@ -34,15 +34,14 @@ if ($logged_in) {
                         <div class="col-md-12">
 
                             <!-- START DEFAULT DATATABLE -->
-                             <?php $date = "2015-08-14";?>
-                             <button onclick="location.href='<?php echo site_url(); ?>test/report/<?php echo  $date ?>'" type="button" class="btn btn-primary" >  <i class="icon-download-alt"></i> <span>Excel Export</span></button>
+
                             <div class="panel panel-default">
 
                                 <div class="panel-body">
 
 
-
-                                    <table class="table datatable">
+<button onclick="location.href = '<?php echo site_url(); ?>test/bankreport/'" class="btn btn-danger pull-right"><i class="fa fa-download"></i>Export Data</button>
+                                    <table class="table datatable table-bordered table-hover">
                                         <thead>
                                             <tr>
                                                 <th>Account Name</th>
@@ -65,8 +64,6 @@ if ($logged_in) {
                 $this->db->join('vendor_details','vendor_details.id = bank_details.compid');
                 $this->db->join('document_details','document_details.compid = bank_details.compid');
                 $this->db->where('vendor_details.firm_type', "proprietorship");
-                $this->db->where('document_details.pan_prop_status', 2);
-                $this->db->where('document_details.vat_cst_status', 2);
                 $this->db->where('bank_details.status', 1);
                 $this->db->group_by("bank_details.compid");
                 $query = $this->db->get();
@@ -82,13 +79,19 @@ if ($logged_in) {
                                                 <td><?php echo $bank_single->ifsc; ?></td>
                                                 <td><?php echo $bank_single->micr; ?></td>
                                                 <td><?php echo $bank_single->date_of_submission; ?></td>
-                                                <td><?php echo $bank_single->amount; ?></td>
+                                               <td class="warning"><?php echo $bank_single->amount; ?></td>
+  <?php if ($bank_single->status == 1) { ?>
+                                                    <td><div class="btn-group">
+                                                    <a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></a>
+                                                    <ul class="dropdown-menu" role="menu">
 
-                                                <?php if ($bank_single->status == 1) { ?>
+                                                        <li> <form style="float: left" method="post" action="/change/sucess/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="btn btn-success">Approve</button> </form></li>
+                                                        <li><form style="float: right" method="post" action="/change/failed/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit"  class="btn btn-danger">Reject</button></form></li>
 
-                                                 <td><form style="float: left" method="post" action="/change/sucess/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="button">Amount Sent</button> </form><form style="float: right" method="post" action="/change/failed/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="button">Reject</button></form></td>
+                                                    </ul>
+                                                </div></td>
 
-                                                <?php } ?>
+                                                 <?php } ?>
                                             </tr>
 
 
@@ -100,9 +103,7 @@ if ($logged_in) {
         $this->db->join('vendor_details','vendor_details.id = bank_details.compid');
         $this->db->join('document_details','document_details.compid = bank_details.compid');
         $this->db->where('vendor_details.firm_type', "partnership");
-        $this->db->where('document_details.pan_comp_status', 2);
-        $this->db->where('document_details.part_deed_status', 2);
-        $this->db->where('document_details.vat_cst_status', 2);
+
         $this->db->where('bank_details.status', 1);
         $this->db->group_by("bank_details.compid");
         $query2 = $this->db->get();
@@ -118,10 +119,19 @@ if ($logged_in) {
                                                 <td><?php echo $bank_single->ifsc; ?></td>
                                                 <td><?php echo $bank_single->micr; ?></td>
                                                 <td><?php echo $bank_single->date_of_submission; ?></td>
-                                                  <td><?php echo $bank_single->amount; ?></td>
-                                                <?php if ($bank_single->status == 1) { ?>
-                                                <td><form style="float: left" method="post" action="/change/sucess/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/failed/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="button">Reject</button></form></td>
-                                                <?php } ?>
+                                               <td class="warning"><?php echo $bank_single->amount; ?></td>
+                                                 <?php if ($bank_single->status == 1) { ?>
+                                                    <td><div class="btn-group">
+                                                    <a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></a>
+                                                    <ul class="dropdown-menu" role="menu">
+
+                                                        <li> <form style="float: left" method="post" action="/change/sucess/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="btn btn-success">Approve</button> </form></li>
+                                                        <li><form style="float: right" method="post" action="/change/failed/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit"  class="btn btn-danger">Reject</button></form></li>
+
+                                                    </ul>
+                                                </div></td>
+
+                                                 <?php } ?>
                                             </tr>
 
 
@@ -135,10 +145,6 @@ if ($logged_in) {
         $this->db->join('vendor_details','vendor_details.id = bank_details.compid');
         $this->db->join('document_details','document_details.compid = bank_details.compid');
         $this->db->where('vendor_details.firm_type', "pvt_or_ltd");
-        $this->db->where('document_details.pan_comp_status', 2);
-        $this->db->where('document_details.moa_aoa_status', 2);
-        $this->db->where('document_details.cert_of_incorp_status', 2);
-        $this->db->where('document_details.vat_cst_status', 2);
         $this->db->where('bank_details.status', 1);
         $this->db->group_by("bank_details.compid");
 $query3 = $this->db->get();
@@ -154,9 +160,18 @@ $bank_data3 = $query3->result(); ?>
                                                 <td><?php echo $bank_single->ifsc; ?></td>
                                                 <td><?php echo $bank_single->micr; ?></td>
                                                 <td><?php echo $bank_single->date_of_submission; ?></td>
-                                                  <td><?php echo $bank_single->amount; ?></td>
-                                                <?php if ($bank_single->status == 1) { ?>
-                                               <td><form style="float: left" method="post" action="/change/sucess/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="button">Approve</button> </form><form style="float: right" method="post" action="/change/failed/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="button">Reject</button></form></td>
+                                                <td class="warning"><?php echo $bank_single->amount; ?></td>
+                                                    <?php if ($bank_single->status == 1) { ?>
+                                                     <td><div class="btn-group">
+                                                    <a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></a>
+                                                    <ul class="dropdown-menu" role="menu">
+
+                                                        <li> <form style="float: left" method="post" action="/change/sucess/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="btn btn-success">Approve</button> </form></li>
+                                                        <li><form style="float: right" method="post" action="/change/failed/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit"  class="btn btn-danger">Reject</button></form></li>
+
+                                                    </ul>
+                                                </div></td>
+
                                                  <?php } ?>
                                             </tr>
 
@@ -206,33 +221,24 @@ $bank_data3 = $query3->result(); ?>
         <!-- END MESSAGE BOX-->
 
         <!-- START PRELOADS -->
-        <audio id="audio-alert" src="/audio/alert.mp3" preload="auto"></audio>
-        <audio id="audio-fail" src="/audio/fail.mp3" preload="auto"></audio>
-        <!-- END PRELOADS -->
-
-    <!-- START SCRIPTS -->
-        <!-- START PLUGINS -->
-        <script type="text/javascript" src="/js/plugins/jquery/jquery.min.js"></script>
+         <script type="text/javascript" src="/js/plugins/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="/js/plugins/jquery/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap.min.js"></script>
-        <!--<script type="text/javascript" src="/js/plugins/datatables/jquery.dataTables.min.js"></script>-->
-        <script type="text/javascript" src="/js/plugins/tableexport/tableExport.js"></script>
-	<script type="text/javascript" src="/js/plugins/tableexport/jquery.base64.js"></script>
-	<script type="text/javascript" src="/js/plugins/tableexport/html2canvas.js"></script>
-	<script type="text/javascript" src="/js/plugins/tableexport/jspdf/libs/sprintf.js"></script>
-	<script type="text/javascript" src="/js/plugins/tableexport/jspdf/jspdf.js"></script>
-	<script type="text/javascript" src="/js/plugins/tableexport/jspdf/libs/base64.js"></script>
+        <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
         <!-- END PLUGINS -->
 
         <!-- THIS PAGE PLUGINS -->
         <script type='text/javascript' src='/js/plugins/icheck/icheck.min.js'></script>
         <script type="text/javascript" src="/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
 
-        <script type="text/javascript" src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
-        <!-- END PAGE PLUGINS -->
+        <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+        <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap-colorpicker.js"></script>
+        <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+        <!-- END THIS PAGE PLUGINS -->
 
         <!-- START TEMPLATE -->
         <script type="text/javascript" src="js/settings.js"></script>
+
         <script type="text/javascript" src="/js/plugins.js"></script>
         <script type="text/javascript" src="/js/actions.js"></script>
         <!-- END TEMPLATE -->

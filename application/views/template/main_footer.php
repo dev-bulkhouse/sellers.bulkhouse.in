@@ -46,8 +46,8 @@
                         <h4>FAQ'S</h4>
                     </div>
 
-                    <p><a href="/main/vendor_on_board">FAQ'S</a></p>
-                    <p><a href="/main/selling_process">FAQ'S Selling Process</a></p></div>
+                    <p><a href="/faqs01">FAQ'S</a></p>
+                    <p><a href="/faqs02">FAQ'S Selling Process</a></p></div>
 
             </div>
             <div class="col-sm-3">
@@ -55,8 +55,8 @@
                     <div class="page-header">
                         <h4>POLICIES</h4>
                     </div>
-                    <p><a href="/main/terms">Domestic Policies</a></p>
-                    <p><a href="/main/export_terms">Export Policies</a></p>
+                    <p><a href="/domestic">Domestic Policies</a></p>
+                    <p><a href="/exports">Export Policies</a></p>
                     <p>Infringement Verification Policy</p></div>
 
             </div>

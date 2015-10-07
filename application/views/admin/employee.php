@@ -69,7 +69,7 @@
                     <section class="panel">
                         <header class="panel-heading bg bg-primary text-center"> Edit Lead</header>
                         <div class="panel-body">
-                            <table class="table datatable">
+                            <table class="table datatable table-hover">
                                 <thead>
 
                                 <th>Vendor e-mail</th>

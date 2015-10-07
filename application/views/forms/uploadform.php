@@ -94,7 +94,7 @@
     <body>
         <section class="vbox" style="background-color: #fff">
 
-            <form action="/main/upl" method='post' enctype="multipart/form-data">
+            <form action="/view/upl" method='post' enctype="multipart/form-data">
                 <h3 style="padding: 20px">Upload</h3><br/>
                 <div class="form-group m-t-lg">
 

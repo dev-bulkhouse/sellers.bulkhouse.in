@@ -14,10 +14,10 @@ class Test extends CI_Controller {
 
     public function report($date) {
 
-        $this->db->select('account_name, account_number,bank_name,branch,ifsc,micr,amount');
+        $this->db->select('account_name,account_number,bank_name,branch,ifsc,micr,amount');
         $this->db->from('bank_details');
         $this->db->join('vendor_details', 'bank_details.compid = vendor_details.id');
-        $this->db->where('bank_details.status', 3);
+        $this->db->where('bank_details.status', 1);
         $this->db->where('bank_details.dispatch_date', $date);
         $query = $this->db->get();
         $excel1 = $query->result();
@@ -34,6 +34,11 @@ class Test extends CI_Controller {
         $xls = new Excel_XML('UTF-8', false, 'Dispatched Sheet');
         $xls->addArray($data6);
         $xls->generateXML('Dispatched on' . $date);
+    }
+    public function bankreport() {
+
+        $this->load->view('admin/bank_report');
+
     }
 
     public function bank_report() {
