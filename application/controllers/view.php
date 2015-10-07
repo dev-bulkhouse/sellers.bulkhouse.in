@@ -110,7 +110,7 @@ class View extends CI_Controller {
         $result = $this->register_model->update_vend();
         if($result == true )
         {
-        redirect(base_url() . 'view/', 'location');
+        redirect(base_url() . 'main/', 'location');
         }
     }
 
