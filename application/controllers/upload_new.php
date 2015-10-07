@@ -782,11 +782,11 @@ class Upload_new extends CI_Controller {
         $result = $this->vendor_update->vendor_bank($comp_id);
          if($result == true )
         {
-        redirect(base_url() . 'view/', 'location');
+        redirect(base_url() . 'main/', 'location');
         }
-       
+
     }
-    
+
     public function max_credit_limit() {
         $email = $this->input->post('email');
         $comp_id = $this->register_model->get_compid($email);
