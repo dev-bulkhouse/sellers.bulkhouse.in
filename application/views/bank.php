@@ -44,9 +44,9 @@ $query = $this->db->get();
         <style>.m-b-sm {
                 margin-bottom: 0px;
             }</style>
-         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script>
-            $(document).ready(function(e) {
+            $(document).ready(function (e) {
 
                 var doc_type_canceled_check = "#canceled_check";
                 var disp_layer_canceled_check = "#targetLayer_20";
@@ -60,13 +60,13 @@ $query = $this->db->get();
 
             function run_doc_check(doc_type, disp_layer, success_layer, doc_arg) {
 
-                $(doc_type).on('submit', (function(e) {
+                $(doc_type).on('submit', (function (e) {
                     e.preventDefault();
                     $.ajax({
-                        xhr: function() {
+                        xhr: function () {
                             var xhr = new window.XMLHttpRequest();
                             //Upload progress
-                            xhr.upload.addEventListener("progress", function(evt) {
+                            xhr.upload.addEventListener("progress", function (evt) {
                                 if (evt.lengthComputable) {
                                     var percentComplete = evt.loaded / evt.total;
                                     $(disp_layer).css("display", "block");
@@ -74,7 +74,7 @@ $query = $this->db->get();
                                 }
                             }, false);
                             //Download progress
-                            xhr.addEventListener("progress", function(evt) {
+                            xhr.addEventListener("progress", function (evt) {
                                 if (evt.lengthComputable) {
                                     var percentComplete = evt.loaded / evt.total;
                                     //Do something with download progress
@@ -90,7 +90,7 @@ $query = $this->db->get();
                         contentType: false,
                         cache: false,
                         processData: false,
-                        success: function(data)
+                        success: function (data)
                         {
                             $(disp_layer).css("display", "none");
                             $(success_layer).html(data);
@@ -101,7 +101,7 @@ $query = $this->db->get();
 
 
                         },
-                        error: function()
+                        error: function ()
                         {
 
                         }
@@ -120,7 +120,7 @@ $query = $this->db->get();
             .form-group .required .control-label:after {
                 content:"*";color:red;
             }
-        .bg-primary {
+            .bg-primary {
                 background-color: #F5F5F5;
                 color: #010101;
             }
@@ -134,60 +134,64 @@ $query = $this->db->get();
 
     </head>
     <body style="background-color: white">
-        <?php $this->load->view('template/main_head',array('firm_name'=>$firm_name,'firm_type'=>$firm_type)); ?>
+        <?php $this->load->view('template/main_head', array('firm_name' => $firm_name, 'firm_type' => $firm_type)); ?>
 
-            <!-- /.aside -->
-            <!-- .vbox -->
-            <section id="content" style="background-color: white">
-                <section class="vbox">
-                    <section class="scrollable wrapper animated fadeInDown" id="wizard">
-                        <div  class="col-ms-12">
-                            <header class="panel-heading bg-primary" style=" color: black">
-                                <span class="badge bg-info pull-right"></span> <i class="fa fa-bank"></i> Bank Details
-                            </header>
-                            <div style="background-color: white">
-                        <div class="col-md-8">
+        <!-- /.aside -->
+        <!-- .vbox -->
+        <section id="content" style="background-color: white">
+            <section class="vbox">
+                <section class="scrollable wrapper animated fadeInDown" id="wizard">
+                    <div  class="col-ms-12">
+                        <header class="panel-heading bg-primary" style=" color: black">
+                            <span class="badge bg-info pull-right"></span> <i class="fa fa-bank"></i> Bank Details
+                        </header>
+                        <div style="background-color: white">
+                            <div class="col-md-8">
 
 
 
                                 <div class="step-content">
                                     <div class="row">
-                                    <form id="canceled_check" method="post" enctype="multipart/form-data" style="margin-top: 10px">
+                                        <form id="canceled_check" method="post" enctype="multipart/form-data" style="margin-top: 10px">
 
-                                                <input type="hidden" name="email" id="email" value="<?php echo  $email; ?>">
-                                                     <?php
+                                            <input type="hidden" name="email" id="email" value="<?php echo $email; ?>">
+                                            <?php
                                             foreach ($query->result_array() as $row) {
 
-                                            if ($row['canceled_check_lock'] == 0 && $row['canceled_check_status'] == 5) {
-                                                ?>
-                                                <input type="hidden" class="form-control" name="canceled_check" id="canceled_check">
+                                                if ($row['canceled_check_lock'] == 0 && $row['canceled_check_status'] == 5) {
+                                                    ?>
+                                                    <input type="hidden" class="form-control" name="canceled_check" id="canceled_check">
 
-                                                <input type="file" name="canceled_check" title="Upload Cancelled Cheque" class="btn btn-primary m-b-sm" style="margin-bottom: 10px;background-color: #594F8D">
-                                                <hr>
-                                                <div class="col-lg-2">
+                                                    <input type="file" name="canceled_check" title="Upload Cancelled Cheque" class="btn btn-primary m-b-sm" style="margin-bottom: 10px;background-color: #594F8D">
+                                                    <hr>
+                                                    <div class="col-lg-2">
 
-                                            <button class="btn btn-sm btn-default" type="submit">Submit</button>
+                                                        <button class="btn btn-sm btn-default" type="submit">Submit</button>
 
-                                        </div>
-                                         <?php } elseif ($row['canceled_check_status'] == 0) { ?>
-                                                <input type="file" disabled title="Uploaded Cancelled Cheque <i class='fa fa-check'></i>" class="btn btn-primary m-b-sm" style="margin-bottom: 10px;background-color: #594F8D">
+                                                    </div>
+                                                <?php } elseif ($row['canceled_check_status'] == 0) { ?>
+                                                    <input type="file" disabled title="Uploaded Cancelled Cheque <i class='fa fa-check'></i>" class="btn btn-primary m-b-sm" style="margin-bottom: 10px;background-color: #594F8D">
+                                                <?php } elseif ($row['canceled_check_status'] == 2) { ?>
+                                                    <input type="file" disabled title="Cancelled Cheque Approved <i class='fa fa-check'></i>" class="btn btn-primary m-b-sm" style="margin-bottom: 10px;background-color: #594F8D">
+                                                <?php } elseif ($row['canceled_check_status'] == 1) { ?>
+                                                    <input type="file" disabled title="Cancelled Cheque Reject <i class='fa fa-check'></i>" class="btn btn-primary m-b-sm" style="margin-bottom: 10px;background-color: #594F8D">
 
-                                         <?php
-                                         }
-                                     }
-                                     ?>
+                                                    <?php
+                                                }
+                                            }
+                                            ?>
 
-                                        <div class="col-lg-4">
-                                            <div id="targetLayer_20" style="display: none"><i class="fa fa-spinner fa-pulse"></i></div>
-                                            <div id="targetLayer20"></div>
+                                            <div class="col-lg-4">
+                                                <div id="targetLayer_20" style="display: none"><i class="fa fa-spinner fa-pulse"></i></div>
+                                                <div id="targetLayer20"></div>
 
-                                        </div>
+                                            </div>
 
 
-                                    </form>
-                                </div>
+                                        </form>
+                                    </div>
                                     <div class="row" style="padding-top: 10px">
-                                    <form action="<?php echo base_url(); ?>upload_new/banking" method="post">
+                                        <form action="<?php echo base_url(); ?>upload_new/banking" method="post">
 
 
 
@@ -196,71 +200,72 @@ $query = $this->db->get();
 
 
                                                 <div class="form-group required">
-<div class="row">
-                                                    <div class="col-md-4">
-                                                        <label class="control-label">Bank Account Name:</label>
-                                                        <input type="hidden"  name ="email" value="<?php echo  $email ?>">
-                                                        <input type="text" placeholder="Bank Account Name" name ="account_name" class="bg-focus form-control" required="required" value=" <?php
-                                                        $details = $this->register_model->bankdetails($compid);
-                                                        foreach ($details as $row) {
-                                                            echo $row->account_name;
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <label class="control-label">Bank Account Name:</label>
+                                                            <input type="hidden"  name ="email" value="<?php echo $email ?>">
+                                                            <input type="text" placeholder="Bank Account Name" name ="account_name" class="bg-focus form-control" required="required" value=" <?php
+                                                            $details = $this->register_model->bankdetails($compid);
+                                                            foreach ($details as $row) {
+                                                                echo $row->account_name;
+                                                                ?>">
+                                                                <div class="line line-dashed m-t-lg"></div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label class="control-label">Bank Account Number:</label>
+                                                                <input type="text" placeholder="Bank Account Number" name ="account_number" pattern="[0-9]*" class="bg-focus form-control" required="required" value="<?php echo $row->account_number; ?>" max="20">
+                                                                <div class="line line-dashed m-t-lg"></div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label class="control-label">Name of the Bank:</label>
+                                                                <input type="text" placeholder="Bank Name" name ="bank_name" class="bg-focus form-control" required="required" value="<?php echo $row->bank_name; ?>">
+                                                                <div class="line line-dashed m-t-lg"></div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label class="control-label">Bank Branch:</label>
+                                                                <input type="text" placeholder="Bank Branch" name ="branch" class="bg-focus form-control" required="required" value="<?php echo $row->branch; ?>">
+                                                                <div class="line line-dashed m-t-lg"></div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label class="control-label">IFSC Code:</label>
+                                                                <input type="text" placeholder="IFSC Code" name ="ifsc" class="bg-focus form-control" required="required" value="<?php echo $row->ifsc; ?>">
+                                                                <div class="line line-dashed m-t-lg"></div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label class="control-label">MICR Code:</label>
+                                                                <input type="text" placeholder="MICR Code" name ="micr" class="bg-focus form-control" required="required" value="<?php echo $row->micr;
+                                                               }
                                                             ?>">
                                                             <div class="line line-dashed m-t-lg"></div>
                                                         </div>
-                                                        <div class="col-md-4">
-                                                            <label class="control-label">Bank Account Number:</label>
-                                                            <input type="text" placeholder="Bank Account Number" name ="account_number" pattern="[0-9]*" class="bg-focus form-control" required="required" value="<?php echo $row->account_number; ?>" max="20">
-                                                            <div class="line line-dashed m-t-lg"></div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <label class="control-label">Name of the Bank:</label>
-                                                            <input type="text" placeholder="Bank Name" name ="bank_name" class="bg-focus form-control" required="required" value="<?php echo $row->bank_name; ?>">
-                                                            <div class="line line-dashed m-t-lg"></div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <label class="control-label">Bank Branch:</label>
-                                                            <input type="text" placeholder="Bank Branch" name ="branch" class="bg-focus form-control" required="required" value="<?php echo $row->branch; ?>">
-                                                            <div class="line line-dashed m-t-lg"></div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <label class="control-label">IFSC Code:</label>
-                                                            <input type="text" placeholder="IFSC Code" name ="ifsc" class="bg-focus form-control" required="required" value="<?php echo $row->ifsc; ?>">
-                                                            <div class="line line-dashed m-t-lg"></div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <label class="control-label">MICR Code:</label>
-                                                            <input type="text" placeholder="MICR Code" name ="micr" class="bg-focus form-control" required="required" value="<?php echo $row->micr;
-                                                           } ?>">
-                                                        <div class="line line-dashed m-t-lg"></div>
+
+
                                                     </div>
 
 
+                                                    <div class="actions m-t">
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </div>
+
                                                 </div>
-
-
-                                                <div class="actions m-t">
-                                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                                </div>
-
                                             </div>
-                                         </div>
-                                    </form>
+                                        </form>
                                     </div>
                                     <!--                                            <button type="button" class="btn btn-white btn-sm btn-prev" data-target="#form-wizard" data-wizard="previous" disabled="disabled">Previous</button>
                                                                                 <button type="button" class="btn btn-white btn-sm btn-next" data-target="#form-wizard" data-wizard="next" data-last="Finish">Submit</button>-->
 
 
-                            </div>
-
-                        </div>
-
+                                </div>
 
                             </div>
 
+
                         </div>
 
+                    </div>
 
-                    </section>
+
                 </section>
+            </section>
 
 <?php $this->load->view('template/main_footer'); ?>
