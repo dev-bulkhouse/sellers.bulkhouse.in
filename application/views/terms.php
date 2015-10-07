@@ -57,7 +57,7 @@ if (window.sidebar){
             <aside class="bg-light aside b-r animated fadeInLeftBig" id="nav">
                 <section class="vbox">
                     <header class="bg-dark nav-bar">
-                        <a href="/main/terms" class="nav-brand">Domestic</a>
+                        <a href="/view/terms" class="nav-brand">Domestic</a>
                         <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-primary">
                             <i class="icon-reorder"></i>
                         </a>
@@ -680,7 +680,7 @@ if (window.sidebar){
                                     <li>All orders placed on Website are covered under Buyer Protection; hereby Seller agrees to fulfill the
                                         commitments made under the above mentioned program specified at the Website at URL
                                         <?php if (isset($logged_in)) { ?>
-                                            <?php echo site_url(); ?>main/terms#BUYER PROTECTION
+                                            <?php echo site_url(); ?>view/terms#BUYER PROTECTION
                                         <?php } else { ?>
                                             <?php echo site_url(); ?>terms#BUYER PROTECTION
                                         <?php } ?>. The said program protects Buyer against

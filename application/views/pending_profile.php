@@ -45,144 +45,36 @@
             .bg-primary .nav li a:hover {
                 color: #010101;
             }
-            
+
             .bs-wizard {margin-top: 40px;}
 
         </style>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
- <script type="text/javascript">
-            var attempt = 1;
-            var SID = "";
 
-            $(document).ready(function() {
-                $("#enter_number").submit(function(e) {
-
-                    e.preventDefault();
-                    initiateDial2Verify();
-                });
-            });
-
-            function initiateDial2Verify() {
-                showCodeForm(1);
-                GetVerificationImage();
-            }
-
-            function showCodeForm(code) {
-                $("#dial2verify").fadeIn();
-                $("#enter_number").fadeOut();
-                $("#waiting_msg").text("Call to the below numnber");
-            }
-
-            function GetVerificationImage() {
-
-                $.post("<?php echo site_url(); ?>dail2verify/GetImageAPIV2.php", {phone_number: $("#phone_number").val()},
-                function(data) {
-                    updateImage(data.ImageUrl, data.SessionId);
-                }, "json");
-
-            }
-
-
-
-            function updateImage(ImageURL, vSID) {
-
-                if (ImageURL === "Err" || ImageURL === "") {
-                    Err();
-                }
-                else
-                {
-                    $("#Image").html("Dail 18001234547 to verify (Toll Free)");
-                    SID = vSID;
-                    PollStart("UnVerified");
-                }
-            }
-
-            function CheckStatus()
-            {
-
-                $.post("<?php echo site_url(); ?>dail2verify/VerificationStatusAPIV2.php", {SID: SID},
-                function(data) {
-                    PollStart(data.VerificationStatus);
-                }, "json");
-            }
-
-
-            function PollStart(vStatus)
-            {
-
-                attempt = attempt + 1;
-                if (attempt >= 90) {
-                    TimeoutCheck();
-                }
-                else
-                if (vStatus === "UnVerified") {
-                    $("#status").html("<b><i>" + (90 - attempt) + "</i> secs.</b>");
-                    setTimeout(CheckStatus, 1000);
-                }
-                else if (vStatus === "VERIFIED")
-                {
-                    success();
-<?php $details2 = $this->register_model->viewdata($compid);
-foreach ($details2 as $row) {
-    ?>
-                        compid = <?php echo $compid; ?>;
-                        mobile = <?php echo $row->mobile; ?>;
-                        $.ajax({
-                            url: "<?php echo site_url(); ?>change/mobile_verified/" + compid + '/' + mobile,
-                            type: "POST"
-
-                        });
-<?php } ?>
-                }
-                else
-                    TimeoutCheck();
-
-            }
-
-
-            function Err() {
-                $("#status").html("Error!<br>Sorry something went wrong, Please cross check your telephone number.");
-            }
-
-            function success() {
-                $("#status2").fadeIn();
-                $("#status").fadeOut();
-                $("#Image").fadeOut();
-                $("#verified").fadeIn();
-
-
-
-            }
-
-            function TimeoutCheck() {
-                $("#status").text(" Failed!");
-            }
-
-        </script>
     </head>
     <body class="page-container-boxed">
         <!-- START PAGE CONTAINER -->
         <div class="container">
             <div class="page-content-wrap">
-               
+
                 <div class="row">
                     <div class="col-lg-8 centered col-lg-offset-2">
-  
+
 
                         <div class="panel panel-default">
                              <div class="panel">
                         <div class="mb-container">
-                            
+
                              <div class="col-lg-6">
                                 <img src="/img/bulkhouse_logo_white-01.png" alt="" width="230"/>
                         </div>
                             <div class="col-lg-6"></div>
-                         
+
             <div class="row" style="border-bottom:0;">
-               
+
                 <img src="/img/step1.jpg" alt="" width="100%"/>
                 </div>
-        
+
 </div>
                                 </div>
                             <div class="panel-heading">
@@ -203,77 +95,18 @@ foreach ($details2 as $row) {
                                     </div>
                                 </div>
                             </div>
-                           
+
                              <div class="col-lg-12">
-                                   <div class="block">
-                                <div class="page-title">
-                                    <h3><span class="fa fa-mobile-phone"></span> Phone Verification</h3>
-                                    </div>
-                                              
-                         
-                            <?php
-                                $mobile_verification = $this->vendor_update->mobile_number($compid);
-                                $verified_mobile = $this->vendor_update->latest_number($compid);
-                                if ($mobile_verification != $verified_mobile) {
-                                    ?>
-                                    <div>
-                                        <?php $details2 = $this->register_model->viewdata($compid);
-                                                    foreach ($details2 as $row) {  ?>
-                                        
-                                       
-                                        <form id="enter_number">
-   <div class="panel-body">
 
-                                    <div class="row">
-
-                                        <div class="col-md-6">
-
-                                                     <h5><span></span></h5>
-                                                       <div class="alert alert-info" role="alert">
-                                                             <strong>
-                                                         <?php
-                                                            echo $row->mobile;
-                                                            ?>
-                                                     </strong>  Mobile number is not verified.
-                            </div>
-                                                     
-                                                        <input  value="<?php
-                                                        echo $row->mobile;
-                                                        ?>" type="hidden" name="phone_number" id="phone_number" class="bg-focus form-control">
-
-
-                                                    </div>
-
-                                                    <div class="col-md-4">
-                                                        <input class="btn btn-sm btn-primary" type="submit" name="submit" value="Click here Verify" />
-                                                    </div>
-                                                </div>
-        </div>                                      
-
-                                            </form>
-                                            <div class="row" id="dial2verify" style="display: none">
-                                                <div class="col-md-8" style="padding: 10px 0px 0px 0px;">
-                                                    <span id="Image" style="font-weight: bold"></span>
-                                                    <span id="verified" style="font-weight: bold; display: none">Successfully verified !</span>
-                                                    
-                                                </div>
-                                                <div class="col-md-4" style="padding: 10px 0px 0px 0px;" id="status"><i class="fa fa-spinner"></i></div>
-                                            </div>
-                                        </div>
-                                    <?php }
-                                }
-                            ?>
-
-                        </div>
                             <div class="block">
-                               
+
                                 <div class="page-title">
                                     <h3><span class="fa fa-building-o"></span> Company Details</h3>
                                 </div>
                             </div>
                             <form class="form-horizontal" action="<?php echo base_url(); ?>view/pending_vendor" method="post">
 
-                               
+
                                 <div class="panel-body">
 
                                     <div class="row">

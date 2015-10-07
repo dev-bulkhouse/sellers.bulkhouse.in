@@ -58,7 +58,7 @@ if (window.sidebar){
             <aside class="bg-light aside b-r animated fadeInLeftBig" id="nav">
                 <section class="vbox">
                     <header class="bg-dark nav-bar">
-                        <a href="/main/export_terms" class="nav-brand">Exports</a>
+                        <a href="/view/export_terms" class="nav-brand">Exports</a>
                         <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-primary">
                             <i class="icon-reorder"></i>
                         </a>
