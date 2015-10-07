@@ -372,12 +372,7 @@ $query = $this->db->get();
                     <?php } ?>
 
                 </div>
-                <div class="alert alert-block" id='status_main' style="background-color: #1B8EDE; color: white;z-index: 999;">
-                    <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i>
-                    </button>
-                    <h4><i class="icon-bell-alt"></i>Account not Complete! <span style="font-size: 0.7em">  -  Please submit pending documents and details</span></h4>
-
-                </div>
+                
                 <div class="col-md-12 visible-md visible-sm visible-xs">
                         <p style="color: black">Account Complete Status</p>
                         <div class="progress progress-xs  m-t-sm">
