@@ -10,7 +10,7 @@ class Admin extends CI_Controller {
 
         if ($this->session->userdata('logged_in')) {
             $this->logged_in = true;
-            redirect(base_url().'verification/','location');
+//            redirect(base_url().'verification/','location');
         } else {
             $this->logged_in = false;
 //            redirect(base_url(),'location');
