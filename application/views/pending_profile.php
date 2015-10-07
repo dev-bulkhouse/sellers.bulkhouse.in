@@ -177,6 +177,7 @@
                                                         <option value="">Select Certification</option>
                                                         <option value="ISI/BIS">ISI / BIS</option>
                                                         <option value="ISO">ISO </option>
+                                                        <option  value="Others">Others</option>
                                                     </select>
                                                     <span class="help-block">Company Quality Certification </span>
                                                 </div>
