@@ -511,10 +511,29 @@ $client->call($session, 'customer.update',
             return false;
         }
     }
+     public function add_vendors() {
+        $data = array(
+            'custid' => $this->input->post('custid'),
+            'email' => $this->input->post('email'),
+        );
+        $this->db->insert('mag_cust', $data);
+        if ($this->db->affected_rows() == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public function viewleads() {
         $this->db->select('*');
         $this->db->from('leads');
+
+        $query = $this->db->get();
+        return $query->result();
+    }
+     public function viewvendors() {
+        $this->db->select('*');
+        $this->db->from('mag_cust');
 
         $query = $this->db->get();
         return $query->result();

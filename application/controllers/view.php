@@ -66,6 +66,12 @@ class View extends CI_Controller {
         $this->load->view('terms');
 //                $this->load->view('template/footer');
     }
+     public function mag_vendor() {
+
+//                $this->load->view('template/header');
+        $this->load->view('vendors');
+//                $this->load->view('template/footer');
+    }
 
     public function export_terms() {
 
@@ -144,6 +150,16 @@ class View extends CI_Controller {
      public function profile_test() {
 
         $this->load->view('pending_profile');
+    }
+    public function add_vendor() {
+
+//        $this->load->view('admin/template/header');
+        $result = $this->register_model->add_vendors();
+        if ($result == 1) {
+            redirect(base_url() . 'view/mag_vendor', 'location');
+        }
+
+//        $this->load->view('admin/template/footer');
     }
 
 }
