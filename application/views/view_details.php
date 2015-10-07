@@ -258,7 +258,7 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
 
                                                             <tr><td>Password:</td>
                                                         <b>
-                                                            <td> <span><span style="font-size: 0.7em"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> - </span><a data-original-title="Change Password" data-toggle="tooltip" href="/main/settings" style="font-size: 0.8em; color: blue"><i class="icon-edit"></i></a></span>
+                                                            <td> <span><span style="font-size: 0.7em"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> - </span><a data-original-title="Change Password" data-toggle="tooltip" href="/settings" style="font-size: 0.8em; color: blue"><i class="icon-edit"></i></a></span>
                                                             </td>
                                                         </b>
                                                         </tr>
@@ -270,7 +270,7 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
 
 
                                                 </div>
-                                               
+
 
                                             </div>
 
@@ -294,7 +294,7 @@ ajax/libs/jquery/1.5/jquery.min.js"></script>
                                                                     <header class="panel-heading">
                                                                         <h4 class="font-thin padder">Vendor Contact Person<span class="pull-right" style="margin-top: -10px">
 
-                                                                                <a data-original-title="Edit" data-toggle="tooltip" type="button" class="btn btn-sm" style="background-color: #428BCA; color: white" onclick="location.href = '/main/company';">Edit <i class="icon-edit"></i></a>
+                                                                                <a data-original-title="Edit" data-toggle="tooltip" type="button" class="btn btn-sm" style="background-color: #428BCA; color: white" onclick="location.href = '/profile01';">Edit <i class="icon-edit"></i></a>
                                                                             </span></h4>
                                                                     </header>
                                                                     <tr>
