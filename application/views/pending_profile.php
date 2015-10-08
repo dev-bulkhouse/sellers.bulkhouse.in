@@ -45,36 +45,36 @@
             .bg-primary .nav li a:hover {
                 color: #010101;
             }
-            
+
             .bs-wizard {margin-top: 40px;}
 
         </style>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
- 
+
     </head>
     <body class="page-container-boxed">
         <!-- START PAGE CONTAINER -->
         <div class="container">
             <div class="page-content-wrap">
-               
+
                 <div class="row">
                     <div class="col-lg-8 centered col-lg-offset-2">
-  
+
 
                         <div class="panel panel-default">
                              <div class="panel">
                         <div class="mb-container">
-                            
+
                              <div class="col-lg-6">
                                 <img src="/img/bulkhouse_logo_white-01.png" alt="" width="230"/>
                         </div>
                             <div class="col-lg-6"></div>
-                         
+
             <div class="row" style="border-bottom:0;">
-               
+
                 <img src="/img/step1.jpg" alt="" width="100%"/>
                 </div>
-        
+
 </div>
                                 </div>
                             <div class="panel-heading">
@@ -95,18 +95,18 @@
                                     </div>
                                 </div>
                             </div>
-                           
+
                              <div class="col-lg-12">
-                                
+
                             <div class="block">
-                               
+
                                 <div class="page-title">
                                     <h3><span class="fa fa-building-o"></span> Company Details</h3>
                                 </div>
                             </div>
                             <form class="form-horizontal" action="<?php echo base_url(); ?>view/pending_vendor" method="post">
 
-                               
+
                                 <div class="panel-body">
 
                                     <div class="row">
@@ -177,6 +177,7 @@
                                                         <option value="">Select Certification</option>
                                                         <option value="ISI/BIS">ISI / BIS</option>
                                                         <option value="ISO">ISO </option>
+                                                        <option value="other">other </option>
                                                     </select>
                                                     <span class="help-block">Company Quality Certification </span>
                                                 </div>
