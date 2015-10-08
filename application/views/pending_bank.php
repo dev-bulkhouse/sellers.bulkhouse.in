@@ -53,7 +53,7 @@ if ($logged_in) {
         <!-- START PAGE CONTAINER -->
         <div class="container">
             <div class="page-content-wrap">
-              
+
                 <div class="row">
                     <div class="col-lg-8 centered col-lg-offset-2">
 
@@ -66,12 +66,12 @@ if ($logged_in) {
                         </div>
                             <div class="col-lg-6"></div>
             <div class="row" style="border-bottom:0;">
-               
+
                 <img src="/img/step2.jpg" alt="" width="100%"/>
-               
+
                 </div>
 
-                            
+
 </div>
                                 </div>
                             <div class="panel-heading">
@@ -238,7 +238,17 @@ if ($logged_in) {
             });
 
         </script>
-
+        <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/56162b9712c288fc1fd7852f/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
         <!-- END SCRIPTS -->
 
     </body>
