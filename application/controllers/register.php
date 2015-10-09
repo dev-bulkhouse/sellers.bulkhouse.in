@@ -128,7 +128,8 @@ class Register extends CI_Controller {
 
         $this->db->where('id', $id);
 
-        $this->db->delete(vendor_details);
+        $this->db->delete('vendor_details');
+        redirect(base_url() . 'admin/vendor_profile', 'location');
     }
 
 }
