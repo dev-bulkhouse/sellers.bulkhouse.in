@@ -126,10 +126,9 @@ class Register extends CI_Controller {
 
     public function delete($id) {
 
-        $tables = array('vendor_details', 'bank_details','vendor_profile','pro_cat','document_deatils');
-       $this->db->where('compid', $id);
-         $this->db->where('id', $id);
-$this->db->delete($tables);
+        $this->db->where('id', $id);
+
+        $this->db->delete(vendor_details);
     }
 
 }
