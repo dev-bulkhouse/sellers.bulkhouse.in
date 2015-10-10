@@ -114,11 +114,16 @@
                                         <div class="col-md-6">
 
                                             <div class="form-group">
+
                                                 <label class="col-md-5 control-label">Year of established</label>
                                                 <div class="col-md-6">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                        <input type="number" name ="year_establishment" class="form-control" pattern="[0-9]*" required="required" maxlength="4"/>
+                                                        <input type="number" name ="year_establishment" class="form-control" pattern="[0-9]*" required="required" maxlength="4" value="<?php
+                                $details1 = $this->register_model->viewdata($compid);
+                                foreach ($details1 as $row) {
+                                    echo $row->year_establishment;
+                                    ?>"/>
                                                     </div>
                                                     <span class="help-block">Company established on </span>
                                                 </div>
@@ -130,7 +135,9 @@
                                                 <div class="col-md-6">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-inr"></span></span>
-                                                        <input type="number" pattern="[0-9]*" name ="comp_turnover" class="form-control"/>
+                                                        <input type="number" pattern="[0-9]*" name ="comp_turnover" value="<?php
+                                    echo $row->comp_turnover;
+                                    ?>" class="form-control"/>
                                                     </div>
                                                     <span class="help-block">Company Turnover in Lacks</span>
                                                 </div>
@@ -139,7 +146,9 @@
                                             <div class="form-group">
                                                 <label class="col-md-5 control-label">Registration Category</label>
                                                 <div class="col-md-6">
-                                                    <select  name="reg_category" class="form-control select" required="required">
+                                                    <select  name="reg_category" class="form-control select" required="required" value="<?php
+                                    echo $row->reg_category;
+                                    ?>">
                                                         <option value="">Select Category</option>
                                                         <option value="Stockist/Distributor">Stockist / Distributor</option>
                                                         <option  value="MSME/SSI">MSME / SSI </option>
@@ -160,7 +169,9 @@
                                             <div class="form-group">
                                                 <label class="col-md-5 control-label">No. of employee's</label>
                                                 <div class="col-md-6">
-                                                    <select name="no_employees" class="form-control select" required="required">
+                                                    <select name="no_employees" class="form-control select" required="required" value="<?php
+                                    echo $row->no_employees;
+                                    ?>">
                                                         <option value="">Select employee's</option>
                                                         <option  value="1 to 25">1 to 25</option>
                                                         <option  value="25 to 50">25 to 50</option>
@@ -173,11 +184,13 @@
                                             <div class="form-group">
                                                 <label  class="col-md-5 control-label">Quality Certification</label>
                                                 <div class="col-md-6">
-                                                    <select name="cert_products" class="form-control select">
+                                                    <select name="cert_products" class="form-control select" value="<?php
+                                    echo $row->cert_products;
+                                    ?>">
                                                         <option value="">Select Certification</option>
                                                         <option value="ISI/BIS">ISI / BIS</option>
                                                         <option value="ISO">ISO </option>
-                                                        <option value="other">other </option>
+                                                        <option value="other">Other </option>
                                                     </select>
                                                     <span class="help-block">Company Quality Certification </span>
                                                 </div>
@@ -205,28 +218,36 @@
                                                         <div class="form-group">
                                                             <label class="col-md-5 control-label">Office Land line:</label>
                                                             <div class="col-md-7">
-                                                                <input type="text" class="form-control"  name ="land_line"/>
+                                                                <input type="text" class="form-control"  name ="land_line" value="<?php
+                                    echo $row->land_line;
+                                    ?>"/>
                                                                 <span class="help-block">Required, max size = 8</span>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="col-md-5 control-label">Address 1:</label>
                                                             <div class="col-md-7">
-                                                                <textarea type="text" class="validate[required,min[18],max[120]] form-control" name ="address1" required></textarea>
+                                                                <textarea type="text" class="validate[required,min[18],max[120]] form-control" name ="address1" required value="<?php
+                                    echo $row->address1;
+                                    ?>" ></textarea>
                                                                 <span class="help-block">Required, min size = 5, max size = 10</span>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="col-md-5 control-label">Address 2:</label>
                                                             <div class="col-md-7">
-                                                                <textarea type="text" class="form-control" name ="address2" ></textarea>
+                                                                <textarea type="text" class="form-control" name ="address2" value="<?php
+                                    echo $row->address2;
+                                    ?>" ></textarea>
                                                                 <span class="help-block">Required, min size = 5, max size = 10</span>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="col-md-5 control-label">Country:</label>
                                                             <div class="col-md-7">
-                                                                <select name="country" id="country" class="form-control select" value="<?php
+                                                                <select name="country" id="country" value="<?php
+                                    echo $row->country;
+                                    ?>" class="form-control select" value="<?php
                                                                 echo $row->state;
                                                                 ?>" required="required"></select>
                                                                 <span class="help-block">Select Country</span>
@@ -249,14 +270,18 @@
                                                         <div class="form-group">
                                                             <label class="col-md-5 control-label">City:</label>
                                                             <div class="col-md-7">
-                                                                <input type="text" class="form-control" name ="city" required/>
+                                                                <input type="text" class="form-control" name ="city" required value="<?php
+                                    echo $row->city;
+                                    ?>"/>
                                                                 <span class="help-block">Required</span>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="col-md-5 control-label">Pin code:</label>
                                                             <div class="col-md-7">
-                                                                <input type="number" class="form-control" name ="pin_code" pattern="[0-9]*" required/>
+                                                                <input type="number" class="form-control" name ="pin_code" pattern="[0-9]*" required value="<?php
+                                    echo $row->pin_code;
+                                    ?>"/>
                                                                 <span class="help-block">Required,max size = 10</span>
                                                             </div>
                                                         </div>
@@ -265,7 +290,9 @@
                                                         <div class="form-group">
                                                             <label class="col-md-5 control-label">WebSite:</label>
                                                             <div class="col-md-7">
-                                                                <input type="text" name="website" value="http://" class="form-control" required/>
+                                                                <input type="text" name="website" value="http://" class="form-control" required value="<?php
+                                    echo $row->website;
+                                    ?>"/>
                                                                 <span class="help-block">Required, url</span>
                                                             </div>
                                                         </div>
@@ -276,7 +303,9 @@
                                                             <label class="col-md-5 control-label">Contact Person:</label>
                                                             <div class="col-md-7">
                                                                 <input type="text" placeholder="Contact Person"
-                                                                       name="contact_name" class="bg-focus form-control">
+                                                                       name="contact_name" value="<?php
+                                    echo $row->contact_name;
+                                    ?>" class="bg-focus form-control">
                                                                 <div class="line line-dashed m-t-lg"></div>
                                                             </div>
                                                         </div>
@@ -284,7 +313,9 @@
                                                             <label class="col-md-5 control-label">Email:</label>
                                                             <div class="col-md-7">
 
-                                                                <input type="email"  placeholder="Contact Email" class="bg-focus form-control">
+                                                                <input type="email"  name="email_contact" placeholder="Contact Email" value="<?php
+                                    echo $row->email_contact;
+                                    ?>" class="bg-focus form-control">
                                                                 <div class="line line-dashed m-t-lg"></div>
                                                             </div>
                                                         </div>
@@ -293,7 +324,9 @@
 
                                                             <label class="col-md-5 control-label">Mobile Number:</label>
                                                             <div class="col-md-7">
-                                                                <input type="number"  placeholder="Mobile Number" pattern="[789][0-9]{9}" name ="mobile_contact" class="bg-focus form-control" maxlength="11">
+                                                                <input type="number"  placeholder="Mobile Number" value="<?php
+                                    echo $row->mobile_contact;
+                                    ?>" pattern="[789][0-9]{9}" name ="mobile_contact" class="bg-focus form-control" maxlength="11">
                                                                 <div class="line line-dashed m-t-lg"></div>
                                                             </div>
                                                         </div>
@@ -322,42 +355,54 @@
                                                     <div class="form-group">
                                                         <label class="col-md-5 control-label">E-mail:</label>
                                                         <div class="col-md-7">
-                                                            <input type="email" value="" name="email" name="dispat_email" class="form-control" required/>
+                                                            <input type="email" value="" name="email" value="<?php
+                                    echo $row->dispat_email;
+                                    ?>"name="dispat_email" class="form-control" required/>
                                                             <span class="help-block">required email</span>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="col-md-5 control-label">Mobile Number::</label>
                                                         <div class="col-md-7">
-                                                            <input type="number" class="form-control" name ="dispat_mobile" pattern="[789][0-9]{9}"/>
+                                                            <input type="number" class="form-control" value="<?php
+                                    echo $row->dispat_mobile;
+                                    ?>"name ="dispat_mobile" pattern="[789][0-9]{9}"/>
                                                             <span class="help-block">min size = 18, max size = 100</span>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="col-md-5 control-label">Office Land Line:</label>
                                                         <div class="col-md-7">
-                                                            <input type="number" class="form-control" name ="dispat_land" pattern="[0-9]*"/>
+                                                            <input type="number" class="form-control" value="<?php
+                                    echo $row->dispat_land;
+                                    ?>"name ="dispat_land" pattern="[0-9]*"/>
                                                             <span class="help-block">min size = 18, max size = 100</span>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="col-md-5 control-label">Address 1:</label>
                                                         <div class="col-md-7">
-                                                            <textarea type="text" class="validate[required,min[18],max[120]] form-control" name ="dispat_address1" required></textarea>
+                                                            <textarea type="text" class="validate[required,min[18],max[120]] form-control" value="<?php
+                                    echo $row->dispat_address1;
+                                    ?>"name ="dispat_address1" required></textarea>
                                                             <span class="help-block">Required, min size = 15, max size = 20</span>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="col-md-5 control-label">Address 2:</label>
                                                         <div class="col-md-7">
-                                                            <textarea type="text" class="form-control" name ="dispat_address2" ></textarea>
+                                                            <textarea type="text" class="form-control" value="<?php
+                                    echo $row->dispat_address2;
+                                    ?>"name ="dispat_address2" ></textarea>
                                                             <span class="help-block">If Required</span>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="col-md-5 control-label">City:</label>
                                                         <div class="col-md-7">
-                                                            <input type="text" class="form-control" name ="dispat_city" required/>
+                                                            <input type="text" class="form-control" value="<?php
+                                    echo $row->mobile_contact;
+                                } ?>"name ="mobile_contact" required/>
                                                             <span class="help-block">Required</span>
                                                         </div>
                                                     </div>
