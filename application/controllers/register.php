@@ -124,13 +124,24 @@ class Register extends CI_Controller {
         }
     }
 
-    public function delete($id) {
+    public function delete($email) {
 
-        $this->db->where('id', $id);
+        $this->db->where('email', $email);
 
         $this->db->delete('vendor_details');
-        redirect(base_url() . 'admin/vendor_profile', 'location');
+        if($this->db->affected_rows() === 1){
+            $custid = $this->register_model->get_mag_cust_id($email);
+             $result = $this->register_model->delete_seller($custid);
+             if ($result == true) {
+                 redirect(base_url() . 'admin/vendor_profile', 'location');
+             }else{
+                 $this->session->set_flashdata('success_message', 'Vendor Not Deleted Properly');
+                 redirect(base_url() . 'admin/vendor_profile', 'location');
+             }
+
+        }
     }
+
 
 }
 
