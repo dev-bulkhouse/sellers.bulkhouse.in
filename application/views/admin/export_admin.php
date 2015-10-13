@@ -342,8 +342,11 @@
                                                     <td class="warning">Due</td>
                                                 <?php } ?>
 
-    <?php if ($vendor->agent_id == NULL) { ?>
+    <?php if (isset($vendor->agent_name)) { ?>
 
+                                                    <td class="active"><?php echo $vendor->agent_name; ?><br/>(<?php echo $vendor->agent_id; ?>)</td>
+
+    <?php } else { ?>
 
                                                     <td class="active">
                                                         No Agent
@@ -354,9 +357,6 @@
 
                                                         </div>
                                                     </td>
-    <?php } else { ?>
-                                                    <td class="active"><?php echo $vendor->agent_name; ?><br/>(<?php echo $vendor->agent_id; ?>)</td>
-
 
     <?php } ?>
 
