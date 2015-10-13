@@ -366,7 +366,7 @@ foreach ($details2 as $row) {
 
                         </div>
                         <div class="col-lg-3 col-md-2  col-sm-2 visible-lg visible-md visible-sm" style="padding: 15px 0px 0px 0px; text-align: right">
-                            <a href="<?php echo site_url(); ?>user/logout"><i class="fa fa-sign-out"></i> logout</a>
+
                         </div>
                     </header>
                     <section class="scrollable wrapper" id="wizard">
@@ -626,10 +626,10 @@ foreach ($details2 as $row) {
                                                     <label class="control-label">No of Employees:</label>
                                                     <select name="no_employees" class="form-control parsley-validated parsley-success" required="required">
                                                         <option value="">Select</option>
-                                                        <option <?php $row->no_employees == '1 to 25' ? ' selected="selected"' : ''; ?> value="1 to 25">1 to 25</option>
-                                                        <option <?php $row->no_employees == '25 to 50' ? ' selected="selected"' : ''; ?> value="25 to 50">25 to 50</option>
-                                                        <option <?php $row->no_employees == '50 to 100' ? ' selected="selected"' : ''; ?> value="50 to 100">50 to 100</option>
-                                                        <option <?php $row->no_employees == 'Above 100' ? ' selected="selected"' : ''; ?> value="Above 100">Above 100</option>
+                                                        <option <?php echo $row->no_employees == '1 to 25' ? ' selected="selected"' : ''; ?> value="1 to 25">1 to 25</option>
+                                                        <option <?php echo $row->no_employees == '25 to 50' ? ' selected="selected"' : ''; ?> value="25 to 50">25 to 50</option>
+                                                        <option <?php echo $row->no_employees == '50 to 100' ? ' selected="selected"' : ''; ?> value="50 to 100">50 to 100</option>
+                                                        <option <?php echo $row->no_employees == 'Above 100' ? ' selected="selected"' : ''; ?> value="Above 100">Above 100</option>
                                                     </select>
                                                     <div class="line line-dashed m-t-lg"></div>
                                                 </div>
@@ -647,8 +647,8 @@ foreach ($details2 as $row) {
                                                     <label>Quality Certification:</label>
                                                     <select name="cert_products"  class="form-control parsley-validated parsley-success">
                                                         <option value="">Select</option>
-                                                        <option <?php $row->cert_products == 'ISI / BIS' ? ' selected="selected"' : ''; ?> value="ISI/BIS">ISI / BIS</option>
-                                                        <option <?php $row->cert_products == 'ISO' ? ' selected="selected"' : ''; ?> value="ISO">ISO </option>
+                                                        <option <?php echo $row->cert_products == 'ISI / BIS' ? ' selected="selected"' : ''; ?> value="ISI/BIS">ISI / BIS</option>
+                                                        <option <?php echo $row->cert_products == 'ISO' ? ' selected="selected"' : ''; ?> value="ISO">ISO </option>
 
                                                         <option value="none">NONE</option>
 
@@ -660,12 +660,12 @@ foreach ($details2 as $row) {
                                                     <label class="control-label">Registration Category:</label>
                                                     <select name="reg_category" class="form-control parsley-validated parsley-success" required="required">
                                                         <option value="">Select</option>
-                                                        <option <?php $row->reg_category == 'Stockist/Distributor' ? ' selected="selected"' : ''; ?> value="Stockist/Distributor">Stockist / Distributor</option>
-                                                        <option <?php $row->reg_category == 'MSME/SSI' ? ' selected="selected"' : ''; ?> value="MSME/SSI">MSME / SSI </option>
-                                                        <option <?php $row->reg_category == 'Exporter' ? ' selected="selected"' : ''; ?> value="Exporter">Exporter </option>
-                                                        <option <?php $row->reg_category == 'OriginalManufacturer' ? ' selected="selected"' : ''; ?> value="OriginalManufacturer">Original Manufacturer</option>
-                                                        <option <?php $row->reg_category == 'Distributor/Agency' ? ' selected="selected"' : ''; ?> value="Distributor/Agency">Distributor / Agency</option>
-                                                        <option <?php $row->reg_category == 'Others' ? ' selected="selected"' : '';
+                                                        <option <?php echo $row->reg_category == 'Stockist/Distributor' ? ' selected="selected"' : ''; ?> value="Stockist/Distributor">Stockist / Distributor</option>
+                                                        <option <?php echo $row->reg_category == 'MSME/SSI' ? ' selected="selected"' : ''; ?> value="MSME/SSI">MSME / SSI </option>
+                                                        <option <?php echo $row->reg_category == 'Exporter' ? ' selected="selected"' : ''; ?> value="Exporter">Exporter </option>
+                                                        <option <?php echo $row->reg_category == 'OriginalManufacturer' ? ' selected="selected"' : ''; ?> value="OriginalManufacturer">Original Manufacturer</option>
+                                                        <option <?php echo $row->reg_category == 'Distributor/Agency' ? ' selected="selected"' : ''; ?> value="Distributor/Agency">Distributor / Agency</option>
+                                                        <option <?php echo $row->reg_category == 'Others' ? ' selected="selected"' : '';
                                             }
                                                 ?> value="Others">Others</option>
                                                 </select>
