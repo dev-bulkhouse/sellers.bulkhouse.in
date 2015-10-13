@@ -17,6 +17,7 @@
             .due{background-color: yellow}
             .rjt{background-color: darkred; color: white}
             td{border: #000 solid}
+            .danger{background-color: darkred; color: white}
              </style>
     </head>
     <body class="page-container-boxed">

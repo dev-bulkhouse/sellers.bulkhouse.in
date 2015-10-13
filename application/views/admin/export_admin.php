@@ -17,6 +17,7 @@
             .due{background-color: yellow}
             .rjt{background-color: darkred; color: white}
             td{border: #000 solid}
+            .danger{background-color: darkred; color: white}
         </style>
         <script src="http://sellers.ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css"/>
