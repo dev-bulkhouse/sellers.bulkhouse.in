@@ -111,7 +111,7 @@
                                     <thead>
                                         <tr>
                                             <th style="width:200px">Company Details </th>
-                                            <th>TO <i data-toggle="tooltip" data-placement="top" title="Turn Over" class="fa fa-question-circle"></i></th>
+                                            <!--<th>TO <i data-toggle="tooltip" data-placement="top" title="Turn Over" class="fa fa-question-circle"></i></th>-->
                                             <th>Register Time</th>
                                             <th>Type</th>
                                             <th>Pan Card</th>
@@ -162,7 +162,7 @@
                                                     <span class="fa fa-registered"><b> <?php echo $vendor->reg_as; ?></b></span><br/>
 
                                                 </td>
-                                                <td><?php echo $vendor->comp_turnover; ?></td>
+                                                <!--<td><?php // echo $vendor->comp_turnover; ?></td>-->
                                                 <td><?php echo $vendor->registered_on; ?></td>
                                                 <td><?php echo $vendor->firm_type; ?></td>
 
