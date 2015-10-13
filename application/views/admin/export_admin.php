@@ -18,7 +18,45 @@
             .rjt{background-color: darkred; color: white}
             td{border: #000 solid}
         </style>
+        <script src="http://sellers.ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css"/>
+        <script>
+            ;
+            (function ($) {
+                $.fn.fixMe = function () {
+                    return this.each(function () {
+                        var $this = $(this),
+                                $t_fixed;
+                        function init() {
+                            $this.wrap('<div class="container" />');
+                            $t_fixed = $this.clone();
+                            $t_fixed.find("tbody").remove().end().addClass("fixed").insertBefore($this);
+                            resizeFixed();
+                        }
+                        function resizeFixed() {
+                            $t_fixed.find("th").each(function (index) {
+                                $(this).css("width", $this.find("th").eq(index).outerWidth() + "px");
+                            });
+                        }
+                        function scrollFixed() {
+                            var offset = $(this).scrollTop(),
+                                    tableOffsetTop = $this.offset().top,
+                                    tableOffsetBottom = tableOffsetTop + $this.height() - $this.find("thead").height();
+                            if (offset < tableOffsetTop || offset > tableOffsetBottom)
+                                $t_fixed.hide();
+                            else if (offset >= tableOffsetTop && offset <= tableOffsetBottom && $t_fixed.is(":hidden"))
+                                $t_fixed.show();
+                        }
+                        $(window).resize(resizeFixed);
+                        $(window).scroll(scrollFixed);
+                        init();
+                    });
+                };
+            })(jQuery);
+
+        </script>
     </head>
+
     <body class="page-container-boxed">
         <!-- START PAGE CONTAINER -->
 
@@ -65,17 +103,15 @@
                                     <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
 
 
-                                </ul>             
+                                </ul>
 
                             </div>
                             <div class="panel-body">
                                 <table class="table datatable table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Name,
-                                                Company,<br/>
-                                                Email,
-                                                Contact</th>
+                                            <th style="width:200px">Company Details </th>
+                                            <th>TO <i data-toggle="tooltip" data-placement="top" title="Turn Over" class="fa fa-question-circle"></i></th>
                                             <th>Register Time</th>
                                             <th>Type</th>
                                             <th>Pan Card</th>
@@ -118,10 +154,15 @@
 
 
                                             <tr>
-                                                <td><span class="fa fa-user"> &nbsp<b><?php echo $vendor->vendor_name; ?> <?php echo $vendor->last_name; ?></b></span><br/>
-                                                    <span class="fa fa-building-o"> &nbsp<b><?php echo $vendor->firm_name; ?></b></span><br/>
+                                                <td style="background-color: #A43F3E; color: white">
+                                                    <span class="fa fa-user"> <b><?php echo $vendor->vendor_name; ?> <?php echo $vendor->last_name; ?></b></span><br/>
+                                                    <span class="fa fa-building-o"> <b><?php echo $vendor->firm_name; ?></b></span><br/>
                                                     <span class="fa fa-envelope"> <?php echo $vendor->email; ?></span><br/>
-                                                    <span class="fa fa-phone"> &nbsp<?php echo $vendor->mobile; ?></span></td>
+                                                    <span class="fa fa-phone"> <?php echo $vendor->mobile; ?></span><br/>
+                                                    <span class="fa fa-registered"><b> <?php echo $vendor->reg_as; ?></b></span><br/>
+
+                                                </td>
+                                                <td><?php echo $vendor->comp_turnover; ?></td>
                                                 <td><?php echo $vendor->registered_on; ?></td>
                                                 <td><?php echo $vendor->firm_type; ?></td>
 
@@ -301,31 +342,33 @@
                                                     <td class="warning">Due</td>
                                                 <?php } ?>
 
-                                                <?php if ($vendor->agent_id != NULL) { ?>
+    <?php if ($vendor->agent_id == NULL) { ?>
 
-                                                    <td class="active"><?php echo $vendor->agent_name; ?><br/>(<?php echo $vendor->agent_id; ?>)</td>
-                                               
-                                                 <?php } else { ?>
-                                                    
+
                                                     <td class="active">
                                                         No Agent
+
                                                         <div class="form-group">
 
                                                             <button type="button" class="btn btn-info mb-control" data-box="#message-box-sound-1">Add</button>
 
                                                         </div>
                                                     </td>
+    <?php } else { ?>
+                                                    <td class="active"><?php echo $vendor->agent_name; ?><br/>(<?php echo $vendor->agent_id; ?>)</td>
 
-                                                <?php } ?>
+
+    <?php } ?>
 
 
                                             </tr>
 
 
-                                        <?php } ?>
+<?php } ?>
 
                                     </tbody>
                                 </table>
+
                                 <div class="message-box animated fadeIn" data-sound="alert" id="message-box-sound-1">
                                     <div class="mb-container">
                                         <div class="mb-middle">
@@ -351,7 +394,7 @@
                                                             ?>
 
                                                             <option value="<?php echo $row->agent_id ?>"><?php echo $row->agent_name . ' - (' . $row->agent_id . ')'; ?></option>
-                                                        <?php } ?>
+<?php } ?>
 
                                                     </select>
                                                 </div>
