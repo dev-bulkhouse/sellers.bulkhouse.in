@@ -345,16 +345,16 @@ foreach ($details2 as $row) {
                                                     <label class="control-label">No of Employees:</label>
                                                     <select name="no_employees" class="form-control parsley-validated parsley-success" required="required">
                                                         <option value="">Select</option>
-                                                        <option <?php $row->no_employees == '1 to 25' ? ' selected="selected"' : ''; ?> value="1 to 25">1 to 25</option>
-                                                        <option <?php $row->no_employees == '25 to 50' ? ' selected="selected"' : ''; ?> value="25 to 50">25 to 50</option>
-                                                        <option <?php $row->no_employees == '50 to 100' ? ' selected="selected"' : ''; ?> value="50 to 100">50 to 100</option>
-                                                        <option <?php $row->no_employees == 'Above 100' ? ' selected="selected"' : ''; ?> value="Above 100">Above 100</option>
+                                                        <option <?php echo $row->no_employees == '1 to 25' ? ' selected="selected"' : ''; ?> value="1 to 25">1 to 25</option>
+                                                        <option <?php echo $row->no_employees == '25 to 50' ? ' selected="selected"' : ''; ?> value="25 to 50">25 to 50</option>
+                                                        <option <?php echo $row->no_employees == '50 to 100' ? ' selected="selected"' : ''; ?> value="50 to 100">50 to 100</option>
+                                                        <option <?php echo $row->no_employees == 'Above 100' ? ' selected="selected"' : ''; ?> value="Above 100">Above 100</option>
                                                     </select>
                                                     <div class="line line-dashed m-t-lg"></div>
                                                 </div>
 
                                                 <div class="col-sm-3">
-                                                    <label class="control-label" data-toggle="tooltip" data-placement="top" title="Only Previous Year Turnover">Turnover (Example : 1000000):</label>
+                                                    <label class="control-label" data-toggle="tooltip" data-placement="top" title="Only Previous Year Turnover">Turnover:</label>
                                                     <input type="number" value="<?php
                                                 echo $row->comp_turnover;
                                                     ?>"  placeholder="Company Turnover" pattern="[0-9]*" name ="comp_turnover" class="bg-focus form-control">
@@ -366,8 +366,8 @@ foreach ($details2 as $row) {
                                                     <label>Quality Certification:</label>
                                                     <select name="cert_products"  class="form-control parsley-validated parsley-success">
                                                         <option value="">Select</option>
-                                                        <option <?php $row->cert_products == 'ISI / BIS' ? ' selected="selected"' : ''; ?> value="ISI/BIS">ISI / BIS</option>
-                                                        <option <?php $row->cert_products == 'ISO' ? ' selected="selected"' : ''; ?> value="ISO">ISO </option>
+                                                        <option <?php echo $row->cert_products == 'ISI / BIS' ? ' selected="selected"' : ''; ?> value="ISI/BIS">ISI / BIS</option>
+                                                        <option <?php echo $row->cert_products == 'ISO' ? ' selected="selected"' : ''; ?> value="ISO">ISO </option>
 
                                                         <option value="none">NONE</option>
 
@@ -379,12 +379,12 @@ foreach ($details2 as $row) {
                                                     <label class="control-label">Registration Category:</label>
                                                     <select name="reg_category" class="form-control parsley-validated parsley-success" required="required">
                                                         <option value="">Select</option>
-                                                        <option <?php $row->reg_category == 'Stockist/Distributor' ? ' selected="selected"' : ''; ?> value="Stockist/Distributor">Stockist / Distributor</option>
-                                                        <option <?php $row->reg_category == 'MSME/SSI' ? ' selected="selected"' : ''; ?> value="MSME/SSI">MSME / SSI </option>
-                                                        <option <?php $row->reg_category == 'Exporter' ? ' selected="selected"' : ''; ?> value="Exporter">Exporter </option>
-                                                        <option <?php $row->reg_category == 'OriginalManufacturer' ? ' selected="selected"' : ''; ?> value="OriginalManufacturer">Original Manufacturer</option>
-                                                        <option <?php $row->reg_category == 'Distributor/Agency' ? ' selected="selected"' : ''; ?> value="Distributor/Agency">Distributor / Agency</option>
-                                                        <option <?php $row->reg_category == 'Others' ? ' selected="selected"' : '';
+                                                        <option <?php echo $row->reg_category == 'Stockist/Distributor' ? ' selected="selected"' : ''; ?> value="Stockist/Distributor">Stockist / Distributor</option>
+                                                        <option <?php echo $row->reg_category == 'MSME/SSI' ? ' selected="selected"' : ''; ?> value="MSME/SSI">MSME / SSI </option>
+                                                        <option <?php echo $row->reg_category == 'Exporter' ? ' selected="selected"' : ''; ?> value="Exporter">Exporter </option>
+                                                        <option <?php echo $row->reg_category == 'OriginalManufacturer' ? ' selected="selected"' : ''; ?> value="OriginalManufacturer">Original Manufacturer</option>
+                                                        <option <?php echo $row->reg_category == 'Distributor/Agency' ? ' selected="selected"' : ''; ?> value="Distributor/Agency">Distributor / Agency</option>
+                                                        <option <?php echo $row->reg_category == 'Others' ? ' selected="selected"' : '';
 
                                                 ?> value="Others">Others</option>
                                                 </select>
@@ -435,9 +435,12 @@ foreach ($details2 as $row) {
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <label class="control-label">Country:</label>
+
                                                     <select id="country" name="country" value="<?php
                                                 echo $row->country;
-                                                    ?>"  class="bg-focus form-control" required="required"></select>
+                                                    ?>"  class="bg-focus form-control" required="required">
+
+                                                    </select>
                                                     <div class="line line-dashed m-t-lg" ></div>
                                                 </div>
 
@@ -639,7 +642,7 @@ foreach ($details2 as $row) {
 
         </script>
 
-        <script type="text/javascript">
+<script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -650,10 +653,7 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-
         <!-- END SCRIPTS -->
-
-
 
     </body>
 </html>
