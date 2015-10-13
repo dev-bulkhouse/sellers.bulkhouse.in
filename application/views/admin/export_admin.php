@@ -353,7 +353,7 @@
 
                                                         <div class="form-group">
 
-                                                            <button type="button" class="btn btn-info mb-control" data-box="#message-box-sound-1">Add</button>
+                                                            <button type="button" class="btn btn-info mb-control" data-box="#message-box-sound-<?php echo $vendor->compid ?>">Add</button>
 
                                                         </div>
                                                     </td>
@@ -364,12 +364,12 @@
                                             </tr>
 
 
-<?php } ?>
+
 
                                     </tbody>
                                 </table>
 
-                                <div class="message-box animated fadeIn" data-sound="alert" id="message-box-sound-1">
+                                <div class="message-box animated fadeIn" data-sound="alert" id="message-box-sound-<?php echo $vendor->compid ?>">
                                     <div class="mb-container">
                                         <div class="mb-middle">
                                             <div class="mb-title"><span class="fa fa-users"></span> Add <strong>Agents</strong></div>
@@ -410,6 +410,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php } ?>
                         </div>
 
                     </div>
