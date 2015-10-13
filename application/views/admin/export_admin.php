@@ -342,11 +342,8 @@
                                                     <td class="warning">Due</td>
                                                 <?php } ?>
 
-    <?php if (isset($vendor->agent_name)) { ?>
+    <?php if ($vendor->agent_name == NULL) { ?>
 
-                                                    <td class="active"><?php echo $vendor->agent_name; ?><br/>(<?php echo $vendor->agent_id; ?>)</td>
-
-    <?php } else { ?>
 
                                                     <td class="active">
                                                         No Agent
@@ -357,7 +354,22 @@
 
                                                         </div>
                                                     </td>
-                                                    <div class="message-box animated fadeIn" data-sound="alert" id="message-box-sound-1">
+    <?php } else { ?>
+                                                    <td class="active"><?php echo $vendor->agent_name; ?><br/>(<?php echo $vendor->agent_id; ?>)</td>
+
+
+    <?php } ?>
+
+
+                                            </tr>
+
+
+<?php } ?>
+
+                                    </tbody>
+                                </table>
+
+                                <div class="message-box animated fadeIn" data-sound="alert" id="message-box-sound-1">
                                     <div class="mb-container">
                                         <div class="mb-middle">
                                             <div class="mb-title"><span class="fa fa-users"></span> Add <strong>Agents</strong></div>
@@ -397,20 +409,7 @@
                                         </div>
                                     </div>
                                 </div>
-    <?php } ?>
-
-
-                                            </tr>
-
-
-
-
-                                    </tbody>
-                                </table>
-
-
                             </div>
-                            <?php } ?>
                         </div>
 
                     </div>
