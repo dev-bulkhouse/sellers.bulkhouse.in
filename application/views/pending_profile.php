@@ -354,7 +354,7 @@ foreach ($details2 as $row) {
                                                 </div>
 
                                                 <div class="col-sm-3">
-                                                    <label class="control-label" data-toggle="tooltip" data-placement="top" title="Only Previous Year Turnover">Turnover (Lakhs):</label>
+                                                    <label class="control-label" data-toggle="tooltip" data-placement="top" title="Only Previous Year Turnover">Turnover (Example : 1000000):</label>
                                                     <input type="number" value="<?php
                                                 echo $row->comp_turnover;
                                                     ?>"  placeholder="Company Turnover" pattern="[0-9]*" name ="comp_turnover" class="bg-focus form-control">
