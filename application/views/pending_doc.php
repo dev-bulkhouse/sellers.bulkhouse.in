@@ -74,7 +74,7 @@ $query = $this->db->get();
         <script src="<?php echo site_url(); ?>js/vendor.js" type="text/javascript"></script>-->
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
-        
+
         <script>
             $(document).ready(function (e) {
 
@@ -372,13 +372,13 @@ $query = $this->db->get();
 
     </head>
     <body  ng-app="ngAnimate">
-        
+
         <section class="vbox">
 
 
 
             <section class="scrollable wrapper animated fadeInDown"  >
-   
+
 
 
                 <div class="row" style="margin-bottom: 10px; padding: 10px;">
@@ -627,18 +627,18 @@ $query = $this->db->get();
                             <div class="col-lg-12">
                                 <div class="list-group bg-white" style="background-color: whitesmoke">
                                      <div class="panel">
-                                         
+
                         <div class="mb-container">
-                            
+
                                <div class="col-lg-6">
                                 <img src="/img/bulkhouse_logo_white-01.png" alt="" width="230"/>
                         </div>
                             <div class="col-lg-6"></div>
-           
+
                 <img src="/img/step3.jpg" alt="" width="100%"/>
-               
-                
-        
+
+
+
 </div>
                                 </div>
                                     </div>
@@ -646,15 +646,15 @@ $query = $this->db->get();
                                     <div class="list-group bg-white" style="background-color: whitesmoke">
                                         <header class="panel-heading bg-primary" style=" color: black">
                                             Products
-                                            <a style="margin-top: -5px"  href="<?php echo site_url(); ?>user/logout" class="btn btn-primary pull-right btn-sm"><i class="fa fa-sign-out"></i> Logout</a>    
+                                            <a style="margin-top: -5px"  href="<?php echo site_url(); ?>user/logout" class="btn btn-primary pull-right btn-sm"><i class="fa fa-sign-out"></i> Logout</a>
                                         </header>
-                                       
+
                                         <span  class="list-group-item">
-                                               
-                                                
+
+
                                             <a class="btn btn-primary btn-sm" target="_blank" href="http://bulk.house/index.php/marketplace/seller/login/"><i class="fa fa-plus"> </i>  Add Products</a>
-                                                  
-                                                
+
+
                                             </span>
 
 
@@ -662,13 +662,13 @@ $query = $this->db->get();
                                 </div>
                                 </div>
                             </div>
-                        
+
                                     <div class="row">
                             <div class="col-lg-12">
                                 <div class="list-group bg-white" style="background-color: whitesmoke">
                                     <header class="panel-heading bg-primary" style=" color: black">
                                         <span class="badge bg-info pull-right"></span> Submit Documents
-  
+
                                     </header>
                                     <?php if ($req_docs->pan_prop == 1) { ?>
                                         <a href="#" class="list-group-item">
@@ -1314,10 +1314,22 @@ $query = $this->db->get();
         <!-- END THIS PAGE PLUGINS -->
 
         <!-- START TEMPLATE -->
-      
+
         <script type="text/javascript" src="/js/plugins.js"></script>
         <script type="text/javascript" src="/js/actions.js"></script>
         <!-- Bootstrap -->
         <!-- App -->
+
+        <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/56162b9712c288fc1fd7852f/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
     </body>
 </html>
