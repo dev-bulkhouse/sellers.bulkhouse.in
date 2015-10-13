@@ -162,6 +162,11 @@ class View extends CI_Controller {
 //        $this->load->view('admin/template/footer');
     }
 
+    public function pending_profile_test() {
+        $logged = $this->logged_in;
+         $this->load->view('pending_profile', array('logged_in' => $logged));
+    }
+
 }
 
 /* End of file welcome.php */
