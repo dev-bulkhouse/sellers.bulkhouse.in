@@ -231,20 +231,14 @@ class Vendor_update extends CI_Model {
         foreach ($result as $st) {
 
             $address1 = $st->address1;
-
             $city = $st->city;
             $state = $st->state;
             $pincode = $st->pin_code;
-            $contact_name = $st->contact_name;
-            $mobile_contact = $st->mobile_contact;
-            $email_contact = $st->email_contact;
             $year_establishment = $st->year_establishment;
             $comp_turnover = $st->comp_turnover;
             $reg_category = $st->reg_category;
-            $tax_reg = $st->tax_reg;
-            $cert_products = $st->cert_products;
 
-            if ($address1 != "" && $city != "" && $state != "" && $pincode != "" && $contact_name != "" && $mobile_contact != "" && $email_contact != "" && $year_establishment != "" && $comp_turnover != "" && $reg_category != "") {
+            if ($address1 != "" && $city != "" && $state != "" && $pincode != "" && $year_establishment != "" && $comp_turnover != "" && $reg_category != "") {
                 return false;
             } else {
                 return true;
