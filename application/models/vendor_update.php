@@ -244,7 +244,7 @@ class Vendor_update extends CI_Model {
             $tax_reg = $st->tax_reg;
             $cert_products = $st->cert_products;
 
-            if ($address1 != "" && $city != "" && $state != "" && $pincode != "" && $contact_name != "" && $mobile_contact != "" && $email_contact != "" && $year_establishment != "" && $comp_turnover != "" && $reg_category != "" && $tax_reg != "" && $cert_products != "") {
+            if ($address1 != "" && $city != "" && $state != "" && $pincode != "" && $contact_name != "" && $mobile_contact != "" && $email_contact != "" && $year_establishment != "" && $comp_turnover != "" && $reg_category != "") {
                 return false;
             } else {
                 return true;
@@ -277,10 +277,10 @@ class Vendor_update extends CI_Model {
             $addressid_status = $st->addressid_status;
             $businessid_status = $st->businessid_status;
             $canceled_check_status = $st->canceled_check_status;
-        
+
         if ($firm_type === $proprietorship) {
         if ($pan_prop_status == 2 && $vat_cst_status == 2 && $shop_establish_trade_status == 2 && $addressid_status == 2 && $businessid_status == 2 && $photoid_status == 2 && $canceled_check_status == 2) {
-               
+
                 return true;
             } else {
                 return false;
@@ -300,7 +300,7 @@ class Vendor_update extends CI_Model {
                 return false;
             }
         }
-        
+
     }
     }
 
