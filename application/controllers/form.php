@@ -27,7 +27,18 @@ class Form extends CI_Controller {
             if ($result == 1) {
                 redirect('http://www.bulkhouse.com', 'location');
             }  else {
-                redirect('http://www.bulkhouse.in', 'location');
+                redirect('http://www.bulkhouse.com', 'location');
+            }
+
+        }
+
+        public function contact() {
+
+            $result = $this->form_submit->contact();
+            if ($result == 1) {
+                redirect('http://www.bulkhouse.com', 'location');
+            }  else {
+                redirect('http://www.bulkhouse.com', 'location');
             }
 
         }

@@ -31,9 +31,13 @@ class Create_tables extends CI_Controller {
 
 
     }
-    
+
     public function let_us_know_you() {
         $this->tabs->let_us_know_you();
+    }
+
+    public function dotcom_contacts() {
+        $this->tabs->dotcom_contacts();
     }
 
     public function agent_leads() {
