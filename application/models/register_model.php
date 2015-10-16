@@ -71,7 +71,7 @@ class Register_model extends CI_Model {
         $reg_as = $this->get_reg_as($email);
 
         if ($reg_as == 'Domestic') {
-            
+
         } else {
             $data2 = array(
                 'compid' => $compid,
@@ -281,17 +281,17 @@ class Register_model extends CI_Model {
         $this->email_code = md5((string) $row->registered_on . $this->config->item('bulk-lock'));
         $this->session->set_userdata($sess_data);
     }
-    
+
     public function update_seller($id,$new_password) {
-        
+
         $client = new SoapClient('http://bulk.house/api/soap/?wsdl');
 
 // If somestuff requires api authentification,
 // then get a session token
 $session = $client->login('inhouse_developer', '3125582');
 
-$client->call($session, 'customer.update', 
- array('customerId' => $id, 'customerData' => 
+$client->call($session, 'customer.update',
+ array('customerId' => $id, 'customerData' =>
    array('password_hash'=> md5($new_password))));
 
 
@@ -301,7 +301,7 @@ $client->call($session, 'customer.update',
         //$this->mage_api->customer_update(array('customerId' => $id,'customerData' => array('password_hash' => md5($new_password))));
     }
     public function delete_seller($id) {
-        
+
 $client = new SoapClient('http://bulk.house/api/soap/?wsdl'); // TODO : change url
 $session = $client->login('inhouse_developer', '3125582'); // TODO : change login and pwd if necessary
 

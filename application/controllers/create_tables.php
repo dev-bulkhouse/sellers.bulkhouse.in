@@ -31,6 +31,10 @@ class Create_tables extends CI_Controller {
 
 
     }
+    
+    public function let_us_know_you() {
+        $this->tabs->let_us_know_you();
+    }
 
     public function agent_leads() {
         $this->tabs->employee();

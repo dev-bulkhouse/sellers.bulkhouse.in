@@ -33,7 +33,8 @@ $show['firm_type'] = $firm_type;
     <link rel="stylesheet" type="text/css" id="theme" href="/css/theme-default.css"/>
     <!-- EOF CSS INCLUDE -->
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <style>.m-b-sm {
+    <style>
+        .m-b-sm {
             margin-bottom: 0px;
         }
 

@@ -300,6 +300,22 @@ class Tabs extends CI_Model {
 
     }
 
+    public function let_us_know_you() {
+
+        $flag = $this->db->query("CREATE TABLE IF NOT EXISTS `let_us_know_you` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `submited_on` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)");
+
+
+        echo $flag;
+
+
+    }
+
     public function mn() {
         $flag = $this->db->query("CREATE TABLE IF NOT EXISTS `vendor_details` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
