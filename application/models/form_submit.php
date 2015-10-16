@@ -95,7 +95,7 @@ class Form_submit extends CI_Model {
     }
 
 
-    private function send_contact_confirmation_mail($email,$name,$message) {
+    private function send_contact_confirmation_mail($email,$name,$message1) {
         $this->load->helper('url');
         $this->load->library('email');
         $config['protocol'] = "sendmail";
@@ -126,7 +126,7 @@ class Form_submit extends CI_Model {
         $message .= $email;
         $message .= '</p>';
         $message .= '<p>Email Id : ';
-        $message .= $message;
+        $message .= $message1;
         $message .= '</p>';
         $message .= '<p>Thank you!</p>';
         $message .= '<p>Automail Bulkhouse.com </p>';
