@@ -125,7 +125,7 @@ class Form_submit extends CI_Model {
         $message .= '<p>Email Id : ';
         $message .= $email;
         $message .= '</p>';
-        $message .= '<p>Email Id : ';
+        $message .= '<p>Message : ';
         $message .= $message1;
         $message .= '</p>';
         $message .= '<p>Thank you!</p>';
