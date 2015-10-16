@@ -26,6 +26,8 @@ class Form extends CI_Controller {
             $result = $this->form_submit->let_us_know_you();
             if ($result == 1) {
                 redirect('http://www.bulkhouse.com', 'location');
+            }  else {
+                
             }
 
         }

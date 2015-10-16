@@ -26,7 +26,6 @@ class Form_submit extends CI_Model {
         $this->db->insert('let_us_know_you', $data);
 
         if ($this->db->affected_rows() === 1) {
-            $this->set_session($email);
             $this->send_confirmation_mail($email,$name);
             return 1;
         } else {
@@ -38,9 +37,6 @@ class Form_submit extends CI_Model {
     private function send_confirmation_mail($email,$name) {
         $this->load->helper('url');
         $this->load->library('email');
-//        $email = $this->session->userdata('email');
-
-        $email_code = $this->email_code;
         $config['protocol'] = "sendmail";
         $config['smtp_host'] = "smtp.sendgrid.net";
         $config['smtp_port'] = "587";
