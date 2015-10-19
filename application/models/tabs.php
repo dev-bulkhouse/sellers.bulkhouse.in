@@ -316,6 +316,31 @@ class Tabs extends CI_Model {
 
     }
 
+    public function add_fields_let_us_know_you() {
+
+        $fields = array(
+                        'company' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '255',
+
+                                          ),
+                        'country' => array(
+                                                 'type' => 'VARCHAR',
+                                                 'constraint' => '255',
+                                          ),
+                        'mobile' => array(
+                                                 'type' =>'VARCHAR',
+                                                 'constraint' => '100',
+                                          ),
+                        'pro_cats' => array(
+                                                 'type' =>'text',
+                                          ),
+                );
+
+        $this->dbforge->add_column('let_us_know_you', $fields);
+
+    }
+
     public function dotcom_contacts() {
 
         $flag = $this->db->query("CREATE TABLE IF NOT EXISTS `dotcom_contacts` (
