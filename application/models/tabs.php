@@ -341,6 +341,17 @@ class Tabs extends CI_Model {
 
     }
 
+    public function modify_part_deed() {
+        $fields = array(
+                        'part_deed_type' => array(
+                                                         'type' => 'VARCHAR',
+                                                 'constraint' => '255',
+                                                ),
+);
+$this->dbforge->modify_column('document_details', $fields);
+return "Done";
+    }
+
     public function dotcom_contacts() {
 
         $flag = $this->db->query("CREATE TABLE IF NOT EXISTS `dotcom_contacts` (
