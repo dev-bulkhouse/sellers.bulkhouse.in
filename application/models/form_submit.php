@@ -15,18 +15,24 @@ class Form_submit extends CI_Model {
         $time = date("Y-m-d") . "|" . date("h:i:s");
         $email = $this->input->post('email');
         $name = $this->input->post('name');
+        $mobile = $this->input->post('mobile');
+        $company = $this->input->post('company');
+        $message = $this->input->post('message');
 
 
         $data = array(
             'email' => $this->input->post('email'),
             'name' => $name,
+            'company' => $company,
+            'mobile' => $mobile,
+            'message' => $message,
             'submited_on' => $time
         );
 
         $this->db->insert('let_us_know_you', $data);
 
         if ($this->db->affected_rows() === 1) {
-            $this->send_confirmation_mail($email,$name);
+            $this->send_confirmation_mail($email,$name,$company,$mobile,$message);
             return 1;
         } else {
             return 0;
@@ -58,7 +64,7 @@ class Form_submit extends CI_Model {
     }
 
 
-    private function send_confirmation_mail($email,$name) {
+    private function send_confirmation_mail($email,$name,$company,$mobile,$message2) {
         $this->load->helper('url');
         $this->load->library('email');
         $config['protocol'] = "sendmail";
@@ -89,6 +95,19 @@ class Form_submit extends CI_Model {
         $message .= '<p>Email Id : ';
         $message .= $email;
         $message .= '</p>';
+
+        $message .= '<p>Company : ';
+        $message .= $company;
+        $message .= '</p>';
+
+        $message .= '<p>Mobile : ';
+        $message .= $mobile;
+        $message .= '</p>';
+
+        $message .= '<p>Message : ';
+        $message .= $message2;
+        $message .= '</p>';
+
         $message .= '<p>Thank you!</p>';
         $message .= '<p>Automail Bulkhouse.com </p>';
         $this->email->message($message);
