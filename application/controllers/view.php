@@ -147,10 +147,16 @@ class View extends CI_Controller {
 
         $this->load->view('forms/uploadform');
     }
-     public function profile_test() {
+     public function profile_step() {
 
         $this->load->view('pending_profile');
     }
+
+    public function bank_step() {
+
+        $this->load->view('pending_bank');
+    }
+
     public function add_vendor() {
 
 //        $this->load->view('admin/template/header');
