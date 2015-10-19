@@ -574,6 +574,7 @@ return $result;
 
             $this->db->insert('removed_vendors', $data_remove);
             if ($this->db->affected_rows() == 1) {
+                $this->del($email_address);
                 return true;
             } else {
                 echo'Error when removing your account, please contact admin@bulkhouse.com';
