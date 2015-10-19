@@ -360,7 +360,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2000 * 2000)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'moa_aoa' . "." . $ext;
@@ -402,7 +402,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2000 * 2000)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'aoa' . "." . $ext;
@@ -738,7 +738,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'comp_file' . "." . $ext;
