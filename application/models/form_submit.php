@@ -25,7 +25,7 @@ class Form_submit extends CI_Model {
             'name' => $name,
             'company' => $company,
             'mobile' => $mobile,
-            'message' => $message,
+            'pro_cats' => $message,
             'submited_on' => $time
         );
 
