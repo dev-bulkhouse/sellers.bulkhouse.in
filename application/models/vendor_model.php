@@ -23,6 +23,7 @@ class Vendor_model extends CI_Model {
             $this->db->where('document_details.addressid_status', '2');
             $this->db->where('document_details.businessid_status', '2');
         } elseif ($firm_type == $firm_type) {
+            $this->db->where('document_details.pan_prop_status', '2');
             $this->db->where('document_details.pan_comp_status', '2');
             $this->db->where('document_details.vat_cst_status', '2');
             $this->db->where('document_details.part_deed_status', '2');
@@ -31,6 +32,7 @@ class Vendor_model extends CI_Model {
             $this->db->where('document_details.addressid_status', '2');
             $this->db->where('document_details.businessid_status', '2');
         } elseif ($firm_type == $firm_type) {
+            $this->db->where('document_details.pan_prop_status', '2');
             $this->db->where('document_details.pan_comp_status', '2');
             $this->db->where('document_details.vat_cst_status', '2');
             $this->db->where('document_details.moa_aoa_status', '2');
