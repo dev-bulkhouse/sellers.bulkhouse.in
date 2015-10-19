@@ -148,13 +148,13 @@ class View extends CI_Controller {
         $this->load->view('forms/uploadform');
     }
      public function profile_step() {
-
-        $this->load->view('pending_profile');
+         $logged = $this->logged_in;
+        $this->load->view('pending_profile', array('logged_in' => $logged));
     }
 
     public function bank_step() {
-
-        $this->load->view('pending_bank');
+        $logged = $this->logged_in;
+        $this->load->view('pending_bank', array('logged_in' => $logged));
     }
 
     public function add_vendor() {
