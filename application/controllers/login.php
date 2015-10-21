@@ -170,10 +170,10 @@ class Login extends CI_Controller
      if($result == 1){
 
          $this->session->set_flashdata('success_message', 'Password reset successfull! ');
-         redirect(base_url().'','location');
+         redirect(site_url().'','location');
      }  else {
          $this->session->set_flashdata('error_message', 'Password reset failed please click back on the same link');
-         redirect(base_url().'','location');
+         redirect(site_url().'','location');
      }
  }
 
