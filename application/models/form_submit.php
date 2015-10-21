@@ -147,7 +147,7 @@ class Form_submit extends CI_Model {
         $config['newline'] = "\r\n";
         $this->email->initialize($config);
         $this->email->set_mailtype('html');
-        $this->email->from('info@bulkhouse.com', 'Bulkhouse International');
+        $this->email->from('info@bulkhouse.com', 'Bulkhouse Contact mail');
         $this->email->to('contactus@bulkhouse.com');
         $this->email->bcc('admin@bulkhouse.com');
         $this->email->bcc('kishorechandra.developer@gmail.com');
@@ -187,7 +187,7 @@ class Form_submit extends CI_Model {
         $config['newline'] = "\r\n";
         $this->email->initialize($config);
         $this->email->set_mailtype('html');
-        $this->email->from('info@bulkhouse.com', 'Bulkhouse International');
+        $this->email->from('info@bulkhouse.com', 'Bulkhouse Subcribe mail');
         $this->email->to('subscribe@bulkhouse.com');
         $this->email->bcc('admin@bulkhouse.com');
         $this->email->bcc('kishorechandra.developer@gmail.com');
