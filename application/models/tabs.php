@@ -316,6 +316,21 @@ class Tabs extends CI_Model {
 
     }
 
+    public function dotcom_subscribe() {
+
+        $flag = $this->db->query("CREATE TABLE IF NOT EXISTS `dotcom_subscribe` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  `submited_on` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)");
+
+
+        echo $flag;
+
+
+    }
+
     public function add_fields_let_us_know_you() {
 
         $fields = array(

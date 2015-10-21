@@ -43,6 +43,17 @@ class Form extends CI_Controller {
 
         }
 
+        public function subscribe() {
+
+            $result = $this->form_submit->subscribe();
+            if ($result == 1) {
+                redirect('http://www.bulkhouse.com', 'location');
+            }  else {
+                redirect('http://www.bulkhouse.com', 'location');
+            }
+
+        }
+
 
     }
 
