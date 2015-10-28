@@ -63,7 +63,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'pan_card' . "." . $ext;
@@ -107,7 +107,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'vat' . "." . $ext;
@@ -149,7 +149,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'cst' . "." . $ext;
@@ -191,7 +191,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'pan_company' . "." . $ext;
@@ -234,7 +234,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'partnership_deed' . "." . $ext;
@@ -276,7 +276,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'authorised_sign' . "." . $ext;
@@ -444,7 +444,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2000 * 2000)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'shop_establish_trade' . "." . $ext;
@@ -486,7 +486,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2000 * 2000)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'cenvat' . "." . $ext;
@@ -528,7 +528,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'servicetax' . "." . $ext;
@@ -570,7 +570,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'photoid' . "." . $ext;
@@ -612,7 +612,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'addressid' . "." . $ext;
@@ -654,7 +654,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'businessid' . "." . $ext;
@@ -696,7 +696,7 @@ class Upload_new extends CI_Controller {
 
                     if (in_array($ext, $valid_formats)) {
 
-                        if ($size < (2048 * 2048)) {
+                        if ($size < (40000 * 40000)) {
                             include (APPPATH . "third_party/s3_config.php");
 //Rename image name.
                             $actual_image_name = $comp_id . '_' . 'canceled_check' . "." . $ext;

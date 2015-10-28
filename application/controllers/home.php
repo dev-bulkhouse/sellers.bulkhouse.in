@@ -15,8 +15,6 @@ class Home extends CI_Controller {
 //            redirect('http://bulkhouse.in','location');
         }
 
-
-
     }
 
 	public function index()
