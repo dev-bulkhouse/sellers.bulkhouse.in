@@ -631,7 +631,7 @@ $query = $this->db->get();
                         <div class="mb-container">
 
                                <div class="col-lg-6">
-                                <img src="/img/logo_small.png" alt="" width="230"/>
+                                <img src="/img/logo_small.png" alt="" width="100"/>
                         </div>
                             <div class="col-lg-6"></div>
 
