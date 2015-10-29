@@ -854,7 +854,7 @@ class Admin extends CI_Controller {
         foreach ($query->result_array() as $row) {
             echo $row['email']."<br/>";
 //            $this->seller_type_update($email);
-            sleep(10);
+//            sleep(10);
         }
     }
 
