@@ -179,25 +179,7 @@ public function seller_update() {
     }
 
 
-    public function smart_run() {
-             $this->db->select('*');
-              $query = $this->db->get('vendor_details');
-        foreach ($query->result_array() as $row) {
-            $email =  $row['email'];
-            $this->seller_type_update($email);
-        }
-    }
-
-
-   public function seller_type_update($email) {
-
-//        $this->load->view('admin/template/header');
-        $result = $this->register_model->seller_type_update($email);
-
-       echo $result;
-
-//        $this->load->view('admin/template/footer');
-    }
+    
    public function seller_test() {
 
         $this->load->view('seller_test');
