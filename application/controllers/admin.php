@@ -852,9 +852,9 @@ class Admin extends CI_Controller {
              $this->db->select('*');
               $query = $this->db->get('vendor_details');
         foreach ($query->result_array() as $row) {
-            echo $row['email']."<br/>";
-//            $this->seller_type_update($email);
-//            sleep(10);
+            $email =  $row['email'];
+            $this->seller_type_update($email);
+            sleep(10);
         }
     }
 
