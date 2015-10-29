@@ -23,6 +23,7 @@ class Register_model extends CI_Model {
         $first_name = $this->input->post('firstname');
         $last_name = $this->input->post('lastname');
         $password_sec = $this->input->post('password');
+        $reg_as = $this->input->post('reg_as');
 
 
         $firm_type = $this->input->post('firm_type');
@@ -82,7 +83,7 @@ class Register_model extends CI_Model {
         if ($this->db->affected_rows() === 1) {
             $this->set_session($email);
             $this->send_confirmation_mail($email);
-            $custid = $this->activate_seller($email, $first_name, $last_name, $password_sec);
+            $custid = $this->activate_seller($email, $first_name, $last_name, $password_sec,$reg_as, $compid);
 //          $this->activate_account($email);
             return array($first_name, $email, $firm_type, $firm_name, $mobile, $custid);
         } else {
@@ -90,9 +91,9 @@ class Register_model extends CI_Model {
         }
     }
 
-    public function activate_seller($email, $firstname, $lastname, $password_sec) {
+    public function activate_seller($email, $firstname, $lastname, $password_sec, $reg_as, $compid) {
         $this->load->spark('mage-api/0.0.1');
-        $result = $this->mage_api->customer_create(array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'password' => $password_sec, 'website_id' => 1, 'store_id' => 1, 'group_id' => 4));
+        $result = $this->mage_api->customer_create(array('email' => $email, 'firstname' => $firstname, 'lastname' => $lastname, 'password' => $password_sec,'seller_type' => $reg_as,'seller_code' => $compid, 'website_id' => 1, 'store_id' => 1, 'group_id' => 4));
         return $result;
     }
 
@@ -300,6 +301,51 @@ $client->call($session, 'customer.update',
       //  $this->load->spark('mage-api/0.0.1');
         //$this->mage_api->customer_update(array('customerId' => $id,'customerData' => array('password_hash' => md5($new_password))));
     }
+    public function seller_type_update($email) {
+
+
+        $this->db->select('vendor_details.id as sellerid, vendor_details.email, reg_as, city, state, custid');
+        $this->db->from('vendor_details');
+        $this->db->where('vendor_details.email', $email);
+        $this->db->join('mag_cust', 'mag_cust.email = vendor_details.email');
+
+        $query = $this->db->get();
+  foreach ($query->result_array() as $row) {
+
+            $id = $row['custid'];
+             $seller_type = $row['reg_as'];
+              $compid = $row['sellerid'];
+              $city = $row['city'];
+              $state = $row['state'];
+
+              $result = $this->register_model->update_seller_type($id,$seller_type,$compid);
+
+              return $result;
+        }
+
+
+
+    }
+
+    public function update_seller_type($id,$seller_type,$compid) {
+
+        $client = new SoapClient('http://bulk.house/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client->login('inhouse_developer', '3125582');
+
+$client->call($session, 'customer.update',
+ array('customerId' => $id, 'customerData' =>
+   array('seller_type'=> $seller_type, 'seller_code' => $compid)));
+return true;
+
+// If you don't need the session anymore
+//$client->endSession($session);
+      //  $this->load->spark('mage-api/0.0.1');
+        //$this->mage_api->customer_update(array('customerId' => $id,'customerData' => array('password_hash' => md5($new_password))));
+    }
+
     public function delete_seller($id) {
 
 $client = new SoapClient('http://bulk.house/api/soap/?wsdl'); // TODO : change url
@@ -574,7 +620,6 @@ return $result;
 
             $this->db->insert('removed_vendors', $data_remove);
             if ($this->db->affected_rows() == 1) {
-                $this->del($email_address);
                 return true;
             } else {
                 echo'Error when removing your account, please contact admin@bulkhouse.com';
@@ -726,5 +771,11 @@ return $result;
             return array('two');
         }
     }
+     public function insert_into()
+{
+$this->db->query("INSERT INTO update_seller (email)
+    SELECT email
+    FROM   vendor_details");
+}
 
 }

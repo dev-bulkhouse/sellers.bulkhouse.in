@@ -167,12 +167,41 @@ class View extends CI_Controller {
 
 //        $this->load->view('admin/template/footer');
     }
+public function seller_update() {
 
-    public function pending_profile_test() {
-        $logged = $this->logged_in;
-         $this->load->view('pending_profile', array('logged_in' => $logged));
+//        $this->load->view('admin/template/header');
+        $result = $this->register_model->insert_into();
+        if ($result == 1) {
+            redirect(base_url() . '', 'location');
+        }
+
+//        $this->load->view('admin/template/footer');
     }
 
+
+    public function smart_run() {
+             $this->db->select('*');
+              $query = $this->db->get('vendor_details');
+        foreach ($query->result_array() as $row) {
+            $email =  $row['email'];
+            $this->seller_type_update($email);
+        }
+    }
+
+
+   public function seller_type_update($email) {
+
+//        $this->load->view('admin/template/header');
+        $result = $this->register_model->seller_type_update($email);
+
+       echo $result;
+
+//        $this->load->view('admin/template/footer');
+    }
+   public function seller_test() {
+
+        $this->load->view('seller_test');
+    }
 }
 
 /* End of file welcome.php */
