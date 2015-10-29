@@ -29,9 +29,11 @@ class Admin extends CI_Controller {
         $this->load->view('admin/login');
 //        $this->load->view('admin/template/footer');
     }
+   public function test() {
 
-    public function removed() {
-        $this->load->view('admin/removed');
+//        $this->load->view('admin/template/header');
+        $this->load->view('admin/profile_view');
+//        $this->load->view('admin/template/footer');
     }
 
     public function exports() {
@@ -851,11 +853,8 @@ class Admin extends CI_Controller {
     public function smart_run() {
              $this->db->select('*');
               $query = $this->db->get('vendor_details');
-        foreach ($query->result_array() as $row) {
-            $email =  $row['email'];
-            $this->seller_type_update($email);
-            sleep(10);
-        }
+              $data['sellers'] = $query->result_array();
+              $this->load->view('admin/registers_data',$data);
     }
 
 
