@@ -869,4 +869,9 @@ class Admin extends CI_Controller {
     }
 
 
+    public function removed() {
+        $this->load->view('admin/removed');
+    }
+
+
 }
