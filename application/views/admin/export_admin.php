@@ -17,7 +17,6 @@
             .due{background-color: yellow}
             .rjt{background-color: darkred; color: white}
             td{border: #000 solid}
-            .danger{background-color: darkred; color: white}
         </style>
         <script src="http://sellers.ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css"/>
@@ -112,7 +111,7 @@
                                     <thead>
                                         <tr>
                                             <th style="width:200px">Company Details </th>
-                                            <!--<th>TO <i data-toggle="tooltip" data-placement="top" title="Turn Over" class="fa fa-question-circle"></i></th>-->
+
                                             <th>Register Time</th>
                                             <th>Type</th>
                                             <th>Pan Card</th>
@@ -121,16 +120,14 @@
                                             <th>Buisness Adr </th>
                                             <th>VAT-CST</th>
                                             <th>Company Pan</th>
-
-
                                             <th>Shop Establish/<br/>Trade</th>
-
                                             <th>COI</th>
                                             <th>MOA</th>
                                             <th>AOA</th>
                                             <th>Prt Deed</th>
                                             <th>Comp Prof</th>
                                             <th>Cheque</th>
+                                            <th>Bank</th>
                                             <th>Agent</th>
 
 
@@ -142,6 +139,7 @@
                                         $this->db->from('vendor_details');
                                         $this->db->where(array('vendor_details.activation' => 1));
                                         $this->db->join('document_details', 'document_details.compid = vendor_details.id');
+                                            $this->db->join('bank_details', 'bank_details.compid = vendor_details.id', 'left');
                                         $this->db->join('leads', 'leads.vendor_email = vendor_details.email', 'left');
                                         $this->db->join('employee', 'employee.agent_id = leads.agent_id', 'left');
 
@@ -163,7 +161,7 @@
                                                     <span class="fa fa-registered"><b> <?php echo $vendor->reg_as; ?></b></span><br/>
 
                                                 </td>
-                                                <!--<td><?php // echo $vendor->comp_turnover; ?></td>-->
+
                                                 <td><?php echo $vendor->registered_on; ?></td>
                                                 <td><?php echo $vendor->firm_type; ?></td>
 
@@ -343,7 +341,23 @@
                                                     <td class="warning">Due</td>
                                                 <?php } ?>
 
-    <?php if ($vendor->agent_name == NULL) { ?>
+                                                    <?php if ($vendor->status == 4) { ?>
+                                                    <td class="success">Approved</td>
+                                                <?php } elseif ($vendor->status == 2) { ?>
+                                                    <td class="info">Amount Credited</td>
+                                                <?php } elseif ($vendor->status == 1){ ?>
+                                                    <td class="success">On Process</td>
+                                              <?php } elseif ($vendor->status == 0) { ?>
+                                                    <td class="info">WFA</td>
+                                              <?php } elseif ($vendor->status == 10) { ?>
+                                                    <td class="warning">Due</td>
+                                              <?php } elseif ($vendor->status == 3) { ?>
+                                                    <td class="danger">Rejected</td>
+                                              <?php } elseif ($vendor->status == 5) { ?>
+                                                    <td class="danger">Wrong</td>
+                                              <?php } ?>
+
+    <?php if ($vendor->agent_id == NULL) { ?>
 
 
                                                     <td class="active">
@@ -430,7 +444,7 @@
                     <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
                     <div class="mb-content">
                         <p>Are you sure you want to log out?</p>
-                        <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+                        <p>Press No if you want to continue work. Press Yes to logout current user.</p>
                     </div>
                     <div class="mb-footer">
                         <div class="pull-right">

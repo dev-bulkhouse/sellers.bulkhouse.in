@@ -2,7 +2,7 @@
 if( ! ini_get('date.timezone') )
 {
    date_default_timezone_set('GMT');
-} 
+}
 
 // We change the headers of the page so that the browser will know what sort of file is dealing with. Also, we will tell the browser it has to treat the file as an attachment which cannot be cached.
 header("Content-type: application/octet-stream");
@@ -12,14 +12,28 @@ header("Pragma: no-cache");
 header("Expires: 0");
 
 ?>
+<style type="text/css">
 
+tr{
+        padding: 0.5em;
+        background-color: #909090;
+        background: -webkit-gradient(linear, left top, left bottom, from(#909090), to(#ababab));
+        background: -moz-linear-gradient(top, #909090, #ababab);
+        color: #efefef;
+    }
+
+
+
+
+    </style>
 <table border='1'>
-    
+
     <tr bgcolor="#199E7F" valign="middle">
         <th>Vendor Name</th>
         <th>Company Name</th>
         <th>Email</th>
         <th>Contact</th>
+        <th>Register As</th>
         <th>Register Time</th>
         <th>Firm Type</th>
         <th>Pan Card</th>
@@ -35,9 +49,10 @@ header("Expires: 0");
         <th>Partnership Deed</th>
         <th>Company Profile</th>
         <th>Canceled Cheque</th>
+          <th>Bank Details</th>
         <th>Agent Name</th>
         <th>Agent ID</th>
-       
+
     </tr>
     <tbody>
         <?php
@@ -45,6 +60,7 @@ header("Expires: 0");
                                         $this->db->from('vendor_details');
                                         $this->db->where(array('vendor_details.activation' => 1));
                                         $this->db->join('document_details', 'document_details.compid = vendor_details.id');
+                                         $this->db->join('bank_details', 'bank_details.compid = vendor_details.id', 'left');
                                         $this->db->join('leads', 'leads.vendor_email = vendor_details.email', 'left');
                                         $this->db->join('employee', 'employee.agent_id = leads.agent_id', 'left');
 
@@ -61,6 +77,7 @@ header("Expires: 0");
                 <td><span class="fa fa-building-o"> &nbsp<b><?php echo $vendor->firm_name; ?></b></span></td>
                 <td><span class="fa fa-envelope"> <?php echo $vendor->email; ?></span></td>
                 <td><span class="fa fa-phone"> <?php echo $vendor->mobile; ?></span></td>
+                 <td><span class="fa fa-phone"> <?php echo $vendor->reg_as; ?></span></td>
                 <td><?php echo $vendor->registered_on; ?></td>
                 <td><?php echo $vendor->firm_type; ?></td>
 
@@ -233,6 +250,22 @@ header("Expires: 0");
                 <?php } elseif ($vendor->canceled_check_status == 5) { ?>
                      <td bgcolor="#FBEE53">Due</td>
                 <?php } ?>
+
+                     <?php if ($vendor->status == 4) { ?>
+                                                    <td bgcolor="#00FF00">Approve</td>
+                                                <?php } elseif ($vendor->status == 2) { ?>
+                                                    <td bgcolor="#00FF00">Amount Credited</td>
+                                                <?php } elseif ($vendor->status == 1){ ?>
+                                                   <td bgcolor="#00FF00">On Process</td>
+                                              <?php } elseif ($vendor->status == 0) { ?>
+                                                      <td bgcolor="#35B7A5">WFA</td>
+                                              <?php } elseif ($vendor->status == 10) { ?>
+                                                   <td bgcolor="#FBEE53">Due</td>
+                                              <?php } elseif ($vendor->status == 3) { ?>
+                                                    <td bgcolor="#FF0000">Reject</td>
+                                              <?php } elseif ($vendor->status == 5) { ?>
+                                                    <td bgcolor="#FF0000">Wrong</td>
+                                              <?php } ?>
 
     <?php if ($vendor->agent_id != NULL) { ?>
 
