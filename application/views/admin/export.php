@@ -17,21 +17,20 @@
             .due{background-color: yellow}
             .rjt{background-color: darkred; color: white}
             td{border: #000 solid}
-            .danger{background-color: darkred; color: white}
-             </style>
+        </style>
     </head>
     <body class="page-container-boxed">
         <!-- START PAGE CONTAINER -->
 
 
         <div class="page-content">
-             <div class="col-lg-12">
+            <div class="col-lg-12">
 
-                        <div class="mb-container">
+                <div class="mb-container">
 
-                                <img src="/img/logo_small.png" alt="" width="230"/>
-                                </div>
-                         </div>
+                    <img src="/img/bulkhouse_logo_white-01.png" alt="" width="230"/>
+                </div>
+            </div>
 
             <div class="page-content-wrap">
 
@@ -42,41 +41,37 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Vendor Document Details</h3>
-                                   <ul class="panel-controls">
+                                <ul class="panel-controls">
 
-                                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
-                                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                                    <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                                    <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
 
 
-                                    </ul>
+                                </ul>
 
                             </div>
                             <div class="panel-body">
-                                  <table class="table datatable table-hover">
-        		<thead>
+                                <table class="table datatable table-hover">
+                                    <thead>
                                         <tr>
-                                            <th>Name,
-                                                Company,<br/>
-                                                Email,
-                                                Contact</th>
+                                            <th style="width:200px">Company Details </th>
+
                                             <th>Register Time</th>
                                             <th>Type</th>
                                             <th>Pan Card</th>
-                                             <th>Photo id</th>
+                                            <th>Photo id</th>
                                             <th>Address</th>
                                             <th>Buisness Adr </th>
                                             <th>VAT-CST</th>
                                             <th>Company Pan</th>
-
-
                                             <th>Shop Establish/<br/>Trade</th>
-
                                             <th>COI</th>
                                             <th>MOA</th>
                                             <th>AOA</th>
                                             <th>Prt Deed</th>
                                             <th>Comp Prof</th>
                                             <th>Cheque</th>
+                                            <th>Bank Details</th>
                                             <th>Agent</th>
 
 
@@ -85,24 +80,32 @@
                                     <tbody>
                                         <?php
                                         $this->db->select('*');
-                                        $this->db->from('document_details');
-                                        $this->db->join('vendor_details', 'vendor_details.id = document_details.compid');
-                                       $this->db->join('leads', 'leads.vendor_email = vendor_details.email','left');
-                                       $this->db->join('employee', 'employee.agent_id = leads.agent_id','left');
+                                        $this->db->from('vendor_details');
+                                        $this->db->where(array('vendor_details.activation' => 1));
+                                        $this->db->join('document_details', 'document_details.compid = vendor_details.id');
+                                        $this->db->join('bank_details', 'bank_details.compid = vendor_details.id', 'left');
+                                        $this->db->join('leads', 'leads.vendor_email = vendor_details.email', 'left');
+                                        $this->db->join('employee', 'employee.agent_id = leads.agent_id', 'left');
+
 
 
                                         $query = $this->db->get();
                                         $vendors = $query->result();
                                         ?>
 
-<?php foreach ($vendors as $vendor) { ?>
+                                        <?php foreach ($vendors as $vendor) { ?>
 
 
                                             <tr>
-                                                <td><span class="fa fa-user"> &nbsp<b><?php echo $vendor->vendor_name; ?> <?php echo $vendor->last_name; ?></b></span><br/>
-                                                    <span class="fa fa-building-o"> &nbsp<b><?php echo $vendor->firm_name; ?></b></span><br/>
+                                                <td>
+                                                    <span class="fa fa-user"> <b><?php echo $vendor->vendor_name; ?> <?php echo $vendor->last_name; ?></b></span><br/>
+                                                    <span class="fa fa-building-o"> <b><?php echo $vendor->firm_name; ?></b></span><br/>
                                                     <span class="fa fa-envelope"> <?php echo $vendor->email; ?></span><br/>
-                                                    <span class="fa fa-phone"> &nbsp<?php echo $vendor->mobile; ?></span></td>
+                                                    <span class="fa fa-phone"> <?php echo $vendor->mobile; ?></span><br/>
+                                                    <span class="fa fa-registered"><b> <?php echo $vendor->reg_as; ?></b></span><br/>
+
+                                                </td>
+
                                                 <td><?php echo $vendor->registered_on; ?></td>
                                                 <td><?php echo $vendor->firm_type; ?></td>
 
@@ -116,13 +119,13 @@
                                                 <?php } elseif ($vendor->pan_prop_status == 5) { ?>
                                                     <td class="warning">Due</td>
                                                 <?php } ?>
- <?php if ($vendor->photoid_status == 0) { ?>
+                                                <?php if ($vendor->photoid_status == 0) { ?>
                                                     <td class="info">WFA</td>
                                                 <?php } elseif ($vendor->photoid_status == 2) { ?>
                                                     <td class="success">Approve</td>
                                                 <?php } elseif ($vendor->photoid_status == 1) { ?>
                                                     <td class="danger">Reject</td>
-    <?php } elseif ($vendor->photoid_status == 5) { ?>
+                                                <?php } elseif ($vendor->photoid_status == 5) { ?>
                                                     <td class="warning">Due</td>
                                                 <?php } ?>
 
@@ -133,8 +136,8 @@
                                                     <td class="success">Approve</td>
                                                 <?php } elseif ($vendor->addressid_status == 1) { ?>
                                                     <td class="danger">Reject</td>
-    <?php } elseif ($vendor->addressid_status == 5) { ?>
-                                                   <td class="warning">Due</td>
+                                                <?php } elseif ($vendor->addressid_status == 5) { ?>
+                                                    <td class="warning">Due</td>
                                                 <?php } ?>
 
 
@@ -145,10 +148,10 @@
                                                 <?php } elseif ($vendor->businessid_status == 1) { ?>
                                                     <td class="danger">Reject</td>
                                                 <?php } elseif ($vendor->businessid_status == 5) { ?>
-                                                   <td class="warning">Due</td>
+                                                    <td class="warning">Due</td>
                                                 <?php } ?>
 
-                                                    <?php if ($vendor->vat_cst_status == 0) { ?>
+                                                <?php if ($vendor->vat_cst_status == 0) { ?>
                                                     <td class="info">WFA</td>
                                                 <?php } elseif ($vendor->vat_cst_status == 2) { ?>
                                                     <td class="success">Approve</td>
@@ -156,7 +159,7 @@
                                                     <td class="danger">Reject</td>
                                                 <?php } elseif ($vendor->vat_cst_status == 5) { ?>
                                                     <td class="warning">Due</td>
-    <?php } ?>
+                                                <?php } ?>
 
                                                 <?php if ($vendor->firm_type == 'proprietorship') { ?>
                                                     <td>NA</td>
@@ -168,9 +171,11 @@
                                                     <?php } elseif ($vendor->pan_comp_status == 1) { ?>
                                                         <td class="danger">Reject</td>
                                                     <?php } elseif ($vendor->pan_comp_status == 5) { ?>
-                                                       <td class="warning">Due</td>
-                                                    <?php }
-                                                } ?>
+                                                        <td class="warning">Due</td>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
 
 
 
@@ -187,9 +192,11 @@
                                                     <?php } elseif ($vendor->shop_establish_trade_status == 1) { ?>
                                                         <td class="danger">Reject</td>
                                                     <?php } elseif ($vendor->shop_establish_trade_status == 5) { ?>
-                                                       <td class="warning">Due</td>
-                                                    <?php }
-                                                } ?>
+                                                        <td class="warning">Due</td>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
 
 
 
@@ -203,8 +210,10 @@
                                                         <td class="danger">Reject</td>
                                                     <?php } elseif ($vendor->cert_of_incorp_status == 5) { ?>
                                                         <td class="warning">Due</td>
-                                                    <?php }
-                                                } else { ?>
+                                                        <?php
+                                                    }
+                                                } else {
+                                                    ?>
                                                     <td>NA</td>
                                                 <?php } ?>
 
@@ -217,8 +226,10 @@
                                                         <td class="danger">Reject</td>
                                                     <?php } elseif ($vendor->moa_aoa_status == 5) { ?>
                                                         <td class="warning">Due</td>
-                                                    <?php }
-                                                } else { ?>
+                                                        <?php
+                                                    }
+                                                } else {
+                                                    ?>
                                                     <td>NA</td>
                                                 <?php } ?>
 
@@ -230,9 +241,11 @@
                                                     <?php } elseif ($vendor->aoa_status == 1) { ?>
                                                         <td class="danger">Reject</td>
                                                     <?php } elseif ($vendor->aoa_status == 5) { ?>
-                                                       <td class="warning">Due</td>
-                                                    <?php }
-                                                } else { ?>
+                                                        <td class="warning">Due</td>
+                                                        <?php
+                                                    }
+                                                } else {
+                                                    ?>
                                                     <td>NA</td>
                                                 <?php } ?>
 
@@ -245,8 +258,10 @@
                                                         <td class="danger">Reject</td>
                                                     <?php } elseif ($vendor->part_deed_status == 5) { ?>
                                                         <td class="warning">Due</td>
-                                                    <?php }
-                                                } else { ?>
+                                                        <?php
+                                                    }
+                                                } else {
+                                                    ?>
                                                     <td>NA</td>
                                                 <?php } ?>
 
@@ -255,38 +270,55 @@
                                                 <?php } elseif ($vendor->comp_file_status == 2) { ?>
                                                     <td class="success">Approve</td>
                                                 <?php } elseif ($vendor->comp_file_status == 1) { ?>
-                                                     <td class="danger">Reject</td>
+                                                    <td class="danger">Reject</td>
                                                 <?php } elseif ($vendor->comp_file_status == 5) { ?>
                                                     <td class="warning">Due</td>
                                                 <?php } ?>
 
                                                 <?php if ($vendor->canceled_check_status == 0) { ?>
                                                     <td class="info">WFA</td>
-    <?php } elseif ($vendor->canceled_check_status == 2) { ?>
+                                                <?php } elseif ($vendor->canceled_check_status == 2) { ?>
                                                     <td class="success">Approve</td>
-    <?php } elseif ($vendor->canceled_check_status == 1) { ?>
+                                                <?php } elseif ($vendor->canceled_check_status == 1) { ?>
                                                     <td class="danger">Reject</td>
-                                            <?php } elseif ($vendor->canceled_check_status == 5) { ?>
-                                                   <td class="warning">Due</td>
-    <?php } ?>
+                                                <?php } elseif ($vendor->canceled_check_status == 5) { ?>
+                                                    <td class="warning">Due</td>
+                                                <?php } ?>
 
-                                                    <?php if($vendor->agent_id  != NULL) { ?>
+                                                <?php if ($vendor->status == 4) { ?>
+                                                    <td class="success">Approved</td>
+                                                <?php } elseif ($vendor->status == 2) { ?>
+                                                    <td class="info">Amount Credited</td>
+                                                <?php } elseif ($vendor->status == 1){ ?>
+                                                    <td class="success">On Process</td>
+                                              <?php } elseif ($vendor->status == 0) { ?>
+                                                    <td class="info">WFA</td>
+                                              <?php } elseif ($vendor->status == 10) { ?>
+                                                    <td class="warning">Due</td>
+                                              <?php } elseif ($vendor->status == 3) { ?>
+                                                    <td class="danger">Rejected</td>
+                                              <?php } elseif ($vendor->status == 5) { ?>
+                                                    <td class="danger">Wrong</td>
+                                              <?php } ?>
 
-                                                    <td class="active"><?php echo $vendor->agent_name; ?><br/>(<?php echo $vendor->agent_id; ?>)</td>
-                                                    <?php }else {?>
-                                                   <td class="active">
+                                                <?php if ($vendor->agent_id == NULL) { ?>
+
+
+                                                    <td class="active">
                                                         No Agent
-                                                   </td>
-                                                     <?php }  ?>
+
+                                                    </td>
+                                                <?php } else { ?>
+                                                    <td class="active"><?php echo $vendor->agent_name; ?><br/>(<?php echo $vendor->agent_id; ?>)</td>
 
 
-
+                                                <?php } ?>
 
 
                                             </tr>
 
 
-<?php } ?>
+                                        <?php } ?>
 
                                     </tbody>
                                 </table>
