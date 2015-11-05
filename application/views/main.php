@@ -372,7 +372,7 @@ $query = $this->db->get();
                     <?php } ?>
 
                 </div>
-                
+
                 <div class="col-md-12 visible-md visible-sm visible-xs">
                         <p style="color: black">Account Complete Status</p>
                         <div class="progress progress-xs  m-t-sm">
@@ -637,7 +637,7 @@ $query = $this->db->get();
                                                 <div class="media-body">
                                                     <i class="fa fa-bank" style="font-size: 1.2em"> Bank Details are Disapproved</i>
 
-                                                    <a href="#" class="alert-link"></a> and try submitting again.
+                                                    <a href="/view/bank" class="alert-link"></a> Please correct the bank details.
 
                                                 </div>
                                             </article>
