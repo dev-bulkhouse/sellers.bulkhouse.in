@@ -34,7 +34,7 @@ if ($logged_in) {
                         <div class="col-md-12">
 
                             <!-- START DEFAULT DATATABLE -->
-                             
+
                             <div class="panel panel-default">
 
                                 <div class="panel-body">
@@ -55,6 +55,7 @@ if ($logged_in) {
                                                 <th>Deposit Amount</th>
                                                 <th>Action</th>
 
+
                                            </tr>
                                         </thead>
                                         <tbody>
@@ -63,7 +64,6 @@ if ($logged_in) {
                 $this->db->from('bank_details');
                 $this->db->join('vendor_details','vendor_details.id = bank_details.compid');
                 $this->db->join('document_details','document_details.compid = bank_details.compid');
-                $this->db->where('vendor_details.firm_type', "proprietorship");
                 $this->db->where('bank_details.status', 1);
                 $this->db->group_by("bank_details.compid");
                 $query = $this->db->get();
@@ -81,102 +81,20 @@ if ($logged_in) {
                                                 <td><?php echo $bank_single->date_of_submission; ?></td>
                                                <td class="warning"><?php echo $bank_single->amount; ?></td>
   <?php if ($bank_single->status == 1) { ?>
-                                                    <td><div class="btn-group">
-                                                    <a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></a>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                        
-                                                        <li> <form style="float: left" method="post" action="/change/sucess/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="btn btn-success">Approve</button> </form></li>
-                                                        <li><form style="float: right" method="post" action="/change/failed/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit"  class="btn btn-danger">Reject</button></form></li>
-                                                                                               
-                                                    </ul>
-                                                </div></td>
-                                              
+                                                    <td>
+
+                                                        <form  method="post" action="/change/sucess/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="btn btn-success">Approve</button> </form> <br/>
+                                                        <form  method="post" action="/change/failed/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit"  class="btn btn-danger">Reject</button></form>
+                                                    </td>
+
+
                                                  <?php } ?>
                                             </tr>
 
 
                                             <?php } ?>
 
-        <?php
-        $this->db->select('*');
-        $this->db->from('bank_details');
-        $this->db->join('vendor_details','vendor_details.id = bank_details.compid');
-        $this->db->join('document_details','document_details.compid = bank_details.compid');
-        $this->db->where('vendor_details.firm_type', "partnership");
-       
-        $this->db->where('bank_details.status', 1);
-        $this->db->group_by("bank_details.compid");
-        $query2 = $this->db->get();
-        $bank_data2 = $query2->result(); ?>
-                                            <?php foreach ($bank_data2 as $bank_single) { ?>
 
-                                            <tr>
-                                                <td><?php echo $bank_single->account_name; ?></td>
-                                                <td><?php echo $bank_single->firm_name; ?></td>
-                                                <td><?php echo $bank_single->account_number; ?></td>
-                                                <td><?php echo $bank_single->bank_name; ?></td>
-                                                <td><?php echo $bank_single->branch; ?></td>
-                                                <td><?php echo $bank_single->ifsc; ?></td>
-                                                <td><?php echo $bank_single->micr; ?></td>
-                                                <td><?php echo $bank_single->date_of_submission; ?></td>
-                                               <td class="warning"><?php echo $bank_single->amount; ?></td>
-                                                 <?php if ($bank_single->status == 1) { ?>
-                                                    <td><div class="btn-group">
-                                                    <a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></a>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                          
-                                                        <li> <form style="float: left" method="post" action="/change/sucess/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="btn btn-success">Approve</button> </form></li>
-                                                        <li><form style="float: right" method="post" action="/change/failed/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit"  class="btn btn-danger">Reject</button></form></li>
-                                                                                                      
-                                                    </ul>
-                                                </div></td>
-                                              
-                                                 <?php } ?>
-                                            </tr>
-
-
-                                            <?php } ?>
-                                            <?php
-
-
-
-                                            $this->db->select('*');
-        $this->db->from('bank_details');
-        $this->db->join('vendor_details','vendor_details.id = bank_details.compid');
-        $this->db->join('document_details','document_details.compid = bank_details.compid');
-        $this->db->where('vendor_details.firm_type', "pvt_or_ltd");
-        $this->db->where('bank_details.status', 1);
-        $this->db->group_by("bank_details.compid");
-$query3 = $this->db->get();
-$bank_data3 = $query3->result(); ?>
-                                            <?php foreach ($bank_data3 as $bank_single) { ?>
-
-                                            <tr>
-                                                <td><?php echo $bank_single->account_name; ?></td>
-                                                <td><?php echo $bank_single->firm_name; ?></td>
-                                                <td><?php echo $bank_single->account_number; ?></td>
-                                                <td><?php echo $bank_single->bank_name; ?></td>
-                                                <td><?php echo $bank_single->branch; ?></td>
-                                                <td><?php echo $bank_single->ifsc; ?></td>
-                                                <td><?php echo $bank_single->micr; ?></td>
-                                                <td><?php echo $bank_single->date_of_submission; ?></td>
-                                                <td class="warning"><?php echo $bank_single->amount; ?></td>
-                                                    <?php if ($bank_single->status == 1) { ?>
-                                                     <td><div class="btn-group">
-                                                    <a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></a>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                          
-                                                        <li> <form style="float: left" method="post" action="/change/sucess/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit" class="btn btn-success">Approve</button> </form></li>
-                                                        <li><form style="float: right" method="post" action="/change/failed/<?php echo $bank_single->compid .'/'. $bank_single->account_number;?>"><button type="submit"  class="btn btn-danger">Reject</button></form></li>
-                                                                                                    
-                                                    </ul>
-                                                </div></td>
-                                              
-                                                 <?php } ?>
-                                            </tr>
-
-
-                                            <?php } ?>
 
                                         </tbody>
                                     </table>
@@ -223,25 +141,25 @@ $bank_data3 = $query3->result(); ?>
         <!-- START PRELOADS -->
          <script type="text/javascript" src="/js/plugins/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="/js/plugins/jquery/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap.min.js"></script>                
+        <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap.min.js"></script>
         <!-- END PLUGINS -->
 
         <!-- THIS PAGE PLUGINS -->
         <script type='text/javascript' src='/js/plugins/icheck/icheck.min.js'></script>
         <script type="text/javascript" src="/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-        
+
         <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
         <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
         <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap-colorpicker.js"></script>
         <script type="text/javascript" src="/js/plugins/datatables/jquery.dataTables.min.js"></script>
-        
-        <!-- END THIS PAGE PLUGINS -->       
+
+        <!-- END THIS PAGE PLUGINS -->
 
         <!-- START TEMPLATE -->
         <script type="text/javascript" src="js/settings.js"></script>
-        
-        <script type="text/javascript" src="/js/plugins.js"></script>        
-        <script type="text/javascript" src="/js/actions.js"></script>   
+
+        <script type="text/javascript" src="/js/plugins.js"></script>
+        <script type="text/javascript" src="/js/actions.js"></script>
         <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
 
