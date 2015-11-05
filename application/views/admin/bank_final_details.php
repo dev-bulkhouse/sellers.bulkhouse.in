@@ -99,7 +99,57 @@ if ($logged_in) {
                                         </tbody>
                                     </table>
 
+ <table class="table datatable table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Account Name</th>
+                                                <th>Company Name</th>
+                                                <th>Account Number</th>
+                                                <th>Bank Name</th>
+                                                <th>Branch</th>
+                                                <th>IFS-Code</th>
+                                                <th>MICR</th>
+                                                <th>Date of Submission</th>
+                                                <th>Deposit Amount</th>
 
+
+
+                                           </tr>
+                                        </thead>
+                                        <tbody>
+               <?php
+                $this->db->select('*');
+                $this->db->from('bank_details');
+                $this->db->join('vendor_details','vendor_details.id = bank_details.compid');
+                $this->db->join('document_details','document_details.compid = bank_details.compid');
+                $this->db->where('bank_details.status', 3);
+                $this->db->group_by("bank_details.compid");
+                $query = $this->db->get();
+                $bank_data = $query->result(); ?>
+              <?php foreach ($bank_data as $bank_single) { ?>
+
+                                            <tr>
+                                                <td><?php echo $bank_single->account_name; ?></td>
+                                                <td><?php echo $bank_single->firm_name; ?></td>
+                                                <td><?php echo $bank_single->account_number; ?></td>
+                                                <td><?php echo $bank_single->bank_name; ?></td>
+                                                <td><?php echo $bank_single->branch; ?></td>
+                                                <td><?php echo $bank_single->ifsc; ?></td>
+                                                <td><?php echo $bank_single->micr; ?></td>
+                                                <td><?php echo $bank_single->date_of_submission; ?></td>
+                                               <td class="warning"><?php echo $bank_single->amount; ?></td>
+
+
+
+                                            </tr>
+
+
+                                            <?php } ?>
+
+
+
+                                        </tbody>
+                                    </table>
 
 
 
