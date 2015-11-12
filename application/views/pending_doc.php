@@ -63,7 +63,7 @@ $query = $this->db->get();
         <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav">
         <meta name="keywords" content="modal, window, overlay, modern, box, css transition, css animation, effect, 3d, perspective" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-     
+
         <link rel="stylesheet" href="/css/app.v1.css">
         <link rel="stylesheet" href="/css/font.css" cache="false">
 
@@ -94,7 +94,7 @@ $query = $this->db->get();
     border-color: #3fbae4;
 }
         </style>
-        
+
         <script>
             $(document).ready(function (e) {
 
@@ -392,13 +392,13 @@ $query = $this->db->get();
 
     </head>
     <body  ng-app="ngAnimate">
-        
+
         <section class="vbox">
 
 
 
             <section class="scrollable wrapper animated fadeInDown"  >
-   
+
 
 
                 <div class="row" style="margin-bottom: 10px; padding: 10px;">
@@ -469,7 +469,7 @@ $query = $this->db->get();
                         $this->load->view('forms/document_form', $data);
                         ?>
                         <!----------------------------->
-                     
+
                         <?php
                         $data['email'] = $email;
                         $data['doc_title'] = 'Memorandum Of Association';
@@ -484,7 +484,7 @@ $query = $this->db->get();
                         $this->load->view('forms/document_form', $data);
                         ?>
                         <!----------------------------->
-                      
+
                         <?php
                         $data['email'] = $email;
                         $data['doc_title'] = 'CENVAT Details';
@@ -499,7 +499,7 @@ $query = $this->db->get();
                         $this->load->view('forms/document_form', $data);
                         ?>
                         <!----------------------------->
-                       
+
                         <?php
                         $data['email'] = $email;
                         $data['doc_title'] = 'Photo Identity Proof';
@@ -516,7 +516,7 @@ $query = $this->db->get();
                         <!----------------------------->
                         <?php
                         $data['email'] = $email;
-                        $data['doc_title'] = 'Canceled Cheque';
+                        $data['doc_title'] = 'Cancel Cheque';
                         $data['id_modal'] = 'modal-canceled_check';
                         $data['doc_placeholder'] = 'Upload Cancel Cheque Copy';
                         $data['doc_pat'] = '';
@@ -538,18 +538,18 @@ $query = $this->db->get();
                             <div class="col-lg-12">
                                 <div class="list-group bg-white" style="background-color: whitesmoke">
                                      <div class="panel">
-                                         
+
                         <div class="mb-container">
-                            
+
                                <div class="col-lg-6">
                                  <img src="/img/logo_small.png" alt="" width="100"/>
                         </div>
                             <div class="col-lg-6"></div>
-           
+
                 <img src="/img/step3.jpg" alt="" width="100%"/>
                <button style="margin-left:70px" class="btn btn-info btn-rounded" ><a href="/view/profile_step">Edit</a></button>
                <button style="margin-left:315px" class="btn btn-info btn-rounded" ><a href="/view/bank_step">Edit</a></button>
-        
+
 </div>
                                 </div>
                                     </div>
@@ -558,15 +558,15 @@ $query = $this->db->get();
                                         <header class="panel-heading bg-primary" style=" color: black">
                                             Products
                                              <a style="color: black; margin-top:3px " href="/view/settings" <span class="fa fa-cog fa-2x pull-right"></span> </a>
-                                            <a style="margin-top: -5px"  href="<?php echo site_url(); ?>user/logout" class="btn btn-primary pull-right btn-sm"><i class="fa fa-sign-out"></i> Logout</a>    
+                                            <a style="margin-top: -5px"  href="<?php echo site_url(); ?>user/logout" class="btn btn-primary pull-right btn-sm"><i class="fa fa-sign-out"></i> Logout</a>
                                         </header>
-                                       
+
                                         <span  class="list-group-item">
-                                               
-                                                
+
+
                                             <a class="btn btn-primary btn-sm" target="_blank" href="http://bulk.house/index.php/marketplace/seller/login/"><i class="fa fa-plus"> </i>  Manage Products</a>
-                                                  
-                                                
+
+
                                             </span>
 
 
@@ -574,13 +574,13 @@ $query = $this->db->get();
                                 </div>
                                 </div>
                             </div>
-                        
+
                                     <div class="row">
                             <div class="col-lg-12">
                                 <div class="list-group bg-white" style="background-color: whitesmoke">
                                     <header class="panel-heading bg-primary" style=" color: black">
                                         <span class="badge bg-info pull-right"></span> Submit Documents
-  
+
                                     </header>
                                     <?php if ($req_docs->pan_prop == 1) { ?>
                                         <a href="#" class="list-group-item">
@@ -686,7 +686,7 @@ $query = $this->db->get();
                                             <span> - <i data-toggle="tooltip" data-placement="top" title="Mandatory to know your Company’s constitution.(Please attach)" class="fa fa-question-circle"></i></span>
                                         </a>
                                     <?php } ?>
-                                  
+
                                     <!----------------------------->
                                     <?php if ($req_docs->moa_aoa == 1) { ?>
                                         <a href="#" class="list-group-item">
@@ -713,7 +713,7 @@ $query = $this->db->get();
                                         </a>
                                     <?php } ?>
                                     <!----------------------------->
-                                   
+
                                     <script>
                                         function save_cenvat(va) {
                                             compid = <?php echo $compid; ?>;
@@ -726,7 +726,7 @@ $query = $this->db->get();
                                             });
                                         }
 
-                                        
+
 
                                     </script>
                                     <div class="col-lg-12" style="margin-bottom: 10px; margin-top: 10px; padding-bottom: 10px">
@@ -823,9 +823,9 @@ $query = $this->db->get();
                                         ?>
 
 
-                                  
 
-                                    
+
+
                                     </div>
                                 </div>
 
@@ -868,13 +868,13 @@ $query = $this->db->get();
                                     </div>
                                 </div>
                                 <div>
-                                 
+
                                     <div class="list-group bg-white" style="background-color: whitesmoke">
                                         <header class="panel-heading bg-primary" style=" color: black">
                                             <span class="badge bg-info pull-right"></span> Bank Document
                                         </header>
 
-                                      
+
 
                                         <a href="#" class="list-group-item">
                                             <i class="icon-chevron-right"></i>
@@ -950,7 +950,7 @@ $query = $this->db->get();
         <!-- END THIS PAGE PLUGINS -->
 
         <!-- START TEMPLATE -->
-      
+
         <script type="text/javascript" src="/js/plugins.js"></script>
         <script type="text/javascript" src="/js/actions.js"></script>
         <!-- Bootstrap -->
