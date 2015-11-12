@@ -218,16 +218,16 @@ class Admin extends CI_Controller {
             $details['moa_aoa_status'] = $row['moa_aoa_status'];
             $details['canceled_check_status'] = $row['canceled_check_status'];
             $details['status'] = $row['status'];
-          
-          
+
+
             $details['address1'] = $row['address1'];
             $details['address2'] = $row['address2'];
             $details['city'] = $row['city'];
             $details['state'] = $row['state'];
             $details['country'] = $row['country'];
             $details['pin_code'] = $row['pin_code'];
-            
-           
+
+
             $details['year_establishment'] = $row['year_establishment'];
             $details['no_employees'] = $row['no_employees'];
             $details['reg_category'] = $row['reg_category'];
@@ -354,7 +354,7 @@ class Admin extends CI_Controller {
             $this->load->view('admin/preview_details', $details);
         }
     }
-    
+
     public function document_preview_cenvat() {
         $compid = $_GET['id'];
         $this->db->select('*');
@@ -574,6 +574,9 @@ class Admin extends CI_Controller {
             redirect(base_url() . 'admin/employees', 'location');
         }
     }
-   
+    public function removed() {
+        $this->load->view('admin/removed');
+    }
+
 
 }
