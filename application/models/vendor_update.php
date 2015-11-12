@@ -104,7 +104,7 @@ class Vendor_update extends CI_Model {
 
         return 1;
     }
-    
+
 //    status's
 
     public function status_update($firm_type, $compid) {
@@ -122,12 +122,12 @@ class Vendor_update extends CI_Model {
             $vat_cst_status = $st->vat_cst_status;
             $pan_comp_status = $st->pan_comp_status;
             $part_deed_status = $st->part_deed_status;
-           
+
             $moa_aoa_status = $st->moa_aoa_status;
-          
+
             $photoid = $st->photoid_status;
-      
-           
+
+
 
             if ($firm_type == 'partnership') {
                 if ( $photoid == 5 || $vat_cst_status == 5 || $pan_comp_status == 5 || $part_deed_status == 5  ) {
@@ -235,7 +235,7 @@ class Vendor_update extends CI_Model {
             $address1 = $st->address1;
 
             $city = $st->city;
-            $state = $st->state;
+//            $state = $st->state;
             $pincode = $st->pin_code;
             $contact_name = $st->contact_name;
             $mobile_contact = $st->mobile_contact;
@@ -243,8 +243,8 @@ class Vendor_update extends CI_Model {
             $year_establishment = $st->year_establishment;
             $comp_turnover = $st->comp_turnover;
             $reg_category = $st->reg_category;
-           
-            if ($address1 != "" && $city != "" && $state != "" && $pincode != "" && $contact_name != "" && $mobile_contact != "" && $email_contact != "" && $year_establishment != "" && $comp_turnover != "" && $reg_category != "") {
+
+            if ($address1 != "" && $city != "" && $pincode != "" && $contact_name != "" && $mobile_contact != "" && $email_contact != "" && $year_establishment != "" && $comp_turnover != "" && $reg_category != "") {
                 return false;
             } else {
                 return true;
@@ -268,11 +268,11 @@ class Vendor_update extends CI_Model {
             $vat_cst_status = $st->vat_cst_status;
             $pan_comp_status = $st->pan_comp_status;
             $part_deed_status = $st->part_deed_status;
-           
+
             $moa_aoa_status = $st->moa_aoa_status;
-         
+
             $photoid_status = $st->photoid_status;
-           
+
             $canceled_check_status = $st->canceled_check_status;
 
         if ($firm_type === $proprietorship) {
@@ -302,7 +302,7 @@ class Vendor_update extends CI_Model {
     }
 
     //    Mobile Verification
-    
+
     public function mobile_verified($compid, $mobile) {
 
         $last_version = $this->latest_number_version($compid);
