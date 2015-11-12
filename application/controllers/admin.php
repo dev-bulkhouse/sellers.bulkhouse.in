@@ -578,18 +578,7 @@ class Admin extends CI_Controller {
         $this->load->view('admin/removed');
     }
 
-    public function change_firmtype($email, $firmtype) {
-​
-​
-        $data = array(
-            'firm_type' => $firmtype
-        );
-​
-​
-        $this->db->where(array('vendor_details.email' => $email));
-        $this->db->update('vendor_details', $data);
-        echo "firmtype changed successfully for " . $email . " to " . $firmtype;
-    }
+    
 
 
 }
