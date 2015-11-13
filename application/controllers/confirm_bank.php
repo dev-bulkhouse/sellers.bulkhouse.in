@@ -39,8 +39,24 @@ class Confirm_bank extends CI_Controller {
 
            redirect(base_url().'main/','location');
 
-           
+
             }}}
+
+    public function reset_attempts($email) {
+
+        $cid = $this->register_model->get_compid($email);
+​
+       $data = array(
+
+           'status' => 2,
+           'attempts' => 0
+
+        );
+        $this->db->where('compid', $cid);
+        $this->db->update('bank_details', $data);
+//        return 1;
+
+    }
 
     public function amt_chk($cid) {
 
