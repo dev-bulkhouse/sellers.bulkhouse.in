@@ -59,9 +59,9 @@ public function export() {
     }
     public function db_backup()
 {
-    $DBUSER=$this->db->username;
-    $DBPASSWD=$this->db->password;
-    $DATABASE=$this->db->database;
+    $DBUSER="root";
+    $DBPASSWD="bulkhouse";
+    $DATABASE="vendor_data";
 
     $filename = $DATABASE . ".sql.gz";
     $mime = "application/x-gzip";
