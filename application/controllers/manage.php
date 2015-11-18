@@ -57,23 +57,101 @@ public function export() {
         $this->load->view('test');
 //        $this->load->view('admin/template/footer');
     }
-    public function db_backup()
+    public function export_vendor()
 {
-    $DBUSER="root";
-    $DBPASSWD="bulkhouse";
-    $DATABASE="vendor_data";
+$this->load->helper('url');
+                $this->load->helper('csv');
 
-    $filename = $DATABASE . ".sql.gz";
-    $mime = "application/x-gzip";
+            $query = $this->db->query('SELECT * FROM vendor_details');
+            $num = $query->num_fields();
+            $var =array();
+            $i=1;
+            $fname="";
+            while($i <= $num){
+                $test = $i;
+                $value = $this->input->post($test);
 
-    header( "Content-Type: " . $mime );
-    header( 'Content-Disposition: attachment; filename="' . $filename . '"' );
+                if($value != ''){
+                        $fname= $fname." ".$value;
+                        array_push($var, $value);
 
-    // $cmd = "mysqldump -u $DBUSER --password=$DBPASSWD $DATABASE | gzip --best";
-    $cmd = "mysqldump -u $DBUSER --password=$DBPASSWD --no-create-info --complete-insert $DATABASE | gzip --best";
+                    }
+                 $i++;
+            }
 
-    passthru( $cmd );
+            $fname = trim($fname);
 
-    exit(0);
-}
+            $fname=str_replace(' ', ',', $fname);
+
+            $this->db->select($fname);
+            $quer = $this->db->get('vendor_details');
+
+            query_to_csv($quer,TRUE,'vendor_details'.'.csv');
+
+
+
+
+ }
+ public function export_bank()
+{
+$this->load->helper('url');
+                $this->load->helper('csv');
+
+            $query = $this->db->query('SELECT * FROM bank_details');
+            $num = $query->num_fields();
+            $var =array();
+            $i=1;
+            $fname="";
+            while($i <= $num){
+                $test = $i;
+                $value = $this->input->post($test);
+
+                if($value != ''){
+                        $fname= $fname." ".$value;
+                        array_push($var, $value);
+
+                    }
+                 $i++;
+            }
+            $fname = trim($fname);
+
+            $fname=str_replace(' ', ',', $fname);
+
+            $this->db->select($fname);
+            $quer = $this->db->get('bank_details');
+
+            query_to_csv($quer,TRUE,'bank_details'.'.csv');
+ }
+ public function export_doc()
+{
+$this->load->helper('url');
+                $this->load->helper('csv');
+
+            $query = $this->db->query('SELECT * FROM document_details');
+            $num = $query->num_fields();
+            $var =array();
+            $i=1;
+            $fname="";
+            while($i <= $num){
+                $test = $i;
+                $value = $this->input->post($test);
+
+                if($value != ''){
+                        $fname= $fname." ".$value;
+                        array_push($var, $value);
+
+                    }
+                 $i++;
+            }
+
+            $fname = trim($fname);
+
+            $fname=str_replace(' ', ',', $fname);
+
+            $this->db->select($fname);
+            $quer = $this->db->get('document_details');
+
+            query_to_csv($quer,TRUE,'document_details'.'.csv');
+ }
+
 }
