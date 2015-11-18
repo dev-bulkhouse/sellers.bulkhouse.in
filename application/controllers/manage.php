@@ -346,12 +346,12 @@ $this->load->helper('url');
             query_to_csv($quer,TRUE,'vendor_mobile'.'.csv');
  }
 
- public function update_seller()
+ public function removed_vendors()
 {
 $this->load->helper('url');
                 $this->load->helper('csv');
 
-            $query = $this->db->query('SELECT * FROM update_seller');
+            $query = $this->db->query('SELECT * FROM removed_vendors');
             $num = $query->num_fields();
             $var =array();
             $i=1;
@@ -373,9 +373,9 @@ $this->load->helper('url');
             $fname=str_replace(' ', ',', $fname);
 
             $this->db->select($fname);
-            $quer = $this->db->get('update_seller');
+            $quer = $this->db->get('removed_vendors');
 
-            query_to_csv($quer,TRUE,'update_seller'.'.csv');
+            query_to_csv($quer,TRUE,'removed_vendors'.'.csv');
  }
 
 }
